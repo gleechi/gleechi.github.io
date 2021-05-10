@@ -23,14 +23,36 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Getting Started with Unity
+      url: /mydoc_introduction.html
+      output: web, pdf
+
+      subfolders:
+      - title: Getting Started Sections
+        url: /mydoc_introduction.html
+        output: web
+        subfolderitems:
+
+        - title: Installation
+          url: /mydoc_introduction.html#installing-the-unity-engine-plugin      
+          output: web
+          
+        - title: Avatar Setup
+          url: /mydoc_introduction.html#a-first-look-at-the-hand-model    
+          output: web
+        
+        - title: Sensor Setup
+          url: /mydoc_introduction.html#a-first-look-at-the-sensor-setup   
+          output: web
+
+        - title: Object Setup
+          url: /mydoc_introduction.html#make-an-object-interactable-in-a-few-seconds    
+          output: web
+
     #- title: Get started
     #  url: /index.html
     #  output: web, pdf
     #  type: homepage
-
-    - title: Introduction
-      url: /mydoc_introduction.html
-      output: web, pdf
 
     #- title: Supported features
     #  url: /mydoc_supported_features.html
@@ -44,7 +66,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: 6.0 Release notes
+    - title: 0.5.0
       url: /mydoc_release_notes_60.html
       output: web, pdf
 
@@ -56,6 +78,6 @@ entries:
     output: web
     folderitems:
 
-      - title: Getting Started pages
+      - title: Tag [Getting Started]
         url: /tag_getting_started.html
         output: web
