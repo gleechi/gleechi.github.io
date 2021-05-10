@@ -11,3 +11,5 @@ impertinent: "Someone acting rude and insensitive to others."
 intrepid: "Brave and courageous especially in a difficult, dangerous situation."
 
 VirtualGrasp: "Gleechi's software for hand interaction."
+
+GameObject: In Unity, any node in the Hierarchy is called a GameObject.
