@@ -1,0 +1,15 @@
+
+<!--<table>
+<thead><tr><th>Term</th><th>Description</th></tr></thead>
+<tbody>
+{% assign gs = site.data.glossary | sort:[0] %}
+{% for kv in gs %}
+<tr> <td><b>{{ kv[0] }} </b></td><td> {{ kv[1] }} </td></tr>
+{% endfor %}
+</tbody>
+</table>-->
+    
+{% for kv in gs %}
+{{ kv[0] }}
+: {{ kv[1] }}
+{% endfor %}

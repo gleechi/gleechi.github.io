@@ -1,0 +1,16 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Chapters
+    output: web
+    folderitems:
+    - title: Knowledge Base
+      url: /knowledge_base.html
+      output: web
+    - title: VirtualGrasp Unity SDK
+      url: /unity_get_started.html
+      output: web

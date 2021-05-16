@@ -1,0 +1,123 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: VirtualGrasp Unity SDK
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Getting Started with Unity
+      url: /unity_get_started.html
+      output: web, pdf
+
+      subfolders:
+      - title: Getting Started Sections
+        url: /unity_get_started_installation.html
+        output: web
+        subfolderitems:
+
+        - title: Installation
+          url: /unity_get_started_installation.html
+          output: web
+          
+        - title: Avatar Setup
+          url: /unity_get_started_avatars.html
+          output: web
+        
+        - title: Sensor Setup
+          url: /unity_get_started_sensors.html
+          output: web
+
+        - title: Object Setup
+          url: /unity_get_started_objects.html
+          output: web
+
+      - title: Components
+        url: /unity_get_started.html
+        output: web
+        subfolderitems:
+
+        - title: MyVirtualGrasp
+          url: /unity_component_myvirtualgrasp.html
+          output: web
+          
+        - title: VG_Articulation
+          url: /unity_component_vgarticulation.html   
+          output: web
+        
+        - title: VG_Recorder
+          url: /unity_component_vgrecorder.html
+          output: web
+
+        - title: VG_GraspStudio
+          url: /unity_component_vggraspstudio.html
+          output: web
+
+    #- title: Get started
+    #  url: /index.html
+    #  output: web, pdf
+    #  type: homepage
+
+    #- title: Supported features
+    #  url: /mydoc_supported_features.html
+    #  output: web, pdf
+
+    #- title: Support
+    #  url: /mydoc_support.html
+    #  output: web, pdf
+
+  - title: Release Notes
+    output: web, pdf
+    folderitems:
+
+    - title: 0.5.0
+      url: /release_notes_050.html
+      output: web, pdf
+
+  - title: API
+    output: web, pdf
+    folderitems:
+      
+    - title: Unity API
+      url: /VirtualGrasp_UnityAPI.html
+      output: web, pdf
+    
+    - title: Unity Scripts
+      url: /VirtualGrasp_UnityAPI.html#scripts
+      output: web, pdf
+  
+    - title: Unity Enums
+      url: /VirtualGrasp_UnityAPI.html#enums
+      output: web, pdf
+      
+    - title: Unity Components
+      url: /VirtualGrasp_UnityAPI.html#components
+      output: web, pdf
+
+    - title: Unity Events
+      url: /VirtualGrasp_UnityAPI.html#events
+      output: web, pdf
+
+  #- title: Tag archives
+  #  output: web
+  #  folderitems:
+
+  #    - title: Tag [Getting Started]
+  #      url: /tag_getting_started.html
+  #      output: web
