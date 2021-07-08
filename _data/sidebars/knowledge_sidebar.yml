@@ -1,0 +1,28 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Chapters
+    output: web
+    folderitems:
+    - title: Controllers
+      url: /controllers.html
+      output: web    
+    - title: Object Affordances
+      url: /object_affordances.html
+      output: web
+    - title: Static vs Dynamic Grasping
+      url: /grasp_synthesis.html
+      output: web
+    - title: Debug Files
+      url: /debug_files.html
+      output: web
+    - title: Grasp Baking
+      url: /grasp_baking.html
+      output: web
+    - title: Glossary
+      url: /glossary.html
+      output: web

@@ -1,0 +1,25 @@
+
+VirtualGrasp: "Gleechi's software for hand interaction."
+
+GameObject: In Unity, any node in the Hierarchy is called a GameObject.
+
+Grasp: A hand grasps and holds an object
+
+Gesture: A hand forms a gesture in air without contacting or interacting with object. Currently VG only support index finger push gesture. And it is only defined at a single frame as a "static" gesture. For example we are not supporting more "dynamic" gestures like waving yet.
+
+Grasp Type: What types of grasps depicting shape of hand/fingers when holding an object, for example Pinch, Power grasp types.
+
+Finger Control Type: Describes how sensor is controlling the finger movement on the avatar hands. The different finger control types are explained in detail in [InteractionSetup](abc.html). 
+
+Grasp Synthesis Method: Describes how a grasp is created when user pushed trigger button to start interacting with an object. VG provides two alternative grasp synthesis methods - pre-baked static grasp (SG), and generate grasp dynamically on the fly, i.e. dynamic grasp (DG). See [Dynamic vs Static Grasping] to understand their differences and how to use them.
+
+Interaction Type: Describes how hand/object moves when VR user selected an object or pushed the trigger button to start interacting with an object. The different interaction types are explained in detail in [InteractionSetup]. 
+
+Object Joint Type: Describes the movement relations between object and environment (world) or object and object. For example if joint type is "Floating", then object moving freely when grasped by a hand; however if it is of "Fixed" joint type, object is fixed to it's parent object/environment. See [Object and Articulation] for details of different types.
+
+Object Affordance: Describes which kind of hand interaction we can have with this object in the virtual environment. For example if an object is "finger pushable", then you can push this object using index finger. See [Object and Articulation] for details of different affordances supported by VG. 
+
+Sensor offset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [InteractionSetup] to know how to adjust this offset.
+
+VG scene files: These are the scene files saved by VG library at end of each game run that stores all the sensor, control, avatar and object tree setup created by the game developers. 
+
