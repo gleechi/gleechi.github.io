@@ -1,0 +1,10 @@
+# This pipeline will sync this bitbucket repo with the github docs repo that servers docs.gleechi.com
+# Instructions from: https://medium.com/@dmitryshaposhnik/sync-bitbucket-repo-to-github-669458ea9a5e
+
+clone:
+  depth: full
+pipelines:
+  default:
+    - step:
+        script:
+          - git push --mirror git@github.com:gleechi/gleechi.github.io.git
