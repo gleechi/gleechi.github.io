@@ -14,6 +14,12 @@ MyVirtualGrasp is the customizable main tutorial component. It showcases how you
 
 
 
+### MyVirtualGraspBurst
+
+MyVirtualGrasp is the customizable main tutorial component. It showcases how you could minimally setup a scene by dragging this component into your scene.  MyVirtualGrasp inherits from VG_MainScript, which wraps the main communication functions of the API. VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity. */  
+
+
+
 ### VG_Editor
 
 VG_Editor exemplifies how you could provide simple keyboard- or mouse-based grasp labeling functionality for your application. The MonoBehavior provides a tutorial on the VG API functions for labeling grasps.  
@@ -29,12 +35,6 @@ VG_ExternalControllerManager exemplifies how you could provide custom controller
 ### VG_Gestures
 
 VG_Gestures exemplifies how you could let a hand make a specific gesture (such as pointing). The MonoBehavior provides a tutorial on the VG API functions for gesture animation.  
-
-
-
-### VG_GrabAndThrow
-
-VG_GrabAndThrow exemplifies how you can effect the object's properties after grabbing and releasing an object in order to let it follow the hand. The MonoBehavior provides a tutorial on the VG API functions for using some of the VG_Controller event functions, such as OnObjectGrasped and OnObjectReleased.  
 
 
 
@@ -135,6 +135,15 @@ An enum to describe how fingers are controlled
 |BY_SENSOR_LOW_DOFS|When not grasping, fingers are controlled by sensor, but less degrees-of-freedom.|
 |BY_ANIMATION|When not grasping, fingers are controlled by grasp animation.|
 |BY_OSCILLATED_ANIMATION||
+
+
+### VG_AvatarType
+
+An enum to descibe an avatar type 
+
+|DEFAULT||
+|REMOTE||
+|REPLAY||
 
 
 ### VG_BoneType
@@ -304,7 +313,7 @@ ReturnCode for various VirtualGrasp functions. Most functions in this API provid
 
 
 ### VG_EditorAction
-Tags: [movie](https://www.youtube.com/watch?v=Z1j6BgosFVA)
+Tags: [video](https://www.youtube.com/watch?v=Z1j6BgosFVA)
 
 Action towards the grasp editor, see EditGrasp()
 
@@ -395,7 +404,7 @@ Enum for setting which (VR) controller buttons.
 This event is invoked when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
-Tutorial: [VG_GrabAndThrow](#vg_grabandthrow)
+Tutorial: VG_GrabAndThrow
 
 
 ### OnObjectReleased
@@ -403,7 +412,15 @@ Tutorial: [VG_GrabAndThrow](#vg_grabandthrow)
 This event is invoked when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
-Tutorial: [VG_GrabAndThrow](#vg_grabandthrow)
+Tutorial: VG_GrabAndThrow
+
+
+### OnObjectFullyReleased
+
+This event is invoked when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+Tutorial: VG_GrabAndThrow
 
 
 ### OnObjectSelected
@@ -470,6 +487,18 @@ The heartbeat of the plugin.
 
 
 
+### UpdateDataIn
+
+
+
+### IsolatedUpdate
+
+
+
+### UpdateDataOut
+
+
+
 ### GetHands
 
 Receive an enumerator of all registered hands and their status.
@@ -486,7 +515,7 @@ Receive a specific hand and its status.
 | **returns** | _VG_HandStatus_ | Enumerator over VG_HandStatus.|
 
 
-### RegisterRemoteAvatarOnline
+### RegisterAvatarOnline
 
 Register a remotely controlled avatar
 
@@ -911,7 +940,7 @@ Tutorial: [VG_HintVisualizer](#vg_hintvisualizer)
 ## [RECORDING_INTERFACE_API](#)
 
 ### SetProcessByRecordedFrame
-Tags: [movie](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Enable or disable a specific avatar to replay a recording.
 
@@ -922,7 +951,7 @@ Tutorial: [VG_Recorder](#vg_recorder)
 
 
 ### StartRecording
-Tags: [movie](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Start recording sensor signal.
 
@@ -931,7 +960,7 @@ Tutorial: [VG_Recorder](#vg_recorder)
 
 
 ### StopRecording
-Tags: [movie](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Stop recording sensor signal and store to a file
 
@@ -941,7 +970,7 @@ Tutorial: [VG_Recorder](#vg_recorder)
 
 
 ### LoadRecording
-Tags: [movie](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Load recorded sensor signal from a file, but do not start replay
 
@@ -951,7 +980,7 @@ Tutorial: [VG_Recorder](#vg_recorder)
 
 
 ### StartReplay
-Tags: [movie](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Start full replay of all recorded interactions.
 
@@ -960,7 +989,7 @@ Tutorial: [VG_Recorder](#vg_recorder)
 
 
 ### StartReplayOnObject
-Tags: [movie](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Start replaying a specific interaction on one object.
 
@@ -1260,7 +1289,7 @@ Tutorial: [VG_GraspHypothesizer](#vg_grasphypothesizer)
 ## [GRASP_EDITOR_API](#)
 
 ### EditGrasp
-Tags: [movie](https://www.youtube.com/watch?v=Z1j6BgosFVA)
+Tags: [video](https://www.youtube.com/watch?v=Z1j6BgosFVA)
 
 Call grasp editor functionality on a currently selected object and grasp.
 
