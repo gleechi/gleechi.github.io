@@ -8,5 +8,5 @@ pipelines:
   default:
     - step:
         script:
-          - apt-get install git-lfs
+          #- apt-get install git-lfs
           - git push --mirror git@github.com:gleechi/gleechi.github.io.git
