@@ -42,18 +42,12 @@ In VG library we define a “narrower” sensed set of affordances that determin
 |-------|--------|---------|
 | Graspable | Can be grasped | valid for all joint types | 
 | Finger Pushable | Can be pushed by the index finger | valid for all joint types | 
-| Palm Pushable | Can be pushed by the palm | valid for all joint types | 
+| Normal | Object stay at the pose when hand is released  | valid for all kinds of joints | 
 | Bounces | When released, bounce to the lowest discrete state | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
 | Bounces two stage | When released, bounce to the highest and lowest discrete state in an alternating order | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
 | Snaps | When released, snap to the closest discrete state | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
 
-#### How to set an object affordance?
 
-You can select one or a combination of affordances in VG_Articulation component (see Figure 1) that is attached to the object.
-
-You have to choose one of first 3 affordances - Graspable, Finger Pushable and Plam Pushable affordances - and they are mutually exclusive. 
-
-If the object have 1-dof joint, you can choose one of the later three  mutually exclusive affordances - Bounces, Bounces two stage, and Snaps - to combine with the selected graspable or pushable affordance. 
 
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
