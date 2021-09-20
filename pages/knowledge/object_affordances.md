@@ -35,12 +35,12 @@ For any joint type, there are a set of parameters to be used to configure the jo
 
 | Parameters | Description | Additional features |
 |-------|--------|---------|
-| Min | min value of 1-dof joint, for cone joint, this is swing angle limit | In VG_Articulation if check Set fix floating then when it is not grasped, will behave like a “fixed” object |
-| Max | max value of 1-dof joint, for cone joint, this is twist angle limit | – |
-| Screw Rate | only valid for Revolute joint, cm / degree | In VG_Articulation [min, max] specifies the angle (degree) range; and if screw rate is >0, then when rotate will also linearly move along the axis like a “screw”. Discrete states (size > 1) can be set for some special affordances. | 
-| Discrete States | discrete values in the 1-dof joint's limit boundary. If provided has to be >=2 discrete states and in ascending order| In VG_Articulation [min, max] specifies the distance range. Discrete states (size > 1) can be set for some special affordances. | 
-| Joint Center | around which position an object is rotating around, e.g. for a Cone joint, this is specified by the Pivot transform's position| In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
-| Joint Axis | what is the joint axis, e.g. for Revolute joint around which axis it is rotating about, this is specified by the Pivot transform's Zaxs| In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
+| **Min** | min value of 1-dof joint, for cone joint, this is swing angle limit | In VG_Articulation if check Set fix floating then when it is not grasped, will behave like a “fixed” object |
+| **Max** | max value of 1-dof joint, for cone joint, this is twist angle limit | – |
+| **Screw Rate** | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation (cm/degree) | - | 
+| **Discrete States** | discrete values in the 1-dof joint's limit boundary. | If filled in, has to provide at least 2 discrete states and in ascending order. When not provided default is [min, max] | 
+| Joint Center | around which position an object is rotating around, e.g. for a Cone joint, this is specified by the **Pivot** transform's position| In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
+| Joint Axis | what is the joint axis, e.g. for Revolute joint around which axis it is rotating about, this is specified by the **Pivot** transform's Zaxs | In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
 
 
 ### Object Affordances
