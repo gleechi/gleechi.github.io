@@ -9,10 +9,10 @@ permalink: unity_component_vgarticulation.html
 folder: mydoc
 ---
 
-VG_Articulation component allows you to create an object with specific kinematic joint features.   
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
-Below we will 
+VG_Articulation component is a powerful feature of VirtualGrasp that allows you to setup complex object behaviors through a combinition of joint settings and object affordances.
+
 #### How to set an object affordance?
 
 You can select one or a combination of affordances in VG_Articulation component (see Figure 1) that is attached to the object.

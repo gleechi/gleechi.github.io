@@ -1,5 +1,5 @@
 ---
-title: Knowledge Base - Object Affordances
+title: Knowledge Base - Object Articulation
 #tags: [getting_started]
 keywords: component, object, affordance, joint
 #last_updated: July 16, 2016
@@ -9,10 +9,13 @@ permalink: object_affordances.html
 folder: mydoc
 ---
 
-### Object Joint Types
+In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors through a combinition of object joint settings and object affordances.
 
-This internal object tree is the key that determines the object-to-object interaction patterns:
 
+### Object Joint
+
+Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic. Different type of joint determines how an object's pose will react to controller
+movement when the hand controlled by this controller is interacting (hold by grasping or push) with the object. 
 Each object has a joint of a given type (specified in VG_Articulation see Figure 1 below) which determines how it moves in relation to its parent object.
 
 If an object's joint is of an “unconstrained” type, meaning it is freely “floating”, then when you grasp this object, it will follow your hands movement freely.
