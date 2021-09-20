@@ -16,13 +16,13 @@ In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors 
 
 Each object has a joint of a given type which determines how it moves in relation to its parent object.
 
-| Type | Description | Additional features |
+| Type | Description |
 |-------|--------|---------|
-| Floating | unconstrained, 6-dof joint, freely floating object | In VG_Articulation if check Set fix floating then when it is not grasped, will behave like a “fixed” object |
-| Fixed | constrained, 0-dof joint, as if an integrated object with its parent | – |
-| Revolute | constrained, 1-dof joint, rotate around an axis through a pivot point, limited by an angle range | In VG_Articulation [min, max] specifies the angle (degree) range; and if screw rate is >0, then when rotate will also linearly move along the axis like a “screw”. Discrete states (size > 1) can be set for some special affordances. | 
-| Prismatic | constrained, 1-dof joint, move linearly along an axis through a pivot point, limited by an distane range | In VG_Articulation [min, max] specifies the distance range. Discrete states (size > 1) can be set for some special affordances. | 
-| Cone | constrained, 3-dof joint, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) | In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
+| Floating | unconstrained, 6-dof joint, freely floating object | 
+| Fixed | constrained, 0-dof joint, as if an integrated object with its parent | 
+| Revolute | constrained, 1-dof joint, rotate around an axis through a pivot point, limited by an angle range | 
+| Prismatic | constrained, 1-dof joint, move linearly along an axis through a pivot point, limited by an distane range | 
+| Cone | constrained, 3-dof joint, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
 
 
 Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic. 
