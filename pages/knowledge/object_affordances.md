@@ -49,10 +49,15 @@ For any joint type, there are a set of parameters to be used to configure the jo
 
 In VG library we define a “narrower” sensed set of affordances that determines which kind of hand interaction we can have with this object in the virtual environment. 
 
-| Affordances | Description | Object Joint Settings |
+We further divide the affordance into **Interaction** affordance and **State** affordance.
+
+| Interaction Affordances | Description | Object Joint Settings |
 |-------|--------|---------|
 | Graspable | Can be grasped | valid for all joint types | 
 | Finger Pushable | Can be pushed by the index finger | valid for all joint types | 
+
+| State Affordances | Description | Object Joint Settings |
+|-------|--------|---------|
 | Normal | Object stay at the pose when hand is released  | valid for all joints types| 
 | Bounces | When released, bounce to the lowest discrete state | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
 | Bounces two stage | When released, bounce to the highest and lowest discrete state in an alternating order | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
