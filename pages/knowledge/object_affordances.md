@@ -14,18 +14,7 @@ In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors 
 
 ### Object Joint
 
-Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic. Different type of joint determines how an object's pose will react to controller
-movement when the hand controlled by this controller is interacting (hold by grasping or push) with the object. 
-Each object has a joint of a given type (specified in VG_Articulation see Figure 1 below) which determines how it moves in relation to its parent object.
-
-If an object's joint is of an “unconstrained” type, meaning it is freely “floating”, then when you grasp this object, it will follow your hands movement freely.
-
-If an object's joint is of a “constrained” type, meaning it is NOT freely “floating”, then when you grasp this object, it will not follow your hands movement, instead it constrain your hand movement.
-
-If an object's joint is of a “constrained” type, then when you move its parent, this object will follow the parent.
-
-If an object's joint is of a “constrained” type, and its parent object is not “fixed”, then when you move this constrained child object, its parent object will also be affected and moved.
-
+Each object has a joint of a given type which determines how it moves in relation to its parent object.
 
 | Type | Description | Additional features |
 |-------|--------|---------|
@@ -34,6 +23,25 @@ If an object's joint is of a “constrained” type, and its parent object is no
 | Revolute | constrained, 1-dof joint, rotate around an axis through a pivot point, limited by an angle range | In VG_Articulation [min, max] specifies the angle (degree) range; and if screw rate is >0, then when rotate will also linearly move along the axis like a “screw”. Discrete states (size > 1) can be set for some special affordances. | 
 | Prismatic | constrained, 1-dof joint, move linearly along an axis through a pivot point, limited by an distane range | In VG_Articulation [min, max] specifies the distance range. Discrete states (size > 1) can be set for some special affordances. | 
 | Cone | constrained, 3-dof joint, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) | In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
+
+
+Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic. 
+
+If an object's joint is of an “unconstrained” type, meaning it is freely “floating”, then when you grasp this object, it will follow your hands movement freely.
+
+If an object's joint is of a “constrained” type, meaning it is NOT freely “floating”, then when you grasp this object, it will not follow your hands movement, instead it constrain your hand movement.
+
+For any joint type, there are a set of parameters to be used to configure the joint:
+
+| Parameters | Description | Additional features |
+|-------|--------|---------|
+| Min | min value of 1-dof joint, for cone joint, this is swing angle limit | In VG_Articulation if check Set fix floating then when it is not grasped, will behave like a “fixed” object |
+| Max | max value of 1-dof joint, for cone joint, this is twist angle limit | – |
+| Screw Rate | only valid for Revolute joint, cm / degree | In VG_Articulation [min, max] specifies the angle (degree) range; and if screw rate is >0, then when rotate will also linearly move along the axis like a “screw”. Discrete states (size > 1) can be set for some special affordances. | 
+| Discrete States | discrete values in the 1-dof joint's limit boundary. If provided has to be >=2 discrete states and in ascending order| In VG_Articulation [min, max] specifies the distance range. Discrete states (size > 1) can be set for some special affordances. | 
+| Joint Center | around which position an object is rotating around, e.g. for a Cone joint, this is specified by the Pivot transform's position| In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
+| Joint Axis | what is the joint axis, e.g. for Revolute joint around which axis it is rotating about, this is specified by the Pivot transform's Zaxs| In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
+
 
 ### Object Affordances
 
@@ -45,7 +53,7 @@ In VG library we define a “narrower” sensed set of affordances that determin
 |-------|--------|---------|
 | Graspable | Can be grasped | valid for all joint types | 
 | Finger Pushable | Can be pushed by the index finger | valid for all joint types | 
-| Normal | Object stay at the pose when hand is released  | valid for all kinds of joints | 
+| Normal | Object stay at the pose when hand is released  | valid for all joints types| 
 | Bounces | When released, bounce to the lowest discrete state | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
 | Bounces two stage | When released, bounce to the highest and lowest discrete state in an alternating order | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
 | Snaps | When released, snap to the closest discrete state | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
