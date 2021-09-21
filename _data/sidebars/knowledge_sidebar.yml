@@ -11,8 +11,8 @@ entries:
     - title: Controllers
       url: /controllers.html
       output: web    
-    - title: Object Affordances
-      url: /object_affordances.html
+    - title: Object Articulation
+      url: /object_articulation.html
       output: web
     - title: Static vs Dynamic Grasping
       url: /grasp_synthesis.html
