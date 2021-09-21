@@ -11,17 +11,23 @@ folder: mydoc
 
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
-VG_Articulation component is a powerful feature of VirtualGrasp that allows you to setup complex object behaviors through a combinition of joint settings and object affordances.
-
-#### How to set an object affordance?
-
-You can select one or a combination of affordances in VG_Articulation component (see Figure 1) that is attached to the object.
+To use the VG_Articulation component (as shown in image above), you should first understand the meaning of VirtualGrasp's  
+[Object Articulation](object_articulation.html#object-articulation).
 
 
-#### How to set an object affordance?
+### Initial Setting
 
-You can select one two kinds of affordances in VG_Articulation component (see Figure 1) that is attached to the object.
-* Interaction: you can choose if an object is graspable or index-finger pushable
-* States: you can select how object state react to each interaction. 
+For each interactable object in your Unity scene, you can add this VG_Articulation component to specify the articulation setup of this object. 
 
-### TODO
+By default, if you do not add this component, this object has "floating" joint type. 
+
+### Runtime Changes
+
+Regardless of what is the initial setting of an object's articulation, you can change the object's articulation parameters in runtime 
+through scripting through API functions [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint)
+
+As you can see ChangeObjectJoint has two interfaces, and one of them can directly recieve this VG_Articulation component. 
+
+To do that, you can add an disabled VG_Articulation component to the object, then your script can recieve this component 
+and use this as the argument in ChangeObjectJoint function. 
+

@@ -5,63 +5,91 @@ keywords: component, object, affordance, joint
 #last_updated: July 16, 2016
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: knowledge_sidebar
-permalink: object_affordances.html
+permalink: object_articulation.html
 folder: mydoc
 ---
 
-In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors through a combinition of object joint settings and object affordances.
+In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors through a combinition of **object joint** settings and **object affordances**.
 
 
 ### Object Joint
 
 Each object has a joint of a given type which determines how it moves in relation to its parent object.
 
-| Type | Description |
-|-------|--------|---------|
-| Floating | unconstrained, 6-dof joint, freely floating object | 
-| Fixed | constrained, 0-dof joint, as if an integrated object with its parent | 
-| Revolute | constrained, 1-dof joint, rotate around an axis through a pivot point, limited by an angle range | 
-| Prismatic | constrained, 1-dof joint, move linearly along an axis through a pivot point, limited by an distane range | 
-| Cone | constrained, 3-dof joint, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
+| Type | Dofs | Description |
+|-------|--------|--------|---------|
+| Floating | 6-dof | unconstrained, freely floating object | 
+| Fixed | 0-dof | constrained, as if an integrated object with its parent | 
+| Revolute | 1-dof | constrained, rotate around an axis through a pivot point (joint center), limited by an angle range | 
+| Prismatic | 1-dof | constrained, move linearly along an axis through a pivot point (joint center), limited by an distane range | 
+| Cone | 3-dof | constrained, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
 
 
 Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic. 
 
 If an object's joint is of an “unconstrained” type, meaning it is freely “floating”, then when you grasp this object, it will follow your hands movement freely.
 
-If an object's joint is of a “constrained” type, meaning it is NOT freely “floating”, then when you grasp this object, it will not follow your hands movement, instead it constrain your hand movement.
+If an object's joint is of a “constrained” type, meaning it is NOT freely “floating”, then when you interact with (grasp or push) this object, it will not follow your hands movement freely, 
+but be constrained according to its joint configuration. 
 
 For any joint type, there are a set of parameters to be used to configure the joint:
 
 | Parameters | Description | Additional features |
 |-------|--------|---------|
-| **Min** | min value of 1-dof joint, for cone joint, this is swing angle limit | In VG_Articulation if check Set fix floating then when it is not grasped, will behave like a “fixed” object |
-| **Max** | max value of 1-dof joint, for cone joint, this is twist angle limit | – |
-| **Screw Rate** | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation (cm/degree) | - | 
-| **Discrete States** | discrete values in the 1-dof joint's limit boundary. | If filled in, has to provide at least 2 discrete states and in ascending order. When not provided default is [min, max] | 
-| Joint Center | around which position an object is rotating around, e.g. for a Cone joint, this is specified by the **Pivot** transform's position| In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
-| Joint Axis | what is the joint axis, e.g. for Revolute joint around which axis it is rotating about, this is specified by the **Pivot** transform's Zaxs | In VG_Articulation [min, max] specifies [swingLimit, twistLimit] (degree) respectively | 
+| **Min** | lower limit of 1-dof joint, for cone joint, this is swing angle limit | if angular limit, unit in (degree)|
+| **Max** | upper limit of 1-dof joint, for cone joint, this is twist angle limit | if angular limit, unit in (degree) |
+| **Screw Rate** | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
+| **Discrete States** | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
+| Joint Center | around which position an object is rotating around, specified by the **Pivot** transform's position | E.g. for cone joint, object will rotate round this point | 
+| Joint Axis | what is the joint axis, specified by the **Pivot** transform's Zaxs | E.g. for prismatic joint, object will move linearly along this axis | 
 
 
 ### Object Affordances
 
 “Object Affordance”, in a broader sense, means what kind of action this object can be used for. For example a chair affords to be sit upon, a button on the wall affords push, and a handle affords grasp.
 
-In VG library we define a “narrower” sensed set of affordances that determines which kind of hand interaction we can have with this object in the virtual environment. 
+In VG library we define a “narrower” sensed set of affordances that determines which kind of hand **interaction** we can have with this object, and how the object's **state** react in the virtual environment. 
 
-We further divide the affordance into **Interaction** affordances and **State** affordances.
 
 | Affordances | Description | Object Joint Settings |
 |-------|--------|---------|
-| Graspable | Can be grasped | valid for all joint types | 
-| Finger Pushable | Can be pushed by the index finger | valid for all joint types | 
+| Graspable | **Interaction**: Can be grasped | for all joint types | 
+| Index Pushable | **Interaction**: Can be pushed by the index finger | for all joint types | 
 |-------|--------|---------|
-| Normal | Object stay at the pose when hand is released  | valid for all joints types| 
-| Bounces | When released, bounce to the lowest discrete state | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
-| Bounces two stage | When released, bounce to the highest and lowest discrete state in an alternating order | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
-| Snaps | When released, snap to the closest discrete state | only valid for 1-dof joint, and has to provide >1 discrete states in VG_Articulation | 
+| Normal | **State**: Object stay at the pose when hand is released  | for all joint types| 
+| Bounces | **State**: When released, bounce to the lowest discrete state | for 1-dof joint | 
+| Bounces two stage | **State**: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
+| Snaps | **State**: When released, snap to the closest discrete state | for 1-dof joint | 
 
+### Pivot vs. Push Pivot
 
+As shown in the joint parameter table above, an object's joint parameter need to specify its joint center point and joint axis. 
+These two parameters are provided in a combined way through a **Pivot** transform in the game engine. 
+
+Then what is **Push Pivot**? 
+
+Push Pivot is provided to specify the object push direction when we assign its interaction affordance to be "Index Pushable". 
+Similar to provide joint axis through Pivot transform, we use Push Pivot transform's Zaxis to specify this push direction. 
+
+And if Push Pivot is not provided in the VG_Articulation component (see image blow), then the Push Pivot just inherit from the Pivot, 
+i.e. the push direction is same as the joint axis. 
+
+### Dual Hands Only
+
+This is a miscellaneous parameter to enforce an object can only be moved when grasped by two hands. 
+
+The purpose of this feature is to simulate a heavy object that need more hands to be moved. 
+
+Note since there is no physical simulation involved, this does not take into account of the physical properties such as
+mass or inertia specified in the game engine. 
+
+### Graphical User Interface
+
+The image below shows Unity's VG_Articulation component as an example for the GUI of Object Artiulation.
+
+Note that the VirtualGrasp's object articulation is generic for all other client engines like Unreal.
+
+To learn more details of Unity implementation see [VG_Articulation](unity_component_vgarticulation.html#unity-component-vgarticulation).
 
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
