@@ -43,6 +43,20 @@ For any joint type, there are a set of parameters to be used to configure the jo
 | Joint Center | around which position an object is rotating around, specified by the **Pivot** transform's position | E.g. for cone joint, object will rotate round this point | 
 | Joint Axis | what is the joint axis, specified by the **Pivot** transform's Zaxs | E.g. for prismatic joint, object will move linearly along this axis | 
 
+### Pivot vs. Push Pivot
+
+As shown in the joint parameter table above, an object's joint parameter need to specify its joint center point and joint axis. 
+These two parameters are provided in a combined way through a **Pivot** transform in the game engine. 
+
+Then what is **Push Pivot**? 
+
+Push Pivot is provided to specify the object push direction when we assign its interaction affordance to be "Index Pushable". 
+Similar to provide joint axis through Pivot transform, we use Push Pivot transform's Zaxis to specify this push direction. 
+
+And if Push Pivot is not provided in the VG_Articulation component (see image blow), then the Push Pivot just inherit from the Pivot, 
+i.e. the push direction is same as the joint axis. 
+
+The effect of this push pivot is to say: your finger is not allowed to push the object along the direction that deviate too much from this push direction.
 
 ### Object Affordances
 
@@ -60,19 +74,6 @@ In VG library we define a “narrower” sensed set of affordances that determin
 | Bounces | **State**: When released, bounce to the lowest discrete state | for 1-dof joint | 
 | Bounces two stage | **State**: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
 | Snaps | **State**: When released, snap to the closest discrete state | for 1-dof joint | 
-
-### Pivot vs. Push Pivot
-
-As shown in the joint parameter table above, an object's joint parameter need to specify its joint center point and joint axis. 
-These two parameters are provided in a combined way through a **Pivot** transform in the game engine. 
-
-Then what is **Push Pivot**? 
-
-Push Pivot is provided to specify the object push direction when we assign its interaction affordance to be "Index Pushable". 
-Similar to provide joint axis through Pivot transform, we use Push Pivot transform's Zaxis to specify this push direction. 
-
-And if Push Pivot is not provided in the VG_Articulation component (see image blow), then the Push Pivot just inherit from the Pivot, 
-i.e. the push direction is same as the joint axis. 
 
 ### Dual Hands Only
 
