@@ -21,8 +21,9 @@ VirtualGrasp fills in the gaps of lack of sensory-motor feedback, and uses a gen
 create immersive grasp interacting experiences in VR.
 
 In this page we explain a set of parameters to configure and fine-tune the grasp interaction experiences in your VR application.
-* Grasp Synthesis Method, or in short, Synthesis Method.
-* Grasp Interaction Type, or in short, Interaction Type.
+* Grasp Synthesis Method, or in short, Synthesis Method 
+* Grasp Interaction Type, or in short, Interaction Type
+* Grasp Speed and Release Speed
 
 ### Grasp Synthesis Method
 
