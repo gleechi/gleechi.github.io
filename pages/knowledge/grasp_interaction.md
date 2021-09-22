@@ -9,15 +9,15 @@ toc: true
 
 ### Background
 To create immersive interactive experiences in a virtual environment is difficult because physical constraints and haptic sensations can not 
-be reproduced realisticly with today's VR software and hardware technology. 
+be fully reproduced with today's VR software and hardware technology. 
 This is especially challenging when we want to have hand presence in VR while grasping and manipulating objects. 
 
 For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarrantee
 that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking grasp configuration on the 
-selected object. While in real life such a problem is trivial since we can always rely on our much faster-processed haptic sensory-motor feedback
-loop to correct our hand and finger poses, in VR such sensor feedback does not exist. 
+selected object. While in real life such a problem is trivial since we can always rely on our fast and advanced sensory-motor feedback
+loop to correct our hand and finger poses, in VR such a feedback does not exist. 
 
-VirtualGrasp fills in the gaps of lack of sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
+VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
 create immersive grasp interacting experiences in VR.
 
 In this page we explain a set of parameters to configure and fine-tune the grasp interaction experiences in your VR application.
