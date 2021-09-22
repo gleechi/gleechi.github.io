@@ -14,7 +14,7 @@ entries:
     - title: Object Articulation
       url: /object_articulation.html
       output: web
-    - title: Static vs Dynamic Grasping
+    - title: Grasp Interaction
       url: /grasp_synthesis.html
       output: web
     - title: Debug Files
