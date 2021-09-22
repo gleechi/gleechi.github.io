@@ -19,6 +19,9 @@ You can set the default [grasp Interaction](grasp_interaction.html#grasp-interac
 
 {% include image.html file="unity/unity_vg_settings.png" alt="VG Settings." caption="VG_Settings" %}
 
+{% include important.html content="We will soon move grasp interaction related parameters out from Sensor setting GUI to have an independent GUI maybe with a name Global Interactables" %}
+
+
 If you want some selected objects to have different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a> method and 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">Interaction Type</a> from the global setting, 
 you can add a VG_Interactable component to the object and setting interaction type and synthesis method. 

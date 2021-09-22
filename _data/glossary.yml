@@ -13,7 +13,7 @@ GraspSynthesis: A process of creating hand grasping configuration – the wrist 
 
 FingerControlType: Describes how sensor is controlling the finger movement on the avatar hands. The different finger control types are explained in detail in [InteractionSetup](abc.html). 
 
-GraspSynthesisMethod: Describes how a grasp is created when user triggers grasp to start interacting with an object. VG provides two alternative grasp synthesis methods - pre-baked static grasp (SG), and generate grasp dynamically on the fly, i.e. dynamic grasp (DG). See [Dynamic vs Static Grasping] to understand their differences and how to use them.
+GraspSynthesisMethod: Describes how a grasp is created when user triggers grasp to start interacting with an object. See [Grasp Interaction](grasp_interaction.html) to understand different methods.
 
 InteractionType: Describes how hand/object moves when VR user selected an object or triggers grasp to start interacting with an object. The different interaction types are explained in detail in [GraspInteraction]. 
 

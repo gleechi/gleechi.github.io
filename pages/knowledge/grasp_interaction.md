@@ -156,6 +156,8 @@ Due to the nature of each option, there may be preferences of how to combine the
 {% include image.html file="unity/unity_vg_settings.png" alt="VG Settings." caption="VG_Settings" %}
 As shown in above image, you can set the default synthesis methods and interaction type for all objects in the scene globally. 
 
+{% include important.html content="We will soon move grasp interaction related parameters out from Sensor setting GUI to have an independent GUI maybe with a name Global Interactables" %}
+
 Besides those, there are two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">Grasp Speed</a> and 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">Release Speed</a>
 that can also significantly affect the user experience because they determines how fast grasp and release of hand is.
