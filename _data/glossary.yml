@@ -42,3 +42,9 @@ PreviewGrasp: Is a grasp interaction type where once user selected an object, th
 PreviewOnly: Is a grasp interaction type where once user selected an object, the grasp configuration is previewed on the object, and the grasp trigger won't take effect to pick up object.
 
 StickyHand: Is a fall-back grasp interaction type when object is not baked, where the grasp configuration is directly taken from the hand pose at the moment of grasp triggering as if hand is stick to the object.
+
+PrimaryGrasp: Is a label of a grasp entry in grasp DB, and used only in StaticGrasp synthesis method, indicating this grasp is one of the few primarily used grasp on an object for a given hand.
+
+GraspSpeed: A parameter in unit (second) specifying how long it takes for hand to move from SensorPose to synthesized grasp pose in TriggerGrasp interaction type, and how long it takes for object to jump to hand in JumpGrasp interaction type.
+
+ReleaseSpeed: A parameter in unit (second) specifying how long it takes for hand to move back to SensorPose once a grasp is released. 

@@ -60,6 +60,10 @@ entries:
         - title: VG_Articulation
           url: /unity_component_vgarticulation.html   
           output: web
+          
+        - title: VG_Interactable
+          url: /unity_component_vginteractable.html   
+          output: web
         
         - title: VG_Recorder
           url: /unity_component_vgrecorder.html

@@ -1,7 +1,7 @@
 ---
 title: Knowledge Base - Grasp Interaction
 sidebar: knowledge_sidebar
-keywords: grasp, static, dynamic
+keywords: grasp, static_grasp, dynamic_grasp, jump_grasp, trigger_grasp, preview_grasp, preview_only, sticky_hand
 permalink: grasp_synthesis.html
 folder: knowledge
 toc: true
@@ -114,7 +114,7 @@ and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.
 
 ### Grasp Interaction Type
 
-As we mentioned in [Background](#background) on this page, when a user triggers grasp, the wrist may not be at a good pose w.r.t. the object.
+As we mentioned in [Background](#background) section, when a user triggers grasp, the wrist may not be at a good pose w.r.t. the object.
 VG's grasp synthesis algorithm will "correct" this "mis-placement" of wrist, and create a grasp configuration
 with a wrist pose different from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">Sensor Pose</a> at the moment of grasp triggering. 
 Because of this difference, there are different alternative solutions to pose the object-hand grasp ensemble that will create different user experiences: 
@@ -122,7 +122,7 @@ Because of this difference, there are different alternative solutions to pose th
 
 | Interaction Type | Description | Considerations |
 |-------|--------|---------|
-| Trigger Grasp | when user triggers grasp, hand moves to the wrist pose in the synthesized grasp configuration around the object | hand moves away from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">Sensor Pose</a> hence could break sensor-motor immersion| 
+| Trigger Grasp | when user triggers grasp, hand moves to the wrist pose in the synthesized grasp configuration around the object | since hand moves away from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">Sensor Pose</a>, this could break sensor-motor immersion| 
 | Jump Grasp | when user triggers grasp, object jumps to the grasped position in the hand | object directly moves upon grasp triggering, which may not be suitable for performing some tasks requiring physical stability (e.g. play Jenga game)  | 
 | Jump Primary Grasp | when user triggers grasp, object jumps to the grasped position in the hand, using the labeled primary grasp(s) in the grasp DB | using primary grasp(s) is needed particularly in situations when an object should be grasped in one or more particular ways, e.g. how to grasp a gun| 
 | Preview Grasp | once user selected an object, the grasp configuration is previewed on the object, so that user can push the trigger button to pick up the object if the grasp is satisfactory | since grasp synthesis process is running at every frame when object is selected, when computationally heavy DG is used, this can be slow | 
@@ -132,18 +132,32 @@ Because of this difference, there are different alternative solutions to pose th
 
 ### Choosing Synthesis Method and Interaction Type
 
+As explained in the previous sections, selecting different combinitions of synthesis method and interaction type will create different user experiences. 
+Due to the nature of each option, there may be preferences of how to combine the two parameters. The table below gives some hints: 
 
 
+| Interaction Type | Synthesis Method | Evaluation |
+|-------|--------|---------|
+| Trigger Grasp | DG | &#x2611; Good since DG create grasp pose that is close to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">Sensor Pose</a>, so hand will not move so much.  | 
+| Trigger Grasp | SG |  &#x2612; Not recommended since when there is sparse grasps in DB, hand will move far away from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">Sensor Pose</a>, breaking immersion | 
+| Jump Grasp | DG | &#x2611; Good since DG create grasp pose that is close to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">Sensor Pose</a>, so object will not jump too much.  | 
+| Jump Grasp | SG | &#x2611; Ok as long as the object's big jump is not a problem a the moment of grasping.  | 
+| Jump Primary Grasp | DG | &#x2612; Not possible since <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PrimaryGrasp}}">Primary Grasp</a> is grasp(s) in the DB which is only used during SG synthesis| 
+| Preview Grasp | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps in to DB through DG synthesis | 
+| Preview Grasp | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in DB | 
+| Preview Only | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps in to DB through DG synthesis | 
+| Preview Only | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in DB | 
+| Sticky Hand | -- | -- | 
 
 
-#### Choosing the Synthesis Method
-
-You can set the default method for all objects in the scene, in VG_SensorConfiguration → Settings → Global Synthesis Method:
+### Grasp Speed and Release Speed
 
 {% include image.html file="unity/unity_vg_settings.png" alt="VG Settings." caption="VG_Settings" %}
+As shown in above image, you can set the default synthesis methods and interaction type for all objects in the scene globally in VG_SensorConfiguration → Sensor Settings. 
+Besides those there are two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">Grasp Speed</a> and 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">Release Speed</a>
+that can also significantly affect the user experience. 
+{% include tip.html content="For grasp speed, lower value means faster grasp, for release speed, lower value means faster release." %}
 
-You can also overwrite the global setting above for particular objects, by adding a VG_Interactable component to the object and setting interaction type and synthesis method.
+To learn more details on how to setup your objects' grasp interaction, please see [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable).
 
-{% include image.html file="unity/unity_vg_interactable.png" alt="VG interactable." caption="VG_Interactable" %}
-
-{% include tip.html content="All objects without a customized VG_Interactable will follow the global settings (see above), but those with VG_Interactable will follow their local settings." %}
