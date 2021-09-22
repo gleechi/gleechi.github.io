@@ -160,8 +160,8 @@ As shown in above image, you can set the default synthesis methods and interacti
 
 Besides those, there are two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">Grasp Speed</a> and 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">Release Speed</a>
-that can also significantly affect the user experience because they determines how fast grasp and release of hand is.
+that can also significantly affect the user experience because they determines how fast the hand forms grasp and releases from grasp respectively.
 {% include tip.html content="For grasp speed, lower value means faster grasp, for release speed, lower value means faster release." %}
 
-To learn more details on how to setup your objects' grasp interaction, please see [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable).
+To learn more details on how to setup your objects' grasp interaction in practice, please see [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable).
 
