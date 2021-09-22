@@ -15,7 +15,7 @@ FingerControlType: Describes how sensor is controlling the finger movement on th
 
 GraspSynthesisMethod: Describes how a grasp is created when user triggers grasp to start interacting with an object. VG provides two alternative grasp synthesis methods - pre-baked static grasp (SG), and generate grasp dynamically on the fly, i.e. dynamic grasp (DG). See [Dynamic vs Static Grasping] to understand their differences and how to use them.
 
-InteractionType: Describes how hand/object moves when VR user selected an object or triggers grasp to start interacting with an object. The different interaction types are explained in detail in [InteractionSetup]. 
+InteractionType: Describes how hand/object moves when VR user selected an object or triggers grasp to start interacting with an object. The different interaction types are explained in detail in [GraspInteraction]. 
 
 ObjectJointType: Describes the movement relations between object and environment (world) or object and object. For example if joint type is "Floating", then object moving freely when grasped by a hand; however if it is of "Fixed" joint type, object is fixed to it's parent object/environment. See [Object and Articulation] for details of different types.
 

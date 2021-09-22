@@ -15,7 +15,7 @@ entries:
       url: /object_articulation.html
       output: web
     - title: Grasp Interaction
-      url: /grasp_synthesis.html
+      url: /grasp_interaction.html
       output: web
     - title: Debug Files
       url: /debug_files.html

@@ -2,7 +2,7 @@
 title: Knowledge Base - Grasp Interaction
 sidebar: knowledge_sidebar
 keywords: grasp, static_grasp, dynamic_grasp, jump_grasp, trigger_grasp, preview_grasp, preview_only, sticky_hand
-permalink: grasp_synthesis.html
+permalink: grasp_interaction.html
 folder: knowledge
 toc: true
 ---
