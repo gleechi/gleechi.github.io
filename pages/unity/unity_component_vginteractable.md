@@ -15,7 +15,7 @@ To use the VG_Interactable component, you should first understand the meaning of
 
 ### Global and Local Settings
 
-You can set the default [grasp Interaction](grasp_interaction.html#grasp-interaction) settings for all objects in the scene globally in VG_SensorConfiguration → Settings → Global Synthesis Method:
+You can set the default [grasp Interaction](grasp_interaction.html#grasp-interaction) settings for all objects in the scene:
 
 {% include image.html file="unity/unity_vg_settings.png" alt="VG Settings." caption="VG_Settings" %}
 

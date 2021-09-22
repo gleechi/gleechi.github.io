@@ -154,10 +154,11 @@ Due to the nature of each option, there may be preferences of how to combine the
 ### Grasp Speed and Release Speed
 
 {% include image.html file="unity/unity_vg_settings.png" alt="VG Settings." caption="VG_Settings" %}
-As shown in above image, you can set the default synthesis methods and interaction type for all objects in the scene globally in VG_SensorConfiguration → Sensor Settings. 
-Besides those there are two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">Grasp Speed</a> and 
+As shown in above image, you can set the default synthesis methods and interaction type for all objects in the scene globally. 
+
+Besides those, there are two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">Grasp Speed</a> and 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">Release Speed</a>
-that can also significantly affect the user experience. 
+that can also significantly affect the user experience because they determines how fast grasp and release of hand is.
 {% include tip.html content="For grasp speed, lower value means faster grasp, for release speed, lower value means faster release." %}
 
 To learn more details on how to setup your objects' grasp interaction, please see [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable).
