@@ -9,8 +9,10 @@ permalink: unity_component_vginteractable.html
 folder: mydoc
 ---
 
-To use the VG_Interactable component, you should first understand the meaning of VirtualGrasp's  
-[grasp Interaction](grasp_interaction.html#grasp-interaction).
+
+
+{% include important.html content="To use the VG_Interactable component, you should first understand the meaning of VirtualGrasp's  
+[Grasp Interaction](grasp_interaction.html#grasp-interaction)." %}
 
 
 ### Global Settings

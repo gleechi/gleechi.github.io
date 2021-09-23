@@ -11,9 +11,7 @@ folder: mydoc
 
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
-To use the VG_Articulation component (as shown in image above), you should first understand the meaning of VirtualGrasp's  
-[Object Articulation](object_articulation.html#object-articulation).
-
+{% include important.html content="To use the VG_Articulation component (as shown in image above), you should first understand the meaning of VirtualGrasp's  [Object Articulation](object_articulation.html#object-articulation)." %}
 
 ### Initial Setting
 
