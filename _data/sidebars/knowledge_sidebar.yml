@@ -17,6 +17,9 @@ entries:
     - title: Grasp Interaction
       url: /grasp_interaction.html
       output: web
+    - title: Push Interaction
+      url: /push_interaction.html
+      output: web
     - title: Debug Files
       url: /debug_files.html
       output: web

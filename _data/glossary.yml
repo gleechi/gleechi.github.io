@@ -48,3 +48,21 @@ PrimaryGrasp: Is a label of a grasp entry in grasp DB, and used only in StaticGr
 GraspSpeed: A parameter in unit (second) specifying how long it takes for hand to move from SensorPose to synthesized grasp pose in TriggerGrasp interaction type, and how long it takes for object to jump to hand in JumpGrasp interaction type.
 
 ReleaseSpeed: A parameter in unit (second) specifying how long it takes for hand to move back to SensorPose once a grasp is released. 
+
+JointLimit: The parameter for object articulation of any joint types. For 1-dof joints (PRISMATIC and REVOLUTE) the limit is defined by a range of scalar values [Min, Max]. For 3-dof rotatioal joint (CONE) the limit is defined by a [swing, twist] angles. 
+
+JointState: The status of a 1-dof joint (PRISMATIC or REVOLUTE), which can be represented by a single scalar value JointState in the range of JointLimit; JointState = 0 is the zero pose of the joint corresponding to the initial pose of the object.
+
+DiscreteStates: The parameter for object articulation only relevant for 1-dof joints (PRISMATIC and REVOLUTE), and they are a set of N (N>=2) joint state values in the range of JointLimit; they are needed for State Affordances (BOUNCE, TWO_STAGE, SNAPS) which, when hand releases from the object, will pin the object into one of these discrete states. 
+
+Affordance: An object affordance determines which kind of hand interaction can be done with the object, and how the object’s JointState reacts to the hand interaction.
+
+InteractionAffordance: An object's interaction affordance determines what kind of action the hand can perform on the object, for example, graspable means the object can be grasped by a hand.
+
+StateAffordance: An object's state affordance determines how the object's JointState reacts to the hand interaction.
+
+Bounce: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the lowest value of the DiscreteStates.
+
+TwoStage: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the highest and lowest values of the DiscreteStates in an alternating order.
+
+Snaps: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it snapes to the closest value of the DiscreteStates.

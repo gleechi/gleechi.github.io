@@ -43,6 +43,23 @@ For any joint type, there are a set of parameters to be used to configure the jo
 | Joint Center | around which position an object is rotating around, specified by the **Pivot** transform's position | E.g. for cone joint, object will rotate round this point | 
 | Joint Axis | what is the joint axis, specified by the **Pivot** transform's Zaxs | E.g. for prismatic joint, object will move linearly along this axis | 
 
+### Joint State
+
+If an object has an 1-dof joint, then its complete pose can be determined by a combination of 
+* its joint configuration (defined by a set of parameters shown in above table) 
+* and a single scalar value -- <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointState}}">Joint State</a>. 
+
+The table below gives some example values of joint state to further clarify its meaning:
+
+| Joint State | Revolute | Prismatic|
+|-------|--------|---------|
+| 0 | zero pose (initial pose) | zero pose (initial pose) |
+| 2.5 (a random value as an example) | 2.5 (degree) rotated around joint axis (follow right-hand rule) from the zero pose | 2.5 (meter, in Unity) translated along joint axis direction from the zero pose |
+| -2.5 (a random value as an example) | -2.5 (degree) rotated around joint axis (follow right-hand rule) from the zero pose | -2.5 (meter, in Unity) translated along joint axis direction from the zero pose |
+
+{% include tip.html content="Note that the joint limit [Min, Max] is essentially the limit range of the Joint State." %}
+
+
 ### Pivot vs. Push Pivot
 
 As shown in the joint parameter table above, an object's joint parameter need to specify its joint center point and joint axis. 
@@ -64,16 +81,15 @@ The effect of this push pivot is to say: your finger is not allowed to push the 
 
 In VG library we define a “narrower” sensed set of affordances that determines which kind of hand **interaction** we can have with this object, and how the object's **state** react in the virtual environment. 
 
-
 | Affordances | Description | Object Joint Settings |
 |-------|--------|---------|
-| Graspable | **Interaction**: Can be grasped | for all joint types | 
-| Index Pushable | **Interaction**: Can be pushed by the index finger | for all joint types | 
+| Graspable | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a>: Can be grasped | for all joint types | 
+| Index Pushable | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a>: Can be pushed by the index finger | for all joint types | 
 |-------|--------|---------|
-| Normal | **State**: Object stay at the pose when hand is released  | for all joint types| 
-| Bounces | **State**: When released, bounce to the lowest discrete state | for 1-dof joint | 
-| Bounces two stage | **State**: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
-| Snaps | **State**: When released, snap to the closest discrete state | for 1-dof joint | 
+| Normal | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>: Object stay at the pose when hand is released  | for all joint types| 
+| Bounce | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>: When released, bounce to the lowest discrete state | for 1-dof joint | 
+| Two Stage | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
+| Snaps | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>: When released, snap to the closest discrete state | for 1-dof joint | 
 
 ### Dual Hands Only
 
