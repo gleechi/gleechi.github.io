@@ -15,6 +15,7 @@ In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors 
 ### Object Joint
 
 Each object has a joint of a given type which determines how it moves in relation to its parent object.
+Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic and defines the relative movement of an object w.r.t. its parent.  
 
 | Type | Dofs | Description |
 |-------|--------|--------|---------|
@@ -24,12 +25,9 @@ Each object has a joint of a given type which determines how it moves in relatio
 | Prismatic | 1-dof | constrained, move linearly along an axis through a pivot point (joint center), limited by an distane range | 
 | Cone | 3-dof | constrained, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
 
-
-Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic. 
-
 If an object's joint is of an “unconstrained” type, meaning it is freely “floating”, then when you grasp this object, it will follow your hands movement freely.
 
-If an object's joint is of a “constrained” type, meaning it is NOT freely “floating”, then when you interact with (grasp or push) this object, it will not follow your hands movement freely, 
+If an object's joint is of a “constrained” type, meaning it is NOT freely “floating”, then when you interact with (grasp or push) this object, it will not follow your hands movement freely,
 but be constrained according to its joint configuration. 
 
 For any joint type, there are a set of parameters to be used to configure the joint:
