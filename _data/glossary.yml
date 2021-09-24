@@ -51,9 +51,23 @@ ReleaseSpeed: A parameter in unit (second) specifying how long it takes for hand
 
 JointLimit: The parameter for object articulation of any joint types. For 1-dof joints (PRISMATIC and REVOLUTE) the limit is defined by a range of scalar values [Min, Max]. For 3-dof rotatioal joint (CONE) the limit is defined by a [swing, twist] angles. 
 
+SwingAngle: For 3-dof Cone joint, this is an angle describes how much object swing away from the joint axis (at the center of the Cone-shaped joint limit boundary).
+
+TwistAngle: For 3-dof Cone joint, this is an angle describes how much the object is rotating around its swinged away axis 
+
 JointState: The status of a 1-dof joint (PRISMATIC or REVOLUTE), which can be represented by a single scalar value JointState in the range of JointLimit; JointState = 0 is the zero pose of the joint corresponding to the initial pose of the object.
 
 DiscreteStates: The parameter for object articulation only relevant for 1-dof joints (PRISMATIC and REVOLUTE), and they are a set of N (N>=2) joint state values in the range of JointLimit; they are needed for State Affordances (BOUNCE, TWO_STAGE, SNAPS) which, when hand releases from the object, will pin the object into one of these discrete states. 
+
+ScrewRate: A parameter for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation, in unit (cm / degree); if > 0 will turn a Revolute joint into ScrewJoint.
+
+JointCenter: The center point of an object's joint, around which an object is rotating around, specified by the Pivot transform’s position.
+
+JointAxis: The axis of the joint, specified by the Pivot transform’s position; for Revolute joint the axis around which the object rotates; for Prismatic joint the axis along which the object translate; for Cone joint the axis in the center of the cone representing zero swing angle.
+
+Pivot: The pivot transform needed to specify the JointCenter (position component of the transform and JointAxis (zaxis of the transform) of an object Joint.
+
+PushPivot: A transform needed to specify the push direction (zaxis of the transform) for an object that has affordance INDEX_PUSHABLE; note this push direction is not the direction of object movement, but the direction along which
 
 Affordance: An object affordance determines which kind of hand interaction can be done with the object, and how the object’s JointState reacts to the hand interaction.
 
@@ -70,4 +84,16 @@ Snaps: One of object's StateAffordance that is only relevant for 1-dof joints; w
 Joint: Joint is where two bones or GameObjects meet, and in VirtualGrasp it defines how a child object moves w.r.t. its parent (not the other way around); and different from the physics-based joint systems in some game engines like Unity, VG's joint system is non-physical (kinematic).
 
 JointType: The type of a Joint, can be Floating, Fixed, Revolute, Prismatic and Cone. 
+
+Floating: An unconstrained JointType, an object with this type of joint can be moved by hand freely.
+
+Fixed: A completely constrained JointType, an object won't be moved relative to its parent object. 
+
+Revolute: A constrained 1-dof rotational JointType, object rotates around an axis through a pivot point (JointCenter), limited by an angle range.
+
+Prismatic: A constrained 1-dof translational JointType, object moves linearly along an axis, limited by an distance range. 
+
+Cone: A constrained 3-dof rotational JointType, object rotates around a pivot point (JointCenter) limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone)
+
+ScrewJoint: A joint of type Revolute when the parameter ScrewRate > 0, then the object will translate at an amount of ScrewRate (cm / degree) for every degree of rotation.
 

@@ -153,10 +153,8 @@ Due to the nature of each option, there may be preferences of how to combine the
 
 ### Grasp Speed and Release Speed
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG Global Grasp Interaction Settings" caption="VG Global Grasp Interaction Settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings" %}
 As shown in above image, you can set the default synthesis methods and interaction type for all objects in the scene globally. 
-
-{% include important.html content="We will soon move grasp interaction related parameters out from Sensor setting GUI to have an independent GUI maybe with a name Global Interactables" %}
 
 Besides those, there are two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">Grasp Speed</a> and 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">Release Speed</a>

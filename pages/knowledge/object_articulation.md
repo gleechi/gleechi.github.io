@@ -9,37 +9,35 @@ permalink: object_articulation.html
 folder: mydoc
 ---
 
-In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors through a combinition of **object joint** settings and **object affordances**.
-
+In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors through a combinition of
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">object joint</a> and
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Affordance}}">object affordance</a>,
+without relying on physical simulations.
 
 ### Object Joint
 
-Each object has a joint of a given type which determines how it moves in relation to its parent object.
-Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic and defines the relative movement of an object w.r.t. its parent.  
+Each object has a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">joint</a> of a given type which determines how it moves in relation to its parent object.
+Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic, and allows you to setup common object behaviors like buttons, screws, and sliders, etc very easily. 
+   
 
 | Type | Dofs | Description |
 |-------|--------|--------|---------|
 | Floating | 6-dof | unconstrained, freely floating object | 
 | Fixed | 0-dof | constrained, as if an integrated object with its parent | 
-| Revolute | 1-dof | constrained, rotate around an axis through a pivot point (joint center), limited by an angle range | 
+| Revolute (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ScrewJoint}}">Screw</a>) | 1-dof | constrained, rotate around an axis through a pivot point (joint center), limited by an angle range | 
 | Prismatic | 1-dof | constrained, move linearly along an axis through a pivot point (joint center), limited by an distane range | 
 | Cone | 3-dof | constrained, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
-
-If an object's joint is of an “unconstrained” type, meaning it is freely “floating”, then when you grasp this object, it will follow your hands movement freely.
-
-If an object's joint is of a “constrained” type, meaning it is NOT freely “floating”, then when you interact with (grasp or push) this object, it will not follow your hands movement freely,
-but be constrained according to its joint configuration. 
 
 For any joint type, there are a set of parameters to be used to configure the joint:
 
 | Parameters | Description | Additional features |
 |-------|--------|---------|
-| **Min** | lower limit of 1-dof joint, for cone joint, this is swing angle limit | if angular limit, unit in (degree)|
-| **Max** | upper limit of 1-dof joint, for cone joint, this is twist angle limit | if angular limit, unit in (degree) |
-| **Screw Rate** | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
-| **Discrete States** | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
-| Joint Center | around which position an object is rotating around, specified by the **Pivot** transform's position | E.g. for cone joint, object will rotate round this point | 
-| Joint Axis | what is the joint axis, specified by the **Pivot** transform's Zaxs | E.g. for prismatic joint, object will move linearly along this axis | 
+| Min / Swing | lower limit of 1-dof joint, for cone joint, this is swing angle limit | if angular limit, unit in (degree)|
+| Max / Twist | upper limit of 1-dof joint, for cone joint, this is twist angle limit | if angular limit, unit in (degree) |
+| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ScrewRate}}">Screw Rate</a> | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
+| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">Discrete States</a> | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
+| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointCenter}}">Joint Center</a> | around which position an object is rotating around, specified by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform's position | E.g. for cone joint, object will rotate round this point | 
+| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">Joint Axis</a> | the axis specified by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform's Zaxis | E.g. for prismatic joint, object will move linearly along this axis | 
 
 ### Joint State
 
@@ -61,7 +59,7 @@ The table below gives some example values of joint state to further clarify its 
 ### Pivot vs. Push Pivot
 
 As shown in the joint parameter table above, an object's joint parameter need to specify its joint center point and joint axis. 
-These two parameters are provided in a combined way through a **Pivot** transform in the game engine. 
+These two parameters are provided in a combined way through a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform in the game engine. 
 
 Then what is **Push Pivot**? 
 
