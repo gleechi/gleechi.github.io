@@ -67,7 +67,7 @@ JointAxis: The axis of the joint, specified by the Pivot transform’s position;
 
 Pivot: The pivot transform needed to specify the JointCenter (position component of the transform and JointAxis (zaxis of the transform) of an object Joint.
 
-PushPivot: A transform needed to specify the push direction (zaxis of the transform) for an object that has affordance INDEX_PUSHABLE; note this push direction is not the direction of object movement, but the direction along which
+PushPivot: A transform needed to specify the push direction (zaxis of the transform) for an object that has affordance INDEX_PUSHABLE; note this push direction is not the direction of object movement, but the direction along which finger is allowed to push the object.
 
 Affordance: An object affordance determines which kind of hand interaction can be done with the object, and how the object’s JointState reacts to the hand interaction.
 
