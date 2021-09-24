@@ -19,7 +19,7 @@ folder: mydoc
 
 You can set the default [grasp Interaction](grasp_interaction.html#grasp-interaction) settings for all objects in the scene through:
 
-{% include image.html file="unity/unity_vg_settings.png" alt="VG Settings." caption="VG_Settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG Global Grasp Interaction Settings" caption="VG Global Grasp Interaction Settings" %}
 
 {% include important.html content="We will soon move grasp interaction related parameters out from Sensor setting GUI to have an independent GUI maybe with a name Global Interactables" %}
 
