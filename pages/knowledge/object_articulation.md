@@ -63,14 +63,14 @@ These two parameters are provided in a combined way through a <a href="#" data-t
 
 Then what is **Push Pivot**? 
 
-Push Pivot is provided to specify along which direction on object the hand is allowed to apply push action, 
-when object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> to INDEX_PUSHABLE. 
-Similar to provide joint axis through Pivot transform, we use Push Pivot transform's Zaxis to specify this push direction. 
-The effect of this push pivot is to say: your finger is not allowed to push the object along the direction that deviate too much from this push direction.
+Push Pivot is provided to specify along which direction the hand is allowed to approach and apply push action. 
+And this is only relevant for Push without Physics setup when object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> 
+to INDEX_PUSHABLE (detailes see [Push Interaction](push_interaction.html#push-articulation)).
+
+Similar to provide joint axis through Pivot transform, we use Push Pivot transform's Zaxis to specify this push approach direction. 
 
 {% include important.html content="Push Pivot is NOT specifying along which direction object moves, 
-but rather specify which direction finger can apply push action. How object moves is defined by Pivot together with other joint parameters; 
-whereas Push Pivot can helps to define for example a button can not be pushed from bottom." %}
+but rather specify a preferred hand approach direction. How object moves is defined by Pivot together with other joint parameters." %}
 
 If Push Pivot is not provided in the VG_Articulation component (see image blow), then the Push Pivot just inherit from the Pivot, 
 i.e. the push direction is same as the joint axis. 

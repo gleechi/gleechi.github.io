@@ -20,15 +20,33 @@ loop to correct our hand and finger poses, in VR such a feedback does not exist.
 VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
 create immersive grasp interacting experiences in VR.
 
-In this page we explain a set of parameters to configure and fine-tune the grasp interaction experiences in your VR application.
+In this page we first describe the process of how VG create hand object grasp interaction,
+* From Object Selection to Grasp Synthesis
+
+and then explain a set of parameters to configure and fine-tune the grasp interaction experiences in your VR application.
 * Grasp Synthesis Method, or in short, Synthesis Method 
 * Grasp Interaction Type, or in short, Interaction Type
 * Grasp Speed and Release Speed
 
+### From Object Selection to Grasp Synthesis
+
+In VR, grasp interaction is composed of two consecutive processes:
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">Object Selection</a> and
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>
+
+VirtualGrasp provides this Object Selection mechanism through checking collision between a grasp selection sphere attached to the hand and the objects,
+and choose the "closest" object for grasp. 
+
+And once an object is selected by a hand, then it is ready for Grasp Synthesis. 
+In a typical <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">Interaction Type</a> (like 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.TriggerGrasp}}">Trigger Grasp</a>, or
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JumpGrasp}}">Jump Grasp</a> ), Grasp Synthesis happens only when
+the user triggers grasp while an object is selected by this hand. 
+
 ### Grasp Synthesis Method
 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>
-refers to the process of creating hand grasping configuration -- the wrist and fingers pose  w.r.t the object -- when an user triggers grasp with VR controllers.
+refers to the runtime process of creating hand grasping configuration -- the wrist and fingers pose  w.r.t the object -- when an user triggers grasp with VR controllers.
 The method for grasp synthesis refers to how this process is done. 
 
 VG provides two alternative methods for grasp synthesis <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StaticGrasp}}">Static Grasp</a> (SG) 

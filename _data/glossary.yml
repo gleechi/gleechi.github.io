@@ -7,9 +7,11 @@ Grasp: A hand grasps and holds an object
 
 Gesture: A hand forms a gesture in air without contacting or interacting with object. Currently VG only support index finger push gesture. And it is only defined at a single frame as a "static" gesture. For example we are not supporting more "dynamic" gestures like waving yet.
 
+ObjectSelection: A runtime process of user selecting one of the many objects in the scene to interact with (interaction can be push or grasp); note only one object can be selected at a time.
+
 GraspType: What types of grasps depicting shape of hand/fingers when holding an object, for example Pinch, Power grasp types.
 
-GraspSynthesis: A process of creating hand grasping configuration – the wrist and fingers pose w.r.t the object – when an user triggers grasp with VR controllers.
+GraspSynthesis: A runtime process of creating hand grasping configuration – the wrist and fingers pose w.r.t the object – when an user triggers grasp with VR controllers.
 
 FingerControlType: Describes how sensor is controlling the finger movement on the avatar hands. The different finger control types are explained in detail in [InteractionSetup](abc.html). 
 
@@ -67,7 +69,7 @@ JointAxis: The axis of the joint, specified by the Pivot transform’s position;
 
 Pivot: The pivot transform needed to specify the JointCenter (position component of the transform and JointAxis (zaxis of the transform) of an object Joint.
 
-PushPivot: A transform needed to specify the push direction (zaxis of the transform) for an object that has affordance INDEX_PUSHABLE; note this push direction is not the direction of object movement, but the direction along which finger is allowed to push the object.
+PushPivot: A transform to specify along which direction (zaxis of the transform) the hand can approach and push an object that has push affordace; note this direction is not the direction of object movement.
 
 Affordance: An object affordance determines which kind of hand interaction can be done with the object, and how the object’s JointState reacts to the hand interaction.
 
