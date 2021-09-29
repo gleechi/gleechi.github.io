@@ -34,16 +34,27 @@ and the parameters shown in below image create a button that can be pushed by in
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
 * Since button is moving along a single axis linearly, we select the joint type to be PRISMATIC.
-* For PRISMATIC joint, we need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> which specifies the axis along which object moves.
+* For PRISMATIC joint, we need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> which specifies the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">Joint Axis</a> along which object moves.
 * For PRISMATIC joint, we also need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">Joint Limit</a>, i.e. a linear movement range between 0 and 0.014 meter. 
+* Since the pushable button's movement direction (by <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a>) is same as the direction we want hand to approach for pushing, so we don't need to specify 
+a different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>.
 * For push without physics, you need to select <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> as INDEX_PUSHABLE.
 * To let object bounce back when not pushed, you need to set the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>
  to be <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Bounce}}">BOUNCE</a>. 
+* To let object bounce back NOT to the lower boundary of the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">Joint Limit</a> 
+(i.e. min = 0), but to slightly lower position, we set two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">Discrete States</a> with first value 0.004.
+
 
 {% include important.html content="When BOUNCE affordace is chosen, object' Joint State will bounce back to the smallest value of the Discrete States.
 Since by default Discrete States will take the two range values from Joint Limits [min, max], so if Discrete States is not provided, Joint State bounce back to min value. 
 If you want Joint State to bounce to a differet value from min, you should define Discrete States with first (smallest) value different from Joint Limit's min value, 
 as shown in above image, smallest discrete value 0.004 is bigger than Min value 0. Then the Joint State will bounce back to 0.004 not 0." %}
+
+#### How object is selected for push?
+
+When push is done without physics, there need to be a way to decide which object is to be pushed. VirtualGrasp does this through a number of geometrical constraints
+1. which pushable object is closest to the push finger?
+2. which pushable object's push approach direction (by  the push finger's approach direction  approaching the object along the preferred approach direction?
 
 
 ### Push With Physics

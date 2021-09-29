@@ -30,18 +30,20 @@ and then explain a set of parameters to configure and fine-tune the grasp intera
 
 ### From Object Selection to Grasp Synthesis
 
-In VR, grasp interaction is composed of two consecutive processes:
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">Object Selection</a> and
+In VR, grasp interaction consists of two consecutive processes:
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">Object Selection</a>
 * <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>
 
-VirtualGrasp provides this Object Selection mechanism through checking collision between a grasp selection sphere attached to the hand and the objects,
-and choose the "closest" object for grasp. 
+VirtualGrasp provides an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">Object Selection</a>
+mechanism through checking collision between a grasp selection sphere attached to the hand and the objects,
+and choose the "closest" object for grasp. Note this process is done in VirtualGrasp library,
+not through physical collision detection in any client engines. 
 
-And once an object is selected by a hand, then it is ready for Grasp Synthesis. 
+And once an object is selected by a hand, it is ready for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>. 
 In a typical <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">Interaction Type</a> (like 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.TriggerGrasp}}">Trigger Grasp</a>, or
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JumpGrasp}}">Jump Grasp</a> ), Grasp Synthesis happens only when
-the user triggers grasp while an object is selected by this hand. 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JumpGrasp}}">Jump Grasp</a> ), Grasp Synthesis on an object only happens if
+the user triggers grasp while this hand has selected this object. 
 
 ### Grasp Synthesis Method
 

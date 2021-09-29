@@ -11,39 +11,17 @@ folder: mydoc
 
 {% include image.html file="unity/unity_vg_hint_visualizer.png" alt="VG HintVisualizer" caption="MyVirtualGrasp script - VG_HintVisualizer Component." %}
 
-The VG_HintVisualizer component can be used to visualize in Unity the hints for Push without Physics using index finger (see [Push Interaction](push_interaction.html#push-interaction))
+The VG_HintVisualizer component can be used to visualize in Unity the hints for pushable object selection (see Push without Physics in [Push Interaction](push_interaction.html#push-interaction))
 and for graspable object selection (see [Grasp Interaction](grasp_interaction.html#grasp-interaction)). 
 
+### Push Hints
 
+If push hints is enabled, for any objects that are setup for push without physics, there will be a push hint drawn on the surface of the selected object in Unity. 
 
+By default the push hint takes the shape of a circle, and its size will increase as the finger tip is closer to the object, and decrease as it moves far away.
+And when finger tip is too far from the object, or if the approach direction deviates too much from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>.
 
-{% include important.html content="To use the VG_Articulation component (as shown in image above), you should first understand the meaning of VirtualGrasp's  [Object Articulation](object_articulation.html#object-articulation)." %}
+### Grasp Hints
 
-### Initial Setting
+If grasp hints is enabled, the grasp selection sphere attached to the hand will show up, and when an object is selected, this sphere will change color.
 
-For each interactable object in your Unity scene, you can add this VG_Articulation component to specify the articulation setup of this object. 
-
-By default, if you do not add this component, this object has "floating" joint type. 
-
-### Runtime Changes
-
-Regardless of what is the initial setting of an object's articulation, you can change the object's articulation parameters in runtime 
-through scripting through API functions [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) 
-and [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) functions.
-
-#### ChangeObjectJoint
-
-As you can see ChangeObjectJoint has two interfaces, and one of them can directly recieve this VG_Articulation component. 
-
-To do that, you can add an disabled VG_Articulation component to the object, then your script can recieve this component 
-and use this as the argument in ChangeObjectJoint function.
-
-And when the VG_Articulation component is used in ChangeObjectJoint function, all the parameters set in the component will be specified
-in runtime on the object. 
-
-#### RecoverObjectJoint
-
-Currently, if you want to "change" object joint to the initial (original) type, then only way to do it is to call RecoverObjectJoint. 
-
-{% include important.html content="Known issue for this is if you want to change other articulation parameters on the origial joint type, it is not supported yet. 
-This will be fixed in next release. " %}
