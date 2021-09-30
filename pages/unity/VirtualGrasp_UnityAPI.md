@@ -10,19 +10,13 @@ toc: true
 
 ### MyVirtualGrasp
 
-MyVirtualGrasp is the customizable main tutorial component. It showcases how you could minimally setup a scene by dragging this component into your scene.  MyVirtualGrasp inherits from VG_MainScript, which wraps the main communication functions of the API. VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity.  
+MyVirtualGrasp is a customizable main tutorial component.  MyVirtualGrasp inherits from VG_MainScript, which wraps the main communication functions of the VirtualGrasp API. VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity. All the API functions you want to use in your own scripts can be accessed through VG_Controller.  
 
 
 
 ### MyVirtualGraspBurst
 
-MyVirtualGrasp is the customizable main tutorial component. It showcases how you could minimally setup a scene by dragging this component into your scene.  MyVirtualGrasp inherits from VG_MainScript, which wraps the main communication functions of the API. VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity. */  
-
-
-
-### VG_Editor
-
-VG_Editor exemplifies how you could provide simple keyboard- or mouse-based grasp labeling functionality for your application. The MonoBehavior provides a tutorial on the VG API functions for labeling grasps.  
+MyVirtualGraspBurst is a customizable main tutorial component.  MyVirtualGraspBurst inherits from VG_MainScript, which wraps the main communication functions of the API. VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity. In contrast to MyVirtualGrasp, this component uses Burst Jobs to isolate VG updates on a seperate thread. */  
 
 
 
@@ -98,140 +92,54 @@ VG_StateVisualizer provides an editor window to print the current state of hands
 
 
 
+### VG_EC_LeapHand
+
+This is an external controller class that supports the LeapMotion controller as an external controller. Please refer to https://docs.gleechi.com/controllers.html for the definition of an external controller for VG.  - You have a Core Assets plugin from https://developer.leapmotion.com/releases imported into your Unity project. - Note that Core Assets > 4.4.0 are for LeapMotion SDK 4, older are for LeapMotion SDK 3 (lastest CA 4.3.4). - You have the corresponding LeapMotion SDK (https://developer.leapmotion.com/sdk-leap-motion-controller/) installed on your computer.  
+
+
+
+### VG_EC_MouseHand
+
+This is an external controller class that supports a Mouse controller as an external controller. Please refer to https://docs.gleechi.com/controllers.html for the definition of an external controller for VG.  
+
+
+
+### VG_EC_OculusHand
+
+This is an external controller class that supports the Oculus Finger Tracking controller as an external controller. Please refer to https://docs.gleechi.com/controllers.html for the definition of an external controller for VG.  - You have the Oculus SDK (https://www.oculus.com/setup/) installed on your computer. - You have the Oculus Integration plugin from https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022 imported into your Unity project. - You have the same Oculus Integration plugin version as the one on your headset AND Oculus App.  
+
+
+
+### VG_EC_UnityXRHand
+
+This is an external controller class that supports the UnityXR controller as an external controller. Please refer to https://docs.gleechi.com/controllers.html for the definition of an external controller for VG.  - You have the Unity XR Management package installed into your Unity project.  
+
+
+
 
 ## [ENUMS](#)
 
-### VG_HandSide
-
-A hand side identifier. Usually a hand is LEFT or RIGHT. UNKNOWN could be caused by an error. 
-
-|LEFT|Left side|
-|RIGHT|Right side|
-|UNKNOWN|Unknown hand side|
-
-
-### VG_SensorType
-
-SensorType defines different sensor types that can be used by the library. 
-
-|NO_CONTROLLER|No controller.|
-|LEAP|LeapMotion 3D camera.|
-|HYDRA|Razer Hydra (Sixense) controllers.|
-|INTEL_REALSENSE|Intel Realsense 3D camera.|
-|MANUS|Manus VR gloves.|
-|KNUCKLES|Steam Knuckles controllers, supported through OpenVR.|
-|VIVE|HTC Vive controllers, supported through OpenVR.|
-|OCULUS_TOUCH_OPENVR|Oculus Touch controllers, supported through OpenVR.|
-|EXTERNAL_CONTROLLER|A controller that must be fed with external sensor signals from the client.|
-|BEBOP_GLOVE|Bebop Haptic VR gloves|
-
-
-### VG_FingerControlType
-
-An enum to describe how fingers are controlled 
-
-|BY_NOTHING|When not grasping, fingers are not controlled at all.|
-|BY_SENSOR_FULL_DOFS|When not grasping, fingers are fully controlled by sensor|
-|BY_SENSOR_LOW_DOFS|When not grasping, fingers are controlled by sensor, but less degrees-of-freedom.|
-|BY_ANIMATION|When not grasping, fingers are controlled by grasp animation.|
-|BY_OSCILLATED_ANIMATION||
-
-
 ### VG_AvatarType
 
-An enum to descibe an avatar type 
+An enum to descibe an avatar type
 
 |DEFAULT||
 |REMOTE||
 |REPLAY||
 
 
-### VG_BoneType
-
-BoneType defines different enumerable bone types that can be accessed from the library. 
-
-|WRIST|The wrist bone of a hand|
-|ELBOW|The elbow bone of an arm|
-|SHOULDER|The shoulder bone of an arm|
-|CLAVICLE|The clavicle bone of an arm|
-|GRASPER|The approach handle of a grasp|
-
-
-### VG_JointType
-
-JointType defines different articulated joint types that are used by the library. They are commonly used on VG_Articulation components. 
-
-|REVOLUTE|revolute joint restricted around an axis, such as wheel|
-|PRISMATIC|linear joint restricted along an axis, such as drawer|
-|FIXED|fixed, not-moveable joint|
-|FLOATING|floating, unrestricted joint|
-|CONE|2-DOF cone joint|
-|UNKNOWN_JOINTTYPE|Unknown joint type|
-
-
-### VG_GraspLabel
-
-For labeling grasps (grasp editor functionality). 
-
-|DISABLED|Labels a grasp as disabled (i.e. removed)|
-|PRIMARY|Labels a grasp as primary (i.e. only grasp for an object)|
-|SUCCEEDED|Labels a grasp as succeeded (for training in robotics scenario)|
-|FAILED|Labels a grasp as failed (for training in robotics scenario)|
-|RANK|TBD|
-
-
-### VG_InteractionType
-
-An enum to describe a hand interaction type (i.e. a mode on grasp visualization). Interaction types mainly define various ways of how a hand interacts with an object. 
-
-|TRIGGER_GRASP|Original, hand goes to object at grasp position|
-|PREVIEW_GRASP|Grasp is always previewed, trigger switch to MANIPULATE/HOLD mode|
-|PREVIEW_ONLY|like PREVIEW_GRASP, but never trigger to hold an object|
-|JUMP_GRASP|Object jumps to hand when grasp is triggered|
-|STICKY_HAND|Object sticks to hand without grasp when grasp is triggered. NOTE: SetGraspTriggerByStrength(false) for this type|
-|JUMP_PRIMARY_GRASP|Using mechanism like JUMP_GRASP, but search for the first grasp in db that is primary.|
-
-
-### VG_QueryGraspMode
-
-Decide when query grasp if object and hand move and how to move hand. 
-
-|NO_MOVE|will not move internal object and hand|
-|MOVE_HAND_SMOOTHLY|will move object and hand moves smoothly with GRASP transition|
-|MOVE_HAND_DIRECTLY|will move object and hand move directly to target grasp pose|
-
-
 ### VG_QueryGraspMethod
 
-The query grasp method for GetGrasp() function 
+The query grasp method for GetGrasp() function
 
 |BY_INDEX|get grasp by index|
 |BY_ID|get grasp by ID|
 |BY_TCP|get grasp by TCP|
 
 
-### VG_GraspSelectionMethod
-
-An enum to specify which kind of method is used for pose-based grasp selection. 
-
-|POS_ROT_COMBINED|choose grasp that has minimum combined distance, which is a weighted sum of position and rotation distances|
-|MIN_POS|among a set of grasps that satisfy rotation distance threshold, choose the grasp with minimum position distance|
-|MIN_ROT|among a set of grasps that satisfy position distance threshold, choose the grasp with minimum rotation distance|
-
-
-### VG_SynthesisMethod
-
-Identifier for a grasp synthesis algorithm. 
-
-|NONE|No grasp synthesis method (no grasping)|
-|STATIC|Static grasp synthesis method (accessing generated set of discrete grasps)|
-|HYBRID|TBD|
-|DYNAMIC|Dynamic grasp synthesis method (generating grasps online based on prebaked object representation)|
-
-
 ### VG_InteractionMode
 
-An important information for designing your gameplay with VirtualGrasp is what to do dependent on what state the hand is in. For this purpose, VG_InteractionMode defines different interaction modes that are used by the library (such as grasping or empty). You can access a specific hand's mode through its VG_HandStatus. 
+An important information for designing your gameplay with VirtualGrasp is what to do dependent onwhat state the hand is in. For this purpose, VG_InteractionMode defines different interaction modesthat are used by the library (such as grasping or empty). You can access a specific hand's modethrough its VG_HandStatus.
 
 |RELEASE|when wrist and finger toward sensor pose|
 |GRASP|when wrist and finger towards target grasp pose|
@@ -247,21 +155,9 @@ An important information for designing your gameplay with VirtualGrasp is what t
 |PHYSICAL_PUSHING2|when both hand's index finger tip do physical push on same object|
 
 
-### VG_SelectObjectMethod
-
-Different object selection methods 
-
-|INTERNAL_SELECTION|Object is selected internally in the library|
-|EXTERNAL_SELECTION|Object is selected externally in the client engine such as Unity or Unreal|
-
-
 ### VG_Affordance
 
-An object-related affordance, i.e. what interaction can be done with this object.
-
-
-Remark
- bitmask convention. 
+An object-related affordance, i.e. what interaction can be done with this object.@remark bitmask convention.
 
 |NOTHING||
 |ONLY_GRASPABLE|000001|
@@ -296,7 +192,7 @@ Remark
 
 ### VG_ReturnCode
 
-ReturnCode for various VirtualGrasp functions. Most functions in this API provide such a return code. 
+ReturnCode for various VirtualGrasp functions.Most functions in this API provide such a return code.
 
 |SUCCESS|Succeeded in processing function|
 |DLL_NOT_INITIALIZED|Failed in processing function because library has not been initialized.|
@@ -313,9 +209,8 @@ ReturnCode for various VirtualGrasp functions. Most functions in this API provid
 
 
 ### VG_EditorAction
-Tags: [video](https://www.youtube.com/watch?v=Z1j6BgosFVA)
 
-Action towards the grasp editor, see EditGrasp()
+Action towards the grasp editor, see EditGrasp()@tag movie:https://www.youtube.com/watch?v=Z1j6BgosFVA
 
 |PRIMARY_CURRENT|Label the current grasp as primary, so it will be the only grasp for this object|
 |DISABLE_CURRENT|Label the current grasp as disabled, so it will not be accessible for static grasping.|
@@ -327,18 +222,77 @@ Action towards the grasp editor, see EditGrasp()
 |TOGGLE_INTERACTION|Toggle interaction type for this object between TRIGGER_GRASP and JUMP_PRIMARY_GRASP (see VG_InteractionType).|
 
 
+### VG_AutoSetup
+
+Enum for quickly setting up projects for a specific controller / build.
+
+|NONE|No setup|
+|QUEST|Setup for Quest / Touch controllers|
+|QUEST_FT|Setup for Quest / finger tracking|
+|STEAMVR|Setup for SteamVR|
+|STEAMVR_FT|Setup for SteamVR finger tracking / Knuckles|
+|MOUSE|Setup for Mouse|
+|BEBOP_FT|Setup for Bebop Haptic Gloves|
+|LEAP_EXT|Setup for LeapMotion finger tracking (external controller)|
+|LEAP_VG|Setup for LeapMotion finger tracking (internal controller)|
+|OPENVR|Setup for OpenVR|
+
+
+### VG_VrButton
+
+Enum for setting which (VR) controller buttons.
+
+|TRIGGER||
+|GRIP||
+
+
+### VG_HandSide
+
+We support two hands per avatar, left and right in this enum.
+
+|LEFT|Left hand|
+|UNKNOWN_HANDSIDE|Unknown hand side|
+|RIGHT|Right hand|
+
+
+### VG_AvatarInputType
+
+Need to know what type made the avatar registration for scaling.
+
+|MESH||
+|URDF||
+
+
 ### VG_UrdfType
 
-Avatar's hand template type as URDF 
+Avatar's hand template type as URDF.
 
 |HUMANOID_HAND|A humanoid hand|
 |PARALLEL_GRIPPER|A parallel jaw gripper (Automed, yumi_gripper_angled1_2hands)|
 |SUCTION_PIN_GRIPPER|A suction pin gripper (Digiload, suction_pin_gripper)|
 
 
+### VG_SensorType
+
+SensorType defines different sensor types that can be used by the library.
+
+|NO_CONTROLLER|no controller|
+|LEAP|Leap motion 3D camera|
+|RAZER_HYDRA|Razer Hydra controllers|
+|INTEL_REALSENSE|Intel Realsense 3D camera|
+|MANUS|Manus VR gloves|
+|KNUCKLES|Valve Knuckles controller|
+|VIVE|HTC Vive controllers, supported through OpenVR|
+|OCULUS_TOUCH_OPENVR|Oculus Touch controllers, supported through OpenVR|
+|VIVE_TRACKER|A ViveTracker|
+|OCULUS_TOUCH_OVR|Oculus Touch controllers, supported through OculusVR (not supported).|
+|EXTERNAL_CONTROLLER|An external, customized controller|
+|BEBOP|Bebop VR gloves|
+
+
 ### VG_GraspType
 
-Animation grasp type enum 
+Animation grasp type enum.
 
 |UNKNOWN_GRASPTYPE|Unknown grasp type|
 |POWER|Power grasp (like on bottle)|
@@ -350,50 +304,220 @@ Animation grasp type enum
 |CLOSING|this is for closing grasp for parallel gripper|
 
 
-### VG_GraspTypes
+### VG_FingerControlType
 
-Enum to describe possible combinations of grasp types specified for an object. 
+An enum to describe how fingers are controlled.
 
-|AUTO|Automatic (VirtualGrasp algorithms decide|
-|POWER|Only Power grasps (like on bottle)|
-|PINCH|Only Pinch grasps (like on coin)|
-|POWER_PINCH|both Power and Pinch|
-|FLAT|Only Flat grasps (like on basketball)|
-|POWER_FLAT|both Power and Flat|
-|PINCH_FLAT|both Pinch and Flat|
-|ALL|Power, Pinch, and Flat|
+|BY_NOTHING|When not grasping, fingers are not controlled at all.|
+|BY_SENSOR_FULL_DOFS|When not grasping, fingers are fully controlled by sensor|
+|BY_SENSOR_LOW_DOFS|When not grasping, fingers are controlled by sensor, but less DOF.|
+|BY_ANIMATION|When not grasping, fingers are controlled by animation.|
+|BY_OSCILLATED_ANIMATION|When not grasping, fingers are controlled by oscillating between two state of animations|
 
 
-### GetObjectSpecifier
+### VG_BoneType
 
-GetObjectSpecifier. Temporary to check different hierarchy update strategies. 
+An enum to describe a bone type, used for accessing of bones from outside the library.
 
-|NONE||
-|ONLY_INTERACTABLES||
-|ALL_OBJECTS||
-
-
-### VG_AutoSetup
-
-Enum for quickly setting up projects for a specific controller / build. 
-
-|NONE|No setup|
-|QUEST|Setup for Quest / Touch controllers|
-|QUEST_FT|Setup for Quest / finger tracking|
-|STEAMVR|Setup for SteamVR|
-|STEAMVR_FT|Setup for SteamVR finger tracking / Knuckles|
-|MOUSE|Setup for Mouse|
-|BEBOP_FT|Setup for Bebop Haptic Gloves|
-|LEAP|Setup for LeapMotion finger tracking|
-|OPENVR|Setup for OpenVR|
+|WRIST|The wrist bone of a hand|
+|ELBOW|The elbow bone of an arm|
+|SHOULDER|The shoulder bone of an arm|
+|CLAVICLE|The clavicle bone of an arm|
+|APPROACH|The approach handle of a grasp|
 
 
-### VG_VrButton
+### VG_JointType
 
-Enum for setting which (VR) controller buttons. 
+Different articulated joint types supported by VG.
 
-|TRIGGER||
-|GRIP||
+|REVOLUTE|revolute joint restricted around an axis, such as wheel|
+|PRISMATIC|prismatic joint restricted along an axis, such as drawer|
+|FIXED|fixed, not-moveable joint|
+|FLOATING|floating, unrestricted joint|
+|CONE|2-DOF universal joint (non-functional)|
+|UNKNOWN_JOINTTYPE|Unknown joint type|
+
+
+### VG_GraspLabel
+
+For labeling grasps (grasp editor functionality).
+
+|DISABLED|Labels a grasp as disabled (i.e. removed)|
+|PRIMARY|Labels a grasp as primary (i.e. only grasp for an object)|
+|SUCCEEDED|Labels a grasp as succeeded (for training in robotics scenario)|
+|FAILED|Labels a grasp as failed (for training in robotics scenario)|
+|RANK|TBD|
+
+
+### VG_InteractionType
+
+An enum to describe a hand interaction type (i.e. a mode on grasp visualization).
+
+|TRIGGER_GRASP|Original, hand goes to object at grasp position|
+|PREVIEW_GRASP|Grasp is always previewed, trigger switch to MANIPULATE/HOLD mode|
+|PREVIEW_ONLY|like vgsPREVIEW_GRASP, but never trigger to hold an object|
+|JUMP_GRASP|Object jumps to hand when grasp is triggered|
+|STICKY_HAND|Object sticks to hand without grasp when grasp is triggered. NOTE|
+|JUMP_PRIMARY_GRASP|Using mechanism like JUMP_GRASP, but search for the first grasp in db that is primary.|
+
+
+### VG_QueryGraspMode
+
+Decide when query grasp if object and hand move and how to move hand.
+
+|NO_MOVE|will not move internal object and hand|
+|MOVE_HAND_SMOOTHLY|will move object and hand moves smoothly with GRASP transition|
+|MOVE_HAND_DIRECTLY|will move object and hand move directly to target grasp pose|
+
+
+### VG_GraspSelectionMethod
+
+An enum to specify which kind of method is used for pose-based grasp selection.
+
+|POS_ROT_COMBINED|choose grasp that has minimum combined distance, which is a weighted sum of position and rotation distances|
+|MIN_POS|among a set of grasps that satisfy rotation distance threshold, choose the grasp with minimum position distance|
+|MIN_ROT|among a set of grasps that satisfy position distance threshold, choose the grasp with minimum rotation distance|
+
+
+### VG_SynthesisMethod
+
+Identifier for a grasp synthesis algorithm.
+
+|NONE|No grasp synthesis method (no grasping)|
+|STATIC|Static grasp synthesis method (accessing generated set of discrete grasps)|
+|DYNAMIC|Dynamic grasp synthesis method (generating grasps online based on prebaked object representation)|
+
+
+### VG_GraspConstraintType
+
+Specify for an object how to constrain grasp synthesis.
+
+|NO_CONSTRAINT|No constraint on grasp|
+|GRASP_ALONG_AXIS|Grasp opposing targets on the two ends of a provided axis|
+|GRASP_ON_PLANE|Grasp opposing targets on the plane whos normal defined by the provided axis|
+
+
+### VG_QueryObjectTransformMode
+
+Decide when query grasp if object and hand move and how to move hand.
+
+|ALL|will get all registered objects including the empty object nodes|
+|ACTIVE_NON_PHYSICAL|will get active non physical object transforms|
+|ACTIVE_ARTICULATED_PHYSICAL|will get active physical object that has constrained joint type (non-floating)|
+
+
+### VG_SelectObjectMethod
+
+Different object selection methods.
+
+|INTERNAL_SELECTION|Object is selected internally in the library|
+|EXTERNAL_SELECTION|Object is selected externally in the client engine such as Unity or Unreal|
+
+
+
+## [COMPONENTS](#)
+
+### VG_SelectionSettings
+
+VG_SelectionSettings can be used to initialize the object and grasp selection settings. 
+
+| _List<string>_ |m_objectIdentifiers|Tags and Layers of these names will mark interactable objects. |
+
+
+### VG_DebugSettings
+
+VG_DebugSettings can be used to configure some debug options. 
+
+| _bool_ |m_saveDebugFiles|Enable this if you need VG to save some debug files.|
+| _bool_ |m_useObjectIK|Enable this if you want to enable VG's object IK module.|
+| _float_ |m_physicsDefaultContactOffset|Overwrite Unity physics contact offset for more accurate collision detection. |
+
+
+### VG_SensorSettings
+
+VG_SensorSettings is ued to configure global parameters of VirtualGrasp sensor interaction.
+
+IMAGE: Unity_VG_SensorSettings.png
+
+|[*VG_FingerControlType*](#vg_fingercontroltype) | m_fingerControlType|Allow free moving fingers or just use a single grab movement.|
+|[*VG_VrButton*](#vg_vrbutton) | m_triggerButton|Which button to use for triggering an interaction (VR only). |
+
+
+### VG_GraspInteractionSettings
+
+VG_GlobalGraspInteractionSettings is ued to configure global parameters of VirtualGrasp grasp interaction.
+
+Missing image: Unity_VG_GraspInteractionSettings.png
+
+|[*VG_SynthesisMethod*](#vg_synthesismethod) | m_synthesisMethod|Define the mode in which grasps are synthesized.|
+|[*VG_InteractionType*](#vg_interactiontype) | m_interactionType|Choose between different grasp interaction types.|
+| _float_ |m_graspSpeed|Transition duration controls the snappiness of grasp motion (lower value = faster grasp).|
+| _float_ |m_releaseSpeed|Transition duration controls the snappiness of release motion (lower value = faster release). |
+
+
+### VG_SensorSetup
+
+VG_SensorSetup is part of the VG_SensorConfiguration component and is used to set hand- and sensor-specific settings.
+
+IMAGE: Unity_VG_SensorSetup.png
+
+| _List<VG_Avatar>_ |m_avatars|Assign game avatars / hands here.|
+|[*VG_SensorType*](#vg_sensortype) | m_sensor|Choose a sensor that you want to control the hands.|
+| _bool_ |m_position|If this sensor's position data shall be used to control the hand.|
+| _bool_ |m_rotation|If this sensor's rotation data shall be used to control the hand.|
+| _bool_ |m_fingers|If this sensor's finger data shall be used to control the hand.|
+| _bool_ |m_grasp|If this sensor's trigger/grasp data shall be used to control the hand.|
+| _bool_ |m_haptics|Enable this if you want to send haptic signals in certain occasions (such as collisions). |
+
+
+### VG_ArticulationBase
+
+VG_ArticulationBase is an abstract class, so only inherited components (such as VG_Articulation) can be attached to an object. An articulation can be attached to an object that should follow an articulated constraint, such as a prismatic or revolute joint. 
+
+|[*VG_JointType*](#vg_jointtype) | m_type|Set the type of this articulated joint.|
+| _float_ |m_min|Set the lower range value of this articulated joint.If CONE this is the swing angle.This value has to be provided in angular degree if REVOLUTE or CONE.|
+| _float_ |m_max|Set the upper range value of this articulated joint. If CONE this is the twist angle. This value has to be provided in angular degree if REVOLUTE or CONE.|
+| _protected_ |float|Set the velocity of this articulated joint [not used].|
+| _VG_Affordances_ |m_affordances;|Set the affordances of this object.|
+| _float_ |m_screwRate|The screw rate describes how much (>=0, in cm) to translate at one degree of rotation for revolute joint type. If set to 0 then is regular revolute joint without screwing in or out.|
+| _bool_ |m_dualHandsOnly|Set if an object can only be manipulated by dual hands (from the same avatar).|
+| _List<float>_ |m_discreteStates|Set the discrete states to which this object will be snapped into. |
+
+
+### VG_Articulation
+
+VG_Articulation inherits from VG_ArticulationBase. An articulation can be attached to an object that should follow an articulated constraint, such as a prismatic or revolute joint. The pivot describes the axis of the constraint (such as the axis of movement for prismatic joints like buttons or drawers; or the axis of rotation for revolute joints such as wheels or levers). The push pivot describes the direction of push for pushable objects.
+
+IMAGE: Unity_VG_Articulation.png
+
+| _Transform_ |m_pivot|The local articulation joint of the object. Important: z-axis of transform is joint axis.|
+| _Transform_ |m_pushPivot|The push pivot (direction) of the object. Important: z-axis of transform is push axis. |
+
+
+### VG_Interactable
+
+VG_Interactable allows to specifiy interaction parameters specifically for an object. An VG_Interactable can be attached to an object that should follow a different interaction behavior than defined in the global VG_SensorSettings.
+
+IMAGE: Unity_VG_Interactable.png
+
+|[*VG_SynthesisMethod*](#vg_synthesismethod) | m_synthesisMethod|The type of synthesis method to use for this object.|
+|[*VG_InteractionType*](#vg_interactiontype) | m_interactionType|The type of interaction to use for this object. |
+
+
+### VG_HandStatus
+
+VG_HandStatus is used as a helping data structure in which the most important grasp state of a hand is stored. Its use in the FixedUpdate() function of the MyVirtualGrasp.cs template will provide you with a good example on how to use the VG_HandStatus from the VirtualGrasp plugin. 
+
+| _bool_ |m_valid|If this hand is currently valid.|
+| _Transform_ |m_hand|The transform of this hand's wrist.|
+|[*VG_HandSide*](#vg_handside) | m_side|The side of this hand.|
+| _int_ |m_avatarID|The ID of the avatar to which this hand belongs.|
+| _float_ |m_grabStrength|The current grab / closing value (0=open hand; 1=closed hand).|
+| _float_ |m_grabVelocity|The current closing velocity.|
+|[*VG_InteractionMode*](#vg_interactionmode) | m_mode|The current mode of the hand.|
+| _Transform_ |m_selectedObject|The currently selected object in this hand.|
+| _float_ |m_distance|The distance of this hand to its currently selected object.|
+| _Transform_ |m_formerSelectedObject|The currently selected object in this hand. |
 
 
 
@@ -481,21 +605,21 @@ Return the path where VG stores debug files.
 | **returns** | _string_ | The path (platform dependent).|
 
 
-### Update
+### IsolatedUpdateDataIn
 
-The heartbeat of the plugin.
-
-
-
-### UpdateDataIn
+The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataIn() isolates data communication from Unity to VG.
 
 
 
 ### IsolatedUpdate
 
+The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdate() runs the main update loop in VG.
 
 
-### UpdateDataOut
+
+### IsolatedUpdateDataOut
+
+The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataOut() isolates data communication from VG to Unity.
 
 
 
@@ -503,6 +627,7 @@ The heartbeat of the plugin.
 
 Receive an enumerator of all registered hands and their status.
 
+| _bool_ |onlyValids|If TRUE, only return valid hands, otherwise return all.|
 | **returns** | _IEnumerable<VG_HandStatus>_ | Enumerator over VG_HandStatus.|
 
 
@@ -674,14 +799,6 @@ Return the object affordance of a particular object.
 | **returns** | _bool_ | The affordance for [selectedObject]|
 
 
-### IsArticulated
-
-Returns if a selected object is an articulated object.
-
-| _Transform_ |selectedObject|The object to check if it is an articulated object.|
-| **returns** | _bool_ | TRUE if object is articulated, FALSE otherwise.|
-
-
 ### GetObjectState
 
 Returns the state (current value) of an articulated object.
@@ -716,7 +833,7 @@ Change an object's joint type in runtime, if this is an articulated object.
 | _VG_Articulation_ |articulation|An articulation describing the new articulation parameters.|
 
 
-### GetObjectJoint
+### GetObjectJointType
 
 Return an object's original or current joint type.
 
@@ -800,15 +917,6 @@ Send an external controller grab signal to the plugin (for EXTERNAL_CONTROLLER s
 | _int_ |avatarID|The avatar to set external sensor pose for.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to set external sensor pose for.|
 | _float_ |trigger|The trigger signal to set.|
-
-Tutorial: [VG_ExternalControllerManager](#vg_externalcontrollermanager)
-
-
-### ProcessExternalAvatarPose
-
-Call to process any external avatar poses that have been set with functions such as SetExternalSensorPose().
-
-| _int_ |avatarID|The avatar to process external avatar poses for.|
 
 Tutorial: [VG_ExternalControllerManager](#vg_externalcontrollermanager)
 
@@ -899,16 +1007,6 @@ Set an offset onto a specific finger tip bone.
 |[*VG_HandSide*](#vg_handside) | side|The hand side to set the offset on.|
 | _int_ |fingerId|The finger to set the offset.|
 | _Vector2_ |offset|The offset as a scale factor on the finger last bone's half dimension, as a 2D-coordinate of (towards tip of the finger, towards inner surface of the finger)|
-
-
-### GetSensorVelocities
-
-Return the positional and rotational sensor velocities of a specific hand.
-
-| _int_ |avatarID|The avatar to get the velocities from.|
-|[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the velocities from.|
-| _out Vector3_ |positionalVelocity|The returned positional velocity.|
-| _out Vector3_ |rotationalVelocity|The returned rotational velocity.|
 
 
 ### GetInteractionMode
@@ -1091,7 +1189,7 @@ Receive the current VG_SynthesisMethod of an interactable object.
 | _Transform_ |selectedObject|The object to query the VG_SynthesisMethod for.|
 | **returns** [VG_SynthesisMethod](#abc.html#vg_synthesismethod) The current VG_SynthesisMethod or VG_SynthesisMethod.NONE if invalid.|
 
-Tutorial: [VG_Editor](#vg_editor)
+Tutorial: VG_Editor
 
 
 ### GetInteractionTypeForObject
@@ -1101,7 +1199,7 @@ Receive the current VG_InteractionType of an interactable object.
 | _Transform_ |selectedObject|The object to query the VG_InteractionType for.|
 | **returns** [VG_InteractionType](#abc.html#vg_interactiontype) The current VG_InteractionType or VG_InteractionType.TRIGGER if invalid.|
 
-Tutorial: [VG_Editor](#vg_editor)
+Tutorial: VG_Editor
 
 
 ### SetGlobalSynthesisMethod
@@ -1299,7 +1397,7 @@ Call grasp editor functionality on a currently selected object and grasp.
 | _Transform_ |obj|The object to call the action on (if not provided, the object in the hand).|
 | _int_ |grasp|The grasp ID to call the action on (if not provided, the current grasp of the hand).|
 
-Tutorial: [VG_Editor](#vg_editor)
+Tutorial: VG_Editor
 
 
 
