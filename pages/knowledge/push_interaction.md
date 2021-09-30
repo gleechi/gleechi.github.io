@@ -9,20 +9,47 @@ toc: true
 
 ### Background
 
-VirtualGrasp not only provides solutions to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>
-challenges in VR (see [Grasp Interaction](grasp_interaction.html#grasp-interaction)), 
+VirtualGrasp not only provides solutions to [Grasp Interaction](grasp_interaction.html#grasp-interaction), 
 but also provides solutions for push interactions.
 
 Button push as an action in real world is very simple process due to the very physical laws existing in the nature. 
 When the same problem is ported into VR, a realistic button push behavior requires some tedius steps that often needs complex setup of physical properties on 
 both button and the hand.
 
-VirtualGrasp provides a solution to make push interaction setup easier and intuitive, through [Object Articulation](object_articulation.html#object-articulation), with and without relying on physical simulations.
+VirtualGrasp provides a solution to make push interaction setup easier and intuitive, through [Object Articulation](object_articulation.html#object-articulation), with and without relying on **physical simulations**.
 
 {% include important.html content="To fully benefit from VG's push interaction, it is important to understand [Object Articulation](object_articulation.html#object-articulation)." %}
 
 
 ### Push Without Physics
+
+#### From Object Selection to Push Without Physics
+
+When push is done with physics, the selection of object is straightforward -- by contact and apply force. 
+When push is done without physics, there need to be a way to decide which object is to be pushed. 
+VirtualGrasp does this through checking the geometric relation between the 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">Push Agent</a>
+and the object to be pushed. 
+To allow VR developers to be able to specify for example "This touch pad can not be pushed from behind", 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> is added
+onto the object to specify the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">Approach Direction</a> by the push agent for pushing. 
+
+Given that
+* The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">Push Agent</a> has been assigned 
+(through set <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> as INDEX_PUSHABLE),
+and
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> is added to the object to be pushed. 
+
+The decision on which of the pushable objects is to be pushed is done by considering:
+* how close is the push agent to the pushable object
+and
+* how aligned is the push agent's approach direction with the preferred approach direction assigned on the object by 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>. 
+
+Once an object is selected, you can turn on the visual hint to show which object is selected for push without physics. 
+See [VG_HintVisualizer](unity_component_vghintvisualizer.html#unity-component-vghintvisualizer) to learn how to use it.
+
+#### How to Setup Push Without Physics
 
 Through VirtualGrasp's [Object Articulation](object_articulation.html#object-articulation) feature, a VR developer can setup a pushable object with various behaviors 
 simulating real world's button object in any game engine. And this setup does not require the developer to add physical qualities to either objects or hands in the game engine. 
@@ -50,11 +77,6 @@ Since by default Discrete States will take the two range values from Joint Limit
 If you want Joint State to bounce to a differet value from min, you should define Discrete States with first (smallest) value different from Joint Limit's min value, 
 as shown in above image, smallest discrete value 0.004 is bigger than Min value 0. Then the Joint State will bounce back to 0.004 not 0." %}
 
-#### How object is selected for push?
-
-When push is done without physics, there need to be a way to decide which object is to be pushed. VirtualGrasp does this through a number of geometrical constraints
-1. which pushable object is closest to the push finger?
-2. which pushable object's push approach direction (by  the push finger's approach direction  approaching the object along the preferred approach direction?
 
 
 ### Push With Physics

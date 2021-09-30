@@ -71,11 +71,15 @@ Pivot: The pivot transform needed to specify the JointCenter (position component
 
 PushPivot: A transform to specify along which direction (zaxis of the transform) the hand can approach and push an object that has push affordace; note this direction is not the direction of object movement.
 
+ApproachDirection: The direction along which the PushAgent approaches the object to be pushed; PushPivot assigned to a pushable object is used to specify a preferred approach direction by the PushAgent. 
+
 Affordance: An object affordance determines which kind of hand interaction can be done with the object, and how the object’s JointState reacts to the hand interaction.
 
 InteractionAffordance: An object's interaction affordance determines what kind of action the hand can perform on the object, for example, graspable means the object can be grasped by a hand.
 
 StateAffordance: An object's state affordance determines how the object's JointState reacts to the hand interaction.
+
+PushAgent: Refers to who is performing the push action, for example if index finger tip is pushing, index finger tip is the push agent. 
 
 Bounce: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the lowest value of the DiscreteStates.
 
