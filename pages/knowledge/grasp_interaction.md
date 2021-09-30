@@ -149,7 +149,7 @@ needs to have #2 a set of grasps in the database.
 In current VirtualGrasp SDK, [Grasp Baking](grasp_baking.html#grasp-baking) process only bake the object shape, and will not produce a set of grasps for the hand.
 Therefore, directly after baking, you can only apply <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">Dynamic Grasp</a>. 
 
-In the situations when you need to use SG (see [Choosing Synthesis Method and Interaction Type](#choosing-synthesis-method-and-interaction-type)), 
+In the situations when you need to use SG (see section [Choosing Synthesis Method and Interaction Type](#choosing-synthesis-method-and-interaction-type)), 
 [Grasp Studio](unity_component_vggraspstudio.html#grasp-studio) can be used to add grasps into database through DG. 
 
 

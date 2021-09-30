@@ -17,6 +17,9 @@ We thus include "shape baking" as well as "grasp baking" into the baking process
 
 {% include important.html content="If any of these inputs changes, the object needs to be rebaked." %}
 
+{% include tip.html content="For VR applications where humanoid hands are used, we have turned off the grasp baking step so that the baking process only include shape baking. 
+As a result, the shape baking result will not be affected if you change 3D rig and 3D mesh of the hand." %}
+
 The final baking is encoded in each deployed plugin version. This means that each plugin will be baked project-dependently, i.e. you can use a plugin that has been built for a project A for a project B, but for all objects in project B that have not also been baked in project A, you will not get natural grasps.
 
 <!--
