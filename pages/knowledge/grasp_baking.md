@@ -7,7 +7,9 @@ folder: knowledge
 toc: true
 ---
 
-Like game developers know the concepts of "baking light" or "baking textures" in order to preprocess expensive computations and have faster access during runtime, we call our the preprocessing of interactions "baking." Eventually, the goal is to have grasps for any object, but to get there, we also bake the shape of the object. We thus include "shape baking" as well as "grasp baking" into the baking process.
+Like game developers know the concepts of "baking light" or "baking textures" in order to preprocess expensive computations and have faster access during runtime, 
+we call our the preprocessing of interactions "baking." Eventually, the goal is to have grasps for any object, but to get there, we also bake the shape of the object. 
+We thus include "shape baking" as well as "grasp baking" into the baking process.
 
 * In order to bake shape, we need access to the 3D mesh data of the object. The input is the object mesh, the output is a semantic shape analysis of the object (such as its parts).
 

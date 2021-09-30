@@ -133,6 +133,28 @@ and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.
 </tbody>
 </table>
 
+
+To create natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a> 
+in <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>, we need to bake the object
+(see [Grasp Baking](grasp_baking.html#grasp-baking)). The baking output of an object and a hand is a grasp database that contains 
+
+1. the object's shape analysis results from shape baking
+2. a set of grasps for the hand to grasp this object
+
+While for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">Dynamic Grasp</a>, 
+we only need to have #1 the result from shape baking, 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StaticGrasp}}">Static Grasp</a>
+needs to have #2 a set of grasps in the database. 
+
+In current VirtualGrasp SDK, [Grasp Baking](grasp_baking.html#grasp-baking) process only bake the object shape, and will not produce a set of grasps for the hand.
+Therefore, directly after baking, you can only apply <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">Dynamic Grasp</a>. 
+
+In the situations when you need to use SG (see [Choosing Synthesis Method and Interaction Type](#choosing-synthesis-method-and-interaction-type)), 
+[Grasp Studio](unity_component_vggraspstudio.html#grasp-studio) can be used to add grasps into database through DG. 
+
+
+
+
 ### Grasp Interaction Type
 
 As we mentioned in [Background](#background) section, when a user triggers grasp, the wrist may not be at a good pose w.r.t. the object.
