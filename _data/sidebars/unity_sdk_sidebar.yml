@@ -76,6 +76,10 @@ entries:
         - title: VG_HintVisualizer
           url: /unity_component_vghintvisualizer.html
           output: web
+        
+        - title: VG_PostAnimator
+          url: /unity_component_vgpostanimator.html
+          output: web
 
     #- title: Get started
     #  url: /index.html
