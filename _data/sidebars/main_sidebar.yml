@@ -9,7 +9,7 @@ entries:
     output: web
     folderitems:
     - title: Knowledge Base
-      url: /knowledge_base.html
+      url: /controllers.html
       output: web
     - title: VirtualGrasp Unity SDK
       url: /unity_get_started.html
