@@ -9,7 +9,7 @@ toc: true
 
 Whether it is Unity or Unreal, you can assign your controller input in VG_MainScript → Sensors → Sensor. 
 
-{% include image.html file="unity/unity_control_flags.png" alt="VG control flags." caption="" %}
+{% include image.html file="unity/unity_control_flags.png" alt="VG control flags." caption="VG Control Flags" %}
 
 There are a few controllers that are supported "out of the box" by VirtualGrasp, which means that no additional engine plugins are needed. Since VirtualGrasp internally takes care of them, we call them "internal controllers." All of the sensor options, except EXTERNAL_CONTROLLER are internal controllers.
 

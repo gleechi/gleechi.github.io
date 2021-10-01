@@ -13,8 +13,8 @@ be fully reproduced with today's VR software and hardware technology.
 This is especially challenging when we want to have hand presence in VR while grasping and manipulating objects. 
 
 For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarrantee
-that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking grasp configuration on the 
-selected object. While in real life such a problem is trivial since we can always rely on our fast and advanced sensory-motor feedback
+that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a> 
+on the selected object. While in real life such a problem is trivial since we can always rely on our fast and advanced sensory-motor feedback
 loop to correct our hand and finger poses, in VR such a feedback does not exist. 
 
 VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
@@ -70,8 +70,10 @@ and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.
 <tbody>
 <tr>
 <td markdown="span" colspan="2" style="text-align: right">
-**Static Grasp** (SG) creates grasping configuration from one of N grasps stored in a grasp database.<!-- While full baking is needed, it only uses grasp baking results during runtime.are created by a limited set of grasps around an object depending on a pre-baked grasp database.--></td>
-<td markdown="span" colspan="2">**Dynamic Grasp** (DG) computes grasping configuration at the moment of grasp triggering.<!--While full baking is currently enabled (so one can switch between static and dynamic grasping per object), it only uses shape baking results. --><!--are unlimited grasps that are generated during runtime.--></td>
+**Static Grasp** (SG) creates <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a> 
+from one of N grasps stored in a grasp database.<!-- While full baking is needed, it only uses grasp baking results during runtime.are created by a limited set of grasps around an object depending on a pre-baked grasp database.--></td>
+<td markdown="span" colspan="2">**Dynamic Grasp** (DG) computes 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a>  at the moment of grasp triggering.<!--While full baking is currently enabled (so one can switch between static and dynamic grasping per object), it only uses shape baking results. --><!--are unlimited grasps that are generated during runtime.--></td>
 </tr>
 <tr>
 <td markdown="span" style="text-align: right">Limited number of and sparse grasps unless parameterized to be denser</td>
