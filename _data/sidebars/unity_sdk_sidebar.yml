@@ -98,8 +98,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: 0.5.0
-      url: /release_notes_050.html
+    - title: Release Notes
+      url: /release_notes.html
       output: web, pdf
 
   - title: API

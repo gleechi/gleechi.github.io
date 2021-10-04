@@ -475,8 +475,8 @@ IMAGE: Unity_VG_SensorSetup.png
 VG_ArticulationBase is an abstract class, so only inherited components (such as VG_Articulation) can be attached to an object. An articulation can be attached to an object that should follow an articulated constraint, such as a prismatic or revolute joint. 
 
 |[*VG_JointType*](#vg_jointtype) | m_type|Set the type of this articulated joint.|
-| _float_ |m_min|Set the lower range value of this articulated joint.If CONE this is the swing angle.This value has to be provided in angular degree if REVOLUTE or CONE.|
-| _float_ |m_max|Set the upper range value of this articulated joint. If CONE this is the twist angle. This value has to be provided in angular degree if REVOLUTE or CONE.|
+| _float_ |m_min|Set the lower range value of this articulated joint. This value has to be provided in angular degree if REVOLUTE or CONE.|
+| _float_ |m_max|Set the upper range value of this articulated joint. This value has to be provided in angular degree if REVOLUTE or CONE.|
 | _protected_ |float|Set the velocity of this articulated joint [not used].|
 | _VG_Affordances_ |m_affordances;|Set the affordances of this object.|
 | _float_ |m_screwRate|The screw rate describes how much (>=0, in cm) to translate at one degree of rotation for revolute joint type. If set to 0 then is regular revolute joint without screwing in or out.|
