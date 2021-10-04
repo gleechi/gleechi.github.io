@@ -9,6 +9,7 @@ permalink: unity_component_vgrecorder.html
 folder: mydoc
 ---
 
+
 ### Use cases
 
 An example use case is “replaying an interaction sequence for instruction”.
@@ -28,10 +29,15 @@ It is important to understand what the data is that actually is recorded. It is 
 There are two replay modes in the current implementation:
 
 #### Full and scene-specific interaction replay
-A whole recorded sequence will be replayed, for example you once record all the steps to go through a training sequence, and you can fully replay it later. However, when you change positions of objects that you interacted with, the replay hand will grasp empty air. In the movie above, the green button triggers this replay.
+A whole recorded sequence will be replayed, for example you once record all the steps to go through a training sequence, and you can fully replay it later. 
+However, when you change positions of objects that you interacted with, the replay hand will grasp empty air. In the movie above, the green button triggers this replay.
 
 #### Partial and object-specific interaction replay
-A specific interaction on an object can be replayed, for example you once record all the steps to go through a training sequence, and you can then replay a specific interaction with any specific object of the same kind. Imagine rotating one switch once, and then being able to replay just that interaction on any other switch in the scene. In the movie above, the blue button triggers this replay.
+A specific interaction on an object can be replayed, for example you once record all the steps to go through a training sequence, 
+and you can then replay a specific interaction with any specific object of the same kind. 
+Imagine rotating one switch once, and then being able to replay just that interaction on any other switch in the scene. In the movie above, the blue button triggers this replay.
+
+
 
 ### How to Record an Interaction Sequence
 
@@ -64,6 +70,10 @@ In the current VG_Recorder, pressing T will replay the recording provided in “
 In the current VG_Recorder, pressing Y will replay a specific interaction of the recording provided in “Recording Filename” with the pair of replay hands. The current implementation is still not very user-friendly as you have to know which interaction combinations (of the “Replay Object” to play on, the avatar, the hand side, and the interaction ID) are valid. You will get a list of available interactions in the console though that may help you out.
 
 If using VR controllers, clicking the left touchpad in its center has the same effect. However, if you click the touchpad on the right side, VG_Recorder will increase the interaction ID until it finds a valid one. Clicking on the left side will decrease the interaction ID until it finds a valid one.
+
+{% include important.html content="Note that right now the partial and object-specific replay is replay the sequence with the same object name. Since objects with same name could
+possibly have different mesh (size and shape), this is not entirely correct. We are going to fix this in next release." %}
+
 
 ### Important Note on the Files
 

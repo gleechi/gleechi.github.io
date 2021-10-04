@@ -26,6 +26,9 @@ entries:
     - title: Grasp Baking
       url: /grasp_baking.html
       output: web
+    - title: Sensor Record and Replay
+      url: /sensor_record_replay.html
+      output: web
     - title: Glossary
       url: /glossary.html
       output: web

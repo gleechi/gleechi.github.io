@@ -105,3 +105,8 @@ Cone: A constrained 3-dof rotational JointType, object rotates around a pivot po
 
 ScrewJoint: A joint of type Revolute when the parameter ScrewRate > 0, then the object will translate at an amount of ScrewRate (cm / degree) for every degree of rotation.
 
+InteractionSequence: A interaction sequence is one segment of recorded sensor data that contains continuous frames for hand interaction with an object, or without any object. 
+
+SensorRecordAndReplay: Refers to the functionality of VirtualGrasp to allow recording a set of InteractionSequences on SensorData during runtime interaction, and later replaying to reproduce those InteractionSequences.   
+
+SensorData: Refers to the set signals provided by VR hand sensors (either VR controllers like Oculus Touch or Hand Tracking devices like LeapMotion); it contains the position and orientation of the wrist over time, as well as the grasp trigger.
