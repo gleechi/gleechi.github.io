@@ -37,7 +37,7 @@ For any joint type, there are a set of parameters to be used to configure the jo
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ScrewRate}}">Screw Rate</a> | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">Discrete States</a> | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointCenter}}">Joint Center</a> | around which position an object is rotating around, specified by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform's position | E.g. for cone joint, object will rotate round this point | 
-| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">Joint Axis</a> | the axis specified by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform's Zaxis | E.g. for prismatic joint, object will move linearly along this axis | 
+| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">Joint Axis</a> | the axis specified by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform's **Zaxis** | E.g. for prismatic joint, object will move linearly along this axis | 
 
 ### Joint State
 
@@ -67,7 +67,7 @@ Push Pivot is provided to specify along which direction the hand is allowed to a
 And this is only relevant for Push without Physics setup when object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> 
 to INDEX_PUSHABLE (detailes see [Push Interaction](push_interaction.html#push-articulation)).
 
-Similar to provide joint axis through Pivot transform, we use Push Pivot transform's Zaxis to specify this push approach direction. 
+Similar to provide joint axis through Pivot transform, we use Push Pivot transform's **Zaxis** to specify this push approach direction. 
 
 {% include important.html content="Push Pivot is NOT specifying along which direction object moves, 
 but rather specify a preferred hand approach direction. How object moves is defined by Pivot together with other joint parameters." %}

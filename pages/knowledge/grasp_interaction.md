@@ -49,7 +49,9 @@ the user triggers grasp while this hand has selected this object.
 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>
 refers to the runtime process of creating hand grasping configuration -- the wrist and fingers pose  w.r.t the object -- when an user triggers grasp with VR controllers.
-The method for grasp synthesis refers to how this process is done. 
+
+Notice that at the moment when the user pushes trigger button, the hand may not be at an ideal position to grasp object.
+
 
 VG provides two alternative methods for grasp synthesis <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StaticGrasp}}">Static Grasp</a> (SG) 
 and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">Dynamic Grasp</a> (DG). 
@@ -93,6 +95,7 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 <td markdown="span">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">Hand-sensor-immersion does not break.</td>
 </tr>
+<!--
 <tr>
 <td markdown="span" style="text-align: right">Can use GraspStudio to add primary grasps so can ensure high quality grasps through 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JumpPrimaryGrasp}}">Jump Primary Grasp</a></td>
@@ -100,7 +103,7 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 <td markdown="span">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
 <td markdown="span">Not possible to control grasp quality since it is computed in runtime by an algorithm</td>
 </tr>
-<!--
+
 <tr>
 <td markdown="span" style="text-align: right">Difficult to transfer animation signals tuned for one hand to another (needs motion retargeting)</td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
