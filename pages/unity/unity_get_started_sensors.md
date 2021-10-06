@@ -11,29 +11,37 @@ toc: false
 
 ## A First Look at the Sensor Setup
 
-In the default prefab, a sensor setting is configured for the any controller supported through Unity by UnityXR.
+In the default prefab, a sensor setting is configured for the any controller supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.html).
 
-As you can see in the top of the MyVirtualGrasp, you can "auto-setup" the whole configuration for some most commonly used sensors, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers.
+As you can see in the top of the MyVirtualGrasp component, you can "auto-setup" the whole configuration for some most commonly used sensors, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers.
 
-If you do not have a headset, you can use the "Mouse" autosetup and control the hands with the mouse.
+AutoSetup will take care of a number of settings in the MyVirtualGrasp component. You can use VirtualGrasp without a VR headset and your scene does not need to be a VR-enabled scene. If you do not have a headset, you can use the "Mouse" auto-setup and control the hands with the mouse. If you do have an Oculus Quest headset, we recommend to use "Quest" auto-setup after enabling your scene for VR. 
 
-### Setting up VR with UnityXR
+<div class="panel-group" id="accordion1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">Quick Setup: enable VR in Unity with UnityXR</a>
+            </h4>
+        </div>
+        <div id="collapseOne1" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                If you have a headset the easiest way is to setup Unity XR Management for your project as follows:
+                <ul>
+                <li> in the "Edit" menu, choose Project Settings→XR Plugin Management and "Install XR Plugin Management"</li>
+                <li> enable "Oculus" as Plugin-Provider (assuming you are using a Quest)</li>
+                <li> Right click "Camera" in Hierarchy and select "XR→Convert Camera To XR Rig"</li>
+                <li> connect Quest with USB cable (the charging cable)</li>
+                <li> Click "Enable Link" inside the headset</li>
+                </ul>
+                {% include image.html file="unity/unity_xr_plugin.png" alt="Unity XR Plugin." caption="Installing Unity XR Management." %}
+            </div>
+        </div>
+    </div>
+</div>
 
-If you have a headset the easiest way is to setup Unity XR Management for your project as follows:
+{% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp." %}
 
-* in the "Edit" menu, choose Project Settings→XR Plugin Management and "Install XR Plugin Management"
-* enable "Oculus" as Plugin-Provider (assuming you are using a Quest)
-* Right click "Camera" in Hierarchy and select "XR→Convert Camera To XR Rig"
-* connect Quest with USB cable (the charging cable)
-* Click "Enable Link" inside the headset
-
-{% include image.html file="unity/unity_xr_plugin.png" alt="Unity XR Plugin." caption="Installing Unity XR Management." %}
-
-Then, the "XRRig" transform that is created should be assigned to the sensor origin.
-
-{% include image.html file="unity/unity_control_flags.png" alt="VG control flags." caption="" %}
-
-{% include note.html content="You will have noticed that (if you used a fresh project) you did not even need to setup your scene for VR. You can run VirtualGrasp without a VR headset and your scene does not need to be a VR scene." %}
 
 ### FAQs
 
@@ -46,10 +54,11 @@ Then, the "XRRig" transform that is created should be assigned to the sensor ori
         </div>
         <div id="collapseOne" class="panel-collapse collapse noCrossRef">
             <div class="panel-body">
-                There are a few controllers that are supported "out of the box" by VirtualGrasp, called INTERNAL_CONTROLLERS, which means that no additional Unity plugins are needed. Read more on this on <a href="mydoc_external_controllers.html">External Controllers</a>.).
+                There are a few controllers that are supported "out of the box" by VirtualGrasp, called INTERNAL_CONTROLLERs, which means that no additional Unity plugins are needed. EXTERNAL_CONTROLLERs are enabled through separate Unity plugins. Read more on this on <a href="controllers.html">External Controllers</a>.).
             </div>
         </div>
     </div>
+    <!--
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
@@ -62,6 +71,7 @@ Then, the "XRRig" transform that is created should be assigned to the sensor ori
             </div>
         </div>
     </div>
+    -->
 </div>
 
 
