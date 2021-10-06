@@ -1,5 +1,5 @@
 ---
-title: Knowledge Base - Grasp Baking
+title: Knowledge Base - Baking
 sidebar: knowledge_sidebar
 keywords: grasp, baking, cabvg
 permalink: grasp_baking.html
@@ -8,7 +8,11 @@ toc: true
 ---
 
 Like game developers know the concepts of "baking light" or "baking textures" in order to preprocess expensive computations and have faster access during runtime, 
-we call our the preprocessing of interactions "baking." Eventually, the goal is to have grasps for any object, but to get there, we also bake the shape of the object. 
+we call our the preprocessing of interactions "baking." 
+
+## Shape Baking and Grasp Baking
+
+Eventually, the goal is to have grasps for any object, but to get there, we also bake the shape of the object. 
 We thus include "shape baking" as well as "grasp baking" into the baking process.
 
 * In order to bake shape, we need access to the 3D mesh data of the object. The input is the object mesh, the output is a semantic shape analysis of the object (such as its parts).
@@ -19,6 +23,8 @@ We thus include "shape baking" as well as "grasp baking" into the baking process
 
 {% include tip.html content="For VR applications where humanoid hands are used, we have turned off the grasp baking step so that the baking process only include shape baking. 
 As a result, the shape baking result will not be affected if you change 3D rig and 3D mesh of the hand." %}
+
+## Bakes are Project-Dependent
 
 The final baking is encoded in each deployed plugin version. This means that each plugin will be baked project-dependently, i.e. you can use a plugin that has been built for a project A for a project B, but for all objects in project B that have not also been baked in project A, you will not get natural grasps.
 
@@ -72,7 +78,7 @@ The VG_BakingClient will identify itself how to rename and where to place the fi
 * An .so file (for Android/Quest) should become Plugins/Android/libvirtualgrasp-selection.so
 * A .dll file (Windows) should become Plugins/x86_64/virtualgrasp-selection.dll
 
-This should have finalized the process and you will be able to enjoy baked grasps of your interactable objects, without any involvement of other people's resources.
+This should have finalized the process and you will be able to enjoy baked grasps of your interactable objects.
 
 <!--
 Known Issues
