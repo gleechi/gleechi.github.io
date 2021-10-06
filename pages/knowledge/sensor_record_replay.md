@@ -15,7 +15,7 @@ and later replay the whole sequences or individual ones on specific objects.
 This is enabled by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorRecordAndReplay}}">Sensor Record and Replay</a>
 functionality of VirtualGrasp. 
 
-With this functionality, you can at any moment during runtime interaction in a VR application start the recording. 
+With this functionality, you can start the recording at any moment in runtime interaction inside a VR application . 
 The sensor recorder will record <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
 frame by frame, and also automatically segment the frames into segments (we call <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>)
  according to which object the hand is interacting with. 
