@@ -3,7 +3,13 @@ VirtualGrasp: "Gleechi's software for hand interaction."
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
-InteractiveBehaviors: Referrs to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup. 
+ObjectBaking: In VirtualGrasp baking an object is a preprocess of expensive computations associated with an object (and optionally for a hand) needed for faster process of runtime object-hand interaction; it include object's ShapeBaking and optionally GraspBaking for particular hands on this object.
+
+ShapeBaking: Refers to a preprocess of expensive object shape analysis, which is needed for DynamicGrasp synthesis in runtime.
+
+GraspBaking: Refers to a preprocess of generating a fixed set of GraspConfigurations for particular hands on an object, which can be used for StaticGrasp synthesis in runtime.
+
+InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup. 
 
 Grasp: A hand grasps and holds an object.
 
