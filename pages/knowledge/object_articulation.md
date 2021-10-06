@@ -9,7 +9,8 @@ permalink: object_articulation.html
 folder: mydoc
 ---
 
-In VirtualGrasp, we use "Object Articulation" to setup complex object behaviors through a combinition of
+In VirtualGrasp, we use "Object Articulation" to setup an object's 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> through a combinition of
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">object joint</a> and
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Affordance}}">object affordance</a>,
 without relying on physical simulations.

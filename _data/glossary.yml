@@ -3,6 +3,8 @@ VirtualGrasp: "Gleechi's software for hand interaction."
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
+InteractiveBehaviors: Referrs to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup. 
+
 Grasp: A hand grasps and holds an object.
 
 GraspConfiguration: Describes the hand pose when grasping an object; including wrist position, orientation and all finger bone's rotation angles.

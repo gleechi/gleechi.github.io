@@ -11,7 +11,11 @@ folder: mydoc
 
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
-{% include important.html content="To use the VG_Articulation component (as shown in image above), you should first understand the meaning of VirtualGrasp's  [Object Articulation](object_articulation.html#object-articulation)." %}
+The VG_Articulation component provide a graphical user interface in Unity to specify an object's 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">Interactive Behaviors</a>. 
+
+{% include important.html content="To use the VG_Articulation component (as shown in image above), you should first understand the meaning of VirtualGrasp's  
+[Object Articulation](object_articulation.html#object-articulation)." %}
 
 ### Initial Setting
 
