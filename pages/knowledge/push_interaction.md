@@ -27,12 +27,13 @@ VirtualGrasp provides a solution to make push interaction setup easier and intui
 
 When push is done with physics, the selection of object is straightforward -- by contact and apply force. 
 When push is done without physics, there need to be a way to decide which object is to be pushed. 
-VirtualGrasp does this through checking the geometric relation between the 
+VirtualGrasp does this through checking the geometric relation between a 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">Push Agent</a>
 and the object to be pushed. 
-To allow VR developers to be able to specify for example "This touch pad can not be pushed from behind", 
+To allow VR developers to be able to specify for example "This button can not be pushed from below", 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> is added
-onto the object to specify the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">Approach Direction</a> by the push agent for pushing. 
+onto the object to specify the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">Approach Direction</a> 
+by the push agent for pushing. 
 
 Given that
 * The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">Push Agent</a> has been assigned 
@@ -40,11 +41,18 @@ Given that
 and
 * <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> is added to the object to be pushed. 
 
-The decision on which of the pushable objects is to be pushed is done by considering:
+The decision on which of the pushable objects is selected for pushing is done by considering:
 * how close is the push agent to the pushable object
 and
 * how aligned is the push agent's approach direction with the preferred approach direction assigned on the object by 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>. 
+
+{% include image.html file="unity/unity_button_pivot.png" alt="A Unity button." caption="A Unity button"%}
+
+For example image above shows the push pivot transform added to the red button. The blue arrow (Zaxis of this transform) specifies
+the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">Approach Direction</a>. 
+So when index finger is approaching from bottom to the button, opposite to the blue arrow, the object will not be selected for push.
+
 
 Once an object is selected, you can turn on the visual hint to show which object is selected for push without physics. 
 See [VG_HintVisualizer](unity_component_vghintvisualizer.html#unity-component-vghintvisualizer) to learn how to use it.

@@ -13,8 +13,9 @@ be fully reproduced with today's VR software and hardware technology.
 This is especially challenging when we want to have hand presence in VR while grasping and manipulating objects. 
 
 For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarrantee
-that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a> 
-on the selected object. While in real life such a problem is trivial since we can always rely on our fast and advanced sensory-motor feedback
+that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a> 
+on the selected object. While in real life such a problem is trivial since we can always rely on our fast sensory-motor feedback
 loop to correct our hand and finger poses, in VR such a feedback does not exist. 
 
 VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
@@ -48,8 +49,8 @@ the user triggers grasp while this hand has selected this object.
 ### Grasp Synthesis Method
 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>
-refers to the runtime process of creating hand grasping configuration -- the wrist and fingers pose  w.r.t the object -- when an user triggers grasp with VR controllers.
-The method for grasp synthesis refers to how this process is done. 
+refers to the runtime process of creating hand <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a>
+ -- the wrist and fingers pose  w.r.t the object -- when an user triggers grasp with VR controllers.
 
 VG provides two alternative methods for grasp synthesis <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StaticGrasp}}">Static Grasp</a> (SG) 
 and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">Dynamic Grasp</a> (DG). 
@@ -93,6 +94,7 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 <td markdown="span">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">Hand-sensor-immersion does not break.</td>
 </tr>
+<!--
 <tr>
 <td markdown="span" style="text-align: right">Can use GraspStudio to add primary grasps so can ensure high quality grasps through 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JumpPrimaryGrasp}}">Jump Primary Grasp</a></td>
@@ -100,7 +102,7 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 <td markdown="span">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
 <td markdown="span">Not possible to control grasp quality since it is computed in runtime by an algorithm</td>
 </tr>
-<!--
+
 <tr>
 <td markdown="span" style="text-align: right">Difficult to transfer animation signals tuned for one hand to another (needs motion retargeting)</td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>

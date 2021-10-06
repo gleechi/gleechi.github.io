@@ -3,6 +3,8 @@ VirtualGrasp: "Gleechi's software for hand interaction."
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
+InteractiveBehaviors: Referrs to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup. 
+
 Grasp: A hand grasps and holds an object.
 
 GraspConfiguration: Describes the hand pose when grasping an object; including wrist position, orientation and all finger bone's rotation angles.
@@ -71,7 +73,7 @@ JointAxis: The axis of the joint, specified by the Pivot transform’s position;
 
 Pivot: The pivot transform needed to specify the JointCenter (position component of the transform and JointAxis (zaxis of the transform) of an object Joint.
 
-PushPivot: A transform to specify along which direction (zaxis of the transform) the hand can approach and push an object that has push affordace; note this direction is not the direction of object movement.
+PushPivot: A transform to specify along which direction (zaxis of the transform) the hand can approach and push an object that has push affordace; this direction is not the direction of object movement, but only used for object selection for push without physics situation.
 
 ApproachDirection: The direction along which the PushAgent approaches the object to be pushed; PushPivot assigned to a pushable object is used to specify a preferred approach direction by the PushAgent. 
 
