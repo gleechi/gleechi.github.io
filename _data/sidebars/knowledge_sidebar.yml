@@ -23,7 +23,7 @@ entries:
     - title: Debug Files
       url: /debug_files.html
       output: web
-    - title: Baking
+    - title: Object Baking
       url: /grasp_baking.html
       output: web
     - title: Sensor Record and Replay

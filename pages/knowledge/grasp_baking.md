@@ -20,9 +20,17 @@ we call our the preprocessing of interactions "baking object".
 
 * In order to bake grasps, we additionally need access to the 3D rig and 3D mesh of the hand. The input is the baked object shape and the hand, the output is a set of grasps. 
 
-{% include important.html content="If any of these inputs changes, the object needs to be rebaked." %}
+### When a new bake need to be requested?
 
-{% include tip.html content="For VR applications where humanoid hands are used, we have turned off the grasp baking step so that the baking process only include shape baking. 
+| What changed | Need new shape baking? | Need new grasp baking? | Why? |
+|-------|--------|---------|---------|
+| Object mesh | Yes | Yes | because the shape changed | 
+| Object scale | Yes | Yes | because grasp is size sensitive | 
+| Object pivot (origin) | Yes | Yes | because shape baking result is stored in object's coordinate frame | 
+| Hand rig | No | Yes | because rig defines fundamental kinematics structure of the hand  | 
+| Hand mesh | No | Yes | because finger thickness affects grasp configurations  | 
+
+{% include tip.html content="For VR applications where humanoid hands are used, we have turned off the grasp baking step so that the object baking process only include shape baking. 
 As a result, the shape baking result will NOT be affected if you change 3D rig and 3D mesh of the hand." %}
 
 ## Bakes are Project-Dependent
