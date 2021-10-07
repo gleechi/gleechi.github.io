@@ -18,7 +18,9 @@ and for graspable object selection .
 
 If push hints is enabled, for any objects that are setup for push without physics, there will be a push hint drawn on the surface of the selected object in Unity. 
 
-By default the push hint takes the shape of a circle, and its size will increase as the finger tip is closer to the object, and decrease as it moves far away.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FX4HQCO_hd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+By default the push hint takes the shape of a circle (see video above), and its size will increase as the finger tip is closer to the object, and decrease as it moves far away.
 And when finger tip is too far from the object, or 
 if the approach direction deviates too much from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>,
 this circle will disappear indicating the object is no longer selected for push.
@@ -27,7 +29,7 @@ See Push without Physics section in [Push Interaction](push_interaction.html#pus
 
 ### Grasp Hints
 
-If grasp hints is enabled, the grasp selection sphere attached to the hand will show up, and when an object is selected, this sphere will change color.
+If grasp hints is enabled, the graspable object selection sphere attached to the hand will show up, and when an object is selected, this sphere will change color.
 
 See [Grasp Interaction](grasp_interaction.html#grasp-interaction) to learn about the process of graspable object selection.
 
