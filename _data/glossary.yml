@@ -61,7 +61,7 @@ GraspSpeed: A parameter in unit (second) specifying how long it takes for hand t
 
 ReleaseSpeed: A parameter in unit (second) specifying how long it takes for hand to move back to SensorPose once a grasp is released. 
 
-JointLimit: The parameter for object articulation of any joint types. For 1-dof joints (PRISMATIC and REVOLUTE) the limit is defined by a range of scalar values [Min, Max]. For 3-dof rotatioal joint (CONE) the limit is defined by a [swing, twist] angles. 
+JointLimit: The parameter for object articulation of any joint types. For 1-dof joints (PRISMATIC and REVOLUTE) the limit is defined by a range of scalar values [Min, Max]. For 3-dof rotational joint (CONE) the limit is defined by a [swing, twist] angles. 
 
 SwingAngle: For 3-dof Cone joint, this is an angle describes how much object swing away from the joint axis (at the center of the Cone-shaped joint limit boundary).
 
@@ -79,7 +79,7 @@ JointAxis: The axis of the joint, specified by the Pivot transform’s position;
 
 Pivot: The pivot transform needed to specify the JointCenter (position component of the transform and JointAxis (zaxis of the transform) of an object Joint.
 
-PushPivot: A transform to specify along which direction (zaxis of the transform) the hand can approach and push an object that has push affordace; this direction is not the direction of object movement, but only used for object selection for push without physics situation.
+PushPivot: A transform to specify along which direction (zaxis of the transform) the hand can approach and push an object that has push affordance; this direction is not the direction of object movement, but only used for object selection for push without physics situation.
 
 ApproachDirection: The direction along which the PushAgent approaches the object to be pushed; PushPivot assigned to a pushable object is used to specify a preferred approach direction by the PushAgent. 
 
@@ -95,7 +95,7 @@ Bounce: One of object's StateAffordance that is only relevant for 1-dof joints; 
 
 TwoStage: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the highest and lowest values of the DiscreteStates in an alternating order.
 
-Snaps: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it snapes to the closest value of the DiscreteStates.
+Snaps: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it snaps to the closest value of the DiscreteStates.
 
 Joint: Joint is where two bones or GameObjects meet, and in VirtualGrasp it defines how a child object moves w.r.t. its parent (not the other way around); and different from the physics-based joint systems in some game engines like Unity, VG's joint system is non-physical (kinematic).
 

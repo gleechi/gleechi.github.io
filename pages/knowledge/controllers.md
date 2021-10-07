@@ -43,7 +43,7 @@ It is called external, because - instead of an internal native library - an exte
 
 ### Considerations to Take Into Account
 
-When installing a controller plugin into your project, the same native libraries will be placed somehere on your system, most probably as part of the plugin that you installed into your project. With the plugin, a number of components, scripts, tutorials, etc may also be installed. Since you may not use many of them, this may be an **overhead to take**.
+When installing a controller plugin into your project, the same native libraries will be placed somewhere on your system, most probably as part of the plugin that you installed into your project. With the plugin, a number of components, scripts, tutorials, etc may also be installed. Since you may not use many of them, this may be an **overhead to take**.
 
 Using a component, script, or prefab, the plugin will follow to allow you to control a pair of hands. Often, only a **particular hand model** that comes with the plugin is supported out of the box (with fixed assumptions on the rig), and mostly this hand is directly controlled by the plugin during runtime. 
 

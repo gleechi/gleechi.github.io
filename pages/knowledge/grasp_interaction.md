@@ -12,7 +12,7 @@ To create immersive interactive experiences in a virtual environment is difficul
 be fully reproduced with today's VR software and hardware technology. 
 This is especially challenging when we want to have hand presence in VR while grasping and manipulating objects. 
 
-For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarrantee
+For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarantee
 that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a> 
 on the selected object. While in real life such a problem is trivial since we can always rely on our fast sensory-motor feedback
@@ -179,7 +179,7 @@ Because of this difference, there are different alternative solutions to pose th
 
 ### Choosing Synthesis Method and Interaction Type
 
-As explained in the previous sections, selecting different combinitions of synthesis method and interaction type will create different user experiences. 
+As explained in the previous sections, selecting different combinations of synthesis method and interaction type will create different user experiences. 
 Due to the nature of each option, there may be preferences of how to combine the two parameters. The table below gives some hints: 
 
 

@@ -10,7 +10,7 @@ folder: mydoc
 ---
 
 In VirtualGrasp, we use "Object Articulation" to setup an object's 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> through a combinition of
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> through a combination of
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">object joint</a> and
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Affordance}}">object affordance</a>,
 without relying on physical simulations.
@@ -70,7 +70,7 @@ Then what is **Push Pivot**?
 
 Push Pivot is provided to specify along which direction the hand is allowed to approach and apply push action. 
 And this is only relevant for Push without Physics setup when object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> 
-to INDEX_PUSHABLE (detailes see [Push Interaction](push_interaction.html#push-articulation)).
+to INDEX_PUSHABLE (details see [Push Interaction](push_interaction.html#push-articulation)).
 
 Similar to provide joint axis through Pivot transform, we use Push Pivot transform's **Zaxis** to specify this push approach direction. 
 
@@ -121,7 +121,7 @@ mass or inertia specified in the game engine.
 
 ### Graphical User Interface
 
-The image below shows Unity's VG_Articulation component as an example for the GUI of Object Artiulation.
+The image below shows Unity's VG_Articulation component as an example for the GUI of Object Articulation.
 
 Note that the VirtualGrasp's object articulation is generic for all other client engines like Unreal.
 

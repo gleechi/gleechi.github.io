@@ -80,9 +80,9 @@ a different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.g
 (i.e. min = 0), but to slightly lower position, we set two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">Discrete States</a> with first value 0.004.
 
 
-{% include important.html content="When BOUNCE affordace is chosen, object' Joint State will bounce back to the smallest value of the Discrete States.
+{% include important.html content="When BOUNCE affordance is chosen, object' Joint State will bounce back to the smallest value of the Discrete States.
 Since by default Discrete States will take the two range values from Joint Limits [min, max], so if Discrete States is not provided, Joint State bounce back to min value. 
-If you want Joint State to bounce to a differet value from min, you should define Discrete States with first (smallest) value different from Joint Limit's min value, 
+If you want Joint State to bounce to a different value from min, you should define Discrete States with first (smallest) value different from Joint Limit's min value, 
 as shown in above image, smallest discrete value 0.004 is bigger than Min value 0. Then the Joint State will bounce back to 0.004 not 0." %}
 
 
