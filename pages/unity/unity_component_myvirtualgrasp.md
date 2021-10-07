@@ -9,8 +9,6 @@ permalink: unity_component_myvirtualgrasp.html
 folder: mydoc
 ---
 
-## [THIS PAGE NEEDS TO BE UPDATED]
-
 ### Sensor setup
 {% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="VG Sensors." caption="VG Sensors" %}
 
