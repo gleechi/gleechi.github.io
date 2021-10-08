@@ -1,6 +1,6 @@
 ---
-title: Knowledge Base - Push Interaction
-sidebar: knowledge_sidebar
+title: Push Interaction
+sidebar: main_sidebar
 keywords: affordance, push, index_finger_pushable
 permalink: push_interaction.html
 folder: knowledge

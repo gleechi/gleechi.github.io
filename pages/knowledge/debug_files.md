@@ -1,6 +1,6 @@
 ---
-title: Knowledge Base - Debug Files
-sidebar: knowledge_sidebar
+title: Debug Files
+sidebar: main_sidebar
 keywords: vg_tmp
 permalink: debug_files.html
 folder: knowledge

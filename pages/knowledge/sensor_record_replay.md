@@ -1,6 +1,6 @@
 ---
-title: Knowledge Base - Sensor Record and Replay
-sidebar: knowledge_sidebar
+title: Sensor Record and Replay
+sidebar: main_sidebar
 keywords: interaction_sequence, sensor_record, sensor_replay, record, replay
 permalink: sensor_record_replay.html
 folder: knowledge

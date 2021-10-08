@@ -1,6 +1,6 @@
 ---
-title: Knowledge Base - Glossary
-sidebar: knowledge_sidebar
+title: Glossary
+sidebar: main_sidebar
 keywords: glossary, index, site.data.glossary
 permalink: glossary.html
 folder: knowledge

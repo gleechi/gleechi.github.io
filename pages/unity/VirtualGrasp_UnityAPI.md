@@ -1,8 +1,8 @@
 ---
 title: Unity API
-sidebar: unity_sdk_sidebar
+sidebar: main_sidebar
 keywords: grasp, baking, cabvg
-permalink: VirtualGrasp_UnityAPI.html
+permalink: virtualgrasp_unityapi.html
 folder: unity
 toc: true
 ---

@@ -8,9 +8,10 @@ Please choose your chapter of interest in the top navigation or menu navigation 
 
 As a general guideline:
 
-* Look for **Explanations** in [Knowledge Base](controllers.html) to find out about the fundamental concepts in VirtualGrasp.
-* Look for **How-To Guides** in [VG components](unity_component_myvirtualgrasp.html) to see how VG api is used in unity scripts to solve various problems.
-* Look for **References** in [API reference](VirtualGrasp_UnityAPI.html) to get a full list of functions and components of the VirtualGrasp API.
-* **Tutorials** is planned to be guided video tutorials prepared by our team (not available yet).
+* **Tutorials** take you by the hand through a series of steps to learn how to use VirtualGrasp.
+* **Explanations** find out about the fundamental concepts in VirtualGrasp.
+* **How-To Guides** are recipes. They guide you through the steps involved in addressing key problems and use-cases.
+* **References** contain technical reference for VirtualGrasp APIs and components as well as release notes. They describe how it works and how to use it but assume that you have a basic understanding of key concepts in **Explanations** chapter.
+
 
 {% include image.html file="docs_overview.png" alt="Documentation overview." caption="Documentation Overview [source: https://documentation.divio.com]." %}

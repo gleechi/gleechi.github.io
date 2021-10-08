@@ -26,10 +26,14 @@ topnav_dropdowns:
     #      external_url: http://idratherbewriting.com/category-jekyll/
     - title: Chapters
       folderitems:
-        - title: Knowledge Base
-          url: /knowledge_base.html
-        - title: VirtualGrasp VR Unity SDK
-          url: /unity_get_started.html
+        - title: Tutorials
+          url: /unity_get_started_installation.html
+        - title: Explanations
+          url: /controllers.html
+        - title: How-To Guides
+          url: /unity_component_myvirtualgrasp.html
+        - title: References
+          url: /virtualgrasp_unityapi.html
         
      #   - title: Product 2
      #     url: /p2_landing_page.html

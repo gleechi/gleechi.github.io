@@ -1,10 +1,10 @@
 ---
-title: Knowledge Base - Object Articulation
+title: Object Articulation
 #tags: [getting_started]
 keywords: component, object, affordance, joint
 #last_updated: July 16, 2016
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
-sidebar: knowledge_sidebar
+sidebar: main_sidebar
 permalink: object_articulation.html
 folder: mydoc
 ---

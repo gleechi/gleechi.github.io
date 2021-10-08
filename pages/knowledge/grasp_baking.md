@@ -1,6 +1,6 @@
 ---
-title: Knowledge Base - Object Baking
-sidebar: knowledge_sidebar
+title: Object Baking
+sidebar: main_sidebar
 keywords: grasp, baking, cabvg
 permalink: grasp_baking.html
 folder: knowledge

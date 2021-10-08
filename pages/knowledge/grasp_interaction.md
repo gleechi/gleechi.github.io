@@ -1,6 +1,6 @@
 ---
-title: Knowledge Base - Grasp Interaction
-sidebar: knowledge_sidebar
+title: Grasp Interaction
+sidebar: main_sidebar
 keywords: grasp, static_grasp, dynamic_grasp, jump_grasp, trigger_grasp, preview_grasp, preview_only, sticky_hand
 permalink: grasp_interaction.html
 folder: knowledge

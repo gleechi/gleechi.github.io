@@ -1,6 +1,6 @@
 ---
-title: Knowledge Base - Controllers
-sidebar: knowledge_sidebar
+title: Controllers
+sidebar: main_sidebar
 keywords: controller, internal, external
 permalink: controllers.html
 folder: knowledge

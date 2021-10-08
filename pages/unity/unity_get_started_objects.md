@@ -2,7 +2,7 @@
 title: Getting Started in Unity - Objects
 series: "Getting Started in Unity series"
 weight: 4
-sidebar: unity_sdk_sidebar
+sidebar: main_sidebar
 keywords: hand, object, avatar, install, quickstart
 permalink: unity_get_started_objects.html
 folder: mydoc

@@ -8,9 +8,98 @@ entries:
   - title: Chapters
     output: web
     folderitems:
-    - title: Knowledge Base
-      url: /controllers.html
+    - title: Welcome
+      url: /index.html
       output: web
-    - title: VirtualGrasp Unity SDK
-      url: /unity_get_started.html
-      output: web
+      subfolders:
+      
+      - title: Tutorials
+        output: web
+        subfolderitems:
+        - title: Installation
+          url: /unity_get_started_installation.html
+          output: web
+        - title: Avatar Setup
+          url: /unity_get_started_avatars.html
+          output: web
+        - title: Sensor Setup
+          url: /unity_get_started_sensors.html
+          output: web
+        - title: Object Setup
+          url: /unity_get_started_objects.html
+          output: web
+          
+      - title: Explanations
+        output: web
+        subfolderitems:            
+        - title: Controllers
+          url: /controllers.html
+          output: web    
+        - title: Object Articulation
+          url: /object_articulation.html
+          output: web
+        - title: Grasp Interaction
+          url: /grasp_interaction.html
+          output: web
+        - title: Push Interaction
+          url: /push_interaction.html
+          output: web
+        - title: Debug Files
+          url: /debug_files.html
+          output: web
+        - title: Object Baking
+          url: /grasp_baking.html
+          output: web
+        - title: Sensor Record and Replay
+          url: /sensor_record_replay.html
+          output: web
+        - title: Glossary
+          url: /glossary.html
+          output: web
+          
+      - title: How-To Guides
+        output: web
+        subfolderitems:
+        - title: My VirtualGrasp
+          url: /unity_component_myvirtualgrasp.html
+          output: web
+        - title: VG_Articulation
+          url: /unity_component_vgarticulation.html   
+          output: web
+        - title: VG_Interactable
+          url: /unity_component_vginteractable.html   
+          output: web
+        - title: VG_Recorder
+          url: /unity_component_vgrecorder.html
+          output: web
+        - title: VG_GraspStudio
+          url: /unity_component_vggraspstudio.html
+          output: web    
+        - title: VG_HintVisualizer
+          url: /unity_component_vghintvisualizer.html
+          output: web
+        - title: VG_PostAnimator
+          url: /unity_component_vgpostanimator.html
+          output: web
+          
+      - title: References
+        output: web
+        subfolderitems:
+        - title: Release Notes
+          url: /release_notes.html
+          output: web
+        - title: Unity API
+          url: /virtualgrasp_unityapi.html
+          output: web
+        - title: Unity Scripts
+          url: /virtualgrasp_unityapi.html#scripts
+          output: web
+        - title: Unity Enums
+          url: /virtualgrasp_unityapi.html#enums
+          output: web
+        - title: Unity Components
+          url: /virtualgrasp_unityapi.html#components
+          output: web
+        - title: Unity Events
+          url: /virtualgrasp_unityapi.html#events
+          output: web

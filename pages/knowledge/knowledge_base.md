@@ -1,6 +1,6 @@
 ---
 title: Knowledge Base
-sidebar: knowledge_sidebar
+sidebar: main_sidebar
 keywords: 
 permalink: knowledge_base.html
 folder: knowledge
