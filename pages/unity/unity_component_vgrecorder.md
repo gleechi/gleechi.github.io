@@ -10,29 +10,28 @@ folder: mydoc
 ---
 
 
-{% include important.html content="To use the VG_Recorder component, you should first learn about VirtualGrasp's  [Sensor Record and Replay](sensor_record_replay.html#sensor-record-replay)." %}
+The VirtualGrasp library (VG_Controller) has a couple of [API functions](VirtualGrasp_UnityAPI.html#setprocessbyrecordedframe) 
+for recording and replaying <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>. 
+For convenience, the SDK includes a VG_Recorder <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>
+as a customizable component. You can use it to access the major functionalities of the sensor recording.
 
+{% include important.html content="To use the VG_Recorder, you should first learn about VirtualGrasp's  [Sensor Record and Replay](sensor_record_replay.html#sensor-record-replay)." %}
+
+{% include image.html file="unity/unity_vg_recorder.png" alt="VG Recorder" caption="VG_Recorder Component." %}
 
 ### Use cases
-
-An example use case is “replaying entire instruction sequences”.
-
-Another example use case is “replaying a specific object interaction for instruction”.
-
-Another example use case is “quick testing of a whole interaction sequences”.
 
 {% include youtube.html id="o5F5tUb8RQM" caption="Record Replay 1." %}
 
 {% include youtube.html id="7aRCZThEHOE" caption="Record Replay 2" %}
 
+Some example use cases are:
+* “replaying entire instruction sequences”.
+* “replaying a specific object interaction for instruction”.
+* “quick testing of a whole interaction sequences”.
 
 ### How to Record Sensor Data
 
-The VirtualGrasp library (VG_Controller) has a couple of [API functions](VirtualGrasp_UnityAPI.html#setprocessbyrecordedframe) for recording and replaying 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>. 
-For convenience, the plugin includes a VG_Recorder script that you can use to access the major functionalities of the sensor recording.
-
-{% include image.html file="unity/unity_vg_recorder.png" alt="VG Recorder" caption="VG_Recorder Component." %}
 
 In the current VG_Recorder, pressing R (KeyCode.R) will toggle between starting recording and stopping recording. 
 When you stop recording, a file with the recorded data will be written, named after the filename you provided in the “Recording Filename”. 

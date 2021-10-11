@@ -9,7 +9,9 @@ permalink: unity_component_vggraspstudio.html
 folder: mydoc
 ---
 
-VirtualGrasp Studio is provided as a component of the VirtualGrasp Unity plugin, and thus only available in Unity for now. 
+VG_GraspStudio is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
+It is provided as a component of the VirtualGrasp Unity plugin, and thus only available in Unity for now. 
+The MonoBehavior provides a tutorial on the VG API functions for accessing static grasps as well as using the labeling interface.
 
 At the moment, it serves as a high-level visualizing tool in which you can not only review all grasps that you have in a project, but also annotate them.
 

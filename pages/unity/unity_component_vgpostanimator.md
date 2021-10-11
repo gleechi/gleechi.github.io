@@ -9,7 +9,8 @@ permalink: unity_component_vgpostanimator.html
 folder: mydoc
 ---
 
-
+VG_PostAnimator is is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
+It exemplifies how you could overwrite (post-animate) grasp animations that are handled by VirtualGrasp.
 
 ### Use cases
 

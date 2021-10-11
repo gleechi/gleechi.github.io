@@ -9,6 +9,11 @@ permalink: unity_component_myvirtualgrasp.html
 folder: mydoc
 ---
 
+MyVirtualGrasp is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
+It is customizable main tutorial component that inherits from VG_MainScript, which wraps the main communication functions of the VirtualGrasp API. 
+VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity. 
+All the API functions you want to use in your own scripts can be accessed through VG_Controller.
+
 ### Sensor setup
 {% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="VG Sensors." caption="VG Sensors" %}
 

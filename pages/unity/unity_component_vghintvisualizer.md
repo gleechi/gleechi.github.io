@@ -9,10 +9,12 @@ permalink: unity_component_vghintvisualizer.html
 folder: mydoc
 ---
 
-{% include image.html file="unity/unity_vg_hint_visualizer.png" alt="VG HintVisualizer" caption="MyVirtualGrasp script - VG_HintVisualizer Component." %}
+VG_HintVisualizer is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
+It can be used as a Unity component to visualize some hints such as a selection sphere to debug graspable object selection or a push sphere 
+to guide pushing interactions. 
+The MonoBehavior provides a tutorial on the VG API functions for accessing the push state (GetPushCircle).
 
-The VG_HintVisualizer component can be used to visualize in Unity the hints for pushable object selection 
-and for graspable object selection . 
+{% include image.html file="unity/unity_vg_hint_visualizer.png" alt="VG HintVisualizer" caption="MyVirtualGrasp script - VG_HintVisualizer Component." %}
 
 ### Push Hints
 

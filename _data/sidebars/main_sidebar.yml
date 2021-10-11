@@ -63,6 +63,12 @@ entries:
         - title: My VirtualGrasp
           url: /unity_component_myvirtualgrasp.html
           output: web
+        - title: My VirtualGraspBurst
+          url: /unity_component_myvirtualgraspburst.html
+          output: web
+        - title: VG_ExternalControllerManager
+          url: /unity_component_vgexternalcontrollermanager.html   
+          output: web
         - title: VG_Articulation
           url: /unity_component_vgarticulation.html   
           output: web
@@ -78,8 +84,17 @@ entries:
         - title: VG_HintVisualizer
           url: /unity_component_vghintvisualizer.html
           output: web
+        - title: VG_HandVisualizer
+          url: /unity_component_vghandvisualizer.html
+          output: web
+        - title: VG_HighLighter
+          url: /unity_component_vghighlighter.html
+          output: web
         - title: VG_PostAnimator
           url: /unity_component_vgpostanimator.html
+          output: web
+        - title: VG_StateVisualizer
+          url: /unity_script_vgstatevisualizer.html
           output: web
         - title: VG_Onboarding_Task1
           url: /unity_vgonboarding_task1.html
