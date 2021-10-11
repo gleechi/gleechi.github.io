@@ -81,6 +81,15 @@ entries:
         - title: VG_PostAnimator
           url: /unity_component_vgpostanimator.html
           output: web
+        - title: VG_Onboarding_Task1
+          url: /unity_vgonboarding_task1.html
+          output: web
+        - title: VG_Onboarding_Task2
+          url: /unity_vgonboarding_task2.html
+          output: web
+        - title: VG_Onboarding_Task3
+          url: /unity_vgonboarding_task3.html
+          output: web
           
       - title: References
         output: web

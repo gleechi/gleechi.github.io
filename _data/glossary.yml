@@ -118,3 +118,5 @@ InteractionSequence: A interaction sequence is one segment of recorded sensor da
 SensorRecordAndReplay: Refers to the functionality of VirtualGrasp to allow recording a set of InteractionSequences on SensorData during runtime interaction, and later replaying to reproduce those InteractionSequences.   
 
 SensorData: Refers to the set signals provided by VR hand sensors (either VR controllers like Oculus Touch or Hand Tracking devices like LeapMotion); it contains the position and orientation of the wrist over time, as well as the grasp trigger.
+
+SelectionWeight: Refers to the weight specifying the likelihood of an object to be selected for interaction (grasp or push) with hands; by default all object have 1 as selection weight; 0 means an object is completely hidden for interaction, and there is no upper boundary for this weight.
