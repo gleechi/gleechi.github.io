@@ -12,13 +12,12 @@ folder: mydoc
 VG_PostAnimator is is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
 It exemplifies how you could overwrite (post-animate) grasp animations that are handled by VirtualGrasp.
 
-### Use cases
+{% include image.html file="unity/unity_vg_post_animator.png" alt="VG PostAnimator" caption="VG_PostAnimator Component." %}
+
 
 Most common use cases of VG_PostAnimator component 
 is to create a finger animation on object, for example pushing a button on an electric drill.
 
 Usually you create a grasp using an already created static grasp through [VG_GraspStudio](unity_component_vggraspstudio.html#grasp-studio)
 
-### How to
 
-{% include image.html file="unity/unity_vg_post_animator.png" alt="VG PostAnimator" caption="MyVirtualGrasp script - VG_PostAnimator Component." %}

@@ -16,6 +16,10 @@ such as OnObjectSelected and OnObjectDeselected.
 
 {% include image.html file="unity/unity_vg_highlighter.png" alt="VG HighLighter" caption="VG_HighLighter Component." %}
 
+
+@kai please record a video to replace this one.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FX4HQCO_hd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### How to Use
 
 When you want to enable highlighting, it is recommended to add this component on the same GameObject where your MyVirtualGrasp script is.

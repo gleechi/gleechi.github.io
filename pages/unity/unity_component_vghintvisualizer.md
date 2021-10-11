@@ -14,7 +14,7 @@ It can be used as a Unity component to visualize some hints such as a selection 
 to guide pushing interactions. 
 The MonoBehavior provides a tutorial on the VG API functions for accessing the push state (GetPushCircle).
 
-{% include image.html file="unity/unity_vg_hint_visualizer.png" alt="VG HintVisualizer" caption="MyVirtualGrasp script - VG_HintVisualizer Component." %}
+{% include image.html file="unity/unity_vg_hint_visualizer.png" alt="VG HintVisualizer" caption="VG_HintVisualizer Component." %}
 
 ### Push Hints
 

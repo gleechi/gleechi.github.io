@@ -13,16 +13,15 @@ VG_HandVisualizer is a <a href="#" data-toggle="tooltip" data-original-title="{{
 It provides a tool to visualize the hand bones in Unity. 
 The MonoBehavior provides a tutorial on the VG API functions for accessing specific bones / elements of the hands
 
+{% include image.html file="unity/unity_vg_hand_visualizer.png" alt="VG HandVisualizer" caption="VG_HandVisualizer Component." %}
+
+@kai please record a video to replace this one.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FX4HQCO_hd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### The Component
-
-{% include image.html file="unity/unity_vg_hand_visualizer.png" alt="VG HintVisualizer" caption="MyVirtualGrasp script - VG_HintVisualizer Component." %}
-
-Is the ID of the avatar whose hands you want to visualize. 
 
 
 ### How to Use
+ 
 
 When you want to enable visualizing the hand, it is recommended to add this component on the same GameObject where your MyVirtualGrasp script is.
 
