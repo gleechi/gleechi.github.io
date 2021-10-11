@@ -21,8 +21,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 #### Tips for VR developers
 
-* Which <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">Joint Type</a> should be assigned to the antenna and two knobs?
-* How to let objects placed on plate to follow the plate stably without easily rolling and falling down due to physical reactions. Can you make use of VG joint changes?
+* How to let objects placed on plate to follow the plate stably without easily rolling and falling down due to physical reactions. Can we use **ChangeObjectJoint**?
 
 #### Solution
 
