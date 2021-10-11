@@ -25,7 +25,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 * Which <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">Joint Type</a> should be assigned to the button?
 * Which <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a> to use to allow button be switch between these two states?
 * How to determine when light should be on or off (use **GetObjectState** function)?
-* More systemtic understanding can be obtained in explanations of [Object Articulation](object_articulation.html#background).
+* More systemtic understanding can be obtained in explanations of [Push Interaction](push_interaction.html#push-without-physics).
 
 #### Solution
 
