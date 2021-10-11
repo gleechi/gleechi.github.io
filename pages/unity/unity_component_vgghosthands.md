@@ -1,0 +1,27 @@
+---
+title: VG_GhostHands Component
+#tags: [getting_started]
+keywords: component, GhostHands
+#last_updated: July 16, 2016
+#summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
+sidebar: main_sidebar
+permalink: unity_component_vgghosthands.html
+folder: mydoc
+---
+
+VG_GhostHands is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
+It provides a tool to create ghost hands in Unity.
+
+{% include image.html file="unity/unity_vg_ghost_hands.png" alt="VG GhostHands" caption="VG_GhostHands Component." %}
+
+@kai please record a video to replace this one.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FX4HQCO_hd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+### How to Use
+ 
+
+When you want to enable ghost hands, it is recommended to add this component on the same GameObject where your MyVirtualGrasp script is.
+
+{% include important.html content="You should not add this component to individual objects because this is a global setting that is not linked to specific objects." %}

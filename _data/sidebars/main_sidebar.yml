@@ -90,6 +90,9 @@ entries:
         - title: VG_HighLighter
           url: /unity_component_vghighlighter.html
           output: web
+        - title: VG_GhostHands
+          url: /unity_component_vgghosthands.html
+          output: web
         - title: VG_PostAnimator
           url: /unity_component_vgpostanimator.html
           output: web
