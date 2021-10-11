@@ -97,7 +97,7 @@ entries:
           url: /unity_component_vgpostanimator.html
           output: web
         - title: VG_StateVisualizer
-          url: /unity_script_vgstatevisualizer.html
+          url: /unity_component_vgstatevisualizer.html
           output: web
         - title: VG_Onboarding_Task1
           url: /unity_vgonboarding_task1.html
