@@ -117,15 +117,12 @@ entries:
           output: web
         - title: Unity API
           url: /virtualgrasp_unityapi.html
-          output: web
-        - title: Unity Scripts
-          url: /virtualgrasp_unityapi.html#scripts
+          output: web        
+        - title: Unity API functions
+          url: /virtualgrasp_unityapi.html#virtualgrasp_controller_functions
           output: web
         - title: Unity Enums
           url: /virtualgrasp_unityapi.html#enums
-          output: web
-        - title: Unity Components
-          url: /virtualgrasp_unityapi.html#components
           output: web
         - title: Unity Events
           url: /virtualgrasp_unityapi.html#events
