@@ -26,7 +26,7 @@ Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system i
 | Floating | 6-dof | unconstrained, freely floating object | 
 | Fixed | 0-dof | constrained, as if an integrated object with its parent | 
 | Revolute (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ScrewJoint}}">Screw</a>) | 1-dof | constrained, rotate around an axis through a pivot point (joint center), limited by an angle range | 
-| Prismatic | 1-dof | constrained, move linearly along an axis through a pivot point (joint center), limited by an distane range | 
+| Prismatic | 1-dof | constrained, move linearly along an axis through a pivot point (joint center), limited by an distance range | 
 | Cone | 3-dof | constrained, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
 
 For any joint type, there are a set of parameters to be used to configure the joint:

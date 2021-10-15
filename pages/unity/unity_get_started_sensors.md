@@ -11,7 +11,7 @@ toc: false
 
 ## A First Look at the Sensor Setup
 
-In the default prefab, a sensor setting is configured for the any controller supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.html).
+In the default prefab, a sensor setting is configured for any controller supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.html).
 
 As you can see in the top of the MyVirtualGrasp component, you can "auto-setup" the whole configuration for some most commonly used sensors, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers.
 

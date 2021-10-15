@@ -37,7 +37,7 @@ Be aware of the following:
 
 * Note that this will make an object interactable (i.e. selectable and movable) with the hands through the VG Interaction Engine. If you also get natural grasps depends on if  the object has been "baked." Read more on baking in the [Knowledge Base - Baking](grasp_baking.html).
 * Only GameObjects with a Mesh connected to it should receive the "Object" tag. Otherwise, you will receive a warning.
-* All of these meshes need to be marked as "readable" in the model inspector. Otherwise, you will receive a warning / error.
+* All of these meshes need to have the "Read/Write enabled" checkbox checked in the model inspector. Otherwise, you will receive a warning / error
 
 <!--
 ### Video Tutorial 

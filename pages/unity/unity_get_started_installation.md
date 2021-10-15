@@ -17,7 +17,7 @@ toc: false
 
 ## Installing the Unity Engine plugin
 
-If you start from the scratch, just create a new, empty project in Unity. It is recommended to always use the most recent Unity version in terms of major version number (e.g., 2020). Unity and the VG plugin are very robust in terms of up- or downgrading inside a major version for your projects.
+If you start from scratch, just create a new, empty project in Unity. It is recommended to always use the most recent Unity version in terms of major version number (e.g., 2020). Unity and the VG plugin are very robust in terms of up- or downgrading inside a major version for your projects.
 
 {% include image.html file="unity/unity_new_project.png" alt="New Unity Project" caption="Create a New Project in Unity" %}
 
