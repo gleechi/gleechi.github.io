@@ -47,7 +47,7 @@ If you replay the whole sequences of <a href="#" data-toggle="tooltip" data-orig
  without any changes, your own VR hands will be disembodied, which is what you potentially do not want. 
  In order to instantiate just another pair of hands to be controlled by a replay, do the following steps:
 
-<!-- {% include image.html file="unity/unity_vg_recorder.png" alt="VG Recorder" caption="VG_Recorder Component." %} -->
+{% include image.html file="unity/unity_vg_recorder_avatars.png" alt="VG Recorder Hands" caption="Setup for another avatar to replay recorded data." %}
 
 In VG_SensorConfiguration→SensorSetup→HandIDs where you should already have one element, add another HandID with the same index. 
 This will instantiate a copy of the hands when VirtualGrasp initializes.
