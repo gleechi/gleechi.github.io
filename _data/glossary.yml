@@ -5,6 +5,8 @@ CoreScript: Refers to a customizable component which wraps and examplify the use
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
+VGSceneFiles: Refers to VirtualGrasp's protobuf representation of the current interaction configuration of the game scene. 
+
 ObjectHierarchy: Refers to parent-child relations between objects in a game scene; VG synchronizes its internal object hierarchy with that in the game scene in runtime. 
 
 ObjectBaking: In VirtualGrasp baking an object is a preprocess of expensive computations associated with an object (and optionally for a hand) needed for faster process of runtime object-hand interaction; it include object's ShapeBaking and optionally GraspBaking for particular hands on this object.
@@ -40,8 +42,6 @@ ObjectAffordance: Describes which kind of hand interaction we can have with this
 SensorOffset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [InteractionSetup] to know how to adjust this offset.
 
 SensorPose: An avatar hand's wrist 6-Dof pose determined by VR controller or a hand sensor like Leap Motion.  
-
-VGSceneFiles: These are the scene files saved by VG library at end of each game run that stores all the sensor, control, avatar and object tree setup created by the game developers. 
 
 StaticGrasp: Or SG, is a grasp synthesis method that creates grasping configuration from one of N grasps stored in a grasp database
 
@@ -117,7 +117,9 @@ Cone: A constrained 3-dof rotational JointType, object rotates around a pivot po
 
 ScrewJoint: A joint of type Revolute when the parameter ScrewRate > 0, then the object will translate at an amount of ScrewRate (cm / degree) for every degree of rotation.
 
-InteractionSequence: A interaction sequence is one segment of recorded sensor data that contains continuous frames for hand interaction with an object, or without any object. 
+InteractionSegment: Refers to a segment of recorded sensor data that contains continuous frames for hand interaction with an object, or without any object.
+
+InteractionSequence: Refers to successive order of two or more recorded sensor data segment that contains continuous frames for hand interaction with an object, or without any object. 
 
 SensorRecordAndReplay: Refers to the functionality of VirtualGrasp to allow recording a set of InteractionSequences on SensorData during runtime interaction, and later replaying to reproduce those InteractionSequences.   
 
