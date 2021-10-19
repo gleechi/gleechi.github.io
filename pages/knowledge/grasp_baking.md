@@ -7,8 +7,8 @@ folder: knowledge
 toc: true
 ---
 
-Like game developers know the concepts of "baking light" or "baking textures" in order to preprocess expensive computations and have faster access during runtime, 
-we call our the preprocessing of interactions "baking object".  
+Like game developers know the concepts of "light baking light" or "texture baking" in order to preprocess expensive computations and have faster access during runtime, 
+we call the preprocessing of interactable objects "object baking".
 
 ## Shape Baking and Grasp Baking
 
@@ -24,11 +24,11 @@ we call our the preprocessing of interactions "baking object".
 
 | What changed | Need new shape baking? | Need new grasp baking? | Why? |
 |-------|--------|---------|---------|
-| Object mesh | Yes | Yes | because the shape changed | 
-| Object scale | Yes | Yes | because grasp is size sensitive | 
-| Object pivot (origin) | Yes | Yes | because shape baking result is stored in object's coordinate frame | 
-| Hand rig | No | Yes | because rig defines fundamental kinematics structure of the hand  | 
-| Hand mesh | No | Yes | because finger thickness affects grasp configurations  | 
+| Object mesh | Yes | Yes | because the shape changed. | 
+| Object scale | Yes | Yes | because each grasp is size sensitive. | 
+| Object pivot (origin) | Yes | Yes | because the shape baking result is stored in the object's coordinate frame. | 
+| Hand rig | No | Yes | because the rig defines the fundamental kinematics structure of the hand. | 
+| Hand mesh | No | Yes | because the finger thickness affects grasp configurations. | 
 
 {% include tip.html content="For VR applications where humanoid hands are used, we have turned off the grasp baking step so that the object baking process only include shape baking. 
 As a result, the shape baking result will NOT be affected if you change 3D rig and 3D mesh of the hand." %}
@@ -66,24 +66,31 @@ After doing this, disable "Save Debug Files" again.
 
 You will be able to request a bake by connecting to Gleechi's CABVG server through a GUI interface that is part of the SDK. You can find it in the VirtualGrasp menu:
 
-{% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client." caption="VG_BakingClient" %}
+{% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client in Unity." caption="VG_BakingClient" %}
 
 ### Upload Input
 
 To upload the files for a bake:
 
 * First, create a package of the necessary inputs for the bake (this is equivalent to creating the [Debug Files](debug.files)).
-* Insert the SitePath (provided to you with your license). The site path is the server address.
-* Insert the ApiKey (provided to you with your license). The api key is an identifier to access the service.
-* Enter your email address (to which you want to get notifications)
-* Select the target platform
-* Click "Upload"
+* Insert the **SitePath** (provided to you with your license). The site path is the server address.
+* Insert the **ApiKey** (provided to you with your license). The api key is an identifier to access the service.
+* Enter your **email** address (to which you want to get notifications).
+* Select the target **platform**.
+* Click **"Upload"**
 
 Note that as soon as you close the window, your settings will be stored in a file called vg_cabvg_settings.json in your project folder, so you won't have to re-enter them all the time (since when you open the window, the settings will be loaded).
 
 After clicking Upload, the server will receive the package and trigger a bake, and you should get a notification mail.
 
-Now you have to wait (depending on the number of objects and their complexity)
+Now you have to wait (depending on the number of objects and their complexity).
+
+### Target Platform
+
+Selecting **"Windows"** as the target platform is the default. "Download" will provide you with a .DLL file and enable natural grasps in your Editor, as well as in Windows builds.
+
+Select **"Android"** as the target platform if you have tested your Windows solution properly. "Download" will provide you with an .SO file to download and enable natural grasps in your Android builds (such as for Quest, Pico, etc.).
+
 
 ### Download Output
 
@@ -91,8 +98,8 @@ You can either download the product of the bake, rename it and sort it in the Un
 
 The VG_BakingClient will identify itself how to rename and where to place the file.
 
-* An .so file (for Android/Quest) should become Plugins/Android/libvirtualgrasp-selection.so
-* A .dll file (Windows) should become Plugins/x86_64/virtualgrasp-selection.dll
+* An .SO file (for Android/Quest) should become Plugins/Android/libvirtualgrasp-selection.so
+* A .DLL file (Windows) should become Plugins/x86_64/virtualgrasp-selection.dll
 
 This should have finalized the process and you will be able to enjoy natural grasps of your interactable objects.
 

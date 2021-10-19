@@ -9,15 +9,86 @@ permalink: unity_component_myvirtualgrasp.html
 folder: mydoc
 ---
 
-MyVirtualGrasp is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
-It is customizable main tutorial component that inherits from VG_MainScript, which wraps the main communication functions of the VirtualGrasp API. 
-VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity. 
-All the API functions you want to use in your own scripts can be accessed through VG_Controller.
+MyVirtualGrasp is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>
 
-### Sensor setup
-{% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="VG Sensors." caption="VG Sensors" %}
+It inherits from VG_MainScript, which encodes the main functionality of VirtualGrasp, and is the main component that you need to add and configure in your project to enable VirtualGrasp.
 
-#### Sensor offset
+In Unity, VG_MainScript inherits from Monobehavior so you can use it as a component on a GameObject.<br><br>
+<!-- All the API functions you want to use in your own scripts can be accessed through VG_Controller. -->
+
+On this page, we are going to describe all the major configuration options, divided into the following sections:
+
+* [AutoSetup & Sensors](#sensor-setup)
+* [Sensor Settings](#sensor-settings)
+* [Global Grasp Interaction Settings](#grasp-interaction-settings)
+* [Advanced Settings - Selection Settings](#selection-settings)
+* [Advanced Settings - Debug Settings](#debug-settings)
+
+{% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="Sensor configuration options (as part of VG_MainScript) in Unity." caption="Sensor configuration options (as part of VG_MainScript) in Unity." %}
+
+### AutoSetup & Sensors
+
+**AutoSetup** will auto-configure a number of controller-related settings in your VG_MainScript component and thereyby allow you to quickly switch between different controller inputs, such as Quest, LeapMotion, Mouse, and others.
+
+Select an [VG_AutoSetup](/virtualgrasp_unityapi.html#vg_autosetup) option from the dropdown menu, then click "Setup" to automatically adjust the following fields:
+* Sensor, External, Origin, Offset, and SensorSettings:FingerControlType.
+
+Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process.
+
+The integer value (0 in the image) relates to the element of the Sensors list that you want to auto-configure.
+In most cases you will have only one avatar in your scene that is controlled by a single controller, so 0 is the default. However, if you use multiple sensor elements, you can also quickly auto-configure them by modifying the integer value.
+
+{% include callout.html content="**Sensors** is a list that allows you to add multiple elements if you like. All of them will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor." type="primary" %} 
+
+<div class="panel-group" id="accordion1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">Show Image</a>
+            </h4>
+        </div>
+        <div id="collapseOne1" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                <img src="/images/unity/unity_vg_myvirtualgrasp.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+### Sensors
+
+#### Avatars
+
+For each sensor, you can assign multiple avatars, though in most cases you will have only one avatar per sensor.
+
+The **Model** should be HUMANOID_HAND in your usecase. There are robotic hand options as well, but they will not be discussed here.
+
+Under **SkeletalMesh** you provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VirtualGrasp during runtime.
+
+Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.html), or the [VG_Recorder Component](unity_component_vgrecorder.html).
+
+Check the **Remote** option if you want to use this avatar for reflecting networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.html), or the [VG_Networking Component](unity_component_vgnetworing.html).
+{% include important.html content="Documentation is missing here and links do not work." %}
+
+Check the **Physical** option if you want VirtualGrasp to create colliders for this avatar and enable the hand for physical interactions (remember VG is an animation engine that is not dependent on physics).
+{% include important.html content="At the moment, this option is experimental and should not be used apart from testing." %}
+
+<div class="panel-group" id="accordion1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">Show Image</a>
+            </h4>
+        </div>
+        <div id="collapseOne1" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                <img src="/images/unity/unity_vg_myvirtualgrasp.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+### Sensor Offset
 
 When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset in each controller setting to synchronize them:
 
@@ -26,7 +97,7 @@ Note that the hand coordinate system's axes, XYZ, are defined like you strech ou
 {% include image.html file="knowledge/lhs_rhs.png" alt="LHS/RHS" caption="The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand." %}
 
 
-### Sensor settings
+### Sensor Settings
 
 {% include image.html file="unity/unity_vg_sensor_settings.png" alt="VG sensor settings." caption="VG sensor settings" %}
 
