@@ -5,6 +5,8 @@ CoreScript: Refers to a customizable component which wraps and examplify the use
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
+ObjectHierarchy: Refers to parent-child relations between objects in a game scene; VG synchronizes its internal object hierarchy with that in the game scene in runtime. 
+
 ObjectBaking: In VirtualGrasp baking an object is a preprocess of expensive computations associated with an object (and optionally for a hand) needed for faster process of runtime object-hand interaction; it include object's ShapeBaking and optionally GraspBaking for particular hands on this object.
 
 ShapeBaking: Refers to a preprocess of expensive object shape analysis, which is needed for DynamicGrasp synthesis in runtime.

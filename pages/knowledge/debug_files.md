@@ -53,9 +53,19 @@ When you stop the scene, two scene configuration files for each Unity or Unreal 
 * .SCN: Is a [Protocol buffers](https://developers.google.com/protocol-buffers) representation of the current state of the scene including VG interaction setup and all interactable objects' status at the moment of saving. 
 * .SCN.OBJRIG: Completely corresponds to .SCN file, but uses indentation to represent object hiearchy. 
 
-These scene files basically reveals **how VG sees the status of your current scene** in your VR application. 
+These scene files reveals **how VG sees the status of your current scene** in your VR application. 
 Because of this, they are very useful for you to debug any VG-related interaction issues that you experience. 
 
+For example:
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectHierarchy}}">Object Hierarchy</a>: you thought you placed antenna as the child of radio, to see if it is really that way in VG, you can check the .scn file. 
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SelectionWeight}}">Selection Weight</a>: you thought you have changed selection weight on antenna to 0, but it is actually not when check the .scn file. 
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Affordance}}">Affordance</a>: you thought you have set radio to afford FINGER_PUSHABLE, but it is actually ONLY_GRASPABLE
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Synthesis Method</a>: you thought you have decided to use STATIC_GRASP on antenna, but it is DYNAMIC_GRASP in reality.
+
+{% include important.html content="Since .scn files are written at the moment when you stop playing the scene, the saved information reflects your scene configuration at that moment. 
+So if you in runtime, for example, changed an object's joint type or selection weight, then stopped playing, the resulting .scn files will reflect the effective values after your runtime change." %}
+
+Below shows an example of a .scn file representing a simple scene with just two objects - "radio" and "antenna". 
 ```
 units_in_meters: 1
 sensor_setup {
