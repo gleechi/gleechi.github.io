@@ -40,6 +40,7 @@ In most cases you will have only one avatar in your scene that is controlled by 
 
 {% include callout.html content="**Sensors** is a list that allows you to add multiple elements if you like. All of them will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor." type="primary" %} 
 
+<!--
 <div class="panel-group" id="accordion1">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -54,12 +55,15 @@ In most cases you will have only one avatar in your scene that is controlled by 
         </div>
     </div>
 </div>
+-->
 
 ### Sensors
 
 #### Avatars
 
 For each sensor, you can assign multiple avatars, though in most cases you will have only one avatar per sensor.
+
+{% include image.html file="unity/unity_vg_myvirtualgrasp_avatar.png" alt="Avatar configuration options (as part of VG_MainScript) in Unity." caption="Avatar configuration options (as part of VG_MainScript) in Unity." %}
 
 The **Model** should be HUMANOID_HAND in your usecase. There are robotic hand options as well, but they will not be discussed here.
 
@@ -72,21 +76,6 @@ Check the **Remote** option if you want to use this avatar for reflecting networ
 
 Check the **Physical** option if you want VirtualGrasp to create colliders for this avatar and enable the hand for physical interactions (remember VG is an animation engine that is not dependent on physics).
 {% include important.html content="At the moment, this option is experimental and should not be used apart from testing." %}
-
-<div class="panel-group" id="accordion1">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">Show Image</a>
-            </h4>
-        </div>
-        <div id="collapseOne1" class="panel-collapse collapse noCrossRef">
-            <div class="panel-body">
-                <img src="/images/unity/unity_vg_myvirtualgrasp.png">
-            </div>
-        </div>
-    </div>
-</div>
 
 ### Sensor Offset
 
