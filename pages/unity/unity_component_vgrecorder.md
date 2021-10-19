@@ -26,9 +26,9 @@ as a customizable component. You can use it to access the major functionalities 
 {% include youtube.html id="7aRCZThEHOE" caption="Record Replay 2" %}
 
 Some example use cases are:
-* “replaying entire instruction sequences”.
+* “replaying entire instruction sequence”.
 * “replaying a specific object interaction for instruction”.
-* “quick testing of a whole interaction sequences”.
+* “quick testing of a whole interaction sequence”.
 
 ### How to Record Sensor Data
 
@@ -43,7 +43,7 @@ So to record, just press the R key once, do some interactions in your scene, and
 
 ### How to Create another Pair of Hands for Replay
 
-If you replay the whole sequences of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
+If you replay the whole sequence of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
  without any changes, your own VR hands will be disembodied, which is what you potentially do not want. 
  In order to instantiate just another pair of hands to be controlled by a replay, do the following steps:
 
@@ -59,7 +59,7 @@ When now restarting the scene, you should find two pairs of hands in the scene.
 ### How to Replay an Interaction Sequence
 
 #### Full and scene-specific interaction replay
-A whole recorded sensor data (usually contain multiple <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequences</a>)
+A whole recorded <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>
  will be replayed, for example you once record all the steps to go through a training sequence, and you can fully replay it later. 
 However, when you change positions of objects that you interacted with, the replay hand will grasp empty air. 
 
@@ -69,27 +69,24 @@ In the current VG_Recorder, pressing T will replay the recording provided in “
 If using VR controllers, clicking the left controller's touchpad has the same effect.
 
 #### Partial and object-specific interaction replay
-A specific <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>
- on an object can be replayed, for example you once record all the steps to go through a training, 
-and you can then replay a specific <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>
-(identified by the interaction id) with a specific object. 
+A specific <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">Interaction Segment</a>
+ on a specific object and hand can be replayed, for example you once record all the steps to go through a training, 
+and you can then replay a specific <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">Interaction Segment</a>
+(identified by the segment id) with a specific object. 
 
 In the movie above, the blue button triggers this replay.
 
 In the current VG_Recorder, pressing Y will replay a specific 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">Interaction Segment</a>
 of the recording provided in “Recording Filename” with the pair of replay hands. The current implementation is still not very user-friendly as you have to
-know which interaction combinations (of the “Replay Object” to play on, the avatar, the hand side, and the interaction ID) are valid. 
-You will get a list of available interactions in the console though that may help you out.
+know which interaction combinations (of the “Replay Object” to play on, the avatar, the hand side, and the segment ID) are valid. 
+You will get a list of available interaction segments in the console though that may help you out.
  
-{% include tip.html content="See [Sensor Record and Replay](sensor_record_replay.html#background) to understand segmented interaction sequences and interaction id." %}
+{% include tip.html content="See [Sensor Record and Replay](sensor_record_replay.html#background) to understand interaction segments." %}
 
 If using VR controllers, clicking the left touchpad in its center has the same effect. However, if you click the touchpad on the right side, 
-VG_Recorder will increase the interaction ID until it finds a valid one. Clicking on the left side will decrease the interaction ID until it finds a valid one.
-
-{% include important.html content="Note that right now the partial and object-specific replay is replaying the sequence with the same object name. 
-Since objects with same name could possibly have different mesh (size and shape), this is not entirely correct. We are going to fix this in next release." %}
-
+VG_Recorder will increase the interaction segment ID until it finds a valid one. 
+Clicking on the left side will decrease the interaction segment ID until it finds a valid one.
 
 ### Important Note on the Files
 
