@@ -9,6 +9,7 @@ permalink: release_notes.html
 folder: mydoc
 ---
 
+
 ## Changes from V0.7.0 (2021-09-17) to V0.7.1 (2021-10-04)
 
 ##### Major Functionality Changes:
