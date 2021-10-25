@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Gleechi Documentations"
+title: "Welcome to VirtualGrasp Documentations"
 sidebar: main_sidebar
 permalink: index.html
 ---
