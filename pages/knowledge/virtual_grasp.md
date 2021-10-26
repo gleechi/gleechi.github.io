@@ -22,8 +22,8 @@ addressed by using VG's [Object Articulation](object_articulation.html) feature.
 Note that, while the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">Interactive Behaviors</a> is provided out of the box
 from the VG SDK, 
 to achieve natural looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a> in runtime
-requires an preprocessing step called [Object Baking](object_baking.html).
+requires a preprocessing step called [Object Baking](object_baking.html).
 
-Besides the above mentioned interaction-related features, VirtualGrasp also is also hardware-agnostic. VirtualGrasp can create natural grasp interactions 
-with any kind of VR controllers (or sensors), wether it is hand-held VR controllers or finger tracking devices like LeapMotion or Oculus hand tracking.
+Besides the above mentioned interaction-related features, VirtualGrasp is also **hardware-agnostic**. VirtualGrasp can create natural grasp interactions 
+with any kind of VR controllers (or sensors), wether it is hand-held VR controllers or finger tracking devices like LeapMotion.
  See [Controllers](controllers.html) page to see details.
