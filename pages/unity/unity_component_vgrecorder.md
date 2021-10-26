@@ -15,88 +15,79 @@ for recording and replaying <a href="#" data-toggle="tooltip" data-original-titl
 For convenience, the SDK includes a VG_Recorder <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>
 as a customizable component. You can use it to access the major functionalities of the sensor recording.
 
-{% include important.html content="To use the VG_Recorder, you should first learn about VirtualGrasp's  [Sensor Record and Replay](sensor_record_replay.html#sensor-record-replay)." %}
-
-{% include image.html file="unity/unity_vg_recorder.png" alt="VG Recorder" caption="VG_Recorder Component." %}
-
-### Use cases
-
-{% include youtube.html id="o5F5tUb8RQM" caption="Record Replay 1." %}
-
-{% include youtube.html id="7aRCZThEHOE" caption="Record Replay 2" %}
-
 Some example use cases are:
-* “replaying entire instruction sequences”.
+* “replaying entire instruction sequence”.
 * “replaying a specific object interaction for instruction”.
-* “quick testing of a whole interaction sequences”.
+* “quick testing of a whole interaction sequence”.
+
+{% include important.html content="To use the VG_Recorder, you should first learn about VirtualGrasp's  [Sensor Record and Replay](sensor_record_replay.html#sensor-record-replay)." %}
 
 ### How to Record Sensor Data
 
+The VG_Recorder is a component that you can place next to your VG_MainScript component.
 
-In the current VG_Recorder, pressing R (KeyCode.R) will toggle between starting recording and stopping recording. 
-When you stop recording, a file with the recorded data will be written, named after the filename you provided in the “Recording Filename”. 
-Note that in the current implementation of VG_Recorder, the recording will be attached to the same file, so if you want to separate and keep multiple recordings, 
-you have to rename them yourself.
+{% include image.html file="unity/unity_vg_recorder.png" alt="VG Recorder" caption="VG_Recorder Component." %}
 
-So to record, just press the R key once, do some interactions in your scene, and press R another time.In order to allow you to have this interaction from the VR headset,
- it has also been implemented that you can start a recording with the "B" button of the right VR controller, and replay it with the "A" button.
+Pressing the _Recording Key_ during play will toggle between starting and stopping the recording of an interaction sequence.
+After a recording is finished, a file with the recorded data will be written, named after the provided _Recording Filename_. 
+In the current implementation of VG_Recorder, the recording will be **attached** to the same file, so if you want to separate and keep multiple recordings, 
+you have to rename them.
 
-### How to Create another Pair of Hands for Replay
-
-If you replay the whole sequences of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
- without any changes, your own VR hands will be disembodied, which is what you potentially do not want. 
- In order to instantiate just another pair of hands to be controlled by a replay, do the following steps:
-
-{% include image.html file="unity/unity_vg_recorder_avatars.png" alt="VG Recorder Hands" caption="Setup for another avatar to replay recorded data." %}
-
-In VG_SensorConfiguration→SensorSetup→HandIDs where you should already have one element, add another HandID with the same index. 
-This will instantiate a copy of the hands when VirtualGrasp initializes.
-
-In order to specify the hand that should be controlled by replay, set “Use Replay” to 1 (which is the index of the hand in HandIDs that should be reserved for replay).
-
-When now restarting the scene, you should find two pairs of hands in the scene.
+In order to record an interaction sequence:
+* press the _Recording Key_ key once, 
+* do some interactions in your scene, 
+* press the _Recording Key_ another time.
 
 ### How to Replay an Interaction Sequence
 
 #### Full and scene-specific interaction replay
-A whole recorded sensor data (usually contain multiple <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequences</a>)
- will be replayed, for example you once record all the steps to go through a training sequence, and you can fully replay it later. 
-However, when you change positions of objects that you interacted with, the replay hand will grasp empty air. 
 
-In the movie above, the green button triggers this replay.
+After you have recorded an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>, you can fully replay it later. The _Replay Object_ has to be empty (None) for this mode. In this replay mode, the hand movements will be replayed exactly as they were recorded. That means that as soon as you change positions of objects that you did interact with, the replaying hand will grasp empty air. 
 
-In the current VG_Recorder, pressing T will replay the recording provided in “Recording Filename” with the pair of replay hands. 
-If using VR controllers, clicking the left controller's touchpad has the same effect.
+Pressing the _Replay Sequence Key_ will replay the recording provided in _Recording Filename_ with the avatar provided in _Avatar ID_. To create a different avatar to follow the recording, please follow the [instructions below](#how-to-create-another-pair-of-hands-for-replaying-an-interaction-sequence). In the video below, the green button triggers this replay.
+
+{% include youtube.html id="o5F5tUb8RQM" caption="Record Replay 1." %}
+
+#### Full and object-specific interaction replay
+
+If you assign a _Replay Object_, the interaction sequence will be replayed fully, but in the frame of the provided _Replay Object_. This means that it is assured that the particular object - even after positional changes - will be interacted with as recorded.
 
 #### Partial and object-specific interaction replay
-A specific <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>
- on an object can be replayed, for example you once record all the steps to go through a training, 
-and you can then replay a specific <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>
-(identified by the interaction id) with a specific object. 
 
-In the movie above, the blue button triggers this replay.
+The third replay mode is to replay an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">Interaction Segment</a>. After you have recorded a full <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>, you can replay a specific part of it - an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">Interaction Segment</a> (specified by the _Segment ID_) - with a specified hand (_Side_) and object (_Replay Object_). 
 
-In the current VG_Recorder, pressing Y will replay a specific 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>
-of the recording provided in “Recording Filename” with the pair of replay hands. The current implementation is still not very user-friendly as you have to
-know which interaction combinations (of the “Replay Object” to play on, the avatar, the hand side, and the interaction ID) are valid. 
-You will get a list of available interactions in the console though that may help you out.
+In the VG_Recoder, pressing the _Replay Segment Key_ will replay a specific 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">Interaction Segment</a>
+of the recording provided in _Recording Filename_ with the replay avatar. In the movie above, the blue button triggers this replay.
+
+{% include warning.html content="The current implementation is still not very user-friendly as you have to
+know which interaction combinations (of the “Replay Object” to play on, the avatar, the hand side, and the segment ID) are valid. 
+You will get a list of available interaction segments in the console though that may help you out." %}
  
-{% include tip.html content="See [Sensor Record and Replay](sensor_record_replay.html#background) to understand segmented interaction sequences and interaction id." %}
-
-If using VR controllers, clicking the left touchpad in its center has the same effect. However, if you click the touchpad on the right side, 
-VG_Recorder will increase the interaction ID until it finds a valid one. Clicking on the left side will decrease the interaction ID until it finds a valid one.
-
-{% include important.html content="Note that right now the partial and object-specific replay is replaying the sequence with the same object name. 
-Since objects with same name could possibly have different mesh (size and shape), this is not entirely correct. We are going to fix this in next release." %}
-
+{% include tip.html content="See [Sensor Record and Replay](sensor_record_replay.html#background) to understand interaction segments." %}
 
 ### Important Note on the Files
 
 In order to support recording and replaying <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
- and re-using that information, there will be recording files in each project 
-(dependent on how you name them, but default in VG_Recorder for now is for example recording.sdb).
+ and re-using that information, there will be recording files in each project.
 
-That means that when you record inside a game engine, and want to use the recordings in a build, you have to manually copy these files to the build directory.
+That means that when you record inside your Unity project, and want to use the recordings in a build, you have to manually copy these files to the build directory.
 
-Also, if you you are using a project repository and want to share the annotated data, you have to commit these files to the repository to do so.
+### How to Create another Pair of Hands for Replaying an Interaction Sequence
+
+If you replay the whole interaction sequence of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
+ without any changes, the controlled VR hands will be disembodied, which is what you potentially do not want. 
+
+In order to instantiate another pair of hands to be controlled by the replay, 
+* add another hand model into the scene (such as by duplicating the hand model you already have), 
+* add another element to VG_MainScript→Sensors→Avatars (see below), 
+* assign the SkinnedMeshRenderer of your duplicated hand model to the Hand Model slot of the newly added element, and finally 
+* change the _AvatarID_ in the VG_Recorder to 2 (meaning that you want to replay the recordings on the second avatar).
+
+{% include image.html file="unity/unity_vg_recorder_avatars.png" alt="VG Recorder Hands" caption="Setup for another avatar to replay recorded data." %}
+
+### Videos
+
+
+{% include youtube.html id="7aRCZThEHOE" caption="Record Replay 2" %}
+
