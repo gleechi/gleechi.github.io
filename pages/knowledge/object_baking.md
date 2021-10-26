@@ -13,15 +13,15 @@ Like game developers know the concepts of "light baking light" or "texture bakin
 we call the preprocessing of the objects <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectBaking}}">Object Baking</a>.
 
 
-In order to bake an object, we need to access to the 3D mesh data of the object. 
+In order to bake an object, we need to access the 3D mesh data of the object. 
 So if the 3D mesh data of the object changed, a new object baking is needed. 
-Table below explains when a new bake is needed. 
+Table below explains when a new bake is needed:
 
 | When do we need new baking | Why? |
 |-------|--------|---------|---------|
 | Object mesh changed|  Because mesh defines object shape. | 
-| Object scale |  Bcause grasp depends on the object size. | 
-| Object pivot (origin) |  Because the shape analysis result is stored in the object's coordinate frame. | 
+| Object scale changed |  Bcause grasp depends on the object size. | 
+| Object pivot (origin) changed |  Because the shape analysis result is stored in the object's coordinate frame. | 
 
 {% include important.html content="If you have not baked your project, you can still enjoy 
 the object interactive behaviors supported by [Object Articulation](object_articulation.html#object-articulation). 
