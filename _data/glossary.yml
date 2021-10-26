@@ -5,21 +5,23 @@ CoreScript: Refers to a customizable component which wraps and examplify the use
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
+CABVG: Refers to VirtualGrasp's baking server, to which you can connect through VG_BakingClient -- a GUI interface that is part of the VG SDK; it is used for ObjectBaking. 
+
 VGSceneFiles: Refers to VirtualGrasp's protobuf representation of the current interaction configuration of the game scene. 
 
 ObjectHierarchy: Refers to parent-child relations between objects in a game scene; VG synchronizes its internal object hierarchy with that in the game scene in runtime. 
 
-ObjectBaking: In VirtualGrasp baking an object is a preprocess of expensive computations associated with an object (and optionally for a hand) needed for faster process of runtime object-hand interaction; it include object's ShapeBaking and optionally GraspBaking for particular hands on this object.
+ObjectBaking: Baking an object is a preprocess of expensive computations on an object (and optionally for a hand) needed for faster process of runtime object-hand interaction; it include analyzing the object shape and optionally creating a set of grasps for particular hands.
 
 ShapeBaking: Refers to a preprocess of expensive object shape analysis, which is needed for DynamicGrasp synthesis in runtime.
 
 GraspBaking: Refers to a preprocess of generating a fixed set of GraspConfigurations for particular hands on an object, which can be used for StaticGrasp synthesis in runtime.
 
-InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup. 
+InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup in VG_Articulation component. 
 
 Grasp: A hand grasps and holds an object.
 
-GraspConfiguration: Describes the hand pose when grasping an object; including wrist position, orientation and all finger bone's rotation angles.
+GraspConfiguration: Describes the hand pose when grasping an object; including wrist position, orientation and all finger bone's rotation angles; it can be synthesized in runtime by VG's GraspSynthesis algorithms.
 
 Gesture: A hand forms a gesture in air without contacting or interacting with object. Currently VG only support index finger push gesture. And it is only defined at a single frame as a "static" gesture. For example we are not supporting more "dynamic" gestures like waving yet.
 
@@ -38,6 +40,8 @@ InteractionType: Describes how hand/object moves when VR user selected an object
 ObjectJointType: Describes the movement relations between object and environment (world) or object and object. For example if joint type is "Floating", then object moving freely when grasped by a hand; however if it is of "Fixed" joint type, object is fixed to it's parent object/environment. See [Object and Articulation] for details of different types.
 
 ObjectAffordance: Describes which kind of hand interaction we can have with this object in the virtual environment. For example if an object is "finger pushable", then you can push this object using index finger. See [Object and Articulation] for details of different affordances supported by VG. 
+
+Sensor: Refers to a hand sensing device (e.g. VR controller, LeapMotion or data gloves) that can sense wrist position, orientation and optionally finger poses; since sensor is used to control avatars in VR, it can also be referred to as "Controller". 
 
 SensorOffset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [InteractionSetup] to know how to adjust this offset.
 
