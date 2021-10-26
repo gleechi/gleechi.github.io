@@ -41,7 +41,7 @@ ObjectJointType: Describes the movement relations between object and environment
 
 ObjectAffordance: Describes which kind of hand interaction we can have with this object in the virtual environment. For example if an object is "finger pushable", then you can push this object using index finger. See [Object and Articulation] for details of different affordances supported by VG. 
 
-Sensor: Refers to a hand sensing device (e.g. VR controller, LeapMotion or data gloves) that can sense wrist position, orientation and optionally finger poses; since sensor is used to control avatars in VR, it can also be referred to as "Controller". 
+Sensor: Refers to a hand sensing device such as VR controller, LeapMotion or data gloves, which can sense wrist position, orientation and optionally finger poses; since sensor is used to control avatars in VR, it can also be referred to as "Controller". 
 
 SensorOffset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [InteractionSetup] to know how to adjust this offset.
 
