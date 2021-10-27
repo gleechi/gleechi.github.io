@@ -143,8 +143,8 @@ An important information for designing your gameplay with VirtualGrasp is what t
 |MANIPULATE2|when doing two hands manipulation|
 |PREVIEW_RELEASE|when release from PREVIEW mode, wrist and finger interpolate toward sensor pose|
 |GRASP_TO_PREVIEW|when wrist and finger interpolate towards target grasp pose synthesized once a new object is selected|
-|PHYSICAL_PUSHING|when index finger tip do physical push on object|
-|PHYSICAL_PUSHING2|when both hand's index finger tip do physical push on same object|
+|PUSHING|when index finger tip do push on object|
+|PUSHING2|when both hand's index finger tip do push on same object|
 
 
 ### VG_InteractionType
@@ -211,9 +211,8 @@ ReturnCode for various VirtualGrasp functions.Most functions in this API provide
 |INVALID_TARGET|Failed in processing function because the provided target is invalid.|
 |ARGUMENT_ERROR|Failed in processing function because a provided argument is invalid.|
 |UNSUPPORTED_FUNCTION|Failed in processing function because it is unsupported.|
-|OBJECT_NO_GRASPS|Failed in processing function because baking is unsupported.|
-|OBJECT_INCONSISTENT|Failed in processing function because a baking process failed.|
-|OBJECT_REDUNDANT|Warning in processing function because the provided object is redundant.|
+|OBJECT_NO_GRASPS|Failed in processing function because there are no static grasps baked.|
+|OBJECT_NO_BAKE|Failed in processing function because a baking process failed / there is no bake at all.|
 
 
 ### VG_SelectObjectMethod
@@ -247,8 +246,9 @@ SensorType defines different sensor types that can be used by the library.
 Identifier for a grasp synthesis algorithm.
 
 |NONE|No grasp synthesis method (no grasping)|
-|STATIC|Static grasp synthesis method (accessing generated set of discrete grasps)|
-|DYNAMIC|Dynamic grasp synthesis method (generating grasps online based on prebaked object representation)|
+|STATIC_GRASP|Static grasp synthesis method (accessing generated set of discrete grasps)|
+|HYBRID|TBD|
+|DYNAMIC_GRASP|Dynamic grasp synthesis method (generating grasps online based on prebaked object representation)|
 
 
 ### VG_UrdfType
@@ -395,7 +395,7 @@ The Update() method has been divided into three parts: IsolatedUpdateDataIn(), I
 
 ### IsolatedUpdateDataIn
 
-The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataIn() isolates data communication from Unity to VG.
+The FixedUpdate() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataIn() isolates data communication from Unity to VG.
 
 
 
@@ -469,20 +469,20 @@ Return all non-interactable objects. Note this will only include objects that ha
 | **returns** | _static internal List<Transform>_ | All non-interactable objects in the scene.|
 
 
+### GetObjectJointState
+
+Returns the state (current value) of an articulated object.
+
+| _Transform_ |selectedObject|The object to get the current articulation value for.|
+| **returns** | _float_ | [selectedObject]'s current articulation value.|
+
+
 ### GetObjectJointType
 
 Return an object's original or current joint type.
 
 | _Transform_ |selectedObject|The object to get the joint type for.|
 | _bool_ |original|If True, return the original joint type, otherwise return the current.|
-
-
-### GetObjectState
-
-Returns the state (current value) of an articulated object.
-
-| _Transform_ |selectedObject|The object to get the current articulation value for.|
-| **returns** | _float_ | [selectedObject]'s current articulation value.|
 
 
 ### GetSelectableObjects
@@ -1101,8 +1101,10 @@ Used in: [VG_Recorder](unity_component_vgrecorder.html)
 ### StartReplay
 Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
-Start full replay of all recorded interactions.
+Start full replay of all recorded interactions on an avatar.
 
+| _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
+| _Transform_ |selectedObject|If provided, the entire sensor recording will be replayed in this object's frame. If not, in global frame.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.html)
 
@@ -1126,6 +1128,15 @@ Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 Stop recording sensor signal and store to a file
 
 | _string_ |filename|The filename to save the recording to.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.html)
+
+
+### StopReplay
+
+Stop replay of all recorded interactions.
+
+| _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.html)
 
