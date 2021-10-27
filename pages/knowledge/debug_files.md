@@ -25,7 +25,7 @@ While you are running the scene, the following data will be saved in the "vg_tmp
 Whenever you stop the scene, the following data will be saved:
 * **.DB** & **.LAB** files carrying data created with [VirtualGrasp Studio](unity_component_vggraspstudio.html),
 * One **.SCN** & **.SCN.OBJRIG** file for each scene, including scene configuration data. (See section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGSceneFiles}}">VG Scene Files</a>)
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGSceneFiles}}">VG scene files</a>)
 * Finally, from all this content, one **.ZIP** file named "PROJECT_NAME".zip will be generated in your project folder.
 
 {% include important.html content="Accordingly, it is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}
@@ -58,10 +58,10 @@ These scene files reveals **how VG sees the status of your current scene** in yo
 Because of this, they are very useful for you to debug any VG-related interaction issues that you experience. 
 
 For example:
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectHierarchy}}">Object Hierarchy</a>: you thought you placed antenna as the child of radio, to see if it is really that way in VG, you can check the .scn file. 
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SelectionWeight}}">Selection Weight</a>: you thought you have changed selection weight on antenna to 0, but it is actually not when check the .scn file. 
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Affordance}}">Affordance</a>: you thought you have set radio to afford FINGER_PUSHABLE, but it is actually ONLY_GRASPABLE
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Synthesis Method</a>: you thought you have decided to use STATIC_GRASP on antenna, but it is DYNAMIC_GRASP in reality.
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectHierarchy}}">object hierarchy</a>: you thought you placed antenna as the child of radio, to see if it is really that way in VG, you can check the .scn file. 
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SelectionWeight}}">selection weight</a>: you thought you have changed selection weight on antenna to 0, but it is actually not when check the .scn file. 
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Affordance}}">affordance</a>: you thought you have set radio to afford FINGER_PUSHABLE, but it is actually ONLY_GRASPABLE
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a>: you thought you have decided to use STATIC_GRASP on antenna, but it is DYNAMIC_GRASP in reality.
 * etc.
 
 {% include important.html content="Since .scn files are written at the moment when you stop playing the scene, the saved information reflects your scene configuration at that moment. 
