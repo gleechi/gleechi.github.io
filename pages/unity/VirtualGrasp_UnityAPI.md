@@ -372,7 +372,7 @@ Receive a specific hand and its status.
 Receive an enumerator of all registered hands and their status.
 
 | _bool_ |onlyValids|If TRUE, only return valid hands, otherwise return all.|
-| **returns** | _IEnumerable<VG_HandStatus>_ | Enumerator over VG_HandStatus.|
+| **returns** | _IEnumerable\<VG_HandStatus\>_ | Enumerator over VG_HandStatus.|
 
 
 ### Initialize
@@ -424,7 +424,7 @@ Sync a new object in the scene to the plugin, e.g. if the object is spawned.
 
 Sync new objects from the scene to the plugin, e.g. if these object are newly spawned.
 
-| _List<Transform>_ |objects|The objects that should be synced.|
+| _List\<Transform\>_ |objects|The objects that should be synced.|
 
 
 ### Release
@@ -455,18 +455,8 @@ Change an object's joint type in runtime, if this is an articulated object.
 Return the avatar/hand pairs that are currently grasping a specified object.
 
 | _Transform_ |objectToCheck|The object to be checked if it is currently grasped.|
-| _VG_HandSide>>_ |hands|An output list of avatar-handside-pairs describing which hands are currently grasping that object.|
-@params return Number of hands grasping the object.
-
-
-
-### GetNonSelectableObjects
-
-Return all non-interactable objects. Note this will only include objects that have been tagged as interactable at start.
-
-| _bool_ |includeHidden|If to include objects that have been hidden in the scene.|
-| _bool_ |includeUntagged|If to include objects that have been untagged in the scene.|
-| **returns** | _static internal List<Transform>_ | All non-interactable objects in the scene.|
+| _VG_HandSide\>\>_ |hands|An output list of avatar-handside-pairs describing which hands are currently grasping that object.|
+| **returns** | _int_ | Number of hands grasping the object.|
 
 
 ### GetObjectJointState
@@ -491,7 +481,7 @@ Return all interactable objects.
 
 | _bool_ |excludeHidden|If to exclude objects that have been hidden in the scene.|
 | _bool_ |excludeUntagged|If to exclude objects that have been untagged in the scene.|
-| **returns** | _IEnumerable<Transform>_ | All interactable objects in the scene.|
+| **returns** | _IEnumerable\<Transform\>_ | All interactable objects in the scene.|
 
 
 ### GetSelectableObjectsFromScene
@@ -500,7 +490,7 @@ Return all interactable objects from the editor scene.
 
 | _bool_ |excludeHidden|If to exclude objects that have been hidden in the scene.|
 | _bool_ |excludeUntagged|If to exclude objects that have been untagged in the scene.|
-| **returns** | _List<Transform>_ | All interactable objects in the editor scene.|
+| **returns** | _List\<Transform\>_ | All interactable objects in the editor scene.|
 
 
 ### GetSensorPose
@@ -524,15 +514,7 @@ Return the currently selected TriggerButton.
 
 Return all unbaked objects.
 
-| **returns** | _List<Transform>_ | All unbaked objects in the scene.|
-
-
-### HasAffordance
-
-Return the object affordance of a particular object.
-
-| _Transform_ |selectedObject|The object to return its affordance for.|
-| **returns** | _bool_ | The affordance for [selectedObject]|
+| **returns** | _List\<Transform\>_ | All unbaked objects in the scene.|
 
 
 ### JumpGraspObject
@@ -553,13 +535,6 @@ Remark
 Recover an object's original joint type, after it has been changed by ChangeObjectJoint().
 
 | _Transform_ |selectedObject|The object to recover the joint type for.|
-
-
-### RegisterObjectsForSelection
-
-If you want to restrain the selectable objects (e.g. to those close to the avatar), inform the plugin about selectable objects.
-
-| _List<Transform>_ |objects|The selectable objects.|
 
 
 ### ResetAllObjects
@@ -606,14 +581,6 @@ Remark
 Remark
  Use case is mainly to specify relative selection preferences for cluttered objects.
 
-
-
-### SetPhysicalObject
-
-Specify if an object is a physical object or not.
-
-| _Transform_ |obj|The object to specify if physical object|
-| _bool_ |isPhysical|If this object is physical|
 
 
 
@@ -754,16 +721,6 @@ Receive a grasp by index.
 Used in: [VG_GraspStudio](unity_component_vggraspstudio.html)
 
 
-### GetInteractionTypeForObject
-
-Receive the current VG_InteractionType of an interactable object.
-
-| _Transform_ |selectedObject|The object to query the VG_InteractionType for.|
-| **returns** [VG_InteractionType](#abc.html#vg_interactiontype) The current VG_InteractionType or VG_InteractionType.TRIGGER if invalid.|
-
-Used in: [VG_Editor](unity_component_vgeditor.html)
-
-
 ### GetNumGrasps
 
 Receive the number of grasps for a specific object.
@@ -781,7 +738,7 @@ Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.html)
 Receive the current VG_SynthesisMethod of an interactable object.
 
 | _Transform_ |selectedObject|The object to query the VG_SynthesisMethod for.|
-| **returns** [VG_SynthesisMethod](#abc.html#vg_synthesismethod) The current VG_SynthesisMethod or VG_SynthesisMethod.NONE if invalid.|
+| **returns** |[VG_SynthesisMethod](#vg_synthesismethod) | The current VG_SynthesisMethod or VG_SynthesisMethod.NONE if invalid.|
 
 Used in: [VG_Editor](unity_component_vgeditor.html)
 
@@ -812,18 +769,6 @@ Specify if on this hand should block release or not in runtime.
 | _int_ |avatarID|The avatar to release a grasp for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
 | _bool_ |block|If block release signal or not on this hand|
-
-
-### SetGestureDuration
-Tags: deprecated
-
-Set all controller's gesture forming and releasing interpolation duration
-
-| _float_ |duration|The duration in sec forming and releasing gesture|
-
-Remark
- Default is 0.1 sec
-
 
 
 ### SetGlobalInteractionType
@@ -871,14 +816,6 @@ Remark
 | _int_ |avatarID|The avatar which is selecting an object.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which is selecting an object.|
 |[*VG_InteractionType*](#vg_interactiontype) | interactionType|The interaction type to switch to for the object that is selected by the [side] hand of avatar [avatarID].|
-
-
-### SetPushAngleThreshold
-Tags: deprecated
-
-Set the angle threshold above which the angle between hand push dir with the push axis for an object, push not allowed.
-
-| _float_ |angle|The angle in range [0;180] degrees. Default is 90 degrees.|
 
 
 ### SetSynthesisMethodForObject
@@ -954,7 +891,7 @@ Returns the current interaction mode of a grasped object.
 
 | _int_ |avatarID|The avatar holding the object to receive the interaction mode for.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand holding the object to receive the interaction mode for.|
-| **returns** [VG_InteractionMode](#abc.html#vg_interactionmode) The current interaction mode of the object held by avatar [avatarID]'s [handSide] hand.|
+| **returns** |[VG_InteractionMode](#vg_interactionmode) | The current interaction mode of the object held by avatar [avatarID]'s [handSide] hand.|
 
 
 ### GetPushCircle
@@ -1015,15 +952,6 @@ Enable or disable finger calibration mode (FCM). During enabled FCM, the hand op
 
 | _int_ |avatarID|The avatar for which to enable/disable FCM.|
 | _bool_ |enabled|True for enabling FCM, False for disabling it.|
-
-
-### SetLimbPositionOffset
-
-Set an offset onto a specific finger tip bone.
-
-|[*VG_HandSide*](#vg_handside) | side|The hand side to set the offset on.|
-| _int_ |fingerId|The finger to set the offset.|
-| _Vector2_ |offset|The offset as a scale factor on the finger last bone's half dimension, as a 2D-coordinate of (towards tip of the finger, towards inner surface of the finger)|
 
 
 ### SetSensorActive
