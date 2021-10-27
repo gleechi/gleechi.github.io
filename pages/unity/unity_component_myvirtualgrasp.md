@@ -16,17 +16,19 @@ It inherits from VG_MainScript, which encodes the main functionality of VirtualG
 In Unity, VG_MainScript inherits from Monobehavior so you can use it as a component on a GameObject.<br><br>
 <!-- All the API functions you want to use in your own scripts can be accessed through VG_Controller. -->
 
-On this page, we are going to describe all the major configuration options, divided into the following sections:
+On this page, we are going to describe all the major configuration options.
+
+<!--On this page, we are going to describe all the major configuration options, divided into the following sections:
 
 * [AutoSetup & Sensors](#sensor-setup)
 * [Sensor Settings](#sensor-settings)
 * [Object Identifiers](#object-identifiers)
 * [Grasp Interaction Settings](#grasp-interaction-settings)
 * [Advanced Settings - Debug Settings](#debug-settings)
+-->
+### AutoSetup & Sensors
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="Sensor configuration options (as part of VG_MainScript) in Unity." caption="Sensor configuration options (as part of VG_MainScript) in Unity." %}
-
-### AutoSetup & Sensors
 
 **AutoSetup** will auto-configure a number of controller-related settings in your VG_MainScript component and thereyby allow you to quickly switch between different controller inputs, such as Quest, LeapMotion, Mouse, and others.
 
