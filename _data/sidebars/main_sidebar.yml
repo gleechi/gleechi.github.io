@@ -31,10 +31,7 @@ entries:
           
       - title: Explanations
         output: web
-        subfolderitems: 
-        - title: About VirtualGrasp
-          url: /virtual_grasp.html
-          output: web   
+        subfolderitems:
         - title: Controllers
           url: /controllers.html
           output: web    

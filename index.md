@@ -4,13 +4,35 @@ sidebar: main_sidebar
 permalink: index.html
 ---
 
-Please choose your chapter of interest in the top navigation or menu navigation bar, or use the search to browse the index.
+VirtualGrasp (VG) is a software development kit (SDK) developed from over eight years of research in robotics, healthcare and industrial applications.
+VG SDK provides a set of tools to make hand-object interactions in VR natural and immersive. The two main benefits of using VG are:
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesis}}">synthesizing</a>
+ natural looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> 
+on hands during [grasp interaction](grasp_interaction.html) in a VR application, and
+* easy setup of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> 
+of an object (through [object articulation](object_articulation.html)) when hand [grasps](grasp_interaction.html) or [pushes](push_interaction.html) the object. 
 
-As a general guideline:
+These two features are closely linked to each other. 
+To have intuitive object grasp interaction experiences, just synthesizing the natural looking 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a>
+is not enough. How the hand and object moves just before and after grasping needs to be carefully handled, which is
+solved by VG's [object articulation](object_articulation.html) feature.
+
+
+Note that, while the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behavior</a> 
+is provided out of the box from the VG SDK, 
+to achieve natural looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> in runtime
+requires a preprocessing step called [object baking](object_baking.html).
+
+VG is hardware agnostic and can create natural grasp interactions with any kind of controllers (or sensors). 
+You can find more details in [controllers](controllers.html) page.
+
+As a general guideline to this site:
 
 * [Tutorials](unity_get_started_installation.html) take you by the hand through a series of steps to learn how to use VirtualGrasp.
-* [Explanations](virtual_grasp.html) lead you to learn about fundamental concepts in VirtualGrasp.
+* [Explanations](controllers.html) lead you to learn about fundamental concepts in VirtualGrasp.
 * [How-To Guides](unity_component_myvirtualgrasp.html) are recipes that guide you through the components involved in addressing key problems and use-cases.
-* [References](virtualgrasp_unityapi.html) contain technical reference for VirtualGrasp APIs and components as well as release notes. They describe how it works and how to use it, but assume that you have a basic understanding of key concepts in **Explanations**.
+* [References](virtualgrasp_unityapi.html) contain technical reference for VirtualGrasp APIs and components as well as release notes. They describe how it works and how to use it,
+ but assume that you have a basic understanding of key concepts in [Explanations](controllers.html).
 
 {% include image.html file="docs_overview.png" alt="Documentation overview." caption="Documentation Overview [source: https://documentation.divio.com]." %}
