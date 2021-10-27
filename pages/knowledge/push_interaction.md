@@ -28,29 +28,29 @@ VirtualGrasp provides a solution to make push interaction setup easier and intui
 When push is done with physics, the selection of object is straightforward -- by contact and apply force. 
 When push is done without physics, there need to be a way to decide which object is to be pushed. 
 VirtualGrasp does this through checking the geometric relation between a 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">Push Agent</a>
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a>
 and the object to be pushed. 
 To allow VR developers to be able to specify for example "This button can not be pushed from below", 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> is added
-onto the object to specify the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">Approach Direction</a> 
+onto the object to specify the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a> 
 by the push agent for pushing. 
 
 Given that
-* The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">Push Agent</a> has been assigned 
-(through set <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> as INDEX_PUSHABLE),
+* The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a> has been assigned 
+(through set <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> as INDEX_PUSHABLE),
 and
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> is added to the object to be pushed. 
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> is added to the object to be pushed. 
 
 The decision on which of the pushable objects is selected for pushing is done by considering:
 * how close is the push agent to the pushable object
 and
 * how aligned is the push agent's approach direction with the preferred approach direction assigned on the object by 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>. 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>. 
 
 {% include image.html file="unity/unity_button_pivot.png" alt="A Unity button." caption="A Unity button"%}
 
 For example image above shows the push pivot transform added to the red button. The blue arrow (Zaxis of this transform) specifies
-the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">Approach Direction</a>. 
+the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>. 
 So when index finger is approaching from bottom to the button, opposite to the blue arrow, the object will not be selected for push.
 
 
@@ -59,7 +59,7 @@ See [VG_HintVisualizer](unity_component_vghintvisualizer.html#unity-component-vg
 
 #### How to Setup Push Without Physics
 
-Through VirtualGrasp's [Object Articulation](object_articulation.html#object-articulation) feature, a VR developer can setup a pushable object with various behaviors 
+Through VirtualGrasp's [object articulation](object_articulation.html#object-articulation) feature, a VR developer can setup a pushable object with various behaviors 
 simulating real world's button object in any game engine. And this setup does not require the developer to add physical qualities to either objects or hands in the game engine. 
 
 Using Unity game engine as an example, to create a pushable button, 
@@ -69,15 +69,15 @@ and the parameters shown in below image create a button that can be pushed by in
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
 * Since button is moving along a single axis linearly, we select the joint type to be PRISMATIC.
-* For PRISMATIC joint, we need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> which specifies the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">Joint Axis</a> along which object moves.
-* For PRISMATIC joint, we also need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">Joint Limit</a>, i.e. a linear movement range between 0 and 0.014 meter. 
-* Since the pushable button's movement direction (by <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a>) is same as the direction we want hand to approach for pushing, so we don't need to specify 
-a different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>.
-* For push without physics, you need to select <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> as INDEX_PUSHABLE.
-* To let object bounce back when not pushed, you need to set the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>
+* For PRISMATIC joint, we need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a> which specifies the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">joint axis</a> along which object moves.
+* For PRISMATIC joint, we also need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">joint limit</a>, i.e. a linear movement range between 0 and 0.014 meter. 
+* Since the pushable button's movement direction (by <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a>) is same as the direction we want hand to approach for pushing, so we don't need to specify 
+a different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>.
+* For push without physics, you need to select <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> as INDEX_PUSHABLE.
+* To let object bounce back when not pushed, you need to set the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>
  to be <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Bounce}}">BOUNCE</a>. 
-* To let object bounce back NOT to the lower boundary of the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">Joint Limit</a> 
-(i.e. min = 0), but to slightly lower position, we set two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">Discrete States</a> with first value 0.004.
+* To let object bounce back NOT to the lower boundary of the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">joint limit</a> 
+(i.e. min = 0), but to slightly lower position, we set two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">discrete states</a> with first value 0.004.
 
 
 {% include important.html content="When BOUNCE affordance is chosen, object' Joint State will bounce back to the smallest value of the Discrete States.
@@ -140,19 +140,19 @@ Which option should be used depends on the requirements of your game and what ki
 <td markdown="span">Need careful selection of dynamic properties since they influence how object react to push</td>
 </tr>
 <tr>
-<td markdown="span" style="text-align: right">Limited in terms of "who" can push the object (now only INDEX_PUSHABLE <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a>.</td>
+<td markdown="span" style="text-align: right">Limited in terms of "who" can push the object (now only INDEX_PUSHABLE <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a>.</td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
 <td markdown="span">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">Anything with RigidBody and Collider can push since it is physics-based.</td>
 </tr>
 <tr>
-<td markdown="span" style="text-align: right">Can specify preferred hand approach direction through <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>  </td>
+<td markdown="span" style="text-align: right">Can specify preferred hand approach direction through <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>  </td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
 <td markdown="span">Can not specify preferred hand direction. </td>
 </tr>
 <tr>
-<td markdown="span" style="text-align: right">Some hand approach direction is not allowed for push if deviate too much from the preferred direction by <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> </td>
+<td markdown="span" style="text-align: right">Some hand approach direction is not allowed for push if deviate too much from the preferred direction by <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> </td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
 <td markdown="span">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">Object can be pushed from any direction since it is physics-based.</td>
