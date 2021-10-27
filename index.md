@@ -24,7 +24,7 @@ is provided out of the box from the VG SDK,
 to achieve natural looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> in runtime
 requires a preprocessing step called [object baking](object_baking.html).
 
-VG is hardware agnostic and can create natural grasp interactions with any kind of controllers (or sensors). 
+VG is hardware agnostic and can create natural [grasp interactions](grasp_interaction.html) with any kind of controllers (or sensors). 
 You can find more details in [controllers](controllers.html) page.
 
 As a general guideline to this site:

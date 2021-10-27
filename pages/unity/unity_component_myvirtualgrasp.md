@@ -20,8 +20,7 @@ On this page, we are going to describe all the major configuration options, divi
 
 * [AutoSetup & Sensors](#sensor-setup)
 * [Sensor Settings](#sensor-settings)
-* [Global Grasp Interaction Settings](#grasp-interaction-settings)
-* [Advanced Settings - Selection Settings](#selection-settings)
+* [Grasp Interaction Settings](#grasp-interaction-settings)
 * [Advanced Settings - Debug Settings](#debug-settings)
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="Sensor configuration options (as part of VG_MainScript) in Unity." caption="Sensor configuration options (as part of VG_MainScript) in Unity." %}
@@ -85,7 +84,6 @@ Note that the hand coordinate system's axes, XYZ, are defined like you strech ou
 
 {% include image.html file="knowledge/lhs_rhs.png" alt="LHS/RHS" caption="The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand." %}
 
-<!--
 ### Sensor Settings
 
 {% include image.html file="unity/unity_vg_sensor_settings.png" alt="VG sensor settings." caption="VG sensor settings" %}
@@ -112,7 +110,15 @@ This provides the option to choose which button on a hand-held VR controller you
 | TRIGGER | the VR controller's trigger button usually placed under index finger. | 
 | GRIP| the VR controller's grip button usually placed under middle and ring fingers | 
 
--->
+### Object Identifiers
+{% include image.html file="unity/unity_vg_object_identifiers.png" alt="VG object identifiers." caption="VG object identifiers" %}
+
+The object identifiers let you decide which Unity component(s) (by name) can be used to specify an object to be interactable. 
+If any of these components are added to a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GameObject}}">game object</a>,
+this object will be supported by VG's [grasp](grasp_interaction.html) and [push](push_interaction.html) interactions.
+
+By default VG uses 2 components: [VG_Articulation](unity_component_vgarticulation.html) and [VG_Interactable](unity_component_vginteractable.html).
+
 ### Grasp Interaction Settings
 
 {% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
@@ -169,6 +175,5 @@ Debug settings will show up when "Show Advanced" is checked.
 | Parameters | Description |
 |-------|--------|
 | Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes (see [Debug Files](debug_files.html)). | 
-| Use Object IK | Enabling this will activate object IK; NOTE this is currently not supported. | 
 | Physics Default Contact Offset | Overwrite Unity physics contact offset for more accurate collision detection. | 
 
