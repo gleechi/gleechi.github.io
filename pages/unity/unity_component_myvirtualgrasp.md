@@ -20,6 +20,7 @@ On this page, we are going to describe all the major configuration options, divi
 
 * [AutoSetup & Sensors](#sensor-setup)
 * [Sensor Settings](#sensor-settings)
+* [Object Identifiers](#object-identifiers)
 * [Grasp Interaction Settings](#grasp-interaction-settings)
 * [Advanced Settings - Debug Settings](#debug-settings)
 
