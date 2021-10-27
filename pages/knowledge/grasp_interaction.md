@@ -22,12 +22,12 @@ VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a gen
 create immersive grasp interacting experiences in VR.
 
 In this page we first describe the process of how VG create hand object grasp interaction,
-* From Object Selection to Grasp Synthesis
+* [From Object Selection to Grasp Synthesis](#from-object-selection-to-grasp-synthesis)
 
-and then explain a set of parameters to configure and fine-tune the grasp interaction experiences in your VR application.
-* Grasp Synthesis Method, or in short, Synthesis Method 
-* Grasp Interaction Type, or in short, Interaction Type
-* Grasp Speed and Release Speed
+and then explain a set of parameters to configure and fine-tune the grasp interaction experiences in your VR application:
+* [Grasp Synthesis Method](#grasp-synthesis-method)
+* [Grasp Interaction Type](#grasp-interaction-type)
+* [Grasp Speed and Release Speed](#grasp-speed-and-release-speed)
 
 ### From Object Selection to Grasp Synthesis
 
@@ -140,7 +140,7 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 
 To create natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">Grasp Configurations</a> 
 in <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis</a>, we need to bake the object
-(see [Grasp Baking](grasp_baking.html#grasp-baking)). The baking output of an object and a hand is a grasp database that contains 
+(see [Object Baking](object_baking.html#object-baking)). The baking output of an object and a hand is a grasp database that contains 
 
 1. the object's shape analysis results from shape baking
 2. a set of grasps for the hand to grasp this object
@@ -150,14 +150,11 @@ we only need to have #1 the result from shape baking,
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StaticGrasp}}">Static Grasp</a>
 needs to have #2 a set of grasps in the database. 
 
-In current VirtualGrasp SDK, [Grasp Baking](grasp_baking.html#grasp-baking) process only bake the object shape, and will not produce a set of grasps for the hand.
+In current VirtualGrasp SDK, [Object Baking](object_baking.html#object-baking) process only bake the object shape, and will not produce a set of grasps for the hand.
 Therefore, directly after baking, you can only apply <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">Dynamic Grasp</a>. 
 
 In the situations when you need to use SG (see section [Choosing Synthesis Method and Interaction Type](#choosing-synthesis-method-and-interaction-type)), 
 [Grasp Studio](unity_component_vggraspstudio.html#grasp-studio) can be used to add grasps into database through DG. 
-
-
-
 
 ### Grasp Interaction Type
 

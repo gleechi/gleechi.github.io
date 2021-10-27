@@ -42,7 +42,7 @@ If properly setup, you will see similar info as below in your console:
 
 #### Object Baking
 
-The **.ZIP** file of all the content is the input that is needed for [Object Baking](grasp_baking.html#upload-input).
+The **.ZIP** file of all the content is the input that is needed for [Object Baking](object_baking.html#upload-input).
 
 #### Grasp Editor
 

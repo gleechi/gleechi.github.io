@@ -85,7 +85,7 @@ Note that the hand coordinate system's axes, XYZ, are defined like you strech ou
 
 {% include image.html file="knowledge/lhs_rhs.png" alt="LHS/RHS" caption="The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand." %}
 
-
+<!--
 ### Sensor Settings
 
 {% include image.html file="unity/unity_vg_sensor_settings.png" alt="VG sensor settings." caption="VG sensor settings" %}
@@ -112,18 +112,18 @@ This provides the option to choose which button on a hand-held VR controller you
 | TRIGGER | the VR controller's trigger button usually placed under index finger. | 
 | GRIP| the VR controller's grip button usually placed under middle and ring fingers | 
 
-
+-->
 ### Grasp Interaction Settings
 
 {% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
 
-You can set the default [grasp Interaction](grasp_interaction.html#grasp-interaction) settings for all objects in the scene globally. 
-
-And note that <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Synthesis Method</a> and 
+See explanation of the parameters in [grasp Interaction](grasp_interaction.html#grasp-interaction). 
+You can set the default grasp interaction parameters for all objects in the scene globally. 
+And <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Synthesis Method</a> and 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">Interaction Type</a> can be set "locally" for each object by using
 [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable) component.
 
-### Selection Settings
+<!--### Selection Settings
 {% include image.html file="unity/unity_vg_selection_settings.png" alt="VG selection settings." caption="VG selection settings" %}
 
 Selection settings will show up when "Show Advanced" is checked. 
@@ -158,7 +158,7 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 | Grasp Rot Dist Threshold | rotation distance threshold above which a grasp in DB will not be selected for grasp synthesis | 
 | Grasp Pos Dist Threshold | position distance threshold above which a grasp in DB will not be selected for grasp synthesis | 
 
-
+-->
 ### Debug Settings
 {% include image.html file="unity/unity_vg_debug_settings.png" alt="VG debug settings." caption="VG debug settings" %}
 
@@ -168,7 +168,7 @@ Debug settings will show up when "Show Advanced" is checked.
 
 | Parameters | Description |
 |-------|--------|
-| Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes; read [Debug Files knowledge page](debug_files.html) to learn more. | 
-| Use Object IK | Enabling this will activate object IK; NOTE this is not supported anymore. | 
+| Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes (see [Debug Files](debug_files.html)). | 
+| Use Object IK | Enabling this will activate object IK; NOTE this is currently not supported. | 
 | Physics Default Contact Offset | Overwrite Unity physics contact offset for more accurate collision detection. | 
 

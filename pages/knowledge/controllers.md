@@ -6,12 +6,21 @@ permalink: controllers.html
 folder: knowledge
 toc: true
 ---
+## Background
 
-Whether it is Unity or Unreal, you can assign your controller input in VG_MainScript → Sensors → Sensor. Note that if you use the GleechiLib prefab in Unity, MyVirtualGrasp is your VG_MainScript (as it inherits from it).
+VirtualGrasp is **hardware-agnostic**. It can create natural grasp interactions 
+with any kind of controllers (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensors}}">sensors</a>), wether it is hand-held VR controllers or finger tracking devices like LeapMotion. 
+This is because unlike many physics-based grasp synthesis solutions in the market (Hand Physics Lab, [HPTK](https://github.com/jorgejgnz/HPTK-Sample), [CLAP](https://clapxr.com/) etc) 
+that requires accurate finger tracking devices, VirtualGrasp exploits "object intelligence". By analyzing shape and affordances of an object model in VR, 
+we can synthesize <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> on a hand
+with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. 
 
+Whether it is Unity or Unreal, you can assign your controller input in VG_MainScript → Sensors → Sensor. 
+Note that if you use the GleechiLib prefab in Unity, MyVirtualGrasp is your VG_MainScript (as it inherits from it).
 {% include image.html file="unity/unity_control_flags.png" alt="VG control flags." caption="VG Control Flags" %}
 
-There are a few controllers that are supported "out of the box" by VirtualGrasp, which means that no additional engine plugins are needed. Since VirtualGrasp internally takes care of them, we call them "internal controllers." All of the sensor options (such as LEAP in the image above), except EXTERNAL_CONTROLLER are internal controllers.
+There are a few controllers that are supported "out of the box" by VirtualGrasp, which means that no additional engine plugins are needed. 
+Since VirtualGrasp internally takes care of them, we call them "internal controllers." All of the sensor options (such as LEAP in the image above), except EXTERNAL_CONTROLLER are internal controllers.
 
 ## Internal Controllers
 
@@ -41,7 +50,7 @@ It is called external, because - instead of an internal native library - an exte
 
 {% include image.html file="knowledge/external_controllers.png" alt="Internal controllers." caption="External controller pipeline." %}
 
-### Considerations to Take Into Account
+### Considerations
 
 When installing a controller plugin into your project, the same native libraries will be placed somewhere on your system, most probably as part of the plugin that you installed into your project. With the plugin, a number of components, scripts, tutorials, etc may also be installed. Since you may not use many of them, this may be an **overhead to take**.
 
