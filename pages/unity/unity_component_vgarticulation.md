@@ -11,17 +11,15 @@ folder: mydoc
 
 {% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
-The VG_Articulation component provide a graphical user interface in Unity to specify an object's 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">Interactive Behaviors</a>. 
+The VG_Articulation component provide a graphical user interface in Unity to specify [object articulation](object_articulation.html#object-articulation)
+that defines an object's 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a>. 
 
-{% include important.html content="To use the VG_Articulation component (as shown in image above), you should first understand the meaning of VirtualGrasp's  
-[Object Articulation](object_articulation.html#object-articulation)." %}
+{% include important.html content="Before using the VG_Articulation component, please first read [object articulation](object_articulation.html#object-articulation) page." %}
 
 ### Initial Setting
 
 For each interactable object in your Unity scene, you can add this VG_Articulation component to specify the articulation setup of this object. 
-
-By default, if you do not add this component, this object has "floating" joint type. 
 
 ### Runtime Changes
 
