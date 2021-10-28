@@ -15,9 +15,8 @@ It provides a tool to create ghost hands in Unity.
 {% include image.html file="unity/unity_vg_ghost_hands.png" alt="VG GhostHands" caption="VG_GhostHands Component." %}
 
 @kai please record a video to replace this one.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FX4HQCO_hd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+{% include youtube.html id="FX4HQCO_hd8" %}
 
 ### How to Use
  

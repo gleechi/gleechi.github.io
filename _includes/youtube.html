@@ -1,10 +1,10 @@
 {% if include.width != '' %}
   <div style="width: {{include.width}}; margin:0 auto;">
 {% else %}
-  <div>
+  <div style="width: 100%; margin:0 auto;">
 {% endif %}
   <div class="ytcontainer">
-    <iframe class="yt" allowfullscreen src="https://www.youtube.com/embed/{{include.id}}?rel=0&modestbranding=1"></iframe>
+    <iframe class="yt" src="https://www.youtube.com/embed/{{include.id}}?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 {% if {{include.caption}} %}
 <figcaption>{{include.caption}}</figcaption>
