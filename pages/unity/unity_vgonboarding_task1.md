@@ -12,8 +12,8 @@ folder: mydoc
 We have a series of VG onboarding tasks to show how to tackle different practical use cases in a VR application.
 
 ### Task Description
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_4IFXcsT9ME" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+{% include youtube.html id="_4IFXcsT9ME" %}
 
 #### Interaction behaviors wanted
 

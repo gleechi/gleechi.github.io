@@ -449,6 +449,8 @@ ul#mysidebar {
 
 span.projectTitle {
     font-family: Nunito;
+    font-style:bold;
+    font-size:14px;
     color: #333;
 }
 
