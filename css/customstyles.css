@@ -1202,6 +1202,9 @@ h4.panel-title {
     .navbar-left,.navbar-right {
         float: none !important;
     }
+    .navbar-inverse .navbar-toggle .icon-bar {
+        background-color: #333;
+    }
     .navbar-toggle {
         display: block;
     }
