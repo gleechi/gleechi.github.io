@@ -20,7 +20,7 @@ The MonoBehavior provides a tutorial on the VG API functions for accessing the p
 
 If push hints is enabled, for any objects that are setup for push without physics, there will be a push hint drawn on the surface of the selected object in Unity. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FX4HQCO_hd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="FX4HQCO_hd8" %}
 
 By default the push hint takes the shape of a circle (see video above), and its size will increase as the finger tip is closer to the object, and decrease as it moves far away.
 And when finger tip is too far from the object, or 
