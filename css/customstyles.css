@@ -448,8 +448,8 @@ ul#mysidebar {
 }
 
 span.projectTitle {
-    font-family: Helvetica;
-    font-weight: bold;
+    font-family: Nunito;
+    color: #333;
 }
 
 .footer {
