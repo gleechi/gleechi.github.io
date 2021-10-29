@@ -19,6 +19,8 @@ GraspBaking: Refers to a preprocess of generating a fixed set of GraspConfigurat
 
 InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup in VG_Articulation component. 
 
+VGInteractable: An object is described as VG-interactable means it can be grasped or pushed by hands supported by VG.
+
 Grasp: A hand grasps and holds an object.
 
 GraspConfiguration: Describes the hand pose when grasping an object; including wrist position, orientation and all finger bone's rotation angles; it can be synthesized in runtime by VG's GraspSynthesis algorithms.
