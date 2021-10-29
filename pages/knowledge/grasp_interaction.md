@@ -139,19 +139,8 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 
 
 To create natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> 
-in <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>, we need to bake the object
-(see [Object Baking](object_baking.html#object-baking)). The baking output of an object and a hand is a grasp database that contains 
-
-1. the object's shape analysis results from shape baking
-2. a set of grasps for the hand to grasp this object
-
-While for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">dynamic grasp</a>, 
-we only need to have #1 the result from shape baking, 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StaticGrasp}}">static grasp</a>
-needs to have #2 a set of grasps in the database. 
-
-In current VirtualGrasp SDK, [object baking](object_baking.html#object-baking) process only bake the object shape, and will not produce a set of grasps for the hand.
-Therefore, directly after baking, you can only apply <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">dynamic grasp</a>. 
+in <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>, we need to [bake the object](object_baking.html#object-baking).
+The baking output of an object a grasp database that contains the object's shape analysis results, which will enable directly DG for any humanoid hands.
 
 In the situations when you need to use SG (see section [choosing synthesis method and interaction type](#choosing-synthesis-method-and-interaction-type)), 
 [grasp studio](unity_component_vggraspstudio.html#grasp-studio) can be used to add grasps into database through DG. 
@@ -179,7 +168,6 @@ Because of this difference, there are different alternative solutions to pose th
 As explained in the previous sections, selecting different combinations of synthesis method and interaction type will create different user experiences. 
 Due to the nature of each option, there may be preferences of how to combine the two parameters. The table below gives some hints: 
 
-
 | Interaction Type | Synthesis Method | Evaluation |
 |-------|--------|---------|
 | Trigger Grasp | DG | &#x2611; Good since DG create grasp pose that is close to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>, so hand will not move so much.  | 
@@ -191,7 +179,7 @@ Due to the nature of each option, there may be preferences of how to combine the
 | Preview Grasp | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in DB | 
 | Preview Only | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps in to DB through DG synthesis | 
 | Preview Only | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in DB | 
-| Sticky Hand | -- | -- | 
+| Sticky Hand | -- | Sticky Hand is a fall back solution when objects are not baked, so no SG or DG is relevant. | 
 
 
 ### Grasp Speed and Release Speed
