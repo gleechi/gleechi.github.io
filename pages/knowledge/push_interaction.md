@@ -99,17 +99,18 @@ To create a pushable button with physics, besides all the setup in VG_Articulati
 
 ### Push Without Physics vs. With Physics
 
-To help you set up the push object with physics, most of the [object articulation](object_articulation.html#object-articulation) parameters that applies to without physics situation also will take effect, with very few exceptions. Table below give a list of these parameters. 
+To help you set up the push object with physics, most of the [object articulation](object_articulation.html#object-articulation) parameters that applies to without physics situation also will take effect, with very few exceptions:
  
-| Object Articulation Param | Push without Physics | Push with Physics |
+<!--| Object Articulation Param | Push without Physics | Push with Physics |
 |-------|--------|---------|
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">Joint</a> | Relevant | Relevant | 
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>| Relevant | Relevant | 
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> | Relevant | INDEX_PUSHABLE is not needed | 
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> | Relevant | Not relevant  | 
+-->
 
-* For push with physics, an object can be pushed by any part of hand or object that have physical properties. Therefore setting <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> to be INDEX_PUSHABLE is not relevant because it will not just limit the push by only the index finger.
-* For push with physics, <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> won't take effect to specify a preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>, which can be good or bad depending on the desired user experiences.
+* For push with physics, an object can be pushed by any part of the hands or any object that have physical properties. Therefore setting <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> to be INDEX_PUSHABLE is not relevant because it will not limit the push by only the index finger.
+* For push with physics, <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> won't take effect to specify a preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>, which can be good or bad depending on the game logic and the desired user experiences.
 
 
 The table below give some hints and considerations to help you choose which push option to use:
