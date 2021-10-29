@@ -8,18 +8,17 @@ toc: true
 ---
 
 ### Background
-To create immersive interactive experiences in a virtual environment is difficult because physical constraints and haptic sensations can not 
-be fully reproduced with today's VR software and hardware technology. 
+To create immersive interactive experiences in a virtual environment is difficult because physical constraints and haptic sensations can not be fully reproduced with today's VR software and hardware technology. 
 This is especially challenging when we want to have hand presence in VR while grasping and manipulating objects. 
 
-For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarantee
-that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> 
-on the selected object. While in real life such a problem is trivial since we can always rely on our fast sensory-motor feedback
-loop to correct our hand and finger poses, in VR such a feedback does not exist. 
+For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarantee that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> on the selected object. While in real life such a problem is trivial since we can always rely on our fast sensory-motor feedback loop to correct our hand and finger poses, in VR such a feedback does not exist. 
 
 VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
 create immersive grasp interacting experiences in VR.
+
+Such a solution guaranttees much more robust grasp interactions compared to the physics-based grasp synthesis solutions in the market ([Hand Physics Lab](https://www.holonautic.com/hand-physics-lab), [HPTK](https://github.com/jorgejgnz/HPTK-Sample), [CLAP](https://clapxr.com/)):
+* there is no dependency on accurate finger tracking controllers (see [controllers](controllers.html)), and
+* users don't need to spend a lot of cognitive load to carefully place the fingers around the object.
 
 In this page we first describe the process of how VG create hand object grasp interaction,
 * [From Object Selection to Grasp Synthesis](#from-object-selection-to-grasp-synthesis)
@@ -41,10 +40,9 @@ and choose the "closest" object for grasp. Note this process is done in VirtualG
 not through physical collision detection in any client engines. 
 
 And once an object is selected by a hand, it is ready for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>. 
-In a typical <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> (like 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.TriggerGrasp}}">trigger grasp</a>, or
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JumpGrasp}}">jump grasp</a> ), grasp synthesis on an object only happens if
-the user triggers grasp while this hand has selected this object. 
+
+<!--In a typical <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> (like <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.TriggerGrasp}}">trigger grasp</a>, or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JumpGrasp}}">jump grasp</a> ), grasp synthesis on an object happens if the user triggers grasp while this hand has selected this object. 
+-->
 
 ### Grasp Synthesis Method
 
@@ -187,9 +185,8 @@ Due to the nature of each option, there may be preferences of how to combine the
 {% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings" %}
 As shown in above image, you can set the default synthesis methods and interaction type for all objects in the scene globally. 
 
-Besides those, there are two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">grasp speed</a> and 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">release speed</a>
-that can also significantly affect the user experience because they determines how fast the hand forms grasp and releases from grasp respectively.
+The other two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">grasp speed</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">release speed</a> that can also significantly affect the user experience because they determines how fast the hand forms grasp and releases from grasp respectively.
+
 {% include tip.html content="For grasp speed, lower value means faster grasp, for release speed, lower value means faster release." %}
 
 To learn more details on how to setup your objects' grasp interaction in practice, please see [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable).

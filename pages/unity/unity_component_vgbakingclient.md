@@ -13,9 +13,9 @@ folder: mydoc
 
 ### VG_BakingClient 
 
-You will be able to request a [Object Baking](object_baking.html) by connecting to Gleechi's 
+You will be able to request [object baking](object_baking.html) by connecting to Gleechi's 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CABVG}}">CABVG</a> 
- server through a GUI interface that is part of the SDK. You can find it in the VirtualGrasp menu:
+ server through a GUI interface -- VG_BakingClient -- that is part of the SDK. You can find it in the VirtualGrasp menu:
 
 {% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client in Unity." caption="VG_BakingClient" %}
 
@@ -23,7 +23,7 @@ You will be able to request a [Object Baking](object_baking.html) by connecting 
 
 To upload the files for a bake:
 
-* First, create a package of the necessary inputs for the bake (this is equivalent to creating the [Debug Files](debug.files)).
+* First, create a package of the necessary inputs for the bake (this is equivalent to creating the [debug files](debug.files)).
 * Insert the **SitePath** (provided to you with your license). The site path is the server address.
 * Insert the **ApiKey** (provided to you with your license). The api key is an identifier to access the service.
 * Enter your **email** address (to which you want to get notifications).

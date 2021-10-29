@@ -9,9 +9,7 @@ toc: true
 
 In order to runtime synthesize natural looking grasps on objects during [grasp interaction](grasp_interaction.html), 
 VirtualGrasp requires a preprocessing step of these objects. 
-Like game developers know the concepts of "light baking light" or "texture baking" in order to preprocess expensive computations and have faster access during runtime, 
-we call the preprocessing of the objects <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectBaking}}">object baking</a>.
-
+Like game developers know the concepts of "light baking" or "texture baking" in order to preprocess expensive computations and have faster access during runtime, we call the preprocessing of the objects <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectBaking}}">object baking</a>.
 
 In order to bake an object, we need to access the 3D mesh data of the object. 
 So if the 3D mesh data of the object changed, a new object baking is needed. 
