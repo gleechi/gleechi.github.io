@@ -79,14 +79,13 @@ a different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.g
 * To let object bounce back NOT to the lower boundary of the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">joint limit</a> 
 (min = 0), but to slightly lower position, we set two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">discrete states</a> with first value 0.004 (>min).
 
-
 {% include callout.html content="When TWO_STAGE affordance is chosen, object' joint state will bounce back to the smallest value of the discrete states after the 2nd push.
 Since by default discrete states will take the two range values from the joint limits [min, max], so if discrete states is not provided, the joint state will bounce back to the min value. 
 If you want it to bounce to a different value from min, you should define the discrete states with first (smallest) value larger than joint limit's min value. As shown in above image, the smallest discrete value 0.004 is bigger than the min value 0." %}
 
-
-
 ### Push With Physics
+
+{% include warning.html content="The push with physics option is still at the experimental stage." %}
 
 VirtualGrasp also supports push through physics, by seamlessly integrating VG's [object articulation](object_articulation.html#object-articulation) feature with the physical simulations already existing 
 in the client engines (Unity or Unreal). 
