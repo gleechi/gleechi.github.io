@@ -10,6 +10,108 @@ folder: mydoc
 ---
 
 
+## Changes from V0.7.1 (2021-10-04) to V0.7.1 V0.8.0 (2021-10-28)
+
+##### Major Functionality Changes:
+
+* Plugins folder has been moved to ThirdParty/VirtualGrasp/Plugins. ⚠️ IMPORTANT: Please move your old VirtualGrasp-related Plugins folder into ThirdParty/VirtualGrasp content before updating with the new unitypackage.
+
+* VG_Articulation 's inspector view got a major overhaul in terms of dynamic settings, e.g. the presented visual elements in the view are changing dependent on joint type and other settings.
+
+* Object tags are deprecated and not considered any longer. 
+
+* The object identifier strings (moved to VG_MainScript inspector view) can still be used to define layers. 
+
+* The object identifier strings are now also used to define component names to mark interactable objects, by default VG_Articulation and VG_Interactable.
+
+* ⚠️ IMPORTANT: In order to simplify transition from object tags, select "VirtualGrasp→ Utilities→ Convert Object Tags to VG_Articulations." This will automatically search for GameObjects with "Object" tag, remove the tag, and - if there is none yet - put a VG_Articulation (with FLOATING joint type) in its place. You need to save the scene manually.
+
+##### GUI / Component Changes:
+
+* All VG components have been linked with their OpenReferenceURLs to their respective docs.gleechi.com pages.
+
+* VG_StateVisualizer and VG_BakingClient also received context menus to open documentation links.
+
+* A number of development components were removed: VG_ObjectModifier, VG_GraspVisualizer, VG_HeightController, VG_ObjectWheel, VG_RuntimeRegister, VG_ButtonTester, VG_JointChanger, VG_TriggerEvent , VG_Gestures.
+
+* MyVirtualGraspBurst (inheriting VG_MainScript) fixed and optimized.
+
+* VG_Recorder improved and optimized in terms of terminology.
+
+* VG_Highlighter consistency statuses updated. Now they differentiate between unbaked, baked, and edited (through VG_GraspEditor) objects.
+
+* VG_GraspStudio always hides inactive objects.
+
+* VG_GraspStudio always adds hands for grasp adding when in VR mode.
+
+* VG_GraspStudio label icon update bug fixed.
+
+* VG_MainScript.DebugSettings.ObjectIK disabled by default.
+
+* VG_SelectionSettings.ObjectIdentifiers moved to VG_Mainscript main GUI.
+
+* VG_Avatar.IsReplay removed (should be set manually through VG_Controller.SetProcessedByFrame(), as in VG_Recorder).
+
+* VG_Articulation default VG_JointType changed to FLOATING.
+
+* VG_HandStatus.Distance removed.
+
+* VG_MainScript.GlobalSensorSettings renamed to VG_MainScript.SensorSettings.
+
+* Menu "VirtualGrasp" organized and sorted into three subfolders "Components", "Asset Functions" and "Utilities."
+
+* VG_InteractionMode.PHYSICAL_PUSHING renamed to VG_InteractionMode.PUSHING
+
+##### API Changes:
+
+* GetObjectState() renamed to GetObjectJointState().
+
+* RegisterAvatarOnline() renamed to RegisterAvatarAtRuntime().
+
+* SynthesisMethod.DYNAMIC renamed to VG_SynthesisMethod.DYNAMIC_GRASP.
+
+* SynthesisMethod.STATIC renamed to VG_SynthesisMethod.STATIC_GRASP.
+
+* StartReplay() now takes avatar ID and selected object as input. See Recorder documentation for way of use.
+
+* StopReplay() added.
+
+* Functions that were marked as obsolete and non-functional before were now removed: SetPhysicalObject(), GetNonSelectableObjects(), SetGestureDuration(), SetPushAngleThreshold()
+
+##### Package Changes:
+
+* All Core Scripts / how-tos that are in use have been moved from Scripts/Core to Scripts.
+
+* Scripts/Dev and Scripts/Tests have been removed.
+
+* Update to VG Core library 0.5.0:
+
+* Improved DG look in terms of naturalism.
+
+* Sensor replay on full sequence can be played on a specified object. 
+
+##### Other / Internal Changes:
+
+* All external controllers (UnityXR, Oculus Finger Tracking, LeapMotion, Mouse) have been updated and tested.
+
+* External controller DebugDraw() also includes unmapped bones.
+
+* Small bugs in Move script and ChangeSelectionWeight script fixed (onboarding).
+
+* Bugfix to not control hands by controllers if they are in replay mode.
+
+* Isolated (burst) and internal VG update loops synced.
+
+* Bugfix that edited grasps and labels were not available in runtime.
+
+##### Known Issues:
+
+* Replay hands spin (invalid data) when using MouseController.
+
+* Replay on controlled avatar only triggers when controllers are active.
+
+* Offset conflict with Burst. Each thread rotates hands; 4 threads / rotations bring it into orignal rotation.
+
 ## Changes from V0.7.0 (2021-09-17) to V0.7.1 (2021-10-04)
 
 ##### Major Functionality Changes:
