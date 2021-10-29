@@ -31,13 +31,45 @@
                   <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.external_url}}" target="_blank" rel="noopener">{{subfolderitem.title}}</a></li>
                   {% elsif page.url == subfolderitem.url %}
                   <li class="active"><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | remove: "/"}}">{{subfolderitem.title}}</a></li>
-                  {% else %} <!-- // DISABLE ACCORDION -->
+                  {% else %}
                   {% if site.expand_sidebars == true %}
                   <li class="active"><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | remove: "/"}}">{{subfolderitem.title}}</a></li>
                   {% else %}
                   <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | remove: "/"}}">{{subfolderitem.title}}</a></li>
                   {% endif %}
                   {% endif %}
+                  
+
+                  <!--
+                  {{ subfolderitem.subsubfolderitems.childElementCount }}
+                  {% if subfolderitem.subsubfolderitems.title != "" %} 
+                  {{ subfolderitem.subsubfolderitems.title }}
+                  <a title="{{subsubfolders.title}}" href="#">{{ subsubfolders.title }}</a>
+                  <ul>
+                    {% for subsubfolderitem in subfolderitem.subsubfolderitems %}   
+                    {% if subsubfolderitem.output contains "web" %}   
+
+                    {% if subsubfolderitem.external_url %}   
+                    <li><a title="{{subsubfolderitem.title}}" href="{{subsubfolderitem.external_url}}" target="_blank" rel="noopener">{{subsubfolderitem.title}}</a></li>
+                    {% elsif page.url == subsubfolderitem.url %}   
+                    <li class="active"><a title="{{subsubfolderitem.title}}" href="{{subsubfolderitem.url | remove: "/"}}">{{subsubfolderitem.title}}</a></li>
+                    {% else %}      
+                    {% if site.expand_sidebars == true %}
+                    <li class="active"><a title="{{subsubfolderitem.title}}" href="{{subsubfolderitem.url | remove: "/"}}">{{subsubfolderitem.title}}</a></li>
+                    {% else %}
+                    {{ subsubfolderitem }}
+                    <ul>
+                    <li><a title="{{subsubfolderitem.title}}" href="{{subsubfolderitem.url | remove: "/"}}">{{subsubfolderitem.title}}</a></li>
+                    </ul>
+                    <li><a title="{{subsubfolderitem.title}}" href="{{subsubfolderitem.url | remove: "/"}}">{{subsubfolderitem.title}}</a></li>
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}                    
+                  </ul>
+                  {% endif %}
+                  -->
+                  
                   {% endif %}
                   {% endfor %}
               </ul>

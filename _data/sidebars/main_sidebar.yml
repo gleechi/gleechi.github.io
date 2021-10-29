@@ -5,103 +5,108 @@ entries:
   levels: one
   folders:
 
-  - title: Chapters
+  - title: Welcome
+    url: /index.html
     output: web
     folderitems:
     - title: Welcome
       url: /index.html
       output: web
       subfolders:
+
+  - title: Tutorials
+    output: web
+    folderitems:
+    - title: Installation
+      url: /unity_get_started_installation.html
+      output: web
+    - title: Avatar Setup
+      url: /unity_get_started_avatars.html
+      output: web
+    - title: Sensor Setup
+      url: /unity_get_started_sensors.html
+      output: web
+    - title: Object Setup
+      url: /unity_get_started_objects.html
+      output: web
       
-      - title: Tutorials
+  - title: Explanations
+    output: web
+    folderitems:
+    - title: Controllers
+      url: /controllers.html
+      output: web 
+    - title: Object Articulation
+      url: /object_articulation.html
+      output: web
+    - title: Object Baking
+      url: /object_baking.html
+      output: web
+    - title: Grasp Interaction
+      url: /grasp_interaction.html
+      output: web
+    - title: Push Interaction
+      url: /push_interaction.html
+      output: web
+    - title: Debug Files
+      url: /debug_files.html
+      output: web
+    - title: Sensor Record and Replay
+      url: /sensor_record_replay.html
+      output: web
+    - title: Glossary
+      url: /glossary.html
+      output: web
+      
+  - title: How-To Guides
+    output: web
+    folderitems:
+    - title: My VirtualGrasp
+      url: /unity_component_myvirtualgrasp.html
+      output: web
+    - title: My VirtualGraspBurst
+      url: /unity_component_myvirtualgraspburst.html
+      output: web
+    - title: VG_Articulation
+      url: /unity_component_vgarticulation.html
+      output: web
+    - title: VG_BakingClient
+      url: /unity_component_vgbakingclient.html
+      output: web
+    - title: VG_ExternalControllerManager
+      url: /unity_component_vgexternalcontrollermanager.html
+      output: web
+    - title: VG_GhostHands
+      url: /unity_component_vgghosthands.html
+      output: web
+    - title: VG_GraspStudio
+      url: /unity_component_vggraspstudio.html
+      output: web
+    - title: VG_HandVisualizer
+      url: /unity_component_vghandvisualizer.html
+      output: web
+    - title: VG_HighLighter
+      url: /unity_component_vghighlighter.html
+      output: web 
+    - title: VG_HintVisualizer
+      url: /unity_component_vghintvisualizer.html
+      output: web 
+    - title: VG_Interactable
+      url: /unity_component_vginteractable.html
+      output: web
+    - title: VG_PostAnimator
+      url: /unity_component_vgpostanimator.html
+      output: web
+    - title: VG_Recorder
+      url: /unity_component_vgrecorder.html
+      output: web
+    - title: VG_StateVisualizer
+      url: /unity_component_vgstatevisualizer.html
+      output: web
+      subfolders:
+      - title: VG_Onboarding
         output: web
         subfolderitems:
-        - title: Installation
-          url: /unity_get_started_installation.html
-          output: web
-        - title: Avatar Setup
-          url: /unity_get_started_avatars.html
-          output: web
-        - title: Sensor Setup
-          url: /unity_get_started_sensors.html
-          output: web
-        - title: Object Setup
-          url: /unity_get_started_objects.html
-          output: web
-          
-      - title: Explanations
-        output: web
-        subfolderitems:
-        - title: Controllers
-          url: /controllers.html
-          output: web    
-        - title: Object Articulation
-          url: /object_articulation.html
-          output: web
-        - title: Object Baking
-          url: /object_baking.html
-          output: web
-        - title: Grasp Interaction
-          url: /grasp_interaction.html
-          output: web
-        - title: Push Interaction
-          url: /push_interaction.html
-          output: web
-        - title: Debug Files
-          url: /debug_files.html
-          output: web
-        - title: Sensor Record and Replay
-          url: /sensor_record_replay.html
-          output: web
-        - title: Glossary
-          url: /glossary.html
-          output: web
-          
-      - title: How-To Guides
-        output: web
-        subfolderitems:
-        - title: My VirtualGrasp
-          url: /unity_component_myvirtualgrasp.html
-          output: web
-        - title: My VirtualGraspBurst
-          url: /unity_component_myvirtualgraspburst.html
-          output: web
-        - title: VG_Articulation
-          url: /unity_component_vgarticulation.html   
-          output: web
-        - title: VG_BakingClient
-          url: /unity_component_vgbakingclient.html   
-          output: web
-        - title: VG_ExternalControllerManager
-          url: /unity_component_vgexternalcontrollermanager.html   
-          output: web
-        - title: VG_GhostHands
-          url: /unity_component_vgghosthands.html
-          output: web
-        - title: VG_GraspStudio
-          url: /unity_component_vggraspstudio.html
-          output: web
-        - title: VG_HandVisualizer
-          url: /unity_component_vghandvisualizer.html
-          output: web
-        - title: VG_HighLighter
-          url: /unity_component_vghighlighter.html
-          output: web       
-        - title: VG_HintVisualizer
-          url: /unity_component_vghintvisualizer.html
-          output: web   
-        - title: VG_Interactable
-          url: /unity_component_vginteractable.html   
-          output: web
-        - title: VG_PostAnimator
-          url: /unity_component_vgpostanimator.html
-          output: web
-        - title: VG_Recorder
-          url: /unity_component_vgrecorder.html
-          output: web
-        - title: VG_StateVisualizer
-          url: /unity_component_vgstatevisualizer.html
-          output: web
         - title: VG_Onboarding_Task1
           url: /unity_vgonboarding_task1.html
           output: web
@@ -111,22 +116,22 @@ entries:
         - title: VG_Onboarding_Task3
           url: /unity_vgonboarding_task3.html
           output: web
-          
-      - title: References
-        output: web
-        subfolderitems:
-        - title: Release Notes
-          url: /release_notes.html
-          output: web
-        - title: Unity API
-          url: /virtualgrasp_unityapi.html
-          output: web        
-        - title: Unity API functions
-          url: /virtualgrasp_unityapi.html#virtualgrasp_controller_functions
-          output: web
-        - title: Unity Enums
-          url: /virtualgrasp_unityapi.html#enums
-          output: web
-        - title: Unity Events
-          url: /virtualgrasp_unityapi.html#events
-          output: web
+      
+  - title: References
+    output: web
+    folderitems:
+    - title: Release Notes
+      url: /release_notes.html
+      output: web
+    - title: Unity API
+      url: /virtualgrasp_unityapi.html
+      output: web 
+    - title: Unity API functions
+      url: /virtualgrasp_unityapi.html#virtualgrasp_controller_functions
+      output: web
+    - title: Unity Enums
+      url: /virtualgrasp_unityapi.html#enums
+      output: web
+    - title: Unity Events
+      url: /virtualgrasp_unityapi.html#events
+      output: web
