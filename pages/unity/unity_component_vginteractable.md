@@ -11,15 +11,18 @@ folder: mydoc
 
 {% include image.html file="unity/unity_vg_interactable.png" alt="VG interactable." caption="VG_Interactable" %}
 
+{% include callout.html content="All parameters in the VG_Interactable component is explained in 
+[grasp interaction](grasp_interaction.html#grasp-interaction)." %}
+
 VG_Interactable component allows you to specify different 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp Synthesis Method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">Interaction Type</a>
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a>
 for each object by attaching this component to the corresponding game object. 
-This will override the global settings for [grasp Interaction](grasp_interaction.html#grasp-interaction) assigned on all objects in the scene
-(see [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.html#grasp-interaction-settings)). 
+This will override the global settings for [grasp Interaction](grasp_interaction.html#grasp-interaction) assigned on all objects in the scene (see [global grasp interaction settings](unity_component_myvirtualgrasp.html#grasp-interaction-settings)). 
+
+Adding this component to an object also specifies this object to be <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">VG-interactable</a>.
  
 {% include tip.html content="All objects without a customized VG_Interactable will follow the global settings,
- but those with VG_Interactable will follow their local settings." %}
+ but those with VG_Interactable will follow these local settings." %}
 
-{% include important.html content="To use the VG_Interactable component, you should first understand the meaning of VirtualGrasp's  
-[Grasp Interaction](grasp_interaction.html#grasp-interaction)." %}
+
 

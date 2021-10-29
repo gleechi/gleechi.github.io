@@ -16,11 +16,11 @@ For example, when a user places the avatar hand close to an object and triggers 
 VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
 create immersive grasp interacting experiences in VR.
 
-Such a solution guaranttees much more robust grasp interactions compared to the physics-based grasp synthesis solutions in the market ([Hand Physics Lab](https://www.holonautic.com/hand-physics-lab), [HPTK](https://github.com/jorgejgnz/HPTK-Sample), [CLAP](https://clapxr.com/)):
+VG guaranttees more robust grasp interactions compared to the physics-based grasp synthesis solutions in the market ([Hand Physics Lab](https://www.holonautic.com/hand-physics-lab), [HPTK](https://github.com/jorgejgnz/HPTK-Sample), and [CLAP](https://clapxr.com/), etc) because:
 * there is no dependency on accurate finger tracking controllers (see [controllers](controllers.html)), and
 * users don't need to spend a lot of cognitive load to carefully place the fingers around the object.
 
-In this page we first describe the process of how VG create hand object grasp interaction,
+In this page we first describe the process of how VG creates object grasp interaction,
 * [From Object Selection to Grasp Synthesis](#from-object-selection-to-grasp-synthesis)
 
 and then explain a set of parameters to configure and fine-tune the grasp interaction experiences in your VR application:
@@ -34,10 +34,8 @@ In VR, grasp interaction consists of two consecutive processes:
 * <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">object selection</a>
 * <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>
 
-VirtualGrasp provides an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">object selection</a>
-mechanism through checking collision between a grasp selection sphere attached to the hand and the objects,
-and choose the "closest" object for grasp. Note this process is done in VirtualGrasp library,
-not through physical collision detection in any client engines. 
+VirtualGrasp provides an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">object selection</a> mechanism through checking collisions between a grasp selection sphere attached to the hand and the objects, and choosing the "closest" object for grasping. 
+Note this process is done in the VirtualGrasp library, and no collider setup or physical simulation is needed in any client engines. 
 
 And once an object is selected by a hand, it is ready for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>. 
 
@@ -84,7 +82,7 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 <td markdown="span" style="text-align: right">No overhead during runtime (simple DB access)</td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
-<td markdown="span">Some overhead during runtime (generative algorithm)</td>
+<td markdown="span">Some negligible overhead during runtime (generative algorithm)</td>
 </tr>
 <tr>
 <td markdown="span" style="text-align: right">Hand-sensor-immersion breaks due to sparse grasps.</td>
@@ -136,9 +134,8 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 </table>
 
 
-To create natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> 
-in <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>, we need to [bake the object](object_baking.html#object-baking).
-The baking output of an object a grasp database that contains the object's shape analysis results, which will enable directly DG for any humanoid hands.
+To create natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> in <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>, we need to [bake the object](object_baking.html#object-baking).
+The baking output of objects is a grasp database which will enable DG for any humanoid hands.
 
 In the situations when you need to use SG (see section [choosing synthesis method and interaction type](#choosing-synthesis-method-and-interaction-type)), 
 [grasp studio](unity_component_vggraspstudio.html#grasp-studio) can be used to add grasps into database through DG. 
@@ -146,46 +143,49 @@ In the situations when you need to use SG (see section [choosing synthesis metho
 ### Grasp Interaction Type
 
 As we mentioned in [background](#background) section, when a user triggers grasp, the wrist may not be at a good pose w.r.t. the object.
-VG's grasp synthesis algorithm will "correct" this "mis-placement" of wrist, and create a grasp configuration
+VG's grasp synthesis algorithm will "correct" this "mis-placement" of wrist, and create a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a>
 with a wrist pose different from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a> at the moment of grasp triggering. 
-Because of this difference, there are different alternative solutions to pose the object-hand grasp ensemble that will create different user experiences: 
+Because of this difference, there are different alternative solutions to pose the object-hand grasp ensemble, which will create different user experiences: 
 
 
 | Interaction Type | Description | Considerations |
 |-------|--------|---------|
-| Trigger Grasp | when user triggers grasp, hand moves to the wrist pose in the synthesized grasp configuration around the object | since hand moves away from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">Sensor Pose</a>, this could break sensor-motor immersion| 
-| Jump Grasp | when user triggers grasp, object jumps to the grasped position in the hand | object directly moves upon grasp triggering, which may not be suitable for performing some tasks requiring physical stability (e.g. play Jenga game)  | 
-| Jump Primary Grasp | when user triggers grasp, object jumps to the grasped position in the hand, using the labeled primary grasp(s) in the grasp DB | using primary grasp(s) is needed particularly in situations when an object should be grasped in one or more particular ways, e.g. how to grasp a gun| 
-| Preview Grasp | once user selected an object, the grasp configuration is previewed on the object, so that user can push the trigger button to pick up the object if the grasp is satisfactory | since grasp synthesis process is running at every frame when object is selected, when computationally heavy DG is used, this can be slow | 
-| Preview Only | once user selected an object, the grasp configuration is previewed on the object, and the grasp trigger won't take effect to pick up object | since grasp synthesis process is running at every frame when object is selected, when computationally heavy DG is used, this can be slow | 
-| Sticky Hand | a fall-back grasp interaction type when object is not baked, where the grasp configuration is directly taken from the hand pose at the moment of grasp triggering as if hand is stick to the object.  | the fall back solution will be active when interactable objects have not been baked | 
+| Trigger Grasp | when user triggers grasp, hand moves to the wrist pose in the synthesized <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> around the object | since hand moves away from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>, this could break hand-sensor immersions| 
+| Jump Grasp | when user triggers grasp, object jumps to the grasped position in the hand | object directly moves upon grasp triggering, which may not be suitable for performing some tasks requiring physical stability (e.g. play a Jenga game)  | 
+| Jump Primary Grasp | when user triggers grasp, object jumps to the grasped position in the hand, using the labeled primary grasp(s) in the grasp DB | using primary grasp(s) is needed particularly in situations when an object should be grasped in some particular ways (e.g. how to grasp scissors)| 
+| Preview Grasp | once user selected an object, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> is previewed on the object, so that user can push the trigger button to pick up the object if the grasp is satisfactory | since <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a> is running at every frame when object is selected, when DG is used can leads to low frame rate | 
+| Preview Only | once user selected an object, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> is previewed on the object, and the grasp trigger won't take effect to pick up object | since grasp synthesis process is running at every frame when object is selected, when DG is used can leads to low frame rate | 
+| Sticky Hand | a fall-back solution when object is not baked, so the grasp configuration is directly taken from the hand pose at the moment of grasp triggering, as if hand is stick to the object.  | this allows VR developers to setup the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> supported by VG's [object articulation](object_articulation.html) before baking objects | 
 
 
 ### Choosing Synthesis Method and Interaction Type
 
-As explained in the previous sections, selecting different combinations of synthesis method and interaction type will create different user experiences. 
+As explained in the previous sections, selecting different combinations of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> will create different user experiences. 
 Due to the nature of each option, there may be preferences of how to combine the two parameters. The table below gives some hints: 
 
 | Interaction Type | Synthesis Method | Evaluation |
 |-------|--------|---------|
-| Trigger Grasp | DG | &#x2611; Good since DG create grasp pose that is close to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>, so hand will not move so much.  | 
-| Trigger Grasp | SG |  &#x2612; Not recommended since when there is sparse grasps in DB, hand will move far away from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>, breaking immersion | 
+| Trigger Grasp | DG | &#x2611; Good since DG create grasp pose with the wrist close to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>, so hand will not move so much. | 
+| Trigger Grasp | SG |  &#x2612; Not recommended since when there is sparse grasps in DB, hand will move far away from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>, breaking the hand-sensor immersion. | 
 | Jump Grasp | DG | &#x2611; Good since DG create grasp pose that is close to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>, so object will not jump too much.  | 
-| Jump Grasp | SG | &#x2611; Ok as long as the object's big jump is not a problem a the moment of grasping.  | 
-| Jump Primary Grasp | DG | &#x2612; Not possible since <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PrimaryGrasp}}">primary grasp</a> is grasp(s) in the DB which is only used during SG synthesis| 
-| Preview Grasp | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps in to DB through DG synthesis | 
-| Preview Grasp | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in DB | 
-| Preview Only | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps in to DB through DG synthesis | 
-| Preview Only | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in DB | 
+| Jump Grasp | SG | &#x2611; Ok as long as the object's big jump is not a problem at the moment of grasping.  | 
+| Jump Primary Grasp | DG | &#x2612; Not possible since <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PrimaryGrasp}}">primary grasp</a> is grasp(s) in the DB which is only used during SG synthesis.| 
+| Preview Grasp | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps to the DB through DG. | 
+| Preview Grasp | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in the DB. | 
+| Preview Only | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps to the DB through DG. | 
+| Preview Only | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in the DB. | 
 | Sticky Hand | -- | Sticky Hand is a fall back solution when objects are not baked, so no SG or DG is relevant. | 
 
 
 ### Grasp Speed and Release Speed
 
 {% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings" %}
-As shown in above image, you can set the default synthesis methods and interaction type for all objects in the scene globally. 
+In global grasp interaction settings, you can set the default <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> for all objects in the scene globally. 
+The other two parameters -- <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">grasp speed</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">release speed</a> -- also significantly affect the user experiences because they determines how fast the hand forms grasp and releases from grasp respectively. 
 
-The other two parameters <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">grasp speed</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">release speed</a> that can also significantly affect the user experience because they determines how fast the hand forms grasp and releases from grasp respectively.
+The unit of these values are in (second), so if <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">grasp speed</a> is 0.1, it means it takes 0.1 second starting from grasp triggering for the hand to form a complete <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> on the object.
+
+If <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">release speed</a> is 0.2, it means it takes 0.2 second starting from release triggering for the hand to move from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> on the object back to its <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>.
 
 {% include tip.html content="For grasp speed, lower value means faster grasp, for release speed, lower value means faster release." %}
 

@@ -128,8 +128,7 @@ By default VG uses 2 components: [VG_Articulation](unity_component_vgarticulatio
 
 See explanation of the parameters in [grasp Interaction](grasp_interaction.html#grasp-interaction). 
 You can set the default grasp interaction parameters for all objects in the scene globally. 
-And <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Synthesis Method</a> and 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">Interaction Type</a> can be set "locally" for each object by using
+And <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis Method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> can be set "locally" for each object by using
 [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable) component.
 
 <!--### Selection Settings
