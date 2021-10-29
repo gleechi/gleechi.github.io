@@ -55,41 +55,41 @@ The table below gives some example values of joint state to further clarify its 
 | -2.5 (a random value as an example) | -2.5 (degree) rotated around joint axis (follow right-hand rule) from the zero pose | -2.5 (meter, in Unity) translated along joint axis direction from the zero pose |
 
 {% include tip.html content="Note that the joint limit [Min, Max] is essentially the limit range of the Joint State; and the Discrete States are 
- where the Joint State will clamp to when the object is released depending on [Object Affordances](#object-affordances)." %}
+ where the Joint State will clamp to when the object is released depending on [object affordances](#object-affordances)." %}
 
 
 ### Pivot vs. Push Pivot
 
 As shown in the joint parameter table above, an object's joint parameters include 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointCenter}}">Joint Center</a> and
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">Joint Axis</a>.
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointCenter}}">joint center</a> and
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">joint axis</a>.
 These two parameters are provided in a combined way through a 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform in the game engine. 
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a> transform in the game engine. 
 
 Then what is **Push Pivot**? 
 
 Push Pivot is provided to specify along which direction the hand is allowed to approach and apply push action. 
-And this is only relevant for Push without Physics setup when object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> 
-to INDEX_PUSHABLE (details see [Push Interaction](push_interaction.html#push-articulation)).
+And this is only relevant for Push without Physics setup when object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> 
+to INDEX_PUSHABLE (details see [push interaction](push_interaction.html#push-articulation)).
 
-Similar to provide joint axis through Pivot transform, we use Push Pivot transform's **Zaxis** to specify this push approach direction. 
+Similar to provide joint axis through pivot transform, we use push pivot transform's **Zaxis** to specify this push approach direction. 
 
-{% include important.html content="Push Pivot is NOT specifying along which direction object moves, 
+{% include important.html content="Push pivot is NOT specifying along which direction object moves, 
 but rather specifying a preferred hand approach direction which is only used for object selection for
-push interaction. How object moves is defined by Pivot together with other joint parameters." %}
+push interaction. How object moves is defined by pivot together with other joint parameters." %}
 
-If <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>
- is not provided in the [the graphical user interface](#graphical-user-interface), then the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>
- just inherit from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a>,
+If <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>
+ is not provided in the [graphical user interface](#graphical-user-interface), then the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>
+ just inherit from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a>,
 i.e. the push direction is same as the joint axis. 
 
 {% include image.html file="unity/unity_button_pivot.png" alt="A Unity button." caption="A Unity button"%}
 The image above shows an example of setting up a button object that can be pushed from top by index finger. 
-In this case the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>
-is the same as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a>
+In this case the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>
+is the same as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a>
 because the preferred approach direction is same as the button movement direction.
 
-To learn more details of how to setup pushable object see [Push Interaction](push_interaction.html#push-without-physics).
+To learn more details of how to setup pushable object see [push interaction](push_interaction.html#push-without-physics).
 
 
 ### Object Affordances
@@ -102,13 +102,13 @@ In VG library we define a “narrower” sensed set of affordances that determin
 
 | Affordances | Description | Object Joint Settings |
 |-------|--------|---------|
-| Graspable | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a>: Can be grasped | for all joint types | 
-| Index Pushable | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a>: Can be pushed by the index finger; only relevant when setup [push interaction without physics](push_interaction.html#push-without-physics).| for all joint types | 
+| Graspable | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a>: Can be grasped | for all joint types | 
+| Index Pushable | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a>: Can be pushed by the index finger; only relevant when setup [push interaction without physics](push_interaction.html#push-without-physics).| for all joint types | 
 |-------|--------|---------|
-| Normal | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>: Object stay at the pose when hand is released  | for all joint types| 
-| Bounce | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>: When released, bounce to the lowest discrete state | for 1-dof joint | 
-| Two Stage | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
-| Snaps | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>: When released, snap to the closest discrete state | for 1-dof joint | 
+| Normal | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: Object stay at the pose when hand is released  | for all joint types| 
+| Bounce | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: When released, bounce to the lowest discrete state | for 1-dof joint | 
+| Two Stage | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
+| Snaps | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: When released, snap to the closest discrete state | for 1-dof joint | 
 
 ### Dual Hands Only
 
@@ -122,8 +122,7 @@ mass or inertia specified in the game engine.
 ### Graphical User Interface
 
 The image below shows Unity's VG_Articulation component as an example for the GUI of Object Articulation.
-
-Note that the VirtualGrasp's object articulation is generic for all other client engines like Unreal.
+Note that the VG_Articulation is generic for all other client engines like Unreal.
 
 To learn more details of Unity implementation see [VG_Articulation](unity_component_vgarticulation.html#unity-component-vgarticulation).
 
