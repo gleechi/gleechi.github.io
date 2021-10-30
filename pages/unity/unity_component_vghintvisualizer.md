@@ -24,16 +24,16 @@ If push hints is enabled, for any objects that are setup for push without physic
 
 By default the push hint takes the shape of a circle (see video above), and its size will increase as the finger tip is closer to the object, and decrease as it moves far away.
 And when finger tip is too far from the object, or 
-if the approach direction deviates too much from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a>,
+if the approach direction deviates too much from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>,
 this circle will disappear indicating the object is no longer selected for push.
 
-See Push without Physics section in [Push Interaction](push_interaction.html#push-interaction) to learn about the process of pushable object selection.
+See [push without physics](push_interaction.html#push-without-physics) to learn about the process of pushable object selection.
 
 ### Grasp Hints
 
 If grasp hints is enabled, the graspable object selection sphere attached to the hand will show up, and when an object is selected, this sphere will change color.
 
-See [Grasp Interaction](grasp_interaction.html#grasp-interaction) to learn about the process of graspable object selection.
+See [from object selection to grasp synthesis](grasp_interaction.html#from-object-selection-to-grasp-synthesis) to learn about the process of graspable object selection.
 
 ### How to Use
 

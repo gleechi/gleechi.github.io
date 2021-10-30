@@ -11,7 +11,7 @@ toc: false
 
 ## A First Look at the Sensor Setup
 
-In VirtualGrasp we use the term <a data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensor}}">sensor</a> and <a data-toggle="tooltip" data-original-title="{{site.data.glossary.Controller}}">controller</a> exchangeably since a VR controller is essentially a sensing device for hand poses. 
+{% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
 In the default prefab, a sensor setting is configured for any <a data-toggle="tooltip" data-original-title="{{site.data.glossary.Controller}}">controller</a> supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.html).
 

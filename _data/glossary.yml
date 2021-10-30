@@ -5,13 +5,11 @@ CoreScript: Refers to a customizable component which wraps and examplify the use
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
-CABVG: Refers to VirtualGrasp's baking server, to which you can connect through VG_BakingClient -- a GUI interface that is part of the VG SDK; it is used for ObjectBaking. 
+CABVG: Refers to VirtualGrasp's baking server, to which you can connect through VG_BakingClient -- a GUI interface that is part of the VG SDK; it is used for [object baking](object_baking.html). 
 
 VGSceneFiles: Refers to VirtualGrasp's protobuf representation of the current interaction configuration of the game scene. 
 
 ObjectHierarchy: Refers to parent-child relations between objects in a game scene; VG synchronizes its internal object hierarchy with that in the game scene in runtime. 
-
-ObjectBaking: Baking an object is a preprocess of expensive computations on an object (and optionally for a hand) needed for faster process of runtime object-hand interaction; it include analyzing the object shape and optionally creating a set of grasps for particular hands.
 
 ObjectBaking: Refers to a preprocess of expensive object analysis, which is needed for DynamicGrasp synthesis in runtime.
 
@@ -33,7 +31,7 @@ GraspSynthesis: A runtime process of creating hand grasping configuration – th
 
 FingerControlType: Describes how sensor is controlling the finger movement on the avatar hands; the different finger control types are explained in detail in [sensor settings](unity_component_myvirtualgrasp.html#sensor-settings). 
 
-GraspSynthesisMethod: Describes the method used for GraspSynthesis; see [grasp interaction](grasp_interaction.html) to understand different methods.
+GraspSynthesisMethod: Describes the method used for GraspSynthesis. See [grasp interaction](grasp_interaction.html) to understand different methods.
 
 InteractionType: Describes how hand/object moves when VR user selected an object or triggers grasp to start interacting with an object. The different interaction types are explained in detail in [GraspInteraction]. 
 
@@ -49,7 +47,7 @@ SensorData: Refers to the set signals provided by a hand sensing device such as 
 
 SensorRecordAndReplay: Refers to the functionality of VirtualGrasp to allow recording SensorData during runtime interaction, and later replaying to reproduce those interaction.   
 
-SensorOffset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [InteractionSetup] to know how to adjust this offset.
+SensorOffset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [sensor offset](unity_component_myvirtualgrasp.html#sensor-offset) to know how to adjust this offset.
 
 SensorPose: The 3D position and orientation of an avatar's wrist determined by a sensor (hand-held VR controller or hand tracking devices like Leap Motion); note this can be different from the actual rendered pose of the avatar wrist.  
 
@@ -129,6 +127,6 @@ ScrewJoint: A joint of type Revolute when the parameter ScrewRate > 0, then the 
 
 InteractionSegment: Refers to a segment of recorded sensor data that contains continuous frames for hand interaction with an object, or without any object.
 
-InteractionSequence: Refers to successive order of two or more recorded sensor data segment that contains continuous frames for hand interaction with an object, or without any object. 
+InteractionSequence: Refers to successive order of two or more recorded InteractionSegment that contains continuous frames for hand interaction with an object, or without any object. 
 
 SelectionWeight: Refers to the weight specifying the likelihood of an object to be selected for interaction (grasp or push) with hands; by default all object have 1 as selection weight; 0 means an object is completely hidden for interaction, and there is no upper boundary for this weight.
