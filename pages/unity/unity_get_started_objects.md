@@ -17,12 +17,12 @@ In Unity, the easiest way to make a GameObject interactable is to add a [VG_Arti
 
 The following two conditions have to be met:
 
-1. The GameObject must have a MeshRenderer component (representing the actual 3D shape data) assigned to it.
-1. The source of that MeshRenderer must have the "Read/Write enabled" checkbox checked in the model inspector.
+1. The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GameObject}}">GameObject</a> must have a MeshRenderer component (representing the actual 3D shape data) assigned to it.
+2. The source of that MeshRenderer must have the "Read/Write enabled" checkbox checked in the model inspector.
 
-Only the MeshRenderer on that GameObject will be interactable, i.e. no MeshRenderers in the hierarchy below it.
+Only the MeshRenderer on that <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GameObject}}">GameObject</a> will be interactable, i.e. no MeshRenderers in the hierarchy below it.
 
-The GameObject will be made interactable (i.e. selectable and movable) with the hands through the VG Interaction Engine. However, if you also get natural grasps depends on if the object has been "baked." You can read more on baking in [Knowledge Base - Baking](grasp_baking.html).
+The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GameObject}}">GameObject</a> will be made <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a> with the hands through VG's [object articulation](object_articulation.html) feature. However, if you also want to get natural grasps then a preprocessing step called [object baking](object_baking.html) is needed.
 
 ### Customizing Layers and Component Names
 

@@ -20,7 +20,7 @@ that defines an object's
 ### Initial Setting
 
 For each interactable object in your Unity scene, you can add this VG_Articulation component to specify the [articulation setup of this object](object_articulation.html#object-articulation). 
-By default the VG_articulation component set an object to have Floating <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a>; and adding this component to the object also specifies this object to be <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">VG-interactable</a>. 
+By default the VG_articulation component sets an object to have floating <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a>; and adding this component to the object also specifies this object to be <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a> (see [object identifiers](unity_get_started_objects.html#customizing-layers-and-component-names)). 
 
 ### Runtime Changes
 

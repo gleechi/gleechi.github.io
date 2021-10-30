@@ -13,9 +13,7 @@ ObjectHierarchy: Refers to parent-child relations between objects in a game scen
 
 ObjectBaking: Baking an object is a preprocess of expensive computations on an object (and optionally for a hand) needed for faster process of runtime object-hand interaction; it include analyzing the object shape and optionally creating a set of grasps for particular hands.
 
-ShapeBaking: Refers to a preprocess of expensive object shape analysis, which is needed for DynamicGrasp synthesis in runtime.
-
-GraspBaking: Refers to a preprocess of generating a fixed set of GraspConfigurations for particular hands on an object, which can be used for StaticGrasp synthesis in runtime.
+ObjectBaking: Refers to a preprocess of expensive object analysis, which is needed for DynamicGrasp synthesis in runtime.
 
 InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup in VG_Articulation component. 
 
@@ -33,9 +31,9 @@ GraspType: What types of grasps depicting shape of hand/fingers when holding an 
 
 GraspSynthesis: A runtime process of creating hand grasping configuration – the wrist and fingers pose w.r.t the object – when an user triggers grasp with VR controllers.
 
-FingerControlType: Describes how sensor is controlling the finger movement on the avatar hands. The different finger control types are explained in detail in [InteractionSetup](abc.html). 
+FingerControlType: Describes how sensor is controlling the finger movement on the avatar hands; the different finger control types are explained in detail in [sensor settings](unity_component_myvirtualgrasp.html#sensor-settings). 
 
-GraspSynthesisMethod: Describes how a grasp is created when user triggers grasp to start interacting with an object. See [Grasp Interaction](grasp_interaction.html) to understand different methods.
+GraspSynthesisMethod: Describes the method used for GraspSynthesis; see [grasp interaction](grasp_interaction.html) to understand different methods.
 
 InteractionType: Describes how hand/object moves when VR user selected an object or triggers grasp to start interacting with an object. The different interaction types are explained in detail in [GraspInteraction]. 
 
@@ -43,7 +41,9 @@ ObjectJointType: Describes the movement relations between object and environment
 
 ObjectAffordance: Describes which kind of hand interaction we can have with this object in the virtual environment. For example if an object is "finger pushable", then you can push this object using index finger. See [Object and Articulation] for details of different affordances supported by VG. 
 
-Sensor: Refers to a hand sensing device such as hand-held VR controllers like Oculus Touch or hand tracking devices like LeapMotion; they can sense wrist position, orientation and optionally finger poses; since sensor is used to control avatars in VR, it can also be referred to as "controller". 
+Sensor: Refers to a hand sensing device such as hand-held VR controllers like Oculus Touch or hand tracking devices like LeapMotion; they can sense wrist position, orientation and optionally finger poses; since sensor is used to control avatars in VR, it can also be referred to as controller. 
+
+Controller: Refers to a hand sensing device such as hand-held VR controllers like Oculus Touch or hand tracking devices like LeapMotion; they can sense wrist position, orientation and optionally finger poses; in VG we also refer to a controller as sensor. 
 
 SensorData: Refers to the set signals provided by a hand sensing device such as hand-held VR controllers like Oculus Touch or hand tracking devices like LeapMotion; it contains the position and orientation of the wrist and optionally finger poses over time, as well as the grasp trigger.
 
