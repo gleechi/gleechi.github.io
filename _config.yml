@@ -41,10 +41,10 @@ feedback_email: support@gleechi.com
 # feedback_disable: true
 # if you uncomment the previous line, the Feedback link gets removed
 
-# feedback_text: "Need help?"
+feedback_text: "Support"
 # if you uncomment the previous line, it changes the Feedback text
 
-# feedback_link: "http://helpy.io/"
+feedback_link: "https://www.gleechi.com/sdk/support"
 # if you uncomment the previous line, it changes where the feedback link points to
 
 highlighter: rouge

@@ -11,49 +11,24 @@ toc: false
 
 ## Make an Object Interactable in a Few Seconds
 
-VirtualGrasp is using tags or layers to mark objects as interactable. By default, it searches for "Object" as a layer or tag name. 
+In Unity, the easiest way to make a GameObject interactable is to add a [VG_Articulation](unity_component_vgarticulation.html) component.
 
-In Unity, the very simple way to make an object interactable is to
+### Conditions for Interactable Objects
 
-* add the object into your scene, and
-* add the "Object" tag to the object.
+The following two conditions have to be met:
 
-<table>
-<thead>
-<tr class="header">
-<th>Inspector View</th>
-<th>Layer Menu</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td markdown="span">{% include image.html file="unity/object_tag1.png" alt="Unity tags 1." %}<i>Tag entry for each GameObject.</i></td>
-<td markdown="span">{% include image.html file="unity/object_tag2.png" alt="Unity tags 2." %}<i>Layer dropdown in Unity.</i></td>
-</tr>
-</tbody>
-</table>
+1. The GameObject must have a MeshRenderer component (representing the actual 3D shape data) assigned to it.
+1. The source of that MeshRenderer must have the "Read/Write enabled" checkbox checked in the model inspector.
 
-Be aware of the following:
+Only the MeshRenderer on that GameObject will be interactable, i.e. no MeshRenderers in the hierarchy below it.
 
-* Note that this will make an object interactable (i.e. selectable and movable) with the hands through the VG Interaction Engine. If you also get natural grasps depends on if  the object has been "baked." Read more on baking in the [Knowledge Base - Baking](grasp_baking.html).
-* Only GameObjects with a Mesh connected to it should receive the "Object" tag. Otherwise, you will receive a warning.
-* All of these meshes need to have the "Read/Write enabled" checkbox checked in the model inspector. Otherwise, you will receive a warning / error
+The GameObject will be made interactable (i.e. selectable and movable) with the hands through the VG Interaction Engine. However, if you also get natural grasps depends on if the object has been "baked." You can read more on baking in [Knowledge Base - Baking](grasp_baking.html).
 
-<!--
-### Video Tutorial 
+### Customizing Layers and Component Names
 
-The following video content is outdated in the sense that VG has been updated to NOT consider names anymore (due to the issues addressed in the video). VG is directly identifying duplicates or differences based on the shape.
+VirtualGrasp is using names to identify which objects are marked as interactable. You can customize component and layer names in MyVirtualGrasp → Object Identifiers. 
+"VG_Articulation" is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your interactable objects.
 
-{% include youtube.html id="oVILrei1LGA" %}
--->
-
-### Customizing Layers and Tags
-
-If you like, you can customize the tag and layer names that are used to identify VG objects in the MyVirtualGrasp → Show Advanced → Selection Settings → Object Identifiers.
-
-Note that "Object" is always a tag identifier for VG, independent of the content of the list. The default entry is only shown in the List to remind you about it.
-
-{% include image.html file="unity/unity_object_identifiers.png" alt="Unity Object Identifiers." caption=""%}
-
+{% include image.html file="unity/unity_object_identifiers.png" alt="Unity Object Identifiers." caption="VG will use the Object Identifier list to browse components and layers for interactable objects."%}
 
 {% include custom/series_acme_next.html %}
