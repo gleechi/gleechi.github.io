@@ -19,6 +19,8 @@ On this page, we are going to describe all the major configuration options cover
 
 ### AutoSetup & Sensors
 
+{% include callout.html content="Note that in VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
+
 {% include callout.html content= "VG allows you to configure upto two sensors in an VR application. This allows the developer to combine two sensors to control avatar's hands. For example you can choose to use a data glove to control avatar's finger pose and grasp triggers, while using the Oculus touch to control wrist position and orientation. Though this is not most common setup for today's VR development, this ability may become useful expecially for the research community. As you can see **Sensors** is a list in the interface and the first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor." %} 
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
@@ -95,7 +97,7 @@ This provides the option to choose how sensor controls the finger motion
 | BY_SENSOR_FULL_DOFS | for sensor that can provide full dofs hand tracking like Leap Motion, the avatar hand will follow your own hand on all dofs. | 
 | BY_SENSOR_LOW_DOFS| for sensor that can only provide one dof for each finger, like some data gloves, the avatar hand finger will be bended by just one value for each finger following a predefined animation path | 
 | BY_ANIMATION | for all sensor types which all provide a single value, grabbing strength, range between 0.0 and 1.0, all fingers will follow a predefined path in animation. | 
-| BY_OSCILLATED_ANIMATION | will let hand animated a little bit when not interacting with any object to avoid "rigid hand" feeling. (Remain to be tested in unity when sensor type is External Controller ) | 
+| BY_OSCILLATED_ANIMATION | will let hand animated a little bit when not interacting with any object to avoid "rigid hand" feeling. (Experimental) | 
 | BY_EXTERNAL | only relevant for External Controller sensor type, finger will be set by an externally specified finger dofs. | 
 
 

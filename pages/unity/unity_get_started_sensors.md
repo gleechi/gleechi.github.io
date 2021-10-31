@@ -13,9 +13,9 @@ toc: false
 
 {% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
-In the default prefab, a sensor setting is configured for any <a data-toggle="tooltip" data-original-title="{{site.data.glossary.Controller}}">controller</a> supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.html).
+In the default prefab, a sensor setting is configured for any <a data-toggle="tooltip" data-original-title="{{site.data.glossary.Controller}}">controller</a> (or <a data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensor}}">sensor</a>) supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.html).
 
-As you can see in the top of the MyVirtualGrasp component, you can "auto-setup" the whole configuration for some most commonly used sensors, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers.
+As you can see in the top of the [MyVirtualGrasp component](unity_component_myvirtualgrasp.html#autosetup--sensors), you can "auto-setup" the whole configuration for some most commonly used sensors, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers. Read [controllers](controllers.html) page to understand the hardware agnostic feature of VG SDK. 
 
 AutoSetup will take care of a number of settings in the MyVirtualGrasp component. You can use VirtualGrasp without a VR headset and your scene does not need to be a VR-enabled scene. If you do not have a headset, you can use the "Mouse" auto-setup and control the hands with the mouse. If you do have an Oculus Quest headset, we recommend to use "Quest" auto-setup after enabling your scene for VR. 
 
@@ -56,7 +56,7 @@ AutoSetup will take care of a number of settings in the MyVirtualGrasp component
         </div>
         <div id="collapseOne" class="panel-collapse collapse noCrossRef">
             <div class="panel-body">
-                There are a few controllers that are supported "out of the box" by VirtualGrasp, called INTERNAL_CONTROLLERs, which means that no additional Unity plugins are needed. EXTERNAL_CONTROLLERs are enabled through separate Unity plugins. Read more on this on <a href="controllers.html">External Controllers</a>.).
+                There are a few controllers that are supported "out of the box" by VirtualGrasp, called INTERNAL_CONTROLLERs, which means that no additional Unity plugins are needed. However in the released VG SDK, INTERNAL_CONTROLLERS option is turned off. EXTERNAL_CONTROLLERs are enabled through separate Unity plugins, and are the default sensor type.
             </div>
         </div>
     </div>
