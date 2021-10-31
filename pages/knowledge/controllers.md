@@ -8,15 +8,17 @@ toc: true
 ---
 ## Background
 
-{% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
+{% include callout.html content="Note that in VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
-VirtualGrasp is hardware-agnostic. It can create natural grasp interactions 
+VirtualGrasp is hardware-agnostic. It can create natural [grasp interactions](grasp_interaction.html) 
 with any kind of controllers (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensor}}">sensors</a>), wether it is hand-held VR controllers or finger tracking devices like LeapMotion. 
 This is because unlike many physics-based grasp synthesis solutions in the market ([Hand Physics Lab](https://www.holonautic.com/hand-physics-lab), [HPTK](https://github.com/jorgejgnz/HPTK-Sample), [CLAP](https://clapxr.com/)) 
 that requires accurate finger tracking devices, VirtualGrasp exploits "object intelligence". By analyzing shape and affordances of an object model in VR, we can synthesize <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. 
 
-Whether it is Unity or Unreal, you can assign your controller input in VG_MainScript → Sensors → Sensor. 
-Note that if you use the GleechiLib prefab in Unity, MyVirtualGrasp is your VG_MainScript (as it inherits from it).
+Whether it is Unity or Unreal, you can assign your controller input in MyVirtualGrasp → Sensors. 
+See [AutoSetup & Sensors](unity_component_myvirtualgrasp.html#autosetup--sensors) to learn how to setup your sensors in Unity. 
+
+<!--
 {% include image.html file="unity/unity_control_flags.png" alt="VG control flags." caption="VG Control Flags" %}
 
 There are a few controllers that are supported "out of the box" by VirtualGrasp, which means that no additional engine plugins are needed. 
@@ -103,14 +105,6 @@ We also include integrations for some "full-pose" external controllers (which ar
 </tr>
 </thead>
 <tbody>
-<!--
-<tr>
-<td markdown="span">SteamVR</td>
-<td markdown="span">Full hand</td>
-<td markdown="span">SteamVR plugin / Steam Skeleton API used for Knuckles</td>
-<td markdown="span">SteamHand.cs</td>
-</tr>
--->
 <tr>
 <td markdown="span">LeapHand</td>
 <td markdown="span">Full hand</td>
@@ -123,23 +117,14 @@ We also include integrations for some "full-pose" external controllers (which ar
 <td markdown="span">OculusVR plugin / OVRPlugin API used for Quest Finger Tracking.</td>
 <td markdown="span">VG_EC_OculusHand.cs</td>
 </tr>
-<!--
-<tr>
-<td markdown="span">BebopGlove</td>
-<td markdown="span">Full hand</td>
-<td markdown="span">Bebop plugin / Bebop API used for Bebop Gloves</td>
-<td markdown="span">BebopHand.cs</td>
-</tr>
--->
 </tbody>
 </table>
-
 
 As mentioned earlier, for each of them, you also need to install a specific plugin into Unity (see table). VG then does not take the raw sensor input as an input, but works as a filter on the bone animation. To address some of the considerations mentioned in the section above, we provide mapping components (right column). Using the minimal APIs and some help of the VG plugin, those mapping components are configured automatically, they update the hand bones according to the sensor input, and then provide the full bone configuration to VG, which in turn updates the hand bones once again to the final hand configuration.
 
 {% include important.html content="Due to the different geometric representations in the sensor API and the hand models, all mapping components are made to work with the Oculus hands. If you want to use other hands, you have to adapt the scripts." %}
 
-<!--
+
 ## Known Issues
 
 Full-hand external controllers do not work when using VirtualGrasp inside a remote package (due to package dependencies). You need to have VirtualGrasp installed inside the project from a .unitypackage.

@@ -10,27 +10,21 @@ folder: mydoc
 ---
 
 MyVirtualGrasp is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>
-
-It inherits from VG_MainScript, which encodes the main functionality of VirtualGrasp, and is the main component that you need to add and configure in your project to enable VirtualGrasp.
-
+It inherits from VG_MainScript, which encodes the main functionality of VirtualGrasp, and is the main component that you need to add 
+and configure in your project to enable VirtualGrasp.
 In Unity, VG_MainScript inherits from Monobehavior so you can use it as a component on a GameObject.<br><br>
-<!-- All the API functions you want to use in your own scripts can be accessed through VG_Controller. -->
+In VG SDK, you can find the Prefab “GleechiLib” from the ThirdParty/VirtualGrasp/Resources directory that has been configured to have MyVirtualGrasp component. You can simply drag and drop this into your scene, in your Hierarchy view, you will see the instantiated GameObject -- GleechiLib.
 
-On this page, we are going to describe all the major configuration options.
+On this page, we are going to describe all the major configuration options covered in MyVirtualGrasp.cs.
 
-<!--On this page, we are going to describe all the major configuration options, divided into the following sections:
-
-* [AutoSetup & Sensors](#sensor-setup)
-* [Sensor Settings](#sensor-settings)
-* [Object Identifiers](#object-identifiers)
-* [Grasp Interaction Settings](#grasp-interaction-settings)
-* [Advanced Settings - Debug Settings](#debug-settings)
--->
 ### AutoSetup & Sensors
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="Sensor configuration options (as part of VG_MainScript) in Unity." caption="Sensor configuration options (as part of VG_MainScript) in Unity." %}
+{% include callout.html content= "VG allows you to configure upto two sensors in an VR application. This allows the developer to combine two sensors to control avatar's hands. For example you can choose to use a data glove to control avatar's finger pose and grasp triggers, while using the Oculus touch to control wrist position and orientation. Though this is not most common setup for today's VR development, this ability may become useful expecially for the research community. As you can see **Sensors** is a list in the interface and the first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor." %} 
 
-**AutoSetup** will auto-configure a number of controller-related settings in your VG_MainScript component and thereyby allow you to quickly switch between different controller inputs, such as Quest, LeapMotion, Mouse, and others.
+{% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
+
+#### AutoSetup
+AutoSetup will auto-configure a number of controller-related settings in your VG_MainScript component and thereyby allow you to quickly switch between different controller inputs, such as Quest, LeapMotion, Mouse, and others.
 
 Select an [VG_AutoSetup](/virtualgrasp_unityapi.html#vg_autosetup) option from the dropdown menu, then click "Setup" to automatically adjust the following fields:
 * Sensor, External, Origin, Offset, and SensorSettings:FingerControlType.
@@ -38,9 +32,9 @@ Select an [VG_AutoSetup](/virtualgrasp_unityapi.html#vg_autosetup) option from t
 Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process.
 
 The integer value (0 in the image) relates to the element of the Sensors list that you want to auto-configure.
-In most cases you will have only one avatar in your scene that is controlled by a single controller, so 0 is the default. However, if you use multiple sensor elements, you can also quickly auto-configure them by modifying the integer value.
+In most cases you will have only one avatar in your scene that is controlled by a single sensor, so 0 is the default. However, if you use multiple sensor elements, you can also quickly auto-configure them by modifying the integer value.
 
-{% include callout.html content="**Sensors** is a list that allows you to add multiple elements if you like. All of them will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor." type="primary" %} 
+
 
 <!--
 <div class="panel-group" id="accordion1">
@@ -59,38 +53,39 @@ In most cases you will have only one avatar in your scene that is controlled by 
 </div>
 -->
 
-### Sensors
-
 #### Avatars
 
 For each sensor, you can assign multiple avatars, though in most cases you will have only one avatar per sensor.
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_avatar.png" alt="Avatar configuration options (as part of VG_MainScript) in Unity." caption="Avatar configuration options (as part of VG_MainScript) in Unity." %}
+<!--{% include image.html file="unity/unity_vg_myvirtualgrasp_avatar.png" alt="Avatar configuration options in Unity." caption="Avatar configuration options in Unity." %}-->
 
-The **Model** should be HUMANOID_HAND in your usecase. There are robotic hand options as well, but they will not be discussed here.
+| Option | Description |
+|-------|--------|
+| Model | should be HUMANOID_HAND in most of VR application usecase. There could also be robotic hand options, but they will not be discussed here. | 
+| SkeletalMesh| used to provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VG during runtime. | 
+| Remote | check this if you want to use this avatar for reflecting networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.html), or the [VG_Networking Component](unity_component_vgnetworing.html).| 
+| Physical | check this if you want VG to create colliders for this avatar and enable the hand for physical interactions. NOTE at the moment, this option is experimental and should not be used apart from testing.| 
 
-Under **SkeletalMesh** you provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VirtualGrasp during runtime.
+<!--Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.html), or the [VG_Recorder Component](unity_component_vgrecorder.html).-->
 
-Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.html), or the [VG_Recorder Component](unity_component_vgrecorder.html).
+#### Sensor
 
-Check the **Remote** option if you want to use this avatar for reflecting networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.html), or the [VG_Networking Component](unity_component_vgnetworing.html).
-{% include important.html content="Documentation is missing here and links do not work." %}
+<!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 
-Check the **Physical** option if you want VirtualGrasp to create colliders for this avatar and enable the hand for physical interactions (remember VG is an animation engine that is not dependent on physics).
-{% include important.html content="At the moment, this option is experimental and should not be used apart from testing." %}
-
-### Sensor Offset
-
-When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset in each controller setting to synchronize them:
-
-Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.
+| Option | Description |
+|-------|--------|
+| Sensor | will always be External Controller for the VG SDK. | 
+| External| name of the external controller, as a string, so one can write your own external controller.| 
+| Control | specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
+| Origin | the origin of sensor where the sensor data is interpreted. | 
+| Offset | when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
 
 {% include image.html file="knowledge/lhs_rhs.png" alt="LHS/RHS" caption="The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand." %}
 
 ### Sensor Settings
 
-{% include image.html file="unity/unity_vg_sensor_settings.png" alt="VG sensor settings." caption="VG sensor settings" %}
-
+{% include image.html file="unity/unity_vg_sensor_settings.png" alt="Sensor settings in Unity." caption="Sensor settings in Unity." %}
+After you have setup how your avatar's hands are controlled (by one or two sensors), you can use this Sensor Settings interface to specify Finger Control Type and Trigger Button globally for all of the sensors.
 #### Finger control type
 
 This provides the option to choose how sensor controls the finger motion
@@ -128,8 +123,10 @@ By default VG uses 2 components: [VG_Articulation](unity_component_vgarticulatio
 
 See explanation of the parameters in [grasp Interaction](grasp_interaction.html#grasp-interaction). 
 You can set the default grasp interaction parameters for all objects in the scene globally. 
-And <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis Method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> can be set "locally" for each object by using
-[VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable) component.
+
+
+{% include callout.html content= "Note that Synthesis Method and Interaction Type can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global grasp interaction settings for that object." %} 
+
 
 <!--### Selection Settings
 {% include image.html file="unity/unity_vg_selection_settings.png" alt="VG selection settings." caption="VG selection settings" %}
@@ -176,6 +173,6 @@ Debug settings will show up when "Show Advanced" is checked.
 
 | Parameters | Description |
 |-------|--------|
-| Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes (see [Debug Files](debug_files.html)). | 
+| Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes (see [debug files](debug_files.html)). | 
 | Physics Default Contact Offset | Overwrite Unity physics contact offset for more accurate collision detection. | 
 

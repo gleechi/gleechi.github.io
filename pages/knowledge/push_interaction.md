@@ -39,19 +39,19 @@ to the object to specify the preferred <a href="#" data-toggle="tooltip" data-or
 by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a> for pushing this object. 
 
 Given that
-* The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a> has been assigned 
+* the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a> has been assigned 
 (through set <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> as INDEX_PUSHABLE),
 and
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> is added to the object to be pushed. 
+* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> is added to the object to be pushed,
 
-The decision on which of the pushable objects is selected for pushing is done by considering:
-* how close is the push agent to the pushable object
+the decision on which of the pushable objects is selected for pushing is done by considering:
+* how close is the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a> to the pushable object
 and
-* how aligned is the push agent's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a> with the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>. 
+* how aligned is the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a>'s <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a> with the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>. 
 
 {% include image.html file="unity/unity_button_pivot.png" alt="A Unity button." caption="A Unity button"%}
 
-For example image above shows the push pivot transform added to the red button. The blue arrow (Zaxis of this transform) specifies
+For example image above shows the push pivot transform added to the red button. The blue arrow (zaxis of this transform) specifies
 the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>. 
 So when index finger is approaching from bottom to the button, opposite to the blue arrow, the object will not be selected for push.
 

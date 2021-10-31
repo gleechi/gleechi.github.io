@@ -28,7 +28,7 @@ Whenever you stop the scene, the following data will be saved:
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGSceneFiles}}">VG scene files</a>)
 * Finally, from all this content, one **.ZIP** file named "PROJECT_NAME".zip will be generated in your project folder.
 
-{% include important.html content="Accordingly, it is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}
+{% include important.html content="It is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}
 
 <!--
 ### Creating the Debug Files
@@ -42,11 +42,11 @@ If properly setup, you will see similar info as below in your console:
 
 #### Object Baking
 
-The **.ZIP** file of all the content is the input that is needed for [Object Baking](object_baking.html#upload-input).
+The **.ZIP** file of all the content is the input that is needed for [object baking](object_baking.html#upload-input).
 
 #### Grasp Editor
 
-The **.OBJ** files of all the objects are used for the automatic generation of the [Grasp Studio](unity_component_vggraspstudio.html) scene.
+The **.OBJ** files of all the objects are used for the automatic generation of the [grasp studio](unity_component_vggraspstudio.html) scene.
 
 #### Debugging Interaction Issues
 
@@ -64,7 +64,7 @@ For example:
 * <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a>: you thought you have decided to use STATIC_GRASP on antenna, but it is DYNAMIC_GRASP in reality.
 * etc.
 
-{% include important.html content="Since .scn files are written at the moment when you stop playing the scene, the saved information reflects your scene configuration at that moment. 
+{% include callout.html content="Since .scn files are written at the moment when you stop playing the scene, the saved information reflects your scene configuration at that moment. 
 So if you in runtime, for example, changed an object's joint type or selection weight, then stopped playing, the resulting .scn files will reflect the effective values after your runtime change." %}
 
 Below shows an example of a .scn file representing a simple scene with just two objects - "radio" and "antenna". 
