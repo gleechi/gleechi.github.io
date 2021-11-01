@@ -16,10 +16,8 @@ folder: mydoc
 
 VG_Interactable component allows you to specify different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> for each object by attaching this component to the corresponding game object. 
 This will override the global settings for [grasp Interaction](grasp_interaction.html#grasp-interaction) assigned on all objects in the scene (see [global grasp interaction settings](unity_component_myvirtualgrasp.html#grasp-interaction-settings)). 
-
-Adding this component to an object also specifies this object to be <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a> (see [object identifiers](unity_get_started_objects.html#customizing-layers-and-component-names)).
  
-{% include tip.html content="All objects without a customized VG_Interactable will follow the global settings,
+{% include callout.html content="All objects without a customized VG_Interactable will follow the global settings,
  but those with VG_Interactable will follow these local settings." %}
 
 

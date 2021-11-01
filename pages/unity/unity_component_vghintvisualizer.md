@@ -37,4 +37,4 @@ See [from object selection to grasp synthesis](grasp_interaction.html#from-objec
 
 When you want to enable either push or grasp hints, it is recommended to add this component on the same GameObject where your MyVirtualGrasp script is.
 
-{% include important.html content="You should not add this component to individual objects because this is a global setting that is not linked to specific objects." %}
+{% include callout.html content="You should not add this component to individual objects because this is a global setting that is not linked to specific objects." %}

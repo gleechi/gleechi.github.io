@@ -14,13 +14,12 @@ The MonoBehavior script examplifies how to use the VG API functions for accessin
 
 {% include image.html file="unity/unity_vg_hand_visualizer.png" alt="VG HandVisualizer" caption="VG_HandVisualizer Component." %}
 
-@kai please record a video to replace this one.
+@kai please add a video here.
 
-{% include youtube.html id="FX4HQCO_hd8" %}
+<!--{% include youtube.html id="FX4HQCO_hd8" %}-->
 
 ### How to Use
  
-
 When you want to enable visualizing the hand, it is recommended to add this component on the same GameObject where your MyVirtualGrasp script is.
 
-{% include important.html content="You should not add this component to individual objects because this is a global setting that is not linked to specific objects." %}
+{% include callout.html content="You should not add this component to individual objects because this is a global setting that is not linked to specific objects." %}
