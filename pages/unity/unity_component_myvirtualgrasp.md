@@ -113,21 +113,19 @@ This provides the option to choose which button on a hand-held VR controller you
 ### Object Identifiers
 {% include image.html file="unity/unity_vg_object_identifiers.png" alt="VG object identifiers." caption="VG object identifiers" %}
 
-The object identifiers let you decide which Unity component(s) (by name) can be used to specify an object to be interactable. 
-If any of these components are added to a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GameObject}}">game object</a>,
-this object will be supported by VG's [grasp](grasp_interaction.html) and [push](push_interaction.html) interactions.
+VirtualGrasp is using names to identify which objects are marked as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a>. You can customize component and layer names in MyVirtualGrasp → Object Identifiers. 
+[VG_Articulation](unity_component_vgarticulation.html) component is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a> objects.
 
-By default VG uses 2 components: [VG_Articulation](unity_component_vgarticulation.html) and [VG_Interactable](unity_component_vginteractable.html).
+Once an object is marked as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a>, it will be supported by VG's [grasp](grasp_interaction.html) and [push](push_interaction.html) interactions. 
 
 ### Grasp Interaction Settings
 
 {% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
 
-See explanation of the parameters in [grasp Interaction](grasp_interaction.html#grasp-interaction). 
-You can set the default grasp interaction parameters for all objects in the scene globally. 
+You can set the default [grasp Interaction](grasp_interaction.html#grasp-interaction) parameters for all objects in the scene globally in Grasp Interaction Settings.
+See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.html#grasp-interaction).
 
-
-{% include callout.html content= "Note that Synthesis Method and Interaction Type can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global grasp interaction settings for that object." %} 
+{% include callout.html content= "Note that Synthesis Method and Interaction Type can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global settings for that object." %} 
 
 
 <!--### Selection Settings
@@ -176,5 +174,5 @@ Debug settings will show up when "Show Advanced" is checked.
 | Parameters | Description |
 |-------|--------|
 | Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes (see [debug files](debug_files.html)). | 
-| Physics Default Contact Offset | Overwrite Unity physics contact offset for more accurate collision detection. | 
+| Physics Default Contact Offset | Overwrite Unity physics contact offset for more accurate collision detection. Currently only relevant for the experimental feature [push with physics](push_interaction.html#push-with-physics).| 
 

@@ -8,7 +8,7 @@ toc: true
 ---
 ## Background
 
-{% include callout.html content="Note that in VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
+{% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
 VirtualGrasp is hardware-agnostic. It can create natural [grasp interactions](grasp_interaction.html) 
 with any kind of controllers (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensor}}">sensors</a>), wether it is hand-held VR controllers or finger tracking devices like LeapMotion. 

@@ -26,8 +26,8 @@ The <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.
 
 ### Customizing Layers and Component Names
 
-VirtualGrasp is using names to identify which objects are marked as interactable. You can customize component and layer names in MyVirtualGrasp → Object Identifiers. 
-"VG_Articulation" is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your interactable objects.
+VirtualGrasp is using names to identify which objects are marked as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a>. You can customize component and layer names in MyVirtualGrasp → Object Identifiers. 
+"VG_Articulation" is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a> objects.
 
 {% include image.html file="unity/unity_object_identifiers.png" alt="Unity Object Identifiers." caption="VG will use the Object Identifier list to browse components and layers for interactable objects."%}
 
