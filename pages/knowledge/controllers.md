@@ -6,7 +6,7 @@ permalink: controllers.html
 folder: knowledge
 toc: true
 ---
-## Background
+### Background
 
 {% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
@@ -18,6 +18,7 @@ In terms of hand control, VirtualGrasp can create natural [grasp interactions](g
 
 This is because unlike many physics-based grasp synthesis solutions in the market that requires accurate finger tracking, VirtualGrasp exploits "object intelligence". By analyzing shape and affordances of an object model in VR, we can synthesize <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. 
 
+### How to Setup
 Whether it is Unity or Unreal, you can assign your controller input in MyVirtualGrasp → Sensors. 
 See [AutoSetup & Sensors](unity_component_myvirtualgrasp.html#autosetup--sensors) to learn how to setup your sensors in Unity. 
 
