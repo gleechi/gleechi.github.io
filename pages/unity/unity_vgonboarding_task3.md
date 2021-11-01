@@ -22,7 +22,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 #### Tips for VR developers
 
-* How to let objects placed on plate to follow the plate stably without easily rolling and falling down due to physical reactions. Can we use **ChangeObjectJoint**?
+* How to let objects placed on plate to follow the plate stably without easily rolling and falling down due to physical reactions. Can we use [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint)?
 
 #### Solution
 
@@ -119,8 +119,7 @@ public class ManageContainerObject : MonoBehaviour
 
 
 ````
-is the script showing how to use API function **ChangeObjectJoint** and **RecoverObjectJoint** 
-to attach and unattach the object to the plate. 
+is the script showing how to use API function [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) and [RecoverObjectJoint](virtualgrasp_unityapi.html#recoverobjectjoint) to attach and unattach the object to the plate. 
 Note that when an object is attached to the plate, its rigid body should be removed to avoid
 object being moved by physical forces. 
 
