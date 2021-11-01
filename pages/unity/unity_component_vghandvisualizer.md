@@ -9,9 +9,8 @@ permalink: unity_component_vghandvisualizer.html
 folder: mydoc
 ---
 
-VG_HandVisualizer is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
-It provides a tool to visualize the hand bones in Unity. 
-The MonoBehavior provides a tutorial on the VG API functions for accessing specific bones / elements of the hands
+VG_HandVisualizer is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGScript}}">VG script</a> that provides a tool to visualize the hand bones in Unity. 
+The MonoBehavior script examplifies how to use the VG API functions for accessing specific bones / elements of the hands
 
 {% include image.html file="unity/unity_vg_hand_visualizer.png" alt="VG HandVisualizer" caption="VG_HandVisualizer Component." %}
 

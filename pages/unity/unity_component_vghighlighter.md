@@ -9,13 +9,12 @@ permalink: unity_component_vghighlighter.html
 folder: mydoc
 ---
 
-VG_HighLighter is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
-It exemplifies how you could enable object highlighting based on the current hand status. 
-The MonoBehavior provides a tutorial on the VG API functions for some of the VG_Controller event functions, 
+VG_HighLighter is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGScript}}">VG script</a>.
+The MonoBehavior script exemplifies how you could enable object highlighting based on the current hand status; 
+and provides a tutorial on the VG API functions for some of the VG_Controller event functions, 
 such as OnObjectSelected and OnObjectDeselected.
 
 {% include image.html file="unity/unity_vg_highlighter.png" alt="VG HighLighter" caption="VG_HighLighter Component." %}
-
 
 @kai please record a video to replace this one.
 

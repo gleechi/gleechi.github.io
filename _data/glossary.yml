@@ -1,7 +1,7 @@
 
 VirtualGrasp: "Gleechi's software for hand interaction."
 
-CoreScript: Refers to a customizable component which wraps and examplify the use of certain communication functions of the VirtualGrasp API; it is a Unity script that inherits from Monobehavior so you can use this as a component to a GameObject in Unity. 
+VGScript: Refers to a customizable component which wraps and examplify the use of certain communication functions of the VirtualGrasp API; it is a Unity script that inherits from Monobehavior so you can use this as a component to a GameObject in Unity. 
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 

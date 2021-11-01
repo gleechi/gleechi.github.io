@@ -9,13 +9,13 @@ permalink: unity_component_vgarticulation.html
 folder: mydoc
 ---
 
-{% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
-
 The VG_Articulation component provides a graphical user interface in Unity to specify [object articulation](object_articulation.html#object-articulation)
 that defines an object's 
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a>. 
 
 {% include callout.html content="All the parameters in the VG_Articulation component is explained in detail in [object articulation](object_articulation.html#object-articulation)." %}
+
+{% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
 ### Initial Setting
 

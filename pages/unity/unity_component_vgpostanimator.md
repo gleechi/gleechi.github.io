@@ -9,15 +9,14 @@ permalink: unity_component_vgpostanimator.html
 folder: mydoc
 ---
 
-VG_PostAnimator is is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>.
-It exemplifies how you could overwrite (post-animate) grasp animations that are handled by VirtualGrasp.
+VG_PostAnimator is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGScript}}">VG script</a> that exemplifies how you could overwrite (post-animate) grasp animations that are handled by VirtualGrasp.
 
 {% include image.html file="unity/unity_vg_post_animator.png" alt="VG PostAnimator" caption="VG_PostAnimator Component." %}
 
 {% include youtube.html id="SWekpa7OxHI" %}
 
-Most common use cases of VG_PostAnimator component 
-is to create a finger animation on an articulated object, for example manipulating a scissor as shown in above video.
+
+Most common use case is to create a finger animation on an articulated object, for example manipulating a scissor as shown in above video.
 
 The steps to achieve the manipulation on the scissors in the video:
 

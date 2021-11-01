@@ -9,8 +9,7 @@ permalink: unity_component_myvirtualgraspburst.html
 folder: mydoc
 ---
 
-MyVirtualGraspBurst is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>. 
-It inherits from VG_MainScript, which wraps the main communication functions of the API. 
+MyVirtualGraspBurst is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.vGScript}}">VG script</a> inherited from VG_MainScript, which wraps the main communication functions of the API. 
 VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity. 
 In contrast to MyVirtualGrasp, this component uses Burst Jobs to isolate VG updates on a seperate thread.
 

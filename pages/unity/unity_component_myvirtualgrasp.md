@@ -9,9 +9,8 @@ permalink: unity_component_myvirtualgrasp.html
 folder: mydoc
 ---
 
-MyVirtualGrasp is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CoreScript}}">Core Script</a>
-It inherits from VG_MainScript, which encodes the main functionality of VirtualGrasp, and is the main component that you need to add 
-and configure in your project to enable VirtualGrasp.
+MyVirtualGrasp is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGScript}}">VG script</a>
+inherited from VG_MainScript, which encodes the main functionality of VirtualGrasp, and is the main component that you need to add and configure in your project to enable VirtualGrasp.
 In Unity, VG_MainScript inherits from Monobehavior so you can use it as a component on a GameObject.<br><br>
 In VG SDK, you can find the Prefab “GleechiLib” from the ThirdParty/VirtualGrasp/Resources directory that has been configured to have MyVirtualGrasp component. You can simply drag and drop this into your scene, in your Hierarchy view, you will see the instantiated GameObject -- GleechiLib.
 
