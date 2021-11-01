@@ -10,7 +10,7 @@ folder: mydoc
 ---
 
 
-## Changes from V0.7.1 (2021-10-04) to V0.7.1 V0.8.0 (2021-10-28)
+## Changes from V0.7.1 (2021-10-04) to V0.8.0 (2021-10-28)
 
 ##### Major Functionality Changes:
 
@@ -84,7 +84,7 @@ folder: mydoc
 
 * Scripts/Dev and Scripts/Tests have been removed.
 
-* Update to VG Core library 0.5.0:
+##### Update to VG Core library 0.5.0:
 
 * Improved DG look in terms of naturalism.
 
