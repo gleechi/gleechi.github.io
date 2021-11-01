@@ -9,11 +9,13 @@ permalink: unity_component_vggraspstudio.html
 folder: mydoc
 ---
 
+### Background 
+
 VG_GraspStudio is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGScript}}">VG script</a>.
 It is provided as a component of the VirtualGrasp Unity plugin, and thus only available in Unity for now. 
-The MonoBehavior provides a tutorial on the VG API functions for accessing static grasps as well as using the labeling interface.
+The MonoBehavior provides a tutorial on the VG API functions for accessing grasps existing in the grasp DB as well as using the labeling interface.
 
-At the moment, it serves as a high-level visualizing tool in which you can not only review all grasps that you have in a project, but also annotate them.
+It serves as a high-level visualizing tool in which you can not only review all grasps that you have in a project, but also annotate them.
 
 Some examples of annotations are:
 
@@ -29,7 +31,7 @@ The preferred way to use GraspStudio is to use the option of automatically creat
 
 This will place a new .unity scene next to your existing one in the file system, that you can then open and use.
 
-The new editor scene will be automatically configured by combining information from your current scene (VirtualGrasp, hands and camera components), [Debug Files](debug_files.html#grasp-editor) (objects) and adding and configuring the GraspStudio component itself (from Prefabs).
+The new editor scene will be automatically configured by combining information from your current scene (VirtualGrasp, hands and camera components), [debug files](debug_files.html#grasp-editor) (objects) and adding and configuring the GraspStudio component itself (from Prefabs).
 
 
 ### VirtualGrasp Studio GUI
@@ -84,7 +86,7 @@ The following table describes the actions and how to achieve them in the two mod
 
 ### Adding Grasps
 
-Adding grasps can only be done in VR. The scene will have a second hand pair created that can interact with a duplicate of the visualized object, using [dynamic grasping](grasp_interaction.html). You can grasp the object until you find a grasp that you would like to add, and while holding then press the top button (usually "X" on the left and "A" on the right controller) to add it as a static grasp. It will then appear as a new entry in the thumbnail section.
+Adding grasps can only be done in VR. The scene will have a second hand pair created that can interact with a duplicate of the visualized object, using [dynamic grasping](grasp_interaction.html#grasp-synthesis-method). You can grasp the object until you find a grasp that you would like to add, and while holding then press the top button (usually "X" on the left and "A" on the right controller) to add it as a static grasp. It will then appear as a new entry in the thumbnail section.
 
 ### Important Note on the Files
 
