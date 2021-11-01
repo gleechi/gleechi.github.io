@@ -326,121 +326,25 @@ This event is invoked in the fixed update loop before VG runs its update. Thus, 
 
 
 
-## [VIRTUALGRASP_CONTROLLER_FUNCTIONS](#)
+## [OBJECT_SELECTION_API](#)
 
-### Initialize
+### ChangeObjectJoint
 
-Initialize the plugin.
+Change an object's joint type in runtime, if this is an articulated object.
 
-
-
-### Clear
-
-Reset the plugin.
-
-
-
-### DeleteDistalObjectAtRuntime
-
-Sync deleted objects from the scene to the plugin, e.g. if the object has been deleted.
-
-| _Transform_ |obj|The object that has been deleted.|
+| _Transform_ |selectedObject|The object to change the joint type for.|
+|[*VG_JointType*](#vg_jointtype) | new_jointType|The joint type to switch to.|
+| _Vector2_ |new_limit|The new limit of the new joint type.|
+| _float_ |new_screwRate|The new screw rate (>=0, in cm per degree) of the new joint type.|
 
 Remark
- Works only for distal objects?
+ Note that the former joint type can be recovered (see RecoverObjectJoint).
 
 
-
-### GetDebugPath
-
-Return the path where VG stores debug files.
-
-| **returns** | _string_ | The path (platform dependent).|
+Remark
+ If new_screwRate is set to 0 then do not screw.
 
 
-### GetHand
-
-Receive a specific hand and its status.
-
-| _int_ |avatarID|The avatar to get the hand status for.|
-|[*VG_HandSide*](#vg_handside) | side|The hand side to get the avatar from.|
-| **returns** | _VG_HandStatus_ | Enumerator over VG_HandStatus.|
-
-
-### GetHands
-
-Receive an enumerator of all registered hands and their status.
-
-| _bool_ |onlyValids|If TRUE, only return valid hands, otherwise return all.|
-| **returns** | _IEnumerable\<VG_HandStatus\>_ | Enumerator over VG_HandStatus.|
-
-
-### Initialize
-
-Initialize the plugin.
-
-
-
-### IsEnabled
-
-Check if the plugin has been initialized and is ready to use.
-
-
-
-### IsolatedUpdate
-
-The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdate() runs the main update loop in VG.
-
-
-
-### IsolatedUpdateDataIn
-
-The FixedUpdate() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataIn() isolates data communication from Unity to VG.
-
-
-
-### IsolatedUpdateDataOut
-
-The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataOut() isolates data communication from VG to Unity.
-
-
-
-### RegisterAvatarAtRuntime
-
-Register a remotely controlled avatar
-
-
-Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.html)
-
-
-### RegisterObjectAtRuntime
-
-Sync a new object in the scene to the plugin, e.g. if the object is spawned.
-
-| _Transform_ |obj|The object that should be synced.|
-
-
-### RegisterObjectsAtRuntime
-
-Sync new objects from the scene to the plugin, e.g. if these object are newly spawned.
-
-| _List\<Transform\>_ |objects|The objects that should be synced.|
-
-
-### Release
-
-Release the plugin.
-
-
-
-### SaveState
-
-Save the object hierarchy debug state. This is done automatically when closing VirtualGrasp.
-
-
-
-
-## [OBJECT_SELECTION_API](#)
 
 ### ChangeObjectJoint
 
@@ -580,6 +484,114 @@ Remark
 
 Remark
  Use case is mainly to specify relative selection preferences for cluttered objects.
+
+
+
+
+## [VIRTUALGRASP_CONTROLLER_FUNCTIONS](#)
+
+### Clear
+
+Reset the plugin.
+
+
+
+### DeleteDistalObjectAtRuntime
+
+Sync deleted objects from the scene to the plugin, e.g. if the object has been deleted.
+
+| _Transform_ |obj|The object that has been deleted.|
+
+Remark
+ Works only for distal objects?
+
+
+
+### GetDebugPath
+
+Return the path where VG stores debug files.
+
+| **returns** | _string_ | The path (platform dependent).|
+
+
+### GetHand
+
+Receive a specific hand and its status.
+
+| _int_ |avatarID|The avatar to get the hand status for.|
+|[*VG_HandSide*](#vg_handside) | side|The hand side to get the avatar from.|
+| **returns** | _VG_HandStatus_ | Enumerator over VG_HandStatus.|
+
+
+### GetHands
+
+Receive an enumerator of all registered hands and their status.
+
+| _bool_ |onlyValids|If TRUE, only return valid hands, otherwise return all.|
+| **returns** | _IEnumerable\<VG_HandStatus\>_ | Enumerator over VG_HandStatus.|
+
+
+### Initialize
+
+Initialize the plugin.
+
+
+
+### IsEnabled
+
+Check if the plugin has been initialized and is ready to use.
+
+
+
+### IsolatedUpdate
+
+The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdate() runs the main update loop in VG.
+
+
+
+### IsolatedUpdateDataIn
+
+The FixedUpdate() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataIn() isolates data communication from Unity to VG.
+
+
+
+### IsolatedUpdateDataOut
+
+The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataOut() isolates data communication from VG to Unity.
+
+
+
+### RegisterAvatarAtRuntime
+
+Register a remotely controlled avatar
+
+
+Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.html)
+
+
+### RegisterObjectAtRuntime
+
+Sync a new object in the scene to the plugin, e.g. if the object is spawned.
+
+| _Transform_ |obj|The object that should be synced.|
+
+
+### RegisterObjectsAtRuntime
+
+Sync new objects from the scene to the plugin, e.g. if these object are newly spawned.
+
+| _List\<Transform\>_ |objects|The objects that should be synced.|
+
+
+### Release
+
+Release the plugin.
+
+
+
+### SaveState
+
+Save the object hierarchy debug state. This is done automatically when closing VirtualGrasp.
 
 
 
