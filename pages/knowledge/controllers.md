@@ -10,10 +10,14 @@ toc: true
 
 {% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
-VirtualGrasp is hardware-agnostic. It can create natural [grasp interactions](grasp_interaction.html) 
-with any kind of controllers (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensor}}">sensors</a>), wether it is hand-held VR controllers or finger tracking devices like LeapMotion. 
+VirtualGrasp is hardware-agnostic. 
+
+You can use VirtualGrasp with or without a VR headset and your scene does not need to be a VR-enabled scene. 
+
+In terms of hand control, VirtualGrasp can create natural [grasp interactions](grasp_interaction.html) with any kind of controllers (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensor}}">sensors</a>), whether it is hand-held VR controllers that gives accurate 6-dof wrist pose, finger tracking devices like Leap Motion or Oculus finger tracking feature, or or even just a computer mouse. 
+
 This is because unlike many physics-based grasp synthesis solutions in the market ([Hand Physics Lab](https://www.holonautic.com/hand-physics-lab), [HPTK](https://github.com/jorgejgnz/HPTK-Sample), [CLAP](https://clapxr.com/)) 
-that requires accurate finger tracking devices, VirtualGrasp exploits "object intelligence". By analyzing shape and affordances of an object model in VR, we can synthesize <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. 
+that requires accurate finger tracking, VirtualGrasp exploits "object intelligence". By analyzing shape and affordances of an object model in VR, we can synthesize <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. 
 
 Whether it is Unity or Unreal, you can assign your controller input in MyVirtualGrasp → Sensors. 
 See [AutoSetup & Sensors](unity_component_myvirtualgrasp.html#autosetup--sensors) to learn how to setup your sensors in Unity. 

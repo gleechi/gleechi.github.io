@@ -19,24 +19,23 @@ On this page, we are going to describe all the major configuration options cover
 
 ### AutoSetup & Sensors
 
-{% include callout.html content="Note that in VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
+{% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
-{% include callout.html content= "VG allows you to configure upto two sensors in an VR application. This allows the developer to combine two sensors to control avatar's hands. For example you can choose to use a data glove to control avatar's finger pose and grasp triggers, while using the Oculus touch to control wrist position and orientation. Though this is not most common setup for today's VR development, this ability may become useful expecially for the research community. As you can see **Sensors** is a list in the interface and the first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor." %} 
+VG allows you to configure upto two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensor}}">sensors</a> in an VR application. This allows the developer to combine two sensors to control avatar's hands. For example you can choose to use a data glove to control avatar's finger pose and grasp triggers, while using the Oculus touch to control wrist position and orientation. Though this is not most common setup for today's VR development, this feature may become useful expecially for research and development of new hand controllers. 
+
+As you can see in MyVirtualGrasp, **Sensors** is a list in the interface and the first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor.
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
 
 #### AutoSetup
-AutoSetup will auto-configure a number of controller-related settings in your VG_MainScript component and thereyby allow you to quickly switch between different controller inputs, such as Quest, LeapMotion, Mouse, and others.
+AutoSetup will auto-configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as Quest, LeapMotion, Mouse, and others.
 
-Select an [VG_AutoSetup](/virtualgrasp_unityapi.html#vg_autosetup) option from the dropdown menu, then click "Setup" to automatically adjust the following fields:
-* Sensor, External, Origin, Offset, and SensorSettings:FingerControlType.
+Select an [VG_AutoSetup](/virtualgrasp_unityapi.html#vg_autosetup) option from the dropdown menu, then click "Setup" to automatically adjust the [Sensor options](#sensor) and [SensorSetting:FingerControlType](#finger-control-type)). 
 
 Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process.
 
 The integer value (0 in the image) relates to the element of the Sensors list that you want to auto-configure.
 In most cases you will have only one avatar in your scene that is controlled by a single sensor, so 0 is the default. However, if you use multiple sensor elements, you can also quickly auto-configure them by modifying the integer value.
-
-
 
 <!--
 <div class="panel-group" id="accordion1">
@@ -74,13 +73,13 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 
-| Option | Description |
-|-------|--------|
-| Sensor | will always be External Controller for the VG SDK. | 
-| External| name of the external controller, as a string, so one can write your own external controller.| 
-| Control | specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
-| Origin | the origin of sensor where the sensor data is interpreted. | 
-| Offset | when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
+| Option | AutoSetup | Description |
+|-------|--------|--------|
+| Sensor | supported | will always be External Controller for the VG SDK. | 
+| External| supported | name of the external controller, as a string, so one can write your own external controller.|  
+| Control | not supported | specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
+| Origin | supported | the origin of sensor where the sensor data is interpreted. | 
+| Offset | supported | when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
 
 {% include image.html file="knowledge/lhs_rhs.png" alt="LHS/RHS" caption="The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand." %}
 
