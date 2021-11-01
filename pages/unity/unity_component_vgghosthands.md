@@ -9,7 +9,7 @@ permalink: unity_component_vgghosthands.html
 folder: mydoc
 ---
 
-VG_GhostHands is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGScript}}">VG script</a> that provides a tool to create ghost hands in Unity.
+VG_GhostHands is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a> that provides a tool to create ghost hands in Unity.
 
 {% include image.html file="unity/unity_vg_ghost_hands.png" alt="VG GhostHands" caption="VG_GhostHands Component." %}
 

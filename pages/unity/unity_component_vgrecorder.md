@@ -10,7 +10,7 @@ folder: mydoc
 ---
 
 The VirtualGrasp library (VG_Controller) has a couple of [API functions](VirtualGrasp_UnityAPI.html#setprocessbyrecordedframe) 
-for recording and replaying <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">sensor data</a>. For convenience, the SDK includes a VG_Recorder <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGScript}}">VG script</a> as a customizable component. You can use it to access the major functionalities of the [sensor record and replay](sensor_record_replay.html#sensor-record-replay).
+for recording and replaying <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">sensor data</a>. For convenience, the SDK includes a VG_Recorder <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a> as a customizable component. You can use it to access the major functionalities of the [sensor record and replay](sensor_record_replay.html#sensor-record-replay).
 
 {% include callout.html content="The important concepts related to VG_Recorder is explained in [sensor record and replay](sensor_record_replay.html#sensor-record-replay) page." %}
 
