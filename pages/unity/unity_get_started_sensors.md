@@ -15,9 +15,9 @@ toc: false
 
 In the default prefab, “GleechiLib”, a sensor setting is configured for any <a data-toggle="tooltip" data-original-title="{{site.data.glossary.Controller}}">controller</a> (or <a data-toggle="tooltip" data-original-title="{{site.data.glossary.Sensor}}">sensor</a>) supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.html).
 
-As you can see in the top of the [MyVirtualGrasp component](unity_component_myvirtualgrasp.html#autosetup--sensors), you can "auto-setup" the whole configuration for some most commonly used sensors, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers. Read [controllers](controllers.html) page to understand the hardware agnostic feature of VG SDK. 
+As you can see in the top of the MyVirtualGrasp component, you can "auto-setup" the whole configuration for some most commonly used sensors, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers. Read [controllers](controllers.html) page to understand the hardware agnostic feature of VG SDK. 
 
-AutoSetup will take care of a number of settings in the MyVirtualGrasp component. You can use VirtualGrasp without a VR headset and your scene does not need to be a VR-enabled scene. If you do not have a headset, you can use the "Mouse" auto-setup and control the hands with the mouse. If you do have an Oculus Quest headset, we recommend to use "Quest" auto-setup after enabling your scene for VR. 
+AutoSetup will take care of a number of settings in the MyVirtualGrasp component. You can use VirtualGrasp without a VR headset and your scene does not need to be a VR-enabled scene. If you do not have a headset, you can use the "MOUSE" auto-setup and control the hands with the mouse. If you do have an Oculus Quest headset, we recommend to use "QUEST" auto-setup after enabling your scene for VR. See [AutoSetup & Sensors](unity_component_myvirtualgrasp.html#autosetup--sensors) to learn more details about sensor setup.
 
 <div class="panel-group" id="accordion1">
     <div class="panel panel-default">

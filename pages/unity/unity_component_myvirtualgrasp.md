@@ -32,7 +32,8 @@ AutoSetup will auto-configure a number of controller-related settings and therey
 
 Select an [VG_AutoSetup](/virtualgrasp_unityapi.html#vg_autosetup) option from the dropdown menu, then click "Setup" to automatically adjust the [Sensor options](#sensor) and [SensorSetting:FingerControlType](#finger-control-type)). 
 
-Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process.
+{% include callout.html content="Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process." %}
+
 
 The integer value (0 in the image) relates to the element of the Sensors list that you want to auto-configure.
 In most cases you will have only one avatar in your scene that is controlled by a single sensor, so 0 is the default. However, if you use multiple sensor elements, you can also quickly auto-configure them by modifying the integer value.
