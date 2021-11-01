@@ -16,7 +16,7 @@ For example, when a user places the avatar hand close to an object and triggers 
 VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
 create immersive grasp interacting experiences in VR.
 
-VG guaranttees more robust grasp interactions compared to the physics-based grasp synthesis solutions in the market ([Hand Physics Lab](https://www.holonautic.com/hand-physics-lab), [HPTK](https://github.com/jorgejgnz/HPTK-Sample), and [CLAP](https://clapxr.com/), etc) because:
+VG enables robust grasp interactions. Compared to many physics-based grasp synthesis solutions in the market VG takes a different approach by exploiting “object intelligence”. By analyzing shape and affordances of an object model in VR, we can synthesize grasp configurations on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. As a result,
 * there is no dependency on accurate finger tracking controllers (see [controllers](controllers.html)), and
 * users don't need to spend a lot of cognitive load to carefully place the fingers around the object.
 
