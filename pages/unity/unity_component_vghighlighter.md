@@ -28,6 +28,8 @@ When the component is in the scene, selecting an object will highlight the selec
 
 When selecting the object with a left hand, the *Left Hand Color* will be used, and when selecting the object with a right hand, the *Right Hand Color* will be used.
 
+{% include youtube.html id="4D4bbfif2YI" caption="Selection Highlighting when selecting objects with both hands." %}
+
 ## Bake Highlighting
 
 When playing the scene in the Unity Editor, you can also use the Highlighter to visualize the object baking state of the objects in your scene. 
@@ -40,3 +42,6 @@ There are three options you can enable by clicking on the respective buttons:
 * **Dynamic Grasps:** Highlight all objects that are baked in red. You can use [Dynamic Grasps](grasp_interaction.html#grasp-synthesis-method) on those objects.
 
 * **Static Grasps:** Highlight all objects that have static grasps assigned to them in cyan. These objects are usually baked and special grasps were assigned to them using [VirtualGrasp Studio](unity_component_vggraspstudio.html). You can use [Dynamic and Static Grasps](grasp_interaction.html#grasp-synthesis-method) on those objects.
+
+{% include youtube.html id="lFa1gn3Cu6c" caption="Bake Highlighting in the Unity Editor. Note that most of the objects in the scene are baked, but not the small apple." %}
+

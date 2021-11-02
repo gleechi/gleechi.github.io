@@ -85,7 +85,7 @@ entries:
     - title: VG_HandVisualizer
       url: /unity_component_vghandvisualizer.html
       output: web
-    - title: VG_HighLighter * 
+    - title: VG_HighLighter ✓
       url: /unity_component_vghighlighter.html
       output: web 
     - title: VG_HintVisualizer ✓
