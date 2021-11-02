@@ -28,7 +28,8 @@ var idx = lunr(function () {
         this.add(doc)
     }, this)
 });
-function lunr_search(term) {
+function lunr_search(term)
+{
     document.getElementById('lunrsearchresults').innerHTML = '<ul></ul>';
     if(term) {
         //put results on the screen.
@@ -52,6 +53,7 @@ function lunr_search(term) {
     return false;
 }
 </script>
+
 <style>
     #lunrsearchresults {padding-top: 0.2rem;}
     .lunrsearchresult {padding-bottom: 1rem;}

@@ -26,16 +26,17 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 #### Solution
 
-In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp\Scenes\onboarding**.
+In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp/Scenes/onboarding**.
 
 ```js
-VirtualGrasp\Scenes\onboarding\VG_Onboarding.unity
+VirtualGrasp/Scenes/onboarding/VG_Onboarding.unity
 ````
-is the unity scene showing how plate and apple are setup with physical properties using Unity's rigid body and collider components;
+
+is the unity scene showing how plate and apple are setup with physical properties using Unity's rigid body and collider components
 and ManageContainerObject.cs script is attached to plate as the container object.
 
 ```js
-//VirtualGrasp\Scenes\onboarding\Scripts\ManageContainerObject.cs:
+//VirtualGrasp/Scenes/onboarding/Scripts/ManageContainerObject.cs:
 
 using System.Collections.Generic;
 using VirtualGrasp;

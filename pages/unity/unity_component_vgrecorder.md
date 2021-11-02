@@ -9,21 +9,23 @@ permalink: unity_component_vgrecorder.html
 folder: mydoc
 ---
 
-The VirtualGrasp library (VG_Controller) has a couple of [API functions](VirtualGrasp_UnityAPI.html#setprocessbyrecordedframe) 
-for recording and replaying <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">sensor data</a>. For convenience, the SDK includes a VG_Recorder <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a> as a customizable component. You can use it to access the major functionalities of the [sensor record and replay](sensor_record_replay.html#sensor-record-replay).
+{% include image.html file="unity/unity_vg_recorder.png" alt="VG Recorder" caption="VG_Recorder Component." %}
 
-{% include callout.html content="The important concepts related to VG_Recorder is explained in [sensor record and replay](sensor_record_replay.html#sensor-record-replay) page." %}
+## Description
+
+The VirtualGrasp library (VG_Controller) has a couple of [API functions](VirtualGrasp_UnityAPI.html#setprocessbyrecordedframe) 
+for recording and replaying <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">sensor data</a>. For convenience, the SDK includes a VG_Recorder <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a> as a customizable component. 
+
+You can use it to access the major functionalities which are explained in [sensor record and replay](sensor_record_replay.html#sensor-record-replay).
 
 Some example use cases are:
 * “replaying entire instruction sequence”.
 * “replaying a specific object interaction for instruction”.
 * “quick testing of a whole interaction sequence”.
 
-### How to Record Sensor Data
+{% include singleton_script.html %}
 
-The VG_Recorder is a component that you can place next to your VG_MainScript component.
-
-{% include image.html file="unity/unity_vg_recorder.png" alt="VG Recorder" caption="VG_Recorder Component." %}
+## How to Record Sensor Data
 
 Pressing the _Recording Key_ during play will toggle between starting and stopping the recording of an interaction sequence.
 After a recording is finished, a file with the recorded data will be written, named after the provided _Recording Filename_. 
@@ -35,9 +37,16 @@ In order to record an interaction sequence:
 * do some interactions in your scene, 
 * press the _Recording Key_ another time.
 
-### How to Replay an Interaction Sequence
+### Important Note on the Files
 
-#### Full and scene-specific interaction replay
+In order to support recording and replaying <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
+ and re-using that information, there will be recording files in each project.
+
+That means that when you record inside your Unity project, and want to use the recordings in a build, you have to manually copy these files to the build directory.
+
+## How to Replay an Interaction Sequence
+
+### Full and scene-specific interaction replay
 
 After you have recorded an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>, you can fully replay it later. The _Replay Object_ has to be empty (None) for this mode. In this replay mode, the hand movements will be replayed exactly as they were recorded. That means that as soon as you change positions of objects that you did interact with, the replaying hand will grasp empty air. 
 
@@ -45,11 +54,11 @@ Pressing the _Replay Sequence Key_ will replay the recording provided in _Record
 
 {% include youtube.html id="o5F5tUb8RQM" caption="Record Replay 1." %}
 
-#### Full and object-specific interaction replay
+### Full and object-specific interaction replay
 
 If you assign a _Replay Object_, the interaction sequence will be replayed fully, but in the frame of the provided _Replay Object_. This means that it is assured that the particular object - even after positional changes - will be interacted with as recorded.
 
-#### Partial and object-specific interaction replay
+### Partial and object-specific interaction replay
 
 The third replay mode is to replay an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">Interaction Segment</a>. After you have recorded a full <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">Interaction Sequence</a>, you can replay a specific part of it - an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">Interaction Segment</a> (specified by the _Segment ID_) - with a specified hand (_Side_) and object (_Replay Object_). 
 
@@ -63,14 +72,7 @@ You will get a list of available interaction segments in the console though that
  
 {% include tip.html content="See [Sensor Record and Replay](sensor_record_replay.html#background) to understand interaction segments." %}
 
-### Important Note on the Files
-
-In order to support recording and replaying <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
- and re-using that information, there will be recording files in each project.
-
-That means that when you record inside your Unity project, and want to use the recordings in a build, you have to manually copy these files to the build directory.
-
-### How to Create another Pair of Hands for Replaying an Interaction Sequence
+## How to Create another Pair of Hands for Replaying an Interaction Sequence
 
 If you replay the whole interaction sequence of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">Sensor Data</a>
  without any changes, the controlled VR hands will be disembodied, which is what you potentially do not want. 
@@ -83,8 +85,9 @@ In order to instantiate another pair of hands to be controlled by the replay,
 
 {% include image.html file="unity/unity_vg_recorder_avatars.png" alt="VG Recorder Hands" caption="Setup for another avatar to replay recorded data." %}
 
-### Videos
-
+<!--
+## Videos
 
 {% include youtube.html id="7aRCZThEHOE" caption="Record Replay 2" %}
+-->
 

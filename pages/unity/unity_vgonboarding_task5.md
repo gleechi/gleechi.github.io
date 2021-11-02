@@ -25,11 +25,12 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 #### Solution
 
-In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp\Scenes\onboarding**.
+In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp/Scenes/onboarding**.
 
 ```js
-VirtualGrasp\Scenes\onboarding\VG_Onboarding.unity
+VirtualGrasp/Scenes/onboarding/VG_Onboarding.unity
 ````
+
 is the unity scene showing how ...
 and xxx.cs script is attached to xxx.
 
@@ -46,7 +47,7 @@ The steps to achieve the manipulation on the scissors in the video:
 * Add the specific behaviour you want in the post animator script to rotate the handles
 
 ```js
-//VirtualGrasp\Scenes\onboarding\Scripts\xxx.cs:
+//VirtualGrasp/Scenes/onboarding/Scripts/xxx.cs:
 
 to be filled
 ````

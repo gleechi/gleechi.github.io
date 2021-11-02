@@ -85,19 +85,19 @@ entries:
     - title: VG_HandVisualizer
       url: /unity_component_vghandvisualizer.html
       output: web
-    - title: VG_HighLighter
+    - title: VG_HighLighter * 
       url: /unity_component_vghighlighter.html
       output: web 
-    - title: VG_HintVisualizer
+    - title: VG_HintVisualizer ✓
       url: /unity_component_vghintvisualizer.html
       output: web 
     - title: VG_Interactable
       url: /unity_component_vginteractable.html
       output: web
-    - title: VG_PostAnimator
+    - title: VG_PostAnimator ✓
       url: /unity_component_vgpostanimator.html
       output: web
-    - title: VG_Recorder
+    - title: VG_Recorder ✓
       url: /unity_component_vgrecorder.html
       output: web
     - title: VG_StateVisualizer

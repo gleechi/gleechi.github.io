@@ -9,19 +9,34 @@ permalink: unity_component_vghighlighter.html
 folder: mydoc
 ---
 
+{% include image.html file="unity/unity_vg_highlighter.png" alt="VG HighLighter" caption="VG_HighLighter Component." %}
+
+## Description
+
 VG_HighLighter is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a>.
 The MonoBehavior script exemplifies how you could enable object highlighting based on the current hand status; 
 and provides a tutorial on the VG API functions for some of the VG_Controller event functions, 
-such as OnObjectSelected and OnObjectDeselected.
+such as [OnObjectSelected](virtualgrasp_unityapi.html#onobjectselected) and [OnObjectDeselected](virtualgrasp_unityapi.html#onobjectdeselected).
 
-{% include image.html file="unity/unity_vg_highlighter.png" alt="VG HighLighter" caption="VG_HighLighter Component." %}
-
-@kai please add a video to here.
+{% include singleton_script.html %}
 
 <!--{% include youtube.html id="FX4HQCO_hd8" %}-->
 
-### How to Use
+## Selection Highlighting
 
-When you want to enable highlighting, it is recommended to add this component on the same GameObject where your MyVirtualGrasp script is.
+When the component is in the scene, selecting an object will highlight the selected object using the assigned Unity *Shader*.
 
-{% include callout.html content="You should not add this component to individual objects because this is a global setting that is not linked to specific objects." %}
+When selecting the object with a left hand, the *Left Hand Color* will be used, and when selecting the object with a right hand, the *Right Hand Color* will be used.
+
+## Bake Highlighting
+
+When playing the scene in the Unity Editor, you can also use the Highlighter to visualize the object baking state of the objects in your scene. 
+Please read more on [object baking](object_baking.html) if you are not familiar with the terminology.
+
+There are three options you can enable by clicking on the respective buttons:
+
+* **No Bakes:** Highlight all objects that are not baked in red. You will only get [Sticky Hand](grasp_interaction.html#grasp-interaction-type) grasps on those objects.
+
+* **Dynamic Grasps:** Highlight all objects that are baked in red. You can use [Dynamic Grasps](grasp_interaction.html#grasp-synthesis-method) on those objects.
+
+* **Static Grasps:** Highlight all objects that have static grasps assigned to them in cyan. These objects are usually baked and special grasps were assigned to them using [VirtualGrasp Studio](unity_component_vggraspstudio.html). You can use [Dynamic and Static Grasps](grasp_interaction.html#grasp-synthesis-method) on those objects.
