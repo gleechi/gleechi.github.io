@@ -17,7 +17,7 @@ In this simple example script, the VR trigger button (value between 0 and 1) is 
 
 This is a use case that you may want to follow if you want to animate a finger push while you have an object in your hand (such as when using an electric tool). 
 
-{% include image.html file="gifs/post_animator.gif" width="100%" alt="post_animator" caption="Default VG_PostAnimator will modify the index finger bending." %}
+{% include image.html file="gifs/post_animator.gif" width="100%" alt="VG_PostAnimator" caption="Default VG_PostAnimator will modify the index finger bending." %}
 
 ```js
 
