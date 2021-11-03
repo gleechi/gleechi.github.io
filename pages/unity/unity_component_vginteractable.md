@@ -11,14 +11,17 @@ folder: mydoc
 
 {% include image.html file="unity/unity_vg_interactable.png" alt="VG interactable." caption="VG_Interactable" %}
 
-{% include callout.html content="All parameters in the VG_Interactable component is explained in 
-[grasp interaction](grasp_interaction.html#grasp-interaction)." %}
+## Description
 
-VG_Interactable component allows you to specify different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> for each object by attaching this component to the corresponding game object. 
-This will override the global settings for [grasp Interaction](grasp_interaction.html#grasp-interaction) assigned on all objects in the scene (see [global grasp interaction settings](unity_component_myvirtualgrasp.html#grasp-interaction-settings)). 
- 
-{% include callout.html content="All objects without a customized VG_Interactable will follow the global settings,
- but those with VG_Interactable will follow these local settings." %}
+The VG_Interactable component allows you to specify a particular <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> for an object.
+
+All parameters in the VG_Interactable component are explained in [grasp interaction](grasp_interaction.html#grasp-interaction).
+
+Adding VG_Interactable to an object will override the [global grasp interaction settings](unity_component_myvirtualgrasp.html#grasp-interaction-settings) for that particular object. 
+
+All objects without a customized VG_Interactable will follow the global settings, but those with VG_Interactable will follow the local settings.
+
+{% include multiple_script.html %}
 
 
 

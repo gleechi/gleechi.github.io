@@ -76,14 +76,17 @@ entries:
     - title: VG_ExternalControllerManager
       url: /unity_component_vgexternalcontrollermanager.html
       output: web
-    - title: VG_GhostHands
+    - title: VG_GhostHands *
       url: /unity_component_vgghosthands.html
       output: web
     - title: VG_GraspStudio
       url: /unity_component_vggraspstudio.html
       output: web
-    - title: VG_HandVisualizer
+    - title: VG_HandVisualizer ✓
       url: /unity_component_vghandvisualizer.html
+      output: web
+    - title: VG_HandStatus
+      url: /unity_component_vghandstatus.html
       output: web
     - title: VG_HighLighter ✓
       url: /unity_component_vghighlighter.html
@@ -91,7 +94,7 @@ entries:
     - title: VG_HintVisualizer ✓
       url: /unity_component_vghintvisualizer.html
       output: web 
-    - title: VG_Interactable
+    - title: VG_Interactable ✓
       url: /unity_component_vginteractable.html
       output: web
     - title: VG_PostAnimator ✓
@@ -100,7 +103,7 @@ entries:
     - title: VG_Recorder ✓
       url: /unity_component_vgrecorder.html
       output: web
-    - title: VG_StateVisualizer
+    - title: VG_StateVisualizer ✓
       url: /unity_component_vgstatevisualizer.html
       output: web
       subfolders:
