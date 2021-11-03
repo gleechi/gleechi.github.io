@@ -79,7 +79,7 @@ entries:
     #- title: VG_GhostHands *
     #  url: /unity_component_vgghosthands.html
     #  output: web
-    - title: VG_GraspStudio
+    - title: VG_GraspStudio ✓
       url: /unity_component_vggraspstudio.html
       output: web
     - title: VG_HandVisualizer ✓

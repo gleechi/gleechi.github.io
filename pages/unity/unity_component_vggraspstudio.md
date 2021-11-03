@@ -9,11 +9,12 @@ permalink: unity_component_vggraspstudio.html
 folder: mydoc
 ---
 
-### Background 
+## Description 
 
 VG_GraspStudio is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a>.
 It is provided as a component of the VirtualGrasp Unity plugin, and thus only available in Unity for now. 
-The MonoBehavior provides a tutorial on the VG API functions for accessing grasps existing in the grasp DB as well as using the labeling interface.
+
+VG_GraspStudio provides a tutorial on the VG API functions for accessing grasps existing in the grasp database as well as using the labeling interface.
 
 It serves as a high-level visualizing tool in which you can not only review all grasps that you have in a project, but also annotate them.
 
@@ -23,9 +24,10 @@ Some examples of annotations are:
 * "adding (dynamic) grasps for an object into the (static) grasp database”
 * “choosing only some "primary" grasps for an object”.
 
-{% include tip.html content="If you are more interested in the low-level API or editing features of VirtualGrasp, or interested in implementing similar high-level features in Unreal, we recommend to also have a look at the Grasp Editing API Section of the API. The VirtualGrasp API (VG_Controller) has one single API function called [EditGrasp](VirtualGrasp_UnityAPI.html#editgrasp) to perform different editing actions on an object. Look up the API page as well as the [EditorAction](VirtualGrasp_UnityAPI.html#vg_editoraction) list for more information." %}
+<!--
+{% include tip.html content="If you are more interested in the low-level API or editing features of VirtualGrasp, or interested in implementing similar high-level features in Unreal, we recommend to also have a look at the Grasp Editing API Section of the API. The VirtualGrasp API (VG_Controller) has one single API function called [EditGrasp](VirtualGrasp_UnityAPI.html#editgrasp) to perform different editing actions on an object. Look up the API page as well as the [EditorAction](VirtualGrasp_UnityAPI.html#vg_editoraction) list for more information." %}-->
 
-### Enabling VirtualGrasp GraspStudio
+## Enabling VirtualGrasp GraspStudio
 
 The preferred way to use GraspStudio is to use the option of automatically creating a separate editor scene (Menu VirtualGrasp → Create VG_Editor Scene).
 
@@ -34,7 +36,7 @@ This will place a new .unity scene next to your existing one in the file system,
 The new editor scene will be automatically configured by combining information from your current scene (VirtualGrasp, hands and camera components), [debug files](debug_files.html#grasp-editor) (objects) and adding and configuring the GraspStudio component itself (from Prefabs).
 
 
-### VirtualGrasp Studio GUI
+## VirtualGrasp Studio GUI
 
 The interface is shown below, with some regions outlined in blue only for this documentation:
 
@@ -56,7 +58,7 @@ Here, information on the current object and the selected grasp is visualized, to
 
 Here, information on the selected grasp is visualized, together with buttons to step between grasps as well as to label them.
 
-### Interacting with VirtualGrasp GraspStudio
+## Interacting with VirtualGrasp GraspStudio
 
 The interface supports two different modes: 
 
@@ -84,11 +86,11 @@ The following table describes the actions and how to achieve them in the two mod
 
 \* Labeling an already selected primary or disabled grasp unlabel it.
 
-### Adding Grasps
+## Adding Grasps
 
 Adding grasps can only be done in VR. The scene will have a second hand pair created that can interact with a duplicate of the visualized object, using [dynamic grasping](grasp_interaction.html#grasp-synthesis-method). You can grasp the object until you find a grasp that you would like to add, and while holding then press the top button (usually "X" on the left and "A" on the right controller) to add it as a static grasp. It will then appear as a new entry in the thumbnail section.
 
-### Important Note on the Files
+## Important Note on the Files
 
 The information on added and edited grasps will be stored in additional files which you will find in each project's root folder by default:
 
