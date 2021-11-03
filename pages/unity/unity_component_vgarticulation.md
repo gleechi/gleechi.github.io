@@ -1,43 +1,43 @@
 ---
 title: VG_Articulation Component
-#tags: [getting_started]
 keywords: component, articulation
-#last_updated: July 16, 2016
-#summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar
 permalink: unity_component_vgarticulation.html
 folder: mydoc
 ---
 
-The VG_Articulation component provides a graphical user interface in Unity to specify [object articulation](object_articulation.html#object-articulation)
-that defines an object's 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a>. 
+## Description
 
-{% include callout.html content="All the parameters in the VG_Articulation component is explained in detail in [object articulation](object_articulation.html#object-articulation)." %}
+VG_Articulation is an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInternalScript}}">internal script</a> that provides the main interface to mark an object as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a> (see [object identifiers](unity_get_started_objects.html#customizing-layers-and-component-names)), as well as to parametrize its [object articulation](object_articulation.html#object-articulation) and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behavior</a>. 
 
-{% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
+By default, the VG_articulation component sets an object to have floating <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a>. 
 
-### Initial Setting
+{% include image.html file="unity/unity_vg_articulation_default.png" alt="VG Articulation" caption="The default VG_Articulation Component (floating joint type)." %}
 
-For each interactable object in your Unity scene, you can add this VG_Articulation component to specify the [articulation setup of this object](object_articulation.html#object-articulation). 
-By default the VG_articulation component sets an object to have floating <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a>; and adding this component to the object also marks this object to be <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a> (see [object identifiers](unity_get_started_objects.html#customizing-layers-and-component-names)). 
+As soon as you change the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a>, the interface will change dynamically.
 
-### Runtime Changes
+{% include image.html file="unity/unity_vg_articulation_full.png" alt="VG Articulation" caption="VG_Articulation interface after changing to  prismatic joint type." %}
+
+All the parameters are explained in detail in [object articulation](object_articulation.html#object-articulation).
+
+{% include multiple_script.html %}
+
+## Runtime Changes
 
 Regardless of what is the initial setting of an object's articulation, you can change the object's articulation parameters in runtime 
-through scripting through API functions [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) 
-and [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) functions.
+through scripting using the API functions [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) 
+and [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#recoverobjectjoint) functions.
 
-#### ChangeObjectJoint
+### ChangeObjectJoint
 
-As you can see one [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) API function receives this VG_Articulation component as input for destination [object articulation settings](object_articulation.html#object-articulation).
+The [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) API function receives an VG_Articulation component as input for the [object articulation](object_articulation.html#object-articulation) settings you want to apply.
 
-To do that, you can add an **disabled** VG_Articulation component to the object, then your script can receive this component and use this as the argument in [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) function.
+To do that, you can add a **disabled** VG_Articulation component to the object, which your script can receive and use as the argument in the [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) function.
+
 As a result, all the parameters set in the component will be specified in runtime on the object. 
 
-#### RecoverObjectJoint
+### RecoverObjectJoint
 
-Currently, if you want to "change" object joint to the initial (original) type, the only way to do it is to call RecoverObjectJoint. 
+At the moment, the only way to "change" object joint to the initial (original) type is to call [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#recoverobjectjoint). 
 
-{% include warning.html content="Known issue for this is if you want to change other articulation parameters on the original joint type, it is not supported yet. 
-This will be fixed in next release. " %}
+{% include warning.html content="Known issue for this is if you want to change other articulation parameters on the original joint type, it is not supported yet. This will be fixed in next release. " %}

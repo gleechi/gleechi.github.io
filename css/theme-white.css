@@ -35,6 +35,7 @@ a[data-toggle="tooltip"] {
     color: #649345;
     font-style: italic;
     cursor: default;
+    background-color: white;
 }
 
 .navbar-inverse {

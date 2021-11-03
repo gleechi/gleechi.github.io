@@ -1,0 +1,14 @@
+<!--
+{% assign tooltip = "" %}
+{% for kv in site.data.glossary %}
+{% if kv[0] == include.entry %}
+{% assign tooltip = kv[1] %}
+<a href="#" data-toggle="tooltip" data-original-title="{{tooltip}}">{{include.text}}</a>
+{% endif %}
+{% endfor %}
+{%if tooltip == "" %}
+<a href="#" data-toggle="tooltip" data-original-title="Not found in glossary">{{include.text}}</a>
+{% endif %}
+-->
+
+<a href="#" data-toggle="tooltip" data-original-title="Not found in glossary">{{include.text}}</a>
