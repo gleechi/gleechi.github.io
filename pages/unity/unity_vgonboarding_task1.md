@@ -61,6 +61,6 @@ public class ToggleLight : MonoBehaviour
 }
 
 ````
-is the script showing how to use API function [GetObjectJointState](virtualgrasp_unityapi.html#getobjectjointstate to get the object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointState}}">joint state</a>
+is the script showing how to use API function [GetObjectJointState](virtualgrasp_unityapi.html#getobjectjointstate) to get the object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointState}}">joint state</a>
  in order to determine when the light is on or off. 
 
