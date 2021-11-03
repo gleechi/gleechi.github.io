@@ -38,6 +38,4 @@ As a result, all the parameters set in the component will be specified in runtim
 
 ### RecoverObjectJoint
 
-At the moment, the only way to "change" object joint to the initial (original) type is to call [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#recoverobjectjoint). 
-
-{% include warning.html content="Known issue for this is if you want to change other articulation parameters on the original joint type, it is not supported yet. This will be fixed in next release. " %}
+If you want to recover the object joint to its original parameters set by the **enabled** VG_Articulation component, you can call the [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#recoverobjectjoint) API function.
