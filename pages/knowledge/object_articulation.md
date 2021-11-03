@@ -10,12 +10,9 @@ folder: mydoc
 ---
 
 In VirtualGrasp, we use "Object Articulation" to setup an object's 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> through a combination of
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">object joint</a> and
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Affordance}}">object affordance</a>,
-without relying on physical simulations.
+<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> through the combination of [object joint](#object-joint) and [object affordances](#object-affordances), without relying on physical simulations.
 
-### Object Joint
+## Object Joint
 
 Each object has a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">joint</a> of a given type which determines how it moves in relation to its parent object.
 Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic, and allows you to setup common object behaviors like buttons, screws, and sliders, etc very easily. 
@@ -87,7 +84,7 @@ because the preferred approach direction is same as the button movement directio
 To learn more details of how to setup pushable object see [push interaction](push_interaction.html).
 
 
-### Object Affordances
+## Object Affordances
 
 “Object Affordance”, in a broader sense, means what kind of action this object can be used for. 
 For example a chair affords to be sit upon, a button on the wall affords push, and a handle affords grasp.
@@ -105,7 +102,7 @@ In VG library we define a “narrower” sensed set of affordances that determin
 | Two Stage | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
 | Snaps | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: When released, snap to the closest discrete state | for 1-dof joint | 
 
-### Dual Hands Only
+## Dual Hands Only
 
 This is a miscellaneous parameter to enforce an object can only be moved when grasped by two hands. 
 
@@ -114,12 +111,10 @@ The purpose of this feature is to simulate a heavy object that need more hands t
 Note since there is no physical simulation involved, this does not take into account of the physical properties such as
 mass or inertia specified in the game engine. 
 
-### Graphical User Interface
+## Graphical User Interface
 
-The image below shows Unity's VG_Articulation component as an example for the GUI of Object Articulation.
+The image below shows Unity's [VG_Articulation](unity_component_vgarticulation.html) component used to setup all parameters of object articulation.
 Note that the VG_Articulation is generic for all other client engines like Unreal.
 
-To learn more details of Unity implementation see [VG_Articulation](unity_component_vgarticulation.html#unity-component-vgarticulation).
-
-{% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
+{% include image.html file="unity/unity_vg_articulation_full.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 

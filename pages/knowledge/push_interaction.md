@@ -66,7 +66,7 @@ Through VirtualGrasp's [object articulation](object_articulation.html#object-art
 Using Unity game engine as an example, to create a pushable button, 
 you add the component [VG_Articulation](unity_component_vgarticulation.html) to the object, and the parameters shown in below image create a button that can be pushed by index finger, and will bounce alternatively to the two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">discrete states</a> when push is released (see [affordances](object_articulation.html#object-affordances)):
 
-{% include image.html file="unity/unity_vg_articulation.png" alt="VG Articulation" caption="VG_Articulation Component." %}
+{% include image.html file="unity/unity_vg_articulation_full.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
 * Since button is moving along a single axis linearly, we select the joint type to be PRISMATIC.
 * For PRISMATIC joint, we need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a> which specifies the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">joint axis</a> along which object moves.
