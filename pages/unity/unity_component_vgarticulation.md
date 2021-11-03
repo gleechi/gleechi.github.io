@@ -26,11 +26,11 @@ All the parameters are explained in detail in [object articulation](object_artic
 
 Regardless of what is the initial setting of an object's articulation, you can change the object's articulation parameters in runtime 
 through scripting using the API functions [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) 
-and [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#recoverobjectjoint) functions.
+and [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#recoverobjectjoint).
 
 ### ChangeObjectJoint
 
-The [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) API function receives an VG_Articulation component as input for the [object articulation](object_articulation.html#object-articulation) settings you want to apply.
+One of the two [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) API functions receives an VG_Articulation component as input for the [object articulation](object_articulation.html#object-articulation) settings you want to apply.
 
 To do that, you can add a **disabled** VG_Articulation component to the object, which your script can receive and use as the argument in the [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) function.
 
