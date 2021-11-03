@@ -1,25 +1,26 @@
 ---
 title: VG_BakingClient Component
-#tags: [getting_started]
 keywords: component, baking, objectbaking, baking-client
-#last_updated: July 16, 2016
-#summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar
 permalink: unity_component_vgbakingclient.html
 folder: mydoc
 ---
 
-@kai update regarding output will not be dll anymore, but encripted db.
+{% include image.html file="unity/unity_vg_statevisualizer_menu.png" alt="VG_BakingClient menu." caption="VG_BakingClient can be found in the VirtualGrasp/Components menu." %}
 
-### VG_BakingClient 
+{% include warning.html content="CABVG is currently ongoing maintenance and an upgrade to version 2.0. It is therefore not available and the documentation below deprecated." %}
 
-You will be able to request [object baking](object_baking.html) by connecting to Gleechi's 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CABVG}}">CABVG</a> 
- server through a GUI interface -- VG_BakingClient -- that is part of the SDK. You can find it in the VirtualGrasp menu:
+## Description
+
+The VG_BakingClient is an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInternalScript}}">internal script</a> that integrates the VirtualGrasp Cloud Baking Service (<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.CABVG}}">CABVG</a>) into the Unity editor. 
+
+If you are not familiar with the concept of object baking, please read the [object baking documentation](object_baking.html) first.
 
 {% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client in Unity." caption="VG_BakingClient" %}
 
-### Upload Input
+{% include editor_script.html %}
+
+## Upload Input
 
 To upload the files for a bake:
 
@@ -36,14 +37,14 @@ After clicking Upload, the server will receive the package and trigger a bake, a
 
 Now you have to wait (depending on the number of objects and their complexity).
 
-### Target Platform
+## Target Platform
 
 Selecting **"Windows"** as the target platform is the default. "Download" will provide you with a .DLL file and enable natural grasps in your Editor, as well as in Windows builds.
 
 Select **"Android"** as the target platform if you have tested your Windows solution properly. "Download" will provide you with an .SO file to download and enable natural grasps in your Android builds (such as for Quest, Pico, etc.).
 
 
-### Download Output
+## Download Output
 
 You can either download the product of the bake, rename it and sort it in the Unity plugin folder yourself, or you can copy the download link, paste it in the DownloadURL field of the VG_BakingClient and click "Download." 
 
