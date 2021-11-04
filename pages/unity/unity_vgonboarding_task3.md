@@ -24,7 +24,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 * How to let objects placed on plate to follow the plate stably without easily rolling and falling down due to physical reactions. Can we use [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint)?
 
-#### Solution
+### Solution
 
 In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp/Scenes/onboarding**.
 

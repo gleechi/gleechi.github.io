@@ -72,7 +72,7 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 
-| Option | AutoSetup | Description |
+| Option | [AutoSetup](#autosetup) | Description |
 |-------|--------|--------|
 | Sensor | supported | will always be External Controller for the VG SDK. | 
 | External| supported | name of the external controller, as a string, so one can write your own external controller.|  
@@ -88,7 +88,7 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 After you have setup how your avatar's hands are controlled (by one or two sensors), you can use this Sensor Settings interface to specify Finger Control Type and Trigger Button globally for all of the sensors.
 #### Finger control type
 
-This provides the option to choose how sensor controls the finger motion
+This provides the option to choose how sensor controls the finger motion. And this can be taken cared by [AutoSetup](#autosetup).
 
 | Finger Control Type | Description |
 |-------|--------|

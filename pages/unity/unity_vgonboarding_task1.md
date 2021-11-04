@@ -27,7 +27,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 * How to determine when light should be on or off (use [GetObjectJointState](virtualgrasp_unityapi.html#getobjectjointstate) function)?
 * More systemtic understanding can be obtained in [push interaction](push_interaction.html#background).
 
-#### Solution
+### Solution
 
 In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp\Scenes\onboarding**.
 

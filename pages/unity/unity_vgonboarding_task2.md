@@ -31,7 +31,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 * How to dissembling radio's parts using runtime change object joint types. 
 * How to make the dissembled parts decoupled from radio and freely move and physically react to environment and gravity.
 
-#### Solution
+### Solution
 
 In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp\Scenes\onboarding**.
 

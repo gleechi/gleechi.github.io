@@ -23,7 +23,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 * xxx
 
-#### Solution
+### Solution
 
 In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp/Scenes/onboarding**.
 
