@@ -11,14 +11,11 @@ VG SDK provides a set of tools to make hand-object interactions in VR natural an
 
 These two features are closely linked to each other. 
 To have intuitive object grasp interaction experiences, just synthesizing the natural looking 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a>
-is not enough. How the hand and object moves just before and after grasping needs to be carefully handled, which is
-solved by VG's [object articulation](object_articulation.html) feature.
+{% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} is not enough. How the hand and object moves just before and after grasping needs to be carefully handled, which is solved by VG's [object articulation](object_articulation.html) feature.
 
 
-Note that, while the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behavior</a> 
-is provided out of the box from the VG SDK, 
-to achieve natural looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> in runtime
+Note that, while the {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behavior" %} is provided out of the box from the VG SDK, 
+to achieve natural looking {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} in runtime
 requires a preprocessing step called [object baking](object_baking.html).
 
 VG is hardware agnostic and can create natural [grasp interactions](grasp_interaction.html) with any kind of controllers (or sensors). 
