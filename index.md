@@ -6,11 +6,8 @@ permalink: index.html
 
 VirtualGrasp (VG) is a software development kit (SDK) developed from over eight years of research in robotics, healthcare and industrial applications.
 VG SDK provides a set of tools to make hand-object interactions in VR natural and immersive. The two main benefits of using VG are:
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesis}}">synthesizing</a>
- natural looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> 
-on hands during [grasp interaction](grasp_interaction.html) in a VR application, and
-* easy setup of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> 
-of an object (through [object articulation](object_articulation.html)) when hand [grasps](grasp_interaction.html) or [pushes](push_interaction.html) the object. 
+* {% include tooltip.html tooltip="GraspSynthesis" text="synthesizing" %} natural looking {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} on hands during [grasp interaction](grasp_interaction.html) in a VR application, and
+* easy setup of {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behaviors" %} of an object (through [object articulation](object_articulation.html)) when hand [grasps](grasp_interaction.html) or [pushes](push_interaction.html) the object. 
 
 These two features are closely linked to each other. 
 To have intuitive object grasp interaction experiences, just synthesizing the natural looking 
