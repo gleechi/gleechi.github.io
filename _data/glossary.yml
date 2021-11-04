@@ -15,7 +15,7 @@ ObjectHierarchy: Refers to parent-child relations between objects in a game scen
 
 ObjectBaking: Refers to a preprocess of expensive object analysis, which is needed for DynamicGrasp synthesis in runtime.
 
-InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's Joint and Affordances setup in VG_Articulation component. 
+InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's [joint and affordances setup](object_articulation.html). 
 
 VGInteractable: An object is described as VG-interactable means it can be grasped or pushed by hands supported by VG.
 
@@ -33,43 +33,39 @@ GraspSynthesis: A runtime process of creating hand grasping configuration – th
 
 FingerControlType: Describes how sensor is controlling the finger movement on the avatar hands; the different finger control types are explained in detail in [sensor settings](unity_component_myvirtualgrasp.html#sensor-settings). 
 
-GraspSynthesisMethod: Describes the method used for GraspSynthesis. See [grasp interaction](grasp_interaction.html) to understand different methods.
+GraspSynthesisMethod: Describes the method used for GraspSynthesis. See [synthesis method](grasp_interaction.html#grasp-synthesis-method).
 
-InteractionType: Describes how hand/object moves when VR user selected an object or triggers grasp to start interacting with an object. The different interaction types are explained in detail in [GraspInteraction]. 
+InteractionType: Describes how hand/object moves when VR user selected an object or triggers grasp to start interacting with an object. See [interaction type](grasp_interaction.html#grasp-interaction-type). 
 
-ObjectJointType: Describes the movement relations between object and environment (world) or object and object. For example if joint type is "Floating", then object moving freely when grasped by a hand; however if it is of "Fixed" joint type, object is fixed to it's parent object/environment. See [Object and Articulation] for details of different types.
+Sensor: Refers to a hand sensing device such as VR controllers like Oculus Touch or finger tracking devices like LeapMotion; they can sense wrist position, orientation and optionally finger poses; since sensor is used to control avatars in VR, it can also be referred to as controller. 
 
-ObjectAffordance: Describes which kind of hand interaction we can have with this object in the virtual environment. For example if an object is "finger pushable", then you can push this object using index finger. See [Object and Articulation] for details of different affordances supported by VG. 
+Controller: Refers to a hand sensing device such as hand-held VR controllers like Oculus Touch or finger tracking devices like LeapMotion; they can sense wrist position, orientation and optionally finger poses; in VG we also refer to a controller as sensor. 
 
-Sensor: Refers to a hand sensing device such as hand-held VR controllers like Oculus Touch or hand tracking devices like LeapMotion; they can sense wrist position, orientation and optionally finger poses; since sensor is used to control avatars in VR, it can also be referred to as controller. 
+SensorData: Refers to the signals provided by a hand sensing device such as VR controllers or finger tracking devices; it contains the wrist position, orientation, and optionally finger poses, as well as the grasp trigger. See [sensor record and replay](sensor_record_replay.html).
 
-Controller: Refers to a hand sensing device such as hand-held VR controllers like Oculus Touch or hand tracking devices like LeapMotion; they can sense wrist position, orientation and optionally finger poses; in VG we also refer to a controller as sensor. 
+SensorRecordAndReplay: Refers to the functionality of VirtualGrasp to allow recording SensorData during runtime interaction, and later replaying to reproduce those interaction. See [sensor record and replay](sensor_record_replay.html).
 
-SensorData: Refers to the set signals provided by a hand sensing device such as hand-held VR controllers like Oculus Touch or hand tracking devices like LeapMotion; it contains the position and orientation of the wrist and optionally finger poses over time, as well as the grasp trigger.
+SensorOffset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [sensor offset](unity_component_myvirtualgrasp.html#sensor).
 
-SensorRecordAndReplay: Refers to the functionality of VirtualGrasp to allow recording SensorData during runtime interaction, and later replaying to reproduce those interaction.   
+SensorPose: The 3D position and orientation of an avatar's wrist determined by a sensor (VR controller or finger tracking devices); note this can be different from the actual rendered pose of the avatar wrist. See [grasp interaction](grasp_interaction.html#grasp-interaction-type).
 
-SensorOffset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [sensor offset](unity_component_myvirtualgrasp.html#sensor-offset) to know how to adjust this offset.
+StaticGrasp: Or SG, is a grasp synthesis method that creates grasping configuration from one of N grasps stored in a grasp database. See [grasp interaction](grasp_interaction.html#grasp-synthesis-method).
 
-SensorPose: The 3D position and orientation of an avatar's wrist determined by a sensor (hand-held VR controller or hand tracking devices like Leap Motion); note this can be different from the actual rendered pose of the avatar wrist.  
-
-StaticGrasp: Or SG, is a grasp synthesis method that creates grasping configuration from one of N grasps stored in a grasp database
-
-DynamicGrasp: Or DG, is a grasp synthesis method that computes grasping configuration at the moment of grasp triggering
+DynamicGrasp: Or DG, is a grasp synthesis method that computes grasping configuration at the moment of grasp triggering. See [grasp interaction](grasp_interaction.html#grasp-synthesis-method).
 
 TriggerGrasp: Is a grasp interaction type where when user triggers grasp, avatar hand moves to the wrist pose in the synthesized grasp configuration around the object.
 
-JumpGrasp: Is a grasp interaction type where when user triggers grasp, the object jumps to the grasped position in the avatar's hand. 
+JumpGrasp: Is a grasp interaction type where when user triggers grasp, the object jumps to the grasped position in the avatar's hand. See [interaction type](grasp_interaction.html#grasp-interaction-type).
 
-JumpPrimaryGrasp: Is a grasp interaction type where when user triggers grasp, the object jumps to the grasped position in the avatar's hand using the labeled primary grasp in the grasp DB. 
+JumpPrimaryGrasp: Is a grasp interaction type where when user triggers grasp, the object jumps to the grasped position in the avatar's hand one of labeled primary grasps in grasp DB. See [interaction type](grasp_interaction.html#grasp-interaction-type).
 
-PreviewGrasp: Is a grasp interaction type where once user selected an object, the grasp configuration is previewed on the object, so that user can push the trigger button to pick up the object if the grasp is satisfactory.
+PreviewGrasp: Is a grasp interaction type where once user selected an object, the grasp configuration is previewed on the object, so that user can push the trigger button to pick up the object if the grasp is satisfactory. See [interaction type](grasp_interaction.html#grasp-interaction-type).
 
-PreviewOnly: Is a grasp interaction type where once user selected an object, the grasp configuration is previewed on the object, and the grasp trigger won't take effect to pick up object.
+PreviewOnly: Is a grasp interaction type where once user selected an object, the grasp configuration is previewed on the object, and the grasp trigger won't take effect to pick up object. See [interaction type](grasp_interaction.html#grasp-interaction-type).
 
-StickyHand: Is a fall-back grasp interaction type when object is not baked, where the grasp configuration is directly taken from the hand pose at the moment of grasp triggering as if hand is stick to the object.
+StickyHand: Is a fall-back grasp interaction type when object is not baked, where the grasp configuration is directly taken from the hand pose at the moment of grasp triggering as if hand is stick to the object. See [interaction type](grasp_interaction.html#grasp-interaction-type).
 
-PrimaryGrasp: Is a label of a grasp entry in grasp DB, and used only in StaticGrasp synthesis method, indicating this grasp is one of the few primarily used grasp on an object for a given hand.
+PrimaryGrasp: Is a label for a grasp entry in grasp DB to indicate it is one of the primarily used grasps on an object for a given hand; and used only JumpPrimaryGrasp interaction type. See [interaction type](grasp_interaction.html#grasp-interaction-type).
 
 GraspSpeed: A parameter in unit (second) specifying how long it takes for hand to move from SensorPose to synthesized grasp pose in TriggerGrasp interaction type, and how long it takes for object to jump to hand in JumpGrasp interaction type.
 
@@ -79,41 +75,41 @@ JointLimit: The parameter for object articulation of any joint types. For 1-dof 
 
 SwingAngle: For 3-dof Cone joint, this is an angle describes how much object swing away from the joint axis (at the center of the Cone-shaped joint limit boundary).
 
-TwistAngle: For 3-dof Cone joint, this is an angle describes how much the object is rotating around its swinged away axis 
+TwistAngle: For 3-dof Cone joint, this is an angle describes how much the object is rotating around its swinged away axis.
 
 JointState: The status of a 1-dof joint (PRISMATIC or REVOLUTE), which can be represented by a single scalar value JointState in the range of JointLimit; JointState = 0 is the zero pose of the joint corresponding to the initial pose of the object.
 
 DiscreteStates: The parameter for object articulation only relevant for 1-dof joints (PRISMATIC and REVOLUTE), and they are a set of N (N>=2) joint state values in the range of JointLimit; they are needed for State Affordances (BOUNCE, TWO_STAGE, SNAPS) which, when hand releases from the object, will pin the object into one of these discrete states. 
 
-ScrewRate: A parameter for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation, in unit (cm / degree); if > 0 will turn a Revolute joint into ScrewJoint.
+ScrewRate: A parameter for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation, in unit (cm / degree); if > 0 will turn a Revolute joint into a ScrewJoint.
 
 JointCenter: The center point of an object's joint, around which an object is rotating around, specified by the Pivot transform’s position.
 
 JointAxis: The axis of the joint, specified by the Pivot transform’s position; for Revolute joint the axis around which the object rotates; for Prismatic joint the axis along which the object translate; for Cone joint the axis in the center of the cone representing zero swing angle.
 
-Pivot: The pivot transform needed to specify the JointCenter (position component of the transform and JointAxis (zaxis of the transform) of an object Joint.
+Pivot: A transform needed to specify the JointCenter (position) and JointAxis (zaxis) of an object Joint.
 
-PushPivot: A transform to specify along which direction (zaxis of the transform) the hand can approach and push an object that has push affordance; this direction is not the direction of object movement, but only used for object selection for push without physics situation.
+PushPivot: A transform to specify along which direction (zaxis) the hand can approach and push an object that has push affordance; this direction is not the direction of object movement, but only used for object selection for [push without physics](push_interaction.html#push-without-physics).
 
 ApproachDirection: The direction along which the PushAgent approaches the object to be pushed; PushPivot assigned to a pushable object is used to specify a preferred approach direction by the PushAgent. 
 
-Affordance: An object affordance determines which kind of hand interaction can be done with the object, and how the object’s JointState reacts to the hand interaction.
+Affordance: An object affordance determines which kind of hand interaction can be done with the object, and how the object’s JointState reacts to the hand interaction. See [object affordances](object_articulation.html#object-affordances).
 
-InteractionAffordance: An object's interaction affordance determines what kind of action the hand can perform on the object, for example, graspable means the object can be grasped by a hand.
+InteractionAffordance: An object's interaction affordance determines what kind of action the hand can perform on the object, for example, graspable means the object can be grasped by a hand. See [object affordances](object_articulation.html#object-affordances).
 
-StateAffordance: An object's state affordance determines how the object's JointState reacts to the hand interaction.
+StateAffordance: An object's state affordance determines how the object's JointState reacts to the hand interaction. See [object affordances](object_articulation.html#object-affordances).
 
 PushAgent: Refers to who is performing the push action, for example if index finger tip is pushing, index finger tip is the push agent. 
 
-Bounce: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the lowest value of the DiscreteStates.
+Bounce: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the lowest value of the DiscreteStates. See [object affordances](object_articulation.html#object-affordances).
 
-TwoStage: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the highest and lowest values of the DiscreteStates in an alternating order.
+TwoStage: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the highest and lowest values of the DiscreteStates in an alternating order. See [object affordances](object_articulation.html#object-affordances).
 
-Snaps: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it snaps to the closest value of the DiscreteStates.
+Snaps: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it snaps to the closest value of the DiscreteStates. See [object affordances](object_articulation.html#object-affordances).
 
 Joint: Joint is where two bones or GameObjects meet, and in VirtualGrasp it defines how a child object moves w.r.t. its parent (not the other way around); and different from the physics-based joint systems in some game engines like Unity, VG's joint system is non-physical (kinematic).
 
-JointType: The type of a Joint, can be Floating, Fixed, Revolute, Prismatic and Cone. 
+JointType: The type of a Joint, can be Floating, Fixed, Revolute, Prismatic and Cone. See [object articulation](object_articulation.html).
 
 Floating: An unconstrained JointType, an object with this type of joint can be moved by hand freely.
 
@@ -127,8 +123,8 @@ Cone: A constrained 3-dof rotational JointType, object rotates around a pivot po
 
 ScrewJoint: A joint of type Revolute when the parameter ScrewRate > 0, then the object will translate at an amount of ScrewRate (cm / degree) for every degree of rotation.
 
-InteractionSegment: Refers to a segment of recorded sensor data that contains continuous frames for hand interaction with an object, or without any object.
+InteractionSegment: Refers to a segment of recorded sensor data that contains continuous frames for hand interaction with an object, or without any object. See [sensor recording and replay](sensor_record_replay.html).
 
-InteractionSequence: Refers to successive order of two or more recorded InteractionSegment that contains continuous frames for hand interaction with an object, or without any object. 
+InteractionSequence: Refers to successive order of two or more recorded InteractionSegment that contains continuous frames for hand interaction with an object, or without any object. See [sensor recording and replay](sensor_record_replay.html).
 
 SelectionWeight: Refers to the weight specifying the likelihood of an object to be selected for interaction (grasp or push) with hands; by default all object have 1 as selection weight; 0 means an object is completely hidden for interaction, and there is no upper boundary for this weight.

@@ -13,6 +13,6 @@ MyVirtualGraspBurst is a <a href="#" data-toggle="tooltip" data-original-title="
 VG_MainScript inherits from Monobehavior so you can use this as a component to a GameObject in Unity. 
 In contrast to MyVirtualGrasp, this component uses Burst Jobs to isolate VG updates on a seperate thread.
 
-[Currently this component does not function]
+{% include warning.html content="Currently this component does not function." %}
 
 
