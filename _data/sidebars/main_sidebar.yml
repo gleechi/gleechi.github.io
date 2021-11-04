@@ -61,49 +61,49 @@ entries:
   - title: How-To Guides
     output: web
     folderitems:
-    - title: My VirtualGrasp
+    - title: My VirtualGrasp *
       url: /unity_component_myvirtualgrasp.html
       output: web
-    - title: My VirtualGraspBurst
+    - title: My VirtualGraspBurst *
       url: /unity_component_myvirtualgraspburst.html
       output: web
-    - title: VG_Articulation ✓
+    - title: VG_Articulation
       url: /unity_component_vgarticulation.html
       output: web
-    - title: VG_BakingClient ✓
+    - title: VG_BakingClient
       url: /unity_component_vgbakingclient.html
       output: web
-    - title: VG_ExternalControllerManager
+    - title: VG_ExternalControllerManager *
       url: /unity_component_vgexternalcontrollermanager.html
       output: web
     #- title: VG_GhostHands *
     #  url: /unity_component_vgghosthands.html
     #  output: web
-    - title: VG_GraspStudio ✓
+    - title: VG_GraspStudio
       url: /unity_component_vggraspstudio.html
       output: web
-    - title: VG_HandVisualizer ✓
+    - title: VG_HandVisualizer
       url: /unity_component_vghandvisualizer.html
       output: web
-    - title: VG_HandStatus
+    - title: VG_HandStatus * 
       url: /unity_component_vghandstatus.html
       output: web
-    - title: VG_HighLighter ✓
+    - title: VG_HighLighter
       url: /unity_component_vghighlighter.html
       output: web 
-    - title: VG_HintVisualizer ✓
+    - title: VG_HintVisualizer
       url: /unity_component_vghintvisualizer.html
       output: web 
-    - title: VG_Interactable ✓
+    - title: VG_Interactable
       url: /unity_component_vginteractable.html
       output: web
-    - title: VG_PostAnimator ✓
+    - title: VG_PostAnimator
       url: /unity_component_vgpostanimator.html
       output: web
-    - title: VG_Recorder ✓
+    - title: VG_Recorder
       url: /unity_component_vgrecorder.html
       output: web
-    - title: VG_StateVisualizer ✓
+    - title: VG_StateVisualizer
       url: /unity_component_vgstatevisualizer.html
       output: web
       subfolders:
