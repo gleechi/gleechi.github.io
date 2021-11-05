@@ -11,7 +11,7 @@ toc: true
 To create immersive interactive experiences in a virtual environment is difficult because physical constraints and haptic sensations can not be fully reproduced with today's VR software and hardware technology. 
 This is especially challenging when we want to have hand presence in VR while grasping and manipulating objects. 
 
-For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarantee that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> on the selected object. While in real life such a problem is trivial since we can always rely on our fast sensory-motor feedback loop to correct our hand and finger poses, in VR such a feedback does not exist. 
+For example, when a user places the avatar hand close to an object and triggers the grasp button to initiate grasp interaction, he or she can not guarantee that the wrist is perfectly placed so that just closing fingers around the object can generate a natural-looking {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} on the selected object. While in real life such a problem is trivial since we can always rely on our fast sensory-motor feedback loop to correct our hand and finger poses, in VR such a feedback does not exist. 
 
 VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a generative grasp synthesis algorithm to 
 create immersive grasp interacting experiences in VR.
@@ -31,25 +31,22 @@ and then explain a set of parameters to configure and fine-tune the grasp intera
 ### From Object Selection to Grasp Synthesis
 
 In VR, grasp interaction consists of two consecutive processes:
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">object selection</a>
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>
+1. {% include tooltip.html tooltip="ObjectSelection" text="object selection" %}, and
+2. {% include tooltip.html tooltip="GraspSynthesis" text="grasp synthesis" %}
 
-VirtualGrasp provides an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ObjectSelection}}">object selection</a> mechanism through checking collisions between a grasp selection sphere attached to the hand and the objects, and choosing the "closest" object for grasping. 
+VirtualGrasp provides an object selection mechanism through checking collisions between a grasp selection sphere attached to the hand and the objects, and choosing the "closest" object for grasping. 
 Note this process is done in the VirtualGrasp library, and no collider setup or physical simulation is needed in any client engines. 
 
-And once an object is selected by a hand, it is ready for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>. 
+And once an object is selected by a hand, it is ready for grasp synthesis. 
 
 <!--In a typical <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> (like <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.TriggerGrasp}}">trigger grasp</a>, or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JumpGrasp}}">jump grasp</a> ), grasp synthesis on an object happens if the user triggers grasp while this hand has selected this object. 
 -->
 
 ### Grasp Synthesis Method
 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">Grasp synthesis</a>
-refers to the runtime process of creating hand <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a>
- -- the wrist and fingers pose  w.r.t the object -- when an user triggers grasp with VR controllers.
+Grasp synthesis refers to the runtime process of creating hand {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} -- the wrist and fingers pose  w.r.t the object -- when an user triggers grasp with VR controllers.
 
-VG provides two alternative methods for grasp synthesis <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StaticGrasp}}">static grasp</a> (SG) 
-and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DynamicGrasp}}">dynamic grasp</a> (DG). 
+VG provides two alternative methods for grasp synthesis {% include tooltip.html tooltip="StaticGrasp" text="static grasp" %} (SG) and {% include tooltip.html tooltip="DynamicGrasp" text="dynamic grasp" %} (DG). 
 
 <table border="1">
 <colgroup>
@@ -67,10 +64,8 @@ and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.
 <tbody>
 <tr>
 <td markdown="span" colspan="2" style="text-align: right">
-**Static Grasp** (SG) creates <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> 
-from one of N grasps stored in a grasp database.<!-- While full baking is needed, it only uses grasp baking results during runtime.are created by a limited set of grasps around an object depending on a pre-baked grasp database.--></td>
-<td markdown="span" colspan="2">**Dynamic Grasp** (DG) computes 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a>  at the moment of grasp triggering.<!--While full baking is currently enabled (so one can switch between static and dynamic grasping per object), it only uses shape baking results. --><!--are unlimited grasps that are generated during runtime.--></td>
+**Static Grasp** (SG) creates grasp configurations from one of N grasps stored in a grasp database.<!-- While full baking is needed, it only uses grasp baking results during runtime.are created by a limited set of grasps around an object depending on a pre-baked grasp database.--></td>
+<td markdown="span" colspan="2">**Dynamic Grasp** (DG) computes grasp configurations at the moment of grasp triggering.<!--While full baking is currently enabled (so one can switch between static and dynamic grasping per object), it only uses shape baking results. --><!--are unlimited grasps that are generated during runtime.--></td>
 </tr>
 <tr>
 <td markdown="span" style="text-align: right">Limited number of and sparse grasps unless parameterized to be denser</td>
@@ -134,7 +129,7 @@ from one of N grasps stored in a grasp database.<!-- While full baking is needed
 </table>
 
 
-To create natural-looking <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configurations</a> in <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a>, we need to [bake the object](object_baking.html#object-baking).
+To create natural-looking {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} during {% include tooltip.html tooltip="GraspSynthesisMethod" text="grasp synthesis" %}, we need to [bake the object](object_baking.html#object-baking).
 The baking output of objects is a grasp database which will enable DG for any humanoid hands.
 
 In the situations when you need to use SG (see section [choosing synthesis method and interaction type](#choosing-synthesis-method-and-interaction-type)), 
@@ -142,9 +137,7 @@ In the situations when you need to use SG (see section [choosing synthesis metho
 
 ### Grasp Interaction Type
 
-As we mentioned in [background](#background) section, when a user triggers grasp, the wrist may not be at a good pose w.r.t. the object.
-VG's grasp synthesis algorithm will "correct" this "mis-placement" of wrist, and create a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a>
-with a wrist pose different from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a> at the moment of grasp triggering. 
+As we mentioned in [background](#background) section, when a user triggers grasp, the wrist may not be at a good pose w.r.t. the object. VG's grasp synthesis algorithm will "correct" this "mis-placement" of wrist, and create a {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} with a wrist pose different from the {% include tooltip.html tooltip="SensorPose" text="sensor pose" %} at the moment of grasp triggering. 
 Because of this difference, there are different alternative solutions to pose the object-hand grasp ensemble, which will create different user experiences: 
 
 
@@ -155,12 +148,12 @@ Because of this difference, there are different alternative solutions to pose th
 | Jump Primary Grasp | when user triggers grasp, object jumps to the grasped position in the hand, using the labeled primary grasp(s) in the grasp DB | using primary grasp(s) is needed particularly in situations when an object should be grasped in some particular ways (e.g. how to grasp scissors)| 
 | Preview Grasp | once user selected an object, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> is previewed on the object, so that user can push the trigger button to pick up the object if the grasp is satisfactory | since <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">grasp synthesis</a> is running at every frame when object is selected, when DG is used can leads to low frame rate | 
 | Preview Only | once user selected an object, the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> is previewed on the object, and the grasp trigger won't take effect to pick up object | since grasp synthesis process is running at every frame when object is selected, when DG is used can leads to low frame rate | 
-| Sticky Hand | a fall-back solution when object is not baked, so the grasp configuration is directly taken from the hand pose at the moment of grasp triggering, as if hand is stick to the object.  | this allows VR developers to setup the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> supported by VG's [object articulation](object_articulation.html) before baking objects | 
+| Sticky Hand | a fall-back solution when object is not baked, so the grasp configuration is directly taken from the hand pose at the moment of grasp triggering, as if hand is stick to the object.  | this allows VR developers to setup the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> through [object articulation](object_articulation.html) before baking objects | 
 
 
 ### Choosing Synthesis Method and Interaction Type
 
-As explained in the previous sections, selecting different combinations of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> will create different user experiences. 
+As explained in the previous sections, selecting different combinations of {% include tooltip.html tooltip="GraspSynthesisMethod" text="synthesis method" %} and {% include tooltip.html tooltip="InteractionType" text="interaction type" %} will create different user experiences. 
 Due to the nature of each option, there may be preferences of how to combine the two parameters. The table below gives some hints: 
 
 | Interaction Type | Synthesis Method | Evaluation |
@@ -180,12 +173,12 @@ Due to the nature of each option, there may be preferences of how to combine the
 ### Grasp Speed and Release Speed
 
 {% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings" %}
-In global grasp interaction settings, you can set the default <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> for all objects in the scene globally. 
-The other two parameters -- <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">grasp speed</a> and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">release speed</a> -- also significantly affect the user experiences because they determines how fast the hand forms grasp and releases from grasp respectively. 
+In global grasp interaction settings, you can set the default {% include tooltip.html tooltip="GraspSynthesisMethod" text="synthesis method" %} and {% include tooltip.html tooltip="InteractionType" text="interaction type" %} for all objects in the scene globally. 
+The other two parameters -- {% include tooltip.html tooltip="GraspSpeed" text="grasp speed" %} and {% include tooltip.html tooltip="ReleaseSpeed" text="release speed" %} -- also significantly affect the user experiences because they determines how fast the hand forms grasp and releases from grasp respectively. 
 
-The unit of these values are in (second), so if <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSpeed}}">grasp speed</a> is 0.1, it means it takes 0.1 second starting from grasp triggering for the hand to form a complete <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> on the object.
+The unit of these values are in (second), so if {% include tooltip.html tooltip="GraspSpeed" text="grasp speed" %} is 0.1, it means it takes 0.1 second starting from grasp triggering for the hand to form a complete {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} on the object.
 
-If <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ReleaseSpeed}}">release speed</a> is 0.2, it means it takes 0.2 second starting from release triggering for the hand to move from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a> on the object back to its <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorPose}}">sensor pose</a>.
+If {% include tooltip.html tooltip="ReleaseSpeed" text="release speed" %} is 0.2, it means it takes 0.2 second starting from release triggering for the hand to move from {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} on the object back to its {% include tooltip.html tooltip="SensorPose" text="sensor pose" %}.
 
 {% include tip.html content="For grasp speed, lower value means faster grasp, for release speed, lower value means faster release." %}
 
