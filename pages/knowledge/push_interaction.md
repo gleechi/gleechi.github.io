@@ -140,16 +140,16 @@ The table below give some hints and considerations to help you choose which push
 <td markdown="span">Need careful selection of dynamic properties since they influence how object react to push</td>
 </tr>
 <tr>
-<td markdown="span" style="text-align: right">Limited in terms of "who" can push the object (now only INDEX_PUSHABLE <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a>.</td>
+<td markdown="span" style="text-align: right">Limited in terms of "who" can push the object (now only INDEX_PUSHABLE).</td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
 <td markdown="span">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">Anything with RigidBody and Collider can push since it is physics-based.</td>
 </tr>
 <tr>
-<td markdown="span" style="text-align: right">Can specify preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a> through <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>  </td>
+<td markdown="span" style="text-align: right">Can specify preferred approach direction through push pivot  </td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
-<td markdown="span">Can not specify preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>. </td>
+<td markdown="span">Can not specify preferred approach direction. </td>
 </tr>
 <tr>
 <td markdown="span" style="text-align: right">From some direction the object cannot be pushed </td>

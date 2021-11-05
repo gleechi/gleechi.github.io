@@ -81,18 +81,17 @@ To learn more details of how to setup pushable object see [push interaction](pus
 “Object Affordance”, in a broader sense, means what kind of action this object can be used for. 
 For example a chair affords to be sit upon, a button on the wall affords push, and a handle affords grasp.
 
-In VG library we define a “narrower” sensed set of affordances that determines which kind of hand **interaction** we can have with this object,
- and how the object's **state** react in the virtual environment. 
+In VG library we define a “narrower” sensed set of affordances that determines which kind of hand **interaction** we can have with this object ({% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}), and how the object's **joint state** react in the virtual environment ({% include tooltip.html tooltip="StateAffordance" text="state affordance" %}). 
 
 | Affordances | Description | Object Joint Settings |
 |-------|--------|---------|
-| Graspable | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a>: Can be grasped | for all joint types | 
-| Index Pushable | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a>: Can be pushed by the index finger; only relevant when setup [push interaction without physics](push_interaction.html#push-without-physics).| for all joint types | 
+| Graspable | _interaction affordance_: Can be grasped | for all joint types | 
+| Index Pushable | _interaction affordance_: Can be pushed by the index finger; only relevant when setup [push interaction without physics](push_interaction.html#push-without-physics).| for all joint types | 
 |-------|--------|---------|
-| Normal | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: Object stay at the pose when hand is released  | for all joint types| 
-| Bounce | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: When released, bounce to the lowest discrete state | for 1-dof joint | 
-| Two Stage | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
-| Snaps | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>: When released, snap to the closest discrete state | for 1-dof joint | 
+| Normal | _state affordance_: Object stay at the pose when hand is released  | for all joint types| 
+| Bounce | _state affordance_: When released, bounce to the lowest discrete state | for 1-dof joint | 
+| Two Stage | _state affordance_: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
+| Snaps | _state affordance_: When released, snap to the closest discrete state | for 1-dof joint | 
 
 ## Dual Hands Only
 
