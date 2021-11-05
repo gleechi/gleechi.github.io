@@ -9,14 +9,11 @@ permalink: object_articulation.html
 folder: mydoc
 ---
 
-In VirtualGrasp, we use "Object Articulation" to setup an object's 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractiveBehaviors}}">interactive behaviors</a> through the combination of [object joint](#object-joint) and [object affordances](#object-affordances), without relying on physical simulations.
+In VirtualGrasp, we use "Object Articulation" to setup an object's {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behaviors" %} through the combination of [object joint](#object-joint) and [object affordances](#object-affordances), without relying on physical simulations.
 
 ## Object Joint
 
-Each object has a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">joint</a> of a given type which determines how it moves in relation to its parent object.
-Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic, and allows you to setup common object behaviors like buttons, screws, and sliders, etc very easily. 
-   
+Each object has a {% include tooltip.html tooltip="Joint" text="joint" %} of a given type which determines how it moves in relation to its parent object. Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system is purely kinematic, and allows you to setup common object behaviors like buttons, screws, and sliders, etc very easily. 
 
 | Type | Dofs | Description |
 |-------|--------|--------|---------|
@@ -56,11 +53,8 @@ The table below gives some example values of joint state to further clarify its 
 
 ### Pivot vs. Push Pivot
 
-As shown in the joint parameter table above, an object's joint parameters include 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointCenter}}">joint center</a> and
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">joint axis</a>.
-These two parameters are provided in a combined way through a 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a> transform in the game engine. 
+As shown in the joint parameter table above, an object's joint parameters include {% include tooltip.html tooltip="JointCenter" text="joint center" %} and {% include tooltip.html tooltip="JointAxis" text="joint axis" %}.
+These two parameters are provided in a combined way through a {% include tooltip.html tooltip="Pivot" text="pivot" %} transform in the game engine. 
 
 Then what is **push pivot**? 
 
