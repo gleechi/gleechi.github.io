@@ -20,11 +20,11 @@ Unlike Unity's object physics-based joint systems, VirtualGrasp's joint system i
 
 | Type | Dofs | Description |
 |-------|--------|--------|---------|
-| Floating | 6-dof | unconstrained, freely floating object | 
-| Fixed | 0-dof | constrained, as if an integrated object with its parent | 
-| Revolute (or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ScrewJoint}}">Screw</a>) | 1-dof | constrained, rotate around an axis through a pivot point (joint center), limited by an angle range | 
-| Prismatic | 1-dof | constrained, move linearly along an axis through a pivot point (joint center), limited by an distance range | 
-| Cone | 3-dof | constrained, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
+| Floating | 6 | unconstrained, freely floating object | 
+| Fixed | 0 | constrained, as if an integrated object with its parent | 
+| Revolute | 1 | constrained, rotate around an axis through a pivot point (joint center), limited by an angle range | 
+| Prismatic | 1 | constrained, move linearly along an axis through a pivot point (joint center), limited by an distance range | 
+| Cone | 3 | constrained, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
 
 For any joint type, there are a set of parameters to be used to configure the joint:
 
@@ -32,16 +32,16 @@ For any joint type, there are a set of parameters to be used to configure the jo
 |-------|--------|---------|
 | Min / Swing | lower limit of 1-dof joint, for cone joint, this is swing angle limit | if angular limit, unit in (degree)|
 | Max / Twist | upper limit of 1-dof joint, for cone joint, this is twist angle limit | if angular limit, unit in (degree) |
-| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ScrewRate}}">Screw Rate</a> | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
-| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">Discrete States</a> | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
-| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointCenter}}">Joint Center</a> | around which position an object is rotating around, specified by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform's position | E.g. for cone joint, object will rotate round this point | 
-| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">Joint Axis</a> | the axis specified by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">Pivot</a> transform's **Zaxis** | E.g. for prismatic joint, object will move linearly along this axis | 
+| Screw Rate | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
+| Discrete States | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
+| Joint Center | around which position an object is rotating around, specified by the pivot transform's position | E.g. for cone joint, object will rotate round this point | 
+| Joint Axis | the axis specified by the pivot transform's _zaxis_ | E.g. for prismatic joint, object will move linearly along this axis | 
 
 ### Joint State
 
 If an object has an 1-dof joint, then its complete pose can be determined by a combination of 
 * its joint configuration (defined by a set of parameters shown in above table) 
-* and a single scalar value -- <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointState}}">Joint State</a>. 
+* and a single scalar value -- {% include tooltip.html tooltip="JointState" text="joint state" %}. 
 
 The table below gives some example values of joint state to further clarify its meaning:
 
@@ -64,22 +64,20 @@ These two parameters are provided in a combined way through a
 
 Then what is **push pivot**? 
 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push pivot</a> is provided to specify along which direction the hand is allowed to approach and apply push action. 
+{% include tooltip.html tooltip="PushPivot" text="Push pivot" %} is provided to specify along which direction the hand is allowed to approach and apply push action. 
 And this is only relevant for [push without physics](push_interaction.html#push-without-physics) setup for push interaction.
 
-Similar to provide joint axis through pivot transform, we use push pivot transform's **Zaxis** to specify this push approach direction. 
+Similar to provide joint axis through pivot transform, we use push pivot transform's _zaxis_ to specify this push approach direction. 
 
 {% include callout.html content="Push pivot is NOT specifying along which direction object moves, 
 but rather specifying a preferred hand approach direction which is only used for [pushable object selection](push_interaction.html#from-object-selection-to-push-without-physics). How object moves is defined by pivot together with other joint parameters." %}
 
-If <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>
- is not provided, then it will just inherit from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a>, i.e. the push direction is same as the joint axis. 
+If {% include tooltip.html tooltip="PushPivot" text="push pivot" %} is not provided, then it will just inherit from the {% include tooltip.html tooltip="Pivot" text="pivot" %}, i.e. the push direction is same as the joint axis. 
 
 {% include image.html file="unity/unity_button_pivot.png" alt="A Unity button." caption="A Unity button"%}
 The image above shows an example of setting up a button object that can be pushed from top by index finger. 
-In this case the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>
-is the same as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a>
-because the preferred approach direction is same as the button movement direction.
+In this case the {% include tooltip.html tooltip="PushPivot" text="push pivot" %}
+is the same as {% include tooltip.html tooltip="Pivot" text="pivot" %} because the preferred approach direction is same as the button movement direction.
 
 To learn more details of how to setup pushable object see [push interaction](push_interaction.html).
 
