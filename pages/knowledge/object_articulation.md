@@ -29,7 +29,7 @@ For any joint type, there are a set of parameters to be used to configure the jo
 |-------|--------|---------|
 | Min / Swing | lower limit of 1-dof joint, for cone joint, this is swing angle limit | if angular limit, unit in (degree)|
 | Max / Twist | upper limit of 1-dof joint, for cone joint, this is twist angle limit | if angular limit, unit in (degree) |
-| Screw Rate | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
+| {% include tooltip.html tooltip="ScrewRate" text="Screw Rate" %} | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
 | Discrete States | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
 | Joint Center | around which position an object is rotating around, specified by the pivot transform's position | E.g. for cone joint, object will rotate round this point | 
 | Joint Axis | the axis specified by the pivot transform's _zaxis_ | E.g. for prismatic joint, object will move linearly along this axis | 

@@ -129,24 +129,6 @@ We support two hands per avatar, left and right in this enum.
 |RIGHT|Right hand|
 
 
-### VG_InteractionMode
-
-An important information for designing your gameplay with VirtualGrasp is what to do dependent onwhat state the hand is in. For this purpose, VG_InteractionMode defines different interaction modesthat are used by the library (such as grasping or empty). You can access a specific hand's modethrough its VG_HandStatus.
-
-|RELEASE|when wrist and finger toward sensor pose|
-|GRASP|when wrist and finger towards target grasp pose|
-|HOLD|when hand hold the object, and wrist towards following sensor pose|
-|EMPTY|when hand not hold the object, wrist and finger fully follow sensor pose|
-|PREVIEW|when grasp is to be previewed before change to HOLD by grasp trigger|
-|MANIPULATE|when wrist is controlled by sensor relative pose|
-|HOLD2|when doing two hands manipulation|
-|MANIPULATE2|when doing two hands manipulation|
-|PREVIEW_RELEASE|when release from PREVIEW mode, wrist and finger interpolate toward sensor pose|
-|GRASP_TO_PREVIEW|when wrist and finger interpolate towards target grasp pose synthesized once a new object is selected|
-|PUSHING|when index finger tip do push on object|
-|PUSHING2|when both hand's index finger tip do push on same object|
-
-
 ### VG_InteractionType
 
 An enum to describe a hand interaction type (i.e. a mode on grasp visualization).
@@ -895,15 +877,6 @@ Returns the current grab velocity of a hand. The current velocity of the grab st
 | _int_ |avatarID|The avatar to receive the grab velocity for.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to receive the grab velocity for.|
 | **returns** | _float_ | The current grab velocity of the [handSide] hand.|
-
-
-### GetInteractionMode
-
-Returns the current interaction mode of a grasped object.
-
-| _int_ |avatarID|The avatar holding the object to receive the interaction mode for.|
-|[*VG_HandSide*](#vg_handside) | handSide|The hand holding the object to receive the interaction mode for.|
-| **returns** |[VG_InteractionMode](#vg_interactionmode) | The current interaction mode of the object held by avatar [avatarID]'s [handSide] hand.|
 
 
 ### GetPushCircle

@@ -61,7 +61,7 @@ entries:
   - title: How-To Guides
     output: web
     folderitems:
-    - title: My VirtualGrasp *
+    - title: My VirtualGrasp
       url: /unity_component_myvirtualgrasp.html
       output: web
     - title: My VirtualGraspBurst *

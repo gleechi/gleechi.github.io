@@ -18,7 +18,7 @@ Table below lists when a new bake is needed:
 | When do we need new baking | Why? |
 |-------|--------|---------|---------|
 | Object mesh changed|  Because mesh defines object shape. | 
-| Object scale changed |  Bcause grasp depends on the object size. | 
+| Object scale changed |  Because grasp depends on the object size. | 
 | Object pivot (origin) changed |  Because the shape analysis result is stored in the object's coordinate frame. | 
 
 {% include callout.html content="If you have not baked your project, you can still enjoy 
