@@ -25,7 +25,7 @@ To import VirtualGrasp into your Unity project, go to Assets→ Import Package �
 
 ## Getting Started with VirtualGrasp and the Console View
 
-Drag and drop the Prefab “GleechiLib” from the ThirdParty/VirtualGrasp/Resources directory into your scene. In your Hierarchy view, you will see the instantiated <a data-toggle="tooltip" data-original-title="{{site.data.glossary.GameObject}}">GameObject</a> hierarchy called GleechiLib.
+Drag and drop the Prefab “GleechiLib” from the ThirdParty/VirtualGrasp/Resources directory into your scene. In your Hierarchy view, you will see the instantiated {% include tooltip.html tooltip="GameObject" text="GameObject" %} hierarchy called GleechiLib.
 
 Have a quick look at the imported GameObject by selecting it in the object hierarchy. There is only one component added by default, which is the minimal component needed for VirtualGrasp: [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.html). When you now play your scene, you should see some messages produced by the plugin in the Console Window.
 

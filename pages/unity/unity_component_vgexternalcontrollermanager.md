@@ -10,7 +10,7 @@ folder: mydoc
 ---
 
 <!--
-VG_ExternalControllerManager is a is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a> that exemplifies how you could provide custom controller scripts for your application. 
+VG_ExternalControllerManager is a is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that exemplifies how you could provide custom controller scripts for your application. 
 The class, used in MyVirtualGrasp.cs, provides a tutorial on the VG API functions for external sensor control. 
 -->
 

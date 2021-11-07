@@ -13,7 +13,7 @@ folder: mydoc
 
 ## Description
 
-VG_HintVisualizer is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a>.
+VG_HintVisualizer is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %}.
 It can be used as a Unity component to visualize some hints such as a selection sphere to debug graspable object selection or a push sphere to guide pushing interactions.
 
 The MonoBehavior provides a tutorial on the VG API functions for accessing the push state ([GetPushCircle](virtualgrasp_unityapi.html#getpushcircle)).
@@ -26,7 +26,7 @@ If push hints are enabled, a circle will be visualized on the surface of the sel
 
 The circle's size will increase as the finger tip is closer to the object, and decrease as it moves farther away.
 
-When the finger tip is too far from the object, or if the approach direction deviates too much from the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>, this circle will disappear indicating the object is no longer selected for pushing.
+When the finger tip is too far from the object, or if the approach direction deviates too much from the {% include tooltip.html tooltip="PushPivot" text="push pivot" %}, this circle will disappear indicating the object is no longer selected for pushing.
 
 See [push without physics](push_interaction.html#push-without-physics) to learn about the process of pushable object selection.
 

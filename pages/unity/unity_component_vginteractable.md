@@ -13,7 +13,7 @@ folder: mydoc
 
 ## Description
 
-The VG_Interactable component allows you to specify a particular <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspSynthesisMethod}}">synthesis method</a> or <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionType}}">interaction type</a> for an object.
+The VG_Interactable component allows you to specify a particular {% include tooltip.html tooltip="GraspSynthesisMethod" text="synthesis method" %} or {% include tooltip.html tooltip="InteractionType" text="interaction type" %} for an object.
 
 All parameters in the VG_Interactable component are explained in [grasp interaction](grasp_interaction.html#grasp-interaction).
 

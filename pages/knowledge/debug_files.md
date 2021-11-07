@@ -43,7 +43,7 @@ If properly setup, you will see similar info as below in your console:
 
 The **.ZIP** file of all the content is the input that is needed for [object baking](object_baking.html#upload-input).
 
-#### Grasp Editor
+#### Grasp Editing
 
 The **.OBJ** files of all the objects are used for the automatic generation of the [grasp studio](unity_component_vggraspstudio.html) scene.
 

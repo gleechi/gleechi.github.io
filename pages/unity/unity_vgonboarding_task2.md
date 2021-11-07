@@ -18,7 +18,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 #### Interaction behaviors wanted
 
 * Radio's body is physically reacting to the environment and gravity
-* Radio's antenna should rotate in a cone-shaped joint range. (using Cone <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a>)
+* Radio's antenna should rotate in a cone-shaped joint range. (using Cone {% include tooltip.html tooltip="JointType" text="joint type" %})
 * Radio's two knobs are to be rotated like as a revolute joint with certain angular range.
 * When one hand grasp the radio body, the other hand should be able to easily grasp knobs (NOTE this is a challenging object selection problem when a smaller object like knobs are close with a bigger radio object).  
 * Can dissembling the antenna and two knobs from the radio body when hand grasping on them and pulling farther away. 
@@ -26,8 +26,8 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 #### Tips for VR developers
 
-* Which <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a> should be assigned to the antenna and two knobs?
-* How to use <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SelectionWeight}}">selection weight</a> to make small object like knobs that are near the big radio body easily selected and grasped?
+* Which {% include tooltip.html tooltip="JointType" text="joint type" %} should be assigned to the antenna and two knobs?
+* How to use {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} to make small object like knobs that are near the big radio body easily selected and grasped?
 * How to dissembling radio's parts using runtime change object joint types. 
 * How to make the dissembled parts decoupled from radio and freely move and physically react to environment and gravity.
 
@@ -79,7 +79,7 @@ This script is attached to the two knobs, and the main radio body would be **m_d
 as a result, once the radio is grasped by one hand, the selection weight of the two knobs will be tuned up to **m_graspedWeight**
 so that the knobs can be easily selected for grasping by the other hand. 
 The logic may not be perfect, however the main goal in this script is to show 
-the use cases of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SelectionWeight}}">selection weight</a>.
+the use cases of {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %}.
 
 ```js
 //VirtualGrasp\Scenes\onboarding\Scripts\DissembleWithDistance.cs:
@@ -118,7 +118,7 @@ public class DissembleWithDistance : MonoBehaviour
 }
 
 ````
-is the script to use API function [GetSensorPose](virtualgrasp_unityapi.html#getsensorpose) to check when sensor controlled wrist position (**sensor_pos**) is too far from the avatar hand's wrist position (**hand.m_hand.position**) by a certain threshold (**m_disassembleDistance**), then API function [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) is used to change object <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a> to freely floating.
+is the script to use API function [GetSensorPose](virtualgrasp_unityapi.html#getsensorpose) to check when sensor controlled wrist position (**sensor_pos**) is too far from the avatar hand's wrist position (**hand.m_hand.position**) by a certain threshold (**m_disassembleDistance**), then API function [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) is used to change object {% include tooltip.html tooltip="JointType" text="joint type" %} to freely floating.
 
 
 

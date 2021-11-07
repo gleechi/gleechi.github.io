@@ -22,8 +22,8 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 #### Tips for VR developers
 
-* Which <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointType}}">joint type</a> should be assigned to the button?
-* Which <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a> to use to allow button be switch between these two states?
+* Which {% include tooltip.html tooltip="JointType" text="joint type" %} should be assigned to the button?
+* Which {% include tooltip.html tooltip="StateAffordance" text="state affordance" %} to use to allow button be switch between these two states?
 * How to determine when light should be on or off (use [GetObjectJointState](virtualgrasp_unityapi.html#getobjectjointstate) function)?
 * More systemtic understanding can be obtained in [push interaction](push_interaction.html#background).
 
@@ -61,6 +61,5 @@ public class ToggleLight : MonoBehaviour
 }
 
 ````
-is the script showing how to use API function [GetObjectJointState](virtualgrasp_unityapi.html#getobjectjointstate) to get the object's <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointState}}">joint state</a>
- in order to determine when the light is on or off. 
+is the script showing how to use API function [GetObjectJointState](virtualgrasp_unityapi.html#getobjectjointstate) to get the object's {% include tooltip.html tooltip="JointState" text="joint state" %} in order to determine when the light is on or off. 
 

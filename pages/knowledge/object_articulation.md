@@ -29,7 +29,7 @@ For any joint type, there are a set of parameters to be used to configure the jo
 |-------|--------|---------|
 | Min / Swing | lower limit of 1-dof joint, for cone joint, this is swing angle limit | if angular limit, unit in (degree)|
 | Max / Twist | upper limit of 1-dof joint, for cone joint, this is twist angle limit | if angular limit, unit in (degree) |
-| {% include tooltip.html tooltip="ScrewRate" text="Screw Rate" %} | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
+| Screw Rate | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
 | Discrete States | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
 | Joint Center | around which position an object is rotating around, specified by the pivot transform's position | E.g. for cone joint, object will rotate round this point | 
 | Joint Axis | the axis specified by the pivot transform's _zaxis_ | E.g. for prismatic joint, object will move linearly along this axis | 
@@ -45,8 +45,8 @@ The table below gives some example values of joint state to further clarify its 
 | Joint State | Revolute | Prismatic|
 |-------|--------|---------|
 | 0 | zero pose (initial pose) | zero pose (initial pose) |
-| 2.5 (a random value as an example) | 2.5 (degree) rotated around joint axis (follow right-hand rule) from the zero pose | 2.5 (meter, in Unity) translated along joint axis direction from the zero pose |
-| -2.5 (a random value as an example) | -2.5 (degree) rotated around joint axis (follow right-hand rule) from the zero pose | -2.5 (meter, in Unity) translated along joint axis direction from the zero pose |
+| 2.5 (a random value as an example) | 2.5 (degree) rotated around {% include tooltip.html tooltip="JointAxis" text="joint axis" %} (follow right-hand rule) from the zero pose | 2.5 (meter, in Unity) translated along {% include tooltip.html tooltip="JointAxis" text="joint axis" %} direction from the zero pose |
+| -2.5 (a random value as an example) | -2.5 (degree) rotated around {% include tooltip.html tooltip="JointAxis" text="joint axis" %} (follow right-hand rule) from the zero pose | -2.5 (meter, in Unity) translated along {% include tooltip.html tooltip="JointAxis" text="joint axis" %} direction from the zero pose |
 
 {% include callout.html content="Note that the joint limit [Min, Max] is essentially the limit range of the joint state; and the discrete states are where the joint state will clamp to when the object is released depending on [object affordances](#object-affordances)." %}
 
@@ -85,13 +85,13 @@ In VG library we define a “narrower” sensed set of affordances that determin
 
 | Affordances | Description | Object Joint Settings |
 |-------|--------|---------|
-| Graspable | _interaction affordance_: Can be grasped | for all joint types | 
-| Index Pushable | _interaction affordance_: Can be pushed by the index finger; only relevant when setup [push interaction without physics](push_interaction.html#push-without-physics).| for all joint types | 
+| Graspable | {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}: Can be grasped | for all joint types | 
+| Index Pushable | {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}: Can be pushed by the index finger; only relevant when setup [push interaction without physics](push_interaction.html#push-without-physics).| for all joint types | 
 |-------|--------|---------|
-| Normal | _state affordance_: Object stay at the pose when hand is released  | for all joint types| 
-| Bounce | _state affordance_: When released, bounce to the lowest discrete state | for 1-dof joint | 
-| Two Stage | _state affordance_: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
-| Snaps | _state affordance_: When released, snap to the closest discrete state | for 1-dof joint | 
+| Normal | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: Object stay at the pose when hand is released  | for all joint types| 
+| Bounce | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, bounce to the lowest discrete state | for 1-dof joint | 
+| Two Stage | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
+| Snaps | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, snap to the closest discrete state | for 1-dof joint | 
 
 ## Dual Hands Only
 

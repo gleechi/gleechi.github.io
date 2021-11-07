@@ -11,7 +11,7 @@ folder: mydoc
 
 ## Description
 
-MyVirtualGrasp is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a> inherited from VG_MainScript, which encodes the main functionality of VirtualGrasp, and is the main component that you need to add and configure in your project to enable VirtualGrasp.
+MyVirtualGrasp is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} inherited from VG_MainScript, which encodes the main functionality of VirtualGrasp, and is the main component that you need to add and configure in your project to enable VirtualGrasp.
 
 In Unity, VG_MainScript inherits from Monobehavior so you can use it as a component on a GameObject.
 
@@ -80,7 +80,7 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 
-| Option | [AutoSetup](#autosetup) | Description |
+| Option | AutoSetup | Description |
 |-------|--------|--------|
 | Sensor | supported | will always be External Controller for the VG SDK. | 
 | External| supported | name of the external controller, as a string, so one can write your own external controller.|  
@@ -122,10 +122,10 @@ This provides the option to choose which button on a hand-held VR controller you
 
 {% include image.html file="unity/unity_vg_object_identifiers.png" alt="VG object identifiers." caption="VG object identifiers" %}
 
-VirtualGrasp is using names to identify which objects are marked as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a>. You can customize component and layer names in MyVirtualGrasp → Object Identifiers. 
-[VG_Articulation](unity_component_vgarticulation.html) component is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a> objects.
+VirtualGrasp is using names to identify which objects are marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}. You can customize component and layer names in MyVirtualGrasp → Object Identifiers. 
+[VG_Articulation](unity_component_vgarticulation.html) component is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your {% include tooltip.html tooltip="VGInteractable" text="interactable" %} objects.
 
-Once an object is marked as <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGInteractable}}">interactable</a>, it will be supported by VG's [grasp](grasp_interaction.html) and [push](push_interaction.html) interactions. 
+Once an object is marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}, it will be supported by VG's [grasp](grasp_interaction.html) and [push](push_interaction.html) interactions. 
 
 ## Grasp Interaction Settings
 
