@@ -10,11 +10,11 @@ folder: mydoc
 
 ## Description
 
-The VG_StateVisualizer is a <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.VGPublicScript}}">public script</a> that enables a Unity editor window in which you can read the current status of hands during runtime in the Editor. 
+The VG_StateVisualizer is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that enables a Unity editor window in which you can read the current status of hands during runtime in the Editor. 
 
 The VG_StateVisualizer.cs script itself provides a tutorial on some of the members of [VG_HandStatus](unity_component_vghandstatus.html) as well as some object-specific VG_Controller functions. 
 
-As you can see in the example video, this is data such as the current avatar ID, the hand side, the [interaction mode](virtualgrasp_unityapi.html#vg_interactionmode), the currently selected object, the grab strength, or the state of an articulated object (such as when grabbing the Antenna).
+As you can see in the example video, this is data such as the current avatar ID, the hand side, the currently selected object, the grab strength, or the {% include tooltip.html tooltip="JointState" text="state" %} of an articulated object (such as when grabbing the Antenna).
 
 {% include editor_script.html %}
 

@@ -31,28 +31,25 @@ Below we will explain:
 When push is done with physics, the selection of object is straightforward -- by contact and apply force. 
 When push is done without physics, there need to be a way to decide which object is to be pushed. 
 VirtualGrasp does this through checking the geometric relation between a 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a>
-and the object to be pushed. 
+{% include tooltip.html tooltip="PushAgent" text="push agent" %} and the object to be pushed. 
 To allow VR developers to be able to specify for example "This button can not be pushed from below", 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> is added
-to the object to specify the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a> 
-by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a> for pushing this object. 
+{% include tooltip.html tooltip="PushPivot" text="push pivot" %} is added
+to the object to specify the preferred {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}
+by the {% include tooltip.html tooltip="PushAgent" text="push agent" %} for pushing this object. 
 
 Given that
-* the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a> has been assigned 
-(through set <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> as INDEX_PUSHABLE),
+* the {% include tooltip.html tooltip="PushAgent" text="push agent" %} has been assigned 
+(through set {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %} as INDEX_PUSHABLE),
 and
-* <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> is added to the object to be pushed,
-
-the decision on which of the pushable objects is selected for pushing is done by considering:
-* how close is the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a> to the pushable object
+* {% include tooltip.html tooltip="PushPivot" text="push pivot" %} is added to the object to be pushed, the decision on which of the pushable objects is selected for pushing is done by considering:
+* how close is the {% include tooltip.html tooltip="PushAgent" text="push agent" %} to the pushable object
 and
-* how aligned is the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushAgent}}">push agent</a>'s <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a> with the preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>. 
+* how aligned is the {% include tooltip.html tooltip="PushAgent" text="push agent" %}'s {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %} with the preferred {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}. 
 
 {% include image.html file="unity/unity_button_pivot.png" alt="A Unity button." caption="A Unity button"%}
 
 For example image above shows the push pivot transform added to the red button. The blue arrow (zaxis of this transform) specifies
-the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>. 
+the {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}. 
 So when index finger is approaching from bottom to the button, opposite to the blue arrow, the object will not be selected for push.
 
 
@@ -69,15 +66,13 @@ you add the component [VG_Articulation](unity_component_vgarticulation.html) to 
 {% include image.html file="unity/unity_vg_articulation_full.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
 * Since button is moving along a single axis linearly, we select the joint type to be PRISMATIC.
-* For PRISMATIC joint, we need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a> which specifies the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointAxis}}">joint axis</a> along which object moves.
-* For PRISMATIC joint, we also need to provide <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">joint limit</a>, i.e. a linear movement range between 0 and 0.014 meter. 
-* Since the pushable button's movement direction (by <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Pivot}}">pivot</a>) is same as the direction we want hand to approach for pushing, so we don't need to specify 
-a different <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a>.
-* For push without physics, you need to select <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> as INDEX_PUSHABLE.
-* To let object bounce back alternatively to two stages when push is release, you need to set the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">state affordance</a>
- to be <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.TwoStage}}">TWO_STAGE</a>. 
-* To let object bounce back NOT to the lower boundary of the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.JointLimit}}">joint limit</a> 
-(min = 0), but to slightly lower position, we set two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">discrete states</a> with first value 0.004 (>min).
+* For PRISMATIC joint, we need to provide {% include tooltip.html tooltip="Pivot" text="pivot" %} which specifies the {% include tooltip.html tooltip="JointAxis" text="joint axis" %} along which object moves.
+* For PRISMATIC joint, we also need to provide {% include tooltip.html tooltip="JointLimit" text="joint limit" %}, i.e. a linear movement range between 0 and 0.014 meter. 
+* Since the pushable button's movement direction (by {% include tooltip.html tooltip="Pivot" text="pivot" %}) is same as the direction we want hand to approach for pushing, so we don't need to specify 
+a different {% include tooltip.html tooltip="PushPivot" text="push pivot" %}.
+* For push without physics, you need to select {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %} as INDEX_PUSHABLE.
+* To let object bounce back alternatively to two stages when push is release, you need to set the {% include tooltip.html tooltip="StateAffordance" text="state affordance" %} to be {% include tooltip.html tooltip="TwoStage" text="TWO_STAGE" %}. 
+* To let object bounce back NOT to the lower boundary of the {% include tooltip.html tooltip="JointLimit" text="joint limit" %} (min = 0), but to slightly lower position, we set two {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} with first value 0.004 (>min).
 
 {% include callout.html content="When TWO_STAGE affordance is chosen, object' joint state will bounce back to the smallest value of the discrete states after the 2nd push.
 Since by default discrete states will take the two range values from the joint limits [min, max], so if discrete states is not provided, the joint state will bounce back to the min value. 
@@ -104,12 +99,12 @@ To help you set up the push object with physics, most of the [object articulatio
 |-------|--------|---------|
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.Joint}}">Joint</a> | Relevant | Relevant | 
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.StateAffordance}}">State Affordance</a>| Relevant | Relevant | 
-| <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">Interaction Affordance</a> | Relevant | INDEX_PUSHABLE is not needed | 
+| {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %} | Relevant | INDEX_PUSHABLE is not needed | 
 | <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">Push Pivot</a> | Relevant | Not relevant  | 
 -->
 
-* For push with physics, an object can be pushed by any part of the hands or any object that have physical properties. Therefore setting <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionAffordance}}">interaction affordance</a> to be INDEX_PUSHABLE is not relevant because it will not limit the push by only the index finger.
-* For push with physics, <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.PushPivot}}">push pivot</a> won't take effect to specify a preferred <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ApproachDirection}}">approach direction</a>, which can be good or bad depending on the game logic and the desired user experiences.
+* For push with physics, an object can be pushed by any part of the hands or any object that have physical properties. Therefore setting {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %} to be INDEX_PUSHABLE is not relevant because it will not limit the push by only the index finger.
+* For push with physics, {% include tooltip.html tooltip="PushPivot" text="push pivot" %} won't take effect to specify a preferred {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}, which can be good or bad depending on the game logic and the desired user experiences.
 
 
 The table below give some hints and considerations to help you choose which push option to use:
@@ -146,10 +141,10 @@ The table below give some hints and considerations to help you choose which push
 <td markdown="span">Anything with RigidBody and Collider can push since it is physics-based.</td>
 </tr>
 <tr>
-<td markdown="span" style="text-align: right">Can specify preferred approach direction through push pivot  </td>
+<td markdown="span" style="text-align: right">Can specify preferred {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %} through {% include tooltip.html tooltip="PushPivot" text="push pivot" %}  </td>
 <td markdown="span" style="text-align: right">{% include inline_image.html file="icons/plus.png" alt="+" %}</td>
 <td markdown="span">{% include inline_image.html file="icons/minus.png" alt="-" %}</td>
-<td markdown="span">Can not specify preferred approach direction. </td>
+<td markdown="span">Can not specify preferred {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}. </td>
 </tr>
 <tr>
 <td markdown="span" style="text-align: right">From some direction the object cannot be pushed </td>
