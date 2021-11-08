@@ -41,7 +41,10 @@ Given that
 * the {% include tooltip.html tooltip="PushAgent" text="push agent" %} has been assigned 
 (through set {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %} as INDEX_PUSHABLE),
 and
-* {% include tooltip.html tooltip="PushPivot" text="push pivot" %} is added to the object to be pushed, the decision on which of the pushable objects is selected for pushing is done by considering:
+* {% include tooltip.html tooltip="PushPivot" text="push pivot" %} is added to the object to be pushed, 
+
+the decision on which of the pushable objects is selected for pushing is done by considering:
+
 * how close is the {% include tooltip.html tooltip="PushAgent" text="push agent" %} to the pushable object
 and
 * how aligned is the {% include tooltip.html tooltip="PushAgent" text="push agent" %}'s {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %} with the preferred {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}. 
