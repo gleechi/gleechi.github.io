@@ -92,7 +92,7 @@ To create a pushable button with physics, besides all the setup in VG_Articulati
 * set up the physical properties for the object in the game engine. For example in Unity, you should add RigidBody and Collider to this object; and
 * set up the physical properties for the hand. In Unity, VirtualGrasp automatically setup the hand physical properties (RigidBody and Colliders) if you enable **Physical** avatars in [Sensors](unity_component_myvirtualgrasp.html#sensors) (see image below).
 
-{% include image.html file="unity/unity_vg_avatars.png" alt="VG Avatars" caption="MyVirtualGrasp script - Avatars." %}
+{% include image.html file="unity/unity_hand_model.png" alt="VG Avatars" caption="MyVirtualGrasp script - Avatars." %}
 
 ### Push Without Physics vs. With Physics
 
