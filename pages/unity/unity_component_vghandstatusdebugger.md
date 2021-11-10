@@ -35,5 +35,5 @@ public class VG_HandStatusDebugger : MonoBehaviour
 }
 ````
 
-{% include youtube.html id="FQCzY6CdVRk" caption="The VG_HandStatusDebugger will continuously update the list of VG_HandStatus in the Inspector." %}
+{% include youtube.html id="8YOEeZmeil8" caption="The VG_HandStatusDebugger will continuously update the list of VG_HandStatus in the Inspector." %}
 
