@@ -85,8 +85,8 @@ entries:
     - title: VG_HandVisualizer
       url: /unity_component_vghandvisualizer.html
       output: web
-    - title: VG_HandStatus * 
-      url: /unity_component_vghandstatus.html
+    - title: VG_HandStatusDebugger
+      url: /unity_component_vghandstatusdebugger.html
       output: web
     - title: VG_HighLighter
       url: /unity_component_vghighlighter.html
@@ -102,9 +102,6 @@ entries:
       output: web
     - title: VG_Recorder
       url: /unity_component_vgrecorder.html
-      output: web
-    - title: VG_StateVisualizer
-      url: /unity_component_vgstatevisualizer.html
       output: web
       subfolders:
       - title: VG_Onboarding
