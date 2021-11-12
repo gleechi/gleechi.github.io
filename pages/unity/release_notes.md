@@ -54,17 +54,13 @@ folder: mydoc
 
 * Baking is producing a separate encrypted grasp db instead of a new dll with grasp db encoded.
 
-* Baking produced grasp db also incorporate all the labels from Grasp Studio
-
-* Fixed the problem of SetObjectSelectionWeight not taking effect.
+* Baking produced grasp db also incorporate all the labels from Grasp Studio.
 
 * Dynamic Grasp single finger pose is more natural.
 
 * Dynamic Grasp works better on objects consisting of some thin parallel elements.
 
 * Hybrid grasp synthesis method added (the one combines Dynamic Grasp and Static Grasp).
-
-* ChangeObjectJoint can have target joint with same type as original joint.
 
 ##### Other / Internal Changes:
 
