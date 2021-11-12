@@ -64,7 +64,7 @@ entries:
     - title: My VirtualGrasp
       url: /unity_component_myvirtualgrasp.html
       output: web
-    - title: My VirtualGraspBurst *
+    - title: My VirtualGraspBurst
       url: /unity_component_myvirtualgraspburst.html
       output: web
     - title: VG_Articulation
@@ -76,9 +76,6 @@ entries:
     - title: VG_ExternalControllerManager *
       url: /unity_component_vgexternalcontrollermanager.html
       output: web
-    #- title: VG_GhostHands *
-    #  url: /unity_component_vgghosthands.html
-    #  output: web
     - title: VG_GraspStudio
       url: /unity_component_vggraspstudio.html
       output: web
