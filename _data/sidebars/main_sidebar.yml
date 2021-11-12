@@ -33,7 +33,7 @@ entries:
   - title: Explanations
     output: web
     folderitems:
-    - title: Controllers
+    - title: Controllers *
       url: /controllers.html
       output: web 
     - title: Object Articulation

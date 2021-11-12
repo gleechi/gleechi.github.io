@@ -6,9 +6,9 @@ permalink: controllers.html
 folder: knowledge
 toc: true
 ---
-### Background
+## Background
 
-{% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
+{% include callout.html content="In VirtualGrasp we use the terms sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
 VirtualGrasp is hardware-agnostic. 
 
@@ -18,14 +18,17 @@ In terms of hand control, VirtualGrasp can create natural [grasp interactions](g
 
 This is because unlike many physics-based grasp synthesis solutions in the market that requires accurate finger tracking, VirtualGrasp exploits "object intelligence". By analyzing shape and affordances of an object model in VR, we can synthesize {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. 
 
-### How to Setup
+## How to Setup
 Whether it is Unity or Unreal, you can assign your controller input in MyVirtualGrasp → Sensors. 
 See [AutoSetup & Sensors](unity_component_myvirtualgrasp.html#autosetup--sensors) to learn how to setup your sensors in Unity. 
+
 
 <!--
 {% include image.html file="unity/unity_control_flags.png" alt="VG control flags." caption="VG Control Flags" %}
 
-There are a few controllers that are supported "out of the box" by VirtualGrasp, which means that no additional engine plugins are needed. 
+There are a few controllers that are supported "out of the box" by VirtualGrasp, called INTERNAL_CONTROLLERs, which means that no additional Unity plugins are needed. However in the released VG SDK, INTERNAL_CONTROLLERS option is turned off. EXTERNAL_CONTROLLERs are enabled through separate Unity plugins, and are the default sensor type.
+
+There are a few controllers that are supported "out of the box" by VirtualGrasp, called INTERNAL_CONTROLLERs, which means that no additional engine plugins are needed. 
 Since VirtualGrasp internally takes care of them, we call them "internal controllers." All of the sensor options (such as LEAP in the image above), except EXTERNAL_CONTROLLER are internal controllers.
 
 ## Internal Controllers
