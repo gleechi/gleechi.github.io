@@ -317,7 +317,7 @@ folder: mydoc
 * Check if alphanumeric check for object names can be deactivated
 * Make create scene tool create all scenes from vg_tmp
 
-## V0.5 (2021-03-24)
+## V0.5.0 (2021-03-24)
 
 ##### Scripts/Tutorials
 * PicoHand ExternalController added to support PicoSDK controllers
