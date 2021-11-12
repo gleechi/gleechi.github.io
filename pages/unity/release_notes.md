@@ -9,6 +9,83 @@ permalink: release_notes.html
 folder: mydoc
 ---
 
+## Changes from V0.8.0 (2021-10-28) to V0.9.0 (2021-11-12)
+
+##### Major Functionality Changes:
+
+* ⚠️ IMPORTANT SDK and Bake have been separated:
+
+    * The SDK / .unitypackage will from now on be a "vanilla" version fixed to a specific SDK and Core library version, but not to a project / bake anymore.
+
+    * A bake will no longer be a .unitypackage of the whole SDK, but a single .db file that you have to add into your project root folder.
+
+    * Read more on [VG_BakingClient](unity_component_vgbakingclient.html) (when updated).
+
+
+##### GUI / Component Changes:
+
+* VG_GhostHands removed.
+
+* VG_StateVisualizer renamed to VG_HandStatusDebugger and is now a component instead of an Editor Window.
+
+* Assembling.cs added in Onboarding.
+
+* VG_HandVisualizer fixed to show unmapped bones from an external controller and for all hands.
+
+* VG_Highlighter label text corrected.
+
+* VG_HintVisualizer simplified and code optimized.
+
+* Moved the check on current VG_TriggerButton (to use the other button not used for grasping) from UnityXRHand to VG_PostAnimator where it belongs.
+
+* VG_PostAnimator code documentation improved.
+
+* Menu entry "VirtualGrasp→ Utilities→ Upload Grasp .db to Android Device" added. This will copy the .db from your project folder into your application folder on the device (assuming that application name and version number of your application are correct and the application exists).
+
+##### API Changes:
+
+* VirtualGrasp will now present proper version numbers for both SDK and VG Core library in the Console when initialized.
+
+* VG_InteractionMode enum and VG_Controller.GetInteractionMode() removed.
+
+* Lots of API documentation corrected and added, to improve documentation in code as well as on VirtualGrasp Documentations.
+
+##### Update to VG Core library 0.6.0:
+
+* VG Message can be collapsed 
+
+* Baking is producing a separate encrypted grasp db instead of a new dll with grasp db encoded.
+
+* Baking produced grasp db also incorporate all the labels from Grasp Studio
+
+* Fixed the problem of SetObjectSelectionWeight not taking effect.
+
+* Dynamic Grasp single finger pose is more natural.
+
+* Dynamic Grasp works better on objects consisting of some thin parallel elements.
+
+* Hybrid grasp synthesis method added (the one combines Dynamic Grasp and Static Grasp).
+
+* ChangeObjectJoint can have target joint with same type as original joint.
+
+##### Other / Internal Changes:
+
+* PostUpdate() called after hand update (to make post-animation) possible again.
+
+* Internal cleanup on some internal variables and VG_Debug calls.
+
+* ChangeObjectJoint() functions refactored.
+
+* Timestamps from VG_Debug removed so Console messages can collapse.
+
+##### Known Issues:
+
+* Replay hands spin (invalid data) when using MouseController.
+
+* Replay on controlled avatar only triggers when controllers are active.
+
+* Offset conflict with Burst. Each thread rotates hands; 4 threads / rotations bring it into orignal rotation.
+
 
 ## Changes from V0.7.1 (2021-10-04) to V0.8.0 (2021-10-28)
 
