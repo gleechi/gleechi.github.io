@@ -82,8 +82,6 @@ folder: mydoc
 
 * Replay on controlled avatar only triggers when controllers are active.
 
-* Offset conflict with Burst. Each thread rotates hands; 4 threads / rotations bring it into orignal rotation.
-
 
 ## Changes from V0.7.1 (2021-10-04) to V0.8.0 (2021-10-28)
 
@@ -184,8 +182,6 @@ folder: mydoc
 * Replay hands spin (invalid data) when using MouseController.
 
 * Replay on controlled avatar only triggers when controllers are active.
-
-* Offset conflict with Burst. Each thread rotates hands; 4 threads / rotations bring it into orignal rotation.
 
 ## Changes from V0.7.0 (2021-09-17) to V0.7.1 (2021-10-04)
 
