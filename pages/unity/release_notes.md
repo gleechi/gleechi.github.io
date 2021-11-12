@@ -50,9 +50,7 @@ folder: mydoc
 
 * Lots of API documentation corrected and added, to improve documentation in code as well as on VirtualGrasp Documentations.
 
-##### Update to VG Core library 0.6.0:
-
-* VG Message can be collapsed 
+##### Update to VG Core library 0.6.0: 
 
 * Baking is producing a separate encrypted grasp db instead of a new dll with grasp db encoded.
 
@@ -74,7 +72,9 @@ folder: mydoc
 
 * Internal cleanup on some internal variables and VG_Debug calls.
 
-* ChangeObjectJoint() functions refactored.
+* ChangeObjectJoint() functions refactored, and can have target joint with same type as original joint.
+
+* SetObjectSelectionWeight () fixed bug of set weight to 0 not taking effect.
 
 * Timestamps from VG_Debug removed so Console messages can collapse.
 
