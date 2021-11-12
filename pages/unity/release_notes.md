@@ -19,6 +19,8 @@ folder: mydoc
 
     * A bake will no longer be a .unitypackage of the whole SDK, but a single .db file that you have to add into your project root folder.
 
+    * The .lab file is obsolete now (because it is incorporated in the single .db file).
+
     * Read more on [VG_BakingClient](unity_component_vgbakingclient.html) (when updated).
 
 
