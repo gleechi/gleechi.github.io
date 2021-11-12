@@ -9,7 +9,7 @@ permalink: release_notes.html
 folder: mydoc
 ---
 
-## Changes from V0.8.0 (2021-10-28) to V0.9.0 (2021-11-12)
+## V0.9.0 (2021-11-12)
 
 ##### Major Functionality Changes:
 
@@ -83,7 +83,7 @@ folder: mydoc
 * Replay on controlled avatar only triggers when controllers are active.
 
 
-## Changes from V0.7.1 (2021-10-04) to V0.8.0 (2021-10-28)
+## V0.8.0 (2021-10-28)
 
 ##### Major Functionality Changes:
 
@@ -183,7 +183,7 @@ folder: mydoc
 
 * Replay on controlled avatar only triggers when controllers are active.
 
-## Changes from V0.7.0 (2021-09-17) to V0.7.1 (2021-10-04)
+## V0.7.1 (2021-10-04)
 
 ##### Major Functionality Changes:
 * Update to core library 0.4.1, including
@@ -208,7 +208,7 @@ folder: mydoc
 ##### VG Core SDK - Changes from V0.4.0 (2021-09-17) to V0.4.1 (2021-09-28)
 * Android support switched from 32 bit to 64 bit libraries
 
-## Changes from V0.6.0 (2021-06-17) to V0.7.0 (2021-09-17)
+## V0.7.0 (2021-09-17)
 
 ##### Major Functionality Changes:
 * VG_MainScript turned into a proper base class, so various child classes (such as MyVirtualGrasp or MyVirtualGraspBurst) properly inherit main functionality.
