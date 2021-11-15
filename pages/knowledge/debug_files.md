@@ -70,7 +70,7 @@ So if you in runtime, for example, changed an object's joint type or selection w
         <div id="collapseOne1" class="panel-collapse collapse noCrossRef">
             <div class="panel-body">  
             Example of an .scn file representing a simple scene with just two objects - "radio" and "antenna".<br><br>
-<code>
+{% highlight java %}
 units_in_meters: 1
 sensor_setup {
   wrist_pos_sensor: LEAP
@@ -183,7 +183,7 @@ object {
   affordance: ONLY_GRASPABLE
   synthesis_method: DYNAMIC_GRASP
 }
-</code>
+{% endhighlight %}
 
             </div>
         </div>
