@@ -9,7 +9,7 @@ GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
 CABVG: Refers to VirtualGrasp's baking server, to which you can connect through VG_BakingClient -- a GUI interface that is part of the VG SDK; it is used for [object baking](object_baking.html). 
 
-VGSceneFiles: Refers to VirtualGrasp's protobuf representation of the current interaction configuration of the game scene. 
+VGSceneFiles: Refers to VirtualGrasp's JSON representation of the current interaction configuration of the game scene. 
 
 ObjectHierarchy: Refers to parent-child relations between objects in a game scene; VG synchronizes its internal object hierarchy with that in the game scene in runtime. 
 

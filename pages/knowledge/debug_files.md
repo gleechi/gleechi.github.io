@@ -11,7 +11,7 @@ toc: true
 
 ## Creating Debug Files
 
-Enabling “Save Debug Files” in your VG_MainScript and running the application in the Editor will create a *vg_tmp* subdirectory in your project’s Asset folder and export files (see Debug Files Content below) when you play your scene.
+Enabling “Save Debug Files” in your VG_MainScript and running the application in the Editor will create a *vg_tmp* subdirectory in your project’s Asset folder and export files (see [Debug Files Content](#debug-files-content) below) when you play your scene.
 
 It will then also create a file named [APP-IDENTITY].[APP-VERSION].zip (you set those in your Unity Player Settings) in your project’s root folder.
 
@@ -24,7 +24,7 @@ The full debug files process is only in effect in development mode (i.e. using t
 * One *.bin* file for each avatar (containing one or a pair of hands of this avatar), will be created when you start the scene.
 * One *.log* file with VG log data (the same that also appears on the Console) for the scene that you are running, will be filled while you are running the scene.
 * One *.db* file carrying data filled with [VG_GraspStudio](unity_component_vggraspstudio.html) or [VG_BakingClient](unity_component_vgbakingclient.html).
-* One *.scn* and One *.scn.objrig* file for each scene, including scene configuration data (see section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}).
+* One *.scn* and one *.scn.objrig* file for each scene, including scene configuration data (see section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}).
 
 {% include important.html content="Each creation of debug files is scene-dependent, meaning that it only relates to the **current** Unity scene. Thus, to complement debug files from multiple scenes, you have to run these scenes separately with \"Save Debug Files\" enabled." %}
 
