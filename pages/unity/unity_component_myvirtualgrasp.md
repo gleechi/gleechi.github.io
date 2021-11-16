@@ -84,39 +84,25 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 |-------|--------|--------|
 | Sensor | supported | will always be External Controller for the VG SDK. | 
 | External| supported | name of the external controller, as a string, so one can write your own external controller.|  
+| Finger Control Type | supported | specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.html#vg_fingercontroltype). | 
 | Control | not supported | specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
 | Origin | supported | the origin of sensor where the sensor data is interpreted. | 
 | Offset | supported | when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
 
-<!--{% include image.html file="knowledge/lhs_rhs.png" alt="LHS/RHS" caption="The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand." %}-->
-{% include image.html file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
-
-## Sensor Settings
-
-{% include image.html file="unity/unity_vg_sensor_settings.png" alt="Sensor settings in Unity." caption="Sensor settings in Unity." %}
-After you have setup how your avatar's hands are controlled, you can use the Sensor Settings interface to specify [Finger Control Type](virtualgrasp_unityapi.html#vg_fingercontroltype) and [Trigger Button](virtualgrasp_unityapi.html#vg_vrbutton) globally for all of the sensors.
-
-### Finger control type
-
-This provides the option to choose how sensor controls the finger motion. And this can be taken cared by [AutoSetup](#autosetup).
-
-| Finger Control Type | Description |
+<!--| Finger Control Type | Description |
 |-------|--------|
 | BY_SENSOR_FULL_DOFS | for sensor that can provide full dofs hand tracking like Leap Motion, the avatar hand will follow your own hand on all dofs. | 
 | BY_SENSOR_LOW_DOFS| for sensor that can only provide one dof for each finger, like some data gloves, the avatar hand finger will be bended by just one value for each finger following a predefined animation path | 
 | BY_ANIMATION | for all sensor types which all provide a single value, grabbing strength, range between 0.0 and 1.0, all fingers will follow a predefined path in animation. | 
 | BY_OSCILLATED_ANIMATION | will let hand animated a little bit when not interacting with any object to avoid "rigid hand" feeling. (Experimental) | 
-| BY_EXTERNAL | only relevant for External Controller sensor type, finger will be set by an externally specified finger dofs. | 
+| BY_EXTERNAL | only relevant for External Controller sensor type, finger will be set by an externally specified finger dofs. | -->
 
+{% include image.html width = "60" file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
 
-### Trigger Button
+## Sensor Settings
 
-This provides the option to choose which button on a hand-held VR controller you want to use to trigger [grasp interactions](grasp_interaction.html#background).
-
-| Trigger Button | Description |
-|-------|--------|
-| TRIGGER | the VR controller's trigger button usually placed under index finger. | 
-| GRIP| the VR controller's grip button usually placed under middle and ring fingers | 
+{% include image.html file="unity/unity_vg_sensor_settings.png" alt="Sensor settings in Unity." caption="Sensor settings in Unity." %}
+After you have setup how your avatar's hands are controlled, you can use the Sensor Settings interface to specify [Trigger Button](virtualgrasp_unityapi.html#vg_vrbutton) globally for all of the sensors.
 
 ## Object Identifiers
 
