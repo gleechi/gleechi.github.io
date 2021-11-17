@@ -25,7 +25,9 @@ folder: mydoc
 
 ##### Update to VG Core library 0.6.1: 
 
-* 
+* Improved pinch grasp on small objects.
+
+* Fixed a bug in dynamic grasp that caused big finger penetrations.
 
 ##### Other / Internal Changes:
 
