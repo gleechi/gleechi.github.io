@@ -130,24 +130,6 @@ We support two hands per avatar, left and right in this enum.
 |RIGHT|Right hand|
 
 
-### VG_InteractionMode
-
-An important information for designing your gameplay with VirtualGrasp is what to do dependent onwhat state the hand is in. For this purpose, VG_InteractionMode defines different interaction modesthat are used by the library (such as grasping or empty). You can access a specific hand's modethrough its VG_HandStatus.
-
-|RELEASE|when wrist and finger toward sensor pose|
-|GRASP|when wrist and finger towards target grasp pose|
-|HOLD|when hand hold the object, and wrist towards following sensor pose|
-|EMPTY|when hand not hold the object, wrist and finger fully follow sensor pose|
-|PREVIEW|when grasp is to be previewed before change to HOLD by grasp trigger|
-|MANIPULATE|when wrist is controlled by sensor relative pose|
-|HOLD2|when doing two hands manipulation|
-|MANIPULATE2|when doing two hands manipulation|
-|PREVIEW_RELEASE|when release from PREVIEW mode, wrist and finger interpolate toward sensor pose|
-|GRASP_TO_PREVIEW|when wrist and finger interpolate towards target grasp pose synthesized once a new object is selected|
-|PUSHING|when index finger tip do push on object|
-|PUSHING2|when both hand's index finger tip do push on same object|
-
-
 ### VG_InteractionType
 
 An enum to describe a hand interaction type (i.e. a mode on grasp visualization).
@@ -214,6 +196,8 @@ ReturnCode for various VirtualGrasp functions.Most functions in this API provide
 |UNSUPPORTED_FUNCTION|Failed in processing function because it is unsupported.|
 |OBJECT_NO_GRASPS|Failed in processing function because there are no static grasps baked.|
 |OBJECT_NO_BAKE|Failed in processing function because a baking process failed / there is no bake at all.|
+|LOAD_GRASP_DB_FAILED|Failed to pass a grasp db file into the library and process it.|
+|SAVE_GRASP_DB_FAILED|Failed to export the internal grasp db to a file.|
 
 
 ### VG_SelectObjectMethod
@@ -226,7 +210,7 @@ Different object selection methods.
 
 ### VG_SensorType
 
-SensorType defines different sensor (or controller) types that can be used by VirtualGrasp. Only External Controller is supported.
+Different sensor (or controller) types that can be used by VirtualGrasp. Note only External Controller is supported.
 
 |NO_CONTROLLER|no controller|
 |LEAP|Internal Controller (not supported), Leap motion 3D camera|
@@ -564,10 +548,11 @@ The Update() method has been divided into three parts: IsolatedUpdateDataIn(), I
 
 ### RegisterAvatarAtRuntime
 
-Register a remotely controlled avatar
+Register a new avatar during runtime.
 
-
-Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.html)
+| _[unknown]_ |The|skinned mesh renderer of the model that should be registered to VG.|
+|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
+| _out int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
 
 
 ### RegisterObjectAtRuntime
@@ -894,15 +879,6 @@ Returns the current grab velocity of a hand. The current velocity of the grab st
 | _int_ |avatarID|The avatar to receive the grab velocity for.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to receive the grab velocity for.|
 | **returns** | _float_ | The current grab velocity of the [side] hand.|
-
-
-### GetInteractionMode
-
-Returns the current interaction mode of a grasped object.
-
-| _int_ |avatarID|The avatar holding the object to receive the interaction mode for.|
-|[*VG_HandSide*](#vg_handside) | handSide|The hand holding the object to receive the interaction mode for.|
-| **returns** |[VG_InteractionMode](#vg_interactionmode) | The current interaction mode of the object held by avatar [avatarID]'s [handSide] hand.|
 
 
 ### GetPushCircle
