@@ -968,7 +968,7 @@ Remark
 
 
 Remark
- SetProcessByRecordedFrame should set this avatar to be enabled for replay.
+ SetProcessByRecordedFrame need to be called before this to set this avatar to be enabled for replay.
 
 
 Used in: [VG_Recorder](unity_component_vgrecorder.html)
