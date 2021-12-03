@@ -954,7 +954,7 @@ Remark
 
 ### GetReplayStartWristPose
 
-Get the starting wrist poses of an avatar, when start full replay of the whole interaction sequence.
+Get the starting wrist poses of an avatar for full replay of the whole interaction sequence.
 
 | _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
 | _Transform_ |selectedObject|If provided, the entire sensor recording will transformed in to object's frame. If not, in global frame.|
