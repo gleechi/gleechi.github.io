@@ -963,6 +963,10 @@ Get the starting wrist poses of an avatar for full replay of the whole interacti
 | _out Vector3_ |p_right|The position of the right wrist.|
 | _out Quaternion_ |q_right|The orientation of the right wrist.|
 
+Remark
+ LoadRecording need to be called before this to load recorded sensor data.
+
+
 Used in: [VG_Recorder](unity_component_vgrecorder.html)
 
 
