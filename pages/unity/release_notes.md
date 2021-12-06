@@ -49,6 +49,8 @@ folder: mydoc
 
 * Rotation interaction on physical object with revolute joint does not feel so natural.
 
+* Dynamic Grasp sometimes has unaturally large thumb extention. 
+
 ## V0.9.1 (2021-11-17)
 
 ##### GUI / Component Changes:

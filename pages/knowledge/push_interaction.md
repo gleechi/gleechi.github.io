@@ -83,7 +83,7 @@ If you want it to bounce to a different value from min, you should define the di
 
 ### Push With Physics
 
-{% include warning.html content="The push with physics option is still at the experimental stage." %}
+<!--{% include warning.html content="The push with physics option is still at the experimental stage." %}-->
 
 VirtualGrasp also supports push through physics, by seamlessly integrating VG's [object articulation](object_articulation.html#object-articulation) feature with the physical simulations already existing 
 in the client engines (Unity or Unreal). 
