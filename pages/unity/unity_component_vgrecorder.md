@@ -90,7 +90,7 @@ VG_Controller.SetProcessByRecordedFrame(m_replayingAvatarID, true);
 VG_Controller.GetReplayStartWristPose(m_replayingAvatarID, m_replayObject, out Vector3 p_left, out Quaternion q_left, out Vector3 p_right, out Quaternion q_right);
 ````
 
-{% include callout.html content="Note that query start pose of hand does not affect later replay the interaction sequence." %}
+{% include callout.html content="Note that querying the start pose of hands does not affect later replaying the interaction sequence." %}
 
 ## How to Create another Pair of Hands for Replaying an Interaction Sequence
 
