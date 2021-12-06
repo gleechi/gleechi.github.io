@@ -11,29 +11,17 @@ folder: mydoc
 
 ## V0.9.2 (2021-12-06)
 
+⚠️ TO BE EDITED
 ##### GUI / Component Changes:
-
-* Fixes to VG_ExternalControllerManager to make it work with VG_Controller.RegisterAvatarAtRuntime().
-
-* VG_FingerControlType moved from VG_SensorSettings to VG_SensorSetup, i.e. can be defined by sensor now instead of globally.
-
-* VG_SensorSetup's open and close thresholds removed.
 
 ##### API Changes:
 
-* VG_Controller.OnInitialize() event added that can be listened to after VG initialized.
 
 ##### Update to VG Core library 0.6.2: 
 
-* Improved pinch grasp on small objects.
-
-* Fixed a bug in dynamic grasp that caused big finger penetrations.
 
 ##### Other / Internal Changes:
 
-* Fix that unskinned bones were not registered before, preventing VG to detect certain hand models.
-
-* updateWhenOffscreen will be automatically enabled for all hand models.
 
 ##### Known Issues:
 
