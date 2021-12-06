@@ -32,11 +32,7 @@ folder: mydoc
 ##### Update to VG Core library 0.6.2: 
 
 * Fixed some big penetration problems in Dynamic Grasp. 
-
 * Added an api function to delete an object in the middle of the object tree and all its downstream objects.
-
-* Improved {% include tooltip.html tooltip="JumpGrasp" text="jump grasp" %} and {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp" %} interactions on physical object -- object jump motion to the hand is much smoother. 
-
 * Fixed a bug that causes crash when useing {% include tooltip.html tooltip="PreviewGrasp" text="preview grasp" %} interaction type.
 
 ##### Other / Internal Changes:
@@ -44,7 +40,7 @@ folder: mydoc
 * Fallback .db added and implemented to use this one if project .db is not found.
 * Grasp Studio Scene will open automatically after creation.
 * Fixed a bug in VG_Articulation initialization.
-* Fixed kink when using physical objects with JUMP_GRASP interaction.
+* Fixed kink when using physical objects with {% include tooltip.html tooltip="JumpGrasp" text="jump grasp" %} and {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp" %} interaction types.
 * Fixed that meshes disappear when prefabs are opened in Editor.
 * Fixed screw rate to accept float values.
 * Default synthesis method
