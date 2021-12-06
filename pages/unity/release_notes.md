@@ -25,8 +25,8 @@ folder: mydoc
 * VG_Recorder extended with example to call new VG_Controller.GetReplayStartWristPose().
 
 ##### API Changes:
-* SetAvatarActive() added to set avatar in/active (i.e. sensor control and mesh visualization).
-* GetReplayStartWristPose() added to return starting wrist poses of a recording.
+* [SetAvatarActive](virtualgrasp_unityapi.html#setavataractive) added to set avatar in/active (i.e. sensor control and mesh visualization).
+* [GetReplayStartWristPose](virtualgrasp_unityapi.html#getreplaystartwristpose) added to return starting wrist poses of a recording.
 * RegisterObjectAtRuntime(), RegisterObjectsAtRuntime(), DeleteDistalObjectAtRuntime() removed. VG_Articulation will take care of de/registration.
 
 ##### Update to VG Core library 0.6.2: 
