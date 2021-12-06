@@ -11,17 +11,37 @@ folder: mydoc
 
 ## V0.9.2 (2021-12-06)
 
+##### Major Functionality Changes:
+
+* VG_Articulation will take care of object de/registration to VG. Runtime functions RegisterObjectAtRuntime(), RegisterObjectsAtRuntime(), DeleteDistalObjectAtRuntime() removed.
+
 ##### GUI / Component Changes:
 
+* VG_DebugSettings modified. EditMode Save Debug Files for Current Editor Scene ⚠️. Read more on [Debug Files](debug_files.html).
+* VG_Articulation.Lock() and VG_Articulation.Unlock() shortcuts removed. Using them in Events was unsafe. In code, use VG_Controller.ChangeObjectJoint(transform, VG_JointType.FIXED) instead of VG_Articulation.Lock(), and VG_Controller.RecoverObjectJoint(transform) instead of VG_Articulation.Unlock().
+* Fixed problem in GraspEditor scene creation when UnityEngine.SpatialTracking.TrackedPoseDriver is not available, but only UnityEngine.InputSystem.XR.TrackedPoseDriver.
+* VG_EC_GenericHand added and used as fallback for VG_ExternalControllerManager.
+* VG_GraspStudio allows deleting grasps. To delete a grasp, you have to "double-disable" it. Read more on [VG_GraspStudio](unity_component_vggraspstudio.html).
+* VG_Recorder extended with example to call new VG_Controller.GetReplayStartWristPose().
+
 ##### API Changes:
+* SetAvatarActive() added to set avatar in/active (i.e. sensor control and mesh visualization).
+* GetReplayStartWristPose() added to return starting wrist poses of a recording.
+* RegisterObjectAtRuntime(), RegisterObjectsAtRuntime(), DeleteDistalObjectAtRuntime() removed. VG_Articulation will take care of de/registration.
 
 ##### Update to VG Core library 0.6.2: 
+
+* TODO
 
 ##### Other / Internal Changes:
 
 * Fallback .db added and implemented to use this one if project .db is not found.
-
 * Grasp Studio Scene will open automatically after creation.
+* Fixed a bug in VG_Articulation initialization.
+* Fixed kink when using physical objects with JUMP_GRASP interaction.
+* Fixed that meshes disappear when prefabs are opened in Editor.
+* Fixed screw rate to accept float values.
+* Default synthesis method
 
 ##### Known Issues:
 
