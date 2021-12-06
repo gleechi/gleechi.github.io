@@ -17,6 +17,14 @@ folder: mydoc
 
 ##### Update to VG Core library 0.6.2: 
 
+* Fixed some big penetration problems in  Dynamic Grasp. 
+
+* Added function to delete an object in the middle of the object tree and all its downstream objects.
+
+* Interactions with {% include tooltip.html tooltip="JumpGrasp" text="jump grasp" %} and {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp" %} types on physical object are smoother. 
+
+* Fixed a bug that causes crash when use {% include tooltip.html tooltip="PreviewGrasp" text="preview grasp" %} interaction type.
+
 ##### Other / Internal Changes:
 
 * Fallback .db added and implemented to use this one if project .db is not found.
