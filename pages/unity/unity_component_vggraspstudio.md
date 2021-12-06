@@ -78,13 +78,16 @@ The following table describes the actions and how to achieve them in the two mod
 | Previous/Next Page | Click Prev/Next in [D] | - | ArrowUp/ArrowDown | 
 | Rotate object(s) (main and thumbnails) | Drag Mouse in [A] | Rotate left controller | - | 
 | Switch Hand | Click Icon above [A] | Push grip button of hand to switch to | -| 
-| Label as Primary* | Click ★ in [D] | Push right thumbstick up | P | 
-| Label as Disabled* | Click    ⃠     in [D] | Push right thumbstick down | D |  
+| Label as Primary* | Click ★  | Push right thumbstick up | P | 
+| Label as Disabled** | Click    ⃠       | Push right thumbstick down | D |  
 | Label all as Disabled* | - | - | LShift+D | 
+| Delete Grasp** |  |  | |  
 | Scale/Place Interface | - | Push both triggers and move controllers | - | 
 | Adding Dynamic grasp | - | see "Adding Grasps" below | - | 
 
-\* Labeling an already selected primary or disabled grasp unlabel it.
+\* Labeling an already selected primary grasp unlabel it.
+
+\** Disabling an already selected disabled grasp deletes it.
 
 ## Adding Grasps
 
@@ -92,19 +95,13 @@ Adding grasps can only be done in VR. The scene will have a second hand pair cre
 
 ## Important Note on the Files
 
-The information on added and edited grasps will be stored in additional files which you will find in each project's root folder by default:
+The information on added and edited grasps will be stored in an additional .db file which you will find in each project's root folder by default.
 
-* vg_external.db: keeps manually added grasps
-* vg_external.lab: keeps manually edited labels of grasps (such as disabled, primary, etc).
-
-The VirtualGrasp plugin will automatically  
-
-* load these files at initialization (e.g. start the game), and 
-* save them at releasing (e.g. stop the game). 
+The VirtualGrasp plugin will automatically load this file at initialization (e.g. start the game), and save it at releasing (e.g. stop the game). 
 
 By this follows that:
 
-* All scenes will use the same annotated grasps and labels, since the files are saved in the project.
-* When you want to use the labels in a build, you have to manually copy these files to the build directory.
-* If you you are using a version control system and want to share the annotated data with others, you have to commit these files to the repository.
+* All scenes will use the same annotated grasps and labels, since the .db file is saved in the project.
+* When you want to use the labels in a build, you have to manually copy the .db file to the build directory.
+* If you you are using a version control system and want to share the annotated data with others, you have to commit the .db file to the repository.
 

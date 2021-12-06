@@ -11,12 +11,17 @@ toc: true
 
 ## Creating Debug Files
 
-Enabling “Save Debug Files” in your VG_MainScript and running the application in the Editor will create a *vg_tmp* subdirectory in your project’s Asset folder and export files (see [Debug Files Content](#debug-files-content) below) when you play your scene.
+Enable the **“Save Debug Files”** in your VG_MainScript when you want to create debug files.
 
-It will then also create a file named [APP-IDENTITY].[APP-VERSION].zip (you set those in your Unity Player Settings) in your project’s root folder.
+Running the application in the Editor will create a *vg_tmp* subdirectory in your project’s Asset folder and export files (see [Debug Files Content](#debug-files-content) below) when you play your scene. It will then also create a file named [APP-IDENTITY].[APP-VERSION].zip (you set those in your Unity Player Settings) in your project’s root folder.
 
 The full debug files process is only in effect in development mode (i.e. using the Unity Editor), but not in builds.
 
+{% include important.html content="Each creation of debug files is scene-dependent, meaning that it only relates to the **current** Unity scene. Thus, to complement debug files from multiple scenes, you have to run these scenes separately with \"Save Debug Files\" enabled." %}
+
+**“Save Debug (Edit)"** will simulate a launch of the VG plugin from the Unity Editor, thus without launching the scene. This option is provided for convenience, but  objects that are not in your scene yet (such as those you spawn in runtime, or those you add by loading another scene during runtime), will not be included for baking.
+
+{% include important.html content="It is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}<br>
 
 ## Debug Files Content
 
@@ -25,11 +30,6 @@ The full debug files process is only in effect in development mode (i.e. using t
 * One *.log* file with VG log data (the same that also appears on the Console) for the scene that you are running, will be filled while you are running the scene.
 * One *.db* file carrying data filled with [VG_GraspStudio](unity_component_vggraspstudio.html) or [VG_BakingClient](unity_component_vgbakingclient.html).
 * One *.scn* and one *.scn.objrig* file for each scene, including scene configuration data (see section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}).
-
-{% include important.html content="Each creation of debug files is scene-dependent, meaning that it only relates to the **current** Unity scene. Thus, to complement debug files from multiple scenes, you have to run these scenes separately with \"Save Debug Files\" enabled." %}
-
-{% include important.html content="It is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}<br>
-
 
 ## How To Use The Debug Files
 

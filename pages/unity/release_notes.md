@@ -43,7 +43,7 @@ folder: mydoc
 * Fixed kink when using physical objects with {% include tooltip.html tooltip="JumpGrasp" text="jump grasp" %} and {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp" %} interaction types.
 * Fixed that meshes disappear when prefabs are opened in Editor.
 * Fixed screw rate to accept float values.
-* Default synthesis method
+* Default synthesis method changed from STATIC_GRASP to DYNAMIC_GRASP.
 
 ##### Known Issues:
 
