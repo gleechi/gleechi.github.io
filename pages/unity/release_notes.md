@@ -11,17 +11,17 @@ folder: mydoc
 
 ## V0.9.2 (2021-12-06)
 
-⚠️ TO BE EDITED
 ##### GUI / Component Changes:
 
 ##### API Changes:
 
-
 ##### Update to VG Core library 0.6.2: 
-
 
 ##### Other / Internal Changes:
 
+* Fallback .db added and implemented to use this one if project .db is not found.
+
+* Grasp Studio Scene will open automatically after creation.
 
 ##### Known Issues:
 

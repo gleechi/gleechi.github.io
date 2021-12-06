@@ -1,20 +1,29 @@
 ---
 title: VG_ExternalControllerManager Component
-#tags: [getting_started]
 keywords: component, external-controller manager
-#last_updated: July 16, 2016
-#summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar
 permalink: unity_component_vgexternalcontrollermanager.html
 folder: mydoc
 ---
 
-<!--
-VG_ExternalControllerManager is a is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that exemplifies how you could provide custom controller scripts for your application. 
-The class, used in MyVirtualGrasp.cs, provides a tutorial on the VG API functions for external sensor control. 
--->
+## Description 
 
+VG_ExternalControllerManager is a static class representing the controller abstraction towards VirtualGrasp. 
 
-{% include warning.html content="This page has no documentation yet. We are working on it." %}
+It should be used in any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.html), where it is initialized after the VG_Controller itself initialized:
 
+```js
+override public void Start()
+{
+    base.Start();
+    VG_Controller.Initialize();
+    VG_ExternalControllerManager.Initialize(this);
+}
+````
+
+VG_ExternalControllerManager.cs is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} so that is is extendable, for example to add more controllers or functionalities.
+
+It is called external, because - instead of an internal native library - an external source is feeding VG with the input data. In most cases, this external source is a plugin provided by the hardware manufacturer for your engine of choice.
+
+{% include image.html file="knowledge/external_controllers.png" alt="Internal controllers." caption="External controller pipeline." %}
 
