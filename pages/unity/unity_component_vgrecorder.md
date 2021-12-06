@@ -83,6 +83,7 @@ You can use [GetReplayStartWristPose](virtualgrasp_unityapi.html#getreplaystartw
 As shown in the VG_Recorder GUI, _Set Hand Start Pose Key_ S demonstrate how this is done in the script. 
 
 ```js
+// Code in VG_Recorder.cs
 // To use GetReplayStartWristPose, need to first load recording and make sure avatar is enabled for replay.
 VG_Controller.LoadRecording(m_recordingFilename);
 VG_Controller.SetProcessByRecordedFrame(m_replayingAvatarID, true);
