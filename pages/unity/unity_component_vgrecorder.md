@@ -76,18 +76,17 @@ This option is handy when you want to record the entire training sequence that i
 
 {% include callout.html content="Note that since this partial replay option can only play interaction on one object by one hand, so when you want to replay two-hands interactions on one object at the same time, or two-hands interactions with multiple objects, you should choose the full replay options earlier. " %}
 
-## How to Query Start Pose of Hand 
+## How to Query Start Pose of Hands
 
-You can use [GetReplayStartWristPose](virtualgrasp_unityapi.html#getreplaystartwristpose) to query the start pose of the wrists of the _replay avatar_ when replay is on [full and scene-specific interaction](#full-and-scene-specific-interaction-replay) or [full and object-specific interaction](#full-and-object-specific-interaction-replay). Note this does not work when replay [partial and object-specific interaction](#partial-and-object-specific-interaction-replay).
+You can use [GetReplayStartWristPose](virtualgrasp_unityapi.html#getreplaystartwristpose) to query the start pose of the wrists of the _replay avatar_ when replay is on [full and scene-specific interaction](#full-and-scene-specific-interaction-replay) or [full and object-specific interaction](#full-and-object-specific-interaction-replay). Note this does not work when replaying [partial and object-specific interaction](#partial-and-object-specific-interaction-replay).
 
-As shown in the VG_Recorder GUI, _Set Hand Start Pose Key_ S demonstrate how this is done in the script. 
-
+As shown in the VG_Recorder GUI, _Set Hand Start Pose Key_ "S" demonstrate how this is done in the script:
 ```js
 // Code in VG_Recorder.cs
 // To use GetReplayStartWristPose, need to first load recording and make sure avatar is enabled for replay.
 VG_Controller.LoadRecording(m_recordingFilename);
 VG_Controller.SetProcessByRecordedFrame(m_replayingAvatarID, true);
-// If m_replayObject is null will be full and scene-specific interaction replay, otherwise object-specific.
+// If m_replayObject is null will be full scene-specific replay, otherwise full object-specific replay.
 VG_Controller.GetReplayStartWristPose(m_replayingAvatarID, m_replayObject, out Vector3 p_left, out Quaternion q_left, out Vector3 p_right, out Quaternion q_right);
 ````
 
