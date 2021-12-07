@@ -13,9 +13,9 @@ VG_ExternalControllerManager is a static class representing the controller abstr
 It should be used in any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.html), where it is initialized after the VG_Controller itself initialized:
 
 ```js
-override public void Start()
+override public void Awake()
 {
-    base.Start();
+    base.Awake();
     VG_Controller.Initialize();
     VG_ExternalControllerManager.Initialize(this);
 }
