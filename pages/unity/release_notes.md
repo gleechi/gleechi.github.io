@@ -9,6 +9,13 @@ permalink: release_notes.html
 folder: mydoc
 ---
 
+## V0.9.3 (Unreleased)
+
+##### Other / Internal Changes:
+
+* Null meshes will be detected and reported as error in Console.
+* VG_MainScript Start() functionality moved to Awake().
+
 ## V0.9.2 (2021-12-06)
 
 ##### Major Functionality Changes:
@@ -25,6 +32,7 @@ folder: mydoc
 * VG_Recorder extended with example to call new VG_Controller.GetReplayStartWristPose().
 
 ##### API Changes:
+
 * [SetAvatarActive](virtualgrasp_unityapi.html#setavataractive) added to set avatar in/active (i.e. sensor control and mesh visualization).
 * [GetReplayStartWristPose](virtualgrasp_unityapi.html#getreplaystartwristpose) added to return starting wrist poses of a recording, and check [how to query start pose page](unity_component_vgrecorder.html#how-to-query-start-pose-of-hand) to learn to use it.
 * RegisterObjectAtRuntime(), RegisterObjectsAtRuntime(), DeleteDistalObjectAtRuntime() removed. VG_Articulation will take care of de/registration.
@@ -48,7 +56,6 @@ folder: mydoc
 ##### Known Issues:
 
 * Rotation interaction on physical object with revolute joint does not feel so natural.
-
 * Dynamic Grasp sometimes has unaturally large thumb extention. 
 
 ## V0.9.1 (2021-11-17)
