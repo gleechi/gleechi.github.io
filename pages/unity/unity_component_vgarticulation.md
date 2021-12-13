@@ -25,17 +25,17 @@ All the parameters are explained in detail in [object articulation](object_artic
 ## Runtime Changes
 
 Regardless of what is the initial setting of an object's articulation, you can change the object's articulation parameters in runtime 
-through scripting using the API functions [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) 
-and [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#recoverobjectjoint).
+through scripting using the API functions [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) 
+and [RecoverObjectJoint](virtualgrasp_unityapi.html#recoverobjectjoint).
 
 ### ChangeObjectJoint
 
-One of the two [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) API functions receives an VG_Articulation component as input for the [object articulation](object_articulation.html#object-articulation) settings you want to apply.
+One of the two [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) API functions receives an VG_Articulation component as input for the [object articulation](object_articulation.html#object-articulation) settings you want to apply.
 
-To do that, you can add a **disabled** VG_Articulation component to the object, which your script can receive and use as the argument in the [ChangeObjectJoint](VirtualGrasp_UnityAPI.html#changeobjectjoint) function.
+To do that, you can add a **disabled** VG_Articulation component to the object, which your script can receive and use as the argument in the [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) function.
 
 As a result, all the parameters set in the component will be specified in runtime on the object. 
 
 ### RecoverObjectJoint
 
-If you want to recover the object joint to its original parameters set by the **enabled** VG_Articulation component, you can call the [RecoverObjectJoint](VirtualGrasp_UnityAPI.html#recoverobjectjoint) API function.
+If you want to recover the object joint to its original parameters set by the **enabled** VG_Articulation component, you can call the [RecoverObjectJoint](virtualgrasp_unityapi.html#recoverobjectjoint) API function.
