@@ -21,3 +21,12 @@ This can be caused by multiple things e.g:
 * Transform scale is 0 (maybe during animation) on the object or any parent in the hierarchy.
 
 
+### Mesh not readable
+
+```js
+[12:22:57] The mesh for screwdriver is not readable. Object cannot be processed.
+````
+
+This is because the source of that MeshRenderer have not checked “Read/Write enabled” checkbox in the model inspector. VG has an utility script you could use as shown in below image. Clicking _Make interactables readable_ will check this Read/Write checkbox for all objects that have been marked as interactable. 
+
+{% include image.html file="unity/unity_vg_make_interactables_readable.png" alt="VG utility make interactables readable" caption="VG Utility: Make interactables readable" %}
