@@ -141,6 +141,9 @@ entries:
     - title: Release Notes
       url: /release_notes.html
       output: web
+    - title: FAQs
+      url: /faqs.html
+      output: web
     - title: Unity API
       url: /virtualgrasp_unityapi.html
       output: web 
