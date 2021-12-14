@@ -9,7 +9,7 @@ permalink: release_notes.html
 folder: mydoc
 ---
 
-## V0.9.3
+## V0.9.3 (2021-12-14)
 
 ##### Other / Internal Changes:
 
