@@ -22,7 +22,7 @@ folder: mydoc
 
 ##### Update to VG Core library 0.6.3: 
 
-* Fixed the object selection weight bug so enabled object will have default weight 1.0f. 
+* Fixed the object selection weight bug so re-enabled object will respect previous set selection weight, or default 1.0 if not specifically set.
 * Object selection in cluttered situation improved. 
 * Hand positioning in Dynamic Grasp improved. 
 * Dynamic Grasp performance improvement.
