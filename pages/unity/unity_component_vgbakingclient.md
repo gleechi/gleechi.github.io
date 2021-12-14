@@ -24,29 +24,22 @@ Enabling "Save Debug Files" in your VG_MainScript and running the application wi
 
 For more information on the content and use cases of the *.zip* file, see [Debug Files Content](#debug-files-content).
 
-## Upload Input
+{% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client in Unity." caption="VG_BakingClient" %}
 
-<!--{% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client in Unity." caption="VG_BakingClient" %}-->
+## Baking
 
-{% include warning.html content="CABVG is currently ongoing maintenance and an upgrade to version 2.0. It is therefore not available and the documentation below deprecated." %}
+<!--{% include warning.html content="CABVG is currently ongoing maintenance and an upgrade to version 2.0. It is therefore not available and the documentation below deprecated." %}-->
 
-To upload the files for a bake:
+### Step 1: Authentication
 
-* Insert the **SitePath** (provided to you with your license). The site path is the server address.
-* Insert the **ApiKey** (provided to you with your license). The api key is an identifier to access the service.
-* Enter your **email** address (to which you want to get notifications).
-* Click **"Upload"**
+After signing up to the Cloud Baking Service, you should have received credentials (email address and password). After entering them once, your credentials will be stored in a file called vg_cabvg_settings.json in your project folder, so you won't have to re-enter them all the time.
 
-Note that as soon as you close the window, your settings will be stored in a file called vg_cabvg_settings.json in your project folder, so you won't have to re-enter them all the time (since when you open the window, the settings will be loaded).
+Check if your credentials are valid by trying to "Login." If successful, a window will appear telling you that you logged in successfully.
 
-After clicking Upload, the server will receive the package and trigger a bake, and you should get a notification mail.
+### Step 2: Preparation
 
-Now you have to wait (depending on the number of objects and their complexity).
+Clicking "Prepare Project" will mainly verify that you have the necessary input data prepared for an upload. See above "Create Input" if you have not. If the input is valid, a window will appear telling you how many objects are going to be baked.
 
-## Download Output
+### Step 3: Baking
 
-{% include warning.html content="CABVG is currently ongoing maintenance and an upgrade to version 2.0. It is therefore not available and the documentation below deprecated." %}
-
-You can either download the product of the bake - which is an updated *[APP-IDENTITY].[APP-VERSION].db* file -, and sort it in your project folder yourself, or you can copy the download link, paste it in the DownloadURL field of the VG_BakingClient and click "Download." 
-
-This should have finalized the process and you will be able to enjoy natural grasps of your interactable objects.
+Clicking "Create Grasps for project" will upload your package to the Gleechi Cloud baking server and trigger a bake. A window will appear to inform you about the process. Expect about 1-2 minutes for a common bake. After finishing the grasp baking file *[APP-IDENTITY].[APP-VERSION].db* will be downloaded into your project folder.
