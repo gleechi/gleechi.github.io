@@ -17,7 +17,7 @@ folder: mydoc
 ````
 This can be caused by multiple things e.g:
 
-* Static geometry flag is enabled for object
+* Static geometry flag is enabled for object, or
 * Transform scale is 0 (maybe during animation) on the object or any parent in the hierarchy.
 
 
