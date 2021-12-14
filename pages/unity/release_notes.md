@@ -11,10 +11,17 @@ folder: mydoc
 
 ## V0.9.3 (2021-12-14)
 
+##### GUI / Component Changes:
+
+* New VG_BakingClient to support CABVG2 cloud baking service (stay tuned for update of [VG_BakingClient](unity_component_vgbakingclient.html))
+* VG_Articulation GUI behavior adjusted: grasp/push affordance also selected for floating objects; push pivot only for pushable objects.
+
 ##### Other / Internal Changes:
 
 * Null meshes will be detected and reported as error in Console.
 * VG_MainScript Start() functionality moved to Awake().
+* Fixed screw rate setting for ChangeObjectJoint() function.
+* Code documentation for external controllers improved.
 
 ##### API Changes:
 
@@ -22,7 +29,7 @@ folder: mydoc
 
 ##### Update to VG Core library 0.6.3: 
 
-* Fixed the object selection weight bug so enabled object will have default weight 1.0f. 
+* Fixed the object selection weight bug so enabled object will have default weight 1.0f.
 * Object selection in cluttered situation improved. 
 * Hand positioning in Dynamic Grasp improved. 
 * Dynamic Grasp performance improvement.
