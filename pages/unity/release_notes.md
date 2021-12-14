@@ -9,12 +9,25 @@ permalink: release_notes.html
 folder: mydoc
 ---
 
-## V0.9.3 (Unreleased)
+## V0.9.3
 
 ##### Other / Internal Changes:
 
 * Null meshes will be detected and reported as error in Console.
 * VG_MainScript Start() functionality moved to Awake().
+
+##### API Changes:
+
+* [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) fixed the bug that made new_screwRate input with no effect. 
+
+##### Update to VG Core library 0.6.3: 
+
+* Fixed the object selection weight bug so enabled object will have default weight 1.0f. 
+* Object selection in cluttered situation improved. 
+* Hand positioning in Dynamic Grasp improved. 
+* Dynamic Grasp performance improvement.
+* Interaction with object with rotating joint improved. 
+* Some spamming of debug error output suppressed. 
 
 ## V0.9.2 (2021-12-06)
 
