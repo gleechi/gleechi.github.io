@@ -18,15 +18,11 @@ Before you can upload the input to the Baking Service, you need to create it by 
 
 {% include editor_script.html %}
 
-## Create Input
+{% include image.html file="knowledge/baking_pipeline.png" alt="Baking Pipeline." caption="Baking Pipeline" %}
 
-Enabling "Save Debug Files" in your VG_MainScript and running the application will create a *[APP-IDENTITY].[APP-VERSION].zip* file in your project folder. 
+## VG_BakingClient
 
-For more information on the content and use cases of the *.zip* file, see [Debug Files Content](#debug-files-content).
-
-{% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client in Unity." caption="VG_BakingClient" %}
-
-## Baking
+{% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client in Unity." caption="VG_BakingClient in Unity." %}
 
 <!--{% include warning.html content="CABVG is currently ongoing maintenance and an upgrade to version 2.0. It is therefore not available and the documentation below deprecated." %}-->
 

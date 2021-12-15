@@ -23,6 +23,8 @@ The full debug files process is only in effect in development mode (i.e. using t
 
 {% include important.html content="It is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}<br>
 
+{% include image.html file="knowledge/baking_pipeline.png" alt="Baking Pipeline." caption="Debug Files." %}
+
 ## Debug Files Content
 
 * One *.obj* file for each interactable object in the scene, i.e. raw 3D mesh data in uniform scale, will be created when you start the scene.
