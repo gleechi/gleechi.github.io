@@ -34,7 +34,7 @@ Check if your credentials are valid by trying to "Login." If successful, a windo
 
 ### Step 2: Preparation
 
-Clicking "Prepare Project" will mainly verify that you have the necessary input data prepared for an upload. See above "Create Input" if you have not. If the input is valid, a window will appear telling you how many objects are going to be baked.
+Clicking "Prepare Project" will mainly verify that you have the necessary input data prepared for an upload. If the input is valid, a window will appear telling you how many objects are going to be baked.
 
 ### Step 3: Baking
 
