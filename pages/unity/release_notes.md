@@ -9,6 +9,24 @@ permalink: release_notes.html
 folder: mydoc
 ---
 
+## V0.9.4 (2021-12-16)
+
+##### GUI / Component Changes:
+
+##### Other / Internal Changes:
+
+##### API Changes:
+
+##### Update to VG Core library 0.6.4: 
+
+* Default hand pose becomes more natural.
+* Pinch grasp object is chosen more strictly. 
+
+##### Known Issues:
+
+* If an object has rigidbody, changing object physical properties such as drag or mass won't affect VG interaction.
+* Dynamic Grasp sometimes has unnaturally large thumb extention. 
+
 ## V0.9.3 (2021-12-14)
 
 ##### GUI / Component Changes:
