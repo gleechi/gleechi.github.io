@@ -540,7 +540,7 @@ The Update() method has been divided into three parts: IsolatedUpdateDataIn(), I
 
 Register a new avatar during runtime.
 
-| _[unknown]_ |The|skinned mesh renderer of the model that should be registered to VG.|
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
 |[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
 | _out int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
 

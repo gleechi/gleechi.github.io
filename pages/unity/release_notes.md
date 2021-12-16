@@ -11,11 +11,10 @@ folder: mydoc
 
 ## V0.9.4 (2021-12-16)
 
-##### GUI / Component Changes:
-
 ##### Other / Internal Changes:
 
-##### API Changes:
+* VG_BakingClient updated to support larger files.
+* Warning added if you have an index-pushable, physical (i.e. Rigidbody) object but no physical hand that would be needed to interact with a physical button.
 
 ##### Update to VG Core library 0.6.4: 
 
