@@ -26,6 +26,7 @@ folder: mydoc
 
 * If an object has rigidbody, changing object physical properties such as drag or mass won't affect VG interaction.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
+* Grasps on small object may have unatural finger placement.
 
 ## V0.9.3 (2021-12-14)
 
