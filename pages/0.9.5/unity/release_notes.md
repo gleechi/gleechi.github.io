@@ -12,6 +12,29 @@ folder: mydoc
 
 ## V0.9.5 (2021-12-16)
 
+##### GUI / Component Changes:
+
+* Grasp DB file for baking can now be adjusted in scriptable object VG_VirtualGraspDbFile.
+* All objects and hand included as Prefabs and used as Prefabs in VG_Onboarding scene.
+
+##### Other / Internal Changes:
+
+* Bugfix that if loading .db at start fails, it will not overwrite at end.
+* Proper reading of VG_Onboarding's fallback .db when no .db is found.
+* PDFs added in Doc/ for offline tutorial and offline API documentations.
+
+##### Update to VG Core library 0.6.5:
+
+* TODO
+
+##### Known Issues:
+
+* If an object has rigidbody, changing object physical properties such as drag or mass won't affect VG interaction.
+* Dynamic Grasp sometimes has unnaturally large thumb extention. 
+* Grasps on small object may have unatural finger placement.
+
+## V0.9.4 (2021-12-16)
+
 ##### Other / Internal Changes:
 
 * VG_BakingClient updated to support larger files.
