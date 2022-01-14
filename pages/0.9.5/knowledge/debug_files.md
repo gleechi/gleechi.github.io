@@ -30,18 +30,18 @@ The full debug files process is only in effect in development mode (i.e. using t
 * One *.obj* file for each interactable object in the scene, i.e. raw 3D mesh data in uniform scale, will be created when you start the scene.
 * One *.bin* file for each avatar (containing one or a pair of hands of this avatar), will be created when you start the scene.
 * One *.log* file with VG log data (the same that also appears on the Console) for the scene that you are running, will be filled while you are running the scene.
-* One *.db* file carrying data filled with [VG_GraspStudio](unity_component_vggraspstudio.html) or [VG_BakingClient](unity_component_vgbakingclient.html).
+* One *.db* file carrying data filled with [VG_GraspStudio](unity_component_vggraspstudio.0.9.5.html) or [VG_BakingClient](unity_component_vgbakingclient.0.9.5.html).
 * One *.scn* and one *.scn.objrig* file for each scene, including scene configuration data (see section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}).
 
 ## How To Use The Debug Files
 
 ### Object Baking
 
-The *.zip* file of all the content is the input that is needed for [object baking](object_baking.html#upload-input).
+The *.zip* file of all the content is the input that is needed for [object baking](object_baking.0.9.5.html#upload-input).
 
 ### Grasp Editing
 
-The *.obj* files of all the objects are used for the automatic generation of the [grasp studio](unity_component_vggraspstudio.html) scene.
+The *.obj* files of all the objects are used for the automatic generation of the [grasp studio](unity_component_vggraspstudio.0.9.5.html) scene.
 
 ### Debugging Interaction Issues
 

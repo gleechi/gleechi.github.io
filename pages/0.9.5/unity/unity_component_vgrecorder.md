@@ -13,10 +13,10 @@ folder: mydoc
 
 ## Description
 
-The VirtualGrasp library (VG_Controller) has a couple of [API functions](VirtualGrasp_UnityAPI.html#setprocessbyrecordedframe) 
+The VirtualGrasp library (VG_Controller) has a couple of [API functions](VirtualGrasp_UnityAPI.0.9.5.html#setprocessbyrecordedframe) 
 for recording and replaying {% include tooltip.html tooltip="SensorData" text="sensor data" %}. For convenience, the SDK includes a VG_Recorder {% include tooltip.html tooltip="VGPublicScript" text="public script" %} as a customizable component. 
 
-You can use it to access the major functionalities which are explained in [sensor record and replay](sensor_record_replay.html#sensor-record-replay).
+You can use it to access the major functionalities which are explained in [sensor record and replay](sensor_record_replay.0.9.5.html#sensor-record-replay).
 
 Some example use cases are:
 * “replaying entire instruction sequence”.
@@ -64,7 +64,7 @@ This option is very handy when you want to record and replay for example an asse
 ### Partial and object-specific interaction replay
 
 The third replay mode is to replay an {% include tooltip.html tooltip="InteractionSegment" text="interaction segment" %}. After you have recorded a full {% include tooltip.html tooltip="InteractionSequence" text="interaction sequence" %}, you can replay a specific part of it - an {% include tooltip.html tooltip="InteractionSegment" text="interaction segment" %} (specified by the _Segment ID_) - with a specified hand (_Side_) and object (_Replay Object_). 
-See [sensor record and replay](sensor_record_replay.html#background) to understand interaction segments.
+See [sensor record and replay](sensor_record_replay.0.9.5.html#background) to understand interaction segments.
 
 In the VG_Recoder, pressing the _Replay Segment Key_ will replay a specific 
 {% include tooltip.html tooltip="InteractionSegment" text="interaction segment" %} of the recording provided in _Recording Filename_ with the replay avatar. In the movie above, the blue button triggers this replay.
@@ -78,7 +78,7 @@ This option is handy when you want to record the entire training sequence that i
 
 ## How to Query Start Pose of Hands
 
-You can use [GetReplayStartWristPose](virtualgrasp_unityapi.html#getreplaystartwristpose) to query the start pose of the wrists of the _replay avatar_ when replay is on [full and scene-specific interaction](#full-and-scene-specific-interaction-replay) or [full and object-specific interaction](#full-and-object-specific-interaction-replay). Note this does not work when replaying [partial and object-specific interaction](#partial-and-object-specific-interaction-replay).
+You can use [GetReplayStartWristPose](virtualgrasp_unityapi.0.9.5.html#getreplaystartwristpose) to query the start pose of the wrists of the _replay avatar_ when replay is on [full and scene-specific interaction](#full-and-scene-specific-interaction-replay) or [full and object-specific interaction](#full-and-object-specific-interaction-replay). Note this does not work when replaying [partial and object-specific interaction](#partial-and-object-specific-interaction-replay).
 
 As shown in the VG_Recorder GUI, _Set Hand Start Pose Key_ "S" demonstrate how this is done in the script:
 ```js

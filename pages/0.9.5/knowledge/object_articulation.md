@@ -59,12 +59,12 @@ These two parameters are provided in a combined way through a {% include tooltip
 Then what is **push pivot**? 
 
 {% include tooltip.html tooltip="PushPivot" text="Push pivot" %} is provided to specify along which direction the hand is allowed to approach and apply push action. 
-And this is only relevant for [push without physics](push_interaction.html#push-without-physics) setup for push interaction.
+And this is only relevant for [push without physics](push_interaction.0.9.5.html#push-without-physics) setup for push interaction.
 
 Similar to provide joint axis through pivot transform, we use push pivot transform's _zaxis_ to specify this push approach direction. 
 
 {% include callout.html content="Push pivot is NOT specifying along which direction object moves, 
-but rather specifying a preferred hand approach direction which is only used for [pushable object selection](push_interaction.html#from-object-selection-to-push-without-physics). How object moves is defined by pivot together with other joint parameters." %}
+but rather specifying a preferred hand approach direction which is only used for [pushable object selection](push_interaction.0.9.5.html#from-object-selection-to-push-without-physics). How object moves is defined by pivot together with other joint parameters." %}
 
 If {% include tooltip.html tooltip="PushPivot" text="push pivot" %} is not provided, then it will just inherit from the {% include tooltip.html tooltip="Pivot" text="pivot" %}, i.e. the push direction is same as the joint axis. 
 
@@ -73,7 +73,7 @@ The image above shows an example of setting up a button object that can be pushe
 In this case the {% include tooltip.html tooltip="PushPivot" text="push pivot" %}
 is the same as {% include tooltip.html tooltip="Pivot" text="pivot" %} because the preferred approach direction is same as the button movement direction.
 
-To learn more details of how to setup pushable object see [push interaction](push_interaction.html).
+To learn more details of how to setup pushable object see [push interaction](push_interaction.0.9.5.html).
 
 
 ## Object Affordances
@@ -86,7 +86,7 @@ In VG library we define a “narrower” sensed set of affordances that determin
 | Affordances | Description | Object Joint Settings |
 |-------|--------|---------|
 | Graspable | {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}: Can be grasped | for all joint types | 
-| Index Pushable | {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}: Can be pushed by the index finger; only relevant when setup [push interaction without physics](push_interaction.html#push-without-physics).| for all joint types | 
+| Index Pushable | {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}: Can be pushed by the index finger; only relevant when setup [push interaction without physics](push_interaction.0.9.5.html#push-without-physics).| for all joint types | 
 |-------|--------|---------|
 | Normal | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: Object stay at the pose when hand is released  | for all joint types| 
 | Bounce | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, bounce to the lowest discrete state | for 1-dof joint | 
@@ -104,7 +104,7 @@ mass or inertia specified in the game engine.
 
 ## Graphical User Interface
 
-The image below shows Unity's [VG_Articulation](unity_component_vgarticulation.html) component used to setup all parameters of object articulation.
+The image below shows Unity's [VG_Articulation](unity_component_vgarticulation.0.9.5.html) component used to setup all parameters of object articulation.
 Note that the VG_Articulation is generic for all other client engines like Unreal.
 
 {% include image.html file="unity/unity_vg_articulation_full.png" alt="VG Articulation" caption="VG_Articulation Component." %}

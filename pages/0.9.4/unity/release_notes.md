@@ -32,7 +32,7 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
-* New VG_BakingClient to support CABVG2 cloud baking service (stay tuned for update of [VG_BakingClient](unity_component_vgbakingclient.html))
+* New VG_BakingClient to support CABVG2 cloud baking service (stay tuned for update of [VG_BakingClient](unity_component_vgbakingclient.0.9.4.html))
 * VG_Articulation GUI behavior adjusted: grasp/push affordance also selected for floating objects; push pivot only for pushable objects.
 
 ##### Other / Internal Changes:
@@ -44,7 +44,7 @@ folder: mydoc
 
 ##### API Changes:
 
-* [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) fixed the bug that made new_screwRate input with no effect. 
+* [ChangeObjectJoint](virtualgrasp_unityapi.0.9.4.html#changeobjectjoint) fixed the bug that made new_screwRate input with no effect. 
 
 ##### Update to VG Core library 0.6.3: 
 
@@ -68,17 +68,17 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
-* VG_DebugSettings modified. EditMode Save Debug Files for Current Editor Scene ⚠️. Read more on [Debug Files](debug_files.html).
+* VG_DebugSettings modified. EditMode Save Debug Files for Current Editor Scene ⚠️. Read more on [Debug Files](debug_files.0.9.4.html).
 * VG_Articulation.Lock() and VG_Articulation.Unlock() shortcuts removed. Using them in Events was unsafe. In code, use VG_Controller.ChangeObjectJoint(transform, VG_JointType.FIXED) instead of VG_Articulation.Lock(), and VG_Controller.RecoverObjectJoint(transform) instead of VG_Articulation.Unlock().
 * Fixed problem in GraspEditor scene creation when UnityEngine.SpatialTracking.TrackedPoseDriver is not available, but only UnityEngine.InputSystem.XR.TrackedPoseDriver.
 * VG_EC_GenericHand added and used as fallback for VG_ExternalControllerManager.
-* VG_GraspStudio allows deleting grasps. To delete a grasp, you have to "double-disable" it. Read more on [VG_GraspStudio](unity_component_vggraspstudio.html).
+* VG_GraspStudio allows deleting grasps. To delete a grasp, you have to "double-disable" it. Read more on [VG_GraspStudio](unity_component_vggraspstudio.0.9.4.html).
 * VG_Recorder extended with example to call new VG_Controller.GetReplayStartWristPose().
 
 ##### API Changes:
 
-* [SetAvatarActive](virtualgrasp_unityapi.html#setavataractive) added to set avatar in/active (i.e. sensor control and mesh visualization).
-* [GetReplayStartWristPose](virtualgrasp_unityapi.html#getreplaystartwristpose) added to return starting wrist poses of a recording, and check [how to query start pose page](unity_component_vgrecorder.html#how-to-query-start-pose-of-hand) to learn to use it.
+* [SetAvatarActive](virtualgrasp_unityapi.0.9.4.html#setavataractive) added to set avatar in/active (i.e. sensor control and mesh visualization).
+* [GetReplayStartWristPose](virtualgrasp_unityapi.0.9.4.html#getreplaystartwristpose) added to return starting wrist poses of a recording, and check [how to query start pose page](unity_component_vgrecorder.0.9.4.html#how-to-query-start-pose-of-hand) to learn to use it.
 * RegisterObjectAtRuntime(), RegisterObjectsAtRuntime(), DeleteDistalObjectAtRuntime() removed. VG_Articulation will take care of de/registration.
 
 ##### Update to VG Core library 0.6.2: 
@@ -148,7 +148,7 @@ folder: mydoc
 
     * The .lab file is obsolete now (because it is incorporated in the single .db file).
 
-    * Read more on [VG_BakingClient](unity_component_vgbakingclient.html) (when updated).
+    * Read more on [VG_BakingClient](unity_component_vgbakingclient.0.9.4.html) (when updated).
 
 
 ##### GUI / Component Changes:

@@ -10,16 +10,16 @@ toc: true
 
 ### Background
 
-VirtualGrasp not only provides solutions to [grasp interaction](grasp_interaction.html#grasp-interaction), 
+VirtualGrasp not only provides solutions to [grasp interaction](grasp_interaction.0.9.4.html#grasp-interaction), 
 but also for push interactions.
 
 Button push as an action in real world is very simple process due to the very physical laws existing in the nature. 
 When the same problem is ported into VR, a realistic button push behavior requires some tedius steps that often needs complex setup of physical properties on 
 both button and the hand.
 
-VirtualGrasp provides a solution to make push interaction setup easier and intuitive through [object articulation](object_articulation.html#object-articulation), with and without relying on physical simulations.
+VirtualGrasp provides a solution to make push interaction setup easier and intuitive through [object articulation](object_articulation.0.9.4.html#object-articulation), with and without relying on physical simulations.
 
-{% include callout.html content="Most important concepts relevant to push interaction are explained in [object articulation](object_articulation.html#object-articulation) page." %}
+{% include callout.html content="Most important concepts relevant to push interaction are explained in [object articulation](object_articulation.0.9.4.html#object-articulation) page." %}
 
 Below we will explain: 
 * first how to setup push interaction without adding any physical properties on an object -- [push without physics](#push-without-physics),
@@ -58,14 +58,14 @@ So when index finger is approaching from bottom to the button, opposite to the b
 
 
 Once an object is selected, you can turn on the visual hint to show which object is selected for push without physics. 
-See [VG_HintVisualizer](unity_component_vghintvisualizer.html#unity-component-vghintvisualizer) to learn how to use it.
+See [VG_HintVisualizer](unity_component_vghintvisualizer.0.9.4.html#unity-component-vghintvisualizer) to learn how to use it.
 
 #### How to Setup Push Without Physics
 
-Through VirtualGrasp's [object articulation](object_articulation.html#object-articulation) feature, a VR developer can setup a pushable object with various behaviors simulating real world's button object in any game engine. And this setup does not require the developer to add any physical components (such as RigidBody or Colliders) to either objects or hands in the game engine. 
+Through VirtualGrasp's [object articulation](object_articulation.0.9.4.html#object-articulation) feature, a VR developer can setup a pushable object with various behaviors simulating real world's button object in any game engine. And this setup does not require the developer to add any physical components (such as RigidBody or Colliders) to either objects or hands in the game engine. 
 
 Using Unity game engine as an example, to create a pushable button, 
-you add the component [VG_Articulation](unity_component_vgarticulation.html) to the object, and the parameters shown in below image create a button that can be pushed by index finger, and will bounce alternatively to the two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">discrete states</a> when push is released (see [affordances](object_articulation.html#object-affordances)):
+you add the component [VG_Articulation](unity_component_vgarticulation.0.9.4.html) to the object, and the parameters shown in below image create a button that can be pushed by index finger, and will bounce alternatively to the two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">discrete states</a> when push is released (see [affordances](object_articulation.0.9.4.html#object-affordances)):
 
 {% include image.html file="unity/unity_vg_articulation_full.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
@@ -86,18 +86,18 @@ If you want it to bounce to a different value from min, you should define the di
 
 <!--{% include warning.html content="The push with physics option is still at the experimental stage." %}-->
 
-VirtualGrasp also supports push through physics, by seamlessly integrating VG's [object articulation](object_articulation.html#object-articulation) feature with the physical simulations already existing 
+VirtualGrasp also supports push through physics, by seamlessly integrating VG's [object articulation](object_articulation.0.9.4.html#object-articulation) feature with the physical simulations already existing 
 in the client engines (Unity or Unreal). 
 
 To create a pushable button with physics, besides all the setup in VG_Articulation component as shown in [push without physics](#push-without-physics) section, you only need to:
 * set up the physical properties for the object in the game engine. For example in Unity, you should add RigidBody and Collider to this object; and
-* set up the physical properties for the hand. In Unity, VirtualGrasp automatically setup the hand physical properties (RigidBody and Colliders) if you enable **Physical** avatars in [Sensors](unity_component_myvirtualgrasp.html#sensors) (see image below).
+* set up the physical properties for the hand. In Unity, VirtualGrasp automatically setup the hand physical properties (RigidBody and Colliders) if you enable **Physical** avatars in [Sensors](unity_component_myvirtualgrasp.0.9.4.html#sensors) (see image below).
 
 {% include image.html file="unity/unity_hand_model.png" alt="VG Avatars" caption="MyVirtualGrasp script - Avatars." %}
 
 ### Push Without Physics vs. With Physics
 
-To help you set up the push object with physics, most of the [object articulation](object_articulation.html#object-articulation) parameters that applies to without physics situation also will take effect, with very few exceptions:
+To help you set up the push object with physics, most of the [object articulation](object_articulation.0.9.4.html#object-articulation) parameters that applies to without physics situation also will take effect, with very few exceptions:
  
 <!--| Object Articulation Param | Push without Physics | Push with Physics |
 |-------|--------|---------|

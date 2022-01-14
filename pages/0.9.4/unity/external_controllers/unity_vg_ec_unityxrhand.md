@@ -11,12 +11,12 @@ folder: mydoc/external_controllers
 
 ## Description 
 
-This is an external controller class that supports a [UnityXR](https://docs.unity3d.com/Manual/XR.html) controller as an external controller.
+This is an external controller class that supports a [UnityXR](https://docs.unity3d.com/Manual/XR.0.9.4.html) controller as an external controller.
  
 The following requirements have to be met to be able to enable the #define USE_LEAP_CONTROLLER above and use the controller:
  * You have the Unity XR Management package installed into your Unity project.
 
-After this, use the "QUEST" option to [AutoSetup](unity_component_myvirtualgrasp.html#autosetup) your VG configuration.
+After this, use the "QUEST" option to [AutoSetup](unity_component_myvirtualgrasp.0.9.4.html#autosetup) your VG configuration.
 
 {% include note.html content="It is called QUEST since we have mainly tested with Oculus integration of UnityXR, and not with other platforms that UnityXR supports." %}
 

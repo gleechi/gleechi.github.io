@@ -13,7 +13,7 @@ folder: mydoc
 
 MyVirtualGrasp is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} inherited from VG_MainScript, which encodes the main functionality of VirtualGrasp.
 
-In contrast to [MyVirtualGrasp](unity_component_myvirtualgrasp.html), this component uses Burst Jobs to isolate VG updates on seperate threads.
+In contrast to [MyVirtualGrasp](unity_component_myvirtualgrasp.0.9.5.html), this component uses Burst Jobs to isolate VG updates on seperate threads.
 
 <!--{% include note.html content="The use of Burst is experimental and has not shown much of performance improvement in tested applications." %}-->
 
@@ -41,9 +41,9 @@ VirtualGrasp works in mainly three steps:
 
 Therefore, the API offers isolated functions specifically for multi-threading for those three steps:
 
-1. [IsolatedUpdateDataIn](virtualgrasp_unityapi.html#isolatedupdatedatain)
-2. [IsolatedUpdate](virtualgrasp_unityapi.html#isolatedupdate)
-3. [IsolatedUpdateDataOut](virtualgrasp_unityapi.html#isolatedupdatedataout)
+1. [IsolatedUpdateDataIn](virtualgrasp_unityapi.0.9.5.html#isolatedupdatedatain)
+2. [IsolatedUpdate](virtualgrasp_unityapi.0.9.5.html#isolatedupdate)
+3. [IsolatedUpdateDataOut](virtualgrasp_unityapi.0.9.5.html#isolatedupdatedataout)
 
 While 1. and 3. are merely data transfer tasks, 2. is the "heavy" lifting and the main blocker on Unity's main thread.
 

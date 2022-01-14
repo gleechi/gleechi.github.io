@@ -262,7 +262,7 @@ Enum for setting which (VR) controller buttons.
 This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
 
 
-Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.html),  [VG_HintVisualizer](unity_component_vghintvisualizer.html)
+Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.0.9.5.html),  [VG_HintVisualizer](unity_component_vghintvisualizer.0.9.5.html)
 
 
 ### OnObjectDeselected
@@ -270,7 +270,7 @@ Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermana
 This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
-Used in: [VG_Highlighter](unity_component_vghighlighter.html)
+Used in: [VG_Highlighter](unity_component_vghighlighter.0.9.5.html)
 
 
 ### OnObjectFullyReleased
@@ -296,7 +296,7 @@ This event is invoked in the frame when a hand is starting to release an object.
 This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
-Used in: [VG_Highlighter](unity_component_vghighlighter.html)
+Used in: [VG_Highlighter](unity_component_vghighlighter.0.9.5.html)
 
 
 ### OnPostUpdate
@@ -571,7 +571,7 @@ Call grasp editor functionality on a currently selected object and grasp.
 | _Transform_ |obj|The object to call the action on (if not provided, the object in the hand).|
 | _int_ |grasp|The grasp ID to call the action on (if not provided, the current grasp of the hand).|
 
-Used in: [VG_GraspStudio](unity_component_vggraspstudio.html)
+Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.9.5.html)
 
 
 
@@ -595,7 +595,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 |[*VG_BoneType*](#vg_bonetype) | boneType|The BoneType to get.|
 | _out Transform_ |t|The returned pose of the bone.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.9.5.html)
 
 
 ### GetBone
@@ -605,7 +605,7 @@ Return the Transform that corresponds to a provided instance ID.
 | _int_ |transformID|The instance ID.|
 | **returns** | _Transform_ | The Transform that corresponds to the transformID.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.9.5.html)
 
 
 ### GetBone
@@ -619,7 +619,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 | _out Vector3_ |p|The returned position of the bone.|
 | _out Quaternion_ |q|The returned rotation of the bone.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.9.5.html)
 
 
 ### GetBone
@@ -632,7 +632,7 @@ Return the pose matrix of a specific bone.
 | _out int_ |instanceID|The returned ID of the bone transform.|
 | _out Matrix4x4_ |m|The returned pose matrix of the bone.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.9.5.html)
 
 
 ### GetFingerBone
@@ -646,7 +646,7 @@ Return the pose of a specific finger bone as a matrix.
 | _out int_ |instanceID|The returned ID of the bone transform.|
 | _out Matrix4x4_ |m|The returned pose of the bone.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.9.5.html)
 
 
 ### GetFingerBone
@@ -661,7 +661,7 @@ Return the pose (i.e. position and orientation) of a specific finger bone.
 | _out Vector3_ |p|The returned position of the bone.|
 | _out Quaternion_ |q|The returned rotation of the bone.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.9.5.html)
 
 
 ### GetFingerBone
@@ -674,7 +674,7 @@ Reflect the pose of a specific bone on a Transform.
 | _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
 | _out Transform_ |t|The returned pose of the bone.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.9.5.html)
 
 
 ### GetGrasp
@@ -692,7 +692,7 @@ Receive a grasp in the grasp DB by index.
 |[*VG_QueryGraspMode*](#vg_querygraspmode) | queryGraspMode|Can be used to define if and how the grasp should be applied also.|
 |[*VG_QueryGraspMethod*](#vg_querygraspmethod) | queryGraspMethod|Can be used to define how the graspIndex should be interpreted.|
 
-Used in: [VG_GraspStudio](unity_component_vggraspstudio.html)
+Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.9.5.html)
 
 
 ### GetNumGrasps
@@ -704,7 +704,7 @@ Receive the number of grasps for a specific object.
 |[*VG_HandSide*](#vg_handside) | handSide|If a valid handSide together with avatarID, receive only the available grasps for this hand (otherwise all available grasps).|
 | **returns** | _int_ | The number of grasps for the selected object (either all or for the specified hand).|
 
-Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.html)
+Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.0.9.5.html)
 
 
 ### GetSynthesisMethodForObject
@@ -714,7 +714,7 @@ Receive the current VG_SynthesisMethod of an interactable object.
 | _Transform_ |selectedObject|The object to query the VG_SynthesisMethod for.|
 | **returns** |[VG_SynthesisMethod](#vg_synthesismethod) | The current VG_SynthesisMethod or VG_SynthesisMethod. NONE if invalid.|
 
-Used in: [VG_GraspStudio](unity_component_vggraspstudio.html)
+Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.9.5.html)
 
 
 ### MakeGesture
@@ -824,7 +824,7 @@ Receive (from VG) a multiplayer broadcast message as a binary byte array.
 
 | **returns** | _byte[]_ | The message received by VG.|
 
-Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.html)
+Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.0.9.5.html)
 
 
 ### SetBroadcastSignal
@@ -833,7 +833,7 @@ Set (to VG) a multiplayer broadcast message as a binary byte array.
 
 | _byte[]_ |message|The message (raw bytes) to be sent and processed by VG.|
 
-Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.html)
+Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.0.9.5.html)
 
 
 
@@ -869,7 +869,7 @@ Get the push cirle for this hand side of an avatar as a visual hint for object s
 | _out bool_ |inContact|True if contact (i.e. pushing), False otherwise.|
 | **returns** | _Transform_ | The selected object, NULL if none.|
 
-Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.html)
+Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.0.9.5.html)
 
 
 ### IsMissingSensorData
@@ -910,7 +910,7 @@ Send an external controller grab signal to the plugin (for EXTERNAL_CONTROLLER s
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to set external sensor pose for.|
 | _float_ |strength|The grab strength signal to set.|
 
-Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.html)
+Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.0.9.5.html)
 
 
 ### SetFingerCalibrationMode
@@ -971,7 +971,7 @@ Remark
  SetProcessByRecordedFrame need to be called before this to set this avatar to be enabled for replay.
 
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 ### IsReplaying
@@ -982,7 +982,7 @@ Check if a hand is currently replaying a recorded sensor data.
 |[*VG_HandSide*](#vg_handside) | handSide|The hand to check.|
 | **returns** | _bool_ | True if replaying, False otherwise.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 ### LoadRecording
@@ -992,7 +992,7 @@ Load recorded sensor data from a file, but do not start replay
 
 | _string_ |filename|The filename to load the recording from.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 ### SetProcessByRecordedFrame
@@ -1003,7 +1003,7 @@ Enable or disable a specific avatar to replay a recording.
 | _int_ |avatarID|The avatar to set to replay mode.|
 | _bool_ |setToRecording|True = enable; False = disable|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 ### StartRecording
@@ -1012,7 +1012,7 @@ Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 Start recording sensor data.
 
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 ### StartReplay
@@ -1023,7 +1023,7 @@ Start full replay of the whole interaction sequence on an avatar.
 | _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
 | _Transform_ |selectedObject|If provided, the entire sensor recording will be replayed in this object's frame. If not, in global frame.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 ### StartReplayOnObject
@@ -1036,7 +1036,7 @@ Start replaying a specific interaction segment on one object.
 |[*VG_HandSide*](#vg_handside) | handSide|The hand to play the interaction with.|
 | _int_ |interactionId|The ID of the interaction segment to be played on this object.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 ### StopRecording
@@ -1046,7 +1046,7 @@ Stop recording sensor data and store the whole sequence to a file
 
 | _string_ |filename|The filename to save the recording to.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 ### StopReplay
@@ -1055,7 +1055,7 @@ Stop replay of the recorded interaction sequence on an avatar.
 
 | _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.0.9.5.html)
 
 
 

@@ -26,7 +26,7 @@ Some examples of annotations are:
 * “choosing only some "primary" grasps for an object”.
 
 <!--
-{% include tip.html content="If you are more interested in the low-level API or editing features of VirtualGrasp, or interested in implementing similar high-level features in Unreal, we recommend to also have a look at the Grasp Editing API Section of the API. The VirtualGrasp API (VG_Controller) has one single API function called [EditGrasp](VirtualGrasp_UnityAPI.html#editgrasp) to perform different editing actions on an object. Look up the API page as well as the [EditorAction](VirtualGrasp_UnityAPI.html#vg_editoraction) list for more information." %}-->
+{% include tip.html content="If you are more interested in the low-level API or editing features of VirtualGrasp, or interested in implementing similar high-level features in Unreal, we recommend to also have a look at the Grasp Editing API Section of the API. The VirtualGrasp API (VG_Controller) has one single API function called [EditGrasp](VirtualGrasp_UnityAPI.0.9.4.html#editgrasp) to perform different editing actions on an object. Look up the API page as well as the [EditorAction](VirtualGrasp_UnityAPI.0.9.4.html#vg_editoraction) list for more information." %}-->
 
 ## Enabling VirtualGrasp GraspStudio
 
@@ -34,7 +34,7 @@ The preferred way to use GraspStudio is to use the option of automatically creat
 
 This will place a new .unity scene next to your existing one in the file system, that you can then open and use.
 
-The new editor scene will be automatically configured by combining information from your current scene (VirtualGrasp, hands and camera components), [debug files](debug_files.html#grasp-editor) (objects) and adding and configuring the GraspStudio component itself (from Prefabs).
+The new editor scene will be automatically configured by combining information from your current scene (VirtualGrasp, hands and camera components), [debug files](debug_files.0.9.4.html#grasp-editor) (objects) and adding and configuring the GraspStudio component itself (from Prefabs).
 
 
 ## VirtualGrasp Studio GUI
@@ -92,7 +92,7 @@ The following table describes the actions and how to achieve them in the two mod
 
 ## Adding Grasps
 
-Adding grasps can only be done in VR. The scene will have a second hand pair created that can interact with a duplicate of the visualized object, using [dynamic grasping](grasp_interaction.html#grasp-synthesis-method). You can grasp the object until you find a grasp that you would like to add, and while holding then press the top button (usually "X" on the left and "A" on the right controller) to add it as a static grasp. It will then appear as a new entry in the thumbnail section.
+Adding grasps can only be done in VR. The scene will have a second hand pair created that can interact with a duplicate of the visualized object, using [dynamic grasping](grasp_interaction.0.9.4.html#grasp-synthesis-method). You can grasp the object until you find a grasp that you would like to add, and while holding then press the top button (usually "X" on the left and "A" on the right controller) to add it as a static grasp. It will then appear as a new entry in the thumbnail section.
 
 ## Important Note on the Files
 

@@ -21,7 +21,7 @@ The following requirements have to be met to be able to enable the #define USE_O
  		\<uses-permission android:name="com.oculus.permission.HAND_TRACKING" /\><br>
  		\<uses-feature android:name="oculus.software.handtracking" android:required="false" /\>
 
-After this, use the "OCULUS_FT" option to [AutoSetup](unity_component_myvirtualgrasp.html#autosetup) your VG configuration.
+After this, use the "OCULUS_FT" option to [AutoSetup](unity_component_myvirtualgrasp.0.9.4.html#autosetup) your VG configuration.
  
 ## Functionality
 

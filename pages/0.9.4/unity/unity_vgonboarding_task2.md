@@ -39,7 +39,7 @@ In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp\Scene
 ```js
 VirtualGrasp\Scenes\onboarding\VG_Onboarding.unity
 ````
-is the unity scene showing how [VG_Articulation](unity_component_vgarticulation.html) component is used to setup antenna and knobs' articulation settings.
+is the unity scene showing how [VG_Articulation](unity_component_vgarticulation.0.9.4.html) component is used to setup antenna and knobs' articulation settings.
 
 
 ```js
@@ -75,7 +75,7 @@ public class ChangeSelectionWeight : MonoBehaviour
 
 ````
 is the script showing how to use API function 
-[SetObjectSelectionWeight](virtualgrasp_unityapi.html#setobjectselectionweight) to tune up and down the selection weight in runtime.
+[SetObjectSelectionWeight](virtualgrasp_unityapi.0.9.4.html#setobjectselectionweight) to tune up and down the selection weight in runtime.
 This script is attached to the two knobs, and the main radio body would be **m_dependent_object**; 
 as a result, once the radio is grasped by one hand, the selection weight of the two knobs will be tuned up to **m_graspedWeight**
 so that the knobs can be easily selected for grasping by the other hand. 
@@ -119,7 +119,7 @@ public class DissembleWithDistance : MonoBehaviour
 }
 
 ````
-is the script to use API function [GetSensorPose](virtualgrasp_unityapi.html#getsensorpose) to check when sensor controlled wrist position (**sensor_pos**) is too far from the avatar hand's wrist position (**hand.m_hand.position**) by a certain threshold (**m_disassembleDistance**), then API function [ChangeObjectJoint](virtualgrasp_unityapi.html#changeobjectjoint) is used to change object {% include tooltip.html tooltip="JointType" text="joint type" %} to freely floating.
+is the script to use API function [GetSensorPose](virtualgrasp_unityapi.0.9.4.html#getsensorpose) to check when sensor controlled wrist position (**sensor_pos**) is too far from the avatar hand's wrist position (**hand.m_hand.position**) by a certain threshold (**m_disassembleDistance**), then API function [ChangeObjectJoint](virtualgrasp_unityapi.0.9.4.html#changeobjectjoint) is used to change object {% include tooltip.html tooltip="JointType" text="joint type" %} to freely floating.
 
 
 

@@ -37,7 +37,7 @@ As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The fi
 
 AutoSetup will auto-configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others.
 
-Select an [VG_AutoSetup](virtualgrasp_unityapi.html#vg_autosetup) option from the dropdown menu, then click "Setup" to automatically adjust the [Sensor options](#sensor) and [SensorSetting:FingerControlType](#finger-control-type)). 
+Select an [VG_AutoSetup](virtualgrasp_unityapi.0.9.5.html#vg_autosetup) option from the dropdown menu, then click "Setup" to automatically adjust the [Sensor options](#sensor) and [SensorSetting:FingerControlType](#finger-control-type)). 
 
 {% include callout.html content="Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process." %}
 
@@ -71,10 +71,10 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 |-------|--------|
 | Model | should be HUMANOID_HAND in most application use cases. There could also be robotic hand options, but they will not be discussed here. | 
 | SkeletalMesh| used to provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VG during runtime. | 
-| Remote | enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.html), or the [VG_Networking Component](unity_component_vgnetworing.html).| 
+| Remote | enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.0.9.5.html), or the [VG_Networking Component](unity_component_vgnetworing.0.9.5.html).| 
 | Physical | enable this if you want VG to create colliders for this avatar and enable the hand for physical interactions. NOTE: at the moment, this option is experimental and should not be used apart from testing.| 
 
-<!--Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.html), or the [VG_Recorder Component](unity_component_vgrecorder.html).-->
+<!--Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.9.5.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.9.5.html).-->
 
 ### Sensor
 
@@ -84,7 +84,7 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 |-------|--------|--------|
 | Sensor | supported | will always be External Controller for the VG SDK. | 
 | External| supported | name of the external controller, as a string, so one can write your own external controller.|  
-| Finger Control Type | supported | specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.html#vg_fingercontroltype). | 
+| Finger Control Type | supported | specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.0.9.5.html#vg_fingercontroltype). | 
 | Control | not supported | specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
 | Origin | supported | the origin of sensor where the sensor data is interpreted. | 
 | Offset | supported | when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
@@ -102,25 +102,25 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 ## Sensor Settings
 
 {% include image.html file="unity/unity_vg_sensor_settings.png" alt="Sensor settings in Unity." caption="Sensor settings in Unity." %}
-After you have setup how your avatar's hands are controlled, you can use the Sensor Settings interface to specify [Trigger Button](virtualgrasp_unityapi.html#vg_vrbutton) globally for all of the sensors.
+After you have setup how your avatar's hands are controlled, you can use the Sensor Settings interface to specify [Trigger Button](virtualgrasp_unityapi.0.9.5.html#vg_vrbutton) globally for all of the sensors.
 
 ## Object Identifiers
 
 {% include image.html file="unity/unity_vg_object_identifiers.png" alt="VG object identifiers." caption="VG object identifiers" %}
 
 VirtualGrasp is using names to identify which objects are marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}. You can customize component and layer names in MyVirtualGrasp → Object Identifiers. 
-[VG_Articulation](unity_component_vgarticulation.html) component is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your {% include tooltip.html tooltip="VGInteractable" text="interactable" %} objects.
+[VG_Articulation](unity_component_vgarticulation.0.9.5.html) component is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your {% include tooltip.html tooltip="VGInteractable" text="interactable" %} objects.
 
-Once an object is marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}, it will be supported by VG's [grasp](grasp_interaction.html) and [push](push_interaction.html) interactions. 
+Once an object is marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}, it will be supported by VG's [grasp](grasp_interaction.0.9.5.html) and [push](push_interaction.0.9.5.html) interactions. 
 
 ## Grasp Interaction Settings
 
 {% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
 
-You can set the default [grasp Interaction](grasp_interaction.html#grasp-interaction) parameters for all objects in the scene globally in Grasp Interaction Settings.
-See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.html#grasp-interaction).
+You can set the default [grasp Interaction](grasp_interaction.0.9.5.html#grasp-interaction) parameters for all objects in the scene globally in Grasp Interaction Settings.
+See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.0.9.5.html#grasp-interaction).
 
-{% include callout.html content= "Note that Synthesis Method and Interaction Type can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global settings for that object." %} 
+{% include callout.html content= "Note that Synthesis Method and Interaction Type can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.0.9.5.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global settings for that object." %} 
 
 
 <!--### Selection Settings
@@ -135,7 +135,7 @@ for <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.
 
 | Object Selection Method | Description |
 |-------|--------|
-| INTERNAL_SELECTION | VG inherent graspable object selection method as described in [grasp interaction](grasp_interaction.html#from-object-selection-to-grasp-synthesis) | 
+| INTERNAL_SELECTION | VG inherent graspable object selection method as described in [grasp interaction](grasp_interaction.0.9.5.html#from-object-selection-to-grasp-synthesis) | 
 | EXTERNAL_SELECTION| This allows VR developers to implement their own object selection method, and call VG's **SelectObject** api function to select object for grasp interaction |
 
 
@@ -169,6 +169,6 @@ Debug settings will show up when "Show Advanced" is checked.
 
 | Parameters | Description |
 |-------|--------|
-| Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes (see [debug files](debug_files.html)). | 
-| Physics Default Contact Offset | Overwrite Unity physics contact offset for more accurate collision detection. Currently only relevant for the experimental feature [push with physics](push_interaction.html#push-with-physics).| 
+| Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes (see [debug files](debug_files.0.9.5.html)). | 
+| Physics Default Contact Offset | Overwrite Unity physics contact offset for more accurate collision detection. Currently only relevant for the experimental feature [push with physics](push_interaction.0.9.5.html#push-with-physics).| 
 

@@ -10,6 +10,7 @@
 
 import os
 import sys
+import re
 import argparse
     
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -21,7 +22,7 @@ EXCLUDE_PATHS = ['cmake_generated', 'conan_build', '_resources.cpp', 'scripts\ch
 ## The header that we want in all source files.
 HEADER = '// Copyright (C) 2014-2022 Gleechi AB. All rights reserved.'
 ## If TRUE, all source files will be overwritten; to be handled with care.
-OVERWRITE = True
+OVERWRITE = False
 
 def receiveFilesFromDirectory(in_path, extensions, recursive = True, exclude_patterns = []):
     in_path = str(in_path)
@@ -58,6 +59,24 @@ def receiveFilesFromDirectory(in_path, extensions, recursive = True, exclude_pat
 
     return files2, os.path.join(in_path, in_path[in_path.rfind('/')+1:])
 
+def replaceWildcards(string, pattern, replacementPattern):
+    splitPattern = re.split(r'([*?])', pattern)
+    splitReplacement = re.split(r'([*?])', replacementPattern)
+    if (len(splitPattern) != len(splitReplacement)):
+        raise ValueError("Provided pattern wildcards do not match")
+    reg = ""
+    sub = ""
+    for idx, (regexPiece, replacementPiece) in enumerate(zip(splitPattern, splitReplacement)):
+        if regexPiece in ["*", "?"]:
+            if replacementPiece != regexPiece:
+                raise ValueError("Provided pattern wildcards do not match")
+            reg += f"(\\S{regexPiece if regexPiece == '*' else ''})" # Match anything but whitespace
+            sub += f"\\{idx + 1}" # Regex matches start at 1, not 0
+        else:
+            reg += f"({re.escape(regexPiece)})"
+            sub += f"{replacementPiece}"
+    return re.sub(reg, sub, string)
+
 ## Process the files by checking header lines and informing which headers are inconsistent.
 def processFiles(filenames, old_, new_):
     for filename in filenames:
@@ -66,12 +85,13 @@ def processFiles(filenames, old_, new_):
         content = file.read()
         file.close()
 
-        # check version with dots
+        # check version with dots        
         if old_ in content:
             print ("+ found", old_, "in", filename)
+            content = content.replace(old_, new_)
             if OVERWRITE:
-                file = open(filename, 'w', encoding="utf-8")
-                file.write(content.replace(old_, new_))
+                file = open(filename, 'w', encoding="utf-8")                
+                file.write(content)
                 file.close()
         #else:
         #    print ('- no', old_, 'found in', filename)  
@@ -81,12 +101,41 @@ def processFiles(filenames, old_, new_):
         new2 = '_sidebar_' + new_.replace('.','_')        
         if old2 in content:
             print ("+ found", old2, "in", filename)
+            content = content.replace(old2, new2)
             if OVERWRITE:
                 file = open(filename, 'w', encoding="utf-8")
-                file.write(content.replace(old2, new2))
+                file.write(content)
                 file.close()
         #else:
-        #    print ('- no', old2, 'found in', filename)            
+        #    print ('- no', old2, 'found in', filename)  
+
+        '''
+        # add version
+        old2 = 'sidebar: main_sidebar_' + old_.replace('.','_')
+        if old2 in content:
+            print ("+ found", old2, "in", filename)
+            content = content.replace(old2, old2 + '\nversion: ' + new_)
+            if OVERWRITE:
+                file = open(filename, 'w', encoding="utf-8")
+                file.write(content)
+                file.close()
+        '''
+        
+        '''
+        content =  "the [grasp studio](unity_component_vggraspstudio.html) scene."
+        print("before:" + content)
+        content = replaceWildcards(content, "](*.html", "](*.{{page.version}}.html")
+        print("after:" + content)
+        '''
+        
+        '''
+        # mod links
+        content = replaceWildcards(content, "](*.html", "](*." + new_ + ".html")
+        if OVERWRITE:
+            file = open(filename, 'w', encoding="utf-8")
+            file.write(content)
+            file.close()
+        '''
 
 if __name__ == "__main__":
     # Parse command line arguments
@@ -95,7 +144,7 @@ if __name__ == "__main__":
     parser.add_argument('--new', required=True, help='New version')
     args = parser.parse_args()
 
-    filenames, path = receiveFilesFromDirectory(".", ['md'], True, EXCLUDE_PATHS)
+    filenames, path = receiveFilesFromDirectory(args.new, ['md'], True, EXCLUDE_PATHS)
     if len(filenames) == 0:
         print ("No files to process.")
         exit(-1)

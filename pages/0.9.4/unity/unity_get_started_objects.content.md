@@ -1,6 +1,6 @@
 ### Make an Object Interactable in a Few Seconds
 
-In Unity, the easiest way to make a GameObject interactable is to add a [VG_Articulation](unity_component_vgarticulation.html) component.
+In Unity, the easiest way to make a GameObject interactable is to add a [VG_Articulation](unity_component_vgarticulation.0.9.4.html) component.
 
 ### Conditions for Interactable Objects
 
@@ -11,7 +11,7 @@ The following two conditions have to be met:
 
 Only the MeshRenderer on that {% include tooltip.html tooltip="GameObject" text="GameObject" %} will be interactable, i.e. no MeshRenderers in the hierarchy below it.
 
-The {% include tooltip.html tooltip="GameObject" text="GameObject" %} will be made {% include tooltip.html tooltip="VGInteractable" text="interactable" %} with the hands through VG's [object articulation](object_articulation.html) feature. However, if you also want to get natural grasps then a preprocessing step called [object baking](object_baking.html) is needed.
+The {% include tooltip.html tooltip="GameObject" text="GameObject" %} will be made {% include tooltip.html tooltip="VGInteractable" text="interactable" %} with the hands through VG's [object articulation](object_articulation.0.9.4.html) feature. However, if you also want to get natural grasps then a preprocessing step called [object baking](object_baking.0.9.4.html) is needed.
 
 ### Customizing Layers and Component Names
 

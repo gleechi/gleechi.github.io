@@ -2,7 +2,7 @@
 
 {% include callout.html content="In VirtualGrasp we use the terms \"sensor\" and \"controller\" exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
-In the default prefab, “GleechiLib”, a sensor setting is configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.html).
+In the default prefab, “GleechiLib”, a sensor setting is configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.0.9.4.html).
 
 As you can see in the top of the MyVirtualGrasp component, you can "Auto-Setup" the whole configuration for some of the most commonly used {% include tooltip.html tooltip="Sensor" text="sensors" %}, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers. 
 
@@ -10,9 +10,9 @@ You can use VirtualGrasp without a VR headset and your scene does not need to be
 
 {% include callout.html content="If you do not have a headset, you can use the \"MOUSE\" auto-setup to get started and control the hands with the mouse. " type="warning" %}
 
-{% include callout.html content="If you do have a headset, we recommend to use the \"QUEST\" auto-setup (after assuring that you enabled your scene for VR) to get started, through [UnityXR](https://docs.unity3d.com/Manual/XR.html)." type="info" %}
+{% include callout.html content="If you do have a headset, we recommend to use the \"QUEST\" auto-setup (after assuring that you enabled your scene for VR) to get started, through [UnityXR](https://docs.unity3d.com/Manual/XR.0.9.4.html)." type="info" %}
 
-<!--See [AutoSetup & Sensors](unity_component_myvirtualgrasp.html#autosetup--sensors) to learn more details about sensor setup.-->
+<!--See [AutoSetup & Sensors](unity_component_myvirtualgrasp.0.9.4.html#autosetup--sensors) to learn more details about sensor setup.-->
 
 {% if include.skip != "true" %}
 <div class="panel-group" id="accordion1">

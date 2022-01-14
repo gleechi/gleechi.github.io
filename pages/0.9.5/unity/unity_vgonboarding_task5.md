@@ -42,7 +42,7 @@ The steps to achieve the manipulation on the scissors in the video:
 * Make **scissor** as a VG interactable object, but deactivate mesh renderer, so it is invisible. 
 * Make both **handles** non-interactable with VG, but activate mesh renderer, so they are actually visible.
 * Once you have baked the objects, then only the VG interactable object **scissor** is baked, so DG is available on this object.
-* Use [VG_GraspStudio](unity_component_vggraspstudio.html#grasp-studio) to create a primary grasp on **scissor** to be suitable for the initial pose for the manipulation.
+* Use [VG_GraspStudio](unity_component_vggraspstudio.0.9.5.html#grasp-studio) to create a primary grasp on **scissor** to be suitable for the initial pose for the manipulation.
 * Find the position where you want to lerp the fingers when triggering the button and add them to the post animator script
 * Add the specific behaviour you want in the post animator script to rotate the handles
 
@@ -51,5 +51,5 @@ The steps to achieve the manipulation on the scissors in the video:
 
 to be filled
 ````
-is the script showing how to adapt the public script [VG_PostAnimator](unity_component_vgpostanimator.html) to ...
+is the script showing how to adapt the public script [VG_PostAnimator](unity_component_vgpostanimator.0.9.5.html) to ...
 

@@ -15,13 +15,13 @@ VirtualGrasp is hardware-agnostic.
 
 You can use VirtualGrasp with or without a VR headset and your scene does not need to be a VR-enabled scene. 
 
-In terms of hand control, VirtualGrasp can create natural [grasp interactions](grasp_interaction.html) with any kind of controllers (or {% include tooltip.html tooltip="Sensor" text="sensors" %}), whether it is hand-held VR controllers that gives accurate 6-dof wrist pose, finger tracking devices like Leap Motion or Oculus finger tracking feature, or or even just a computer mouse. 
+In terms of hand control, VirtualGrasp can create natural [grasp interactions](grasp_interaction.0.9.4.html) with any kind of controllers (or {% include tooltip.html tooltip="Sensor" text="sensors" %}), whether it is hand-held VR controllers that gives accurate 6-dof wrist pose, finger tracking devices like Leap Motion or Oculus finger tracking feature, or or even just a computer mouse. 
 
 This is because unlike many physics-based grasp synthesis solutions in the market that requires accurate finger tracking, VirtualGrasp exploits "object intelligence". By analyzing shape and affordances of an object model in VR, we can synthesize {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. 
 
 ## How to Setup
 Whether it is Unity or Unreal, you can assign your controller input in MyVirtualGrasp → Sensors. 
-See [AutoSetup & Sensors](unity_component_myvirtualgrasp.html#autosetup--sensors) to learn how to setup your sensors in Unity. 
+See [AutoSetup & Sensors](unity_component_myvirtualgrasp.0.9.4.html#autosetup--sensors) to learn how to setup your sensors in Unity. 
 
 
 <!--
@@ -85,7 +85,7 @@ Finally, all plugins are **engine specific**, so if you are using other engines 
 
 In order to reduce the effect of these considerations, and provide a better plug&play experience for external controller input, we provide a sample script, called VG_ExternalControllerManager and a number of VG_ExternalControllers that can be managed with it.
 
-For Unity, the basic VG_ExternalController "UnityXR" is using Unity's [UnityXR](https://docs.unity3d.com/2019.1/Documentation/Manual/xr_input.html) API to provide the wrist pose and a trigger signal to VG.
+For Unity, the basic VG_ExternalController "UnityXR" is using Unity's [UnityXR](https://docs.unity3d.com/2019.1/Documentation/Manual/xr_input.0.9.4.html) API to provide the wrist pose and a trigger signal to VG.
 
 <table border="1">
 <thead>

@@ -17,7 +17,7 @@ VirtualGrasp fills in the gaps of lacking sensory-motor feedback, and uses a gen
 create immersive grasp interacting experiences in VR.
 
 VG enables robust grasp interactions. Compared to many physics-based grasp synthesis solutions in the market VG takes a different approach by exploiting “object intelligence”. By analyzing shape and affordances of an object model in VR, we can synthesize grasp configurations on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. As a result,
-* there is no dependency on accurate finger tracking controllers (see [controllers](controllers.html)), and
+* there is no dependency on accurate finger tracking controllers (see [controllers](controllers.0.9.5.html)), and
 * users don't need to spend a lot of cognitive load to carefully place the fingers around the object.
 
 In this page we first describe the process of how VG creates object grasp interaction,
@@ -129,11 +129,11 @@ VG provides two alternative methods for grasp synthesis {% include tooltip.html 
 </table>
 
 
-To create natural-looking {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} during {% include tooltip.html tooltip="GraspSynthesisMethod" text="grasp synthesis" %}, we need to [bake the object](object_baking.html#object-baking).
+To create natural-looking {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} during {% include tooltip.html tooltip="GraspSynthesisMethod" text="grasp synthesis" %}, we need to [bake the object](object_baking.0.9.5.html#object-baking).
 The baking output of objects is a grasp database which will enable DG for any humanoid hands.
 
 In the situations when you need to use SG (see section [choosing synthesis method and interaction type](#choosing-synthesis-method-and-interaction-type)), 
-[grasp studio](unity_component_vggraspstudio.html#grasp-studio) can be used to add grasps into database through DG. 
+[grasp studio](unity_component_vggraspstudio.0.9.5.html#grasp-studio) can be used to add grasps into database through DG. 
 
 ### Grasp Interaction Type
 
@@ -148,7 +148,7 @@ Because of this difference, there are different alternative solutions to pose th
 | Jump Primary Grasp | when user triggers grasp, object jumps to the grasped position in the hand, using the labeled primary grasp(s) in the grasp DB | using primary grasp(s) is needed particularly in situations when an object should be grasped in some particular ways (e.g. how to grasp scissors)| 
 | Preview Grasp | once user selected an object, the {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} is previewed on the object, so that user can push the trigger button to pick up the object if the grasp is satisfactory | since {% include tooltip.html tooltip="GraspSynthesis" text="grasp synthesis" %} is running at every frame when object is selected, when DG is used can leads to low frame rate | 
 | Preview Only | once user selected an object, the {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} is previewed on the object, and the grasp trigger won't take effect to pick up object | since grasp synthesis process is running at every frame when object is selected, when DG is used can leads to low frame rate | 
-| Sticky Hand | a fall-back solution when object is not baked, so the grasp configuration is directly taken from the hand pose at the moment of grasp triggering, as if hand is stick to the object.  | this allows VR developers to setup the {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behaviors" %} through [object articulation](object_articulation.html) before baking objects | 
+| Sticky Hand | a fall-back solution when object is not baked, so the grasp configuration is directly taken from the hand pose at the moment of grasp triggering, as if hand is stick to the object.  | this allows VR developers to setup the {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behaviors" %} through [object articulation](object_articulation.0.9.5.html) before baking objects | 
 
 
 ### Choosing Synthesis Method and Interaction Type
@@ -182,5 +182,5 @@ If {% include tooltip.html tooltip="ReleaseSpeed" text="release speed" %} is 0.2
 
 {% include tip.html content="For grasp speed, lower value means faster grasp, for release speed, lower value means faster release." %}
 
-To learn more details on how to setup your objects' grasp interaction in practice, please see [VG_Interactable](unity_component_vginteractable.html#unity-component-vginteractable).
+To learn more details on how to setup your objects' grasp interaction in practice, please see [VG_Interactable](unity_component_vginteractable.0.9.5.html#unity-component-vginteractable).
 

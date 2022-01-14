@@ -16,7 +16,7 @@ folder: mydoc
 VG_HighLighter is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %}.
 The MonoBehavior script exemplifies how you could enable object highlighting based on the current hand status; 
 and provides a tutorial on the VG API functions for some of the VG_Controller event functions, 
-such as [OnObjectSelected](virtualgrasp_unityapi.html#onobjectselected) and [OnObjectDeselected](virtualgrasp_unityapi.html#onobjectdeselected).
+such as [OnObjectSelected](virtualgrasp_unityapi.0.9.5.html#onobjectselected) and [OnObjectDeselected](virtualgrasp_unityapi.0.9.5.html#onobjectdeselected).
 
 {% include singleton_script.html %}
 
@@ -33,15 +33,15 @@ When selecting the object with a left hand, the *Left Hand Color* will be used, 
 ## Bake Highlighting
 
 When playing the scene in the Unity Editor, you can also use the Highlighter to visualize the object baking state of the objects in your scene. 
-Please read more on [object baking](object_baking.html) if you are not familiar with the terminology.
+Please read more on [object baking](object_baking.0.9.5.html) if you are not familiar with the terminology.
 
 There are three options you can enable by clicking on the respective buttons:
 
-* **No Bakes:** Highlight all objects that are not baked in red. You will only get [Sticky Hand](grasp_interaction.html#grasp-interaction-type) grasps on those objects.
+* **No Bakes:** Highlight all objects that are not baked in red. You will only get [Sticky Hand](grasp_interaction.0.9.5.html#grasp-interaction-type) grasps on those objects.
 
-* **Dynamic Grasps:** Highlight all objects that are baked in red. You can use [Dynamic Grasps](grasp_interaction.html#grasp-synthesis-method) on those objects.
+* **Dynamic Grasps:** Highlight all objects that are baked in red. You can use [Dynamic Grasps](grasp_interaction.0.9.5.html#grasp-synthesis-method) on those objects.
 
-* **Static Grasps:** Highlight all objects that have static grasps assigned to them in cyan. These objects are usually baked and special grasps were assigned to them using [VG Grasp Studio](unity_component_vggraspstudio.html). You can use [Dynamic and Static Grasps](grasp_interaction.html#grasp-synthesis-method) on those objects.
+* **Static Grasps:** Highlight all objects that have static grasps assigned to them in cyan. These objects are usually baked and special grasps were assigned to them using [VG Grasp Studio](unity_component_vggraspstudio.0.9.5.html). You can use [Dynamic and Static Grasps](grasp_interaction.0.9.5.html#grasp-synthesis-method) on those objects.
 
 {% include youtube.html id="lFa1gn3Cu6c" caption="Bake Highlighting in the Unity Editor. Note that most of the objects in the scene are baked, but not the small apple. Thus, grasping the big apple results in Dynamic Grasps, grasping the small apple results in Sticky Hand grasps." %}
 

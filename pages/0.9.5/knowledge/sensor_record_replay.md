@@ -69,5 +69,5 @@ As a result, for example, if you recorded a set of sensor data on a particular s
 
 
 To learn more details on how to use <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorRecordAndReplay}}">sensor record and replay</a> 
-in Unity please see [VG_Recorder](unity_component_vgrecorder.html#unity-component-vgrecorder).
+in Unity please see [VG_Recorder](unity_component_vgrecorder.0.9.5.html#unity-component-vgrecorder).
 
