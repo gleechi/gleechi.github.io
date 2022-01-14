@@ -13,7 +13,7 @@ toc: true
 
 Enable the **“Save Debug Files”** in your VG_MainScript when you want to create debug files.
 
-Running the application in the Editor will create a *vg_tmp* subdirectory in your project’s Asset folder and export files (see [Debug Files Content](#debug-files-content) below) when you play your scene. It will then also create a file named [APP-IDENTITY].[APP-VERSION].zip (you set those in your Unity Player Settings) in your project’s root folder.
+Running the application in the Editor will create a *vg_tmp* subdirectory in your project’s Asset folder and export files (see [Debug Files Content](#debug-files-content) below) when you play your scene. It will then also create a .zip file from the vg_tmp folder in your project’s root folder.
 
 The full debug files process is only in effect in development mode (i.e. using the Unity Editor), but not in builds.
 
@@ -32,6 +32,14 @@ The full debug files process is only in effect in development mode (i.e. using t
 * One *.log* file with VG log data (the same that also appears on the Console) for the scene that you are running, will be filled while you are running the scene.
 * One *.db* file carrying data filled with [VG_GraspStudio](unity_component_vggraspstudio.0.9.5.html) or [VG_BakingClient](unity_component_vgbakingclient.0.9.5.html).
 * One *.scn* and one *.scn.objrig* file for each scene, including scene configuration data (see section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}).
+
+## Naming of the .zip and .db Files
+
+By default, the .zip and .db files are given the name <applicationId>-<applicationVersion> (which are extracted from your Unity project's build settings).
+
+You can customize the name by modifying the VG_VirtualGraspDBFile that you can find in the VirtualGrasp/Resource folder.
+
+{% include image.html file="unity/unity_vg_virtualgraspdbfile.png" alt="VG_VirtualGraspDBFile" caption="Scriptable resource VG_VirtualGraspDBFile allows you to customize the name of your .db file." %}
 
 ## How To Use The Debug Files
 

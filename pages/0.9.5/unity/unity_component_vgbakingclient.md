@@ -14,7 +14,7 @@ The VG_BakingClient is an {% include tooltip.html tooltip="VGInternalScript" tex
 
 If you are not familiar with the concept of object baking, please read the [object baking documentation](object_baking.0.9.5.html) first.
 
-Before you can upload the input to the Baking Service, you need to create it by following the instructions on [Debug Files](debug_files).
+Before you can upload the input to the Baking Service, you need to create it by following the instructions on [Debug Files](debug_files.0.9.5.html).
 
 {% include editor_script.html %}
 
@@ -38,4 +38,4 @@ Clicking "Prepare Project" will mainly verify that you have the necessary input 
 
 ### Step 3: Baking
 
-Clicking "Create Grasps for project" will upload your package to the Gleechi Cloud baking server and trigger a bake. A window will appear to inform you about the process. Expect about 1-2 minutes for a common bake. After finishing the grasp baking file *[APP-IDENTITY].[APP-VERSION].db* will be downloaded into your project folder.
+Clicking "Create Grasps for project" will upload your package to the Gleechi Cloud baking server and trigger a bake. A window will appear to inform you about the process. Expect about 1-2 minutes for a common bake. After finishing, the grasp baking .db file will be downloaded into your project folder.
