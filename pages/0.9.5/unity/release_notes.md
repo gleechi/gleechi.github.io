@@ -6,6 +6,7 @@ keywords: release notes #, announcements, what's new, new features
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar_0_9_5
 permalink: release_notes.0.9.5.html
+redirect_from: release_notes.html
 folder: mydoc
 ---
 
