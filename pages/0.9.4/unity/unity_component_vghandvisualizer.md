@@ -3,6 +3,7 @@ title: VG_HandVisualizer Component
 keywords: component, HandVisualizer
 #last_updated: July 16, 2016
 sidebar: main_sidebar_0_9_4
+version: 0.9.4
 permalink: unity_component_vghandvisualizer.0.9.4.html
 folder: mydoc
 ---

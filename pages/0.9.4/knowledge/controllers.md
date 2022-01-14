@@ -1,6 +1,7 @@
 ---
 title: Controllers
 sidebar: main_sidebar_0_9_4
+version: 0.9.4
 keywords: controller, internal, external
 permalink: controllers.0.9.4.html
 folder: knowledge

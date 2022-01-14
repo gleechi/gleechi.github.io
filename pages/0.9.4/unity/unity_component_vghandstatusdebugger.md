@@ -2,6 +2,7 @@
 title: VG_HandStatusDebugger Component
 keywords: editor, script
 sidebar: main_sidebar_0_9_4
+version: 0.9.4
 permalink: unity_component_vghandstatusdebugger.0.9.4.html
 folder: mydoc
 ---

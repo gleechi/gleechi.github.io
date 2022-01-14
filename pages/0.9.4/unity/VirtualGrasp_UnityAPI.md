@@ -1,6 +1,7 @@
 ---
 title: Unity API
 sidebar: main_sidebar_0_9_4
+version: 0.9.4
 keywords: grasp, baking, cabvg
 permalink: virtualgrasp_unityapi.0.9.4.html
 folder: unity

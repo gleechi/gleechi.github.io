@@ -1,6 +1,7 @@
 ---
 title: Push Interaction
 sidebar: main_sidebar_0_9_4
+version: 0.9.4
 keywords: affordance, push, index_finger_pushable
 permalink: push_interaction.0.9.4.html
 folder: knowledge

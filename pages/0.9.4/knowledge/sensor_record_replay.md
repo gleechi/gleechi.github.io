@@ -1,6 +1,7 @@
 ---
 title: Sensor Record and Replay
 sidebar: main_sidebar_0_9_4
+version: 0.9.4
 keywords: interaction_sequence, interaction_segment, sensor_record, sensor_replay, record, replay
 permalink: sensor_record_replay.0.9.4.html
 folder: knowledge

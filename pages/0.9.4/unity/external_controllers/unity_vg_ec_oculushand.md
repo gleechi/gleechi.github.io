@@ -2,6 +2,7 @@
 title: VG_EC_OculusHand controller
 keywords: external-controller
 sidebar: main_sidebar_0_9_4
+version: 0.9.4
 permalink: unity_vg_ec_oculushand.0.9.4.html
 folder: mydoc/external_controllers
 ---

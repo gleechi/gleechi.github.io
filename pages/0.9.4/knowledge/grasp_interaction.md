@@ -1,6 +1,7 @@
 ---
 title: Grasp Interaction
 sidebar: main_sidebar_0_9_4
+version: 0.9.4
 keywords: grasp, static_grasp, dynamic_grasp, jump_grasp, trigger_grasp, preview_grasp, preview_only, sticky_hand
 permalink: grasp_interaction.0.9.4.html
 folder: knowledge
