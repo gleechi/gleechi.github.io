@@ -1,0 +1,13 @@
+<li>
+{% if site.blog_text %}
+  {% assign blog_text = site.blog_text %}
+{% else %}
+  {% assign blog_text = "Blog" %}
+{% endif %}
+
+{% if site.blog_link %}
+  <a class="email" title="Read our blog" href="{{site.blog_link}}">{{blog_text}}</a>
+{% else %}
+  <a class="email" title="Read our blog" href="{{site.blog_link}}">{{blog_text}}</a>
+{% endif %}
+</li>

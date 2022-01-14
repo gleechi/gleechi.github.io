@@ -2,38 +2,29 @@
 ## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
 topnav:
 - title: Topnav
-  items:
-#    - title: GitHub
-#      external_url: https://github.com/tomjoht/documentation-theme-jekyll
-    - title: Blog
-      external_url: https://www.gleechi.com/blog
-    #- title: News
-    #  url: /news
-
+  #items:
+  #  - title: Blog
+  #    external_url: https://www.gleechi.com/blog
+      
 #Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    #- title: Jekyll Help
-    #  folderitems:
-    #    - title: Jekyll Talk
-    #      external_url: https://talk.jekyllrb.com
-    #    - title: Jekyll documentation
-    #      external_url: http://jekyllrb.com/docs/home/
-    #    - title: Jekyll on Stack Overflow
-    #      external_url: http://stackoverflow.com/questions/tagged/jekyll
-    #    - title: Jekyll on my blog
-    #      external_url: http://idratherbewriting.com/category-jekyll/
-    - title: Chapters
+    - title: Versions
       folderitems:
-        - title: Tutorials
-          url: /unity_get_started_installation.html
-        - title: Explanations
-          url: /controllers.html
-        - title: How-To Guides
-          url: /unity_component_myvirtualgrasp.html
-        - title: References
-          url: /virtualgrasp_unityapi.html
+        - title: 0.9.5
+          url: /index.html
+        - title: 0.9.4
+          url: /index.0.9.4.html        
+    
+    # - title: Chapters
+    #  folderitems:
+    #    - title: Tutorials
+    #      url: /unity_get_started_installation.html
+    #    - title: Explanations
+    #      url: /controllers.html
+    #    - title: How-To Guides
+    #      url: /unity_component_myvirtualgrasp.html
+    #    - title: References
+    #      url: /virtualgrasp_unityapi.html
         
-     #   - title: Product 2
-     #     url: /p2_landing_page.html
