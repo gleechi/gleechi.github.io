@@ -10,7 +10,7 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
-## V0.9.5 (2021-12-16)
+## V0.9.5 (2021-01-14)
 
 ##### GUI / Component Changes:
 
