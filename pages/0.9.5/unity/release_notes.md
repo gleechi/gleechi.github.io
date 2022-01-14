@@ -25,7 +25,8 @@ folder: mydoc
 
 ##### Update to VG Core library 0.6.5:
 
-* TODO
+* Bugfix that intermediate empty object can cause crash.
+* Won't save empty object db entries into grasp db file.
 
 ##### Known Issues:
 
