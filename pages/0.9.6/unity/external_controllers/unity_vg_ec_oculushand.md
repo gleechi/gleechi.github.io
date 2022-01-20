@@ -17,8 +17,11 @@ The following requirements have to be met to be able to enable the #define USE_O
  * You have the [Oculus Integration Plugin](https://developer.oculus.com/downloads/package/unity-integration/) imported into your Unity project.
  * You have the same Oculus Integration plugin version as the one on your headset AND Oculus App.
  * You have setup the AndroidManifest.xml properly, i.e. they need to include<br>
+ 
+	```js
  		\<uses-permission android:name="com.oculus.permission.HAND_TRACKING" /\><br>
  		\<uses-feature android:name="oculus.software.handtracking" android:required="false" /\>
+	````
 
 After this, use the "OCULUS_FT" option to [AutoSetup](unity_component_myvirtualgrasp.0.9.6.html#autosetup) your VG configuration.
  
