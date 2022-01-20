@@ -11,9 +11,11 @@ topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
     - title: Versions
-      folderitems:
-        - title: Unity SDK 0.9.5
+      folderitems:      
+        - title: Unity SDK 0.9.6
           url: /index.html
+        - title: Unity SDK 0.9.5
+          url: /index.0.9.5.html
         - title: Unity SDK 0.9.4
           url: /index.0.9.4.html        
     

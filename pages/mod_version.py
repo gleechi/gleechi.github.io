@@ -19,10 +19,8 @@ sys.path.append(os.path.join(CURRENT_DIR, "../../scripts"))
 
 ## Any filename that includes any of these will be excluded.
 EXCLUDE_PATHS = ['cmake_generated', 'conan_build', '_resources.cpp', 'scripts\check\VirtualGraspSDK_']
-## The header that we want in all source files.
-HEADER = '// Copyright (C) 2014-2022 Gleechi AB. All rights reserved.'
 ## If TRUE, all source files will be overwritten; to be handled with care.
-OVERWRITE = False
+OVERWRITE = True
 
 def receiveFilesFromDirectory(in_path, extensions, recursive = True, exclude_patterns = []):
     in_path = str(in_path)
