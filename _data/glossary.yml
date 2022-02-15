@@ -109,7 +109,7 @@ Snaps: One of object's StateAffordance that is only relevant for 1-dof joints; w
 
 Joint: Joint is where two bones or GameObjects meet, and in VirtualGrasp it defines how a child object moves w.r.t. its parent (not the other way around); and different from the physics-based joint systems in some game engines like Unity, VG's joint system is non-physical (kinematic).
 
-JointType: The type of a Joint, can be Floating, Fixed, Revolute, Prismatic and Cone. See [object articulation](object_articulation.html).
+JointType: The type of a VG Joint, can be Floating, Fixed, Revolute, Prismatic and Cone. See [object articulation](object_articulation.html).
 
 Floating: An unconstrained JointType, an object with this type of joint can be moved by hand freely.
 

@@ -48,11 +48,15 @@ NOTE: While release notes are added, related documentation pages are still under
 
 ##### Update to VG Core library 0.6.6:
 
-* TODO
+* Added support to interact with objects with [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) components. 
+* For non-physical objects (objects without RigidBody or ArticulationBody), grasping a child object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} will also move the parent non-physical object, and the movement will propagate back to upstream non-physical objects as long as they are connected through constrained {% include tooltip.html tooltip="Joint" text="joints" %}. 
+* DG can grasp on the inner structure of a complex object, for example a driving wheel. 
+* Improved fitting of physical avatar finger colliders.
 
 ##### Known Issues:
 
-* TODO
+* When grasping freely movable physical objects (objects with RigidBody or ArticulationBody), movement with the object is suboptimal with observable wobbling effects. This is to be fixed in next release. 
+* When throwing a physical object, the object velocity is suboptimal. This is to be fixed in next release.  
 
 ## V0.9.5 (2022-01-14)
 
