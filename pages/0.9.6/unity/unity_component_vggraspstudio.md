@@ -20,8 +20,7 @@ It serves as a high-level visualizing tool in which you can not only review all 
 
 Some examples of annotations are:
 
-* “deleting grasps that look bad”.
-* "adding (dynamic) grasps for an object into the (static) grasp database”
+* "adding manually annotated grasps for an object”
 * “choosing only some "primary" grasps for an object”.
 
 <!--
@@ -38,7 +37,9 @@ The new editor scene will be automatically configured by combining information f
 
 ## VirtualGrasp Studio GUI
 
-The interface is shown below, with some regions outlined in blue only for this documentation:
+The interface is shown below, with some regions outlined in blue only for this documentation.
+
+Note that when starting in VR mode, form a grab with both hands and move them (e.g., press both controller triggers and move them when using controllers) to place and adjust the GUI in front of you.
 
 {% include image.html file="unity/unity_vg_graspstudio.png" alt="VG GraspStudio" caption="VG_GraspStudio Component." %}
 
@@ -93,15 +94,20 @@ The following table describes the actions and how to achieve them in the two mod
 
 Adding grasps can only be done in VR. The scene will have a second hand pair created that can interact with a duplicate of the visualized object, using [dynamic grasping](grasp_interaction.0.9.6.html#grasp-synthesis-method). You can grasp the object until you find a grasp that you would like to add, and while holding then press the top button (usually "X" on the left and "A" on the right controller) to add it as a static grasp. It will then appear as a new entry in the thumbnail section.
 
+## Using Grasps in Runtime
+
+In order to use your annotated grasps instead of the default, dynamic grasps during runtime, you need to change an object's [grasp synthesis method](https://docs.gleechi.com/grasp_interaction.0.9.6.html#grasp-synthesis-method) to STATIC_GRASP, and optionally adjust its [interaction types](https://docs.gleechi.com/grasp_interaction.0.9.6.html#grasp-interaction-type). 
+
+Unless you want all objects to behave the same (and use the [global interaction settings](https://docs.gleechi.com/unity_component_myvirtualgrasp.0.9.6.html#grasp-interaction-settings)), you need to add a [VG_Interactable](https://docs.gleechi.com/unity_component_vginteractable.0.9.6.html) on your object to adjust these parameters only for this object.
+
 ## Important Note on the Files
 
-The information on added and edited grasps will be stored in an additional .db file which you will find in each project's root folder by default.
+The information on added and edited grasps will be stored in an additional .db file which you will find in each project's StreamingAssets/VG_Grasps folder by default.
 
 The VirtualGrasp plugin will automatically load this file at initialization (e.g. start the game), and save it at releasing (e.g. stop the game). 
 
 By this follows that:
 
-* All scenes will use the same annotated grasps and labels, since the .db file is saved in the project.
-* When you want to use the labels in a build, you have to manually copy the .db file to the build directory.
+* All scenes will use the same annotated grasps and labels, since the .db file is saved in and loaded from the project.
 * If you you are using a version control system and want to share the annotated data with others, you have to commit the .db file to the repository.
 

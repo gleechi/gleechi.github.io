@@ -10,7 +10,46 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
-## V0.9.5 (2021-01-14)
+## V0.9.6 (2022-02-15)
+
+NOTE: While release notes are added, related documentation pages are still under update!
+
+##### Major Functionality Changes:
+
+* Breaking change: Prefabs GleechiLib and GleechiLibBurst removed. You are expected to just insert a VG_MainScript component (such as MyVirtualGrasp) on a GameObject of your choice.
+* Grasp .db will be handled automatically, no manual deployment needed anymore (UploadGraspDB menu entry removed).
+* Removed ObjectIdentifiers. The single and only component to mark objects as interactable is VG_Articulation. This should not break earlier use of VG_Interactable as Unity will create missing VG_Articulation component through RequireComponent requirement.
+* Performance speed up by handling only subset of close-by objects.
+
+##### GUI / Component Changes:
+
+* GraspStudio optimized and extended (see [VG_GraspStudio](unity_component_vggraspstudio.0.9.6.html)).
+* Helper tooltips adjusted after documentation being transferred to docs.virtualgrasp.com.
+* Disabling VG_Articulation editing when ArticulationBody is on object.
+* VG_AutoSetup.QUEST renamed to VG_AutoSetup.UNITYXR
+* Adjusted auto-setup offsets for provided hand model when using UnityXR.
+* VG_VrButton extended with GRIP_OR_TRIGGER to enable both buttons for grabbing.
+
+##### Other / Internal Changes:
+
+* Event handling order bugfix: OnObjectReleased() called before OnObjectFullyReleased()
+* All assets (onboarding scene) provided as Prefabs.
+* .scn files also saved when using Save Debug Edit.
+* Avatar Bone management optimized.
+* Removed Unity Garbage Collection during Editor time.
+* Initial support for Unity ArticulationBodies.
+* Improved upon physical object handling (objects with Rigidbodies and ArticulationBodies).
+* Improved upon physical hand handling.
+
+##### Update to VG Core library 0.6.6:
+
+* TODO
+
+##### Known Issues:
+
+* TODO
+
+## V0.9.5 (2022-01-14)
 
 ##### GUI / Component Changes:
 
