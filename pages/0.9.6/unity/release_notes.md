@@ -56,7 +56,9 @@ NOTE: While release notes are added, related documentation pages are still under
 ##### Known Issues:
 
 * When grasping freely movable physical objects (objects with RigidBody or ArticulationBody), movement with the object is suboptimal with observable wobbling effects. This is to be fixed in next release. 
-* When throwing a physical object, the object velocity is suboptimal. This is to be fixed in next release.  
+* When throwing a physical object, the object velocity is suboptimal. This is to be fixed in next release.
+* Dynamic Grasp sometimes has unnaturally large thumb extention. 
+* Grasps on small object may have unatural finger placement.
 
 ## V0.9.5 (2022-01-14)
 
