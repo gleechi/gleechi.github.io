@@ -26,9 +26,14 @@ NOTE: While release notes are added, related documentation pages are still under
 * GraspStudio optimized and extended (see [VG_GraspStudio](unity_component_vggraspstudio.0.9.6.html)).
 * Helper tooltips adjusted after documentation being transferred to docs.virtualgrasp.com.
 * Disabling VG_Articulation editing when ArticulationBody is on object.
-* VG_AutoSetup.QUEST renamed to VG_AutoSetup.UNITYXR
 * Adjusted auto-setup offsets for provided hand model when using UnityXR.
+
+##### API Changes:
+
+* OnObjectFullyReleased event carries VG_HandStatus instead of Transform, aligning with all other VG events.
+* VG_AutoSetup.QUEST renamed to VG_AutoSetup.UNITYXR
 * VG_VrButton extended with GRIP_OR_TRIGGER to enable both buttons for grabbing.
+* VG_Controller.SetObjectAffordances() added to change object affordances in runtime.
 
 ##### Other / Internal Changes:
 
