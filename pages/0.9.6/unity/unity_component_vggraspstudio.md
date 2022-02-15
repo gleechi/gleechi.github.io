@@ -30,7 +30,7 @@ Some examples of annotations are:
 
 The preferred way to use GraspStudio is to use the option of automatically creating a separate editor scene (Menu VirtualGrasp → Create VG_Editor Scene).
 
-This will place a new .unity scene next to your existing one in the file system, that you can then open and use.
+This will place a new .unity scene next to your existing one in the file system, that will then be opened automatically.
 
 The new editor scene will be automatically configured by combining information from your current scene (VirtualGrasp, hands and camera components), [debug files](debug_files.0.9.6.html#grasp-editor) (objects) and adding and configuring the GraspStudio component itself (from Prefabs).
 
@@ -65,7 +65,7 @@ The interface supports two different modes:
 
 **Non-VR mode.** You can interact with the interface using the mouse and/or the keyboard when playing the scene. The GUI camera is used, so you will not be able to see your scene.
 
-**VR mode.** You can interact with the interface using your VR controllers when playing the scene. You can do this both using buttons on the controllers as well as by interacting with the GUI.
+**VR mode.** You can interact with the interface using your controllers when playing the scene. You can do this both using buttons on the controllers (if they have any) as well as by interacting with the GUI.
 
 You are free to choose after your own preference, but notice that not all features are possible in Non-VR mode.
 
@@ -83,8 +83,8 @@ The following table describes the actions and how to achieve them in the two mod
 | Label as Disabled** | Click    ⃠       | Push right thumbstick down | D |  
 | Label all as Disabled* | - | - | LShift+D | 
 | Delete Grasp** |  |  | |  
-| Scale/Place Interface | - | Push both triggers and move controllers | - | 
-| Adding Dynamic grasp | - | see "Adding Grasps" below | - | 
+| Scale/Place Interface | - | Grasp with both hands in air and move them apart | - | 
+| Adding Dynamic grasp | - | see "Adding Grasps" below | A | 
 
 \* Labeling an already selected primary grasp unlabel it.
 

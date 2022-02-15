@@ -35,9 +35,9 @@ The full debug files process is only in effect in development mode (i.e. using t
 
 ## Naming of the .zip and .db Files
 
-By default, the .zip and .db files are given the name [applicationId]-[applicationVersion] (which are extracted from your Unity project's build settings).
+By default, the .zip and .db files are given the name "grasps.zip" and "grasps.db".
 
-You can customize the name by modifying the VG_VirtualGraspDBFile that you can find in the VirtualGrasp/Resource folder.
+You can customize the name by modifying the VG_VirtualGraspDBFile that you can find in the VirtualGrasp/Resources folder.
 
 {% include image.html file="unity/unity_vg_virtualgraspdbfile.png" alt="VG_VirtualGraspDBFile" caption="Scriptable resource VG_VirtualGraspDBFile allows you to customize the name of your .db and .zip file." %}
 

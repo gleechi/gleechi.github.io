@@ -104,6 +104,7 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 {% include image.html file="unity/unity_vg_sensor_settings.png" alt="Sensor settings in Unity." caption="Sensor settings in Unity." %}
 After you have setup how your avatar's hands are controlled, you can use the Sensor Settings interface to specify [Trigger Button](virtualgrasp_unityapi.0.9.6.html#vg_vrbutton) globally for all of the sensors.
 
+<!--
 ## Object Identifiers
 
 {% include image.html file="unity/unity_vg_object_identifiers.png" alt="VG object identifiers." caption="VG object identifiers" %}
@@ -112,6 +113,7 @@ VirtualGrasp is using names to identify which objects are marked as {% include t
 [VG_Articulation](unity_component_vgarticulation.0.9.6.html) component is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your {% include tooltip.html tooltip="VGInteractable" text="interactable" %} objects.
 
 Once an object is marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}, it will be supported by VG's [grasp](grasp_interaction.0.9.6.html) and [push](push_interaction.0.9.6.html) interactions. 
+-->
 
 ## Grasp Interaction Settings
 

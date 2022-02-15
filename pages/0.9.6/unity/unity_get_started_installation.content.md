@@ -14,13 +14,11 @@ To import VirtualGrasp into your Unity project, go to Assets → Import Package 
 
 ### Getting Started with VirtualGrasp and the Console View
 
-Drag and drop the Prefab “GleechiLib” from the ThirdParty/VirtualGrasp/Resources directory into your scene. In your Hierarchy view, you will see the instantiated {% include tooltip.html tooltip="GameObject" text="GameObject" %} hierarchy called GleechiLib.
-
-Have a quick look at the imported GameObject by selecting it in the object hierarchy. There is only one component added by default, which is the minimal component needed for VirtualGrasp: [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.0.9.6.html). When you now play your scene, you should see some messages produced by the plugin in the Console Window.
+There is only one minimal main component you have to add by default to use and configure VirtualGrasp: [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.0.9.6.html). Adding a component to your scene and playing your scene, you should see some messages produced by the plugin in the Console Window.
 
 You can identify that VG has been successfully initialized when a message like these appear on the Console, also informing you of the SDK version:
 
-{% include callout.html content="Initialized VirtualGrasp SDK 0.9.1 (core 0.6.1)." %}
+{% include callout.html content="Initialized VirtualGrasp SDK 0.9.6 (core 0.6.6)." %}
 
 <!--{% include image.html file="unity/unity_console_initialization.png" alt="VG Console Initialization" caption="VirtualGrasp initialization message in the Unity console." %}-->
 
