@@ -21,5 +21,5 @@ VirtualGrasp is using names to identify which objects are marked as {% include t
 {% include image.html file="unity/unity_object_identifiers.png" alt="Unity Object Identifiers." caption="VG will use the Object Identifier list to browse components and layers for interactable objects."%}
 
 {% if include.skip != "true" %}
-{% include custom/series_acme_next.html %}
+<!--{% include custom/series_acme_next.html %}-->
 {% endif %}

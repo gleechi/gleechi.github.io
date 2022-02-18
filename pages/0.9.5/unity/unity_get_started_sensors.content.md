@@ -42,5 +42,5 @@ You can use VirtualGrasp without a VR headset and your scene does not need to be
 {% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp." %}
 
 {% if include.skip != "true" %}
-{% include custom/series_acme_next.html %}
+<!--{% include custom/series_acme_next.html %}-->
 {% endif %}

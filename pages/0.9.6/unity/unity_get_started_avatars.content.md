@@ -1,6 +1,6 @@
 ### A First Look at the Hand Model
 
-First, import a hand model into your scene, such as the provided OculusRig in ThirdPart/VirtualGrasp/Resources/OculusHands. 
+First, import a hand model into your scene, such as the provided OculusRig in ThirdParty/VirtualGrasp/Resources/OculusHands. 
 
 Next, link it into its place under Sensors → Avatars → Skeletal Mesh, by dragging and dropping Rhand.001 (which you can find directly under OculusRig in the Hierarchy) into this slot.
 
@@ -19,7 +19,3 @@ As a rule of thumb, the rigging / model hierarchy should be same as the model in
 You can see that VG has successfully initialized the avatar when messages like these appear:
 
 {% include image.html file="unity/unity_avatar_init.png" alt="Unity avatar init." caption="VirtualGrasp initialization message in the Unity console." %}
-
-{% if include.skip != "true" %}
-{% include custom/series_acme_next.html %}
-{% endif %}

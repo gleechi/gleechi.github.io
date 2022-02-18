@@ -23,5 +23,5 @@ You can see that VG has successfully initialized the avatar when messages like t
 {% include tip.html content="Enable \"Update When Offscreen\" for your models to always show the hands even if they are close to the camera." %}
 
 {% if include.skip != "true" %}
-{% include custom/series_acme_next.html %}
+<!--{% include custom/series_acme_next.html %}-->
 {% endif %}

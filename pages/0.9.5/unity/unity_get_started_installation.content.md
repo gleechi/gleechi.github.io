@@ -31,5 +31,5 @@ You can identify that VG has been successfully initialized when a message like t
 
 {% include youtube.html id="CHo9TB_yYps" caption="QuickStart with VirtualGrasp in Unity." %}
 
-{% include custom/series_acme_next.html %}
+<!--{% include custom/series_acme_next.html %}-->
 {% endif %}

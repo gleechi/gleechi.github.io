@@ -2,7 +2,7 @@
 
 {% include callout.html content="In VirtualGrasp we use the terms \"sensor\" and \"controller\" exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
-In the default prefab, “GleechiLib”, a sensor setting is configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through Unity by [UnityXR](https://docs.unity3d.com/Manual/XR.0.9.6.html).
+In any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.0.9.6.html), a sensor setting can be configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through various [VG_ExternalControllers](unity_component_vgexternalcontrollermanager.0.9.6.html).
 
 As you can see in the top of the MyVirtualGrasp component, you can "Auto-Setup" the whole configuration for some of the most commonly used {% include tooltip.html tooltip="Sensor" text="sensors" %}, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers. 
 
@@ -40,7 +40,3 @@ You can use VirtualGrasp without a VR headset and your scene does not need to be
 {% endif %}
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp." %}
-
-{% if include.skip != "true" %}
-{% include custom/series_acme_next.html %}
-{% endif %}

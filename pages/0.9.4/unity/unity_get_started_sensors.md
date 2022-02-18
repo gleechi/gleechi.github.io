@@ -1,7 +1,7 @@
 ---
 title: Getting Started in Unity - Sensors
-series: "Getting Started in Unity series"
-weight: 3
+#series: GettingStartedInUnitySeries_0_9_4
+#weight: 3
 sidebar: main_sidebar_0_9_4
 version: 0.9.4
 keywords: hand, object, avatar, install, quickstart

@@ -12,8 +12,6 @@ folder: mydoc
 
 ## V0.9.6 (2022-02-15)
 
-NOTE: While release notes are added, related documentation pages are still under update!
-
 ##### Major Functionality Changes:
 
 * Breaking change: Prefabs GleechiLib and GleechiLibBurst removed. You are expected to just insert a VG_MainScript component (such as MyVirtualGrasp) on a GameObject of your choice.
