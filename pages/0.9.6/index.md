@@ -1,5 +1,5 @@
 ---
-title: "Welcome to VirtualGrasp Documentations"
+title: "Welcome to VirtualGrasp Documentation"
 version: 0.9.6
 sidebar: main_sidebar_0_9_6
 permalink: index.0.9.6.html
