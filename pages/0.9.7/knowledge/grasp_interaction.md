@@ -170,17 +170,21 @@ Due to the nature of each option, there may be preferences of how to combine the
 | Sticky Hand | -- | Sticky Hand is a fall back solution when objects are not baked, so no SG or DG is relevant. | 
 
 
-### Grasp Speed and Release Speed
+### Grasp Animation Speed and Release Animation Speed
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction_0.9.7.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings" %}
 In global grasp interaction settings, you can set the default {% include tooltip.html tooltip="GraspSynthesisMethod" text="synthesis method" %} and {% include tooltip.html tooltip="InteractionType" text="interaction type" %} for all objects in the scene globally. 
-The other two parameters -- {% include tooltip.html tooltip="GraspSpeed" text="grasp speed" %} and {% include tooltip.html tooltip="ReleaseSpeed" text="release speed" %} -- also significantly affect the user experiences because they determines how fast the hand forms grasp and releases from grasp respectively. 
+The other two parameters -- {% include tooltip.html tooltip="GraspSpeed" text="grasp animation speed" %} and {% include tooltip.html tooltip="ReleaseSpeed" text="release animation speed" %} -- also significantly affect the user experiences because they determines how fast the hand forms grasp and releases from grasp respectively. 
 
-The unit of these values are in (second), so if {% include tooltip.html tooltip="GraspSpeed" text="grasp speed" %} is 0.1, it means it takes 0.1 second starting from grasp triggering for the hand to form a complete {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} on the object.
+The unit of these values are in (second), so if {% include tooltip.html tooltip="GraspSpeed" text="grasp animation speed" %} is 0.1, it means it takes 0.1 second starting from grasp triggering for the hand to form a complete {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} on the object.
 
-If {% include tooltip.html tooltip="ReleaseSpeed" text="release speed" %} is 0.2, it means it takes 0.2 second starting from release triggering for the hand to move from {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} on the object back to its {% include tooltip.html tooltip="SensorPose" text="sensor pose" %}.
+If {% include tooltip.html tooltip="ReleaseSpeed" text="release animation speed" %} is 0.1, it means it takes 0.1 second starting from release triggering for the hand to move from {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} on the object back to its {% include tooltip.html tooltip="SensorPose" text="sensor pose" %}.
 
-{% include tip.html content="For grasp speed, lower value means faster grasp, for release speed, lower value means faster release." %}
+{% include tip.html content="For grasp animation speed, lower value means faster grasp, for release animation speed, lower value means faster release." %}
 
-To learn more details on how to setup your objects' grasp interaction in practice, please see [VG_Interactable](unity_component_vginteractable.0.9.7.html#unity-component-vginteractable).
+{% include important.html content="For both grasp and release animation speed, there is a minimum allowed value. So any value specified in the GUI that is smaller than the min value will be clamped to this min value." %}
 
+### Throw Velocity Scale and Throw Angular Velocity Scale
+
+The two velocity scales allow you to scale up and down throwing power when an object is released from all grasping hands. 
+Throw Velocity Scale is to scale how fast object translate, while throw angular velocity scale is to scale how fast object rotate. 

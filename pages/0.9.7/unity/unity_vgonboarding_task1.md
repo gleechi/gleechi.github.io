@@ -17,8 +17,9 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 #### Interaction behaviors wanted
 
-* Push once a button stay in lowered position, light turn on
-* Push another time button come back to original position, light turns off
+* We want to implement a button without using any physical components, but only use VirtualGrasp's kinematic {% include tooltip.html tooltip="Joint" text="joints" %}.
+* Push once a button stay in lowered position, light turn on.
+* Push another time button come back to original position, light turns off.
 
 #### Tips for VR developers
 

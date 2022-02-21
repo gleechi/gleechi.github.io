@@ -117,7 +117,7 @@ Once an object is marked as {% include tooltip.html tooltip="VGInteractable" tex
 
 ## Grasp Interaction Settings
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction_0.9.7.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
 
 You can set the default [grasp Interaction](grasp_interaction.0.9.7.html#grasp-interaction) parameters for all objects in the scene globally in Grasp Interaction Settings.
 See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.0.9.7.html#grasp-interaction).
