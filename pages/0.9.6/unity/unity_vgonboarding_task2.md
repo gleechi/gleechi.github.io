@@ -6,6 +6,7 @@ keywords: casestudy, task2, vgonboarding, dissemble
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar_0_9_6
 permalink: unity_vgonboarding_task2.0.9.6.html
+redirect_from: unity_vgonboarding_task2.html
 folder: mydoc
 ---
 
