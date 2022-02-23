@@ -19,9 +19,9 @@ Each object has a {% include tooltip.html tooltip="Joint" text="joint" %} of a g
 |-------|--------|--------|---------|
 | Floating | 6 | unconstrained, freely floating object | 
 | Fixed | 0 | constrained, as if an integrated object with its parent | 
-| Revolute | 1 | constrained, rotate around an axis through a pivot point (joint center), limited by an angle range | 
-| Prismatic | 1 | constrained, move linearly along an axis through a pivot point (joint center), limited by an distance range | 
-| Cone | 3 | constrained, rotate around a pivot point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
+| Revolute | 1 | constrained, rotate around an axis through an anchor point (joint center), limited by an angle range | 
+| Prismatic | 1 | constrained, move linearly along an axis through an anchor point (joint center), limited by an distance range | 
+| Cone | 3 | constrained, rotate around an anchor point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
 
 For any joint type, there are a set of parameters to be used to configure the joint:
 
@@ -31,8 +31,8 @@ For any joint type, there are a set of parameters to be used to configure the jo
 | Max / Twist | upper limit of 1-dof joint, for cone joint, this is twist angle limit | if angular limit, unit in (degree) |
 | Screw Rate | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
 | Discrete States | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
-| Joint Center | around which position an object is rotating around, specified by the pivot transform's position | E.g. for cone joint, object will rotate round this point | 
-| Joint Axis | the axis specified by the pivot transform's _zaxis_ | E.g. for prismatic joint, object will move linearly along this axis | 
+| Joint Center | around which position an object is rotating around, specified by the anchor transform's position | E.g. for cone joint, object will rotate round this point | 
+| Joint Axis | the axis specified by the anchor transform's _zaxis_ | E.g. for prismatic joint, object will move linearly along this axis | 
 
 ### Joint State
 
@@ -51,27 +51,27 @@ The table below gives some example values of joint state to further clarify its 
 {% include callout.html content="Note that the joint limit [Min, Max] is essentially the limit range of the joint state; and the discrete states are where the joint state will clamp to when the object is released depending on [object affordances](#object-affordances)." %}
 
 
-### Pivot vs. Push Pivot
+### Anchor vs. Push Direction
 
 As shown in the joint parameter table above, an object's joint parameters include {% include tooltip.html tooltip="JointCenter" text="joint center" %} and {% include tooltip.html tooltip="JointAxis" text="joint axis" %}.
-These two parameters are provided in a combined way through a {% include tooltip.html tooltip="Pivot" text="pivot" %} transform in the game engine. 
+These two parameters are provided in a combined way through an {% include tooltip.html tooltip="Pivot" text="anchor" %} transform in the game engine. 
 
-Then what is **push pivot**? 
+Then what is **push direction**? 
 
-{% include tooltip.html tooltip="PushPivot" text="Push pivot" %} is provided to specify along which direction the hand is allowed to approach and apply push action. 
+{% include tooltip.html tooltip="PushPivot" text="Push direction" %} is provided to specify along which direction the hand is allowed to approach and apply push action. 
 And this is only relevant for [push without physics](push_interaction.0.9.7.html#push-without-physics) setup for push interaction.
 
-Similar to provide joint axis through pivot transform, we use push pivot transform's _zaxis_ to specify this push approach direction. 
+Similar to provide joint axis through anchor transform, we use push direction transform's _zaxis_ to specify this push approach direction. 
 
-{% include callout.html content="Push pivot is NOT specifying along which direction object moves, 
-but rather specifying a preferred hand approach direction which is only used for [pushable object selection](push_interaction.0.9.7.html#from-object-selection-to-push-without-physics). How object moves is defined by pivot together with other joint parameters." %}
+{% include callout.html content="Push direction is NOT specifying along which direction object moves, 
+but rather specifying a preferred hand approach direction which is only used for [pushable object selection](push_interaction.0.9.7.html#from-object-selection-to-push-without-physics). How object moves is defined by anchor together with other joint parameters." %}
 
-If {% include tooltip.html tooltip="PushPivot" text="push pivot" %} is not provided, then it will just inherit from the {% include tooltip.html tooltip="Pivot" text="pivot" %}, i.e. the push direction is same as the joint axis. 
+If {% include tooltip.html tooltip="PushPivot" text="push direction" %} is not provided, then it will just inherit from the {% include tooltip.html tooltip="Pivot" text="anchor" %}, i.e. the push direction is same as the joint axis. 
 
 {% include image.html file="unity/unity_button_pivot.png" alt="A Unity button." caption="A Unity button"%}
 The image above shows an example of setting up a button object that can be pushed from top by index finger. 
-In this case the {% include tooltip.html tooltip="PushPivot" text="push pivot" %}
-is the same as {% include tooltip.html tooltip="Pivot" text="pivot" %} because the preferred approach direction is same as the button movement direction.
+In this case the {% include tooltip.html tooltip="PushPivot" text="push direction" %}
+is the same as {% include tooltip.html tooltip="Pivot" text="anchor" %} because the preferred approach direction is same as the button movement direction.
 
 To learn more details of how to setup pushable object see [push interaction](push_interaction.0.9.7.html).
 

@@ -15,16 +15,18 @@ folder: mydoc
 ##### Major Functionality Changes:
 
 * Breaking change: Removed support of using VG_Articulation component with constrained {% include tooltip.html tooltip="Joint" text="joints" %} (non-FLOATING joint) on objects with Rigidbody. Developers are encouraged to use [Unity Joints](https://docs.unity3d.com/Manual/Joints.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) for physical joints.
+* Improved grasp interaction with physcal objects (objects with Rigidbody or ArticulationBody) and throwing physical objects. 
 
 ##### GUI / Component Changes:
 
 * In MyVirtualGrasp component, Global Grasp Interaction Settings changed variable name "Grasp Speed" to "Grasp Animation Speed" and "Release Speed" to "Release Animation Speed". And the minimum values for both are 0.01 second now.  (see [MyVirtualGrasp/GraspInteractionSettings](unity_component_myvirtualgrasp.0.9.7.html#grasp-interaction-settings)).
 * In MyVirtualGrasp component, Global Grasp Interaction Settings added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to control power of throw on grasped objects. 
-* Disabling VG_Articulation editing when Rigidbody is on object.
+* Disabling VG_Articulation editing when object has Rigidbody component.
+* "Pivot" changed to "Anchor" and "Push Pivot" changed to "Push Direction" in VG_Articulation component. 
 
 ##### API Changes:
 
-* OnObjectFullyReleased event
+* 
 
 ##### Other / Internal Changes:
 
@@ -33,7 +35,8 @@ folder: mydoc
 
 ##### Update to VG Core library 0.6.7:
 
-* tbd
+* Default hand pose animation is improved.
+
 
 ##### Known Issues:
 
