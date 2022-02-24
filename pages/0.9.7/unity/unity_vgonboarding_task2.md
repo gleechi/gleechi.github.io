@@ -38,8 +38,6 @@ In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp\Scene
 ```js
 VirtualGrasp\Scenes\onboarding\VG_Onboarding.unity
 ````
-is the unity scene showing how [VG_Articulation](unity_component_vgarticulation.0.9.7.html) component is used to setup antenna and knobs' articulation settings.
-
 
 ```js
 //VirtualGrasp\Scenes\onboarding\Scripts\ChangeSelectionWeight.cs:
@@ -47,7 +45,10 @@ is the unity scene showing how [VG_Articulation](unity_component_vgarticulation.
 using UnityEngine;
 using VirtualGrasp;
 
-[HelpURL("https://docs.virtualgrasp.com/unity_vgonboarding_task2.html")]
+/** 
+ * ChangeSelectionWeight shows as a tutorial on how to runtime change object
+ * selection weight to affect how easy an object can be selected for interaction with VG.
+ */
 public class ChangeSelectionWeight : MonoBehaviour
 {
     public Transform m_dependent_object;
@@ -89,7 +90,10 @@ Note, in this example, even when we don't tune up selection weights on the knobs
 using UnityEngine;
 using VirtualGrasp;
 
-[HelpURL("https://docs.virtualgrasp.com/unity_vgonboarding_task2.html")]
+/** 
+ * DissembleWithDistance shows as a tutorial on how to use the VG_Controller.ChangeObjectJoint
+ * function to dissemble parts that are initially non-physical objects.
+ */
 public class DissembleWithDistance : MonoBehaviour
 {
     public Transform new_parent;

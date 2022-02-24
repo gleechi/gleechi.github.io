@@ -35,7 +35,6 @@ In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp\Scene
 ```js
 VirtualGrasp\Scenes\onboarding\VG_Onboarding.unity
 ````
-is the unity scene showing how [VG_Articulation](unity_component_vgarticulation.0.9.7.html) component is used to setup this object's articulation settings.
 
 ```js
 //VirtualGrasp\Scenes\onboarding\Scripts\ToggleLight.cs:
@@ -43,6 +42,10 @@ is the unity scene showing how [VG_Articulation](unity_component_vgarticulation.
 using UnityEngine;
 using VirtualGrasp;
 
+/** 
+ * ToggleLight shows as a tutorial on a non-physical two-stage button setup 
+ * through VG_Articulation and how to use VG_Controller.GetObjectJointState to toggle light on and off. 
+ */
 public class ToggleLight : MonoBehaviour
 {
     public Light m_light = null;

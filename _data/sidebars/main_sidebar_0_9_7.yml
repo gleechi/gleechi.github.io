@@ -139,6 +139,9 @@ entries:
         - title: VG_Onboarding_Task4
           url: /unity_vgonboarding_task4.0.9.7.html
           output: web
+        - title: VG_Onboarding_Task5
+          url: /unity_vgonboarding_task5.0.9.7.html
+          output: web
       
   - title: References
     output: web

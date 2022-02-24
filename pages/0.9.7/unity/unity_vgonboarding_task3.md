@@ -34,9 +34,6 @@ In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp/Scene
 VirtualGrasp/Scenes/onboarding/VG_Onboarding.unity
 ````
 
-is the unity scene showing how plate and apple are setup with physical properties using Unity's rigid body and collider components
-and ManageContainerObject.cs script is attached to plate as the container object.
-
 ```js
 //VirtualGrasp/Scenes/onboarding/Scripts/ManageContainerObject.cs:
 
@@ -44,7 +41,11 @@ using System.Collections.Generic;
 using VirtualGrasp;
 using UnityEngine;
 
-[HelpURL("https://docs.virtualgrasp.com/unity_vgonboarding_task3.html")]
+/** 
+ * ManageContainerObject shows as a tutorial on how to use the VG_Controller.OnObjectFullyReleased
+ * and VG_Controller.OnObjectGrasped combined with Unity's physical joints to manage a 
+ * container object to hold the contained physical objects stably without falling off. 
+ */
 public class ManageContainerObject : MonoBehaviour
 {
     /// A set off objects that are actively colliding with this one.
@@ -148,6 +149,4 @@ public class ManageContainerObject : MonoBehaviour
     }
 }
 
-
 ````
-is the script showing how to use API function [ChangeObjectJoint](virtualgrasp_unityapi.0.9.7.html#changeobjectjoint) and [RecoverObjectJoint](virtualgrasp_unityapi.0.9.7.html#recoverobjectjoint) to attach and unattach the object to the plate. 

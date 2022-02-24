@@ -33,15 +33,17 @@ In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp/Scene
 VirtualGrasp/Scenes/onboarding/VG_Onboarding.unity
 ````
 
-is the unity scene showing how valve is setup with ArticulationBody components
-and AssembleArticulationBody.cs script is attached valve's mesh.
-
 ```js
 //VirtualGrasp/Scenes/onboarding/Scripts/AssembleArticulationBody.cs:
 
-// Copyright (C) 2014-2022 Gleechi AB. All rights reserved.
+using UnityEngine;
+using VirtualGrasp;
+using System.Collections.Generic;
 
-[HelpURL("https://docs.virtualgrasp.com/unity_vgonboarding_task4.html")]
+/** 
+ * AssembleArticulationBody shows as a tutorial on how to use VG to
+ * assemble and dissemble objects through Unity's ArticulationBody.
+ */
 public class AssembleArticulationBody : MonoBehaviour
 {
     public Transform m_newParent = null;
