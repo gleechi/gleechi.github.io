@@ -10,13 +10,13 @@ folder: mydoc
 
 VG_Articulation is an {% include tooltip.html tooltip="VGInternalScript" text="internal script" %} that provides the main interface to mark an object as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} (see [object identifiers](unity_get_started_objects.0.9.7.html#customizing-layers-and-component-names)), as well as to parametrize its [object articulation](object_articulation.0.9.7.html#object-articulation) and {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behavior" %}. 
 
-By default, the VG_articulation component sets an object to have floating {% include tooltip.html tooltip="JointType" text="joint type" %}. If an object is non-physical (i.e. no Rigidbody or ArticulationBody component), constraied (non-floating) joint types can be specified. 
+By default, the VG_articulation component sets an object to have floating {% include tooltip.html tooltip="JointType" text="joint type" %}. If an object is non-physical (i.e. no Rigidbody or ArticulationBody component), constrained (non-floating) joint types can be specified. 
 
 {% include image.html file="unity/unity_vg_articulation_default.png" alt="VG Articulation" caption="The default VG_Articulation Component (floating joint type)." %}
 
 As soon as you change the {% include tooltip.html tooltip="JointType" text="joint type" %}, the interface will change dynamically.
 
-{% include image.html file="unity/unity_vg_articulation_full.png" alt="VG Articulation" caption="VG_Articulation interface after changing to  prismatic joint type." %}
+{% include image.html file="unity/unity_vg_articulation_full_0.9.7.png" alt="VG Articulation" caption="VG_Articulation interface after changing to  prismatic joint type." %}
 
 All the parameters are explained in detail in [object articulation](object_articulation.0.9.7.html#object-articulation).
 
