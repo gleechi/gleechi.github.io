@@ -19,10 +19,10 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
-* In MyVirtualGrasp component, Global Grasp Interaction Settings changed variable name "Grasp Speed" to "Grasp Animation Speed" and "Release Speed" to "Release Animation Speed". And the minimum values for both are 0.01 second now.  (see [MyVirtualGrasp/GraspInteractionSettings](unity_component_myvirtualgrasp.0.10.0.html#grasp-interaction-settings)).
-* In MyVirtualGrasp component, Global Grasp Interaction Settings added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to control power of throw on grasped objects. 
-* Disabling VG_Articulation editing when object has Rigidbody component.
-* "Pivot" changed to "Anchor" and "Push Pivot" changed to "Push Direction" in VG_Articulation component. 
+* In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.10.0.html#grasp-interaction-settings) changed variable name "Grasp Speed" to "Grasp Animation Speed" and "Release Speed" to "Release Animation Speed". The default values for them are reduced to 0.05 (from 0.1) and 0.1 (from 0.2) second respectively to make grasp and release more snappy. The minimum values for both are reduced to 0.01 second (from 0.1 second).
+* In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.10.0.html#grasp-interaction-settings) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to control power of throw on grasped objects. 
+* In [VG_Articulation](unity_component_vgarticulation.0.10.0.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive.
+* [VG_Articulation](unity_component_vgarticulation.0.10.0.html#description) editing is disabled when object has Rigidbody component. (Was disabled when object has ArticulationBody component in version 0.9.6)
 
 ##### API Changes:
 
@@ -45,6 +45,7 @@ folder: mydoc
 
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small object may have unatural finger placement.
+* Index finger push gesture formation is not smooth when avatar is set to be physical.
 
 ## V0.9.6 (2022-02-15)
 
