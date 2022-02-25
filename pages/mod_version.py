@@ -8,6 +8,9 @@
 # @package check_header
 # This module checks copyright headers of all source files in a directory.
 
+# TODOS:
+# - automatic, proper handling of sidebar, topnav, release notes
+
 import os
 import sys
 import re
