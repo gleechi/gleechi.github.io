@@ -31,11 +31,14 @@ folder: mydoc
 ##### Other / Internal Changes:
 
 * Event handling bugfix: OnObjectFullyReleased do not trigger on objects that are not grasped. 
-* Onboarding scene added Task4 showcase VirtualGrasp's support of interaction with ArticulationBodys. 
+* Onboarding scene [Task3](unity_vgonboarding_task3.0.10.0.html) improved ManageContainerObject.cs script.
+* Onboarding scene added [Task4](unity_vgonboarding_task4.0.10.0.html) showcase VirtualGrasp's support of interaction with ArticulationBodys. 
+* Onboarding scene added [Task5](unity_vgonboarding_task5.0.10.0.html)  showcase VirtualGrasp's support of object assembly with VG_Articulation without rely on physics. 
 
-##### Update to VG Core library 0.6.7:
+##### Update to VG Core library 0.7.0:
 
 * Default hand pose animation is improved.
+* Dyamic Grasp rejection rate is improved. 
 
 
 ##### Known Issues:
