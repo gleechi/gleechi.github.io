@@ -23,23 +23,28 @@ folder: mydoc
 * In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.10.0.html#grasp-interaction-settings) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to control power of throw on grasped objects. 
 * In [VG_Articulation](unity_component_vgarticulation.0.10.0.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive.
 * [VG_Articulation](unity_component_vgarticulation.0.10.0.html#description) editing is disabled when object has Rigidbody component. (Was disabled when object has ArticulationBody component in version 0.9.6)
+* Made VG_MainScript abstract since one should only use a child class (such as MyVirtualGrasp).
+* Improved handling of AutoSetup when a VG_MainScript is created (such as adding a sensor instead of complaining it has not been added). 
 
 ##### API Changes:
 
-* 
+* No API changes in this release.
 
 ##### Other / Internal Changes:
 
 * Event handling bugfix: OnObjectFullyReleased do not trigger on objects that are not grasped. 
 * Onboarding scene [Task3](unity_vgonboarding_task3.0.10.0.html) improved ManageContainerObject.cs script.
 * Onboarding scene added [Task4](unity_vgonboarding_task4.0.10.0.html) showcase VirtualGrasp's support of interaction with ArticulationBodys. 
-* Onboarding scene added [Task5](unity_vgonboarding_task5.0.10.0.html)  showcase VirtualGrasp's support of object assembly with VG_Articulation without rely on physics. 
+* Onboarding scene added [Task5](unity_vgonboarding_task5.0.10.0.html) showcase VirtualGrasp's support of object assembly with VG_Articulation without rely on physics. 
+* Endpoints for CABVG cloud baking updated to new server.
+* Hidden affordances (such as after switching a VG_Articulation from revolute joint to fixed joint) are ignored as they should be.
+* Recording files added to StreamingAssets.
+* Bugfix when objects are moved to a different parent which has not been registered.
 
 ##### Update to VG Core library 0.7.0:
 
 * Default hand pose animation is improved.
 * Dyamic Grasp rejection rate is improved. 
-
 
 ##### Known Issues:
 
