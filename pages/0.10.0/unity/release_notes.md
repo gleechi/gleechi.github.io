@@ -38,14 +38,16 @@ folder: mydoc
 ##### Update to VG Core library 0.7.0:
 
 * Default hand pose animation is improved.
-* Dyamic Grasp rejection rate is improved. 
-
+* Dyamic Grasp rejection rate is improved.
+* Improved hand palm colliders for physical avatar.
+* Removed the controller hand offset when runtime change a grasped object's VG Articulation to FLOATING joint type.
 
 ##### Known Issues:
 
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small object may have unatural finger placement.
 * Index finger push gesture formation is not smooth when avatar is set to be physical.
+* Onboarding scene [Task2](unity_vgonboarding_task2.0.10.0.html) radio antenna's VG_Articulation CONE joint anchor transform is missing, causing rotating around wrong joint center. You can fix it by dragging AntennaPivot transform into Anchor in VirtualGrasp\Scenes\onboarding\VG onboarding scene. This will be fixed in next release.
 
 ## V0.9.6 (2022-02-15)
 
