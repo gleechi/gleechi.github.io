@@ -15,13 +15,13 @@ folder: mydoc
 ##### Major Functionality Changes:
 
 * Breaking change: Removed support of using VG_Articulation component with constrained {% include tooltip.html tooltip="Joint" text="joints" %} (non-FLOATING joint) on objects with Rigidbody. Developers are encouraged to use [Unity Joints](https://docs.unity3d.com/Manual/Joints.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) for physical joints.
+* Breaking change: in [VG_Articulation](unity_component_vgarticulation.0.10.0.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive. Due to the name change, the reference can be lost and need to be reassigned.
 * Improved grasp interaction with physcal objects (objects with Rigidbody or ArticulationBody) and throwing physical objects. 
 
 ##### GUI / Component Changes:
 
 * In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.10.0.html#grasp-interaction-settings) changed variable name "Grasp Speed" to "Grasp Animation Speed" and "Release Speed" to "Release Animation Speed". The default values for them are reduced to 0.05 (from 0.1) and 0.1 (from 0.2) second respectively to make grasp and release more snappy. The minimum values for both are reduced to 0.01 second (from 0.1 second).
 * In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.10.0.html#grasp-interaction-settings) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to control power of throw on grasped objects. 
-* In [VG_Articulation](unity_component_vgarticulation.0.10.0.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive.
 * [VG_Articulation](unity_component_vgarticulation.0.10.0.html#description) editing is disabled when object has Rigidbody component. (Was disabled when object has ArticulationBody component in version 0.9.6)
 * Made VG_MainScript abstract since one should only use a child class (such as MyVirtualGrasp).
 * Improved handling of AutoSetup when a VG_MainScript is created (such as adding a sensor instead of complaining it has not been added). 
