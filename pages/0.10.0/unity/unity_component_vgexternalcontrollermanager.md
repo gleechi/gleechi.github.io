@@ -42,7 +42,7 @@ controllers:
 * [VG_MouseHand](unity_vg_ec_mousehand.0.10.0.html) for Mouse control.
 * [VG_UnityXRHand](unity_vg_ec_unityxrhand.0.10.0.html) for all XR controllers that are supported through [UnityXR](https://docs.unity3d.com/Manual/XR.0.10.0.html).
 * [VG_OculusHand](unity_vg_ec_oculushand.0.10.0.html) for Oculus Finger Tracking which is supported through the Oculus SDK.
-* [VG_MouseHand](unity_vg_ec_leaphand.0.10.0.html) for LeapMotion controller which is supported through the Ultraleap SDK.
+* [VG_LeapHand](unity_vg_ec_leaphand.0.10.0.html) for LeapMotion controller which is supported through the Ultraleap SDK.
 * [VG_GenericHand](unity_vg_ec_generichand.0.10.0.html) as a fallback solution.
 
 While all these classes can serve as tutorials to understand how a VG_ExternalController can be setup, please refer to each particular page for further details on just that particular controller.

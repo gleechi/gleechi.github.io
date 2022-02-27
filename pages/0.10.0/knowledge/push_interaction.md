@@ -31,7 +31,7 @@ When push is done without physics, there need to be a way to decide which object
 VirtualGrasp does this through checking the geometric relation between a 
 {% include tooltip.html tooltip="PushAgent" text="push agent" %} and the object to be pushed. 
 To allow VR developers to be able to specify for example "This button can not be pushed from below", 
-{% include tooltip.html tooltip="PushPivot" text="push pivot" %} is added
+{% include tooltip.html tooltip="PushPivot" text="push direction" %} is added
 to the object to specify the preferred {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}
 by the {% include tooltip.html tooltip="PushAgent" text="push agent" %} for pushing this object. 
 
@@ -39,7 +39,7 @@ Given that
 * the {% include tooltip.html tooltip="PushAgent" text="push agent" %} has been assigned 
 (through set {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %} as INDEX_PUSHABLE),
 and
-* {% include tooltip.html tooltip="PushPivot" text="push pivot" %} is added to the object to be pushed, 
+* {% include tooltip.html tooltip="PushPivot" text="push direction" %} is added to the object to be pushed, 
 
 the decision on which of the pushable objects is selected for pushing is done by considering:
 
@@ -49,7 +49,7 @@ and
 
 {% include image.html file="unity/unity_button_pivot.png" alt="A Unity button." caption="A Unity button"%}
 
-For example image above shows the push pivot transform added to the red button. The blue arrow (zaxis of this transform) specifies
+For example image above shows the push direction transform added to the red button. The blue arrow (zaxis of this transform) specifies
 the {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}. 
 So when index finger is approaching from bottom to the button, opposite to the blue arrow, the object will not be selected for push.
 
@@ -64,13 +64,12 @@ Through VirtualGrasp's [object articulation](object_articulation.0.10.0.html#obj
 Using Unity game engine as an example, to create a pushable button, 
 you add the component [VG_Articulation](unity_component_vgarticulation.0.10.0.html) to the object, and the parameters shown in below image create a button that can be pushed by index finger, and will bounce alternatively to the two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">discrete states</a> when push is released (see [affordances](object_articulation.0.10.0.html#object-affordances)):
 
-{% include image.html file="unity/unity_vg_articulation_full.png" alt="VG Articulation" caption="VG_Articulation Component." %}
+{% include image.html file="unity/unity_vg_articulation_full_0.10.0.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
 * Since button is moving along a single axis linearly, we select the joint type to be PRISMATIC.
-* For PRISMATIC joint, we need to provide {% include tooltip.html tooltip="Pivot" text="pivot" %} which specifies the {% include tooltip.html tooltip="JointAxis" text="joint axis" %} along which object moves.
+* For PRISMATIC joint, we need to provide {% include tooltip.html tooltip="Pivot" text="anchor" %} which specifies the {% include tooltip.html tooltip="JointAxis" text="joint axis" %} along which object moves.
 * For PRISMATIC joint, we also need to provide {% include tooltip.html tooltip="JointLimit" text="joint limit" %}, i.e. a linear movement range between 0 and 0.014 meter. 
-* Since the pushable button's movement direction (by {% include tooltip.html tooltip="Pivot" text="pivot" %}) is same as the direction we want hand to approach for pushing, so we don't need to specify 
-a different {% include tooltip.html tooltip="PushPivot" text="push pivot" %}.
+* Since the pushable button's movement direction (by {% include tooltip.html tooltip="Pivot" text="anchor" %}) is same as the direction we want hand to approach for pushing, so we don't need to specify a different {% include tooltip.html tooltip="PushPivot" text="push direction" %}.
 * For push without physics, you need to select {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %} as INDEX_PUSHABLE.
 * To let object bounce back alternatively to two stages when push is release, you need to set the {% include tooltip.html tooltip="StateAffordance" text="state affordance" %} to be {% include tooltip.html tooltip="TwoStage" text="TWO_STAGE" %}. 
 * To let object bounce back NOT to the lower boundary of the {% include tooltip.html tooltip="JointLimit" text="joint limit" %} (min = 0), but to slightly lower position, we set two {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} with first value 0.004 (>min).
