@@ -29,6 +29,8 @@ You can identify that VG has been successfully initialized when a message like t
 {% if include.skip != "true" %}
 #### QuickStart Video
 
+{% include warning.html content="The video below has been recorded for an outdated version of the SDK ([0.7.0](release_notes.0.9.6.html#v070-2021-09-17)). The process has been simplified with any newer version since (see [release notes](release_notes.html)). Please refer to the text instructions in this Getting Started guide for accurate guidelines." %}
+
 {% include youtube.html id="CHo9TB_yYps" caption="QuickStart with VirtualGrasp in Unity." %}
 
 <!--{% include custom/series_acme_next.html %}-->
