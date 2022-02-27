@@ -50,10 +50,13 @@ folder: mydoc
 
 ##### Known Issues:
 
+* Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported by VirtualGrasp 0.10.0.
+* Since Unity 2020 version [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) does not have variable "computeParentAnchor", onboarding scene [Task4](unity_vgonboarding_task4.0.10.0.html)'s script VirtualGrasp/Scenes/onboarding/Scripts/AssembleArticulationBody.cs will have compilation error in this unity version. This will be fixed in next patch release.
+* Onboarding scene [Task2](unity_vgonboarding_task2.0.10.0.html) radio antenna and two knob's VG_Articulation anchor transform is missing, causing rotating around wrong joint center. This will be fixed in next patch release.
+* Bug: when two avatars are registered, grasping a physical object can not pick the object up. This will be fixed in next patch release.
+* Index finger push gesture formation is not smooth when avatar is set to be physical.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small object may have unatural finger placement.
-* Index finger push gesture formation is not smooth when avatar is set to be physical.
-* Onboarding scene [Task2](unity_vgonboarding_task2.0.10.0.html) radio antenna's VG_Articulation CONE joint anchor transform is missing, causing rotating around wrong joint center. You can fix it by dragging AntennaPivot transform into Anchor in VirtualGrasp\Scenes\onboarding\VG onboarding scene. This will be fixed in next release.
 
 ## V0.9.6 (2022-02-15)
 

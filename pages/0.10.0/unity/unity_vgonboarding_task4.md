@@ -101,7 +101,11 @@ public class AssembleArticulationBody : MonoBehaviour
             transform.SetPositionAndRotation(m_desiredPose.position, m_desiredPose.rotation);
             transform.SetParent(m_newParent);
             m_this_ab.jointType = m_jointType;
-            m_this_ab.matchAnchors = false;
+#if UNITY_2021_2_OR_NEWER
+            m_this_ab.matchAnchors = m_matchAnchors;
+#else
+            m_this_ab.computeParentAnchor = m_matchAnchors;
+#endif
             m_this_ab.anchorPosition = m_anchorPosition;
             m_this_ab.anchorRotation = Quaternion.Euler(m_anchorRotation);
             m_this_ab.parentAnchorPosition = m_parentAnchorPosition;
