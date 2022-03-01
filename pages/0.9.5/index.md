@@ -3,7 +3,6 @@ title: "Welcome to VirtualGrasp Documentation"
 version: 0.9.5
 sidebar: main_sidebar_0_9_5
 permalink: index.0.9.5.html
-redirect_from: index.html
 ---
 
 VirtualGrasp (VG) is a software development kit (SDK) developed from over eight years of research in robotics, healthcare and industrial applications.
