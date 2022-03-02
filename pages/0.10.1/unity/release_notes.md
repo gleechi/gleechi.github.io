@@ -51,6 +51,7 @@ folder: mydoc
 
 ##### Known Issues:
 
+* AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.10.1.html#vg_externalcontroller-class) you like to use.
 * Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported.
 * Index finger push gesture formation is not smooth when avatar is set to be physical.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
