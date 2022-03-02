@@ -52,10 +52,11 @@ public class AssembleArticulationBody : MonoBehaviour
     public float m_disassembleDistance = 0.5f;
 
     public ArticulationJointType m_jointType = ArticulationJointType.FixedJoint;
+    public bool m_matchAnchors = true;
     public Vector3 m_anchorPosition = Vector3.zero;
-    public Vector3 m_anchorRotation = new Vector3(90, 90, 0);
-    public Vector3 m_parentAnchorPosition = new Vector3(0.298f, 0.158f, 0.268f);
-    public Vector3 m_parentAnchorRotation = new Vector3(90, 90, 0);
+    public Vector3 m_anchorRotation = Vector3.zero;
+    public Vector3 m_parentAnchorPosition = Vector3.zero;
+    public Vector3 m_parentAnchorRotation = Vector3.zero;
 
     private ArticulationBody m_this_ab;
     private ArticulationBody m_parent_ab;
@@ -130,6 +131,7 @@ public class AssembleArticulationBody : MonoBehaviour
         }
     }
 }
+
 
 
 ````

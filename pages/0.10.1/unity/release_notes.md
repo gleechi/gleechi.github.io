@@ -12,15 +12,11 @@ folder: mydoc
 
 ## V0.10.1 (2022-03-01)
 
-We'll fill in cool stuff here very soon :) 
-
-## V0.10.0 (2022-02-25)
-
 ##### Major Functionality Changes:
 
 * Breaking change: Removed support of using VG_Articulation component with constrained {% include tooltip.html tooltip="Joint" text="joints" %} (non-FLOATING joint) on objects with Rigidbody. Developers are encouraged to use [Unity Joints](https://docs.unity3d.com/Manual/Joints.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) for physical joints.
 * Breaking change: in [VG_Articulation](unity_component_vgarticulation.0.10.1.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive. Due to the name change, the reference can be lost and need to be reassigned.
-* Improved grasp interaction with physcal objects (objects with Rigidbody or ArticulationBody) and throwing physical objects. 
+* More stable grasp interaction with physical objects (objects with Rigidbody or ArticulationBody) and better throwing experiences. 
 
 ##### GUI / Component Changes:
 
@@ -29,6 +25,7 @@ We'll fill in cool stuff here very soon :)
 * [VG_Articulation](unity_component_vgarticulation.0.10.1.html#description) editing is disabled when object has Rigidbody component. (Was disabled when object has ArticulationBody component in version 0.9.6)
 * Made VG_MainScript abstract since one should only use a child class (such as MyVirtualGrasp).
 * Improved handling of AutoSetup when a VG_MainScript is created (such as adding a sensor instead of complaining it has not been added). 
+* [MyVirtualGrasp/Avatars](unity_component_myvirtualgrasp.0.10.1.html#avatars) added "Replay" check to indicate if this avatar is to be used for sensor replay. If not checked, it will be controlled by sensor / controller. 
 
 ##### API Changes:
 
@@ -54,10 +51,7 @@ We'll fill in cool stuff here very soon :)
 
 ##### Known Issues:
 
-* Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported by VirtualGrasp 0.10.1.
-* Since Unity 2020 version [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) does not have variable "computeParentAnchor", onboarding scene [Task4](unity_vgonboarding_task4.0.10.1.html)'s script VirtualGrasp/Scenes/onboarding/Scripts/AssembleArticulationBody.cs will have compilation error in this unity version. This will be fixed in next patch release.
-* Onboarding scene [Task2](unity_vgonboarding_task2.0.10.1.html) radio antenna and two knob's VG_Articulation anchor transform is missing, causing rotating around wrong joint center. This will be fixed in next patch release.
-* Bug: when two avatars are registered, grasping a physical object can not pick the object up. This will be fixed in next patch release.
+* Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported.
 * Index finger push gesture formation is not smooth when avatar is set to be physical.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small object may have unatural finger placement.
