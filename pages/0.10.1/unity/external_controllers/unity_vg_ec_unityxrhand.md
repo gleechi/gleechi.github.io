@@ -17,6 +17,12 @@ The following requirements have to be met to be able to enable the #define USE_U
 
 After this, use the "UNITY_XR" option to [AutoSetup](unity_component_myvirtualgrasp.0.10.1.html#autosetup) your VG configuration.
 
+### AutoSetup
+
+* will set "External" to "UnityXR"
+* will set "FingerControlType" to "BY_ANIMATION"
+* will set "Origin" to the transform called "XRRig"
+
 ## Functionality
 
 ### Hand Poses

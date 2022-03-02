@@ -19,7 +19,13 @@ The following requirements have to be met to be able to enable the #define USE_L
  * You have the corresponding [LeapMotion SDK](https://developer.leapmotion.com/sdk-leap-motion-controller/) installed on your computer.
  
  After this, use the "LEAP_EXT" option to [AutoSetup](unity_component_myvirtualgrasp.0.10.1.html#autosetup) your VG configuration.
- 
+
+### AutoSetup
+
+* will set "External" to "LeapHand"
+* will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"
+* will set "Origin" to the transform called "VR_LeapOriginExt"
+
 ### Hand Poses
 All finger bones are mapped.
 

@@ -25,6 +25,12 @@ The following requirements have to be met to be able to enable the #define USE_O
 
 After this, use the "OCULUS_FT" option to [AutoSetup](unity_component_myvirtualgrasp.0.10.1.html#autosetup) your VG configuration.
  
+### AutoSetup
+
+* will set "External" to "OculusHand"
+* will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"
+* will set "Origin" to the transform called "XRRig"
+
 ## Functionality
 
 ### Hand Poses
