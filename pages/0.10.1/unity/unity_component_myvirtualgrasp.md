@@ -31,7 +31,7 @@ In the majority of use cases only 1 single sensor is used.
 
 As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor.
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_0_10_1.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
 
 ### AutoSetup
 
@@ -54,7 +54,7 @@ In most cases you will have only one avatar in your scene that is controlled by 
         </div>
         <div id="collapseOne1" class="panel-collapse collapse noCrossRef">
             <div class="panel-body">
-                <img src="/images/unity/unity_vg_myvirtualgrasp.png">
+                <img src="/images/unity/unity_vg_myvirtualgrasp_0_10_1.png">
             </div>
         </div>
     </div>
@@ -71,6 +71,7 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 |-------|--------|
 | Model | should be HUMANOID_HAND in most application use cases. There could also be robotic hand options, but they will not be discussed here. | 
 | SkeletalMesh| used to provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VG during runtime. | 
+| Replay | enable this if you want to use this avatar for replay recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.10.1.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.10.1.html).|
 | Remote | enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.0.10.1.html), or the [VG_Networking Component](unity_component_vgnetworing.0.10.1.html).| 
 | Physical | enable this if you want VG to create colliders for this avatar and enable the hand for physical interactions. NOTE: at the moment, this option is experimental and should not be used apart from testing.| 
 
@@ -117,7 +118,7 @@ Once an object is marked as {% include tooltip.html tooltip="VGInteractable" tex
 
 ## Grasp Interaction Settings
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction_0.10.1.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction_0_10_0.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
 
 You can set the default [grasp Interaction](grasp_interaction.0.10.1.html#grasp-interaction) parameters for all objects in the scene globally in Grasp Interaction Settings.
 See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.0.10.1.html#grasp-interaction).

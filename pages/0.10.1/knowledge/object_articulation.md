@@ -104,5 +104,5 @@ The purpose of this feature is to simulate a heavy object that need more hands t
 The image below shows Unity's [VG_Articulation](unity_component_vgarticulation.0.10.1.html) component used to setup all parameters of object articulation.
 Note that the VG_Articulation is generic for all other client engines like Unreal.
 
-{% include image.html file="unity/unity_vg_articulation_full_0.10.1.png" alt="VG Articulation" caption="VG_Articulation Component." %}
+{% include image.html file="unity/unity_vg_articulation_full_0_10_0.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 

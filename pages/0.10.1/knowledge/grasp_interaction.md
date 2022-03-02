@@ -172,7 +172,7 @@ Due to the nature of each option, there may be preferences of how to combine the
 
 ### Grasp Animation Speed and Release Animation Speed
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction_0.10.1.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction_0_10_0.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings" %}
 In global grasp interaction settings, you can set the default {% include tooltip.html tooltip="GraspSynthesisMethod" text="synthesis method" %} and {% include tooltip.html tooltip="InteractionType" text="interaction type" %} for all objects in the scene globally. 
 The other two parameters -- {% include tooltip.html tooltip="GraspSpeed" text="grasp animation speed" %} and {% include tooltip.html tooltip="ReleaseSpeed" text="release animation speed" %} -- also significantly affect the user experiences because they determines how fast the hand forms grasp and releases from grasp respectively. 
 

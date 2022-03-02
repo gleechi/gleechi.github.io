@@ -12,10 +12,6 @@ folder: mydoc
 
 ## V0.10.1 (2022-03-01)
 
-We'll fill in cool stuff here very soon :) 
-
-## V0.10.0 (2022-02-25)
-
 ##### Major Functionality Changes:
 
 * Breaking change: Removed support of using VG_Articulation component with constrained {% include tooltip.html tooltip="Joint" text="joints" %} (non-FLOATING joint) on objects with Rigidbody. Developers are encouraged to use [Unity Joints](https://docs.unity3d.com/Manual/Joints.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) for physical joints.
@@ -54,10 +50,7 @@ We'll fill in cool stuff here very soon :)
 
 ##### Known Issues:
 
-* Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported by VirtualGrasp 0.10.1.
-* Since Unity 2020 version [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) does not have variable "computeParentAnchor", onboarding scene [Task4](unity_vgonboarding_task4.0.10.1.html)'s script VirtualGrasp/Scenes/onboarding/Scripts/AssembleArticulationBody.cs will have compilation error in this unity version. This will be fixed in next patch release.
-* Onboarding scene [Task2](unity_vgonboarding_task2.0.10.1.html) radio antenna and two knob's VG_Articulation anchor transform is missing, causing rotating around wrong joint center. This will be fixed in next patch release.
-* Bug: when two avatars are registered, grasping a physical object can not pick the object up. This will be fixed in next patch release.
+* Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported.
 * Index finger push gesture formation is not smooth when avatar is set to be physical.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small object may have unatural finger placement.
