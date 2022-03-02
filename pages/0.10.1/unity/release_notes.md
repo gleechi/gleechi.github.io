@@ -16,7 +16,7 @@ folder: mydoc
 
 * Breaking change: Removed support of using VG_Articulation component with constrained {% include tooltip.html tooltip="Joint" text="joints" %} (non-FLOATING joint) on objects with Rigidbody. Developers are encouraged to use [Unity Joints](https://docs.unity3d.com/Manual/Joints.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) for physical joints.
 * Breaking change: in [VG_Articulation](unity_component_vgarticulation.0.10.1.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive. Due to the name change, the reference can be lost and need to be reassigned.
-* Improved grasp interaction with physcal objects (objects with Rigidbody or ArticulationBody) and throwing physical objects. 
+* More stable grasp interaction with physical objects (objects with Rigidbody or ArticulationBody) and better throwing experiences. 
 
 ##### GUI / Component Changes:
 
@@ -25,6 +25,7 @@ folder: mydoc
 * [VG_Articulation](unity_component_vgarticulation.0.10.1.html#description) editing is disabled when object has Rigidbody component. (Was disabled when object has ArticulationBody component in version 0.9.6)
 * Made VG_MainScript abstract since one should only use a child class (such as MyVirtualGrasp).
 * Improved handling of AutoSetup when a VG_MainScript is created (such as adding a sensor instead of complaining it has not been added). 
+* [MyVirtualGrasp/Avatars](unity_component_myvirtualgrasp.0.10.1.html#avatars) added "Replay" check to indicate if this avatar is to be used for sensor replay. If not checked, it will be controlled by sensor / controller. 
 
 ##### API Changes:
 
