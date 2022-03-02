@@ -22,6 +22,7 @@ After this, use the "UNITY_XR" option to [AutoSetup](unity_component_myvirtualgr
 * will set "External" to "UnityXR"
 * will set "FingerControlType" to "BY_ANIMATION"
 * will set "Origin" to the transform called "XRRig"
+* will set "Offset-Position" to (-0.045, -0.1, -0.03) and "Offset-Rotation" to (23.7, 91.63, 92.7)
 
 ## Functionality
 
