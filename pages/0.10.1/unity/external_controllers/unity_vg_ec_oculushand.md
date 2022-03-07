@@ -27,9 +27,10 @@ After this, use the "OCULUS_FT" option to [AutoSetup](unity_component_myvirtualg
  
 ### AutoSetup
 
-* will set "External" to "OculusHand"
+* will set "External" to "QuestHand"
 * will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"
 * will set "Origin" to the transform called "XRRig"
+* will set all "Offset" values to 0.
 
 ## Functionality
 
