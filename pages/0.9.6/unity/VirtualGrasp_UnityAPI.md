@@ -3,7 +3,6 @@ title: Unity API
 sidebar: main_sidebar_0_9_6
 keywords: grasp, baking, cabvg
 permalink: virtualgrasp_unityapi.0.9.6.html
-permalink: unity_api.html
 folder: unity
 toc: true
 ---
