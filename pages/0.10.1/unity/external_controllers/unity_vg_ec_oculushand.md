@@ -6,26 +6,31 @@ permalink: unity_vg_ec_oculushand.0.10.1.html
 folder: mydoc/external_controllers
 ---
 
+## Description 
+
 {% include external_controller.html %}
 
-## Description 
+## Setup 
 
 This is an external controller class that supports the Oculus Finger Tracking controller as an external controller.
 
-The following requirements have to be met to be able to enable the #define USE_OCULUS_CONTROLLER in the VG_EC_OculusHand.cs file and use the controller:
+{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **USE_OCULUS_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation)." %}
+
+The following requirements have to be met to be able to use this controller:
+
  * You have the [Oculus SDK](https://www.oculus.com/setup/) installed on your computer.
  * You have the [Oculus Integration Plugin](https://developer.oculus.com/downloads/package/unity-integration/) imported into your Unity project.
- * You have the same Oculus Integration plugin version as the one on your headset AND Oculus App.
- * You have setup the AndroidManifest.xml properly, i.e. they need to include<br>
+ * You have the same Oculus Integration plugin version as the one on your headset and the Oculus App.
+ * You have setup the AndroidManifest.xml properly, i.e. it needs to include<br>
  
 	```js
- 		\<uses-permission android:name="com.oculus.permission.HAND_TRACKING" /\><br>
- 		\<uses-feature android:name="oculus.software.handtracking" android:required="false" /\>
+	\<uses-permission android:name="com.oculus.permission.HAND_TRACKING" /\>
+	\<uses-feature android:name="oculus.software.handtracking" android:required="false" /\>
 	````
 
-After this, use the "OCULUS_FT" option to [AutoSetup](unity_component_myvirtualgrasp.0.10.1.html#autosetup) your VG configuration.
- 
 ### AutoSetup
+
+Finally, you can use the "OCULUS_FT" option to [AutoSetup](unity_component_myvirtualgrasp.0.10.1.html#autosetup) your VG configuration. For this controller, AutoSetup 
 
 * will set "External" to "QuestHand"
 * will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"

@@ -6,18 +6,25 @@ permalink: unity_vg_ec_unityxrhand.0.10.1.html
 folder: mydoc/external_controllers
 ---
 
+## Description
+
 {% include external_controller.html %}
 
-## Description 
+## Setup 
 
 This is an external controller class that supports a [UnityXR](https://docs.unity3d.com/Manual/XR.0.10.1.html) controller (such as provided by Pico or Oculus integrations) as an external controller.
  
-The following requirements have to be met to be able to enable the #define USE_UNITYXR_CONTROLLER above and use the controller:
+{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **USE_UNITYXR_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation)." %}
+
+The following requirements have to be met to be able to use this controller:
+
  * You have the Unity XR Management package installed into your Unity project.
 
-After this, use the "UNITY_XR" option to [AutoSetup](unity_component_myvirtualgrasp.0.10.1.html#autosetup) your VG configuration.
-
 ### AutoSetup
+
+Finally, you can the "UNITY_XR" option to [AutoSetup](unity_component_myvirtualgrasp.0.10.1.html#autosetup) your VG configuration.
+
+For this controller, AutoSetup 
 
 * will set "External" to "UnityXR"
 * will set "FingerControlType" to "BY_ANIMATION"

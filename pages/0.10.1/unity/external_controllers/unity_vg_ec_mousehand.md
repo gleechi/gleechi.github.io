@@ -6,9 +6,11 @@ permalink: unity_vg_ec_mousehand.0.10.1.html
 folder: mydoc/external_controllers
 ---
 
+## Description
+
 {% include external_controller.html %}
 
-## Description 
+## Setup 
 
 This is an external controller class that supports a Mouse controller as an external controller.
 
