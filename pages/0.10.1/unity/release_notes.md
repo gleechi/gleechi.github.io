@@ -56,10 +56,10 @@ folder: mydoc
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.10.1.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.10.1.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 * After an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose.
 * Grasping and sliding a physical object on another object with collider shows obvious non-smooth behavior due to some artificial manipulation of object velocities. 
+* AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.10.1.html#vg_externalcontroller-class) you like to use.
 
 ##### Known Issues:
 
-* AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.10.1.html#vg_externalcontroller-class) you like to use.
 * Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small objects may have unatural finger placement.
