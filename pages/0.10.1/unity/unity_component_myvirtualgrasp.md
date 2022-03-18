@@ -71,10 +71,12 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 |-------|--------|
 | Model | should be HUMANOID_HAND in most application use cases. There could also be robotic hand options, but they will not be discussed here. | 
 | SkeletalMesh| used to provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VG during runtime. | 
-| Replay | enable this if you want to use this avatar for replay recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.10.1.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.10.1.html).|
-| Remote | enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.0.10.1.html), or the [VG_Networking Component](unity_component_vgnetworing.0.10.1.html).| 
+| Replay | enable this if you want to use this avatar for replay recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.10.1.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.10.1.html). This is a feature that is not available in the free version. |
+| Remote | This is a placeholder for advanced multiplayer support for hand interaction that we are working on towards a stable version.  This is a feature that is not available in the free version. | 
 | Physical | enable this if you want VG to create colliders for this avatar and enable the hand for physical interactions. NOTE: at the moment, this option is experimental and should not be used apart from testing.| 
 
+
+<!--enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.0.10.1.html), or the [VG_Networking Component](unity_component_vgnetworing.0.10.1.html).-->
 <!--Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.10.1.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.10.1.html).-->
 
 ### Sensor
