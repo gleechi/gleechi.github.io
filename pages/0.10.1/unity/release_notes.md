@@ -63,7 +63,7 @@ folder: mydoc
 * Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small objects may have unatural finger placement.
-* When add a [VG_Articulation](unity_component_vgarticulation.0.10.1.html#description) component to a game object, even if it is disabled (unchecked) in Unity inspector, it still marks this game object as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}. And even if this disabled VG_Articulation choose {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}.  
+* If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.10.1.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
 
 
 ## V0.9.6 (2022-02-15)
