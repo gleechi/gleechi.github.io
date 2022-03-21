@@ -22,6 +22,8 @@ All the parameters are explained in detail in [object articulation](object_artic
 
 {% include multiple_script.html %}
 
+{% include callout.html content="If you add multiple VG_Articulation components to one game object, the first active component will be used to configure your initial object articulation." %}
+
 ## Runtime Changes
 
 Regardless of what is the initial setting of an object's articulation, you can change the object's articulation parameters in runtime 
