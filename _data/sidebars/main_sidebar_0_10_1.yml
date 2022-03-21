@@ -30,6 +30,9 @@ entries:
       output: web
     - title: Object Setup
       url: /unity_get_started_objects.0.10.1.html
+      output: web      
+    - title: Build Setup
+      url: /unity_get_started_build.0.10.1.html
       output: web
       
   - title: Explanations
