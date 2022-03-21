@@ -10,6 +10,52 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
+## V0.11.0_pre-release (2022-03-24)
+
+##### Major Functionality Changes:
+
+* Breaking change: Removed support of using VG_Articulation component with constrained {% include tooltip.html tooltip="Joint" text="joints" %} (non-FLOATING joint) on objects with Rigidbody. Developers are encouraged to use [Unity Joints](https://docs.unity3d.com/Manual/Joints.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) for physical joints.
+* Breaking change: in [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive. Due to the name change, the reference can be lost and need to be reassigned.
+* More stable grasp interaction with physical objects (objects with Rigidbody or ArticulationBody) and better throwing experiences. 
+
+##### GUI / Component Changes:
+
+* [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) editing discrete state and State affordance are hiden when joint type is not 1-dof joint (Revolute or Prismatic); and DualHand is hiden when Interaction affordance is index push.
+
+##### API Changes:
+
+* [GetObjectJointState](virtualgrasp_unityapi.0.11.0.html#getobjectjointstate) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointState will be invalid.
+* [GetObjectJointType](virtualgrasp_unityapi.0.11.0.html#getobjectjointtype) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointType will be invalid.
+
+
+##### Other / Internal Changes:
+
+* Event handling bugfix: OnObjectFullyReleased do not trigger on objects that are not grasped. 
+* Bugfix when objects are moved to a different parent which has not been registered.
+
+##### Update to VG Core library 0.7.0:
+
+* Default hand pose animation is improved.
+* Dyamic Grasp rejection rate is improved.
+* Improved hand palm colliders for physical avatar.
+* Removed the controller hand offset when runtime change a grasped object's VG Articulation to FLOATING joint type.
+
+##### Known Issues (To Be Fixed In Next Release)
+
+* Index finger push gesture formation is not smooth when avatar is set to be physical.
+* [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.0.html#jumpgraspobject) call.
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.11.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+* After an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose.
+* Grasping and sliding a physical object on another object with collider shows obvious non-smooth behavior due to some artificial manipulation of object velocities. 
+* AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.0.html#vg_externalcontroller-class) you like to use.
+
+##### Known Issues:
+
+* Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported.
+* Dynamic Grasp sometimes has unnaturally large thumb extention. 
+* Grasps on small objects may have unatural finger placement.
+* If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
+
 ## V0.10.1 (2022-03-01)
 
 ##### Major Functionality Changes:
