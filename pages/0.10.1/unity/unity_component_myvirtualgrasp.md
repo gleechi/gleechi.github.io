@@ -15,8 +15,6 @@ MyVirtualGrasp is a {% include tooltip.html tooltip="VGPublicScript" text="publi
 
 In Unity, VG_MainScript inherits from Monobehavior so you can use it as a component on a GameObject.
 
-In the VirtualGrasp SDK, you can find the Prefab “GleechiLib” from the ThirdParty/VirtualGrasp/Resources directory that has been configured with the MyVirtualGrasp component. You can simply drag and drop this into your scene. In your Hierarchy view, you will see the instantiated GameObject -- GleechiLib.
-
 On this page, we are going to describe all the major configuration options covered in MyVirtualGrasp.cs.
 
 ## AutoSetup & Sensors
