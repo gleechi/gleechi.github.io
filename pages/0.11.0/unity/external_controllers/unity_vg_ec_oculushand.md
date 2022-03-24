@@ -14,7 +14,7 @@ folder: mydoc/external_controllers
 
 This is an external controller class that supports the Oculus Finger Tracking controller as an external controller.
 
-{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **USE_OCULUS_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation)." %}
+{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **VG_USE_OCULUS_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation) OR activate the same define in VG_EC_OculusHand.cs." %}
 
 The following requirements have to be met to be able to use this controller:
 
@@ -32,7 +32,7 @@ The following requirements have to be met to be able to use this controller:
 
 Finally, you can use the "OCULUS_FT" option to [AutoSetup](unity_component_myvirtualgrasp.0.11.0.html#autosetup) your VG configuration. For this controller, AutoSetup 
 
-* will set "External" to "QuestHand"
+* will set "External" to "OculusHand"
 * will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"
 * will set "Origin" to the transform called "XRRig"
 * will set all "Offset" values to 0.
