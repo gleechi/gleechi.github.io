@@ -16,7 +16,7 @@ By default, the VG_articulation component sets an object to have floating {% inc
 
 As soon as you change the {% include tooltip.html tooltip="JointType" text="joint type" %}, the interface will change dynamically.
 
-{% include image.html file="unity/unity_vg_articulation_full_0_10_0.png" alt="VG Articulation" caption="VG_Articulation interface after changing to  prismatic joint type." %}
+{% include image.html file="unity/unity_vg_articulation_full_0_11_0.png" alt="VG Articulation" caption="VG_Articulation interface after changing to  prismatic joint type." %}
 
 All the parameters are explained in detail in [object articulation](object_articulation.0.11.0.html#object-articulation).
 
