@@ -17,7 +17,7 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
-* [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) editing discrete state and State affordance are hiden when joint type is not 1-dof joint (Revolute or Prismatic); and DualHand is hiden when Interaction affordance is index push.
+* [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) some major improvements on GUI interface (@kai not sure what to describe on Ronald's many changes. Also not sure if this is Breaking change because don't know if some previous project that specified some values will be lost or not.).
 
 ##### API Changes:
 
@@ -34,9 +34,10 @@ folder: mydoc
 * Improved grasping and sliding a physical object on another object with collider. Note however still Unity physical material with smaller friction should be used for desired sliding behaviors.
 * Onboarding scene added [Task6](unity_vgonboarding_task6.0.11.0.html) showcase VirtualGrasp's newly added support of Planar {% include tooltip.html tooltip="Joint" text="joint" %}. 
 
-##### Update to VG Core library 0.7.0:
+##### Update to VG Core library 0.8.0:
 
 * Bugfix for physical avatar index finger push gesture formation is not smooth.
+* Improved pinch grasp on small objects.
 
 ##### Known Issues (To Be Fixed In Next Release)
 
@@ -48,8 +49,6 @@ folder: mydoc
 ##### Known Issues:
 
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
-* Grasps on small objects may have unatural finger placement.
-
 
 ## V0.10.1 (2022-03-01)
 
