@@ -6,11 +6,15 @@
 
 ### Installing the Unity Engine plugin
 
-If you start from scratch, just create a new, empty project in Unity. It is recommended to always use the most recent Unity version in terms of major version number (e.g., 2020.x.x, 2021.x.x, etc). Unity and the VirtualGrasp SDK are very robust in terms of up- or downgrading inside a major version for your projects.
+If you start from scratch, just create a new, empty project in Unity. It is recommended to always use the most recent Unity version in terms of major version number (e.g., 2020.x.x, 2021.x.x, etc). Unity and the VirtualGrasp SDK are very robust in terms of up- or downgrading inside a major Unity version for your projects.
 
 {% include image.html file="unity/unity_new_project.png" alt="New Unity Project" caption="Create a New Project in Unity" %}
 
 To import VirtualGrasp into your Unity project, go to Assets → Import Package → Custom Package and import the VirtualGrasp *.unitypackage. After doing this, you should find the main VirtualGrasp installation under ThirdParty/VirtualGrasp in your Unity project. 
+
+### Updating the Unity Engine plugin
+
+If you are updating the VG SDK in your project, it we **strongly recommend to remove the old version before importing the new one**, to avoid clutter of old files. The whole VG SDK is placed into a single folder (by default ThirdParty/VirtualGrasp) to make the update process as convenient as possible for you. If you are customizing files inside the VG SDK, you should backup your old state or use a versioning system such as git.
 
 ### Getting Started with VirtualGrasp and the Console View
 

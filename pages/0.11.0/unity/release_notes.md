@@ -13,26 +13,38 @@ folder: mydoc
 ## V0.11.0-pre (2022-03-24)
 
 ##### Major Functionality Changes:
-* Tbd
+
+* Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly.
 
 ##### GUI / Component Changes:
 
-* [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) some major improvements on GUI interface (@kai not sure what to describe on Ronald's many changes. Also not sure if this is Breaking change because don't know if some previous project that specified some values will be lost or not.).
+* AutoSetup was fixed again after it broke in 0.10.1.
+* [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) has been overhauled as a dynamic component to improve user experience. 
+* AutoSetup string for Oculus finger tracking was changed from "QuestHand" to "OculusHand" to conform with the file names and avoid confusion.
+* Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.
 
 ##### API Changes:
 
 * Breaking change: [GetObjectJointState](virtualgrasp_unityapi.0.11.0.html#getobjectjointstate) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointState will be invalid.
 * Breaking change: [GetObjectJointType](virtualgrasp_unityapi.0.11.0.html#getobjectjointtype) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointType will be invalid.
 * Added [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.11.0.html#getobjectsecondaryjointstate) which provide {% include tooltip.html tooltip="JointState" text="joint state" %} along yaxis of joint anchor for planar {% include tooltip.html tooltip="Joint" text="joint" %}. 
+* GetAvatarID() added to receive the ID of an avatar.
+* GetSensorControlledAvatarID() added to receive the ID of the sensor-controlled avatar.
+* GetReplayAvatarID() added to receive the ID of the replay avatar (if replaying is supported by the VG version).
+* UnregisterAvatarAtRuntime() added to allow deleting avatars.
+* OnGraspTriggered event added.
 
 ##### Other / Internal Changes:
 
+* All #defines that enable controllers with dependencies on third party plugins have been prefixed with VG_ (e.g., USE_LEAP_CONTROLLER is now VG_USE_LEAP_CONTROLLER) to avoid conflicts with non-VG defines.
+* When trying to use an controller but not enabling its #define (e.g., VG_USE_LEAP_CONTROLLER), an error message is presented.
 * Bugfix on [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.0.html#jumpgraspobject) call.
 * Bugfix on after an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose.
 * Bugfix on AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.0.html#vg_externalcontroller-class) you like to use.
-
+* Internal object handling management was improved.
+* Further performance optimization of selecting which objects need to be synced between Unity and VG.
 * Improved grasping and sliding a physical object on another object with collider. Note however still Unity physical material with smaller friction should be used for desired sliding behaviors.
-* Onboarding scene added [Task6](unity_vgonboarding_task6.0.11.0.html) showcase VirtualGrasp's newly added support of Planar {% include tooltip.html tooltip="Joint" text="joint" %}. 
+* Onboarding scene added [Task6](unity_vgonboarding_task6.0.11.0.html) to showcase VirtualGrasp's newly added support of Planar {% include tooltip.html tooltip="Joint" text="joints" %}. 
 
 ##### Update to VG Core library 0.8.0:
 
@@ -40,7 +52,6 @@ folder: mydoc
 * Improved pinch grasp on small objects.
 
 ##### Known Issues (To Be Fixed In Next Release)
-
 
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.11.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
