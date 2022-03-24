@@ -79,6 +79,8 @@ TwistAngle: For 3-dof Cone joint, this is an angle describes how much the object
 
 JointState: The status of a 1-dof joint (PRISMATIC or REVOLUTE), which can be represented by a single scalar value in the range of JointLimit; value 0 corresponds to the zero pose of the joint defined by the initial pose of the object.
 
+SecondaryJointState: The status of a PLANAR joint along the yaxis of anchor transform; value 0 corresponds to the zero pose of the joint defined by the initial pose of the object.
+
 DiscreteStates: The parameter for object articulation only relevant for 1-dof joints (PRISMATIC and REVOLUTE), and they are a set of N (N>=2) joint state values in the range of JointLimit; they are needed for State Affordances (BOUNCE, TWO_STAGE, SNAPS) which, when hand releases from the object, will pin the object into one of these discrete states. 
 
 ScrewRate: A parameter for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation, in unit (cm / degree); if > 0 will turn a Revolute joint into a ScrewJoint.
@@ -87,7 +89,7 @@ JointCenter: The center point of an object's joint, around which an object is ro
 
 JointAxis: The axis of the joint, specified by the Pivot transform’s position; for Revolute joint the axis around which the object rotates; for Prismatic joint the axis along which the object translate; for Cone joint the axis in the center of the cone representing zero swing angle.
 
-Pivot: A transform needed to specify the JointCenter (position) and JointAxis (zaxis) of an object Joint.
+Pivot: A transform needed to specify the JointCenter (position) and JointAxis (zaxis) of an object Joint; for PLANAR joint (xaxis, yaxis) are used to define rectangular limit space on the plane.
 
 PushPivot: A transform to specify along which direction (zaxis) the hand can approach and push an object that has push affordance; this direction is not the direction of object movement, but only used for object selection for [push without physics](push_interaction.html#push-without-physics).
 

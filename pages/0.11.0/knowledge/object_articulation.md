@@ -58,6 +58,10 @@ The table below gives some example values of joint state to further clarify its 
 
 {% include callout.html content="Note that the joint limit [Min, Max] is essentially the limit range of the joint state; and the discrete states are where the joint state will clamp to when the object is released depending on [object affordances](#object-affordances)." %}
 
+If an object has planar joint, then there are {% include tooltip.html tooltip="JointState" text="joint state" %} and {% include tooltip.html tooltip="SecondaryJointState" text="secondary joint state" %} representing the position of object along _xaxis_ and _yaxis_ of the {% include tooltip.html tooltip="Pivot" text="anchor" %} transform. 
+
+{% include tip.html content="You can use [GetObjectJointState](virtualgrasp_unityapi.0.11.0.html#getobjectjointstate) and [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.11.0.html#getobjectsecondaryjointstate) to get current joint state and secondary joint state (in the case of PLANAR joint) respectively." %}
+ 
 
 ### Anchor vs. Push Direction
 
