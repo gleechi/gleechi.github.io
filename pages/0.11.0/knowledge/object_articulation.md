@@ -20,19 +20,27 @@ Each object has a {% include tooltip.html tooltip="Joint" text="joint" %} of a g
 | Floating | 6 | unconstrained, freely floating object | 
 | Fixed | 0 | constrained, as if an integrated object with its parent | 
 | Revolute | 1 | constrained, rotate around an axis through an anchor point (joint center), limited by an angle range | 
-| Prismatic | 1 | constrained, move linearly along an axis through an anchor point (joint center), limited by an distance range | 
+| Prismatic | 1 | constrained, move linearly along an axis through an anchor point (joint center), limited by an distance range |
+| Planar | 2 | constrained, move on a plane defined by anchor point and anchor's zaxis as plane normal, limited by a rectangular shaped range defined along anchor's x and y axes | 
 | Cone | 3 | constrained, rotate around an anchor point limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone) |
 
 For any joint type, there are a set of parameters to be used to configure the joint:
 
-| Parameters | Description | Additional features |
-|-------|--------|---------|
-| Min / Swing | lower limit of 1-dof joint, for cone joint, this is swing angle limit | if angular limit, unit in (degree)|
-| Max / Twist | upper limit of 1-dof joint, for cone joint, this is twist angle limit | if angular limit, unit in (degree) |
-| Screw Rate | only valid for Revolute joint, describing how much the object linearly move along the axis given every degree of rotation | In unit (cm/degree) | 
-| Discrete States | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | Same unit as the limits | 
-| Joint Center | around which position an object is rotating around, specified by the anchor transform's position | E.g. for cone joint, object will rotate round this point | 
-| Joint Axis | the axis specified by the anchor transform's _zaxis_ | E.g. for prismatic joint, object will move linearly along this axis | 
+| Parameters | Description |
+|-------|--------|
+| Min | lower limit of 1-dof joint, i.e. revolute or prismatic joint. |
+| Max | upper limit of 1-dof joint, i.e. revolute or prismatic joint. |
+| Min x | lower limit of planar joint, along _xaxis_ of anchor transform. |
+| Max x| upper limit of planar joint, along _xaxis_ of anchor transform. |
+| Min y| lower limit of planar joint, along _yaxis_ of anchor transform. |
+| Max y| upper limit of planar joint, along _yaxis_ of anchor transform. |
+| Swing | swing angle limit for cone joint. |
+| Twist | twist angle limit for cone joint. |
+| Screw Rate | only valid for revolute joint, describing how much the object linearly move along the axis given every degree of rotation, in unit (cm/degree). | 
+| Discrete States | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | 
+| Joint Center | around which position an object is rotating around, specified by the anchor transform's position. | 
+| Joint Axis | the axis specified by the anchor transform's _zaxis_. For revolute joint, this defines rotation axis, for prismatic joint, object move linearly along this axis, for cone joint this defines center of the core shape limit range, for planar joint, this is normal of the plane. |
+| Joint Axis2 | the secondary axis specified by the anchor transform's _xaxis_, which defines orientation of planar joint's rectangular shaped limit space. |
 
 ### Joint State
 
@@ -104,5 +112,5 @@ The purpose of this feature is to simulate a heavy object that need more hands t
 The image below shows Unity's [VG_Articulation](unity_component_vgarticulation.0.11.0.html) component used to setup all parameters of object articulation.
 Note that the VG_Articulation is generic for all other client engines like Unreal.
 
-{% include image.html file="unity/unity_vg_articulation_full_0_10_0.png" alt="VG Articulation" caption="VG_Articulation Component." %}
+{% include image.html file="unity/unity_vg_articulation_full_0_11_0.png" alt="VG Articulation" caption="VG_Articulation Component." %}
 
