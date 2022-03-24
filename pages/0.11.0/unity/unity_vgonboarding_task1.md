@@ -58,9 +58,14 @@ public class ToggleLight : MonoBehaviour
 
     void Update()
     {
-        float state = VG_Controller.GetObjectJointState(transform);
-        if (state == m_articulation.m_min) m_light.enabled = false;
-        else if (state == m_articulation.m_max) m_light.enabled = true;
+        float state;
+        VG_Controller.GetObjectJointState(transform, out state);
+
+        float disable_state = (m_articulation.m_discreteStates.Count == 0) ? m_articulation.m_min : m_articulation.m_discreteStates[0];
+        if (state == disable_state) 
+            m_light.enabled = false;
+        else if (state == m_articulation.m_max)
+            m_light.enabled = true;
     }
 }
 

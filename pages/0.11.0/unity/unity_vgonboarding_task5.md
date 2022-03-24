@@ -13,7 +13,7 @@ We have a series of VG onboarding tasks to show how to tackle different practica
 
 ### Task Description
 
-{% include youtube.html id="qIvdxcs3Xq8" %}
+{% include youtube.html id="TJ5T67fv6ys" %}
 
 #### Interaction behaviors wanted
 
