@@ -157,6 +157,8 @@ Different articulated joint types supported by VG.
 
 ### VG_PhysicalBy
 
+An enum to specify if an object is physical, and if physical by which unity component.
+
 |NotPhysical|If object is not physical|
 |RigidBody|If object is physical due to attached rigid body|
 |ArticulationBody|If object is physical due to attached articulation body|
