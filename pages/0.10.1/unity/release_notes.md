@@ -29,7 +29,7 @@ folder: mydoc
 
 ##### API Changes:
 
-* Breaking change: VG_Controller.SetProcessedByFrame() function is removed. If you want to set an avatar for sensor replay, you can specify the avatar for replay by checking _Replay_ in [MyVirtualGrasp](unity_component_myvirtualgrasp.0.10.1.html#autosetup--sensors). 
+* Breaking change: VG_Controller.SetProcessedByFrame() function is removed. If you want to set an avatar for sensor replay, you can specify the avatar for replay by checking _Replay_ in [MyVirtualGrasp](unity_component_myvirtualgrasp.0.10.1.html#autosetup--sensors) component. 
 
 ##### Other / Internal Changes:
 
