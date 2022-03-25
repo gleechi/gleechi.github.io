@@ -31,8 +31,7 @@ folder: mydoc
 * GetAvatarID() added to receive the ID of an avatar.
 * GetSensorControlledAvatarID() added to receive the ID of the sensor-controlled avatar.
 * GetReplayAvatarID() added to receive the ID of the replay avatar (if replaying is supported by the VG version).
-* UnregisterAvatarAtRuntime() added to allow deleting avatars.
-* OnGraspTriggered event added.
+* UnregisterAvatarAtRuntime() added to allow deleting avatars. (This is most relevant for multiplayer case.)
 
 ##### Other / Internal Changes:
 
