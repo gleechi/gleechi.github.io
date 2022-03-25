@@ -3,7 +3,6 @@ title: Unity API
 sidebar: main_sidebar_0_11_0
 keywords: grasp, baking, cabvg
 permalink: virtualgrasp_unityapi.0.11.0.html
-redirect_from: unity_api.html
 folder: unity
 toc: true
 ---
@@ -152,8 +151,8 @@ Different articulated joint types supported by VG.
 |PRISMATIC|prismatic joint constrained along an axis, such as drawer|
 |FIXED|fixed, not-moveable joint|
 |FLOATING|floating, unconstrained joint|
+|PLANAR|planar joint; up to here consistent with joint types in URDF, all 1-DOF joint|
 |CONE|3-DOF ball and socket joint modeled with cone joint limit|
-|UNKNOWN_JOINTTYPE|Unknown joint type|
 
 
 ### VG_PhysicalBy
@@ -206,6 +205,8 @@ ReturnCode for various VirtualGrasp functions.Most functions in this API provide
 |OBJECT_NO_BAKE|Failed in processing function because a baking process failed / there is no bake at all.|
 |LOAD_GRASP_DB_FAILED|Failed to pass a grasp db file into the library and process it.|
 |SAVE_GRASP_DB_FAILED|Failed to export the internal grasp db to a file.|
+|UNKNOWN_AVATAR||
+|AVATAR_BLOCKED||
 
 
 ### VG_SelectObjectMethod
@@ -359,18 +360,30 @@ Return the avatar/hand pairs that are currently grasping a specified object.
 
 ### GetObjectJointState
 
-Returns the joint state (current value) of an articulated object.
+Get the current joint state of a single-dof articulated object. For planar joint, the joint state along xaxis of the joint anchor.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
-| **returns** | _float_ | [selectedObject]'s current articulation value.|
+| _out float_ |jointState|The returned joint state. Will be set to 0.0f upon error|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
 ### GetObjectJointType
 
-Return an object's original or current joint type.
+Get object's original or current joint type.
 
-| _Transform_ |selectedObject|The object to get the joint type for.|
-| _bool_ |original|If True, return the original joint type, otherwise return the current.|
+| _Transform_ |selectedObject|The object to get the current joint state value for.|
+| _bool_ |original|If true, get the original joint type, otherwise the current type.|
+| _out VG_JointType_ |jointType|The returned joint type. Will be set to FLOATING upon error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint type fetch. VG_ReturnCode.ARGUMENT_ERROR when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+
+
+### GetObjectSecondaryJointState
+
+Get the current secondary joint state along yaxis of joint anchor for planar articulated object.
+
+| _Transform_ |selectedObject|The object to get the current joint state value for.|
+| _out float_ |secondaryJointState|The returned secondary joint state. Will be set to 0.0f upon error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
 ### GetSelectableObjects
@@ -490,6 +503,14 @@ Reset the plugin.
 
 
 
+### GetAvatarID
+
+Return the AvatarID of the given avatar.
+
+| _SkinnedMeshRenderer_ |avatar|The avatar to get its AvatarID|
+| **returns** |[VG_ReturnCode](#vg_returncode) | the AvatarID|
+
+
 ### GetDebugPath
 
 Return the path where VG stores debug files.
@@ -511,6 +532,17 @@ Receive a specific hand and its status.
 Receive an enumerator of all registered hands and their status.
 
 | **returns** | _List\<VG_HandStatus\>_ | Enumerator over VG_HandStatus.|
+
+
+### GetSensorControlledAvatarID
+
+Return the AvatarID of the first sensor controlled avatar.
+
+| **returns** |[VG_ReturnCode](#vg_returncode) | the AvatarID|
+
+Remark
+ No guarantee on returning the one that was first registered
+
 
 
 ### Initialize
@@ -562,6 +594,13 @@ Release the plugin.
 
 Save the object hierarchy debug state. This is done automatically when closing VirtualGrasp.
 
+
+
+### UnRegisterAvatarAtRuntime
+
+Unregister avatar during runtime
+
+| _int_ |avatarID|avatar id to be unregistered.|
 
 
 
@@ -959,6 +998,17 @@ Remark
 
 ## [RECORDING_INTERFACE_API](#)
 
+### GetReplayAvatarID
+
+Return the AvatarID of the first replay avatar.
+
+| **returns** |[VG_ReturnCode](#vg_returncode) | the AvatarID|
+
+Remark
+ No guarantee on returning the one that was first registered as replay avatar
+
+
+
 ### GetReplayStartWristPose
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
@@ -998,17 +1048,6 @@ Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 Load recorded sensor data from a file, but do not start replay
 
 | _string_ |filename|The filename to load the recording from.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.0.11.0.html)
-
-
-### SetProcessByRecordedFrame
-Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
-
-Enable or disable a specific avatar to replay a recording.
-
-| _int_ |avatarID|The avatar to set to replay mode.|
-| _bool_ |setToRecording|True = enable; False = disable|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.11.0.html)
 
