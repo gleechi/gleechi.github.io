@@ -14,7 +14,7 @@ folder: mydoc
 
 ##### Major Functionality Changes:
 
-* Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly.
+* Breaking change: Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly. Check out [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.0.html#getsensorcontrolledavatarid), [GetReplayAvatarID](virtualgrasp_unityapi.0.11.0.html#getreplayavatarid), and [GetAvatarID](virtualgrasp_unityapi.0.11.0.html#getavatarid). 
 
 ##### GUI / Component Changes:
 

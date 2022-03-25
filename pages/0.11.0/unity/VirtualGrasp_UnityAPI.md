@@ -505,10 +505,10 @@ Reset the plugin.
 
 ### GetAvatarID
 
-Return the AvatarID of the given avatar.
+Get the AvatarID of the given skinned mesh renderer
 
-| _SkinnedMeshRenderer_ |avatar|The avatar to get its AvatarID|
-| **returns** |[VG_ReturnCode](#vg_returncode) | the AvatarID|
+| _out int_ |avatarID|The returned AvatarID.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.INVALID_AVATAR if avatar is null.|
 
 
 ### GetDebugPath
@@ -536,12 +536,13 @@ Receive an enumerator of all registered hands and their status.
 
 ### GetSensorControlledAvatarID
 
-Return the AvatarID of the first sensor controlled avatar.
+Get the AvatarID of the first sensor controlled avatar.
 
-| **returns** |[VG_ReturnCode](#vg_returncode) | the AvatarID|
+| _out int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 Remark
- No guarantee on returning the one that was first registered
+ No guarantee on returning the one that was first sensor controlled avatar
 
 
 
@@ -1000,9 +1001,10 @@ Remark
 
 ### GetReplayAvatarID
 
-Return the AvatarID of the first replay avatar.
+Get the AvatarID of the first replay avatar.
 
-| **returns** |[VG_ReturnCode](#vg_returncode) | the AvatarID|
+| _out int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 Remark
  No guarantee on returning the one that was first registered as replay avatar
