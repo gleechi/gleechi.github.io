@@ -77,9 +77,9 @@ SwingAngle: For 3-dof Cone joint, this is an angle describes how much object swi
 
 TwistAngle: For 3-dof Cone joint, this is an angle describes how much the object is rotating around its swinged away axis.
 
-JointState: The status of a 1-dof joint (PRISMATIC or REVOLUTE), which can be represented by a single scalar value in the range of JointLimit; value 0 corresponds to the zero pose of the joint defined by the initial pose of the object.
+JointState: The state of a 1-dof joint (PRISMATIC or REVOLUTE), or the state along anchor's xaxis of the PLANAR joint, which can be represented by a single scalar value in the range of JointLimit; value 0 corresponds to the zero pose of the joint defined by the initial pose of the object.
 
-SecondaryJointState: The status of a PLANAR joint along the yaxis of anchor transform; value 0 corresponds to the zero pose of the joint defined by the initial pose of the object.
+SecondaryJointState: The state along anchor's yaxis of the PLANAR joint; value 0 corresponds to the zero pose of the joint defined by the initial pose of the object.
 
 DiscreteStates: The parameter for object articulation only relevant for 1-dof joints (PRISMATIC and REVOLUTE), and they are a set of N (N>=2) joint state values in the range of JointLimit; they are needed for State Affordances (BOUNCE, TWO_STAGE, SNAPS) which, when hand releases from the object, will pin the object into one of these discrete states. 
 
@@ -120,6 +120,8 @@ Fixed: A completely constrained JointType, an object won't be moved relative to 
 Revolute: A constrained 1-dof rotational JointType, object rotates around an axis through a pivot point (JointCenter), limited by an angle range.
 
 Prismatic: A constrained 1-dof translational JointType, object moves linearly along an axis, limited by an distance range. 
+
+Planar: A constrained 2-dof translational JointType, object moves along a defined planary surface, limited by a rectangular shaped area.
 
 Cone: A constrained 3-dof rotational JointType, object rotates around a pivot point (JointCenter) limited by a cone limit, parameterized by a swing limit angle that determines the cone size, and twist limit angle that determines how much the object can rotate around the axis (center axis of the cone)
 
