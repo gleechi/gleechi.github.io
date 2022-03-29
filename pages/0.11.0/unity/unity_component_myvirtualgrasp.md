@@ -116,14 +116,14 @@ VirtualGrasp is using names to identify which objects are marked as {% include t
 Once an object is marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}, it will be supported by VG's [grasp](grasp_interaction.0.11.0.html) and [push](push_interaction.0.11.0.html) interactions. 
 -->
 
-## Grasp Interaction Settings
+## Global Grasp Interaction Settings
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction_0_10_0.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction_0_11_0.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
 
-You can set the default [grasp Interaction](grasp_interaction.0.11.0.html#grasp-interaction) parameters for all objects in the scene globally in Grasp Interaction Settings.
+You can set the default [grasp Interaction](grasp_interaction.0.11.0.html#grasp-interaction) parameters for all objects in the scene globally in Global Grasp Interaction Settings.
 See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.0.11.0.html#grasp-interaction).
 
-{% include callout.html content= "Note that Synthesis Method and Interaction Type can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.0.11.0.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global settings for that object." %} 
+{% include callout.html content= "Note that Synthesis Method, Interaction Type, Throw Velocity Scale and Throw Angular Velocity Scale can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.0.11.0.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global settings for that object." %} 
 
 
 <!--### Selection Settings

@@ -22,12 +22,13 @@ folder: mydoc
 * [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) has been overhauled as a dynamic component to improve user experience. 
 * AutoSetup string for Oculus finger tracking was changed from "QuestHand" to "OculusHand" to conform with the file names and avoid confusion.
 * Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.
-
+* **Formal release**: [VG_Interactable](unity_component_vginteractable.0.11.0.html) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to allow specifying object-specific throwing power that overwrite those set in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.11.0.html#global-grasp-interaction-settings).
 ##### API Changes:
 
 * Breaking change: [GetObjectJointState](virtualgrasp_unityapi.0.11.0.html#getobjectjointstate) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointState will be invalid.
 * Breaking change: [GetObjectJointType](virtualgrasp_unityapi.0.11.0.html#getobjectjointtype) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointType will be invalid.
 * Added [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.11.0.html#getobjectsecondaryjointstate) which provide {% include tooltip.html tooltip="JointState" text="joint state" %} along yaxis of joint anchor for planar {% include tooltip.html tooltip="Joint" text="joint" %}. 
+* **Formal release**: Added [SetGlobalThrowVelocityScale], [SetThrowVelocityScaleForSelectedObject], [SetThrowVelocityScaleForObject], [SetGlobalThrowAngularVelocityScale], [SetThrowAngularVelocityScaleForSelectedObject], [SetThrowAngularVelocityScaleForObject] api functions. 
 * GetAvatarID() added to receive the ID of an avatar.
 * GetSensorControlledAvatarID() added to receive the ID of the sensor-controlled avatar.
 * GetReplayAvatarID() added to receive the ID of the replay avatar (if replaying is supported by the VG version).
