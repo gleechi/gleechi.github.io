@@ -2,9 +2,11 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                     <img src="{{ "images/company_logo.png" }}" width="50" style="padding-left: 10px;float:right;" alt="Company logo"/>
-               &copy;{{ site.time | date: "%Y"  }} {{site.company_name}}. All rights reserved. <br>
-                {% if page.last_updated %}<span>Page last updated:</span> {{page.last_updated}}<br/>{% endif %} Site last generated: {{ site.time | date: "%b %-d, %Y"  }} 
-
+               &copy;{{ site.time | date: "%Y"  }} {{site.company_name}}. All rights reserved. 
+                {% if page.last_updated %}<span>Page last updated:</span> {{page.last_updated}}{% endif %}  Site last generated: {{ site.time | date: "%b %-d, %Y"  }}.<br/>
+                For question, comments and feedback, use lightweight support form or mail <a href="mailto:support@gleechi.com?subject=VG Support">support@gleechi.com</a>.
                 </div>
             </div>
 </footer>
+
+{% include support-form.html %}
