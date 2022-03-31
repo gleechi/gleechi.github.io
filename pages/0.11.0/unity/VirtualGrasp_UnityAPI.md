@@ -814,6 +814,28 @@ Remark
 |[*VG_SynthesisMethod*](#vg_synthesismethod) | synthesisMethod|The method to switch to for all objects.|
 
 
+### SetGlobalThrowAngularVelocityScale
+
+Set the global throw angular velocity scale. The throw angular velocity scale defines how powerful the throw is in terms of rotation movement.
+
+
+Remark
+ This will overwrite the specific throw angular velocity scale (see SetThrowAngularVelocityScaleForObject) for all objects.
+
+| _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
+
+
+### SetGlobalThrowVelocityScale
+
+Set the global throw velocity scale. The throw velocity scale defines how powerful the throw is in terms of linear movement.
+
+
+Remark
+ This will overwrite the specific throw velocity scale (see SetThrowVelocityScaleForObject) for all objects.
+
+| _float_ |throwVelocityScale|The throw translational velocity scale.|
+
+
 ### SetInteractionTypeForObject
 
 Set the interaction type for a selected object. The interaction type defines how the hand and the object should get together during a grasp.
@@ -862,6 +884,56 @@ Remark
 | _int_ |avatarID|The avatar which is selecting an object.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which is selecting an object.|
 |[*VG_SynthesisMethod*](#vg_synthesismethod) | synthesisMethod|The synthesis method to switch to for the object that is selected by the [side] hand of avatar [avatarID].|
+
+
+### SetThrowAngularVelocityScaleForObject
+
+Set the throw angular velocity scale for a selected object. The throw angular velocity scale defines how powerful the throw is in terms of rotation movement.
+
+
+Remark
+ This will overwrite the global throw angular velocity scale (see SetGlobalThrowAngularVelocityScale) for that object.
+
+| _Transform_ |selectedObject|The object to modify the throw velocity scale for.|
+| _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
+
+
+### SetThrowAngularVelocityScaleForSelectedObject
+
+Set the throw angular velocity scale for a selected object. The throw angular velocity scale defines how powerful the throw is in terms of rotation movement.
+
+
+Remark
+ This will overwrite the global throw angular velocity scale (see SetGlobalThrowAngularVelocityScale) for that object.
+
+| _int_ |avatarID|The avatar which is selecting an object.|
+|[*VG_HandSide*](#vg_handside) | side|The hand which is selecting an object.|
+| _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
+
+
+### SetThrowVelocityScaleForObject
+
+Set the throw velocity scale for a selected object. The throw velocity scale defines how powerful the throw is in terms of linear movement.
+
+
+Remark
+ This will overwrite the global throw velocity scale (see SetGlobalThrowVelocityScale) for that object.
+
+| _Transform_ |selectedObject|The object to modify the throw velocity scale for.|
+| _float_ |throwVelocityScale|The throw translational velocity scale.|
+
+
+### SetThrowVelocityScaleForSelectedObject
+
+Set the throw velocity scale for a selected object. The throw velocity scale defines how powerful the throw is in terms of linear movement.
+
+
+Remark
+ This will overwrite the global throw velocity scale (see SetGlobalThrowVelocityScale) for that object.
+
+| _int_ |avatarID|The avatar which is selecting an object.|
+|[*VG_HandSide*](#vg_handside) | side|The hand which is selecting an object.|
+| _float_ |throwVelocityScale|The throw translational velocity scale.|
 
 
 
