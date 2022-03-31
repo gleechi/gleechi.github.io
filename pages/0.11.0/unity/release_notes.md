@@ -62,9 +62,13 @@ folder: mydoc
 
 * If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
 
-* If game object's pivot is far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.11.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
+* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.11.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
+
+* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
 
 * Calling [VG_Controller.SetAvatarActive(sensorAvatarID, false, false)](virtualgrasp_unityapi.0.11.0.html#setavataractive) is not making hand disappear at the spot, but visibaly translate to the world origin. 
+
+* If two hands trigger grasp on a physical object at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
 
 ##### Known Issues:
 
