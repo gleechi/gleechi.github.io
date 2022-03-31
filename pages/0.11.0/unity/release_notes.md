@@ -22,7 +22,7 @@ folder: mydoc
 * [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) has been overhauled as a dynamic component to improve user experience. 
 * AutoSetup string for Oculus finger tracking was changed from "QuestHand" to "OculusHand" to conform with the file names and avoid confusion.
 * Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.
-* **Formal release**: [VG_Interactable](unity_component_vginteractable.0.11.0.html) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to allow specifying object-specific throwing power that overwrite those set in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.11.0.html#global-grasp-interaction-settings).
+* [VG_Interactable](unity_component_vginteractable.0.11.0.html) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to allow specifying object-specific throwing power that overwrite those set in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.11.0.html#global-grasp-interaction-settings).
 
 
 ##### API Changes:
@@ -30,11 +30,11 @@ folder: mydoc
 * **Breaking change**: [GetObjectJointState](virtualgrasp_unityapi.0.11.0.html#getobjectjointstate) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointState will be invalid.
 * **Breaking change**: [GetObjectJointType](virtualgrasp_unityapi.0.11.0.html#getobjectjointtype) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointType will be invalid.
 * Added [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.11.0.html#getobjectsecondaryjointstate) which provide {% include tooltip.html tooltip="JointState" text="joint state" %} along yaxis of joint anchor for planar {% include tooltip.html tooltip="Joint" text="joint" %}. 
-* **Formal release**: Added api functions to set velocity scales for throwing: [SetGlobalThrowVelocityScale](virtualgrasp_unityapi.0.11.0.html#setglobalthrowvelocityscale), [SetThrowVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.0.html#setthrowvelocityscaleforselectedobject), [SetThrowVelocityScaleForObject](virtualgrasp_unityapi.0.11.0.html#setthrowvelocityscaleforobject), [SetGlobalThrowAngularVelocityScale](virtualgrasp_unityapi.0.11.0.html#setglobalthrowangularvelocityscale), [SetThrowAngularVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.0.html#setthrowangularvelocityscaleforselectedobject), [SetThrowAngularVelocityScaleForObject](virtualgrasp_unityapi.0.11.0.html#setthrowangularvelocityscaleforobject). 
-* GetAvatarID() added to receive the ID of an avatar.
-* GetSensorControlledAvatarID() added to receive the ID of the sensor-controlled avatar.
-* GetReplayAvatarID() added to receive the ID of the replay avatar (if replaying is supported by the VG version).
-* UnregisterAvatarAtRuntime() added to allow deleting avatars. (This is most relevant for multiplayer case.)
+* Added api functions to set velocity scales for throwing: [SetGlobalThrowVelocityScale](virtualgrasp_unityapi.0.11.0.html#setglobalthrowvelocityscale), [SetThrowVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.0.html#setthrowvelocityscaleforselectedobject), [SetThrowVelocityScaleForObject](virtualgrasp_unityapi.0.11.0.html#setthrowvelocityscaleforobject), [SetGlobalThrowAngularVelocityScale](virtualgrasp_unityapi.0.11.0.html#setglobalthrowangularvelocityscale), [SetThrowAngularVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.0.html#setthrowangularvelocityscaleforselectedobject), [SetThrowAngularVelocityScaleForObject](virtualgrasp_unityapi.0.11.0.html#setthrowangularvelocityscaleforobject). 
+* Added [GetAvatarID](virtualgrasp_unityapi.0.11.0.html#getavatarid) to receive the ID of an avatar.
+* Added [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.0.html#getsensorcontrolledavatarid) to receive the ID of the sensor-controlled avatar.
+* Added [GetReplayAvatarID](virtualgrasp_unityapi.0.11.0.html#getreplayavatarid) to receive the ID of the replay avatar (if replaying is supported by the VG version).
+* Added [UnregisterAvatarAtRuntime](virtualgrasp_unityapi.0.11.0.html#unregisteravataratruntime) to allow deleting avatars. (This is most relevant for multiplayer use case.)
 
 ##### Other / Internal Changes:
 
