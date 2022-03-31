@@ -47,6 +47,7 @@ folder: mydoc
 * Further performance optimization of selecting which objects need to be synced between Unity and VG.
 * Improved grasping and sliding a physical object on another object with collider. Note however still Unity physical material with smaller friction should be used for desired sliding behaviors. (**fixed known issue from 0.10.1**)
 * Onboarding scene added [Task6](unity_vgonboarding_task6.0.11.0.html) to showcase VirtualGrasp's newly added support of Planar {% include tooltip.html tooltip="Joint" text="joints" %}. 
+* Improved XR_Rig wrist offset: avatar hand is closer to the real hand which improves immersion.
 
 ##### Update to VG Core library 0.8.0:
 
@@ -59,7 +60,7 @@ folder: mydoc
 
 * If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
 
-* If game object's pivot is far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.11.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. 
+* If game object's pivot is far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.11.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
 
 ##### Known Issues:
 
