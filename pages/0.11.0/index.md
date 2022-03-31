@@ -10,9 +10,9 @@ VirtualGrasp (VG) is a software development kit (SDK) developed from over eight 
 VG SDK provides a set of tools to make hand-object interactions in VR natural and immersive. The three main benefits of using VG are:
 * {% include tooltip.html tooltip="GraspSynthesis" text="synthesizing" %} natural looking {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} on hands during [grasp interaction](grasp_interaction.0.11.0.html) in a VR application, and
 * easy setup of {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behaviors" %} of an object (through [object articulation](object_articulation.0.11.0.html)) when hand [grasps](grasp_interaction.0.11.0.html) or [pushes](push_interaction.0.11.0.html) the object. 
-* neither {% include tooltip.html tooltip="GraspSynthesis" text="grasp synthesis" %} or [object articulation](object_articulation.0.11.0.html) requires physical setup of the objects or avatars, while both features integrate seamlessly with any existing physical objects or environment.
+* neither {% include tooltip.html tooltip="GraspSynthesis" text="grasp synthesis" %} or [object articulation](object_articulation.0.11.0.html) requires physical setup of the objects or avatars, while both features integrate seamlessly with any physical objects or environment.
 
-These two features are closely linked to each other. 
+{% include tooltip.html tooltip="GraspSynthesis" text="Synthesizing grasps" %} and {% include tooltip.html tooltip="InteractiveBehaviors" text="creating interactive behaviors" %} are the two features that closely link to each other. 
 To have intuitive object grasp interaction experiences, just synthesizing the natural looking 
 {% include tooltip.html tooltip="GraspConfiguration" text="grasp configuration" %} is not enough. How the hand and object moves just before and after grasping needs to be carefully handled, which is solved by VG's [object articulation](object_articulation.0.11.0.html) feature.
 
