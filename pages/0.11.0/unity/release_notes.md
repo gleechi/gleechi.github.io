@@ -40,6 +40,7 @@ folder: mydoc
 
 * All #defines that enable controllers with dependencies on third party plugins have been prefixed with VG_ (e.g., USE_LEAP_CONTROLLER is now VG_USE_LEAP_CONTROLLER) to avoid conflicts with non-VG defines.
 * When trying to use an controller but not enabling its #define (e.g., VG_USE_LEAP_CONTROLLER), an error message is presented.
+* Bugfix on [OnObjectSelected](virtualgrasp_unityapi.0.11.0.html#onobjectselected) event is not invoked for object with Index Pushable {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}.
 * Bugfix on [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.0.html#jumpgraspobject) call. (**fixed known issue from 0.10.1**)
 * Bugfix on after an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose. (**fixed known issue from 0.10.1**)
 * Bugfix on AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.0.html#vg_externalcontroller-class) you like to use. (**fixed known issue from 0.10.1**)
@@ -48,6 +49,7 @@ folder: mydoc
 * Improved grasping and sliding a physical object on another object with collider. Note however still Unity physical material with smaller friction should be used for desired sliding behaviors. (**fixed known issue from 0.10.1**)
 * Onboarding scene added [Task6](unity_vgonboarding_task6.0.11.0.html) to showcase VirtualGrasp's newly added support of Planar {% include tooltip.html tooltip="Joint" text="joints" %}. 
 * Improved XR_Rig wrist offset: avatar hand is closer to the real hand which improves immersion.
+* Bugfix on physical avatar when grasping physical object with {% include tooltip.html tooltip="StickyHand" text="sticky hand" %} interaction type object and hand is grandually moving away.
 
 ##### Update to VG Core library 0.8.0:
 
@@ -61,6 +63,8 @@ folder: mydoc
 * If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
 
 * If game object's pivot is far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.11.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
+
+* Calling [VG_Controller.SetAvatarActive(sensorAvatarID, false, false)](virtualgrasp_unityapi.0.11.0.html#setavataractive) is not making hand disappear at the spot, but visibaly translate to the world origin. 
 
 ##### Known Issues:
 
