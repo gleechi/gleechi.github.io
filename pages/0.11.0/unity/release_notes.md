@@ -70,6 +70,10 @@ folder: mydoc
 
 * If two hands trigger grasp on a physical object at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
 
+* If two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position.
+
+* {% include tooltip.html tooltip="Planar" text="PLANAR" %} joint does not support Discrete states and [ChangeObjectJoint](virtualgrasp_unityapi.0.11.0.html#changeobjectjoint) as yet.
+
 ##### Known Issues:
 
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
