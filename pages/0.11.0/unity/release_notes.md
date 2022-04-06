@@ -15,6 +15,7 @@ folder: mydoc
 ##### Major Functionality Changes:
 
 * **Breaking change**: Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly. Check out [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.0.html#getsensorcontrolledavatarid), [GetReplayAvatarID](virtualgrasp_unityapi.0.11.0.html#getreplayavatarid), and [GetAvatarID](virtualgrasp_unityapi.0.11.0.html#getavatarid). 
+* Released GleechiHands model.
 
 ##### GUI / Component Changes:
 
@@ -55,6 +56,8 @@ folder: mydoc
 
 * Bugfix for physical avatar index finger push gesture formation is not smooth. (**fixed known issue from 0.10.1**)
 * Improved pinch grasp on small objects. (**fixed known issue from 0.10.1**)
+* Bugfix for when hand form index finger push gesture grasp synthesis adopted push gesture problem.
+* Bugfix for [JumpGraspObject](virtualgrasp_unityapi.0.11.0.html#jumpgraspobject) crash on unbaked object problem. 
 
 ##### Known Issues (To Be Fixed In Next Release)
 
