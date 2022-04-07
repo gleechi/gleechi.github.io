@@ -77,6 +77,10 @@ folder: mydoc
 
 * {% include tooltip.html tooltip="Planar" text="PLANAR" %} joint does not support Discrete states and [ChangeObjectJoint](virtualgrasp_unityapi.0.11.0.html#changeobjectjoint) as yet.
 
+* Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.11.0.html) can lead to crashing.
+
+* When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
+
 ##### Known Issues:
 
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
