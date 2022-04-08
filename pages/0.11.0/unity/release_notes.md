@@ -87,7 +87,7 @@ folder: mydoc
 
 ##### Known Issues:
 
-* Dynamic Grasp sometimes has unnaturally large thumb extention. 
+* Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
 
 
 ## V0.10.1 (2022-03-01)
