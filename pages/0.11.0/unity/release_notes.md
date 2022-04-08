@@ -15,7 +15,8 @@ folder: mydoc
 ##### Major Functionality Changes:
 
 * **Breaking change**: Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly. Check out [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.0.html#getsensorcontrolledavatarid), [GetReplayAvatarID](virtualgrasp_unityapi.0.11.0.html#getreplayavatarid), and [GetAvatarID](virtualgrasp_unityapi.0.11.0.html#getavatarid). 
-* Released GleechiHands model.
+* **Breaking change**: Since defination of {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}  needed for [baking](object_baking.0.11.0.html) is updated without backward compatibility in this version, if you use earlier VG SDK versions, then baking will not function correctly.
+* Released Gleechi's first original avatar with hands in VirtualGrasp>Resources>GleechiHands. This replaces earlier released OcculusHands, so in the VG SDK that support only one avatar, only GleechiHands are supported.
 
 ##### GUI / Component Changes:
 
@@ -84,6 +85,7 @@ folder: mydoc
 ##### Known Issues:
 
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
+
 
 ## V0.10.1 (2022-03-01)
 
