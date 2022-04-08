@@ -41,7 +41,6 @@ folder: mydoc
 
 ##### Other / Internal Changes:
 
-
 * Bugfix on [OnObjectSelected](virtualgrasp_unityapi.0.11.0.html#onobjectselected) event is not invoked for object with Index Pushable {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}.
 * Bugfix on [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.0.html#jumpgraspobject) call. (**fixed known issue from 0.10.1**)
 * Bugfix on after an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose. (**fixed known issue from 0.10.1**)
@@ -85,8 +84,6 @@ folder: mydoc
 * Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.11.0.html) can lead to crashing.
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
-
-* Root articulation body with floating non-physical children that have collider, then grasping and move children, there is some unexpected behavior. 
 
 ##### Known Issues:
 
