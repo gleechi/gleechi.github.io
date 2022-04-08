@@ -16,6 +16,7 @@ folder: mydoc
 
 * **Breaking change**: Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly. Check out [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.0.html#getsensorcontrolledavatarid), [GetReplayAvatarID](virtualgrasp_unityapi.0.11.0.html#getreplayavatarid), and [GetAvatarID](virtualgrasp_unityapi.0.11.0.html#getavatarid). 
 * Released Gleechi's first original avatar in VirtualGrasp/Resources/GleechiHands. This replaces earlier released OcculusHands, so in the VG SDK that support only one avatar, only GleechiHands are supported.
+* Added {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joint" %} support on [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description). See VG Onboarding [Task6](unity_vgonboarding_task6.0.11.0.html) to show the example use. 
 
 ##### GUI / Component Changes:
 
@@ -31,7 +32,7 @@ folder: mydoc
 * **Breaking change**: [GetObjectJointState](virtualgrasp_unityapi.0.11.0.html#getobjectjointstate) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointState will be invalid.
 * **Breaking change**: [GetObjectJointType](virtualgrasp_unityapi.0.11.0.html#getobjectjointtype) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointType will be invalid.
 * [SetAvatarActive](virtualgrasp_unityapi.0.11.0.html#setavataractive) added an optional argument: resetPos.
-* Added [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.11.0.html#getobjectsecondaryjointstate) which provide {% include tooltip.html tooltip="JointState" text="joint state" %} along yaxis of joint anchor for planar {% include tooltip.html tooltip="Joint" text="joint" %}. 
+* Added [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.11.0.html#getobjectsecondaryjointstate) which provide {% include tooltip.html tooltip="JointState" text="joint state" %} along yaxis of joint anchor for {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joint" %}. 
 * Added api functions to set velocity scales for throwing: [SetGlobalThrowVelocityScale](virtualgrasp_unityapi.0.11.0.html#setglobalthrowvelocityscale), [SetThrowVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.0.html#setthrowvelocityscaleforselectedobject), [SetThrowVelocityScaleForObject](virtualgrasp_unityapi.0.11.0.html#setthrowvelocityscaleforobject), [SetGlobalThrowAngularVelocityScale](virtualgrasp_unityapi.0.11.0.html#setglobalthrowangularvelocityscale), [SetThrowAngularVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.0.html#setthrowangularvelocityscaleforselectedobject), [SetThrowAngularVelocityScaleForObject](virtualgrasp_unityapi.0.11.0.html#setthrowangularvelocityscaleforobject). 
 * Added [GetAvatarID](virtualgrasp_unityapi.0.11.0.html#getavatarid) to receive the ID of an avatar.
 * Added [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.0.html#getsensorcontrolledavatarid) to receive the ID of the sensor-controlled avatar.
@@ -53,7 +54,7 @@ folder: mydoc
 * Provide error message if you are on Mac that Mac is not supported.
 
 * All #defines that enable controllers with dependencies on third party plugins have been prefixed with VG_ (e.g., USE_LEAP_CONTROLLER is now VG_USE_LEAP_CONTROLLER) to avoid conflicts with non-VG defines.
-* Onboarding scene added [Task6](unity_vgonboarding_task6.0.11.0.html) to showcase VirtualGrasp's newly added support of Planar {% include tooltip.html tooltip="Joint" text="joints" %}. 
+* Onboarding scene added [Task6](unity_vgonboarding_task6.0.11.0.html) to showcase VirtualGrasp's newly added support of {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joints" %}. 
 * Added first Unity tutorials.
 
 ##### Update to VG Core library 0.8.0:
@@ -77,7 +78,7 @@ folder: mydoc
 
 * If two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position.
 
-* {% include tooltip.html tooltip="Planar" text="PLANAR" %} joint does not support Discrete states and [ChangeObjectJoint](virtualgrasp_unityapi.0.11.0.html#changeobjectjoint) as yet.
+* {% include tooltip.html tooltip="Planar" text="Planar" %} joint does not support Discrete states and [ChangeObjectJoint](virtualgrasp_unityapi.0.11.0.html#changeobjectjoint) as yet.
 
 * Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.11.0.html) can lead to crashing.
 
@@ -152,6 +153,7 @@ folder: mydoc
 * Grasp .db will be handled automatically, no manual deployment needed anymore (UploadGraspDB menu entry removed).
 * Removed ObjectIdentifiers. The single and only component to mark objects as interactable is VG_Articulation. This should not break earlier use of VG_Interactable as Unity will create missing VG_Articulation component through RequireComponent requirement.
 * Performance speed up by handling only subset of close-by objects.
+* Added 
 
 ##### GUI / Component Changes:
 
