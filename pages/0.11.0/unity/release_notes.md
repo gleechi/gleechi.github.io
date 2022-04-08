@@ -78,7 +78,7 @@ folder: mydoc
 
 * If two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position.
 
-* {% include tooltip.html tooltip="Planar" text="Planar" %} joint does not support Discrete states and [ChangeObjectJoint](virtualgrasp_unityapi.0.11.0.html#changeobjectjoint) as yet.
+* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.11.0.html#changeobjectjoint) as yet. 
 
 * Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.11.0.html) can lead to crashing.
 
