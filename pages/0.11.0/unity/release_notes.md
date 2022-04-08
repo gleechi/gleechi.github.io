@@ -15,12 +15,11 @@ folder: mydoc
 ##### Major Functionality Changes:
 
 * **Breaking change**: Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly. Check out [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.0.html#getsensorcontrolledavatarid), [GetReplayAvatarID](virtualgrasp_unityapi.0.11.0.html#getreplayavatarid), and [GetAvatarID](virtualgrasp_unityapi.0.11.0.html#getavatarid). 
-* **Breaking change**: Since defination of {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}  needed for [baking](object_baking.0.11.0.html) is updated without backward compatibility in this version, if you use earlier VG SDK versions, then baking will not function correctly.
-* Released Gleechi's first original avatar with hands in VirtualGrasp>Resources>GleechiHands. This replaces earlier released OcculusHands, so in the VG SDK that support only one avatar, only GleechiHands are supported.
+* Released Gleechi's first original avatar in VirtualGrasp/Resources/GleechiHands. This replaces earlier released OcculusHands, so in the VG SDK that support only one avatar, only GleechiHands are supported.
 
 ##### GUI / Component Changes:
 
-* AutoSetup was fixed again after it broke in 0.10.1.
+* Bugfix on AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.0.html#vg_externalcontroller-class) you like to use. (**fixed known issue from 0.10.1**)
 * [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description) has been overhauled as a dynamic component to improve user experience. 
 * AutoSetup string for Oculus finger tracking was changed from "QuestHand" to "OculusHand" to conform with the file names and avoid confusion.
 * Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.
@@ -44,7 +43,6 @@ folder: mydoc
 * Bugfix on [OnObjectSelected](virtualgrasp_unityapi.0.11.0.html#onobjectselected) event is not invoked for object with Index Pushable {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}.
 * Bugfix on [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.0.html#jumpgraspobject) call. (**fixed known issue from 0.10.1**)
 * Bugfix on after an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose. (**fixed known issue from 0.10.1**)
-* Bugfix on AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.0.html#vg_externalcontroller-class) you like to use. (**fixed known issue from 0.10.1**)
 * Bugfix on physical avatar when grasping physical object with {% include tooltip.html tooltip="StickyHand" text="sticky hand" %} interaction type object and hand is grandually moving away.
 * Further performance optimization of selecting which objects need to be synced between Unity and VG.
 * Improved grasping and sliding a physical object on another object with collider. Note however still Unity physical material with smaller friction should be used for desired sliding behaviors. (**fixed known issue from 0.10.1**)
