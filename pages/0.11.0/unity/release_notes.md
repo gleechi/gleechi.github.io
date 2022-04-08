@@ -43,9 +43,9 @@ folder: mydoc
 * Bugfix on [OnObjectSelected](virtualgrasp_unityapi.0.11.0.html#onobjectselected) event is not invoked for object with Index Pushable {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}.
 * Bugfix on [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.0.html#jumpgraspobject) call. (**fixed known issue from 0.10.1**)
 * Bugfix on after an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose. (**fixed known issue from 0.10.1**)
-* Bugfix on physical avatar when grasping physical object with {% include tooltip.html tooltip="StickyHand" text="sticky hand" %} interaction type object and hand is grandually moving away.
+* Bugfix on physical avatar when grasping {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with {% include tooltip.html tooltip="StickyHand" text="sticky hand" %} interaction type object and hand is grandually moving away.
 * Further performance optimization of selecting which objects need to be synced between Unity and VG.
-* Improved grasping and sliding a physical object on another object with collider. Note however still Unity physical material with smaller friction should be used for desired sliding behaviors. (**fixed known issue from 0.10.1**)
+* Improved grasping and sliding a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} on another object with collider. Note however still Unity physical material with smaller friction should be used for desired sliding behaviors. (**fixed known issue from 0.10.1**)
 
 * Provide error message when trying to use an controller but not enabling its #define (e.g., VG_USE_LEAP_CONTROLLER).
 * Provide error signal if {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object is labeled as Static.
@@ -73,7 +73,7 @@ folder: mydoc
 
 * If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
 
-* If two hands trigger grasp on a physical object at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
+* If two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
 
 * If two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position.
 
@@ -94,7 +94,7 @@ folder: mydoc
 
 * **Breaking change**: Removed support of using VG_Articulation component with constrained {% include tooltip.html tooltip="Joint" text="joints" %} (non-FLOATING joint) on objects with Rigidbody. Developers are encouraged to use [Unity Joints](https://docs.unity3d.com/Manual/Joints.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) for physical joints.
 * **Breaking change**: in [VG_Articulation](unity_component_vgarticulation.0.11.0.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive. Due to the name change, the reference can be lost and need to be reassigned.
-* More stable grasp interaction with physical objects (objects with Rigidbody or ArticulationBody) and better throwing experiences. 
+* More stable grasp interaction with {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} and better throwing experiences. 
 
 ##### GUI / Component Changes:
 
@@ -132,7 +132,7 @@ folder: mydoc
 * Index finger push gesture formation is not smooth when avatar is set to be physical.
 * [OnObjectGrasped](virtualgrasp_unityapi.0.11.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.0.html#jumpgraspobject) call.
 * After an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose.
-* Grasping and sliding a physical object on another object with collider shows obvious non-smooth behavior due to some artificial manipulation of object velocities. 
+* Grasping and sliding a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} on another object with collider shows obvious non-smooth behavior due to some artificial manipulation of object velocities. 
 * AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.0.html#vg_externalcontroller-class) you like to use.
 
 ##### Known Issues:
@@ -175,7 +175,7 @@ folder: mydoc
 * Avatar Bone management optimized.
 * Removed Unity Garbage Collection during Editor time.
 * Initial support for Unity ArticulationBodies.
-* Improved upon physical object handling (objects with Rigidbodies and ArticulationBodies).
+* Improved upon {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} handling.
 * Improved upon physical hand handling.
 
 ##### Update to VG Core library 0.6.6:
@@ -187,8 +187,8 @@ folder: mydoc
 
 ##### Known Issues:
 
-* When grasping freely movable physical objects (objects with RigidBody or ArticulationBody), movement with the object is suboptimal with observable wobbling effects. This is to be fixed in next release. 
-* When throwing a physical object, the object velocity is suboptimal. This is to be fixed in next release.
+* When grasping freely movable {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %}, movement with the object is suboptimal with observable wobbling effects. This is to be fixed in next release. 
+* When throwing a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %}, the object velocity is suboptimal. This is to be fixed in next release.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small object may have unatural finger placement.
 
@@ -298,14 +298,14 @@ folder: mydoc
 * Fallback .db added and implemented to use this one if project .db is not found.
 * Grasp Studio Scene will open automatically after creation.
 * Fixed a bug in VG_Articulation initialization.
-* Fixed kink when using physical objects with {% include tooltip.html tooltip="JumpGrasp" text="jump grasp" %} and {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp" %} interaction types.
+* Fixed kink when using {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} with {% include tooltip.html tooltip="JumpGrasp" text="jump grasp" %} and {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp" %} interaction types.
 * Fixed that meshes disappear when prefabs are opened in Editor.
 * Fixed screw rate to accept float values.
 * Default synthesis method changed from STATIC_GRASP to DYNAMIC_GRASP.
 
 ##### Known Issues:
 
-* Rotation interaction on physical object with revolute joint does not feel so natural.
+* Rotation interaction on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with revolute joint does not feel so natural.
 * Dynamic Grasp sometimes has unaturally large thumb extention. 
 
 ## V0.9.1 (2021-11-17)
