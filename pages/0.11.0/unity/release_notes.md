@@ -31,6 +31,7 @@ folder: mydoc
 
 * **Breaking change**: [GetObjectJointState](virtualgrasp_unityapi.0.11.0.html#getobjectjointstate) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointState will be invalid.
 * **Breaking change**: [GetObjectJointType](virtualgrasp_unityapi.0.11.0.html#getobjectjointtype) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointType will be invalid.
+* [SetAvatarActive](virtualgrasp_unityapi.0.11.0.html#setavataractive) added an optional argument: resetPos.
 * Added [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.11.0.html#getobjectsecondaryjointstate) which provide {% include tooltip.html tooltip="JointState" text="joint state" %} along yaxis of joint anchor for planar {% include tooltip.html tooltip="Joint" text="joint" %}. 
 * Added api functions to set velocity scales for throwing: [SetGlobalThrowVelocityScale](virtualgrasp_unityapi.0.11.0.html#setglobalthrowvelocityscale), [SetThrowVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.0.html#setthrowvelocityscaleforselectedobject), [SetThrowVelocityScaleForObject](virtualgrasp_unityapi.0.11.0.html#setthrowvelocityscaleforobject), [SetGlobalThrowAngularVelocityScale](virtualgrasp_unityapi.0.11.0.html#setglobalthrowangularvelocityscale), [SetThrowAngularVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.0.html#setthrowangularvelocityscaleforselectedobject), [SetThrowAngularVelocityScaleForObject](virtualgrasp_unityapi.0.11.0.html#setthrowangularvelocityscaleforobject). 
 * Added [GetAvatarID](virtualgrasp_unityapi.0.11.0.html#getavatarid) to receive the ID of an avatar.
@@ -70,8 +71,6 @@ folder: mydoc
 
 * If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
 
-* Calling [VG_Controller.SetAvatarActive(sensorAvatarID, false, false)](virtualgrasp_unityapi.0.11.0.html#setavataractive) is not making hand disappear at the spot, but visibaly translate to the world origin. 
-
 * If two hands trigger grasp on a physical object at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
 
 * If two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position.
@@ -81,6 +80,8 @@ folder: mydoc
 * Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.11.0.html) can lead to crashing.
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
+
+* Root articulation body with floating non-physical children that have collider, then grasping and move children, there is some unexpected behavior. 
 
 ##### Known Issues:
 

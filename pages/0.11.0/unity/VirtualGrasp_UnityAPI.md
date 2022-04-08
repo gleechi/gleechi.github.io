@@ -1009,6 +1009,7 @@ Set the active state of the avatar sensor(s) and mesh.
 | _int_ |avatarID|The instance avatar id|
 | _bool_ |enableSensors|If the sensor(s) that control this hand should be active or not.|
 | _bool_ |enableMesh|If the mesh of this hand should be visible or not.|
+| _Vector3_ |resetPos|If an avatar is deactivated, hand positions will be reset to here (default (0,0,0)).|
 
 
 ### SetCalibrationMode
@@ -1049,7 +1050,7 @@ Set the active state of the sensor(s) that control the specified hand of an inst
 | _int_ |avatarID|The instance avatar id|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand (remark: UNKNOWN will not have any effect)|
 | _bool_ |active|If the sensor(s) that control this hand should be active or not|
-| _Vector3_ |resetPos|If a hand is activated, its position will be reset to here (default (0,0,0)).|
+| _Vector3_ |resetPos|If a hand is deactivated, its position will be reset to here (default (0,0,0)).|
 
 Remark
  By default sensors are all active, and this function can be used in runtime to change this.
