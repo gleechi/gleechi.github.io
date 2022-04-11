@@ -84,6 +84,14 @@ folder: mydoc
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 
+* {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
+
+* If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
+
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.11.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision. 
+
+* The newly released GleechiHands showes excessively extended thumb pose when using finger tracking solutions like QUEST_EXT and LEAP_EXT. 
+
 ##### Known Issues:
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
