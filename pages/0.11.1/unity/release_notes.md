@@ -90,7 +90,7 @@ folder: mydoc
 
 * If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.11.1.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision. 
 
-* The newly released GleechiHands does not have perfect mapping of real finger poses when using finger tracking solutions like QUEST_EXT and LEAP_EXT. 
+* The newly released GleechiHands does not have perfect mapping of real finger poses when using finger tracking solutions like OCULUS_EXT and LEAP_EXT. 
 
 ##### Known Issues:
 
