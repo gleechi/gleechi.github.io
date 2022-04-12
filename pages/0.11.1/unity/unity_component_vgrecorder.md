@@ -85,9 +85,9 @@ As shown in the VG_Recorder GUI, _Set Hand Start Pose Key_ "S" demonstrate how t
 // Code in VG_Recorder.cs
 // To use GetReplayStartWristPose, need to first load recording and make sure avatar is enabled for replay.
 VG_Controller.LoadRecording(m_recordingFilename);
-VG_Controller.SetProcessByRecordedFrame(m_replayingAvatarID, true);
 // If m_replayObject is null will be full scene-specific replay, otherwise full object-specific replay.
-VG_Controller.GetReplayStartWristPose(m_replayingAvatarID, m_replayObject, out Vector3 p_left, out Quaternion q_left, out Vector3 p_right, out Quaternion q_right);
+int replayingAvatarInstanceID = GetReplayAvatar();
+VG_Controller.GetReplayStartWristPose(replayingAvatarInstanceID, m_replayObject, out Vector3 p_left, out Quaternion q_left, out Vector3 p_right, out Quaternion q_right);
 ````
 
 {% include callout.html content="Note that querying the start pose of hands does not affect later replaying the interaction sequence." %}
