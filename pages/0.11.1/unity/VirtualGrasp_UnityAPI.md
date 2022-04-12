@@ -14,7 +14,7 @@ Enum for quickly setting up projects for a specific controller / build.
 
 |NONE|No setup|
 |UNITY_XR|Setup for UnityXR supported controllers|
-|QUEST_FT|Setup for Quest / finger tracking|
+|OCULUS_FT|Setup for Quest / finger tracking|
 |STEAMVR|Setup for SteamVR|
 |STEAMVR_FT|Setup for SteamVR finger tracking / Knuckles|
 |MOUSE|Setup for Mouse|
@@ -1099,10 +1099,6 @@ Get the starting wrist poses for full replay of the whole interaction sequence.
 
 Remark
  LoadRecording need to be called before this to load recorded sensor data.
-
-
-Remark
- SetProcessByRecordedFrame need to be called before this to set this avatar to be enabled for replay.
 
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.11.1.html)
