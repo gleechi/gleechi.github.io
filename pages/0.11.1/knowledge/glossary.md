@@ -7,4 +7,4 @@ folder: knowledge
 toc: false
 ---
 
-{% include glossary.html %}
+{% include glossary.html version=".0.11.1.html" %}
