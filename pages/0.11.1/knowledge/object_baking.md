@@ -27,4 +27,3 @@ However, note that there will only be unnatural looking sticky hand like grasps
  (see [grasp interaction type](grasp_interaction.0.11.1.html#grasp-interaction-type))." %}
 
 See [VG_BakingClient](unity_component_vgbakingclient.0.11.1.html) to learn how to bake the objects in your Unity project.
-

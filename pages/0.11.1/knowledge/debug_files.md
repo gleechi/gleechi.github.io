@@ -7,9 +7,8 @@ folder: knowledge
 toc: true
 ---
 
-{% include image.html file="unity/unity_vg_debug_settings_0_12_0.png" alt="VG Debug Settings." caption="\"Save Debug Files\" must be enabled Debug Settings to prepare the files." %}
-
 ## Creating Debug Files
+{% include image.html file="unity/unity_vg_debug_settings_0_12_0.png" alt="VG Debug Settings." caption="\"Save Debug Files\" must be enabled Debug Settings to prepare the files." %}
 
 We can enable creation of a set of debug files (see [Debug Files Content](#debug-files-content) below) which is saved in a *vg_tmp* subdirectory in your project’s Asset folder. 
 
@@ -25,7 +24,7 @@ There are two ways to create them
 
 {% include important.html content="It is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}<br>
 
-{% include image.html file="knowledge/baking_pipeline.png" alt="Baking Pipeline." caption="Debug Files." %}
+{% include image.html file="knowledge/baking_pipeline_0_12_0.png" alt="Baking Pipeline." caption="Baking Pipeline." %}
 
 ## Debug Files Content
 
