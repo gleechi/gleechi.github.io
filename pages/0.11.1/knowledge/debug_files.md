@@ -17,7 +17,7 @@ There are two ways to create them
 
 1. Enabling **Export Scene in Runtime** allows you to create debug files after launching the scene in the Editor. The benefit of this is to be able to include objects you spawn in runtime or those you add by loading another scene during runtime into the debug files. Note the full debug files process is only in effect in development mode (i.e. using the Unity Editor), but not in builds.
 
-2. Pressing **Export Current Scene** will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but  objects that are not in your scene yet will not be included.
+2. Pressing **Export Scene in Edit** will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included.
 
 {% include important.html content="Each creation of debug files is scene-dependent, meaning that it only relates to the **current** Unity scene. Thus, to complement debug files from multiple scenes, you have to launch these scenes separately with **Export Scene in Runtime** enabled if you export in runtime, or press **Export Current Scene** after opening each scene." %}
 

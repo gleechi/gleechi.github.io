@@ -14,15 +14,13 @@ The VG_BakingClient is an {% include tooltip.html tooltip="VGInternalScript" tex
 
 If you are not familiar with the concept of object baking, please read the [object baking documentation](object_baking.0.11.1.html) first.
 
-Before you can upload the input to the Baking Service, you need to create it by following the instructions on [Debug Files](debug_files.0.11.1.html).
-
 {% include editor_script.html %}
 
 {% include image.html file="knowledge/baking_pipeline.png" alt="Baking Pipeline." caption="Baking Pipeline" %}
 
 ## VG_BakingClient
 
-{% include image.html file="unity/unity_vg_baking_client.png" alt="VG Baking Client in Unity." caption="VG_BakingClient in Unity." %}
+{% include image.html file="unity/unity_vg_baking_client_0_12_0.png" alt="VG Baking Client in Unity." caption="VG_BakingClient in Unity." %}
 
 <!--{% include warning.html content="CABVG is currently ongoing maintenance and an upgrade to version 2.0. It is therefore not available and the documentation below deprecated." %}-->
 
@@ -34,8 +32,15 @@ Check if your credentials are valid by trying to "Login." If successful, a windo
 
 ### Step 2: Preparation
 
-Clicking "Prepare Project" will mainly verify that you have the necessary input data prepared for an upload. If the input is valid, a window will appear telling you how many objects are going to be baked.
+{% include image.html file="unity/unity_vg_baking_client_prepare_project.png" alt="VG Baking Client Prepare Project in Unity." caption="VG_BakingClient Prepare Project in Unity." %}
 
+Preparation step is to create input files needed by the Baking Service. Since these input files can also be used for debugging purposes we refer them to "[Debug Files](debug_files.0.11.1.html#debug-files-content)". 
+
+To prepare project, click _Prepare project_ button in baking client window, and a separate window "Prepare project" shown in above image will pop up. Follow the instruction to prepare the baking input files.
+
+{% include important.html content="Note there are two ways to create the files depending on the need of your project. Currently, if you want to bake objects that are runtime spawned, _Prepare project_ window does not support it, you need to enable _Export Scene in Runtime_ in Debug Settings. See [Creating Debug Files](debug_files.0.11.1.html#creating-debug-files) for detailed instruction." %}
+
+ 
 ### Step 3: Baking
 
-Clicking "Create Grasps for project" will upload your package to the Gleechi Cloud baking server and trigger a bake. A window will appear to inform you about the process. Expect about 1-2 minutes for a common bake. After finishing, the grasp baking .db file will be downloaded into your project folder.
+Once _Prepare project_ is finished by clicking _Finish_ button, you can come back to main baking client window, and click "Create Grasps for project" to upload your package to the Gleechi Cloud baking server and trigger a bake. A window will appear to inform you about the process. Expect about 1-2 minutes for a common bake. After finishing, the grasp baking .db file will be downloaded into your project folder.
