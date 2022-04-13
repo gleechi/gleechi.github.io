@@ -7,19 +7,21 @@ folder: knowledge
 toc: true
 ---
 
-{% include image.html file="unity/unity_vg_debug_settings.png" alt="VG Debug Settings." caption="\"Save Debug Files\" must be enabled Debug Settings to prepare the files." %}
+{% include image.html file="unity/unity_vg_debug_settings_0_12_0.png" alt="VG Debug Settings." caption="\"Save Debug Files\" must be enabled Debug Settings to prepare the files." %}
 
 ## Creating Debug Files
 
-Enable the **“Save Debug Files”** in your VG_MainScript when you want to create debug files.
+We can enable creation of a set of debug files (see [Debug Files Content](#debug-files-content) below) which is saved in a *vg_tmp* subdirectory in your project’s Asset folder. 
 
-Running the application in the Editor will create a *vg_tmp* subdirectory in your project’s Asset folder and export files (see [Debug Files Content](#debug-files-content) below) when you play your scene. It will then also create a .zip file from the vg_tmp folder in your project’s root folder.
+There are two ways to create them
 
-The full debug files process is only in effect in development mode (i.e. using the Unity Editor), but not in builds.
+1. Enabling **Export Scene in Runtime** allows you to create debug files after launching the scene in the Editor. The benefit of this is to be able to include objects you spawn in runtime or those you add by loading another scene during runtime into the debug files. Note the full debug files process is only in effect in development mode (i.e. using the Unity Editor), but not in builds.
 
-{% include important.html content="Each creation of debug files is scene-dependent, meaning that it only relates to the **current** Unity scene. Thus, to complement debug files from multiple scenes, you have to run these scenes separately with \"Save Debug Files\" enabled." %}
+2. Pressing **Export Current Scene** will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but  objects that are not in your scene yet will not be included.
 
-**“Save Debug (Edit)"** will simulate a launch of the VG plugin from the Unity Editor, thus without launching the scene. This option is provided for convenience, but  objects that are not in your scene yet (such as those you spawn in runtime, or those you add by loading another scene during runtime), will not be included for baking.
+{% include important.html content="Each creation of debug files is scene-dependent, meaning that it only relates to the **current** Unity scene. Thus, to complement debug files from multiple scenes, you have to launch these scenes separately with **Export Scene in Runtime** enabled if you export in runtime, or press **Export Current Scene** after opening each scene." %}
+
+{% include important.html content="If creating of debug files is for the purpose of grasp baking, after export all scenes, you need to go to **VirtualGrasp->Bake grasps->prepare project->finish** to complete the export for baking." %}
 
 {% include important.html content="It is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}<br>
 
@@ -27,8 +29,8 @@ The full debug files process is only in effect in development mode (i.e. using t
 
 ## Debug Files Content
 
-* One *.obj* file for each interactable object in the scene, i.e. raw 3D mesh data in uniform scale, will be created when you start the scene.
-* One *.bin* file for each avatar (containing one or a pair of hands of this avatar), will be created when you start the scene.
+* One *.obj* file for each {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object in the scene, i.e. raw 3D mesh data in uniform scale.
+* One *.bin* file for each avatar (containing one or a pair of hands of this avatar).
 * One *.log* file with VG log data (the same that also appears on the Console) for the scene that you are running, will be filled while you are running the scene.
 * One *.db* file carrying data filled with [VG_GraspStudio](unity_component_vggraspstudio.0.11.1.html) or [VG_BakingClient](unity_component_vgbakingclient.0.11.1.html).
 * One *.scn* and one *.scn.objrig* file for each scene, including scene configuration data (see section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}).
@@ -45,7 +47,7 @@ You can customize the name by modifying the VG_VirtualGraspDBFile that you can f
 
 ### Object Baking
 
-The *.zip* file of all the content is the input that is needed for [object baking](object_baking.0.11.1.html#upload-input).
+A *.zip* file of all the content in *vg_tmp* folder is the input that is needed for [object baking](object_baking.0.11.1.html#upload-input).
 
 ### Grasp Editing
 
