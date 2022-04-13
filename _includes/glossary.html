@@ -12,5 +12,5 @@
     
 {% for kv in gs %}
 {{ kv[0] }}
-: {{ kv[1] }}
+: {{ kv[1] | replace: ".html", {{include.version}} }}
 {% endfor %}

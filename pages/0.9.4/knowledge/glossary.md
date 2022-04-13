@@ -8,4 +8,4 @@ folder: knowledge
 toc: false
 ---
 
-{% include glossary.html %}
+{% include glossary.html version=".0.9.4.html" %}
