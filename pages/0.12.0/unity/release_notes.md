@@ -53,6 +53,8 @@ folder: mydoc
 
 * If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
+* [GetReplayStartWristPose](virtualgrasp_unityapi.0.12.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
+
 ##### Known Issues:
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
@@ -73,7 +75,6 @@ folder: mydoc
 * [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) has been overhauled as a dynamic component to improve user experience. 
 * Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.
 * [VG_Interactable](unity_component_vginteractable.0.12.0.html) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to allow specifying object-specific throwing power that overwrite those set in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings).
-
 
 ##### API Changes:
 
