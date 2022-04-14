@@ -32,7 +32,7 @@ folder: mydoc
 
 ##### Update to VG Core library 0.9.0:
 
-* Fixed unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. 
+* Bugfix on unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. (**fixed known issue from 0.11.1**)
 * Bugfix on if two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position. (**fixed known issue from 0.11.1**)
 
 ##### Known Issues (To Be Fixed In Next Release)
