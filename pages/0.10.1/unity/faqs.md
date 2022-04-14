@@ -13,7 +13,7 @@ folder: mydoc
 
 ### Where is the GleechiLib Prefab?
 
-If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in [version 0.10.1](release_notes.0.10.1.html#major-functionality-changes). You are expected to just insert a VG_MainScript component (such as MyVirtualGrasp) on a GameObject of your choice.
+If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in version 0_9_6. You are expected to just insert a VG_MainScript component (such as MyVirtualGrasp) on a GameObject of your choice.
 
 ## Hands and Controllers
 

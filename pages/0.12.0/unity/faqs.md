@@ -13,7 +13,7 @@ folder: mydoc
 
 ### Where is the GleechiLib Prefab?
 
-If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in [version 0.12.0](release_notes.0.12.0.html#major-functionality-changes). You are expected to just insert a VG_MainScript component (such as MyVirtualGrasp) on a GameObject of your choice.
+If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in version 0_9_6. You are expected to just insert a VG_MainScript component (such as MyVirtualGrasp) on a GameObject of your choice.
 
 ## Hands and Controllers
 
@@ -31,14 +31,22 @@ The reason for the mismatch is that each controller (for example, VG_EC_OculusHa
 
 ## Interaction
 
-### When grasping a fast-moving object, the hand is following the object
+### I added a VG_Articulation component to my game object, but I could not interact with the object when I play, why?
 
-The default interaction type for all objects is {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} and Grasp Speed 0.1 (see [Global Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#grasp-interaction-settings) which means that the a grasp moves the hand to the object in 0.1 seconds.
+There could be four reasons:
+1. Caused by [Mesh not readable](#mesh-not-readable) error.
+2. The added [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component is disabled (unchecked).
+3. You have in runtime disabled this [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component.
+4. You have in runtime [SetObjectSelectionWeight](virtualgrasp_unityapi.0.12.0.html#setobjectselectionweight) to 0. 
 
-So, when you are trying to catch a fast moving object such as a falling one, the hand will follow the object for 0.1 sec to grab it while falling. There are two quick options to get a different experience: 
+### When I tried to catch a fast moving or falling object, the hand is following the object for a little which looks strange. Why?
+
+The default interaction type for all objects is {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} and Grasp Animation Speed 0.05 (see [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings)) which means that the a grasp moves the hand to the object in 0.05 seconds.
+
+So, when you are trying to catch a fast moving object such as a falling one, the hand will follow the object for 0.05 sec to grab it while falling. There are two quick options to get a different experience: 
 
 1. Decrease the Grasp Speed to 0.01 (which is the minimum). This makes the grasp happen quicker, while still moving the hand to the object. 
-2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Speed for the object to interpolate into the hand. These and more [interaction types](grasp_interaction.0.12.0.html#grasp-interaction-type) are documented [here](grasp_interaction.0.12.0.html#grasp-interaction-type).
+2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} for this object and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Speed for the object to interpolate into the hand. These and more [interaction types](grasp_interaction.0.12.0.html#grasp-interaction-type) are documented [here](grasp_interaction.0.12.0.html#grasp-interaction-type).
 
 Note that you cannot define the Grasp Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.0.12.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [VG_Controller.SetInteractionTypeForObject](virtualgrasp_unityapi.0.12.0.html#setinteractiontypeforobject) from your code during runtime.
 
