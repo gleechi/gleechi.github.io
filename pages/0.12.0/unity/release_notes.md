@@ -39,11 +39,11 @@ folder: mydoc
 
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
-* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
-
-* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
+* If game object's pivot is relatively far away from mesh center, there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
 
 * If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
+
+* If under a root [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) there is a child non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %} that has {% include tooltip.html tooltip="Floating" text="floating" %} joint [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component, and if add a collider to this object, grasping and moving this object will cause very small drifting of the root Articulation Body. 
 
 * The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) as yet. 
 
@@ -131,8 +131,6 @@ folder: mydoc
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
 * If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
-
-* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
 
 * If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
 

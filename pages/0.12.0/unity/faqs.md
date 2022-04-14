@@ -34,7 +34,7 @@ The reason for the mismatch is that each controller (for example, VG_EC_OculusHa
 ### I added a VG_Articulation component to my game object, but I could not interact with the object when I play, why?
 
 There could be four reasons:
-1. Caused by [Mesh not readable](#mesh-not-readable) error.
+1. [Mesh is not readable](#mesh-not-readable).
 2. The added [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component is disabled (unchecked).
 3. You have in runtime disabled this [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component.
 4. You have in runtime [SetObjectSelectionWeight](virtualgrasp_unityapi.0.12.0.html#setobjectselectionweight) to 0. 
@@ -45,10 +45,10 @@ The default interaction type for all objects is {% include tooltip.html tooltip=
 
 So, when you are trying to catch a fast moving object such as a falling one, the hand will follow the object for 0.05 sec to grab it while falling. There are two quick options to get a different experience: 
 
-1. Decrease the Grasp Speed to 0.01 (which is the minimum). This makes the grasp happen quicker, while still moving the hand to the object. 
-2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} for this object and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Speed for the object to interpolate into the hand. These and more [interaction types](grasp_interaction.0.12.0.html#grasp-interaction-type) are documented [here](grasp_interaction.0.12.0.html#grasp-interaction-type).
+1. Decrease the Grasp Animation Speed to 0.01 (which is the minimum). This makes the grasp happen quicker, while still moving the hand to the object. 
+2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} for this object and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Animation Speed for the object to interpolate into the hand. These and more [interaction types](grasp_interaction.0.12.0.html#grasp-interaction-type) are documented [here](grasp_interaction.0.12.0.html#grasp-interaction-type).
 
-Note that you cannot define the Grasp Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.0.12.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [VG_Controller.SetInteractionTypeForObject](virtualgrasp_unityapi.0.12.0.html#setinteractiontypeforobject) from your code during runtime.
+Note that you cannot define the Grasp Animation Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.0.12.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [VG_Controller.SetInteractionTypeForObject](virtualgrasp_unityapi.0.12.0.html#setinteractiontypeforobject) from your code during runtime.
 
 ### All my objects are baked but why do I still get unnatural looking grasps?
 
