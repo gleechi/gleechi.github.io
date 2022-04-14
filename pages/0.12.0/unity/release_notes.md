@@ -75,7 +75,7 @@ folder: mydoc
 * [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) has been overhauled as a dynamic component to improve user experience. 
 * Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.
 * [VG_Interactable](unity_component_vginteractable.0.12.0.html) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to allow specifying object-specific throwing power that overwrite those set in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings).
-* [VG_Recorder](unity_component_vgrecorder.0.12.0.html) has improved file management so that users can optionally provide in _Recording Filename_ with either a single file name like "MyRecordingFile", or a folder and a file name like "MyRecordingFolder/MyRecordingFile". 
+* [VG_Recorder](unity_component_vgrecorder.0.12.0.html) has improved file management so that users can optionally provide in _Recording Filename_ with either a single file name like "MyRecordingFile", or a folder and a file name like "MyRecordingFolder/MyRecordingFile". Also adding the file extension ".sdb" is only optional.
 
 ##### API Changes:
 
