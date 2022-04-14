@@ -29,7 +29,7 @@ If you are not familiar with the concept of object baking, please read the [obje
 
 After signing up to the Cloud Baking Service, you should have received credentials (email address and password). After entering them once, your credentials will be stored in a file called vg_cabvg_settings.json in your project folder, so you won't have to re-enter them all the time.
 
-Check if your credentials are valid by trying to "Login." If successful, a window will appear telling you that you logged in successfully.
+Check if your credentials are valid by clicking "Verify credentials". If successful, a window will appear telling you "Logged in successfully".
 
 ### Step 2: Preparation
 
@@ -49,5 +49,5 @@ To prepare project, click _Prepare project_ button in baking client window, and 
 Once _Prepare project_ is finished by clicking _Finish_ button, you can come back to main baking client window, and click _Create Grasps for project_ to upload your package to the Gleechi Cloud baking server and trigger a bake. 
 A window will appear to inform you about the process. Expect about 1-2 minutes for a common bake. 
 
-After finishing, the grasp baking .db file will be downloaded into your project folder.
-Now you can directly play the project and enjoy natural looking grasps dynamically synthesized on your objects.
+Once baking is complete, the grasp baking .db file will be downloaded into your project folder.
+Now you can directly play the project and enjoy natural looking grasps dynamically generated on your objects.
