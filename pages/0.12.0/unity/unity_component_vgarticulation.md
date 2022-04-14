@@ -22,7 +22,9 @@ All the parameters are explained in detail in [object articulation](object_artic
 
 {% include multiple_script.html %}
 
-{% include callout.html content="If you add multiple VG_Articulation components to one game object, the first active component will be used to configure your initial object articulation." %}
+{% include callout.html content="If you add multiple VG_Articulation components to a game object, the first active component will be used to configure your initial object articulation." %}
+
+{% include callout.html content="If you add a VG_Articulation component on a game object but disabled it (unchecked), the object will be registered to VirtualGrasp, however it is not interactable (equivalent to [SetObjectSelectionWeight](virtualgrasp_unityapi.0.12.0.html#setobjectselectionweight) to 0)." %}
 
 ## Runtime Changes
 
@@ -37,6 +39,8 @@ One of the two [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjec
 To do that, you can add a **disabled** VG_Articulation component to the object, which your script can receive and use as the argument in the [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) function.
 
 As a result, all the parameters set in the component will be specified in runtime on the object. 
+
+{% include important.html content="Runtime disabling one VG_Articulation and enabling another VG_Articulation will not achieve joint change. [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint-1) has to be used to change joint." %}
 
 ### RecoverObjectJoint
 

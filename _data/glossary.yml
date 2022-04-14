@@ -19,7 +19,7 @@ ObjectBaking: Refers to a preprocess of expensive object analysis, which is need
 
 InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's [joint and affordances setup](object_articulation.html). 
 
-VGInteractable: An object is described as VG-interactable means it can be grasped or pushed by hands supported by VG, and adding VG_Articulation component will make object interactable.
+VGInteractable: An object is described as VG-interactable means it can be grasped or pushed by hands supported by VG, and adding an enabled VG_Articulation component will make object interactable.
 
 Grasp: A hand grasps and holds an object.
 
