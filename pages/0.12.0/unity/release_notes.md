@@ -4,43 +4,93 @@ title: Release Notes
 keywords: release notes #, announcements, what's new, new features
 #last_updated: July 16, 2016
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
-sidebar: main_sidebar_0_11_1
-permalink: release_notes.0.11.1.html
+sidebar: main_sidebar_0_12_0
+permalink: release_notes.0.12.0.html
 redirect_from: release_notes.html
 folder: mydoc
 ---
+
+## V0.12.0 (2022-04-14)
+
+##### Major Functionality Changes:
+
+*  [VG_BakingClient](unity_component_vgbakingclient.0.12.0.html) has been overhauled with support of _Prepare project_ in the same GUI without the need to move to [Debug Settings](debug_files.0.12.0.html) if there are no runtime spawned {% include tooltip.html tooltip="VGInteractable" text="interactable" %} objects. 
+
+##### GUI / Component Changes:
+
+* AutoSetup string for Oculus finger tracking was changed from "QuestHand" to "OculusHand" to conform with the file names and avoid confusion.
+* Fixed confusion of disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) component. (**fixed known issue from 0.11.1**)
+
+##### API Changes:
+* There are no API changes. 
+
+##### Other / Internal Changes:
+
+* Updated GleechiHands with better shader and material, as well as bone structure for finger pose mapping and grasp interaction (**fixed known issue from 0.11.1**).
+* Updated Unity tutorials for VG baking client. 
+* Bugfix on if two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen. (**fixed known issue from 0.11.1**)
+
+##### Update to VG Core library 0.9.0:
+
+* Fixed unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. 
+* Bugfix on if two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position. (**fixed known issue from 0.11.1**)
+
+##### Known Issues (To Be Fixed In Next Release)
+
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+
+* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
+
+* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
+
+* If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
+
+* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) as yet. 
+
+* Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.12.0.html) can lead to crashing.
+
+* When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
+
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
+
+##### Known Issues:
+
+* Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
+
+* {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
 
 ## V0.11.1 (2022-04-11)
 
 ##### Major Functionality Changes:
 
-* **Breaking change**: Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly. Check out [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.1.html#getsensorcontrolledavatarid), [GetReplayAvatarID](virtualgrasp_unityapi.0.11.1.html#getreplayavatarid), and [GetAvatarID](virtualgrasp_unityapi.0.11.1.html#getavatarid). 
+* **Breaking change**: Avatar IDs that were before the array index have been replaced by the Unity instance ID of the SkinnedMeshRenderer that relates to the avatar. The VG API is providing helper functions and the SDK scripts have been adjusted accordingly. Check out [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.12.0.html#getsensorcontrolledavatarid), [GetReplayAvatarID](virtualgrasp_unityapi.0.12.0.html#getreplayavatarid), and [GetAvatarID](virtualgrasp_unityapi.0.12.0.html#getavatarid). 
 * Released Gleechi's first original avatar in VirtualGrasp/Resources/GleechiHands. This replaces earlier released OcculusHands, so in the VG SDK that support only one avatar, only GleechiHands are supported.
-* Added {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joint" %} support on [VG_Articulation](unity_component_vgarticulation.0.11.1.html#description). See VG Onboarding [Task6](unity_vgonboarding_task6.0.11.1.html) to show the example use. 
+* Added {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joint" %} support on [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description). See VG Onboarding [Task6](unity_vgonboarding_task6.0.12.0.html) to show the example use. 
 
 ##### GUI / Component Changes:
 
-* Bugfix on AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.1.html#vg_externalcontroller-class) you like to use. (**fixed known issue from 0.10.1**)
-* [VG_Articulation](unity_component_vgarticulation.0.11.1.html#description) has been overhauled as a dynamic component to improve user experience. 
+* Bugfix on AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.12.0.html#vg_externalcontroller-class) you like to use. (**fixed known issue from 0.10.1**)
+* [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) has been overhauled as a dynamic component to improve user experience. 
 * Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.
-* [VG_Interactable](unity_component_vginteractable.0.11.1.html) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to allow specifying object-specific throwing power that overwrite those set in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.11.1.html#global-grasp-interaction-settings).
+* [VG_Interactable](unity_component_vginteractable.0.12.0.html) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to allow specifying object-specific throwing power that overwrite those set in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings).
+
 
 ##### API Changes:
 
-* **Breaking change**: [GetObjectJointState](virtualgrasp_unityapi.0.11.1.html#getobjectjointstate) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointState will be invalid.
-* **Breaking change**: [GetObjectJointType](virtualgrasp_unityapi.0.11.1.html#getobjectjointtype) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointType will be invalid.
-* [SetAvatarActive](virtualgrasp_unityapi.0.11.1.html#setavataractive) added an optional argument: resetPos.
-* Added [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.11.1.html#getobjectsecondaryjointstate) which provide {% include tooltip.html tooltip="JointState" text="joint state" %} along yaxis of joint anchor for {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joint" %}. 
-* Added api functions to set velocity scales for throwing: [SetGlobalThrowVelocityScale](virtualgrasp_unityapi.0.11.1.html#setglobalthrowvelocityscale), [SetThrowVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.1.html#setthrowvelocityscaleforselectedobject), [SetThrowVelocityScaleForObject](virtualgrasp_unityapi.0.11.1.html#setthrowvelocityscaleforobject), [SetGlobalThrowAngularVelocityScale](virtualgrasp_unityapi.0.11.1.html#setglobalthrowangularvelocityscale), [SetThrowAngularVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.11.1.html#setthrowangularvelocityscaleforselectedobject), [SetThrowAngularVelocityScaleForObject](virtualgrasp_unityapi.0.11.1.html#setthrowangularvelocityscaleforobject). 
-* Added [GetAvatarID](virtualgrasp_unityapi.0.11.1.html#getavatarid) to receive the ID of an avatar.
-* Added [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.11.1.html#getsensorcontrolledavatarid) to receive the ID of the sensor-controlled avatar.
-* Added [GetReplayAvatarID](virtualgrasp_unityapi.0.11.1.html#getreplayavatarid) to receive the ID of the replay avatar (if replaying is supported by the VG version).
-* Added [UnregisterAvatarAtRuntime](virtualgrasp_unityapi.0.11.1.html#unregisteravataratruntime) to allow deleting avatars. (This is most relevant for multiplayer use case.)
+* **Breaking change**: [GetObjectJointState](virtualgrasp_unityapi.0.12.0.html#getobjectjointstate) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointState will be invalid.
+* **Breaking change**: [GetObjectJointType](virtualgrasp_unityapi.0.12.0.html#getobjectjointtype) changed function signature, so it checks if input selectedObject is null, will return error code, and output JointType will be invalid.
+* [SetAvatarActive](virtualgrasp_unityapi.0.12.0.html#setavataractive) added an optional argument: resetPos.
+* Added [GetObjectSecondaryJointState](virtualgrasp_unityapi.0.12.0.html#getobjectsecondaryjointstate) which provide {% include tooltip.html tooltip="JointState" text="joint state" %} along yaxis of joint anchor for {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joint" %}. 
+* Added api functions to set velocity scales for throwing: [SetGlobalThrowVelocityScale](virtualgrasp_unityapi.0.12.0.html#setglobalthrowvelocityscale), [SetThrowVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.12.0.html#setthrowvelocityscaleforselectedobject), [SetThrowVelocityScaleForObject](virtualgrasp_unityapi.0.12.0.html#setthrowvelocityscaleforobject), [SetGlobalThrowAngularVelocityScale](virtualgrasp_unityapi.0.12.0.html#setglobalthrowangularvelocityscale), [SetThrowAngularVelocityScaleForSelectedObject](virtualgrasp_unityapi.0.12.0.html#setthrowangularvelocityscaleforselectedobject), [SetThrowAngularVelocityScaleForObject](virtualgrasp_unityapi.0.12.0.html#setthrowangularvelocityscaleforobject). 
+* Added [GetAvatarID](virtualgrasp_unityapi.0.12.0.html#getavatarid) to receive the ID of an avatar.
+* Added [GetSensorControlledAvatarID](virtualgrasp_unityapi.0.12.0.html#getsensorcontrolledavatarid) to receive the ID of the sensor-controlled avatar.
+* Added [GetReplayAvatarID](virtualgrasp_unityapi.0.12.0.html#getreplayavatarid) to receive the ID of the replay avatar (if replaying is supported by the VG version).
+* Added [UnregisterAvatarAtRuntime](virtualgrasp_unityapi.0.12.0.html#unregisteravataratruntime) to allow deleting avatars. (This is most relevant for multiplayer use case.)
 
 ##### Other / Internal Changes:
 
-* Bugfix on [OnObjectSelected](virtualgrasp_unityapi.0.11.1.html#onobjectselected) event is not invoked for object with Index Pushable {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}.
-* Bugfix on [OnObjectGrasped](virtualgrasp_unityapi.0.11.1.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.1.html#jumpgraspobject) call. (**fixed known issue from 0.10.1**)
+* Bugfix on [OnObjectSelected](virtualgrasp_unityapi.0.12.0.html#onobjectselected) event is not invoked for object with Index Pushable {% include tooltip.html tooltip="InteractionAffordance" text="interaction affordance" %}.
+* Bugfix on [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.12.0.html#jumpgraspobject) call. (**fixed known issue from 0.10.1**)
 * Bugfix on after an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose. (**fixed known issue from 0.10.1**)
 * Bugfix on physical avatar when grasping {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with {% include tooltip.html tooltip="StickyHand" text="sticky hand" %} interaction type object and hand is grandually moving away.
 * Further performance optimization of selecting which objects need to be synced between Unity and VG.
@@ -52,7 +102,7 @@ folder: mydoc
 * Provide error message if you are on Mac that Mac is not supported.
 
 * All #defines that enable controllers with dependencies on third party plugins have been prefixed with VG_ (e.g., USE_LEAP_CONTROLLER is now VG_USE_LEAP_CONTROLLER) to avoid conflicts with non-VG defines.
-* Onboarding scene added [Task6](unity_vgonboarding_task6.0.11.1.html) to showcase VirtualGrasp's newly added support of {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joints" %}. 
+* Onboarding scene added [Task6](unity_vgonboarding_task6.0.12.0.html) to showcase VirtualGrasp's newly added support of {% include tooltip.html tooltip="Planar" text="planar" %} {% include tooltip.html tooltip="Joint" text="joints" %}. 
 * Added first Unity tutorials.
 
 ##### Update to VG Core library 0.8.0:
@@ -60,7 +110,7 @@ folder: mydoc
 * Bugfix for physical avatar index finger push gesture formation is not smooth. (**fixed known issue from 0.10.1**)
 * Improved pinch grasp on small objects. (**fixed known issue from 0.10.1**)
 * Bugfix for when hand form index finger push gesture grasp synthesis adopted push gesture problem.
-* Bugfix for [JumpGraspObject](virtualgrasp_unityapi.0.11.1.html#jumpgraspobject) crash on unbaked object problem. 
+* Bugfix for [JumpGraspObject](virtualgrasp_unityapi.0.12.0.html#jumpgraspobject) crash on unbaked object problem. 
 
 ##### Known Issues (To Be Fixed In Next Release)
 
@@ -68,7 +118,7 @@ folder: mydoc
 
 * If two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position.
 
-* If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.11.1.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
+* If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
 
 * If two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
 
@@ -76,17 +126,17 @@ folder: mydoc
 
 ##### Known Issues:
 
-* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.11.1.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.11.1.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
-* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.11.1.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
+* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
 
 * If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
 
 * If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
 
-* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.11.1.html#changeobjectjoint) as yet. 
+* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) as yet. 
 
-* Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.11.1.html) can lead to crashing.
+* Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.12.0.html) can lead to crashing.
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 
@@ -96,34 +146,33 @@ folder: mydoc
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
 
-
 ## V0.10.1 (2022-03-01)
 
 ##### Major Functionality Changes:
 
 * **Breaking change**: Removed support of using VG_Articulation component with constrained {% include tooltip.html tooltip="Joint" text="joints" %} (non-FLOATING joint) on objects with Rigidbody. Developers are encouraged to use [Unity Joints](https://docs.unity3d.com/Manual/Joints.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) for physical joints.
-* **Breaking change**: in [VG_Articulation](unity_component_vgarticulation.0.11.1.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive. Due to the name change, the reference can be lost and need to be reassigned.
+* **Breaking change**: in [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description), "Pivot" changed name to "Anchor" to be more consistent with the terminology used by [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html). And "Push Pivot" changed name to "Push Direction" to be more descriptive. Due to the name change, the reference can be lost and need to be reassigned.
 * More stable grasp interaction with {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} and better throwing experiences. 
 
 ##### GUI / Component Changes:
 
-* In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.11.1.html#grasp-interaction-settings) changed variable name "Grasp Speed" to "Grasp Animation Speed" and "Release Speed" to "Release Animation Speed". The default values for them are reduced to 0.05 (from 0.1) and 0.1 (from 0.2) second respectively to make grasp and release more snappy. The minimum values for both are reduced to 0.01 second (from 0.1 second).
-* In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.11.1.html#grasp-interaction-settings) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to control power of throw on grasped objects. 
-* [VG_Articulation](unity_component_vgarticulation.0.11.1.html#description) editing is disabled when object has Rigidbody component. (Was disabled when object has ArticulationBody component in version 0.9.6)
+* In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#grasp-interaction-settings) changed variable name "Grasp Speed" to "Grasp Animation Speed" and "Release Speed" to "Release Animation Speed". The default values for them are reduced to 0.05 (from 0.1) and 0.1 (from 0.2) second respectively to make grasp and release more snappy. The minimum values for both are reduced to 0.01 second (from 0.1 second).
+* In [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#grasp-interaction-settings) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to control power of throw on grasped objects. 
+* [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) editing is disabled when object has Rigidbody component. (Was disabled when object has ArticulationBody component in version 0.9.6)
 * Made VG_MainScript abstract since one should only use a child class (such as MyVirtualGrasp).
 * Improved handling of AutoSetup when a VG_MainScript is created (such as adding a sensor instead of complaining it has not been added). 
-* [MyVirtualGrasp/Avatars](unity_component_myvirtualgrasp.0.11.1.html#avatars) added "Replay" check to indicate if this avatar is to be used for sensor replay. If not checked, it will be controlled by sensor / controller. 
+* [MyVirtualGrasp/Avatars](unity_component_myvirtualgrasp.0.12.0.html#avatars) added "Replay" check to indicate if this avatar is to be used for sensor replay. If not checked, it will be controlled by sensor / controller. 
 
 ##### API Changes:
 
-* **Breaking change**: VG_Controller.SetProcessedByFrame() function is removed. If you want to set an avatar for sensor replay, you can specify the avatar for replay by checking _Replay_ in [MyVirtualGrasp](unity_component_myvirtualgrasp.0.11.1.html#autosetup--sensors) component. 
+* **Breaking change**: VG_Controller.SetProcessedByFrame() function is removed. If you want to set an avatar for sensor replay, you can specify the avatar for replay by checking _Replay_ in [MyVirtualGrasp](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) component. 
 
 ##### Other / Internal Changes:
 
 * Event handling bugfix: OnObjectFullyReleased do not trigger on objects that are not grasped. 
-* Onboarding scene [Task3](unity_vgonboarding_task3.0.11.1.html) improved ManageContainerObject.cs script.
-* Onboarding scene added [Task4](unity_vgonboarding_task4.0.11.1.html) showcase VirtualGrasp's support of interaction with ArticulationBodys. 
-* Onboarding scene added [Task5](unity_vgonboarding_task5.0.11.1.html) showcase VirtualGrasp's support of object assembly with VG_Articulation without rely on physics. 
+* Onboarding scene [Task3](unity_vgonboarding_task3.0.12.0.html) improved ManageContainerObject.cs script.
+* Onboarding scene added [Task4](unity_vgonboarding_task4.0.12.0.html) showcase VirtualGrasp's support of interaction with ArticulationBodys. 
+* Onboarding scene added [Task5](unity_vgonboarding_task5.0.12.0.html) showcase VirtualGrasp's support of object assembly with VG_Articulation without rely on physics. 
 * Endpoints for CABVG cloud baking updated to new server.
 * Hidden affordances (such as after switching a VG_Articulation from revolute joint to fixed joint) are ignored as they should be.
 * Recording files added to StreamingAssets.
@@ -139,18 +188,18 @@ folder: mydoc
 ##### Known Issues (To Be Fixed In Next Release)
 
 * Index finger push gesture formation is not smooth when avatar is set to be physical.
-* [OnObjectGrasped](virtualgrasp_unityapi.0.11.1.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.11.1.html#jumpgraspobject) call.
+* [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) event is not invoked for [JumpGraspObject](virtualgrasp_unityapi.0.12.0.html#jumpgraspobject) call.
 * After an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained {% include tooltip.html tooltip="Joint" text="joint" %} follows the move of its non-{% include tooltip.html tooltip="VGInteractable" text="interactable" %} parent (or an ancester), the moment when hand grasp or push this constrained object, it jump back to the original global pose.
 * Grasping and sliding a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} on another object with collider shows obvious non-smooth behavior due to some artificial manipulation of object velocities. 
-* AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.1.html#vg_externalcontroller-class) you like to use.
+* AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.12.0.html#vg_externalcontroller-class) you like to use.
 
 ##### Known Issues:
 
 * Since Unity 2019 or earlier versions do not have [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html), these earlier versions of Unity is not supported.
-* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.11.1.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.11.1.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 * Dynamic Grasp sometimes has unnaturally large thumb extention. 
 * Grasps on small objects may have unatural finger placement.
-* If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.11.1.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
+* If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
 
 
 ## V0.9.6 (2022-02-15)
@@ -165,7 +214,7 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
-* GraspStudio optimized and extended (see [VG_GraspStudio](unity_component_vggraspstudio.0.11.1.html)).
+* GraspStudio optimized and extended (see [VG_GraspStudio](unity_component_vggraspstudio.0.12.0.html)).
 * Helper tooltips adjusted after documentation being transferred to docs.virtualgrasp.com.
 * Disabling VG_Articulation editing when ArticulationBody is on object.
 * Adjusted auto-setup offsets for provided hand model when using UnityXR.
@@ -248,7 +297,7 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
-* New VG_BakingClient to support CABVG2 cloud baking service (stay tuned for update of [VG_BakingClient](unity_component_vgbakingclient.0.11.1.html))
+* New VG_BakingClient to support CABVG2 cloud baking service (stay tuned for update of [VG_BakingClient](unity_component_vgbakingclient.0.12.0.html))
 * VG_Articulation GUI behavior adjusted: grasp/push affordance also selected for floating objects; push pivot only for pushable objects.
 
 ##### Other / Internal Changes:
@@ -260,7 +309,7 @@ folder: mydoc
 
 ##### API Changes:
 
-* [ChangeObjectJoint](virtualgrasp_unityapi.0.11.1.html#changeobjectjoint) fixed the bug that made new_screwRate input with no effect. 
+* [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) fixed the bug that made new_screwRate input with no effect. 
 
 ##### Update to VG Core library 0.6.3: 
 
@@ -284,17 +333,17 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
-* VG_DebugSettings modified. EditMode Save Debug Files for Current Editor Scene ⚠️. Read more on [Debug Files](debug_files.0.11.1.html).
+* VG_DebugSettings modified. EditMode Save Debug Files for Current Editor Scene ⚠️. Read more on [Debug Files](debug_files.0.12.0.html).
 * VG_Articulation.Lock() and VG_Articulation.Unlock() shortcuts removed. Using them in Events was unsafe. In code, use VG_Controller.ChangeObjectJoint(transform, VG_JointType.FIXED) instead of VG_Articulation.Lock(), and VG_Controller.RecoverObjectJoint(transform) instead of VG_Articulation.Unlock().
 * Fixed problem in GraspEditor scene creation when UnityEngine.SpatialTracking.TrackedPoseDriver is not available, but only UnityEngine.InputSystem.XR.TrackedPoseDriver.
 * VG_EC_GenericHand added and used as fallback for VG_ExternalControllerManager.
-* VG_GraspStudio allows deleting grasps. To delete a grasp, you have to "double-disable" it. Read more on [VG_GraspStudio](unity_component_vggraspstudio.0.11.1.html).
+* VG_GraspStudio allows deleting grasps. To delete a grasp, you have to "double-disable" it. Read more on [VG_GraspStudio](unity_component_vggraspstudio.0.12.0.html).
 * VG_Recorder extended with example to call new VG_Controller.GetReplayStartWristPose().
 
 ##### API Changes:
 
-* [SetAvatarActive](virtualgrasp_unityapi.0.11.1.html#setavataractive) added to set avatar in/active (i.e. sensor control and mesh visualization).
-* [GetReplayStartWristPose](virtualgrasp_unityapi.0.11.1.html#getreplaystartwristpose) added to return starting wrist poses of a recording, and check [how to query start pose page](unity_component_vgrecorder.0.11.1.html#how-to-query-start-pose-of-hand) to learn to use it.
+* [SetAvatarActive](virtualgrasp_unityapi.0.12.0.html#setavataractive) added to set avatar in/active (i.e. sensor control and mesh visualization).
+* [GetReplayStartWristPose](virtualgrasp_unityapi.0.12.0.html#getreplaystartwristpose) added to return starting wrist poses of a recording, and check [how to query start pose page](unity_component_vgrecorder.0.12.0.html#how-to-query-start-pose-of-hand) to learn to use it.
 * RegisterObjectAtRuntime(), RegisterObjectsAtRuntime(), DeleteDistalObjectAtRuntime() removed. VG_Articulation will take care of de/registration.
 
 ##### Update to VG Core library 0.6.2: 
@@ -364,7 +413,7 @@ folder: mydoc
 
     * The .lab file is obsolete now (because it is incorporated in the single .db file).
 
-    * Read more on [VG_BakingClient](unity_component_vgbakingclient.0.11.1.html) (when updated).
+    * Read more on [VG_BakingClient](unity_component_vgbakingclient.0.12.0.html) (when updated).
 
 
 ##### GUI / Component Changes:
