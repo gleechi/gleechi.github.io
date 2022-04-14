@@ -50,11 +50,21 @@ So, when you are trying to catch a fast moving object such as a falling one, the
 
 Note that you cannot define the Grasp Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.0.12.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [VG_Controller.SetInteractionTypeForObject](virtualgrasp_unityapi.0.12.0.html#setinteractiontypeforobject) from your code during runtime.
 
+### All my objects are baked but why do I still get unnatural looking grasps?
+
+The unnatrual looking grasps could be caused by you have set the {% include tooltip.html tooltip="InteractionType" text="interaction type" %} of this object to be {% include tooltip.html tooltip="StickyHand" text="STICKY_HAND" %}. You could set it by either globally for all objects in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings), or on specific object through [VG_Interactable](unity_component_vginteractable.0.12.0.html) component, which overwrite the global settings. The commonly used {% include tooltip.html tooltip="InteractionType" text="interaction type" %} is either {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} or {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}.
+
 ## Baking
 
 ### How am I supposed to import the .obj files (in vg_tmp) into my project?
 
 You are not supposed to import the .obj files in your own scenes (since you have your original models there). The main purpose of the .obj files is to represent the raw mesh data of objects when they shall be sent through the [Baking Client](unity_component_vgbakingclient.0.12.0.html) to the cloud baking service. You can read more information on [Debug Files](debug_files.0.12.0.html#debug-files-content).
+
+### Why some of my interactable objects not baked?
+
+This can be caused by multiple things:
+* [Mesh not readable](#mesh-not-readable) error, or
+* The objects are runtime spawned and were not exported correctly in [Prepare project](unity_component_vgbakingclient.0.12.0.html#step-2-preparation) step. 
 
 ## Common Unity Error Messages
 
