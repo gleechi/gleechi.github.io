@@ -9,7 +9,7 @@ permalink: unity_component_vgrecorder.0.11.1.html
 folder: mydoc
 ---
 
-{% include image.html file="unity/unity_vg_recorder.png" alt="VG Recorder" caption="VG_Recorder Component." %}
+{% include image.html file="unity/unity_vg_recorder_0_11_1.png" alt="VG Recorder" caption="VG_Recorder Component." %}
 
 ## Description
 
@@ -97,12 +97,12 @@ VG_Controller.GetReplayStartWristPose(replayingAvatarInstanceID, m_replayObject,
 If you replay the whole {% include tooltip.html tooltip="InteractionSequence" text="interaction sequence" %} of {% include tooltip.html tooltip="SensorData" text="sensor data" %} without any changes, the controlled VR hands will be disembodied, which is what you potentially do not want. 
 
 In order to instantiate another pair of hands to be controlled by the replay, 
-* add another hand model into the scene (such as by duplicating the hand model you already have), 
-* add another element to VG_MainScript→Sensors→Avatars (see below), 
-* assign the SkinnedMeshRenderer of your duplicated hand model to the Hand Model slot of the newly added element, and finally 
-* change the _AvatarID_ in the VG_Recorder to 2 (meaning that you want to replay the recordings on the second avatar).
+* add another avatar with hands into the scene (such as by duplicating the avatar you already have), 
+* add another element to VG_MainScript→Sensors→Avatars, and check it as _Replay_ avatar (see below), 
+* assign the SkinnedMeshRenderer of your duplicated Replay avatar to the _Replaying avatar_  slot of the VG_Recorder (meaning that you want to replay the recordings on the second avatar).
 
-{% include image.html file="unity/unity_vg_recorder_avatars.png" alt="VG Recorder Hands" caption="In MyVirtualGrasp: Setup for another avatar to replay recorded data." %}
+{% include image.html file="unity/unity_vg_recorder_avatars_0_11_1.png" alt="VG Recorder Hands" caption="In MyVirtualGrasp: Setup for another avatar to replay recorded data." %}
+
 
 <!--
 ## Videos
