@@ -41,8 +41,6 @@ In order to record an interaction sequence:
 
 In order to support recording and replaying {% include tooltip.html tooltip="SensorData" text="sensor data" %} and re-using that information, there will be recording files in each project.
 
-That means that when you record inside your Unity project, and want to use the recordings in a build, you have to manually copy these files to the build directory.
-
 ## How to Replay an Interaction Sequence
 
 ### Full and scene-specific interaction replay
@@ -51,7 +49,7 @@ After you have recorded an {% include tooltip.html tooltip="InteractionSequence"
 
 This option is very handy when you want to record and replay for example an assembling task where interactions with multiple objects are involved. However you need to guaranttee while replaying all objects are at the same location as when they are recorded.
 
-Pressing the _Replay Sequence Key_ will replay the recording provided in _Recording Filename_ with the avatar provided in _Avatar ID_. To create a different avatar to follow the recording, please follow the [instructions below](#how-to-create-another-pair-of-hands-for-replaying-an-interaction-sequence). In the video below, the green button triggers this replay.
+Pressing the _Replay Sequence Key_ will replay the recording provided in _Recording Filename_ with the replay avatar. To create a different avatar to follow the recording, please follow the [instructions below](#how-to-create-another-pair-of-hands-for-replaying-an-interaction-sequence). In the video below, the green button triggers this replay.
 
 {% include youtube.html id="o5F5tUb8RQM" caption="Record Replay 1." %}
 
@@ -98,8 +96,8 @@ If you replay the whole {% include tooltip.html tooltip="InteractionSequence" te
 
 In order to instantiate another pair of hands to be controlled by the replay, 
 * add another avatar with hands into the scene (such as by duplicating the avatar you already have), 
-* add another element to VG_MainScript→Sensors→Avatars, and check it as _Replay_ avatar (see below), 
-* assign the SkinnedMeshRenderer of your duplicated Replay avatar to the _Replaying avatar_  slot of the VG_Recorder (meaning that you want to replay the recordings on the second avatar).
+* add another element to VG_MainScript→Sensors→Avatars, drag the SkinnedMeshRenderer from scene to _SkeletalMesh_ field and check it as _Replay_ avatar (see below), 
+* also assigne the SkinnedMeshRenderer to the _Replaying avatar_  slot of the VG_Recorder (meaning that you want to replay the recordings on this avatar).
 
 {% include image.html file="unity/unity_vg_recorder_avatars_0_11_1.png" alt="VG Recorder Hands" caption="In MyVirtualGrasp: Setup for another avatar to replay recorded data." %}
 
