@@ -10,7 +10,56 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
-## V0.12.0(2022-04-14)
+## V0.12.0 (2022-04-14)
+
+##### Major Functionality Changes:
+
+*  [VG_BakingClient](unity_component_vgbakingclient.0.12.0.html) has been overhauled with support of _Prepare project_ in the same GUI without the need to move to [Debug Settings](debug_files.0.12.0.html) if there are no runtime spawned {% include tooltip.html tooltip="VGInteractable" text="interactable" %} objects. 
+
+##### GUI / Component Changes:
+
+* AutoSetup string for Oculus finger tracking was changed from "QuestHand" to "OculusHand" to conform with the file names and avoid confusion.
+* Fixed confusion of disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) component. (**fixed known issue from 0.11.1**)
+
+##### API Changes:
+* There are no API changes. 
+
+##### Other / Internal Changes:
+
+* Updated GleechiHands with better shader and material, as well as bone structure for finger pose mapping and grasp interaction (**fixed known issue from 0.11.1**).
+* Updated Unity tutorials for VG baking client. 
+* Bugfix on if two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen. (**fixed known issue from 0.11.1**)
+
+##### Update to VG Core library 0.9.0:
+
+* Fixed unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. 
+* Bugfix on if two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position. (**fixed known issue from 0.11.1**)
+
+##### Known Issues (To Be Fixed In Next Release)
+
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+
+* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
+
+* If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
+
+* If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
+
+* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) as yet. 
+
+* Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.12.0.html) can lead to crashing.
+
+* When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
+
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
+
+##### Known Issues:
+
+* Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
+
+* {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
+
+## V0.11.1 (2022-04-11)
 
 ##### Major Functionality Changes:
 
@@ -22,7 +71,6 @@ folder: mydoc
 
 * Bugfix on AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.12.0.html#vg_externalcontroller-class) you like to use. (**fixed known issue from 0.10.1**)
 * [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) has been overhauled as a dynamic component to improve user experience. 
-* AutoSetup string for Oculus finger tracking was changed from "QuestHand" to "OculusHand" to conform with the file names and avoid confusion.
 * Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.
 * [VG_Interactable](unity_component_vginteractable.0.12.0.html) added "Throw Velocity Scale" and "Throw Angular Velocity Scale" to allow specifying object-specific throwing power that overwrite those set in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings).
 
@@ -66,17 +114,25 @@ folder: mydoc
 
 ##### Known Issues (To Be Fixed In Next Release)
 
-* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+* There is a problem of unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. 
+
+* If two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position.
 
 * If a game object only has a disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.12.0.html#description) component, this game object is still marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} so that you can grasp it. And even if this disabled VG_Articulation set a {% include tooltip.html tooltip="Joint" text="joint" %} other than Floating, it will behave as Floating {% include tooltip.html tooltip="Joint" text="joint" %}. These are undesired behavior and will be fixed.
+
+* If two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
+
+* The newly released GleechiHands does not have perfect mapping of real finger poses when using finger tracking solutions like OCULUS_EXT and LEAP_EXT. 
+
+##### Known Issues:
+
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
 * If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
 
 * If game object's pivot is relatively far away from mesh center, then there is strange interactive behavior on REVOLUTE joint through [Unity ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html).
 
-* If two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
-
-* If two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position.
+* If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
 
 * The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) as yet. 
 
@@ -86,16 +142,9 @@ folder: mydoc
 
 * {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
 
-* If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
-
-* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision. 
-
-* The newly released GleechiHands does not have perfect mapping of real finger poses when using finger tracking solutions like OCULUS_EXT and LEAP_EXT. 
-
-##### Known Issues:
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
-
 
 ## V0.10.1 (2022-03-01)
 
