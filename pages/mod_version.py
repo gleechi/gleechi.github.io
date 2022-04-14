@@ -15,7 +15,8 @@ import os
 import sys
 import re
 import argparse
-    
+import shutil
+
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 PATH_INITIAL_DIR = os.path.join(CURRENT_DIR, "../../")
 sys.path.append(os.path.join(CURRENT_DIR, "../../scripts"))
@@ -78,8 +79,7 @@ def replaceWildcards(string, pattern, replacementPattern):
             sub += f"{replacementPiece}"
     return re.sub(reg, sub, string)
 
-## Process the files by checking header lines and informing which headers are inconsistent.
-def processFiles(filenames, old_, new_):
+def replaceVersion(filenames, old_, new_):
     for filename in filenames:
         # read content
         file = open(filename, 'r', encoding="utf-8")
@@ -138,6 +138,27 @@ def processFiles(filenames, old_, new_):
             file.close()
         '''
 
+def adjustReleaseNotes(filename, old_, new_):
+    file = open(filename, 'r', encoding="utf-8")
+    content = file.read()
+    file.close()
+
+    file = open(filename, 'w', encoding="utf-8")
+    content = content.replace("V" + new_ + " (", "V" + old_ + "(")
+    file.write(content) 
+    file.close()
+
+def adjustTopNav(filename, old_, new_):
+    file = open(filename, 'r', encoding="utf-8")
+    content = file.read()
+    file.close()
+
+    file = open(filename, 'w', encoding="utf-8")
+    idx = content.find("        - title: Unity SDK " + old_)
+    out = content[:idx] + "        - title: Unity SDK " + new_ + "\n          url: /index." + new_ + ".html\n" + content[idx:]
+    file.write(out) 
+    file.close()     
+
 if __name__ == "__main__":
     # Parse command line arguments
     parser = argparse.ArgumentParser()
@@ -145,13 +166,32 @@ if __name__ == "__main__":
     parser.add_argument('--new', required=True, help='New version')
     args = parser.parse_args()
 
-    filenames, path = receiveFilesFromDirectory(args.new, ['md'], True, EXCLUDE_PATHS)
-    if len(filenames) == 0:
-        print ("No files to process.")
-        exit(-1)
+    if not os.path.isdir(args.new):
+        print ()
+        answer = input("There is no folder " + args.new + ". Do you want to create it [Y/n]?") 
+        if answer == "Y" or answer == "y" or answer == "":
+            shutil.copytree(args.old, args.new)
+        else:
+            exit(-1)
 
-    # process sequence of files
-    processFiles(filenames, args.old, args.new)
+    # Create sidebar for new version
+    content = open("../_data/sidebars/main_sidebar_" + args.old.replace('.', '_') + ".yml", 'r', encoding="utf-8").read()
+    sidebar = "../_data/sidebars/main_sidebar_" + args.new.replace('.', '_') + ".yml"
+    open(sidebar, 'w', encoding="utf-8").write(content)
+
+    # Gather .md files and process sequence of files
+    filenames, path = receiveFilesFromDirectory(args.new, ['md'], True, EXCLUDE_PATHS)    
+    replaceVersion(filenames, args.old, args.new)
+    
+    # Replace the "last" version in the sidebar that is checked to show if there's an update.
+    replaceVersion([sidebar, "../_includes/sidebar.html"], args.old, args.new)
+
+    # Add a new version entry to the topnav menu
+    adjustTopNav("../_data/topnav.yml", args.old, args.new)
+
+    # Re-adjust the release notes (version was replaced above in this .md file as well)
+    adjustReleaseNotes(args.new + "/unity/release_notes.md", args.old, args.new)
+
 else:
     print("check_header.py is being imported into another module")
 
