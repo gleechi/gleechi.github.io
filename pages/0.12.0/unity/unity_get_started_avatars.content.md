@@ -1,8 +1,8 @@
 ### A First Look at the Hand Model
 
-First, import a hand model into your scene, such as the provided OculusRig in ThirdParty/VirtualGrasp/Resources/OculusHands. 
+First, import a hand model into your scene, such as the provided GleechiRig in ThirdParty/VirtualGrasp/Resources/GleechiHands. 
 
-Next, link it into its place under Sensors → Avatars → Skeletal Mesh, by dragging and dropping Rhand.001 (which you can find directly under OculusRig in the Hierarchy) into this slot.
+Next, link it into its place under Sensors → Avatars → Skeletal Mesh, by dragging and dropping its SkinnedMeshRenderer (which you can find directly under GleechiRig in the Hierarchy) into this slot.
 
 {% include image.html file="unity/unity_hand_model.png" alt="Unity hand model." caption="Hand model references need to be provided in Sensors → Avatars → Skeletal Mesh." %}
 
