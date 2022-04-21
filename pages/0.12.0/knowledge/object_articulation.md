@@ -44,11 +44,11 @@ For any joint type, there are a set of parameters to be used to configure the jo
 
 ### Joint State
 
-If an object has an 1-dof joint, then its complete pose can be determined by a combination of 
+If an object has an 1-dof joint (Prismatic or Revolute) or 2-dof joint (Planar), then its complete pose can be determined by a combination of 
 * its joint configuration (defined by a set of parameters shown in above table) 
-* and a single scalar value -- {% include tooltip.html tooltip="JointState" text="joint state" %}. 
+* and a single scalar value -- {% include tooltip.html tooltip="JointState" text="joint state" %} for 1-dof joints, or two values -- ({% include tooltip.html tooltip="JointState" text="joint state" %}, {% include tooltip.html tooltip="SecondaryJointState" text="secondary joint state" %}).
 
-The table below gives some example values of joint state to further clarify its meaning:
+The table below gives some example values of joint state for two 1-dof joints to further clarify its meaning:
 
 | Joint State | Revolute | Prismatic|
 |-------|--------|---------|
@@ -65,7 +65,7 @@ If an object has {% include tooltip.html tooltip="Planar" text="PLANAR" %} joint
 
 ### Anchor vs. Push Direction
 
-As shown in the joint parameter table above, an object's joint parameters include {% include tooltip.html tooltip="JointCenter" text="joint center" %} and {% include tooltip.html tooltip="JointAxis" text="joint axis" %}.
+As shown in the joint parameter table above, an object's joint parameters include {% include tooltip.html tooltip="JointCenter" text="joint center" %} and {% include tooltip.html tooltip="JointAxis" text="joint axis" %} (also {% include tooltip.html tooltip="JointAxis2" text="joint axis2" %} in the case of PLANAR joint).
 These two parameters are provided in a combined way through an {% include tooltip.html tooltip="Pivot" text="anchor" %} transform in the game engine. 
 
 Then what is **push direction**? 

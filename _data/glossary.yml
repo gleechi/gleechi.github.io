@@ -89,11 +89,13 @@ ScrewRate: A parameter for Revolute joint, describing how much the object linear
 
 JointCenter: The center point of an object's joint, around which an object is rotating around, specified by the Pivot transform’s position.
 
-JointAxis: The axis of the joint, specified by the Pivot transform’s position; for Revolute joint the axis around which the object rotates; for Prismatic joint the axis along which the object translate; for Cone joint the axis in the center of the cone representing zero swing angle.
+JointAxis: The axis of the joint, specified by the Pivot (Anchor) transform’s zaxis; for Revolute joint the axis around which the object rotates; for Prismatic joint the axis along which the object translate; for Planar joint this is normal of the plane; for Cone joint the axis in the center of the cone representing zero swing angle.
 
-Pivot: A transform needed to specify the JointCenter (position) and JointAxis (zaxis) of an object Joint; for PLANAR joint (xaxis, yaxis) are used to define rectangular limit space on the plane.
+JointAxis2: The secondary axis of the joint, specified by the Pivot (Anchor) transform’s xaxis; this is the xaxis for PLANAR joint's rectangular limit.
 
-PushPivot: A transform to specify along which direction (zaxis) the hand can approach and push an object that has push affordance; this direction is not the direction of object movement, but only used for object selection for [push without physics](push_interaction.html#push-without-physics).
+Pivot: Pivot or Anchor is a transform needed to specify the JointCenter (position) and JointAxis (zaxis) of an object Joint; for PLANAR joint (xaxis, yaxis) are used to define rectangular limit space on the plane.
+
+PushPivot: Push Pivot or Push Direction is a transform to specify along which direction (zaxis) the hand can approach and push an object that has push affordance; this direction is not the direction of object movement, but only used for object selection for [push without physics](push_interaction.html#push-without-physics).
 
 ApproachDirection: The direction along which the PushAgent approaches the object to be pushed; PushPivot assigned to a pushable object is used to specify a preferred approach direction by the PushAgent. 
 
