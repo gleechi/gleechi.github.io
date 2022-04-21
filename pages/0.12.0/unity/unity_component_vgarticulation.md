@@ -46,4 +46,4 @@ As a result, all the parameters set in the component will be specified in runtim
 
 If you want to recover the object joint to its original parameters set by the **enabled** VG_Articulation component, you can call the [RecoverObjectJoint](virtualgrasp_unityapi.0.12.0.html#recoverobjectjoint) API function.
 
-{% include important.html content="ChangeObjectJoint to a non-floating joint type will not be allowed if an object is physical, i.e. with Rigidbody or ArticulationBody components." %}
+{% include important.html content="Switch an object to a non-floating joint type (whether through ChangeObjectJoint or RecoverObjectJoint) is not allowed if an object is physical, i.e. with Rigidbody or ArticulationBody components." %}
