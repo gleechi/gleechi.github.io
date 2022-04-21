@@ -31,7 +31,7 @@ The reason for the mismatch is that each controller (for example, VG_EC_OculusHa
 
 ## Interaction
 
-### I added a VG_Articulation component to my game object, but I could not interact with the object when I play, why?
+### I added a VG_Articulation component to my game object, but I could not interact with the object when I play.
 
 There could be four reasons:
 1. [Mesh is not readable](#mesh-not-readable).
@@ -39,11 +39,11 @@ There could be four reasons:
 3. You have in runtime disabled this [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component.
 4. You have in runtime [SetObjectSelectionWeight](virtualgrasp_unityapi.0.12.0.html#setobjectselectionweight) to 0. 
 
-### I runtime changed the VG_Articulation component on an object with different joint type and other joint parameters, why the interaction with this object does not correspond to these changes?
+### I runtime changed the VG_Articulation component on an object with different joint type and/or other joint parameters. Why the interaction with this object does not correspond to these changes?
 
 You can only runtime change object articulation by using API function [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint-1). See page [runtime changes](unity_component_vgarticulation.0.12.0.html#runtime-changes). 
 
-### When I tried to catch a fast moving object, the hand is following the object for a little which looks strange. Why?
+### When I tried to catch a fast moving object, the hand is following the object for a little which looks strange.
 
 The default interaction type for all objects is {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} and Grasp Animation Speed 0.05 (see [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings)) which means that the a grasp moves the hand to the object in 0.05 seconds.
 
@@ -56,7 +56,7 @@ Note that you cannot define the Grasp Animation Speed for a specific object. You
 
 ### All my objects are baked but why do I still get unnatural looking grasps?
 
-The unnatrual looking grasps could be caused by you have set the {% include tooltip.html tooltip="InteractionType" text="interaction type" %} of this object to be {% include tooltip.html tooltip="StickyHand" text="STICKY_HAND" %}. You could set it by either globally for all objects in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings), or on specific object through [VG_Interactable](unity_component_vginteractable.0.12.0.html) component, which overwrite the global settings. The commonly used {% include tooltip.html tooltip="InteractionType" text="interaction type" %} is either {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} or {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}.
+The unnatrual looking grasps could be caused by you have set the {% include tooltip.html tooltip="InteractionType" text="interaction type" %} of this object to be {% include tooltip.html tooltip="StickyHand" text="STICKY_HAND" %}. You could have set it by either globally for all objects in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings), or on specific object through [VG_Interactable](unity_component_vginteractable.0.12.0.html) component, which overwrite the global settings. To fix it just switch to the commonly used {% include tooltip.html tooltip="InteractionType" text="interaction type" %}: {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} or {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}. See [Grasp Interaction Type](grasp_interaction.0.12.0.html#grasp-interaction-type) for more information.
 
 ## Baking
 
@@ -64,7 +64,7 @@ The unnatrual looking grasps could be caused by you have set the {% include tool
 
 You are not supposed to import the .obj files in your own scenes (since you have your original models there). The main purpose of the .obj files is to represent the raw mesh data of objects when they shall be sent through the [Baking Client](unity_component_vgbakingclient.0.12.0.html) to the cloud baking service. You can read more information on [Debug Files](debug_files.0.12.0.html#debug-files-content).
 
-### Why some of my interactable objects not baked?
+### Why are some of my interactable objects not baked?
 
 This can be caused by multiple things:
 * [Mesh not readable](#mesh-not-readable) error, or
