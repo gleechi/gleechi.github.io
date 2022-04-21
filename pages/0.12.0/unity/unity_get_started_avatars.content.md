@@ -4,7 +4,7 @@ First, import a hand model into your scene, such as the provided GleechiRig in T
 
 Next, link it into its place under Sensors → Avatars → Skeletal Mesh, by dragging and dropping its SkinnedMeshRenderer (which you can find directly under GleechiRig in the Hierarchy) into this slot.
 
-{% include image.html file="unity/unity_hand_model.png" alt="Unity hand model." caption="Hand model references need to be provided in Sensors → Avatars → Skeletal Mesh." %}
+{% include image.html file="unity/unity_hand_model_0_11_1.png" alt="Unity hand model." caption="Hand model references need to be provided in Sensors → Avatars → Skeletal Mesh." %}
 
 ### Conditions for Avatars
 
@@ -18,4 +18,4 @@ As a rule of thumb, the rigging / model hierarchy should be same as the model in
 
 You can see that VG has successfully initialized the avatar when messages like these appear:
 
-{% include image.html file="unity/unity_avatar_init.png" alt="Unity avatar init." caption="VirtualGrasp initialization message in the Unity console." %}
+{% include image.html file="unity/unity_avatar_init_0_11_1.png" alt="Unity avatar init." caption="VirtualGrasp initialization message in the Unity console." %}
