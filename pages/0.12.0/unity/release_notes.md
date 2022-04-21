@@ -55,6 +55,8 @@ folder: mydoc
 
 * Runtime change parent of an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained joint type may result in unexpected {% include tooltip.html tooltip="JointAxis" text="joint axis" %}  different from its initial setting.
 
+* The 2nd method -- pressing button "Export Scene in Edit" to [Create Debug Files](debug_files.0.12.0.html#creating-debug-files) has a bug: instead of create debug files in vg_tmp folder, it enabled "Export Scene in Runtime". 
+
 ##### Known Issues:
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
