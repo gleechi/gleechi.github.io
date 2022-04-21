@@ -28,7 +28,7 @@ folder: mydoc
 
 * Updated GleechiHands with better shader and material, as well as bone structure for finger pose mapping and grasp interaction (**fixed known issue from 0.11.1**).
 * Updated Unity tutorials for VG baking client. 
-* Bugfix on if two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen. (**fixed known issue from 0.11.1**)
+* Bugfix on if two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. (**fixed known issue from 0.11.1**)
 
 ##### Update to VG Core library 0.9.0:
 
@@ -43,15 +43,13 @@ folder: mydoc
 
 * If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
 
-* If under a root [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) there is a child non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %} that has {% include tooltip.html tooltip="Floating" text="floating" %} joint [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component, and if add a collider to this object, grasping and moving this object will cause very small drifting of the root Articulation Body. 
+<!--* If under a root [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) there is a child non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %} that has {% include tooltip.html tooltip="Floating" text="floating" %} joint [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component, and if add a collider to this object, grasping and moving this object will cause very small drifting of the root Articulation Body. -->
 
 * The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) as yet. 
 
 * Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.12.0.html) can lead to crashing.
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
-
-* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
 * [GetReplayStartWristPose](virtualgrasp_unityapi.0.12.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
 
@@ -60,6 +58,8 @@ folder: mydoc
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
 
 * {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
+
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
 ## V0.11.1 (2022-04-11)
 
