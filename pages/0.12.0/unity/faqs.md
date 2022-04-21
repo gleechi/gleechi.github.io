@@ -39,7 +39,11 @@ There could be four reasons:
 3. You have in runtime disabled this [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component.
 4. You have in runtime [SetObjectSelectionWeight](virtualgrasp_unityapi.0.12.0.html#setobjectselectionweight) to 0. 
 
-### When I tried to catch a fast moving or falling object, the hand is following the object for a little which looks strange. Why?
+### I runtime changed the VG_Articulation component on an object with different joint type and other joint parameters, why the interaction with this object does not correspond to these changes?
+
+You can only runtime change object articulation by using API function [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint-1). See page [runtime changes](unity_component_vgarticulation.0.12.0.html#runtime-changes). 
+
+### When I tried to catch a fast moving object, the hand is following the object for a little which looks strange. Why?
 
 The default interaction type for all objects is {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} and Grasp Animation Speed 0.05 (see [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.12.0.html#global-grasp-interaction-settings)) which means that the a grasp moves the hand to the object in 0.05 seconds.
 

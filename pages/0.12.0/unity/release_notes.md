@@ -53,6 +53,8 @@ folder: mydoc
 
 * [GetReplayStartWristPose](virtualgrasp_unityapi.0.12.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
 
+* Runtime change parent of an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained joint type may result in unexpected {% include tooltip.html tooltip="JointAxis" text="joint axis" %}  different from its initial setting.
+
 ##### Known Issues:
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.

@@ -24,7 +24,7 @@ All the parameters are explained in detail in [object articulation](object_artic
 
 {% include callout.html content="If you add multiple VG_Articulation components to a game object, the first active component will be used to configure your initial object articulation." %}
 
-{% include callout.html content="If you add a VG_Articulation component on a game object but disabled it (unchecked), the object will be registered to VirtualGrasp, however it is not interactable (equivalent to [SetObjectSelectionWeight](virtualgrasp_unityapi.0.12.0.html#setobjectselectionweight) to 0)." %}
+{% include callout.html content="If only an inactive VG_Articulation component is added to a game object, the object will be registered to VirtualGrasp and included in the [baking process](unity_component_vgbakingclient.0.12.0.html#step-2-preparation), however its interactability is temporarily disabled (equivalent to [SetObjectSelectionWeight](virtualgrasp_unityapi.0.12.0.html#setobjectselectionweight) to 0)." %}
 
 ## Runtime Changes
 
@@ -40,7 +40,7 @@ To do that, you can add a **disabled** VG_Articulation component to the object, 
 
 As a result, all the parameters set in the component will be specified in runtime on the object. 
 
-{% include important.html content="Runtime disabling one VG_Articulation and enabling another VG_Articulation will not achieve joint change. [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint-1) has to be used to change joint." %}
+{% include important.html content="Runtime disabling one VG_Articulation and enabling another VG_Articulation with different joint parameters, or directly modifying the parameters of an active VG_Articulation component will not achieve joint change. [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint-1) has to be used to change joint in runtime." %}
 
 ### RecoverObjectJoint
 

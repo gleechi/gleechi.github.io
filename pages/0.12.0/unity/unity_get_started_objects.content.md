@@ -1,6 +1,6 @@
 ### Make an Object Interactable in a Few Seconds
 
-To make a GameObject {% include tooltip.html tooltip="VGInteractable" text="interactable" %} you simply add a [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component to it.
+To make a GameObject {% include tooltip.html tooltip="VGInteractable" text="interactable" %} you simply add an active [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component to it.
 
 ### Conditions for Interactable Objects
 
