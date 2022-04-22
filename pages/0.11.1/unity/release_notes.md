@@ -20,6 +20,7 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
+* AutoSetup "External" string for Oculus finger tracking was changed from "QuestHand" to "OculusHand" to conform with the file names and avoid confusion.
 * Bugfix on AutoSetup in MyVirtualGrasp is broken. Please refer to the manual "AutoSetup" sections on the [ExternalController](unity_component_vgexternalcontrollermanager.0.11.1.html#vg_externalcontroller-class) you like to use. (**fixed known issue from 0.10.1**)
 * [VG_Articulation](unity_component_vgarticulation.0.11.1.html#description) has been overhauled as a dynamic component to improve user experience. 
 * Replay and Remote checkboxes for avatar are only shown if the VG version supports this feature.

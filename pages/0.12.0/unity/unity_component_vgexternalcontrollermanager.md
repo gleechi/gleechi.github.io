@@ -61,7 +61,7 @@ Each VG_ExternalController has to include a VG_ExternalControllerMapping that ma
 
 ### Coordinate-Frame Corrections
 
-If you use a custom hand rig different than the OculusRig provided in the SDK, you may find the fingers of the hand bending along the wrong axis.
+If you use a custom hand rig different than the GleechiRig provided in the SDK, you may find the fingers of the hand bending along the wrong axis.
 
 The reason for the mismatch is that each finger controller (for example, VG_EC_OculusHands.cs) is adjusting the raw finger orientations that come directly from the controller API (for example, from the Oculus Integration plugin) to match the hand model representation that is provided with the SDK.
 
