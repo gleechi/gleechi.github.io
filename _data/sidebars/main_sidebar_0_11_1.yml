@@ -69,9 +69,6 @@ entries:
     - title: My VirtualGrasp
       url: /unity_component_myvirtualgrasp.0.11.1.html
       output: web
-    - title: My VirtualGraspBurst
-      url: /unity_component_myvirtualgraspburst.0.11.1.html
-      output: web
     - title: VG_Articulation
       url: /unity_component_vgarticulation.0.11.1.html
       output: web

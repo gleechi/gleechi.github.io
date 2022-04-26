@@ -9,7 +9,7 @@ permalink: unity_vgonboarding_task5.0.12.0.html
 folder: mydoc
 ---
 
-We have a series of VG onboarding tasks to show how to tackle different practical use cases in a VR application.
+{% include onboarding_task.html %}
 
 ### Task Description
 
