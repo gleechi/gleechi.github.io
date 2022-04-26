@@ -28,7 +28,7 @@ Some examples of annotations are:
 
 ## Enabling VirtualGrasp GraspStudio
 
-The preferred way to use GraspStudio is to use the option of automatically creating a separate editor scene (Menu VirtualGrasp → Create VG_Editor Scene).
+The preferred way to use GraspStudio is to use the option of automatically creating a separate editor scene (Menu VirtualGrasp → Asset Functions → Create VG_Editor Scene).
 
 This will place a new .unity scene next to your existing one in the file system, that will then be opened automatically.
 

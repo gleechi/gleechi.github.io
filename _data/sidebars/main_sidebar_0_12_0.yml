@@ -19,6 +19,9 @@ entries:
   - title: Tutorials
     output: web
     folderitems:
+    - title: Supported Unity Engines
+      url: /unity_get_started_engines.0.12.0.html
+      output: web
     - title: Installation
       url: /unity_get_started_installation.0.12.0.html
       output: web
@@ -66,14 +69,14 @@ entries:
   - title: How-To Guides
     output: web
     folderitems:
+    - title: BakingClient [EditorWindow]
+      url: /unity_component_vgbakingclient.0.12.0.html
+      output: web
     - title: My VirtualGrasp
       url: /unity_component_myvirtualgrasp.0.12.0.html
       output: web
     - title: VG_Articulation
       url: /unity_component_vgarticulation.0.12.0.html
-      output: web
-    - title: VG_BakingClient
-      url: /unity_component_vgbakingclient.0.12.0.html
       output: web
       subfolders:
     - title: VG_ExternalControllerManager

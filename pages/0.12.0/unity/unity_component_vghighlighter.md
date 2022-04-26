@@ -39,7 +39,7 @@ There are three options you can enable by clicking on the respective buttons:
 
 * **No Bakes:** Highlight all objects that are not baked in red. You will only get [Sticky Hand](grasp_interaction.0.12.0.html#grasp-interaction-type) grasps on those objects.
 
-* **Dynamic Grasps:** Highlight all objects that are baked in red. You can use [Dynamic Grasps](grasp_interaction.0.12.0.html#grasp-synthesis-method) on those objects.
+* **Dynamic Grasps:** Highlight all objects that are baked in green. You can use [Dynamic Grasps](grasp_interaction.0.12.0.html#grasp-synthesis-method) on those objects.
 
 * **Static Grasps:** Highlight all objects that have static grasps assigned to them in cyan. These objects are usually baked and special grasps were assigned to them using [VG Grasp Studio](unity_component_vggraspstudio.0.12.0.html). You can use [Dynamic and Static Grasps](grasp_interaction.0.12.0.html#grasp-synthesis-method) on those objects.
 

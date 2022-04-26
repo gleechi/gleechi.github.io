@@ -1,5 +1,5 @@
 ---
-title: VG_BakingClient Component
+title: BakingClient [EditorWindow]
 keywords: component, baking, objectbaking, baking-client
 sidebar: main_sidebar_0_12_0
 permalink: unity_component_vgbakingclient.0.12.0.html
