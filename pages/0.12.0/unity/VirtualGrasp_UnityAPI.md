@@ -268,7 +268,7 @@ Enum for setting which (VR) controller buttons.
 
 ## [EVENTS](#)
 
-### OnObjectCollided
+### VG_Controller.OnObjectCollided
 
 This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
 
@@ -276,7 +276,7 @@ This event is invoked when a grasped object is colliding with another object. Th
 Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.0.12.0.html),  [VG_HintVisualizer](unity_component_vghintvisualizer.0.12.0.html)
 
 
-### OnObjectDeselected
+### VG_Controller.OnObjectDeselected
 
 This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
 
@@ -284,25 +284,25 @@ This event is invoked in the frame when a hand is starting to deselect an object
 Used in: [VG_Highlighter](unity_component_vghighlighter.0.12.0.html)
 
 
-### OnObjectFullyReleased
+### VG_Controller.OnObjectFullyReleased
 
-This event is invoked in the frame when an object is fully release by all hands. The Transform it carries includes the object that has just been released.  
-
-
-
-### OnObjectGrasped
-
-This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.  
+This event is invoked in the frame when an object is fully release by all hands. The Transform it carries includes the object that has just been released.
 
 
 
-### OnObjectReleased
+### VG_Controller.OnObjectGrasped
 
-This event is invoked in the frame when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.  
+This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
 
-### OnObjectSelected
+### VG_Controller.OnObjectReleased
+
+This event is invoked in the frame when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectSelected
 
 This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
 
@@ -310,22 +310,22 @@ This event is invoked in the frame when a hand is starting to select an object. 
 Used in: [VG_Highlighter](unity_component_vghighlighter.0.12.0.html)
 
 
-### OnPostUpdate
+### VG_Controller.OnPostUpdate
 
-This event is invoked in the fixed update loop after VG runs its update. Thus, all other scripts that should update after the VG cycle should listen to this event.  
+This event is invoked in the fixed update loop after VG runs its update. Thus, all other scripts that should update after the VG cycle should listen to this event.
 
 
 
-### OnPreUpdate
+### VG_Controller.OnPreUpdate
 
-This event is invoked in the fixed update loop before VG runs its update. Thus, all other scripts that should update before the VG cycle should listen to this event.  
+This event is invoked in the fixed update loop before VG runs its update. Thus, all other scripts that should update before the VG cycle should listen to this event.
 
 
 
 
 ## [OBJECT_SELECTION_API](#)
 
-### ChangeObjectJoint
+### VG_Controller.ChangeObjectJoint
 
 Change an object's joint in runtime.
 
@@ -334,16 +334,16 @@ Change an object's joint in runtime.
 | _Vector2_ |new_limit|The new limit of the new joint type.|
 | _float_ |new_screwRate|The new screw rate (>=0, in cm per degree) if new_jointType is Revolute.|
 
-Remark
+**Remark:**
  Note that the former joint can be recovered (see RecoverObjectJoint).
 
 
-Remark
+**Remark:**
  If new_screwRate is set to 0 then do not screw.
 
 
 
-### ChangeObjectJoint
+### VG_Controller.ChangeObjectJoint
 
 Change an object's joint and all other articulation parameters in runtime.
 
@@ -351,7 +351,7 @@ Change an object's joint and all other articulation parameters in runtime.
 | _VG_Articulation_ |articulation|An articulation describing the new articulation parameters.|
 
 
-### GetGraspingAvatars
+### VG_Controller.GetGraspingAvatars
 
 Return the avatar/hand pairs that are currently grasping a specified object.
 
@@ -360,35 +360,35 @@ Return the avatar/hand pairs that are currently grasping a specified object.
 | **returns** | _int_ | Number of hands grasping the object.|
 
 
-### GetObjectJointState
+### VG_Controller.GetObjectJointState
 
 Get the current joint state of a single-dof articulated object. For planar joint, the joint state along xaxis of the joint anchor.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _out float_ |jointState|The returned joint state. Will be set to 0.0f upon error|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
-### GetObjectJointType
+### VG_Controller.GetObjectJointType
 
 Get object's original or current joint type.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _bool_ |original|If true, get the original joint type, otherwise the current type.|
 | _out VG_JointType_ |jointType|The returned joint type. Will be set to FLOATING upon error.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint type fetch. VG_ReturnCode.ARGUMENT_ERROR when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint type fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
-### GetObjectSecondaryJointState
+### VG_Controller.GetObjectSecondaryJointState
 
 Get the current secondary joint state along yaxis of joint anchor for planar articulated object.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _out float_ |secondaryJointState|The returned secondary joint state. Will be set to 0.0f upon error.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
-### GetSelectableObjects
+### VG_Controller.GetSelectableObjects
 
 Return all interactable objects.
 
@@ -397,7 +397,7 @@ Return all interactable objects.
 | **returns** | _IEnumerable\<Transform\>_ | All interactable objects in the scene.|
 
 
-### GetSelectableObjectsFromScene
+### VG_Controller.GetSelectableObjectsFromScene
 
 Return all interactable objects from the editor scene.
 
@@ -406,7 +406,7 @@ Return all interactable objects from the editor scene.
 | **returns** | _List\<Transform\>_ | All interactable objects in the editor scene.|
 
 
-### GetSensorPose
+### VG_Controller.GetSensorPose
 
 Receive the sensor pose of a given avatar and hand.
 
@@ -417,53 +417,53 @@ Receive the sensor pose of a given avatar and hand.
 | _bool_ |absolute|Set True (default) to return the absolute pose, and False to return the relative pose.|
 
 
-### GetTriggerButton
+### VG_Controller.GetTriggerButton
 
 Return the currently selected TriggerButton.
 
 
 
-### GetUnbakedObjects
+### VG_Controller.GetUnbakedObjects
 
 Return all unbaked objects.
 
 | **returns** | _List\<Transform\>_ | All unbaked objects in the scene.|
 
 
-### JumpGraspObject
+### VG_Controller.JumpGraspObject
 
-Externally select an object and jump grasp it (object jump to hand)
+Externally select an object and jump grasp it (object jump to hand).
 
 | _int_ |avatarID|instance avatar id (>0)|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
 | _Transform_ |obj|The id of externally selected object to jump grasped by this hand|
 
-Remark
+**Remark:**
  Note you do NOT need to use vgsSetSelectObjectMethod() to set select object externally before call this function
 
 
 
-### RecoverObjectJoint
+### VG_Controller.RecoverObjectJoint
 
 Recover an object's original joint, after it has been changed by ChangeObjectJoint().
 
 | _Transform_ |selectedObject|The object to recover the joint for.|
 
 
-### ResetAllObjects
+### VG_Controller.ResetAllObjects
 
 Reset all objects' initial pose and initial zero pose.
 
 
 
-### ResetObject
+### VG_Controller.ResetObject
 
 Reset a specific object's initial pose and initial zero pose.
 
 | _Transform_ |transform|The object to reset.|
 
 
-### SelectObject
+### VG_Controller.SelectObject
 
 If external object selection is used (and not the internal one that the plugin provides, use this function to sync the selected object from the scene to the plugin.
 
@@ -472,7 +472,7 @@ If external object selection is used (and not the internal one that the plugin p
 | _Transform_ |obj|The object that should be selected.|
 
 
-### SetDualHandsOnly
+### VG_Controller.SetDualHandsOnly
 
 Set if an object can only be manipulated by dual hands from a same avatar.
 
@@ -480,18 +480,18 @@ Set if an object can only be manipulated by dual hands from a same avatar.
 | _bool_ |dualHandsOnly|If dual hand only.|
 
 
-### SetObjectSelectionWeight
+### VG_Controller.SetObjectSelectionWeight
 
-Specify the object selection weights for grasping interaction
+Specify the object selection weights for grasping interaction.
 
 | _Transform_ |obj|Which object to specify weight|
 | _float_ |weight|Should be >=0 value to specify the preferences to select this object. If 0 exclude this object in selection process|
 
-Remark
+**Remark:**
  Note by default this weight is 1 for all objects.
 
 
-Remark
+**Remark:**
  Use case is mainly to specify relative selection preferences for cluttered objects.
 
 
@@ -499,13 +499,13 @@ Remark
 
 ## [VIRTUALGRASP_CONTROLLER_FUNCTIONS](#)
 
-### Clear
+### VG_Controller.Clear
 
 Reset the plugin.
 
 
 
-### GetAvatarID
+### VG_Controller.GetAvatarID
 
 Get the AvatarID of the given skinned mesh renderer
 
@@ -513,72 +513,72 @@ Get the AvatarID of the given skinned mesh renderer
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.INVALID_AVATAR if avatar is null.|
 
 
-### GetDebugPath
+### VG_Controller.GetDebugPath
 
 Return the path where VG stores debug files.
 
 | **returns** | _string_ | The path (platform dependent).|
 
 
-### GetHand
+### VG_Controller.GetHand
 
 Receive a specific hand and its status.
 
 | _int_ |avatarID|The avatar to get the hand status for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand side to get the avatar from.|
-| **returns** | _VG_HandStatus_ | Enumerator over VG_HandStatus.|
+| **returns** | _VG_HandStatus_ | A VG_HandStatus.|
 
 
-### GetHands
+### VG_Controller.GetHands
 
 Receive an enumerator of all registered hands and their status.
 
 | **returns** | _List\<VG_HandStatus\>_ | Enumerator over VG_HandStatus.|
 
 
-### GetSensorControlledAvatarID
+### VG_Controller.GetSensorControlledAvatarID
 
 Get the AvatarID of the first sensor controlled avatar.
 
 | _out int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
-Remark
+**Remark:**
  No guarantee on returning the one that was first sensor controlled avatar
 
 
 
-### Initialize
+### VG_Controller.Initialize
 
 Initialize the plugin.
 
 
 
-### IsEnabled
+### VG_Controller.IsEnabled
 
 Check if the plugin has been initialized and is ready to use.
 
 
 
-### IsolatedUpdate
+### VG_Controller.IsolatedUpdate
 
 The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdate() runs the main update loop in VG.
 
 
 
-### IsolatedUpdateDataIn
+### VG_Controller.IsolatedUpdateDataIn
 
 The FixedUpdate() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataIn() isolates data communication from Unity to VG.
 
 
 
-### IsolatedUpdateDataOut
+### VG_Controller.IsolatedUpdateDataOut
 
 The Update() method has been divided into three parts: IsolatedUpdateDataIn(), IsolatedUpdate() and IsolatedUpdateDataOut() for application of the Burst compiler. IsolatedUpdateDataOut() isolates data communication from VG to Unity.
 
 
 
-### RegisterAvatarAtRuntime
+### VG_Controller.RegisterAvatar
 
 Register a new avatar during runtime.
 
@@ -587,19 +587,19 @@ Register a new avatar during runtime.
 | _out int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
 
 
-### Release
+### VG_Controller.Release
 
 Release the plugin.
 
 
 
-### SaveState
+### VG_Controller.SaveState
 
 Save the object hierarchy debug state. This is done automatically when closing VirtualGrasp.
 
 
 
-### UnRegisterAvatarAtRuntime
+### VG_Controller.UnRegisterAvatar
 
 Unregister avatar during runtime
 
@@ -609,7 +609,7 @@ Unregister avatar during runtime
 
 ## [GRASP_EDITOR_API](#)
 
-### EditGrasp
+### VG_Controller.EditGrasp
 Tags: [video](https://www.youtube.com/watch?v=Z1j6BgosFVA)
 
 Call grasp editor functionality on a currently selected object and grasp.
@@ -623,7 +623,7 @@ Call grasp editor functionality on a currently selected object and grasp.
 Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.12.0.html)
 
 
-### GetGrasp
+### VG_Controller.GetGrasp
 
 Receive a grasp in the grasp DB by index.
 
@@ -641,7 +641,7 @@ Receive a grasp in the grasp DB by index.
 Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.12.0.html)
 
 
-### GetNumGrasps
+### VG_Controller.GetNumGrasps
 
 Receive the number of grasps for a specific object.
 
@@ -656,7 +656,15 @@ Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.0.12.0.html)
 
 ## [GRASP_SELECTION_API](#)
 
-### ForceReleaseObject
+### VG_Controller.ForceReleaseObject
+Tags: untested
+
+Force the release of a grasp.
+
+| _int_ |avatarID|The avatar to release grasps on all its hands.|
+
+
+### VG_Controller.ForceReleaseObject
 Tags: untested
 
 Force the release of a grasp.
@@ -665,7 +673,7 @@ Force the release of a grasp.
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
 
 
-### GetBone
+### VG_Controller.GetBone
 
 Return the pose (i.e. position and orientation) of a specific bone.
 
@@ -677,7 +685,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.12.0.html)
 
 
-### GetBone
+### VG_Controller.GetBone
 
 Return the Transform that corresponds to a provided instance ID.
 
@@ -687,7 +695,7 @@ Return the Transform that corresponds to a provided instance ID.
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.12.0.html)
 
 
-### GetBone
+### VG_Controller.GetBone
 
 Return the pose (i.e. position and orientation) of a specific bone.
 
@@ -701,7 +709,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.12.0.html)
 
 
-### GetBone
+### VG_Controller.GetBone
 
 Return the pose matrix of a specific bone.
 
@@ -714,7 +722,7 @@ Return the pose matrix of a specific bone.
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.12.0.html)
 
 
-### GetFingerBone
+### VG_Controller.GetFingerBone
 
 Return the pose of a specific finger bone as a matrix.
 
@@ -728,7 +736,7 @@ Return the pose of a specific finger bone as a matrix.
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.12.0.html)
 
 
-### GetFingerBone
+### VG_Controller.GetFingerBone
 
 Return the pose (i.e. position and orientation) of a specific finger bone.
 
@@ -743,7 +751,7 @@ Return the pose (i.e. position and orientation) of a specific finger bone.
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.12.0.html)
 
 
-### GetFingerBone
+### VG_Controller.GetFingerBone
 
 Reflect the pose of a specific bone on a Transform.
 
@@ -756,7 +764,7 @@ Reflect the pose of a specific bone on a Transform.
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.12.0.html)
 
 
-### GetSynthesisMethodForObject
+### VG_Controller.GetSynthesisMethodForObject
 
 Receive the current VG_SynthesisMethod of an interactable object.
 
@@ -766,7 +774,7 @@ Receive the current VG_SynthesisMethod of an interactable object.
 Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.12.0.html)
 
 
-### MakeGesture
+### VG_Controller.MakeGesture
 
 Make a gesture with a hand.
 
@@ -775,7 +783,7 @@ Make a gesture with a hand.
 |[*VG_GraspType*](#vg_grasptype) | gesture|The gesture to make with the [side] hand of avatar [avatarID].|
 
 
-### ReleaseGesture
+### VG_Controller.ReleaseGesture
 
 Release a gesture on a hand
 
@@ -783,77 +791,85 @@ Release a gesture on a hand
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
 
 
-### SetBlockRelease
+### VG_Controller.SetBlockRelease
+
+Specify if on this hand should block release or not in runtime.
+
+| _int_ |avatarID|The avatar to release a grasp for.|
+| _bool_ |block|If block release signal or not on this avatar.|
+
+
+### VG_Controller.SetBlockRelease
 
 Specify if on this hand should block release or not in runtime.
 
 | _int_ |avatarID|The avatar to release a grasp for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
-| _bool_ |block|If block release signal or not on this hand|
+| _bool_ |block|If block release signal or not on this hand.|
 
 
-### SetGlobalInteractionType
+### VG_Controller.SetGlobalInteractionType
 
 Set the global interaction type method. The interaction type defines how the hand and the object should get together during a grasp.
 
 
-Remark
+**Remark:**
  This will overwrite the specific grasp interaction type (see SetInteractionTypeForObject) for all objects.
 
 |[*VG_InteractionType*](#vg_interactiontype) | type|The method to switch to for all objects.|
 
 
-### SetGlobalSynthesisMethod
+### VG_Controller.SetGlobalSynthesisMethod
 
 Set the global grasp synthesis method. The synthesis method defines the algorithm with which grasps are generated in runtime.
 
 
-Remark
+**Remark:**
  This will overwrite the specific grasp synthesis method (see SetSynthesisMethodForObject) for all objects.
 
 |[*VG_SynthesisMethod*](#vg_synthesismethod) | synthesisMethod|The method to switch to for all objects.|
 
 
-### SetGlobalThrowAngularVelocityScale
+### VG_Controller.SetGlobalThrowAngularVelocityScale
 
 Set the global throw angular velocity scale. The throw angular velocity scale defines how powerful the throw is in terms of rotation movement.
 
 
-Remark
+**Remark:**
  This will overwrite the specific throw angular velocity scale (see SetThrowAngularVelocityScaleForObject) for all objects.
 
 | _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
 
 
-### SetGlobalThrowVelocityScale
+### VG_Controller.SetGlobalThrowVelocityScale
 
 Set the global throw velocity scale. The throw velocity scale defines how powerful the throw is in terms of linear movement.
 
 
-Remark
+**Remark:**
  This will overwrite the specific throw velocity scale (see SetThrowVelocityScaleForObject) for all objects.
 
 | _float_ |throwVelocityScale|The throw translational velocity scale.|
 
 
-### SetInteractionTypeForObject
+### VG_Controller.SetInteractionTypeForObject
 
 Set the interaction type for a selected object. The interaction type defines how the hand and the object should get together during a grasp.
 
 
-Remark
+**Remark:**
  This will overwrite the global interaction type (see SetGlobalInteractionType) for that object.
 
 | _Transform_ |selectedObject|The object to modify the interaction type for.|
 |[*VG_InteractionType*](#vg_interactiontype) | interactionType|The interaction type to switch to for the object.|
 
 
-### SetInteractionTypeForSelectedObject
+### VG_Controller.SetInteractionTypeForSelectedObject
 
 Set the interaction type for a selected object. The interaction type defines how the hand and the object should get together during a grasp.
 
 
-Remark
+**Remark:**
  This will overwrite the global interaction type (see SetGlobalInteractionType) for that object.
 
 | _int_ |avatarID|The avatar which is selecting an object.|
@@ -861,24 +877,24 @@ Remark
 |[*VG_InteractionType*](#vg_interactiontype) | interactionType|The interaction type to switch to for the object that is selected by the [side] hand of avatar [avatarID].|
 
 
-### SetSynthesisMethodForObject
+### VG_Controller.SetSynthesisMethodForObject
 
 Set the grasp synthesis method for a selected object. The synthesis method defines the algorithm with which grasps are generated.
 
 
-Remark
+**Remark:**
  This will overwrite the global grasp synthesis method (see SetGlobalSynthesisMethod) for that object.
 
 | _Transform_ |selectedObject|The object to modify the synthesis method for.|
 |[*VG_SynthesisMethod*](#vg_synthesismethod) | synthesisMethod|The synthesis method to switch to for the selected object.|
 
 
-### SetSynthesisMethodForSelectedObject
+### VG_Controller.SetSynthesisMethodForSelectedObject
 
 Set the grasp synthesis method for a selected object. The synthesis method defines the algorithm with which grasps are generated in runtime.
 
 
-Remark
+**Remark:**
  This will overwrite the global grasp synthesis method (see SetGlobalSynthesisMethod) for that object.
 
 | _int_ |avatarID|The avatar which is selecting an object.|
@@ -886,24 +902,24 @@ Remark
 |[*VG_SynthesisMethod*](#vg_synthesismethod) | synthesisMethod|The synthesis method to switch to for the object that is selected by the [side] hand of avatar [avatarID].|
 
 
-### SetThrowAngularVelocityScaleForObject
+### VG_Controller.SetThrowAngularVelocityScaleForObject
 
 Set the throw angular velocity scale for a selected object. The throw angular velocity scale defines how powerful the throw is in terms of rotation movement.
 
 
-Remark
+**Remark:**
  This will overwrite the global throw angular velocity scale (see SetGlobalThrowAngularVelocityScale) for that object.
 
 | _Transform_ |selectedObject|The object to modify the throw velocity scale for.|
 | _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
 
 
-### SetThrowAngularVelocityScaleForSelectedObject
+### VG_Controller.SetThrowAngularVelocityScaleForSelectedObject
 
 Set the throw angular velocity scale for a selected object. The throw angular velocity scale defines how powerful the throw is in terms of rotation movement.
 
 
-Remark
+**Remark:**
  This will overwrite the global throw angular velocity scale (see SetGlobalThrowAngularVelocityScale) for that object.
 
 | _int_ |avatarID|The avatar which is selecting an object.|
@@ -911,24 +927,24 @@ Remark
 | _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
 
 
-### SetThrowVelocityScaleForObject
+### VG_Controller.SetThrowVelocityScaleForObject
 
 Set the throw velocity scale for a selected object. The throw velocity scale defines how powerful the throw is in terms of linear movement.
 
 
-Remark
+**Remark:**
  This will overwrite the global throw velocity scale (see SetGlobalThrowVelocityScale) for that object.
 
 | _Transform_ |selectedObject|The object to modify the throw velocity scale for.|
 | _float_ |throwVelocityScale|The throw translational velocity scale.|
 
 
-### SetThrowVelocityScaleForSelectedObject
+### VG_Controller.SetThrowVelocityScaleForSelectedObject
 
 Set the throw velocity scale for a selected object. The throw velocity scale defines how powerful the throw is in terms of linear movement.
 
 
-Remark
+**Remark:**
  This will overwrite the global throw velocity scale (see SetGlobalThrowVelocityScale) for that object.
 
 | _int_ |avatarID|The avatar which is selecting an object.|
@@ -939,7 +955,7 @@ Remark
 
 ## [NETWORK_INTERFACE_API](#)
 
-### GetBroadcastSignal
+### VG_Controller.GetBroadcastSignal
 
 Receive (from VG) a multiplayer broadcast message as a binary byte array.
 
@@ -948,7 +964,7 @@ Receive (from VG) a multiplayer broadcast message as a binary byte array.
 Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.0.12.0.html)
 
 
-### SetBroadcastSignal
+### VG_Controller.SetBroadcastSignal
 
 Set (to VG) a multiplayer broadcast message as a binary byte array.
 
@@ -960,7 +976,7 @@ Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.0.12.0.html)
 
 ## [SENSOR_INTERFACE_API](#)
 
-### GetGrabStrength
+### VG_Controller.GetGrabStrength
 
 Returns the current grab strength of a hand. The grab strength is 0 for a fully open hand, 1 for a fully closed hand.
 
@@ -969,7 +985,7 @@ Returns the current grab strength of a hand. The grab strength is 0 for a fully 
 | **returns** | _float_ | The current grab strength of the [side] hand.|
 
 
-### GetGrabVelocity
+### VG_Controller.GetGrabVelocity
 
 Returns the current grab velocity of a hand. The current velocity of the grab strength (see GetGrabStrength), so negative when the hand is opening, and positive when the hand is closing.
 
@@ -978,7 +994,7 @@ Returns the current grab velocity of a hand. The current velocity of the grab st
 | **returns** | _float_ | The current grab velocity of the [side] hand.|
 
 
-### GetPushCircle
+### VG_Controller.GetPushCircle
 
 Get the push cirle for this hand side of an avatar as a visual hint for object selection for push without physics.
 
@@ -993,7 +1009,7 @@ Get the push cirle for this hand side of an avatar as a visual hint for object s
 Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.0.12.0.html)
 
 
-### IsMissingSensorData
+### VG_Controller.IsMissingSensorData
 
 Check if a hand has invalid sensor data.
 
@@ -1002,29 +1018,29 @@ Check if a hand has invalid sensor data.
 | **returns** | _bool_ | True if sensor data is invalid, False otherwise.|
 
 
-### SetAvatarActive
+### VG_Controller.SetAvatarActive
 
 Set the active state of the avatar sensor(s) and mesh.
 
-| _int_ |avatarID|The instance avatar id|
+| _int_ |avatarID|The instance avatar id.|
 | _bool_ |enableSensors|If the sensor(s) that control this hand should be active or not.|
 | _bool_ |enableMesh|If the mesh of this hand should be visible or not.|
 | _Vector3_ |resetPos|If an avatar is deactivated, hand positions will be reset to here (default (0,0,0)).|
 
 
-### SetCalibrationMode
+### VG_Controller.SetCalibrationMode
 
 Enable or disable wrist calibration mode (WCM). During enabled WCM, different ranges of motion of the wrist or grab strength will be calibrated.
 
 
-Remark
+**Remark:**
  untested
 
 | _int_ |avatarID|The avatar for which to enable/disable WCM.|
 | _bool_ |enabled|True for enabling WCM, False for disabling it.|
 
 
-### SetExternalGrabStrength
+### VG_Controller.SetExternalGrabStrength
 
 Send an external controller grab signal to the plugin (for EXTERNAL_CONTROLLER sensors).
 
@@ -1035,7 +1051,7 @@ Send an external controller grab signal to the plugin (for EXTERNAL_CONTROLLER s
 Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.0.12.0.html)
 
 
-### SetFingerCalibrationMode
+### VG_Controller.SetFingerCalibrationMode
 
 Enable or disable finger calibration mode (FCM). During enabled FCM, the hand opening range will be calibrated. After disabling it, grasp and release signals will work in this range.
 
@@ -1043,26 +1059,26 @@ Enable or disable finger calibration mode (FCM). During enabled FCM, the hand op
 | _bool_ |enabled|True for enabling FCM, False for disabling it.|
 
 
-### SetSensorActive
+### VG_Controller.SetSensorActive
 
-Set the active state of the sensor(s) that control the specified hand of an instance avatar
+Set the active state of the sensor(s) that control the specified hand of an instance avatar.
 
-| _int_ |avatarID|The instance avatar id|
-|[*VG_HandSide*](#vg_handside) | handSide|The side of the hand (remark: UNKNOWN will not have any effect)|
-| _bool_ |active|If the sensor(s) that control this hand should be active or not|
+| _int_ |avatarID|The instance avatar id.|
+|[*VG_HandSide*](#vg_handside) | handSide|The side of the hand (remark: UNKNOWN will not have any effect).|
+| _bool_ |active|If the sensor(s) that control this hand should be active or not.|
 | _Vector3_ |resetPos|If a hand is deactivated, its position will be reset to here (default (0,0,0)).|
 
-Remark
+**Remark:**
  By default sensors are all active, and this function can be used in runtime to change this.
 
 
 
-### SetSensorOffset
+### VG_Controller.SetSensorOffset
 
 Change the sensor offset in runtime. The sensor offset is the offset between the pose that the current sensor is measuring and where the virtual hand is appearing in the scene.
 
 
-Remark
+**Remark:**
  Also treating left hand (LHS) and right hand (RHS) is considered, so the offset is applied symmetrically.
 
 | _int_ |avatarID|The avatar to set the offset for.|
@@ -1074,19 +1090,19 @@ Remark
 
 ## [RECORDING_INTERFACE_API](#)
 
-### GetReplayAvatarID
+### VG_Controller.GetReplayAvatarID
 
 Get the AvatarID of the first replay avatar.
 
 | _out int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
-Remark
+**Remark:**
  No guarantee on returning the one that was first registered as replay avatar
 
 
 
-### GetReplayStartWristPose
+### VG_Controller.GetReplayStartWristPose
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
 
@@ -1097,14 +1113,18 @@ Get the starting wrist poses for full replay of the whole interaction sequence.
 | _out Vector3_ |p_right|The position of the right wrist.|
 | _out Quaternion_ |q_right|The orientation of the right wrist.|
 
-Remark
+**Remark:**
  LoadRecording need to be called before this to load recorded sensor data.
+
+
+**Remark:**
+ SetProcessByRecordedFrame need to be called before this to set this avatar to be enabled for replay.
 
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.12.0.html)
 
 
-### IsReplaying
+### VG_Controller.IsReplaying
 
 Check if a hand is currently replaying a recorded sensor data.
 
@@ -1115,7 +1135,7 @@ Check if a hand is currently replaying a recorded sensor data.
 Used in: [VG_Recorder](unity_component_vgrecorder.0.12.0.html)
 
 
-### LoadRecording
+### VG_Controller.LoadRecording
 Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Load recorded sensor data from a file, but do not start replay
@@ -1125,7 +1145,7 @@ Load recorded sensor data from a file, but do not start replay
 Used in: [VG_Recorder](unity_component_vgrecorder.0.12.0.html)
 
 
-### StartRecording
+### VG_Controller.StartRecording
 Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Start recording sensor data.
@@ -1134,7 +1154,7 @@ Start recording sensor data.
 Used in: [VG_Recorder](unity_component_vgrecorder.0.12.0.html)
 
 
-### StartReplay
+### VG_Controller.StartReplay
 Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Start full replay of the whole interaction sequence on an avatar.
@@ -1145,7 +1165,7 @@ Start full replay of the whole interaction sequence on an avatar.
 Used in: [VG_Recorder](unity_component_vgrecorder.0.12.0.html)
 
 
-### StartReplayOnObject
+### VG_Controller.StartReplayOnObject
 Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Start replaying a specific interaction segment on one object.
@@ -1158,7 +1178,7 @@ Start replaying a specific interaction segment on one object.
 Used in: [VG_Recorder](unity_component_vgrecorder.0.12.0.html)
 
 
-### StopRecording
+### VG_Controller.StopRecording
 Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
 
 Stop recording sensor data and store the whole sequence to a file
@@ -1168,7 +1188,7 @@ Stop recording sensor data and store the whole sequence to a file
 Used in: [VG_Recorder](unity_component_vgrecorder.0.12.0.html)
 
 
-### StopReplay
+### VG_Controller.StopReplay
 
 Stop replay of the recorded interaction sequence on an avatar.
 
