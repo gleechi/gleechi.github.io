@@ -10,6 +10,47 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
+## V0.13.0-rc1 (2022-05-02, not publically released yet)
+
+##### Major Functionality Changes:
+
+* The AutoSetup function was optimized by adding it to each single sensor. No need for indexing sensors anymore.
+
+##### GUI / Component Changes:
+
+* VirtualGrasp menu re-organized for better usability.
+* Some VirtualGrasp menu functions were made obsolete/removed: "Create VG Scene," "Convert object tags to VG_Articulations,"
+* The "About" (VirtualGrasp) window was made fixed size.
+* A "Welcome" window was added that can be access from the VirtualGrasp menu. It will automatically open if it is detected that XR Plugin Management is not installed, but used in the scene. The choice to install the UnityXR package and the Unity Tutorial package is provided to the user.
+* MyVirtualGraspBurst was removed.
+* In VG_Highlighter, if no shader is assigned, the included "RimLight" shader will be used.
+
+##### API Changes:
+
+* All functions that were "XYZAtRuntime()" functions (such as RegisterAvatarAtRuntime()) have been renamed by removing that suffix (such as to RegisterAvatar()).
+
+##### Other / Internal Changes:
+
+* A more appealing environment was added to the VG_Onboarding scene.
+* A version check was added to the BakingClient to inform you if a newer version of VG is available for download.
+* SDK was successfully tested with Unity 2022.1.0b16.
+* Some 3D models in the VG_Onboarding scene were simplied and optimized.
+* Additional .xml files have been packaged along the .dll libraries to expose the comments / summaries for the API into the coding environment.
+* Creating a VG_Editor scene can only be done when XR Management is installed and a vg_tmp directory exists.
+
+##### Update to VG Core library 0.10.0:
+
+* TODO
+
+##### Known Issues (To Be Fixed In Next Release)
+
+* TODO
+
+##### Known Issues:
+
+* There is an Inspector GUI artifact in VG_MainScript/Sensors, but it is a known [Unity issue](https://issuetracker.unity3d.com/issues/first-array-element-expansion-is-broken-for-arrays-that-use-custom-property-drawers).
+* TODO
+
 ## V0.12.0(2022-04-14)
 
 ##### Major Functionality Changes:
@@ -22,6 +63,7 @@ folder: mydoc
 * Fixed confusion of disabled (unchecked) [VG_Articulation](unity_component_vgarticulation.0.13.0.html#description) component. Now, if the component is added but disabled (unchecked) the object will not be {% include tooltip.html tooltip="VGInteractable" text="interactable" %}. Runtime enabling or disabling this component will make the object interactable or uninteractable respectively. However note that it is more efficient to change object's interactable status by [SetObjectSelectionWeight](virtualgrasp_unityapi.0.13.0.html#setobjectselectionweight).  (**fixed known issue from 0.11.1**)
 
 ##### API Changes:
+
 * There are no API changes. 
 
 ##### Other / Internal Changes:
@@ -35,7 +77,7 @@ folder: mydoc
 * Bugfix on unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. (**fixed known issue from 0.11.1**)
 * Bugfix on if two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position. (**fixed known issue from 0.11.1**)
 
-##### Known Issues (To Be Fixed In Next Release)
+##### Known Issues (To Be Fixed In Next Release):
 
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.13.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.13.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
