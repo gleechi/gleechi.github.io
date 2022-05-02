@@ -12,7 +12,7 @@ toc: true
 
 Enum for quickly setting up projects for a specific controller / build.
 
-|NONE|No setup|
+|Select||
 |UNITY_XR|Setup for UnityXR supported controllers|
 |OCULUS_FT|Setup for Quest / finger tracking|
 |STEAMVR|Setup for SteamVR|
@@ -267,6 +267,24 @@ Enum for setting which (VR) controller buttons.
 
 
 ## [EVENTS](#)
+
+### VG_Controller.OnAfterReset
+
+The event to call when we have reset all objects in the library.
+
+
+
+### VG_Controller.OnBeforeReset
+
+The event to call when we are going to reset all objects in the library.
+
+
+
+### VG_Controller.OnInitialize
+
+The event to call when we have successfully initialized the library.
+
+
 
 ### VG_Controller.OnObjectCollided
 
