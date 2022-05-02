@@ -6,7 +6,7 @@ permalink: unity_component_vgbakingclient.0.13.0.html
 folder: mydoc
 ---
 
-{% include image.html file="unity/unity_vg_menu_bakingclient_0_12_0.png" alt="VG_BakingClient menu." caption="VG_BakingClient can be found in the VirtualGrasp menu." %}
+{% include image.html file="unity/unity_vg_menu_0_13_0.png" alt="VG_BakingClient menu." caption="The BakingClient / Bake Grasps method can be found in the VirtualGrasp menu." %}
 
 ## Description
 

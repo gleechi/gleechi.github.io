@@ -1,6 +1,6 @@
 ### Building an APK for Android
 
-VirtualGrasp only supports 64 bit for Android. 
+For Android, VirtualGrasp only supports 64 bit. 
 
 You therefore have to ensure that you use **IL2CPP** as Scripting Backend and **ARM64** as Target Architecture in your Build Settings, see image below:
 

@@ -4,7 +4,7 @@
 
 In any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.0.13.0.html), a sensor setting can be configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through various [VG_ExternalControllers](unity_component_vgexternalcontrollermanager.0.13.0.html).
 
-As you can see in the top of the MyVirtualGrasp component, you can "Auto-Setup" the whole configuration for some of the most commonly used {% include tooltip.html tooltip="Sensor" text="sensors" %}, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers. 
+As you can see in each Sensor element, you can "AutoSetup" each configuration for some of the most commonly used {% include tooltip.html tooltip="Sensor" text="sensors" %}, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers. 
 
 You can use VirtualGrasp without a VR headset and your scene does not need to be a VR-enabled scene. 
 
@@ -39,4 +39,4 @@ You can use VirtualGrasp without a VR headset and your scene does not need to be
 </div>
 {% endif %}
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_0_11_1.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_0_13_0.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp." %}

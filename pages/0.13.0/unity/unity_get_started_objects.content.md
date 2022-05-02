@@ -7,7 +7,7 @@ To make a GameObject {% include tooltip.html tooltip="VGInteractable" text="inte
 The following two conditions have to be met:
 
 1. The {% include tooltip.html tooltip="GameObject" text="GameObject" %} must have a MeshRenderer component (representing the actual 3D shape data) assigned to it.
-2. The source of that MeshRenderer must have the "Read/Write enabled" checkbox checked in the model inspector. You can either do that manually or use the "VirtualGrasp → Utilities → Make Interactables Readable" helper function after you have equipped your objects with VG_Articulations.
+2. The source of that MeshRenderer must have the "Read/Write enabled" checkbox checked in the model inspector. You can either do that manually or use the "VirtualGrasp → Make Interactables Readable" helper function after you have equipped your objects with VG_Articulations.
 
 Only the MeshRenderer on that {% include tooltip.html tooltip="GameObject" text="GameObject" %} will be interactable, i.e. no MeshRenderers in the hierarchy below it.
 

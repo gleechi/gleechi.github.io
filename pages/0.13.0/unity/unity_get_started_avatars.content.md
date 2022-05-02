@@ -8,7 +8,7 @@ Next, link it into its place under Sensors → Avatars → Skeletal Mesh, by dra
 
 ### Conditions for Avatars
 
-In Pro-versions of VG, you can replace this model by any other skinned mesh renderer that you import into the scene, but there are certain conditions on which kind of skeletal meshes are supported. 
+**In Pro-versions of VG,** you can replace this model by any other skinned mesh renderer that you import into the scene, but there are certain conditions on which kind of skeletal meshes are supported. 
 
 As a rule of thumb, the rigging / model hierarchy should be same as the model in the project:
 
@@ -16,6 +16,6 @@ As a rule of thumb, the rigging / model hierarchy should be same as the model in
 * 1 hand should include 5 fingers (no extra bones), and 
 * 1 finger should include 3-4 bones (with or without fingertip). If a fingertip is missing, VirtualGrasp will estimate its position, but it is recommended, and also very easy in Unity to add missing fingertip bones manually.
 
-You can see that VG has successfully initialized the avatar when messages like these appear:
-
+<!--You can see that VG has successfully initialized the avatar when messages like these appear:
 {% include image.html file="unity/unity_avatar_init_0_11_1.png" alt="Unity avatar init." caption="VirtualGrasp initialization message in the Unity console." %}
+-->
