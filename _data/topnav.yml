@@ -12,6 +12,8 @@ topnav_dropdowns:
   folders:
     - title: Versions
       folderitems:
+        - title: Unity SDK 0.13.0
+          url: /index.0.13.0.html
         - title: Unity SDK 0.12.0
           url: /index.0.12.0.html
         - title: Unity SDK 0.11.1
