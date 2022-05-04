@@ -64,7 +64,7 @@ folder: mydoc
 * Bugfix for when hand form index finger push gesture grasp synthesis adopted push gesture problem.
 * Bugfix for [JumpGraspObject](virtualgrasp_unityapi.0.11.1.html#jumpgraspobject) crash on unbaked object problem. 
 
-##### Known Issues (To Be Fixed In Next Release)
+##### Known Issues:
 
 * There is a problem of unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. 
 
@@ -75,8 +75,6 @@ folder: mydoc
 * If two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
 
 * The newly released GleechiHands does not have perfect mapping of real finger poses when using finger tracking solutions like OCULUS_EXT and LEAP_EXT. 
-
-##### Known Issues:
 
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.11.1.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.11.1.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 

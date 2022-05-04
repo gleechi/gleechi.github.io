@@ -47,21 +47,21 @@ folder: mydoc
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 
-* [GetReplayStartWristPose](virtualgrasp_unityapi.0.13.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
+* [GetReplayStartWristPose](virtualgrasp_unityapi.0.12.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
 
-* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.13.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.13.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
-* If game object's pivot is relatively far away from mesh center, there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.13.0.html) or [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
+* If game object's pivot is relatively far away from mesh center, there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
 
 * If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
 
-* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.13.0.html#changeobjectjoint) as yet. 
+* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) as yet. 
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
 
 * {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
 
-* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.13.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
 ## V0.11.1 (2022-04-11)
 
@@ -117,7 +117,7 @@ folder: mydoc
 * Bugfix for when hand form index finger push gesture grasp synthesis adopted push gesture problem.
 * Bugfix for [JumpGraspObject](virtualgrasp_unityapi.0.12.0.html#jumpgraspobject) crash on unbaked object problem. 
 
-##### Known Issues (To Be Fixed In Next Release)
+##### Known Issues:
 
 * There is a problem of unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. 
 
@@ -128,8 +128,6 @@ folder: mydoc
 * If two hands trigger grasp on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} at the exact same moment, the hands will form grasps, but the object freeze and can not be moved by hands. This is difficult to reproduce but still could happen.
 
 * The newly released GleechiHands does not have perfect mapping of real finger poses when using finger tracking solutions like OCULUS_EXT and LEAP_EXT. 
-
-##### Known Issues:
 
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
