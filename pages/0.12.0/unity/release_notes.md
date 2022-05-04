@@ -35,35 +35,33 @@ folder: mydoc
 * Bugfix on unreliable grasp and release triggering for finger tracking solutions OCULUS_FT. (**fixed known issue from 0.11.1**)
 * Bugfix on if two hands grasp on a non-physical FLOATING object, when one hand releases, the other hand could have a big offset from sensor position. (**fixed known issue from 0.11.1**)
 
-##### Known Issues (To Be Fixed In Next Release)
+##### Known Issues:
 
-* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.12.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.12.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+* New recording sensor recording using [VG_Recorder](unity_component_vgrecorder.0.13.0.html) is pending the data to earlier recordings.
 
-* If game object's pivot is relatively far away from mesh center, there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.12.0.html) or [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
+* Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.13.0.html) can lead to crashing.
 
-* If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
+* The 2nd method -- pressing button "Export Scene in Edit" to [Create Debug Files](debug_files.0.13.0.html#creating-debug-files) has a bug: instead of create debug files in vg_tmp folder, it enabled "Export Scene in Runtime". 
 
-<!--* If under a root [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html) there is a child non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %} that has {% include tooltip.html tooltip="Floating" text="floating" %} joint [VG_Articulation](unity_component_vgarticulation.0.12.0.html) component, and if add a collider to this object, grasping and moving this object will cause very small drifting of the root Articulation Body. -->
-
-* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.12.0.html#changeobjectjoint) as yet. 
-
-* Successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.12.0.html) can lead to crashing.
+* Runtime change parent of an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained joint type may result in unexpected {% include tooltip.html tooltip="JointAxis" text="joint axis" %}  different from its initial setting. 
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 
-* [GetReplayStartWristPose](virtualgrasp_unityapi.0.12.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
+* [GetReplayStartWristPose](virtualgrasp_unityapi.0.13.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
 
-* Runtime change parent of an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained joint type may result in unexpected {% include tooltip.html tooltip="JointAxis" text="joint axis" %}  different from its initial setting.
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.13.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.13.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
-* The 2nd method -- pressing button "Export Scene in Edit" to [Create Debug Files](debug_files.0.12.0.html#creating-debug-files) has a bug: instead of create debug files in vg_tmp folder, it enabled "Export Scene in Runtime". 
+* If game object's pivot is relatively far away from mesh center, there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.13.0.html) or [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 
 
-##### Known Issues:
+* If an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. 
+
+* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.13.0.html#changeobjectjoint) as yet. 
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
 
 * {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
 
-* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.12.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.13.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
 ## V0.11.1 (2022-04-11)
 
