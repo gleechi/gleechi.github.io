@@ -43,11 +43,9 @@ folder: mydoc
 * Fixed bug on new recording sensor recording using [VG_Recorder](unity_component_vgrecorder.0.13.0.html) is pending the data to earlier recordings. (**fixed known issue from 0.12.0**)
 * Fixed bug on successively recording sensor data using [VG_Recorder](unity_component_vgrecorder.0.13.0.html) can lead to crashing. (**fixed known issue from 0.12.0**)
 * Fixed bug on the 2nd method -- pressing button "Export Scene in Edit" to [Create Debug Files](debug_files.0.13.0.html#creating-debug-files) has a bug: instead of create debug files in vg_tmp folder, it enabled "Export Scene in Runtime". (**fixed known issue from 0.12.0**)
-
+* Fixed bug on runtime change parent of an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained joint type may result in unexpected {% include tooltip.html tooltip="JointAxis" text="joint axis" %}  different from its initial setting. (**fixed known issue from 0.12.0**)
 
 ##### Known Issues:
-
-* Runtime change parent of an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object with constrained joint type may result in unexpected {% include tooltip.html tooltip="JointAxis" text="joint axis" %}  different from its initial setting. 
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 

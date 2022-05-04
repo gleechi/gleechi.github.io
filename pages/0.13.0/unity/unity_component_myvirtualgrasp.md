@@ -164,14 +164,10 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 -->
 
 ## Debug Settings
-{% include image.html file="unity/unity_vg_debug_settings.png" alt="VG debug settings." caption="VG debug settings" %}
 
-Debug settings will show up when "Show Advanced" is checked. 
-
-### Save Debug Files
+{% include image.html file="unity/unity_vg_debug_settings_0_13_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
 
 | Parameters | Description |
 |-------|--------|
-| Save Debug Files | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes (see [debug files](debug_files.0.13.0.html)). | 
-| Physics Default Contact Offset | Overwrite Unity physics contact offset for more accurate collision detection. Currently only relevant for the experimental feature [push with physics](push_interaction.0.13.0.html#push-with-physics).| 
-
+| Export Scene in Runtime | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes. (see [create debug files](debug_files.0.13.0.html#creating-debug-files)) | 
+| Export Scene in Editor | Alternatively to check "Export Scene in Runtime", pressing Export Scene in Edit will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included. (see [create debug files](debug_files.0.13.0.html#creating-debug-files))|
