@@ -29,7 +29,7 @@ In the majority of use cases only 1 single sensor is used.
 
 As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor.
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_0_10_1.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_0_13_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
 
 ### AutoSetup
 

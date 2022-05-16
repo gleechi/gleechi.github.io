@@ -28,11 +28,11 @@ Some examples of annotations are:
 
 ## Enabling VirtualGrasp GraspStudio
 
-The preferred way to use GraspStudio is to use the option of automatically creating a separate editor scene (Menu VirtualGrasp → Create VG_Editor Scene).
-
-This will place a new .unity scene next to your existing one in the file system, that will then be opened automatically.
+We strongly recommend to use the option of automatically creating a separate editor scene using the helper function from the \"VirtualGrasp → Create VG_Editor Scene\" menu instead of using the GraspStudio prefab manually. This will place a new .unity scene next to your existing one in the file system, that will then be opened automatically.
 
 The new editor scene will be automatically configured by combining information from your current scene (VirtualGrasp, hands and camera components), [debug files](debug_files.0.13.0.html#grasp-editor) (objects) and adding and configuring the GraspStudio component itself (from Prefabs).
+
+{% include important.html content="Because some assets are re-used from your current scene, you need to have a properly VG-configured scene to use the Menu VirtualGrasp → Create VG_Editor Scene\" function. " %}
 
 
 ## VirtualGrasp Studio GUI

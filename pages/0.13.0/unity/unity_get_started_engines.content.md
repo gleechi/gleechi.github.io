@@ -6,5 +6,5 @@ The following is a list of Unity Engine versions that we have tested the Virtual
 * <ins>**Unity 2020.x**</ins> is supported and has been tested successfully.
 * <ins>**Unity 2021.x**</ins> is supported and has been tested successfully.
   * **Unity 2021.3** is the version that we are currently using to create the SDK.
-* <ins>**Unity 2022.1.0b**</ins> is supported and has been tested successfully. 
-  * There is an Inspector GUI artifact in VG_MainScript/Sensors, but it is a known [Unity issue](https://issuetracker.unity3d.com/issues/first-array-element-expansion-is-broken-for-arrays-that-use-custom-property-drawers).
+* <ins>**Unity 2022.1**</ins> is supported and has been tested successfully. 
+  * For Unity 2022.1.0b, there is an Inspector GUI artifact in VG_MainScript/Sensors, but it is a known [Unity issue](https://issuetracker.unity3d.com/issues/first-array-element-expansion-is-broken-for-arrays-that-use-custom-property-drawers).
