@@ -10,6 +10,16 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
+## V0.13.0-rc2 (2022-05-18, not publically released yet)
+
+##### Other / Internal Changes:
+
+* Unity Tutorial Framework dependency handled. Version >=2.0 needs to be installed to run VG Unity tutorials.
+* physicsDefaultContactOffset removed from DebugSettings. We won't fiddle with your project settings anymore.
+* Some graphical adjustments to the onboarding scene.
+* Allowed to get rid of the VG welcome window if you want to.
+* A number of warnings that were not really warnings were removed.
+
 ## V0.13.0-rc1 (2022-05-02, not publically released yet)
 
 ##### Major Functionality Changes:
