@@ -27,6 +27,10 @@ The following requirements have to be met to be able to use this controller:
 	<uses-permission android:name="com.oculus.permission.HAND_TRACKING" />
 	<uses-feature android:name="oculus.software.handtracking" android:required="false" />
 	````
+* You may optionally also add the following into the AndroidManifest.xml to use V2.0 of Oculus finger tracking:
+	```js
+	<meta-data android:name="com.oculus.handtracking.version" android:value="V2.0" />
+	````
 
 ### AutoSetup
 
