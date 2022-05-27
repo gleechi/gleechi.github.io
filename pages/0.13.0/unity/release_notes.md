@@ -10,17 +10,7 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
-## V0.13.0-rc2 (2022-05-18, not publically released yet)
-
-##### Other / Internal Changes:
-
-* Unity Tutorial Framework dependency handled. Version >=2.0 needs to be installed to run VG Unity tutorials.
-* physicsDefaultContactOffset removed from DebugSettings. We won't fiddle with your project settings anymore.
-* Some graphical adjustments to the onboarding scene.
-* Allowed to get rid of the VG welcome window if you want to.
-* A number of warnings that were not really warnings were removed.
-
-## V0.13.0-rc1 (2022-05-02, not publically released yet)
+## V0.13.0 (2022-05-23)
 
 ##### Major Functionality Changes:
 
@@ -47,6 +37,11 @@ folder: mydoc
 * Some 3D models in the VG_Onboarding scene were simplied and optimized.
 * Additional .xml files have been packaged along the .dll libraries to expose the comments / summaries for the API into the coding environment.
 * Creating a VG_Editor scene can only be done when XR Management is installed and a vg_tmp directory exists.
+* Unity Tutorial Framework dependency handled. Version >=2.0 needs to be installed to run VG Unity tutorials.
+* physicsDefaultContactOffset removed from DebugSettings. We won't fiddle with your project settings anymore.
+* Some graphical adjustments to the onboarding scene.
+* Allowed to get rid of the VG welcome window if you want to.
+* A number of warnings that were not really warnings were removed.
 
 ##### Update to VG Core library 0.10.0:
 
