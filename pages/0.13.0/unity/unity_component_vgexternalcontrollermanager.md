@@ -49,7 +49,7 @@ While all these classes can serve as tutorials to understand how a VG_ExternalCo
 
 <br>
 
-{% include youtube.html id="hNa2o7ngctU" caption="Switching between different external controllers using the VGs AutoSetup functionality." %}
+{% include youtube.html id="DptmMLbSIdU" caption="Switching between different external controllers using the VGs AutoSetup functionality." %}
 
 ## Modifying or Writing a Controller
 
