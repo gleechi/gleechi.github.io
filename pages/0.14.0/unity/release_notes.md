@@ -72,6 +72,7 @@ folder: mydoc
 
 * There is an Inspector GUI artifact in VG_MainScript/Sensors, but it is a known [Unity issue](https://issuetracker.unity3d.com/issues/first-array-element-expansion-is-broken-for-arrays-that-use-custom-property-drawers).
 
+* In [onboarding Task 3](#unity_vgonboarding_task5.0.14.0.html), there is a bug after assembling cap to the bottle where cap becomes bottle's child, then grasp bottle and cap together could make cap move off the initial position relative to the parent bottle. This will not happen however if you first grasp bottle then later another hand grasp the cap. We have identified cause and the problem will be fixed in V0.14.0.
 
 ## V0.12.0(2022-04-14)
 
