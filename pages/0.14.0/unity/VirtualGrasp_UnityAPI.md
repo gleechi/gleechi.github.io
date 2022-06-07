@@ -6,6 +6,13 @@ permalink: virtualgrasp_unityapi.0.14.0.html
 folder: unity
 toc: true
 ---
+<hr><b>Tags</b>
+<table>
+<tr><td><span class="label label-default">pro</span></td><td>this function is related to a feature that is not part of the free version.
+Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCTION.</td></tr>
+<tr><td><span class="label label-primary">video</span></td><td>this function is related to a tutorial movie.</td></tr>
+</table><hr>
+
 ## [ENUMS](#)
 
 ### VG_AutoSetup
@@ -280,6 +287,12 @@ The event to call when we are going to reset all objects in the library.
 
 
 
+### VG_Controller.OnGraspTriggered
+
+This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
 ### VG_Controller.OnInitialize
 
 The event to call when we have successfully initialized the library.
@@ -310,7 +323,13 @@ This event is invoked in the frame when an object is fully release by all hands.
 
 ### VG_Controller.OnObjectGrasped
 
-This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
+This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectPushed
+
+This event is invoked in the frame when a hand pushing an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
 
@@ -350,7 +369,7 @@ Change an object's joint in runtime.
 | _Transform_ |selectedObject|The object to change the joint type for.|
 |[*VG_JointType*](#vg_jointtype) | new_jointType|The joint type to switch to.|
 | _Vector2_ |new_limit|The new limit of the new joint type.|
-| _float_ |new_screwRate|The new screw rate (>=0, in cm per degree) if new_jointType is Revolute.|
+| _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) if new_jointType is Revolute.|
 
 **Remark:**
  Note that the former joint can be recovered (see RecoverObjectJoint).
@@ -452,7 +471,7 @@ Return all unbaked objects.
 
 Externally select an object and jump grasp it (object jump to hand).
 
-| _int_ |avatarID|instance avatar id (>0)|
+| _int_ |avatarID|instance avatar id (\>0)|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
 | _Transform_ |obj|The id of externally selected object to jump grasped by this hand|
 
@@ -503,7 +522,7 @@ Set if an object can only be manipulated by dual hands from a same avatar.
 Specify the object selection weights for grasping interaction.
 
 | _Transform_ |obj|Which object to specify weight|
-| _float_ |weight|Should be >=0 value to specify the preferences to select this object. If 0 exclude this object in selection process|
+| _float_ |weight|Should be \>=0 value to specify the preferences to select this object. If 0 exclude this object in selection process|
 
 **Remark:**
  Note by default this weight is 1 for all objects.
@@ -511,6 +530,19 @@ Specify the object selection weights for grasping interaction.
 
 **Remark:**
  Use case is mainly to specify relative selection preferences for cluttered objects.
+
+
+
+### VG_Controller.SwitchGraspObject
+
+Instantaneously select an object and jump grasp it (object jump to hand)
+
+| _int_ |avatarID|instance avatar id (\>0)|
+|[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
+| _Transform_ |obj|The id of externally selected object to jump grasped by this hand|
+
+**Remark:**
+ Note you do NOT need to use vgsSetSelectObjectMethod() to set select object externally before call this function
 
 
 
@@ -625,10 +657,43 @@ Unregister avatar during runtime
 
 
 
+## [ENABLE_DATABASE_API](#)
+
+### VG_Controller.DeleteGrasp
+<span class="label label-default">pro</span>
+
+Deletes object-specific grasp db. Won't delete grasp if there still exists one or more registered objects with objectHash.
+
+| _uint_ |objectHash|Hash of the object to delete.|
+| **returns** | _bool_ |  True if grasp was deleted. False otherwise.|
+| _exception_ |ArgumentException|In case of unidentified objectHash.|
+
+
+### VG_Controller.GetGrasp
+<span class="label label-default">pro</span>
+
+Get grasp information in raw byte format by objectHash.
+
+| _uint_ |objectHash|Hash of the object for which to retrieve the grasp db.|
+| **returns** | _VG_RawDataHandle_ | Handle with (encrypted) grasp information for object with hash objectHash.|
+| _exception_ |ArgumentException|In case of unidentified objectHash.|
+
+
+### VG_Controller.LoadGrasp
+<span class="label label-default">pro</span>
+
+Loads object-specific grasp db.
+
+| _byte[]_ |grasp|Byte stream of object-specific grasp db.|
+| _exception_ |IOException|In case of incorrect data format.|
+
+
+
 ## [GRASP_EDITOR_API](#)
 
 ### VG_Controller.EditGrasp
-Tags: [video](https://www.youtube.com/watch?v=Z1j6BgosFVA)
+<a href="https://www.youtube.com/watch?v=Z1j6BgosFVA"><span class="label label-warning">video</span></a>
+
 
 Call grasp editor functionality on a currently selected object and grasp.
 
@@ -675,7 +740,7 @@ Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.0.14.0.html)
 ## [GRASP_SELECTION_API](#)
 
 ### VG_Controller.ForceReleaseObject
-Tags: untested
+untested, 
 
 Force the release of a grasp.
 
@@ -683,7 +748,7 @@ Force the release of a grasp.
 
 
 ### VG_Controller.ForceReleaseObject
-Tags: untested
+untested, 
 
 Force the release of a grasp.
 
@@ -974,6 +1039,7 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 ## [NETWORK_INTERFACE_API](#)
 
 ### VG_Controller.GetBroadcastSignal
+<span class="label label-default">pro</span>
 
 Receive (from VG) a multiplayer broadcast message as a binary byte array.
 
@@ -983,6 +1049,7 @@ Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.0.14.0.html)
 
 
 ### VG_Controller.SetBroadcastSignal
+<span class="label label-default">pro</span>
 
 Set (to VG) a multiplayer broadcast message as a binary byte array.
 
@@ -1109,6 +1176,7 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 ## [RECORDING_INTERFACE_API](#)
 
 ### VG_Controller.GetReplayAvatarID
+<span class="label label-default">pro</span>
 
 Get the AvatarID of the first replay avatar.
 
@@ -1121,6 +1189,7 @@ Get the AvatarID of the first replay avatar.
 
 
 ### VG_Controller.GetReplayStartWristPose
+<span class="label label-default">pro</span>
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
 
@@ -1143,6 +1212,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.IsReplaying
+<span class="label label-default">pro</span>
 
 Check if a hand is currently replaying a recorded sensor data.
 
@@ -1154,7 +1224,9 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.LoadRecording
-Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+<span class="label label-default">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
 
 Load recorded sensor data from a file, but do not start replay
 
@@ -1163,8 +1235,22 @@ Load recorded sensor data from a file, but do not start replay
 Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
+### VG_Controller.ResumeReplay
+<span class="label label-default">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
+
+Resume replaying of an avatar.
+
+| _int_ |avatarID|The ID of the avatar to resume replaying the recording on (note: it has to be an avatar enabled for replay).|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
+
+
 ### VG_Controller.StartRecording
-Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+<span class="label label-default">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
 
 Start recording sensor data.
 
@@ -1173,7 +1259,9 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StartReplay
-Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+<span class="label label-default">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
 
 Start full replay of the whole interaction sequence on an avatar.
 
@@ -1184,7 +1272,9 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StartReplayOnObject
-Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+<span class="label label-default">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
 
 Start replaying a specific interaction segment on one object.
 
@@ -1197,7 +1287,9 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StopRecording
-Tags: [video](https://www.youtube.com/watch?v=o5F5tUb8RQM)
+<span class="label label-default">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
 
 Stop recording sensor data and store the whole sequence to a file
 
@@ -1207,6 +1299,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StopReplay
+<span class="label label-default">pro</span>
 
 Stop replay of the recorded interaction sequence on an avatar.
 
@@ -1215,4 +1308,11 @@ Stop replay of the recorded interaction sequence on an avatar.
 Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
+
+<hr><b>Tags</b>
+<table>
+<tr><td><span class="label label-default">pro</span></td><td>this function is related to a feature that is not part of the free version.
+Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCTION.</td></tr>
+<tr><td><span class="label label-primary">video</span></td><td>this function is related to a tutorial movie.</td></tr>
+</table><hr>
 

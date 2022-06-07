@@ -123,6 +123,9 @@ entries:
     - title: VG_PostAnimator
       url: /unity_component_vgpostanimator.0.14.0.html
       output: web
+    - title: VG_Recorder [pro]
+      url: /unity_component_vgrecorder.0.14.0.html
+      output: web
       subfolders:
       - title: VG_Onboarding
         output: web
