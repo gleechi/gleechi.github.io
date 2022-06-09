@@ -91,3 +91,19 @@ This can be caused by multiple things e.g:
 This is because the source of that MeshRenderer have not checked “Read/Write enabled” checkbox in the model inspector. VG has an utility script you could use as shown in below image. Clicking _Make interactables readable_ will check this Read/Write checkbox for all objects that have been marked as interactable. 
 
 {% include image.html file="unity/unity_vg_make_interactables_readable.png" alt="VG utility make interactables readable" caption="VG Utility: Make interactables readable" %}
+
+
+## Others
+
+### .NET target framework mismatch when using VS Code
+```js
+Error: The primary reference "virtualgrasp.CSharp.Unity.NET3.5" could not be resolved because it was built against the ".NETFramework,Version=v4.8" framework.
+````
+There are many threads with the same underlying issue of a dependency being compiled against 4.8 while Unitys VSCode plugin is hardcoded at the time of writing to 4.7.1. The culprit is the project file Assembly-CSharp.csproj where this dependency is hardcoded:
+```js
+<TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+````
+The following can be added to that .csproj file to let the IDE ignore these mismatches:
+```js
+<ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+````
