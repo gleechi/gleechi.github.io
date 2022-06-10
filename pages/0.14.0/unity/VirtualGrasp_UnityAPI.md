@@ -368,6 +368,7 @@ Change an object's joint in runtime.
 
 | _Transform_ |selectedObject|The object to change the joint type for.|
 |[*VG_JointType*](#vg_jointtype) | new_jointType|The joint type to switch to.|
+| _Transform_ |new_anchor_transform|The anchor transform to switch to.|
 | _Vector2_ |new_limit|The new limit of the new joint type.|
 | _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) if new_jointType is Revolute.|
 
@@ -393,7 +394,7 @@ Change an object's joint and all other articulation parameters in runtime.
 Return the avatar/hand pairs that are currently grasping a specified object.
 
 | _Transform_ |objectToCheck|The object to be checked if it is currently grasped.|
-| _VG_HandSide\>\>_ |hands|An output list of avatar-handside-pairs describing which hands are currently grasping that object.|
+| _**out** List\<KeyValuePair\<int, VG_HandSide\>\>_ |hands|An output list of avatar-handside-pairs describing which hands are currently grasping that object.|
 | **returns** | _int_ | Number of hands grasping the object.|
 
 
@@ -402,7 +403,7 @@ Return the avatar/hand pairs that are currently grasping a specified object.
 Get the current joint state of a single-dof articulated object. For planar joint, the joint state along xaxis of the joint anchor.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
-| _out float_ |jointState|The returned joint state. Will be set to 0.0f upon error|
+| _**out** float_ |jointState|The returned joint state. Will be set to 0.0f upon error|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
@@ -412,7 +413,7 @@ Get object's original or current joint type.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _bool_ |original|If true, get the original joint type, otherwise the current type.|
-| _out VG_JointType_ |jointType|The returned joint type. Will be set to FLOATING upon error.|
+| _**out** VG_JointType_ |jointType|The returned joint type. Will be set to FLOATING upon error.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint type fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
@@ -421,7 +422,7 @@ Get object's original or current joint type.
 Get the current secondary joint state along yaxis of joint anchor for planar articulated object.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
-| _out float_ |secondaryJointState|The returned secondary joint state. Will be set to 0.0f upon error.|
+| _**out** float_ |secondaryJointState|The returned secondary joint state. Will be set to 0.0f upon error.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
@@ -449,8 +450,8 @@ Receive the sensor pose of a given avatar and hand.
 
 | _int_ |avatarID|The avatar to get the pose from.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the pose from.|
-| _out Vector3_ |p|The returned position.|
-| _out Quaternion_ |q|The returned rotation.|
+| _**out** Vector3_ |p|The returned position.|
+| _**out** Quaternion_ |q|The returned rotation.|
 | _bool_ |absolute|Set True (default) to return the absolute pose, and False to return the relative pose.|
 
 
@@ -559,7 +560,7 @@ Reset the plugin.
 
 Get the AvatarID of the given skinned mesh renderer
 
-| _out int_ |avatarID|The returned AvatarID.|
+| _**out** int_ |avatarID|The returned AvatarID.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.INVALID_AVATAR if avatar is null.|
 
 
@@ -590,7 +591,7 @@ Receive an enumerator of all registered hands and their status.
 
 Get the AvatarID of the first sensor controlled avatar.
 
-| _out int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
+| _**out** int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 **Remark:**
@@ -634,7 +635,7 @@ Register a new avatar during runtime.
 
 | _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
 |[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
-| _out int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
 
 
 ### VG_Controller.Release
@@ -714,10 +715,10 @@ Receive a grasp in the grasp DB by index.
 | _int_ |avatarID|The avatar to receive a grasp for.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to receive a grasp for.|
 | _int_ |graspIndex|The index of grasp to receive.|
-| _out Vector3_ |p|The received wrist position of the grasp.|
-| _out Quaternion_ |q|The received wrist orientation of the grasp.|
-| _out VG_GraspType_ |type|The received VG_GraspType of the grasp.|
-| _out VG_GraspLabel_ |label|The received VG_GraspLabel of the grasp.|
+| _**out** Vector3_ |p|The received wrist position of the grasp.|
+| _**out** Quaternion_ |q|The received wrist orientation of the grasp.|
+| _**out** VG_GraspType_ |type|The received VG_GraspType of the grasp.|
+| _**out** VG_GraspLabel_ |label|The received VG_GraspLabel of the grasp.|
 |[*VG_QueryGraspMode*](#vg_querygraspmode) | queryGraspMode|Can be used to define if and how the grasp should be applied also.|
 |[*VG_QueryGraspMethod*](#vg_querygraspmethod) | queryGraspMethod|Can be used to define how the graspIndex should be interpreted.|
 
@@ -763,7 +764,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 | _int_ |avatarID|The avatar to get the bone pose from.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 |[*VG_BoneType*](#vg_bonetype) | boneType|The BoneType to get.|
-| _out Transform_ |t|The returned pose of the bone.|
+| _**out** Transform_ |t|The returned pose of the bone.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.14.0.html)
 
@@ -785,9 +786,9 @@ Return the pose (i.e. position and orientation) of a specific bone.
 | _int_ |avatarID|The avatar to get the bone pose from.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 |[*VG_BoneType*](#vg_bonetype) | boneType|The BoneType to get.|
-| _out int_ |instanceID|The returned ID of the bone transform.|
-| _out Vector3_ |p|The returned position of the bone.|
-| _out Quaternion_ |q|The returned rotation of the bone.|
+| _**out** int_ |instanceID|The returned ID of the bone transform.|
+| _**out** Vector3_ |p|The returned position of the bone.|
+| _**out** Quaternion_ |q|The returned rotation of the bone.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.14.0.html)
 
@@ -799,8 +800,8 @@ Return the pose matrix of a specific bone.
 | _int_ |avatarID|The avatar to get the bone pose from.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 |[*VG_BoneType*](#vg_bonetype) | boneType|The BoneType to get.|
-| _out int_ |instanceID|The returned ID of the bone transform.|
-| _out Matrix4x4_ |m|The returned pose matrix of the bone.|
+| _**out** int_ |instanceID|The returned ID of the bone transform.|
+| _**out** Matrix4x4_ |m|The returned pose matrix of the bone.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.14.0.html)
 
@@ -813,8 +814,8 @@ Return the pose of a specific finger bone as a matrix.
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 | _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
 | _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
-| _out int_ |instanceID|The returned ID of the bone transform.|
-| _out Matrix4x4_ |m|The returned pose of the bone.|
+| _**out** int_ |instanceID|The returned ID of the bone transform.|
+| _**out** Matrix4x4_ |m|The returned pose of the bone.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.14.0.html)
 
@@ -827,9 +828,9 @@ Return the pose (i.e. position and orientation) of a specific finger bone.
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 | _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
 | _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
-| _out int_ |instanceID|The returned ID of the bone transform.|
-| _out Vector3_ |p|The returned position of the bone.|
-| _out Quaternion_ |q|The returned rotation of the bone.|
+| _**out** int_ |instanceID|The returned ID of the bone transform.|
+| _**out** Vector3_ |p|The returned position of the bone.|
+| _**out** Quaternion_ |q|The returned rotation of the bone.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.14.0.html)
 
@@ -842,7 +843,7 @@ Reflect the pose of a specific bone on a Transform.
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 | _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
 | _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
-| _out Transform_ |t|The returned pose of the bone.|
+| _**out** Transform_ |t|The returned pose of the bone.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.14.0.html)
 
@@ -1085,10 +1086,10 @@ Get the push cirle for this hand side of an avatar as a visual hint for object s
 
 | _int_ |avatarID|The avatar to get the push circle for.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand to get the push circle for.|
-| _out Vector3_ |p|The push circle's position.|
-| _out Quaternion_ |r|The push circle's rotation (zaxis is normal).|
-| _out float_ |radius|Radius of the push circle,|
-| _out bool_ |inContact|True if contact (i.e. pushing), False otherwise.|
+| _**out** Vector3_ |p|The push circle's position.|
+| _**out** Quaternion_ |r|The push circle's rotation (zaxis is normal).|
+| _**out** float_ |radius|Radius of the push circle,|
+| _**out** bool_ |inContact|True if contact (i.e. pushing), False otherwise.|
 | **returns** | _Transform_ | The selected object, NULL if none.|
 
 Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.0.14.0.html)
@@ -1180,7 +1181,7 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 
 Get the AvatarID of the first replay avatar.
 
-| _out int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
+| _**out** int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 **Remark:**
@@ -1195,10 +1196,10 @@ Get the starting wrist poses for full replay of the whole interaction sequence.
 
 | _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
 | _Transform_ |selectedObject|If provided, the entire sensor recording will transformed in to object's frame. If not, in global frame.|
-| _out Vector3_ |p_left|The position of the left wrist.|
-| _out Quaternion_ |q_left|The orientation of the left wrist.|
-| _out Vector3_ |p_right|The position of the right wrist.|
-| _out Quaternion_ |q_right|The orientation of the right wrist.|
+| _**out** Vector3_ |p_left|The position of the left wrist.|
+| _**out** Quaternion_ |q_left|The orientation of the left wrist.|
+| _**out** Vector3_ |p_right|The position of the right wrist.|
+| _**out** Quaternion_ |q_right|The orientation of the right wrist.|
 
 **Remark:**
  LoadRecording need to be called before this to load recorded sensor data.
