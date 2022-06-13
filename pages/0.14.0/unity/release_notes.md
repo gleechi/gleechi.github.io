@@ -10,7 +10,28 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
-## V0.13.0(2022-05-23)
+## V0.14.0-rc1 (2022-06-10)
+
+##### Major Functionality Changes:
+
+##### GUI / Component Changes:
+
+* SteamHand.cs added as new external controller to support SteamVR controllers.
+* When using a finger tracking device, FingerControlType BY_ANIMATION will be blocked.
+* GUI issues of some Unity versions resolved by making lists [NonReorderable].
+
+##### API Changes:
+* OnObjectPushed event added.
+
+##### Other / Internal Changes:
+* Onboarding scene equipped with sound effects.
+
+##### Update to VG Core library 0.11.0:
+
+##### Known Issues:
+
+
+## V0.13.0 (2022-05-23)
 
 ##### Major Functionality Changes:
 
