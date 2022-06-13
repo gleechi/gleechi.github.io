@@ -39,11 +39,12 @@ To link together a controller plugin with VG, the VirtualGrasp SDK provides a ba
 VG_ExternalController together with a few ready-to-use child classes for the following
 controllers:
 
-* [VG_MouseHand](unity_vg_ec_mousehand.0.14.0.html) for Mouse control.
-* [VG_UnityXRHand](unity_vg_ec_unityxrhand.0.14.0.html) for all XR controllers that are supported through [UnityXR](https://docs.unity3d.com/Manual/XR.0.14.0.html).
-* [VG_OculusHand](unity_vg_ec_oculushand.0.14.0.html) for Oculus Finger Tracking which is supported through the Oculus SDK.
-* [VG_LeapHand](unity_vg_ec_leaphand.0.14.0.html) for LeapMotion controller which is supported through the Ultraleap SDK.
-* [VG_GenericHand](unity_vg_ec_generichand.0.14.0.html) as a fallback solution.
+* [VG_EC_MouseHand](unity_vg_ec_mousehand.0.14.0.html) for Mouse control.
+* [VG_EC_UnityXRHand](unity_vg_ec_unityxrhand.0.14.0.html) for all XR controllers that are supported through [UnityXR](https://docs.unity3d.com/Manual/XR.0.14.0.html).
+* [VG_EC_SteamHand](unity_vg_ec_steamhand.0.14.0.html) for all XR controllers that are supported through [SteamVR](https://valvesoftware.github.io/steamvr_unity_plugin/index.html).
+* [VG_EC_OculusHand](unity_vg_ec_oculushand.0.14.0.html) for Oculus Finger Tracking which is supported through the Oculus SDK.
+* [VG_EC_LeapHand](unity_vg_ec_leaphand.0.14.0.html) for LeapMotion controller which is supported through the Ultraleap SDK.
+* [VG_EC_GenericHand](unity_vg_ec_generichand.0.14.0.html) as a fallback solution.
 
 While all these classes can serve as tutorials to understand how a VG_ExternalController can be setup, please refer to each particular page for further details on just that particular controller.
 

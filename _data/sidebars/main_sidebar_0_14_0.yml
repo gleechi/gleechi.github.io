@@ -99,6 +99,9 @@ entries:
         - title: VG_EC_OculusHand
           url: /unity_vg_ec_oculushand.0.14.0.html
           output: web
+        - title: VG_EC_SteamHand
+          url: /unity_vg_ec_steamhand.0.14.0.html
+          output: web
         #- title: VG_EC_GenericHand
         #  url: /unity_vg_ec_generichand.0.14.0.html
         #  output: web
