@@ -54,8 +54,6 @@ folder: mydoc
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 
-* [GetReplayStartWristPose](virtualgrasp_unityapi.0.13.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
-
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.13.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.13.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
 * If game object's pivot is relatively far away from mesh center, there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.13.0.html) or [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. 

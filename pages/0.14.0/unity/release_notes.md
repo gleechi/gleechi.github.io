@@ -12,24 +12,52 @@ folder: mydoc
 
 ## V0.14.0-rc1 (2022-06-10)
 
+
 ##### Major Functionality Changes:
+
+* Added Knuckles controller to VG free version.  
+* **Breaking change:** [ChangeObjectJoint](virtualgrasp_unityapi.0.14.0.html#vg_controllerchangeobjectjoint) is extended with one additional input parameter "new_anchor_transform". 
+
 
 ##### GUI / Component Changes:
 
 * SteamHand.cs added as new external controller to support SteamVR controllers.
-* When using a finger tracking device, FingerControlType BY_ANIMATION will be blocked.
+* When using finger tracking devices (OCULUS_FT, STEAMVR_FT or LEAP_EXT), {% include tooltip.html tooltip="FingerControlType" text="Finger Control Type" %} -- "BY_ANIMATION" is disabled. 
 * GUI issues of some Unity versions resolved by making lists [NonReorderable].
+* **(@Alex check if this is correct)** Pause / Resume replay of recorded sensor data is added to VG_Recorder component.
 
 ##### API Changes:
-* OnObjectPushed event added.
+* Added [OnObjectPushed](virtualgrasp_unityapi.0.14.0.html#vg_controlleronobjectpushed) event.
+* Added [OnGraspTriggered](virtualgrasp_unityapi.0.14.0.html#vg_controllerongrasptriggered) event.
+* Added [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) API function to allow directly switch grasped object. 
 
 ##### Other / Internal Changes:
 * Onboarding scene equipped with sound effects.
+* Guard mesh and rig are compatible when registering avatars. 
+* **(@Alex check if this is correct)** Customized selection weight (different from default value 1.0f) is recovered when object is switch from hidden to selectable again to enable interaction.
+* Using special characters for object name in Unity is allowed and won't affect VG functionality anymore. 
+* VG onboarding scene object models are improved and sound effect added. 
+* **(@Dan confirm this is true)** [JumpGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerjumpgraspobject) now can work on unbaked objects. 
 
 ##### Update to VG Core library 0.11.0:
+* Fixed bug on examplified in [onboarding Task 3](#unity_vgonboarding_task5.0.14.0.html), after assembling cap to the bottle where cap becomes bottle's child, then grasp bottle and cap together could make cap move off the initial position relative to the parent bottle. This will not happen however if you first grasp bottle then later another hand grasp the cap. **(fixed known issue from 0.13.0)**
+* Fixed bug on if game object's pivot is relatively far away from mesh center, there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.14.0.html) or [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. **(fixed known issue from 0.13.0)**
+* Fixed bug on if an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. **(fixed known issue from 0.13.0)**
+* Two hands grasp interaction with an object is improved. Both hands now contribute to the position and rotation changes of the grasped object.
 
 ##### Known Issues:
 
+* When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
+
+* **(@Dan check if this is fixed)** A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.14.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.14.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+
+* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.14.0.html#changeobjectjoint) as yet. 
+
+* Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
+
+* {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
+
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.14.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
 ## V0.13.0 (2022-05-23)
 
@@ -74,8 +102,6 @@ folder: mydoc
 ##### Known Issues:
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
-
-* [GetReplayStartWristPose](virtualgrasp_unityapi.0.14.0.html#getreplaystartwristpose) does not give accurate wrist pose. 
 
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.14.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.14.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
