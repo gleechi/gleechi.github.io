@@ -2,8 +2,8 @@
 
 <ul id="mysidebar" class="nav">
   <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
-  {% if sidebar[0].version != "0.13.0" and sidebar %}
-  <u><i><a style="background-color: #FF8800; font-size: 9pt;" href="{{page.url | split: "." | first }}.0.13.0.html">Note: Newer version 0.13.0 exists.</a></i></u>
+  {% if sidebar[0].version != "0.14.0" and sidebar %}
+  <u><i><a style="background-color: #FF8800; font-size: 9pt;" href="{{page.url | split: "." | first }}.0.14.0.html">Note: Newer version 0.14.0 exists.</a></i></u>
   {% endif %}
   {% for entry in sidebar %}
   {% for folder in entry.folders %}

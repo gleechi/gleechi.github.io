@@ -1,8 +1,8 @@
 ---
 title: VG_ExternalControllerManager Component
 keywords: component, external-controller manager
-sidebar: main_sidebar_0_13_0
-permalink: unity_component_vgexternalcontrollermanager.0.13.0.html
+sidebar: main_sidebar_0_14_0
+permalink: unity_component_vgexternalcontrollermanager.0.14.0.html
 folder: mydoc
 ---
 
@@ -10,7 +10,7 @@ folder: mydoc
 
 VG_ExternalControllerManager is a static class representing the controller abstraction towards VirtualGrasp. 
 
-It should be used in any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.0.13.0.html), where it is initialized after the VG_Controller itself initialized:
+It should be used in any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.0.14.0.html), where it is initialized after the VG_Controller itself initialized:
 
 ```js
 override public void Awake()
@@ -26,7 +26,7 @@ VG_ExternalControllerManager.cs is a {% include tooltip.html tooltip="VGPublicSc
 In most cases, the source is a plugin provided by the hardware manufacturer for your engine of choice.
 
 The VG_ExternalControllerManager is managing different VG_ExternalControllers. 
-<!-- For more background information, please refer to the [Controller](controllers.0.13.0.html) explanation. -->
+<!-- For more background information, please refer to the [Controller](controllers.0.14.0.html) explanation. -->
 We call it **external controllers**, because an external source or plugin is providing VirtualGrasp with the input data in Unity (but external to VirtualGrasp). In contrast to this are **internal controllers** that link the native library directly to VirtualGrasp. Internal controllers are by default not supported for the VirtualGrasp SDK, due to third-party distribution regulations.
 
 Thus, whenever we speak of controllers or sensors in this documentation, we refer to external controllers.
@@ -39,11 +39,12 @@ To link together a controller plugin with VG, the VirtualGrasp SDK provides a ba
 VG_ExternalController together with a few ready-to-use child classes for the following
 controllers:
 
-* [VG_MouseHand](unity_vg_ec_mousehand.0.13.0.html) for Mouse control.
-* [VG_UnityXRHand](unity_vg_ec_unityxrhand.0.13.0.html) for all XR controllers that are supported through [UnityXR](https://docs.unity3d.com/Manual/XR.0.13.0.html).
-* [VG_OculusHand](unity_vg_ec_oculushand.0.13.0.html) for Oculus Finger Tracking which is supported through the Oculus SDK.
-* [VG_LeapHand](unity_vg_ec_leaphand.0.13.0.html) for LeapMotion controller which is supported through the Ultraleap SDK.
-* [VG_GenericHand](unity_vg_ec_generichand.0.13.0.html) as a fallback solution.
+* [VG_EC_MouseHand](unity_vg_ec_mousehand.0.14.0.html) for Mouse control.
+* [VG_EC_UnityXRHand](unity_vg_ec_unityxrhand.0.14.0.html) for all XR controllers that are supported through [UnityXR](https://docs.unity3d.com/Manual/XR.0.14.0.html).
+* [VG_EC_SteamHand](unity_vg_ec_steamhand.0.14.0.html) for all XR controllers that are supported through [SteamVR](https://valvesoftware.github.io/steamvr_unity_plugin/index.html).
+* [VG_EC_OculusHand](unity_vg_ec_oculushand.0.14.0.html) for Oculus Finger Tracking which is supported through the Oculus SDK.
+* [VG_EC_LeapHand](unity_vg_ec_leaphand.0.14.0.html) for LeapMotion controller which is supported through the Ultraleap SDK.
+* [VG_EC_GenericHand](unity_vg_ec_generichand.0.14.0.html) as a fallback solution.
 
 While all these classes can serve as tutorials to understand how a VG_ExternalController can be setup, please refer to each particular page for further details on just that particular controller.
 
