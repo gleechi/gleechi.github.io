@@ -10,42 +10,40 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
-## V0.14.0-rc1 (2022-06-10)
+## V0.14.0-rc2 (2022-06-15)
 
 
 ##### Major Functionality Changes:
 
 * **Breaking change:** [ChangeObjectJoint](virtualgrasp_unityapi.0.14.0.html#vg_controllerchangeobjectjoint) is extended with one additional input parameter "new_anchor_transform". 
 * {% include tooltip.html tooltip="PhysicalObject" text="Physical objects" %} are allowed to have disabled VG_Articulation components with any constrained joint types. Note the enabled VG_Articulation can only have Floating joint type.
-* Customized selection weight (different from default value 1.0f) is recovered when object is switched from hidden to selectable again to enable interaction.
+* Customized {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} (different from default value 1.0f) will be recovered when object is switched from hidden to selectable again to enable interaction.
 
 ##### GUI / Component Changes:
 
 * SteamHand.cs added as new external controller to support any controllers supported through SteamVR (for example Knuckles).
-* When using finger tracking devices (OCULUS_FT, STEAMVR_FT or LEAP_EXT), {% include tooltip.html tooltip="FingerControlType" text="Finger Control Type" %} -- "BY_ANIMATION" is disabled. 
+* When using finger tracking devices, {% include tooltip.html tooltip="FingerControlType" text="Finger Control Type" %} option -- "BY_ANIMATION" is disabled, so only recommended BY_SENSOR_FULL_DOFS is used.
 * GUI issues of some Unity versions resolved by making lists [NonReorderable].
 * Pause / Resume replay of recorded sensor data control is added to [VG_Recorder](unity_component_vgrecorder.0.14.0.html) component: Shift + Replay Sequence Key is used to pause or resume replay.
-* MyVirtualGrasp's elements have been re-ordered. For example: controllers at top to be closer to AutoSetup, GraspButton section removed and merged into Interaction settings.
-* All AutoSetup options have been renamed to better reflect the names of the external controllers.
+* [MyVirtualGrasp](unity_component_myvirtualgrasp.0.14.0.html)'s elements have been re-ordered. For example: controllers at top to be closer to AutoSetup, GraspButton section removed and merged into Interaction settings.
+* All AutoSetup options have been renamed to better reflect the names of the [external controllers](unity_component_vgexternalcontrollermanager.0.14.0.html#vg_externalcontroller-class).
 
 ##### API Changes:
 * Added [OnObjectPushed](virtualgrasp_unityapi.0.14.0.html#vg_controlleronobjectpushed) event.
 * Added [OnGraspTriggered](virtualgrasp_unityapi.0.14.0.html#vg_controllerongrasptriggered) event.
 * Added [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) API function to allow directly switch grasped object. 
-* Added [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) API function to allow directly switch grasped object. 
-* Removed [SelectObject](virtualgrasp_unityapi.0.13.0.html#vg_controllerselectobject) API function since allowing externally selecting object by developers will not integrate seamlessly with VG's grasp synthesis. 
-* [GetTriggerButton](virtualgrasp_unityapi.0.13.0.html#vg_controllergettriggerbutton) has been renamed to [GetGraspButton](virtualgrasp_unityapi.0.14.0.html#vg_controllergetgraspbutton).
+* Removed [SelectObject](virtualgrasp_unityapi.0.13.0.html#vg_controllerselectobject) API function since if VR developers choose to select object differently from [the object selection mechanism in VG](grasp_interaction.0.14.0.html#from-object-selection-to-grasp-synthesis) the result will not integrate well with the subsequent {% include tooltip.html tooltip="GraspSynthesis" text="grasp synthesis" %} process provided by VirtualGrasp. 
+* [GetTriggerButton](virtualgrasp_unityapi.0.13.0.html#vg_controllergettriggerbutton) has been renamed to [GetGraspButton](virtualgrasp_unityapi.0.14.0.html#vg_controllergetgraspbutton) to make naming consistent with "Grasp Button" option in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.14.0.html#global-grasp-interaction-settings) interface.
 
 ##### Other / Internal Changes:
-* Onboarding scene equipped with sound effects.
+* Onboarding scene object models are improved and sound effect added.
 * Guard mesh and rig are compatible when registering avatars. 
 * Using special characters for object name in Unity is allowed and won't affect VG functionality anymore. 
-* VG onboarding scene object models are improved and sound effect added.
 * A couple of text optimizations to the VirtualGrasp Tutorials to improve understanding.
 * Bugfix to avoid NullReference if a ForceReleasedObject is deleted in the same frame.
 
 ##### Update to VG Core library 0.11.0:
-* Fixed bug on examplified in [onboarding Task 3](#unity_vgonboarding_task5.0.14.0.html), after assembling cap to the bottle where cap becomes bottle's child, then grasp bottle and cap together could make cap move off the initial position relative to the parent bottle. This will not happen however if you first grasp bottle then later another hand grasp the cap. **(fixed known issue from 0.13.0)**
+* Fixed bug that is examplified in [onboarding Task 3](#unity_vgonboarding_task5.0.14.0.html): after assembling cap to the bottle where cap becomes bottle's child, then grasp bottle and cap together could make cap move off the initial position relative to the parent bottle. **(fixed known issue from 0.13.0)**
 * Fixed bug on if game object's pivot is relatively far away from mesh center, there is strange interactive behavior on PRISMATIC joint (both through [VG_Articulation](unity_component_vgarticulation.0.14.0.html) or [ArticulationBody](https://docs.unity3d.com/Manual/class-ArticulationBody.html)): the rotating movement of controller can result in unexpected translation of object along the joint axis. Other constrained joint types are also affected. **(fixed known issue from 0.13.0)**
 * Fixed bug on if an object has rotational VG articulation joints, when switch from two hands grasping to one hand, or when one hand grasps an object at the moment of another hand releasing it, the remaining grasping hand have trouble to control the constrained object movement. **(fixed known issue from 0.13.0)**
 * Two hands grasp interaction with an object is improved. Both hands now contribute to the position and rotation changes of the grasped object.
