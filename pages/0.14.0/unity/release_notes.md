@@ -17,14 +17,16 @@ folder: mydoc
 
 * Added Knuckles controller to VG free version.  
 * **Breaking change:** [ChangeObjectJoint](virtualgrasp_unityapi.0.14.0.html#vg_controllerchangeobjectjoint) is extended with one additional input parameter "new_anchor_transform". 
-
+* {% include tooltip.html tooltip="PhysicalObject" text="Physical objects" %} are allowed to have disabled VG_Articulation components with any constrained joint types. Note the enabled VG_Articulation can only have Floating joint type.
+* Customized selection weight (different from default value 1.0f) is recovered when object is switched from hidden to selectable again to enable interaction.
 
 ##### GUI / Component Changes:
 
 * SteamHand.cs added as new external controller to support SteamVR controllers.
 * When using finger tracking devices (OCULUS_FT, STEAMVR_FT or LEAP_EXT), {% include tooltip.html tooltip="FingerControlType" text="Finger Control Type" %} -- "BY_ANIMATION" is disabled. 
 * GUI issues of some Unity versions resolved by making lists [NonReorderable].
-* **(@Alex check if this is correct)** Pause / Resume replay of recorded sensor data is added to VG_Recorder component.
+* Pause / Resume replay of recorded sensor data control is added to [VG_Recorder](unity_component_vgrecorder.0.14.0.html) component: Shift + Replay Sequence Key is used to pause or resume replay.
+ 
 
 ##### API Changes:
 * Added [OnObjectPushed](virtualgrasp_unityapi.0.14.0.html#vg_controlleronobjectpushed) event.
@@ -34,10 +36,8 @@ folder: mydoc
 ##### Other / Internal Changes:
 * Onboarding scene equipped with sound effects.
 * Guard mesh and rig are compatible when registering avatars. 
-* **(@Alex check if this is correct)** Customized selection weight (different from default value 1.0f) is recovered when object is switch from hidden to selectable again to enable interaction.
 * Using special characters for object name in Unity is allowed and won't affect VG functionality anymore. 
 * VG onboarding scene object models are improved and sound effect added. 
-* **(@Dan confirm this is true)** [JumpGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerjumpgraspobject) now can work on unbaked objects. 
 
 ##### Update to VG Core library 0.11.0:
 * Fixed bug on examplified in [onboarding Task 3](#unity_vgonboarding_task5.0.14.0.html), after assembling cap to the bottle where cap becomes bottle's child, then grasp bottle and cap together could make cap move off the initial position relative to the parent bottle. This will not happen however if you first grasp bottle then later another hand grasp the cap. **(fixed known issue from 0.13.0)**
@@ -49,7 +49,7 @@ folder: mydoc
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 
-* **(@Dan check if this is fixed)** A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.14.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.14.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.14.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.14.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
 * The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.14.0.html#changeobjectjoint) as yet. 
 
