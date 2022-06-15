@@ -29,7 +29,7 @@ In the majority of use cases only 1 single sensor is used.
 
 As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor.
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_0_13_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_0_14_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
 
 ### AutoSetup
 
@@ -100,11 +100,6 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 
 {% include image.html width = "60" file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
 
-## Sensor Settings
-
-{% include image.html file="unity/unity_vg_sensor_settings.png" alt="Sensor settings in Unity." caption="Sensor settings in Unity." %}
-After you have setup how your avatar's hands are controlled, you can use the Sensor Settings interface to specify [Trigger Button](virtualgrasp_unityapi.0.14.0.html#vg_vrbutton) globally for all of the sensors.
-
 <!--
 ## Object Identifiers
 
@@ -118,7 +113,9 @@ Once an object is marked as {% include tooltip.html tooltip="VGInteractable" tex
 
 ## Global Grasp Interaction Settings
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction_0_11_0.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction_0_14_0.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
+
+After you have setup how your avatar's hands are controlled, you can use the interface to specify [Grasp Button](virtualgrasp_unityapi.0.14.0.html#vg_vrbutton) globally for all of the sensors.
 
 You can set the default [grasp Interaction](grasp_interaction.0.14.0.html#grasp-interaction) parameters for all objects in the scene globally in Global Grasp Interaction Settings.
 See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.0.14.0.html#grasp-interaction).

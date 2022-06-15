@@ -22,7 +22,7 @@ The following requirements have to be met to be able to use this controller:
 
 ### AutoSetup
 
-Finally, you can the "UNITY_XR" option to [AutoSetup](unity_component_myvirtualgrasp.0.14.0.html#autosetup) your VG configuration.
+Finally, you can the "Unity XR Hand" option to [AutoSetup](unity_component_myvirtualgrasp.0.14.0.html#autosetup) your VG configuration.
 
 For this controller, AutoSetup 
 

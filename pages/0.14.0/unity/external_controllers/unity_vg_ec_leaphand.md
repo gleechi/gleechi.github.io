@@ -24,7 +24,7 @@ The following requirements have to be met to be able to use this controller:
 
 ### AutoSetup
 
-Finally, you can use the "LEAP_EXT" option to [AutoSetup](unity_component_myvirtualgrasp.0.14.0.html#autosetup) your VG configuration.
+Finally, you can use the "Leap Hand" option to [AutoSetup](unity_component_myvirtualgrasp.0.14.0.html#autosetup) your VG configuration.
  
 For this controller, AutoSetup 
 

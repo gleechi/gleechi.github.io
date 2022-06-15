@@ -24,7 +24,7 @@ The following requirements have to be met to be able to use this controller:
 
 ### AutoSetup
 
-Finally, you can use the "STEAMVR" option to [AutoSetup](unity_component_myvirtualgrasp.0.14.0.html#autosetup) your VG configuration. For this controller, AutoSetup 
+Finally, you can use the "Steam Hand" option to [AutoSetup](unity_component_myvirtualgrasp.0.14.0.html#autosetup) your VG configuration. For this controller, AutoSetup 
 
 * will set "External" to "SteamHand"
 * will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"
