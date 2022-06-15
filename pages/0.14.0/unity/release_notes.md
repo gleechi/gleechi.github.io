@@ -15,29 +15,32 @@ folder: mydoc
 
 ##### Major Functionality Changes:
 
-* Added Knuckles controller to VG free version.  
 * **Breaking change:** [ChangeObjectJoint](virtualgrasp_unityapi.0.14.0.html#vg_controllerchangeobjectjoint) is extended with one additional input parameter "new_anchor_transform". 
 * {% include tooltip.html tooltip="PhysicalObject" text="Physical objects" %} are allowed to have disabled VG_Articulation components with any constrained joint types. Note the enabled VG_Articulation can only have Floating joint type.
 * Customized selection weight (different from default value 1.0f) is recovered when object is switched from hidden to selectable again to enable interaction.
 
 ##### GUI / Component Changes:
 
-* SteamHand.cs added as new external controller to support SteamVR controllers.
+* SteamHand.cs added as new external controller to support any controllers supported through SteamVR (for example Knuckles).
 * When using finger tracking devices (OCULUS_FT, STEAMVR_FT or LEAP_EXT), {% include tooltip.html tooltip="FingerControlType" text="Finger Control Type" %} -- "BY_ANIMATION" is disabled. 
 * GUI issues of some Unity versions resolved by making lists [NonReorderable].
 * Pause / Resume replay of recorded sensor data control is added to [VG_Recorder](unity_component_vgrecorder.0.14.0.html) component: Shift + Replay Sequence Key is used to pause or resume replay.
- 
+* MyVirtualGrasp's elements have been re-ordered. For example: controllers at top to be closer to AutoSetup, GraspButton section removed and merged into Interaction settings.
+* All AutoSetup options have been renamed to better reflect the names of the external controllers.
 
 ##### API Changes:
 * Added [OnObjectPushed](virtualgrasp_unityapi.0.14.0.html#vg_controlleronobjectpushed) event.
 * Added [OnGraspTriggered](virtualgrasp_unityapi.0.14.0.html#vg_controllerongrasptriggered) event.
-* Added [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) API function to allow directly switch grasped object. 
+* Added [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) API function to allow directly switch grasped object.
+* GetTriggerButton() has been renamed GetGraspButton().
 
 ##### Other / Internal Changes:
 * Onboarding scene equipped with sound effects.
 * Guard mesh and rig are compatible when registering avatars. 
 * Using special characters for object name in Unity is allowed and won't affect VG functionality anymore. 
-* VG onboarding scene object models are improved and sound effect added. 
+* VG onboarding scene object models are improved and sound effect added.
+* A couple of text optimizations to the VirtualGrasp Tutorials to improve understanding.
+* Bugfix to avoid NullReference if a ForceReleasedObject is deleted in the same frame.
 
 ##### Update to VG Core library 0.11.0:
 * Fixed bug on examplified in [onboarding Task 3](#unity_vgonboarding_task5.0.14.0.html), after assembling cap to the bottle where cap becomes bottle's child, then grasp bottle and cap together could make cap move off the initial position relative to the parent bottle. This will not happen however if you first grasp bottle then later another hand grasp the cap. **(fixed known issue from 0.13.0)**
