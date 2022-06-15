@@ -464,7 +464,7 @@ Return all unbaked objects.
 
 Specify an object to be grasped by a hand no matter how far the object is, and object will jump to the hand.
 
-| _int_ |avatarID|instance avatar id|
+| _int_ |avatarID|The avatar id|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
 | _Transform_ |obj|The object that will be jump grasped by this hand|
 
@@ -517,9 +517,9 @@ Specify the object selection weights for grasping interaction.
 
 Instantaneously switch the grasped object to specified object in the function, the object will jump to hand.
 
-| _int_ |avatarID|Avatar id|
+| _int_ |avatarID|The avatar id|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
-| _Transform_ |obj|The transform of the object to switch to grasp.|
+| _Transform_ |obj|The transform of the object to switch to grasp|
 
 
 
@@ -629,7 +629,7 @@ Save the object hierarchy debug state. This is done automatically when closing V
 
 Unregister avatar during runtime
 
-| _int_ |avatarID|avatar id to be unregistered.|
+| _int_ |avatarID|The id of the avatar to be unregistered.|
 
 
 
@@ -1078,7 +1078,7 @@ Check if a hand has invalid sensor data.
 
 Set the active state of the avatar sensor(s) and mesh.
 
-| _int_ |avatarID|The instance avatar id.|
+| _int_ |avatarID|The avatar id.|
 | _bool_ |enableSensors|If the sensor(s) that control this hand should be active or not.|
 | _bool_ |enableMesh|If the mesh of this hand should be visible or not.|
 | _Vector3_ |resetPos|If an avatar is deactivated, hand positions will be reset to here (default (0,0,0)).|
@@ -1119,7 +1119,7 @@ Enable or disable finger calibration mode (FCM). During enabled FCM, the hand op
 
 Set the active state of the sensor(s) that control the specified hand of an instance avatar.
 
-| _int_ |avatarID|The instance avatar id.|
+| _int_ |avatarID|The avatar id.|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand (remark: UNKNOWN will not have any effect).|
 | _bool_ |active|If the sensor(s) that control this hand should be active or not.|
 | _Vector3_ |resetPos|If a hand is deactivated, its position will be reset to here (default (0,0,0)).|
