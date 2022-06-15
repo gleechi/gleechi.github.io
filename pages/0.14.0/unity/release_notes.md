@@ -31,8 +31,10 @@ folder: mydoc
 ##### API Changes:
 * Added [OnObjectPushed](virtualgrasp_unityapi.0.14.0.html#vg_controlleronobjectpushed) event.
 * Added [OnGraspTriggered](virtualgrasp_unityapi.0.14.0.html#vg_controllerongrasptriggered) event.
-* Added [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) API function to allow directly switch grasped object.
-* GetTriggerButton() has been renamed GetGraspButton().
+* Added [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) API function to allow directly switch grasped object. 
+* Added [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) API function to allow directly switch grasped object. 
+* Removed [SelectObject](virtualgrasp_unityapi.0.13.0.html#vg_controllerselectobject) API function since allowing externally selecting object by developers will not integrate seamlessly with VG's grasp synthesis. 
+* [GetTriggerButton](virtualgrasp_unityapi.0.13.0.html#vg_controllergettriggerbutton) has been renamed to [GetGraspButton](virtualgrasp_unityapi.0.14.0.html#vg_controllergetgraspbutton).
 
 ##### Other / Internal Changes:
 * Onboarding scene equipped with sound effects.
