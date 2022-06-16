@@ -27,15 +27,15 @@ If you are not familiar with the concept of object baking, please read the [obje
 
 ### Step 1: Authentication
 
-After signing up to the Cloud Baking Service, you should have received credentials (email address and password). After entering them once, your credentials will be stored in a file called vg_cabvg_settings.json in your project folder, so you won't have to re-enter them all the time.
+After signing up to the Cloud Baking Service, you should have received credentials (email address and password). After entering them once, your credentials will be stored in your Unity registry, so you won't have to re-enter them all the time.
 
-Check if your credentials are valid by clicking "Verify credentials". If successful, a window will appear telling you "Logged in successfully".
+Check if your credentials are valid by clicking "Verify credentials".
 
 ### Step 2: Preparation
 
 {% include image.html file="unity/unity_vg_baking_client_prepare_project.png" alt="VG Baking Client Prepare Project in Unity." caption="VG_BakingClient Prepare Project in Unity." %}
 
-Preparation step is to create input files needed by the Baking Service. Since these input files can also be used for debugging purposes we refer them to "[Debug Files](debug_files.0.14.0.html#debug-files-content)". 
+The preparation step is to create input files needed by the Baking Service. Since these input files can also be used for debugging purposes we refer them to "[Debug Files](debug_files.0.14.0.html#debug-files-content)". 
 
 To prepare project, click _Prepare project_ button in baking client window, and a separate window "Prepare project" shown in above image will pop up. Follow the instruction to prepare the baking input files:
 1. At the begining of preparing project, if the listed number of scenes, hand models or objects is non-zero, please click _Clear_ button to clear all so to prevent outdated data from polluting your baking result. 
