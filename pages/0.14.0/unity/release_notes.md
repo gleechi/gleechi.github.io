@@ -10,7 +10,7 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
-## V0.14.0-rc2 (2022-06-15)
+## V0.14.0 (2022-06-17)
 
 
 ##### Major Functionality Changes:
