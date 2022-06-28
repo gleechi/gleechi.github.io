@@ -133,22 +133,22 @@ entries:
       - title: VG_Onboarding
         output: web
         subfolderitems:
-        - title: VG_Onboarding_Task1
+        - title: Task1_Button_Switch
           url: /unity_vgonboarding_task1.0.14.0.html
           output: web
-        - title: VG_Onboarding_Task2
+        - title: Task2_Radio_Disassemble
           url: /unity_vgonboarding_task2.0.14.0.html
           output: web
-        - title: VG_Onboarding_Task3
+        - title: Task3_Container
           url: /unity_vgonboarding_task3.0.14.0.html
           output: web
-        - title: VG_Onboarding_Task4
+        - title: Task4_Valve_Assemble_ArtiBody
           url: /unity_vgonboarding_task4.0.14.0.html
           output: web
-        - title: VG_Onboarding_Task5
+        - title: Task5_Bottle_Assemble_VG
           url: /unity_vgonboarding_task5.0.14.0.html
           output: web
-        - title: VG_Onboarding_Task6
+        - title: Task6_Pad_VG_Planar_Joint
           url: /unity_vgonboarding_task6.0.14.0.html
           output: web
       
