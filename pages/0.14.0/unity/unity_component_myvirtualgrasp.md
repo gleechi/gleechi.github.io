@@ -35,12 +35,14 @@ As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The fi
 
 AutoSetup will auto-configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others.
 
-Select an [VG_AutoSetup](virtualgrasp_unityapi.0.14.0.html#vg_autosetup) option from the dropdown menu, then click "Setup" to automatically adjust the [Sensor options](#sensor) and [SensorSetting:FingerControlType](#finger-control-type)). 
+Select an [AutoSetup](virtualgrasp_unityapi.0.14.0.html#vg_autosetup) option from the dropdown menu, it will automatically adjust various [Sensor options](#sensor). 
 
 {% include callout.html content="Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process." %}
 
-The integer value (0 in the image) relates to the element of the Sensors list that you want to auto-configure.
-In most cases you will have only one avatar in your scene that is controlled by a single sensor, so 0 is the default. However, if you use multiple sensor elements, you can also quickly auto-configure them by modifying the integer value.
+The integer value 1 (Sensors--> Size in the image) relates to the number sensor elements (maximum 2) that you want to auto-configure. And when there is only one sensor, "Element 0" indicate the first sensor element. 
+In most cases you will have only one avatar in your scene that is controlled by a single sensor. However, if you want to use multiple sensor elements, you can also modify size of sensors (maximum 2) and auto-configure them respectively. 
+
+{% include important.html content="No matter if Sensors Size is 1 or 2, all the components under Control list should be checked by the combined sensors, and if 2 sensor elements are used, they should not both control same component. For example two sensors should not both control position of the hand." %}
 
 <!--
 <div class="panel-group" id="accordion1">
