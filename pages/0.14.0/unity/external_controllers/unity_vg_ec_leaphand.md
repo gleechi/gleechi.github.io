@@ -19,7 +19,7 @@ This is an external controller class that supports the LeapMotion controller as 
 The following requirements have to be met to be able to use this controller:
 
  * You have a [Core Assets](https://developer.leapmotion.com/releases) plugin imported into your Unity project.
- * Note that Core Assets > 4.4.0 are for LeapMotion SDK 4, older are for LeapMotion SDK 3 (lastest CA 4.3.4).
+ * Note that Core Assets > 4.4.0 are for LeapMotion SDK 4 or higher, and the older Core Assets are for LeapMotion SDK 3 (lastest CA 4.3.4).
  * You have the corresponding [LeapMotion SDK](https://developer.leapmotion.com/sdk-leap-motion-controller/) installed on your computer.
 
 ### AutoSetup

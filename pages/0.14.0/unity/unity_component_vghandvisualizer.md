@@ -11,7 +11,7 @@ folder: mydoc
 
 ## Description
 
-VG_HandVisualizer is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that provides a tool to visualize the VirtualGrasp representation of hand bones. 
+VG_HandVisualizer is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that provides a tool to visualize the VirtualGrasp representation of hand bones for debugging purposes. To see the skeleton, you should either choose a transparent shader for your hands or disable the skinned mesh renderer. 
 
 The MonoBehavior script exemplifies how to use the VG API functions for accessing specific bones / elements of the hands, such as [VG_Controller.GetBone()](virtualgrasp_unityapi.0.14.0.html#getbone) and [VG_Controller.GetFingerBone()](virtualgrasp_unityapi.0.14.0.html#getfingerbone).
 

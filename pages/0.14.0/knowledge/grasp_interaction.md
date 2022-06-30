@@ -162,7 +162,8 @@ Due to the nature of each option, there may be preferences of how to combine the
 | Trigger Grasp | SG |  &#x2612; Not recommended since when there is sparse grasps in DB, hand will move far away from {% include tooltip.html tooltip="SensorPose" text="sensor pose" %}, breaking the hand-sensor immersion. | 
 | Jump Grasp | DG | &#x2611; Good since DG create grasp pose that is close to {% include tooltip.html tooltip="SensorPose" text="sensor pose" %}, so object will not jump too much.  | 
 | Jump Grasp | SG | &#x2611; Ok as long as the object's big jump is not a problem at the moment of grasping.  | 
-| Jump Primary Grasp | DG | &#x2612; Not possible since {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasp" %} is grasp(s) in the DB which is only used during SG synthesis.| 
+| ~~Jump Primary Grasp~~ | ~~DG~~ | &#x2612; Not possible since {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasp" %} is grasp(s) in the DB which is only used during SG synthesis.| 
+| Jump Primary Grasp | SG | &#x2611; Needed since {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasp" %} is grasp(s) in the DB which is only used during SG synthesis.| 
 | Preview Grasp | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps to the DB through DG. | 
 | Preview Grasp | SG | &#x2612; Not recommended since at preview phase hand will be very jumpy due to sparse grasps in the DB. | 
 | Preview Only | DG | &#x2611; Good and recommend to be used in Grasp Studio when adding grasps to the DB through DG. | 

@@ -96,9 +96,11 @@ Adding grasps can only be done in VR. The scene will have a second hand pair cre
 
 ## Using Grasps in Runtime
 
-In order to use your annotated grasps instead of the default, dynamic grasps during runtime, you need to change an object's [grasp synthesis method](https://docs.gleechi.com/grasp_interaction.0.14.0.html#grasp-synthesis-method) to STATIC_GRASP, and optionally adjust its [interaction types](https://docs.gleechi.com/grasp_interaction.0.14.0.html#grasp-interaction-type). 
+In order to use your annotated grasps instead of the default dynamic grasps during runtime, you need to change an object's [grasp synthesis method](grasp_interaction.0.14.0.html#grasp-synthesis-method) to STATIC_GRASP, and optionally adjust its [interaction types](grasp_interaction.0.14.0.html#grasp-interaction-type). 
 
-Unless you want all objects to behave the same (and use the [global interaction settings](https://docs.gleechi.com/unity_component_myvirtualgrasp.0.14.0.html#grasp-interaction-settings)), you need to add a [VG_Interactable](https://docs.gleechi.com/unity_component_vginteractable.0.14.0.html) on your object to adjust these parameters only for this object.
+Unless you want all objects to behave the same (and use the [global interaction settings](unity_component_myvirtualgrasp.0.14.0.html#global-grasp-interaction-settings), you need to add a [VG_Interactable](unity_component_vginteractable.0.14.0.html) on your object to adjust these parameters only for this object.
+
+{% include tip.html content="After you have added grasp and labeled it as Primary, in order to use it in runtime, you should set  [interaction types](grasp_interaction.0.14.0.html#grasp-interaction-type) as JUMP_PRIMARY_GRASP." %}
 
 ## Important Note on the Files
 

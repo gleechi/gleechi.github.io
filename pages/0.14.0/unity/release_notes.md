@@ -64,6 +64,10 @@ folder: mydoc
 
 * [MakeGesture](virtualgrasp_unityapi.0.14.0.html#vg_controllermakegesture) have a bug when choose gesture from [VG_GraspType.FLAT](virtualgrasp_unityapi.0.14.0.html#vg_grasptype). 
 
+* [ResetAllObjects](virtualgrasp_unityapi.0.14.0.html#vg_controllerresetallobjects) and [ResetObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerresetobject) are not working properly. 
+
+* [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) and [JumpGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerjumpgraspobject) may fail due to bad position of the target object with respect to the hand. 
+
 ## V0.13.0 (2022-05-23)
 
 ##### Major Functionality Changes:

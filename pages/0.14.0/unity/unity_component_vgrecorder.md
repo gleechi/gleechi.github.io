@@ -37,6 +37,9 @@ In order to record an interaction sequence:
 * do some interactions in your scene, 
 * press the _Recording Key_ another time.
 
+
+{% include tip.html content="To make the VG_Recorder react appropriately to keyboard input, the Unity Editor needs to be in focus (by mouse click on the game window once)." %}
+
 ### Important Note on the Files
 
 In order to support recording and replaying {% include tooltip.html tooltip="SensorData" text="sensor data" %} and re-using that information, there will be recording files in each project.

@@ -65,13 +65,13 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 
 <!--{% include image.html file="unity/unity_vg_myvirtualgrasp_avatar.png" alt="Avatar configuration options in Unity." caption="Avatar configuration options in Unity." %}-->
 
-| Option | Description |
-|-------|--------|
-| Model | should be HUMANOID_HAND in most application use cases. There could also be robotic hand options, but they will not be discussed here. | 
-| SkeletalMesh| used to provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VG during runtime. | 
-| Replay | enable this if you want to use this avatar for replay recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.14.0.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.14.0.html). This is a feature that is not available in the free version. |
-| Remote | This is a placeholder for advanced multiplayer support for hand interaction that we are working on towards a stable version.  This is a feature that is not available in the free version. | 
-| Physical | enable this if you want VG to create colliders for this avatar and enable the hand for physical interactions. NOTE: at the moment, this option is experimental and should not be used apart from testing.| 
+| Option | Description | Supported VG Version|
+|-------|--------|--------|
+| Model | should be HUMANOID_HAND in most application use cases. There could also be robotic hand options, but they will not be discussed here. | All Versions|
+| SkeletalMesh| used to provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VG during runtime. | All Versions |
+| Replay | enable this if you want to use this avatar for replay recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.14.0.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.14.0.html). This is a feature that is not available in the free version. | Pro Version|
+| Remote | This is a placeholder for advanced multiplayer support for hand interaction that we are working on towards a stable version.  This is a feature that is not available in the free version. | Pro Version |
+| Physical | enable this if you want VG to create colliders for this avatar and enable the hand for physical interactions. NOTE: at the moment, this option is experimental and should not be used apart from testing.| All Versions |
 
 
 <!--enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.0.14.0.html), or the [VG_Networking Component](unity_component_vgnetworing.0.14.0.html).-->
