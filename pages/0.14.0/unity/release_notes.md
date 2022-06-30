@@ -68,6 +68,8 @@ folder: mydoc
 
 * [SwitchGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerswitchgraspobject) and [JumpGraspObject](virtualgrasp_unityapi.0.14.0.html#vg_controllerjumpgraspobject) may fail due to bad position of the target object with respect to the hand. 
 
+* Crashing bug: when an object and all its upstream objects have FIXED VG_Articulation joint, when grasped by two hands, when one hand releases crash happens.
+
 ## V0.13.0 (2022-05-23)
 
 ##### Major Functionality Changes:
