@@ -636,7 +636,6 @@ Unregister avatar during runtime
 ## [ENABLE_DATABASE_API](#)
 
 ### VG_Controller.DeleteGrasp
-<span class="label label-default">pro</span>
 
 Deletes object-specific grasp db. Won't delete grasp if there still exists one or more registered objects with objectHash.
 
@@ -646,7 +645,6 @@ Deletes object-specific grasp db. Won't delete grasp if there still exists one o
 
 
 ### VG_Controller.GetGrasp
-<span class="label label-default">pro</span>
 
 Get grasp information in raw byte format by objectHash.
 
@@ -656,7 +654,6 @@ Get grasp information in raw byte format by objectHash.
 
 
 ### VG_Controller.LoadGrasp
-<span class="label label-default">pro</span>
 
 Loads object-specific grasp db.
 
@@ -1152,7 +1149,6 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 ## [RECORDING_INTERFACE_API](#)
 
 ### VG_Controller.GetReplayAvatarID
-<span class="label label-default">pro</span>
 
 Get the AvatarID of the first replay avatar.
 
@@ -1165,7 +1161,6 @@ Get the AvatarID of the first replay avatar.
 
 
 ### VG_Controller.GetReplayStartWristPose
-<span class="label label-default">pro</span>
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
 
@@ -1188,7 +1183,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.IsReplaySuccess
-<span class="label label-default">pro</span>
 
 Check if finished replay had identical response as recorded
 
@@ -1198,7 +1192,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.IsReplaying
-<span class="label label-default">pro</span>
 
 Check if a hand is currently replaying a recorded sensor data.
 
@@ -1210,7 +1203,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.LoadRecording
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1222,7 +1214,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.ResumeReplay
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1234,7 +1225,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StartRecording
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1245,7 +1235,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StartReplay
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1258,7 +1247,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StartReplayOnObject
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1273,7 +1261,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StopRecording
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1285,7 +1272,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.14.0.html)
 
 
 ### VG_Controller.StopReplay
-<span class="label label-default">pro</span>
 
 Stop replay of the recorded interaction sequence on an avatar.
 

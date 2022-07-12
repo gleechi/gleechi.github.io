@@ -32,15 +32,6 @@ The following requirements have to be met to be able to use this controller:
 	<meta-data android:name="com.oculus.handtracking.version" android:value="V2.0" />
 	````
 
-### AutoSetup
-
-Finally, you can use the "Oculus Hand" option to [AutoSetup](unity_component_myvirtualgrasp.0.15.0.html#autosetup) your VG configuration. For this controller, AutoSetup 
-
-* will set "External" to "OculusHand"
-* will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"
-* will set "Origin" to the transform called "XRRig"
-* will set all "Offset" values to 0.
-
 ## Functionality
 
 ### Hand Poses

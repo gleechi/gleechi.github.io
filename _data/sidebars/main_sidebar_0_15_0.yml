@@ -105,8 +105,8 @@ entries:
         #- title: VG_EC_GenericHand
         #  url: /unity_vg_ec_generichand.0.15.0.html
         #  output: web
-    - title: VG_GraspStudio
-      url: /unity_component_vggraspstudio.0.15.0.html
+    - title: VG_GraspAnnotator
+      url: /unity_component_vggraspannotator.0.15.0.html
       output: web
     - title: VG_HandVisualizer
       url: /unity_component_vghandvisualizer.0.15.0.html

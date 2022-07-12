@@ -31,7 +31,7 @@ There are two ways to create them
 * One *.obj* file for each {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object in the scene, i.e. raw 3D mesh data in uniform scale.
 * One *.bin* file for each avatar (containing one or a pair of hands of this avatar).
 * One *.log* file with VG log data (the same that also appears on the Console) for the scene that you are running, will be filled while you are running the scene.
-* One *.db* file carrying data filled with [VG_GraspStudio](unity_component_vggraspstudio.0.15.0.html) or [VG_BakingClient](unity_component_vgbakingclient.0.15.0.html).
+* One *.db* file carrying data filled with [VG_GraspAnnotator](unity_component_vggraspannotator.0.15.0.html) or [VG_BakingClient](unity_component_vgbakingclient.0.15.0.html).
 * One *.scn* and one *.scn.objrig* file for each scene, including scene configuration data (see section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}).
 
 ## Naming of the .zip and .db Files

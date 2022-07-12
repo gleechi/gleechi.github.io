@@ -17,7 +17,7 @@ In Unity, VG_MainScript inherits from Monobehavior so you can use it as a compon
 
 On this page, we are going to describe all the major configuration options covered in MyVirtualGrasp.cs.
 
-## AutoSetup & Sensors
+## Sensors & Controllers
 
 {% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a controller is essentially a sensing device for hand poses." %}
 
@@ -31,18 +31,12 @@ As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The fi
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp_0_14_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
 
-### AutoSetup
 
-AutoSetup will auto-configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others.
-
-Select an [AutoSetup](virtualgrasp_unityapi.0.15.0.html#vg_autosetup) option from the dropdown menu, it will automatically adjust various [Sensor options](#sensor). 
-
+<!--
 {% include callout.html content="Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process." %}
 
-The integer value 1 (Sensors--> Size in the image) relates to the number sensor elements (maximum 2) that you want to auto-configure. And when there is only one sensor, "Element 0" indicate the first sensor element. 
-In most cases you will have only one avatar in your scene that is controlled by a single sensor. However, if you want to use multiple sensor elements, you can also modify size of sensors (maximum 2) and auto-configure them respectively. 
-
 {% include important.html content="No matter if Sensors Size is 1 or 2, all the components under Control list should be checked by the combined sensors, and if 2 sensor elements are used, they should not both control same component. For example two sensors should not both control position of the hand." %}
+-->
 
 <!--
 <div class="panel-group" id="accordion1">
@@ -79,7 +73,9 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 <!--enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.0.15.0.html), or the [VG_Networking Component](unity_component_vgnetworing.0.15.0.html).-->
 <!--Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.15.0.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.15.0.html).-->
 
-### Sensor
+### Controller Profile
+
+Through controller profiles (which are ScriptableObjects), you are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in Resources/ExternalControllers. Elements of each VG_ControllerProfile are as follows: 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 

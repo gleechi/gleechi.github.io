@@ -22,16 +22,6 @@ The following requirements have to be met to be able to use this controller:
  * Note that Core Assets > 4.4.0 are for LeapMotion SDK 4 or higher, and the older Core Assets are for LeapMotion SDK 3 (lastest CA 4.3.4).
  * You have the corresponding [LeapMotion SDK](https://developer.leapmotion.com/sdk-leap-motion-controller/) installed on your computer.
 
-### AutoSetup
-
-Finally, you can use the "Leap Hand" option to [AutoSetup](unity_component_myvirtualgrasp.0.15.0.html#autosetup) your VG configuration.
- 
-For this controller, AutoSetup 
-
-* will set "External" to "LeapHand"
-* will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"
-* will set "Origin" to the transform called "VR_LeapOriginExt"
-
 ## Functionality
 
 ### Hand Poses

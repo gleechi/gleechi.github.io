@@ -22,15 +22,6 @@ The following requirements have to be met to be able to use this controller:
  * You have the [SteamVR Unity plugin](https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647) imported into your Unity project.
  * You have OpenVR Loader selected in Unity XR Management Project Settings.
 
-### AutoSetup
-
-Finally, you can use the "Steam Hand" option to [AutoSetup](unity_component_myvirtualgrasp.0.15.0.html#autosetup) your VG configuration. For this controller, AutoSetup 
-
-* will set "External" to "SteamHand"
-* will set "FingerControlType" to "BY_SENSOR_FULL_DOFS"
-* will set "Origin" to the transform called "XRRig"
-* will set "Offset" values to rotation (175f, 160f, 210f) and position (-0.06f, -0.1f, -0.01f).
-
 ## Functionality
 
 ### Hand Poses

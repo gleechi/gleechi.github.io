@@ -14,13 +14,7 @@ folder: mydoc/external_controllers
 
 This is an external controller class that supports a Mouse controller as an external controller.
 
-There are no requirements to use this controller, so you can use the "Mouse Hand" option to [AutoSetup](unity_component_myvirtualgrasp.0.15.0.html#autosetup) your VG configuration.
-
-### AutoSetup
-
-* will set "External" to "MouseHand"
-* will set "FingerControlType" to "BY_ANIMATION"
-* will set "Origin" to "None"
+There are no requirements to use this controller, so you can use the "VG_EC_MouseHand" profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.0.15.0.html#controller-profile) configuration.
 
 ## Functionality
 

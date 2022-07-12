@@ -41,6 +41,7 @@ controllers:
 
 * [VG_EC_MouseHand](unity_vg_ec_mousehand.0.15.0.html) for Mouse control.
 * [VG_EC_UnityXRHand](unity_vg_ec_unityxrhand.0.15.0.html) for all XR controllers that are supported through [UnityXR](https://docs.unity3d.com/Manual/XR.0.15.0.html).
+* [VG_EC_UnityInteractionHand](unity_vg_ec_unityinteractionhand.0.15.0.html) for all XR controllers that are supported through [Unity XR Interaction toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/xr-controller-action-based.html).
 * [VG_EC_SteamHand](unity_vg_ec_steamhand.0.15.0.html) for all XR controllers that are supported through [SteamVR](https://valvesoftware.github.io/steamvr_unity_plugin/index.html).
 * [VG_EC_OculusHand](unity_vg_ec_oculushand.0.15.0.html) for Oculus Finger Tracking which is supported through the Oculus SDK.
 * [VG_EC_LeapHand](unity_vg_ec_leaphand.0.15.0.html) for LeapMotion controller which is supported through the Ultraleap SDK.

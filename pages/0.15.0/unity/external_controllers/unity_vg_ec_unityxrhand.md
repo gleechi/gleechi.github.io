@@ -20,17 +20,6 @@ The following requirements have to be met to be able to use this controller:
 
  * You have the Unity XR Management package installed into your Unity project.
 
-### AutoSetup
-
-Finally, you can the "Unity XR Hand" option to [AutoSetup](unity_component_myvirtualgrasp.0.15.0.html#autosetup) your VG configuration.
-
-For this controller, AutoSetup 
-
-* will set "External" to "UnityXR"
-* will set "FingerControlType" to "BY_ANIMATION"
-* will set "Origin" to the transform called "XRRig"
-* will set "Offset-Position" to (-0.045, -0.1, -0.03) and "Offset-Rotation" to (23.7, 91.63, 92.7)
-
 ## Functionality
 
 ### Hand Poses
