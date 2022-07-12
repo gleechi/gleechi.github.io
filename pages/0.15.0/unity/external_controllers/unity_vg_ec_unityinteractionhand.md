@@ -12,6 +12,8 @@ folder: mydoc/external_controllers
 
 ## Setup 
 
+{% include image.html file="unity/unity_vg_ec_unityinteractionhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
+
 The following requirements have to be met to be able to use this controller:
 
  * You have the Unity XR Management package installed into your Unity project.

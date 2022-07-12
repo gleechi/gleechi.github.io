@@ -29,8 +29,7 @@ In the majority of use cases only 1 single sensor is used.
 
 As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor.
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_0_14_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
-
+{% include image.html file="unity/unity_vg_myvirtualgrasp_0_15_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
 
 <!--
 {% include callout.html content="Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process." %}
@@ -75,18 +74,20 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 
 ### Controller Profile
 
-Through controller profiles (which are ScriptableObjects), you are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in Resources/ExternalControllers. Elements of each VG_ControllerProfile are as follows: 
+{% include image.html file="unity/unity_vg_ec_unityxrhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+
+Through controller profiles (which are ScriptableObjects), you are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in __Resources/ExternalControllers__. Elements of each VG_ControllerProfile are explained in this table: 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 
-| Option | AutoSetup | Description |
+| Option | Description |
 |-------|--------|--------|
-| Sensor | supported | will always be External Controller for the VG SDK. | 
-| External| supported | name of the external controller, as a string, so one can write your own external controller.|  
-| Finger Control Type | supported | specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.0.15.0.html#vg_fingercontroltype). | 
-| Control | not supported | specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
-| Origin | supported | the origin of sensor where the sensor data is interpreted. | 
-| Offset | supported | when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
+| External| name of the external controller, as a string, so one can write your own external controller.|  
+| Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
+| Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.0.15.0.html#vg_fingercontroltype). | 
+| Offset |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
+| Origin Name |  @kai ?? | 
+| Origin Scale | @kai ?? | 
 
 <!--| Finger Control Type | Description |
 |-------|--------|

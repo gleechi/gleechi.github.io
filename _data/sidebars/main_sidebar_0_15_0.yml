@@ -86,21 +86,24 @@ entries:
       - title: VG_ExternalController
         url: /unity_component_vgexternalcontroller.0.15.0.html
         output: web
-        subfolderitems:        
-        - title: VG_EC_MouseHand
-          url: /unity_vg_ec_mousehand.0.15.0.html
-          output: web
-        - title: VG_EC_UnityXRHand
-          url: /unity_vg_ec_unityxrhand.0.15.0.html
-          output: web
+        subfolderitems:     
         - title: VG_EC_LeapHand
           url: /unity_vg_ec_leaphand.0.15.0.html
+          output: web   
+        - title: VG_EC_MouseHand
+          url: /unity_vg_ec_mousehand.0.15.0.html
           output: web
         - title: VG_EC_OculusHand
           url: /unity_vg_ec_oculushand.0.15.0.html
           output: web
         - title: VG_EC_SteamHand
           url: /unity_vg_ec_steamhand.0.15.0.html
+          output: web
+        - title: VG_EC_UnityInteractionHand
+          url: /unity_vg_ec_unityinteractionhand.0.15.0.html
+          output: web
+        - title: VG_EC_UnityXRHand
+          url: /unity_vg_ec_unityxrhand.0.15.0.html
           output: web
         #- title: VG_EC_GenericHand
         #  url: /unity_vg_ec_generichand.0.15.0.html

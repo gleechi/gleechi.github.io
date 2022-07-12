@@ -12,6 +12,8 @@ folder: mydoc/external_controllers
 
 ## Setup 
 
+{% include image.html file="unity/unity_vg_ec_steamhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
+
 This is an external controller class that supports any SteamVR/OpenVR controller as an external controller. Examples are the Valve Knuckles controller or also the Oculus Touch controllers. Note that SteamVR only supports Windows, there is **no Android support for SteamVR**.
 
 {% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **VG_USE_STEAMVR_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation) OR activate the same define in VG_EC_SteamHand.cs." %}

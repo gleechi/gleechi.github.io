@@ -12,6 +12,8 @@ folder: mydoc/external_controllers
 
 ## Setup 
 
+{% include image.html file="unity/unity_vg_ec_mousehand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
+
 This is an external controller class that supports a Mouse controller as an external controller.
 
 There are no requirements to use this controller, so you can use the "VG_EC_MouseHand" profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.0.15.0.html#controller-profile) configuration.
