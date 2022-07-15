@@ -86,8 +86,8 @@ Through controller profiles (which are ScriptableObjects), you are able to confi
 | Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
 | Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.0.15.0.html#vg_fingercontroltype). | 
 | Offset |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
-| Origin Name |  @kai ?? | 
-| Origin Scale | @kai ?? | 
+| Origin Name | Set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin. | 
+| Origin Scale | You can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
 
 <!--| Finger Control Type | Description |
 |-------|--------|

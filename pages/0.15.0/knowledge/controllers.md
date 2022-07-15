@@ -21,7 +21,7 @@ This is because unlike many physics-based grasp synthesis solutions in the marke
 
 ## How to Setup
 Whether it is Unity or Unreal, you can assign your controller input in MyVirtualGrasp → Sensors. 
-See [AutoSetup & Sensors](unity_component_myvirtualgrasp.0.15.0.html#autosetup--sensors) to learn how to setup your sensors in Unity. A set of ready-to-use controllers is explained in [VG_ExteralController Class](http://localhost:4000/unity_component_vgexternalcontrollermanager.0.15.0.html#vg_externalcontroller-class). 
+See [Controller Profile](unity_component_myvirtualgrasp.0.15.0.html#controller-profile) to learn how to setup your sensors in Unity. A set of ready-to-use controllers is explained in on the [VG_ExternalControllerManager](http://localhost:4000/unity_component_vgexternalcontrollermanager.0.15.0.html#vg_externalcontroller-class) page. 
 
 
 <!--

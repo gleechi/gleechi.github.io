@@ -2,15 +2,15 @@
 
 {% include callout.html content="In VirtualGrasp we use the terms \"sensor\" and \"controller\" exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
-In any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.0.15.0.html), a sensor setting can be configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through various [VG_ExternalControllers](unity_component_vgexternalcontrollermanager.0.15.0.html).
+In any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.0.15.0.html), a sensor setting can be configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through various [VG_ExternalControllers](unity_component_vgexternalcontrollermanager.0.15.0.html). A number of controller profiles are already included in VirtualGrasp, such as Oculus controllers, mouse control, finger tracking, among others. 
 
-As you can see in each Sensor element, you can "AutoSetup" each configuration for some of the most commonly used {% include tooltip.html tooltip="Sensor" text="sensors" %}, to quickly switch between Oculus controllers, mouse control, finger tracking, and other controllers. 
+{% include image.html file="unity/unity_vg_myvirtualgrasp_0_15_0.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp." %}
 
 You can use VirtualGrasp without a VR headset and your scene does not need to be a VR-enabled scene. 
 
-{% include callout.html content="If you do not have a headset, you can use the \"MOUSE\" auto-setup to get started and control the hands with the mouse. " type="warning" %}
+{% include callout.html content="If you do not have a headset, you can use the \"VG_EC_Mousehand\" profile to get started and control the hands with the mouse. " type="warning" %}
 
-{% include callout.html content="If you do have a headset, we recommend to use the \"UNITYXR\" auto-setup (after assuring that you enabled your scene for VR) to get started, through [UnityXR](https://docs.unity3d.com/Manual/XR.0.15.0.html)." type="info" %}
+{% include callout.html content="If you do have a headset, we recommend to use the \"VG_EC_UnityXRHand\" profile (after assuring that you enabled your scene for VR) to get started, through [UnityXR](https://docs.unity3d.com/Manual/XR.0.15.0.html)." type="info" %}
 
 <!--See [AutoSetup & Sensors](unity_component_myvirtualgrasp.0.15.0.html#autosetup--sensors) to learn more details about sensor setup.-->
 
@@ -38,5 +38,3 @@ You can use VirtualGrasp without a VR headset and your scene does not need to be
     </div>
 </div>
 {% endif %}
-
-{% include image.html file="unity/unity_vg_myvirtualgrasp_0_14_0.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp." %}
