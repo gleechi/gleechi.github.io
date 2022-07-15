@@ -12,8 +12,6 @@ folder: mydoc/external_controllers
 
 ## Setup 
 
-{% include image.html file="unity/unity_vg_ec_unityinteractionhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
-
 The following requirements have to be met to be able to use this controller:
 
  * You have the Unity XR Management package installed into your Unity project.
@@ -26,6 +24,10 @@ The following requirements have to be met to be able to enable the #define VG_US
  * You have the "XR Interaction Toolkit" package installed into your Unity project.
  * You have selected "OpenXR" as the Plugin-Provider in Project Settings -> XR Plugin Management
  * if you use Oculus, you use it through "OpenXR" (Oculus -> Tools -> OVR Utilitites Plugin -> Set OVR to OpenXR)
+
+If these requirements are met, you will be able to use the "VG_EC_UnityInteractionHand" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.0.15.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+
+{% include image.html file="unity/unity_vg_ec_unityinteractionhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 
 ## Functionality
 
