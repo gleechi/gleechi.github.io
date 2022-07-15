@@ -1,20 +1,20 @@
 ---
-title: VG_GraspAnnotator Component
+title: VG_GraspEditor Component
 #tags: [getting_started]
 keywords: component, editor, studio, grasp
 #last_updated: July 16, 2016
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar_0_15_0
-permalink: unity_component_vggraspannotator.0.15.0.html
+permalink: unity_component_vggraspeditor.0.15.0.html
 folder: mydoc
 ---
 
 ## Description 
 
-VG_GraspAnnotator is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %}.
+VG_GraspEditor is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %}.
 It is provided as a component of the VirtualGrasp Unity plugin, and thus only available in Unity for now. 
 
-VG_GraspAnnotator provides a tutorial on the minimal VG API functions for accessing grasps existing in the grasp database as well as using the labeling interface.
+VG_GraspEditor provides a tutorial on the minimal VG API functions for accessing grasps existing in the grasp database as well as using the labeling interface.
 
 Some examples of annotations are:
 
@@ -24,7 +24,6 @@ Some examples of annotations are:
 ## Adding Grasps
 
 ## Using Grasps in Runtime
-
 
 ## Important Note on the Files
 
