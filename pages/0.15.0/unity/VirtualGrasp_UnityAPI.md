@@ -13,7 +13,7 @@ Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCT
 <tr><td><span class="label label-primary">video</span></td><td>this function is related to a tutorial movie.</td></tr>
 </table><hr>
 
-## [ENUMS](#)
+## [ENUMS](#enums)
 
 ### VG_AvatarType
 
@@ -207,7 +207,7 @@ Enum for setting which (VR) controller buttons.
 
 
 
-## [EVENTS](#)
+## [EVENTS](#events)
 
 ### VG_Controller.OnAfterReset
 
@@ -294,7 +294,7 @@ This event is invoked in the fixed update loop before VG runs its update. Thus, 
 
 
 
-## [OBJECT_SELECTION_API](#)
+## [OBJECT_SELECTION_API](#object_selection_api)
 
 ### VG_Controller.ChangeObjectJoint
 
@@ -495,7 +495,7 @@ Instantaneously switch the grasped object to specified object in the function, t
 
 
 
-## [VIRTUALGRASP_CONTROLLER_FUNCTIONS](#)
+## [VIRTUALGRASP_CONTROLLER_FUNCTIONS](#virtualgrasp_controller_functions)
 
 ### VG_Controller.Clear
 
@@ -597,7 +597,7 @@ Unregister avatar during runtime
 
 
 
-## [DATABASE_API](#)
+## [DATABASE_API](#database_api)
 
 ### VG_Controller.DeleteGrasp
 
@@ -628,7 +628,7 @@ Loads object-specific grasp db.
 
 
 
-## [GRASP_EDITOR_API](#)
+## [GRASP_EDITOR_API](#grasp_editor_api)
 
 ### VG_Controller.EditGrasp
 <a href="https://www.youtube.com/watch?v=Z1j6BgosFVA"><span class="label label-warning">video</span></a>
@@ -686,7 +686,7 @@ Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.0.15.0.html)
 
 
 
-## [GRASP_SELECTION_API](#)
+## [GRASP_SELECTION_API](#grasp_selection_api)
 
 ### VG_Controller.ForceReleaseObject
 untested, 
@@ -960,7 +960,7 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 
 
 
-## [NETWORK_INTERFACE_API](#)
+## [NETWORK_INTERFACE_API **(pro*)**](#network_interface_api-pro)
 
 ### VG_Controller.GetBroadcastSignal
 <span class="label label-default">pro</span>
@@ -984,7 +984,7 @@ Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.0.15.0.html)
 
 
 
-## [SENSOR_INTERFACE_API](#)
+## [SENSOR_INTERFACE_API](#sensor_interface_api)
 
 ### VG_Controller.GetGrabStrength
 
@@ -1099,7 +1099,7 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 
 
 
-## [RECORDING_INTERFACE_API](#)
+## [RECORDING_INTERFACE_API **(pro*)**](#recording_interface_api-pro)
 
 ### VG_Controller.GetReplayAvatarID
 <span class="label label-default">pro</span>
@@ -1253,7 +1253,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 
-## [ENABLE_NETWORK_API](#)
+## [ENABLE_NETWORK_API](#enable_network_api)
 
 ### VG_Controller.RegisterAvatar
 
