@@ -19,9 +19,9 @@ Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCT
 
 An enum to descibe an avatar type
 
-|DEFAULT||
-|REMOTE||
-|REPLAY||
+|DEFAULT|A default avatar|
+|REMOTE|A remote avatar (multiplayer)|
+|REPLAY|A replay avatar (AI)|
 
 
 ### VG_BoneType
@@ -42,6 +42,7 @@ Action towards the grasp editor, see EditGrasp()
 |PRIMARY_CURRENT|Label the current grasp as primary, so it will be the only grasp for this object|
 |DISABLE_CURRENT|Label the current grasp as disabled, so it will not be accessible for static grasping.|
 |DELETE_CURRENT|Currently the same as DISABLE_CURRENT, since we do not really want to remove grasps.|
+|DELETE_ALL_HAND_GRASPS|Delete the HandGrasp entry for a given object and hand hash|
 |ADD_CURRENT|Add the current grasp as a valid one, so it becomes accessible for static grasping.|
 |CLEAR_PRIMARY|Remove the label of the current object's primary grasp, so all grasps will be valid again.|
 |CLEAR_DISABLED|Remove the label of the current object's disabled grasps, so all grasps will be valid again.|
@@ -121,11 +122,11 @@ Different articulated joint types supported by VG.
 
 Enum bitmask to compose parts of a NetworkSignal
 
-|None||
-|ControllerSignal||
-|SensorSignal||
-|TriggerSignal||
-|ObjectSignal||
+|None|Empty signal|
+|ControllerSignal|Flag for the controller part of the network signal.|
+|SensorSignal|Flag for the sensor part of the network signal.|
+|TriggerSignal|Flag for the trigger part of the network signal.|
+|ObjectSignal|Flag for the object part of the network signal.|
 
 
 ### VG_QueryGraspMethod
@@ -200,9 +201,9 @@ Different sensor (or controller) types that can be used by VirtualGrasp. Note on
 
 Enum for setting which (VR) controller buttons.
 
-|TRIGGER||
-|GRIP||
-|GRIP_OR_TRIGGER||
+|TRIGGER|Use the trigger button (usually index finger on the controller) to grasp.|
+|GRIP|Use the grip button (usually middle finger on the controller) to grasp.|
+|GRIP_OR_TRIGGER|Use both the trigger and the grip button (logical OR) to grasp.|
 
 
 
@@ -849,7 +850,7 @@ Set the global interaction type method. The interaction type defines how the han
 **Remark:**
  This will overwrite the specific grasp interaction type (see SetInteractionTypeForObject) for all objects.
 
-| _[unknown]_ |type|The method to switch to for all objects.|
+|[*VG_InteractionType*](#vg_interactiontype) | interactionType|The method to switch to for all objects.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
