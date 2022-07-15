@@ -48,10 +48,6 @@ You can customize the name by modifying the VG_VirtualGraspDBFile that you can f
 
 A *.zip* file of all the content in *vg_tmp* folder is the input that is needed for [object baking](object_baking.0.15.0.html#upload-input).
 
-### Grasp Editing
-
-The *.obj* files of all the objects are used for the automatic generation of the [grasp studio](unity_component_vggraspstudio.0.15.0.html) scene.
-
 ### Debugging Interaction Issues
 
 When you stop the scene, two scene configuration files for each Unity or Unreal scene will be saved: 
