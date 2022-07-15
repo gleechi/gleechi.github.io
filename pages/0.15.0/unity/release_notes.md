@@ -11,7 +11,7 @@ folder: mydoc
 ---
 
 <!-- (Template)
-## V0.15.0(2022-07-15)
+## Vxx.xx.xx-rcx (xxxx-xx-xx)
 
 ##### Major Functionality Changes:
 * 
