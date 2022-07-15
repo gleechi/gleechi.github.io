@@ -15,31 +15,6 @@ Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCT
 
 ## [ENUMS](#)
 
-### VG_AutoSetup
-
-Enum for quickly setting up projects for a specific controller / build.
-
-|Select||
-|UnityXRHand|Setup for UnityXR supported controllers|
-|OculusHand|Setup for Quest / finger tracking|
-|SteamHand|Setup for SteamVR|
-|STEAMVR_FT|Setup for SteamVR finger tracking / Knuckles|
-|MouseHand|Setup for Mouse|
-|BEBOP_FT|Setup for Bebop Haptic Gloves|
-|LeapHand|Setup for LeapMotion finger tracking (external controller)|
-|LEAP_VG|Setup for LeapMotion finger tracking (internal controller)|
-|OPENVR|Setup for OpenVR|
-
-
-### VG_AvatarInputType
-
-Need to know what type made the avatar registration for scaling.
-
-|MESH||
-|URDF||
-|MESH_PHYSICAL||
-
-
 ### VG_AvatarType
 
 An enum to descibe an avatar type
@@ -70,8 +45,6 @@ Action towards the grasp editor, see EditGrasp()
 |ADD_CURRENT|Add the current grasp as a valid one, so it becomes accessible for static grasping.|
 |CLEAR_PRIMARY|Remove the label of the current object's primary grasp, so all grasps will be valid again.|
 |CLEAR_DISABLED|Remove the label of the current object's disabled grasps, so all grasps will be valid again.|
-|TOGGLE_SYNTHESIS|Toggle synthesis mode for this object between static grasping and dynamic grasping (see VG_SynthesisMethod).|
-|TOGGLE_INTERACTION|Toggle interaction type for this object between TRIGGER_GRASP and JUMP_PRIMARY_GRASP (see VG_InteractionType).|
 
 
 ### VG_FingerControlType
@@ -85,15 +58,6 @@ An enum to describe how fingers are controlled.
 |BY_OSCILLATED_ANIMATION|When not grasping, fingers are controlled by oscillating between two state of animations|
 
 
-### VG_GraspConstraintType
-
-Specify for an object how to constrain grasp synthesis.
-
-|NO_CONSTRAINT|No constraint on grasp|
-|GRASP_ALONG_AXIS|Grasp opposing targets on the two ends of a provided axis|
-|GRASP_ON_PLANE|Grasp opposing targets on the plane whose normal is defined by the provided axis|
-
-
 ### VG_GraspLabel
 
 For labeling grasps (grasp editor functionality).
@@ -103,15 +67,6 @@ For labeling grasps (grasp editor functionality).
 |SUCCEEDED|Labels a grasp as succeeded|
 |FAILED|Labels a grasp as failed|
 |RANK|TBD|
-
-
-### VG_GraspSelectionMethod
-
-An enum to specify which kind of method is used for pose-based grasp selection.
-
-|POS_ROT_COMBINED|choose a grasp close to hand that minimized a weighted sum of position and rotation distances|
-|MIN_POS|among a set of grasps that satisfy rotation distance threshold, choose the grasp with minimum position distance|
-|MIN_ROT|among a set of grasps that satisfy position distance threshold, choose the grasp with minimum rotation distance|
 
 
 ### VG_GraspType
@@ -162,13 +117,15 @@ Different articulated joint types supported by VG.
 |CONE|3-DOF ball and socket joint modeled with cone joint limit|
 
 
-### VG_PhysicalBy
+### VG_NetworkSignal
 
-An enum to specify if an object is physical, and if physical by which unity component.
+Enum bitmask to compose parts of a NetworkSignal
 
-|NotPhysical|If object is not physical|
-|RigidBody|If object is physical due to attached rigid body|
-|ArticulationBody|If object is physical due to attached articulation body|
+|None||
+|ControllerSignal||
+|SensorSignal||
+|TriggerSignal||
+|ObjectSignal||
 
 
 ### VG_QueryGraspMethod
@@ -187,14 +144,6 @@ Decide when query grasp if hand moves and how to move hand.
 |NO_MOVE|will not move internal object and hand|
 |MOVE_HAND_SMOOTHLY|will move object and hand moves smoothly with GRASP transition|
 |MOVE_HAND_DIRECTLY|will move object and hand move directly to target grasp pose|
-
-
-### VG_QueryObjectTransformMode
-
-Decide when query object transform which objects to get.
-
-|ALL|will get all registered objects including the empty object nodes|
-|ACTIVE_NON_PHYSICAL|will get active non physical object transforms|
 
 
 ### VG_ReturnCode
@@ -218,6 +167,17 @@ ReturnCode for various VirtualGrasp functions.Most functions in this API provide
 |AVATAR_BLOCKED||
 
 
+### VG_SensorControlFlags
+
+Enum flag to describe what controller signals a sensor should cover.
+
+|POSITION|Enable wrist position signal|
+|ROTATION|Enable wrist rotation signal|
+|FINGERS|Enable finger configuration signals|
+|GRASP|Enable grasp trigger signal|
+|HAPTICS|Enable haptics signals|
+
+
 ### VG_SensorType
 
 Different sensor (or controller) types that can be used by VirtualGrasp. Note only External Controller is supported.
@@ -234,25 +194,6 @@ Different sensor (or controller) types that can be used by VirtualGrasp. Note on
 |OCULUS_TOUCH_OVR|Internal Controller (not supported), Oculus Touch controllers, through OculusVR.|
 |EXTERNAL_CONTROLLER|External Controller, customized controller|
 |BEBOP|Internal Controller (not supported), Bebop VR gloves|
-
-
-### VG_SynthesisMethod
-
-Identifier for a grasp synthesis algorithm.
-
-|NONE|No grasp synthesis method (no grasping)|
-|STATIC_GRASP|Synthesize grasp using one of the grasps stored in grasp DB.|
-|HYBRID|When hand is far away from any grasps in DB, use DYNAMIC_GRASP, otherwise use STATIG_GRASP synthesis method.|
-|DYNAMIC_GRASP|Synthesize grasp in runtime based on precomputed object shape information.|
-
-
-### VG_UrdfType
-
-Avatar's hand template type represented as URDF.
-
-|HUMANOID_HAND|Humanoid hand type|
-|PARALLEL_GRIPPER|Parallel gripper type|
-|SUCTION_PIN_GRIPPER|Suction pin gripper type|
 
 
 ### VG_VrButton
@@ -363,6 +304,7 @@ Change an object's joint in runtime.
 | _Transform_ |new_anchor_transform|The anchor transform to switch to.|
 | _Vector2_ |new_limit|The new limit of the new joint type.|
 | _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) if new_jointType is Revolute.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
  Note that the former joint can be recovered (see RecoverObjectJoint).
@@ -379,6 +321,15 @@ Change an object's joint and all other articulation parameters in runtime.
 
 | _Transform_ |selectedObject|The object to change the joint for.|
 | _VG_Articulation_ |articulation|An articulation describing the new articulation parameters.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.ClearAvatarSpecificObjectSelectionWeights
+
+Clear all avatar specific object selection weights.
+
+| _int_ |avatarID|The avatar id|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.GetGraspButton
@@ -402,7 +353,7 @@ Get the current joint state of a single-dof articulated object. For planar joint
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _**out** float_ |jointState|The returned joint state. Will be set to 0.0f upon error|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
 ### VG_Controller.GetObjectJointType
@@ -412,7 +363,7 @@ Get object's original or current joint type.
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _bool_ |original|If true, get the original joint type, otherwise the current type.|
 | _**out** VG_JointType_ |jointType|The returned joint type. Will be set to FLOATING upon error.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint type fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
 ### VG_Controller.GetObjectSecondaryJointState
@@ -421,7 +372,7 @@ Get the current secondary joint state along yaxis of joint anchor for planar art
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _**out** float_ |secondaryJointState|The returned secondary joint state. Will be set to 0.0f upon error.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull joint state fetch. VG_ReturnCode.ARGUMENT_ERROR. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 
 ### VG_Controller.GetSelectableObjects
@@ -451,13 +402,14 @@ Receive the sensor pose of a given avatar and hand.
 | _**out** Vector3_ |p|The returned position.|
 | _**out** Quaternion_ |q|The returned rotation.|
 | _bool_ |absolute|Set True (default) to return the absolute pose, and False to return the relative pose.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.GetUnbakedObjects
 
 Return all unbaked objects.
 
-| **returns** | _List\<Transform\>_ | All unbaked objects in the scene.|
+| **returns** | _List\<Transform\>_ | A list of all unbaked objects in the scene as Unity Transforms.|
 
 
 ### VG_Controller.JumpGraspObject
@@ -467,6 +419,7 @@ Specify an object to be grasped by a hand no matter how far the object is, and o
 | _int_ |avatarID|The avatar id|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
 | _Transform_ |obj|The object that will be jump grasped by this hand|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.RecoverObjectJoint
@@ -474,19 +427,25 @@ Specify an object to be grasped by a hand no matter how far the object is, and o
 Recover an object's original joint, after it has been changed by ChangeObjectJoint().
 
 | _Transform_ |selectedObject|The object to recover the joint for.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
-### VG_Controller.ResetAllObjects
+### VG_Controller.SetAvatarSpecificObjectSelectionWeight
 
-Reset all objects' initial pose and initial zero pose.
+Specify the avatar specific object selection weight of an object for interaction.
+
+| _int_ |avatarID|The avatar id|
+| _Transform_ |obj|Which object to specify weight|
+| _float_ |weight|Should be \>=0 value to specify the preferences to select this object. If 0 exclude this object in selection process|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ Note by default this weight is 1 for all objects.
 
 
+**Remark:**
+ Use case is mainly to specify relative selection preferences for cluttered objects.
 
-### VG_Controller.ResetObject
-
-Reset a specific object's initial pose and initial zero pose.
-
-| _Transform_ |transform|The object to reset.|
 
 
 ### VG_Controller.SetDualHandsOnly
@@ -495,6 +454,16 @@ Set if an object can only be manipulated by dual hands from a same avatar.
 
 | _Transform_ |selectedObject|The object to change the dual hand type for.|
 | _bool_ |dualHandsOnly|If dual hand only.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.SetObjectJointState
+
+Set the current joint to desired state for a single-dof articulated object.
+
+| _Transform_ |selectedObject|The object to set the joint state value for.|
+| _float_ |jointState|The target joint state. If exceed joint limit will be constrained within limit.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetObjectSelectionWeight
@@ -503,6 +472,7 @@ Specify the object selection weights for grasping interaction.
 
 | _Transform_ |obj|Which object to specify weight|
 | _float_ |weight|Should be \>=0 value to specify the preferences to select this object. If 0 exclude this object in selection process|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
  Note by default this weight is 1 for all objects.
@@ -520,6 +490,7 @@ Instantaneously switch the grasped object to specified object in the function, t
 | _int_ |avatarID|The avatar id|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
 | _Transform_ |obj|The transform of the object to switch to grasp|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 
@@ -604,15 +575,6 @@ The Update() method has been divided into three parts: IsolatedUpdateDataIn(), I
 
 
 
-### VG_Controller.RegisterAvatar
-
-Register a new avatar during runtime.
-
-| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
-|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
-| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
-
-
 ### VG_Controller.Release
 
 Release the plugin.
@@ -630,37 +592,37 @@ Save the object hierarchy debug state. This is done automatically when closing V
 Unregister avatar during runtime
 
 | _int_ |avatarID|The id of the avatar to be unregistered.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 
-## [ENABLE_DATABASE_API](#)
+## [DATABASE_API](#)
 
 ### VG_Controller.DeleteGrasp
-<span class="label label-default">pro</span>
 
 Deletes object-specific grasp db. Won't delete grasp if there still exists one or more registered objects with objectHash.
 
 | _uint_ |objectHash|Hash of the object to delete.|
-| **returns** | _bool_ |  True if grasp was deleted. False otherwise.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 | _exception_ |ArgumentException|In case of unidentified objectHash.|
 
 
 ### VG_Controller.GetGrasp
-<span class="label label-default">pro</span>
 
 Get grasp information in raw byte format by objectHash.
 
 | _uint_ |objectHash|Hash of the object for which to retrieve the grasp db.|
-| **returns** | _VG_RawDataHandle_ | Handle with (encrypted) grasp information for object with hash objectHash.|
+| _**out** VG_RawDataHandle_ |handle|Handle with (encrypted) grasp information for object with hash objectHash.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 | _exception_ |ArgumentException|In case of unidentified objectHash.|
 
 
 ### VG_Controller.LoadGrasp
-<span class="label label-default">pro</span>
 
 Loads object-specific grasp db.
 
 | _byte[]_ |grasp|Byte stream of object-specific grasp db.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 | _exception_ |IOException|In case of incorrect data format.|
 
 
@@ -678,6 +640,7 @@ Call grasp editor functionality on a currently selected object and grasp.
 |[*VG_EditorAction*](#vg_editoraction) | action|The grasp editor function / action to call.|
 | _Transform_ |obj|The object to call the action on (if not provided, the object in the hand).|
 | _int_ |grasp|The grasp ID to call the action on (if not provided, the current grasp of the hand).|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.15.0.html)
 
@@ -696,8 +659,17 @@ Receive a grasp in the grasp DB by index.
 | _**out** VG_GraspLabel_ |label|The received VG_GraspLabel of the grasp.|
 |[*VG_QueryGraspMode*](#vg_querygraspmode) | queryGraspMode|Can be used to define if and how the grasp should be applied also.|
 |[*VG_QueryGraspMethod*](#vg_querygraspmethod) | queryGraspMethod|Can be used to define how the graspIndex should be interpreted.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.15.0.html)
+
+
+### VG_Controller.GetInteractionTypeForObject
+
+Get the current interaction type assigned to an object.
+
+| _Transform_ |selectedObject|The object to receive the interaction type for.|
+| **returns** |[VG_InteractionType](#vg_interactiontype) | VG_InteractionType describing the current interaction type of the object.|
 
 
 ### VG_Controller.GetNumGrasps
@@ -721,6 +693,7 @@ untested,
 Force the release of a grasp.
 
 | _int_ |avatarID|The avatar to release grasps on all its hands.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.ForceReleaseObject
@@ -730,6 +703,7 @@ Force the release of a grasp.
 
 | _int_ |avatarID|The avatar to release a grasp for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.GetBone
@@ -740,6 +714,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 |[*VG_BoneType*](#vg_bonetype) | boneType|The BoneType to get.|
 | _**out** Transform_ |t|The returned pose of the bone.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.15.0.html)
 
@@ -764,6 +739,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 | _**out** int_ |instanceID|The returned ID of the bone transform.|
 | _**out** Vector3_ |p|The returned position of the bone.|
 | _**out** Quaternion_ |q|The returned rotation of the bone.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.15.0.html)
 
@@ -777,6 +753,7 @@ Return the pose matrix of a specific bone.
 |[*VG_BoneType*](#vg_bonetype) | boneType|The BoneType to get.|
 | _**out** int_ |instanceID|The returned ID of the bone transform.|
 | _**out** Matrix4x4_ |m|The returned pose matrix of the bone.|
+| **returns** | _Transform_ | The Unity Transform that corresponds to the requested bone.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.15.0.html)
 
@@ -791,6 +768,7 @@ Return the pose of a specific finger bone as a matrix.
 | _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
 | _**out** int_ |instanceID|The returned ID of the bone transform.|
 | _**out** Matrix4x4_ |m|The returned pose of the bone.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.15.0.html)
 
@@ -806,6 +784,7 @@ Return the pose (i.e. position and orientation) of a specific finger bone.
 | _**out** int_ |instanceID|The returned ID of the bone transform.|
 | _**out** Vector3_ |p|The returned position of the bone.|
 | _**out** Quaternion_ |q|The returned rotation of the bone.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.15.0.html)
 
@@ -819,18 +798,9 @@ Reflect the pose of a specific bone on a Transform.
 | _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
 | _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
 | _**out** Transform_ |t|The returned pose of the bone.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.0.15.0.html)
-
-
-### VG_Controller.GetSynthesisMethodForObject
-
-Receive the current VG_SynthesisMethod of an interactable object.
-
-| _Transform_ |selectedObject|The object to query the VG_SynthesisMethod for.|
-| **returns** |[VG_SynthesisMethod](#vg_synthesismethod) | The current VG_SynthesisMethod or VG_SynthesisMethod. NONE if invalid.|
-
-Used in: [VG_GraspStudio](unity_component_vggraspstudio.0.15.0.html)
 
 
 ### VG_Controller.MakeGesture
@@ -840,6 +810,7 @@ Make a gesture with a hand.
 | _int_ |avatarID|The avatar to make gesture for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to make gesture for.|
 |[*VG_GraspType*](#vg_grasptype) | gesture|The gesture to make with the [side] hand of avatar [avatarID].|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.ReleaseGesture
@@ -848,6 +819,7 @@ Release a gesture on a hand
 
 | _int_ |avatarID|The avatar to release a grasp for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetBlockRelease
@@ -856,6 +828,7 @@ Specify if on this hand should block release or not in runtime.
 
 | _int_ |avatarID|The avatar to release a grasp for.|
 | _bool_ |block|If block release signal or not on this avatar.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetBlockRelease
@@ -865,6 +838,7 @@ Specify if on this hand should block release or not in runtime.
 | _int_ |avatarID|The avatar to release a grasp for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
 | _bool_ |block|If block release signal or not on this hand.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetGlobalInteractionType
@@ -875,18 +849,8 @@ Set the global interaction type method. The interaction type defines how the han
 **Remark:**
  This will overwrite the specific grasp interaction type (see SetInteractionTypeForObject) for all objects.
 
-|[*VG_InteractionType*](#vg_interactiontype) | type|The method to switch to for all objects.|
-
-
-### VG_Controller.SetGlobalSynthesisMethod
-
-Set the global grasp synthesis method. The synthesis method defines the algorithm with which grasps are generated in runtime.
-
-
-**Remark:**
- This will overwrite the specific grasp synthesis method (see SetSynthesisMethodForObject) for all objects.
-
-|[*VG_SynthesisMethod*](#vg_synthesismethod) | synthesisMethod|The method to switch to for all objects.|
+| _[unknown]_ |type|The method to switch to for all objects.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetGlobalThrowAngularVelocityScale
@@ -898,6 +862,7 @@ Set the global throw angular velocity scale. The throw angular velocity scale de
  This will overwrite the specific throw angular velocity scale (see SetThrowAngularVelocityScaleForObject) for all objects.
 
 | _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetGlobalThrowVelocityScale
@@ -909,6 +874,7 @@ Set the global throw velocity scale. The throw velocity scale defines how powerf
  This will overwrite the specific throw velocity scale (see SetThrowVelocityScaleForObject) for all objects.
 
 | _float_ |throwVelocityScale|The throw translational velocity scale.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetInteractionTypeForObject
@@ -921,6 +887,7 @@ Set the interaction type for a selected object. The interaction type defines how
 
 | _Transform_ |selectedObject|The object to modify the interaction type for.|
 |[*VG_InteractionType*](#vg_interactiontype) | interactionType|The interaction type to switch to for the object.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetInteractionTypeForSelectedObject
@@ -934,31 +901,7 @@ Set the interaction type for a selected object. The interaction type defines how
 | _int_ |avatarID|The avatar which is selecting an object.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which is selecting an object.|
 |[*VG_InteractionType*](#vg_interactiontype) | interactionType|The interaction type to switch to for the object that is selected by the [side] hand of avatar [avatarID].|
-
-
-### VG_Controller.SetSynthesisMethodForObject
-
-Set the grasp synthesis method for a selected object. The synthesis method defines the algorithm with which grasps are generated.
-
-
-**Remark:**
- This will overwrite the global grasp synthesis method (see SetGlobalSynthesisMethod) for that object.
-
-| _Transform_ |selectedObject|The object to modify the synthesis method for.|
-|[*VG_SynthesisMethod*](#vg_synthesismethod) | synthesisMethod|The synthesis method to switch to for the selected object.|
-
-
-### VG_Controller.SetSynthesisMethodForSelectedObject
-
-Set the grasp synthesis method for a selected object. The synthesis method defines the algorithm with which grasps are generated in runtime.
-
-
-**Remark:**
- This will overwrite the global grasp synthesis method (see SetGlobalSynthesisMethod) for that object.
-
-| _int_ |avatarID|The avatar which is selecting an object.|
-|[*VG_HandSide*](#vg_handside) | side|The hand which is selecting an object.|
-|[*VG_SynthesisMethod*](#vg_synthesismethod) | synthesisMethod|The synthesis method to switch to for the object that is selected by the [side] hand of avatar [avatarID].|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetThrowAngularVelocityScaleForObject
@@ -971,6 +914,7 @@ Set the throw angular velocity scale for a selected object. The throw angular ve
 
 | _Transform_ |selectedObject|The object to modify the throw velocity scale for.|
 | _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetThrowAngularVelocityScaleForSelectedObject
@@ -984,6 +928,7 @@ Set the throw angular velocity scale for a selected object. The throw angular ve
 | _int_ |avatarID|The avatar which is selecting an object.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which is selecting an object.|
 | _float_ |throwAngularVelocityScale|The throw angular velocity scale.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetThrowVelocityScaleForObject
@@ -996,6 +941,7 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 
 | _Transform_ |selectedObject|The object to modify the throw velocity scale for.|
 | _float_ |throwVelocityScale|The throw translational velocity scale.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetThrowVelocityScaleForSelectedObject
@@ -1009,6 +955,7 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 | _int_ |avatarID|The avatar which is selecting an object.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which is selecting an object.|
 | _float_ |throwVelocityScale|The throw translational velocity scale.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 
@@ -1019,6 +966,7 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 
 Receive (from VG) a multiplayer broadcast message as a binary byte array.
 
+|[*VG_NetworkSignal*](#vg_networksignal) | signals|A bitmask of network signals to request. Default is All.|
 | **returns** | _byte[]_ | The message received by VG.|
 
 Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.0.15.0.html)
@@ -1065,7 +1013,7 @@ Get the push cirle for this hand side of an avatar as a visual hint for object s
 | _**out** Quaternion_ |r|The push circle's rotation (zaxis is normal).|
 | _**out** float_ |radius|Radius of the push circle,|
 | _**out** bool_ |inContact|True if contact (i.e. pushing), False otherwise.|
-| **returns** | _Transform_ | The selected object, NULL if none.|
+| **returns** | _Transform_ | The selected object's Unity Transform, or null if none.|
 
 Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.0.15.0.html)
 
@@ -1146,6 +1094,7 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 |[*VG_SensorType*](#vg_sensortype) | sensor|The sensor type to change the offset for.|
 | _Vector3?_ |position|The offset position. Set to null if position should not be modified.|
 | _Vector3?_ |rotation|The offset rotation. Set to null if rotation should not be modified.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 
@@ -1157,7 +1106,7 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 Get the AvatarID of the first replay avatar.
 
 | _**out** int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
  No guarantee on returning the one that was first registered as replay avatar
@@ -1175,6 +1124,7 @@ Get the starting wrist poses for full replay of the whole interaction sequence.
 | _**out** Quaternion_ |q_left|The orientation of the left wrist.|
 | _**out** Vector3_ |p_right|The position of the right wrist.|
 | _**out** Quaternion_ |q_right|The orientation of the right wrist.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
  LoadRecording need to be called before this to load recorded sensor data.
@@ -1217,6 +1167,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 Load recorded sensor data from a file, but do not start replay
 
 | _string_ |filename|The filename to load the recording from.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
@@ -1229,6 +1180,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 Resume replaying of an avatar.
 
 | _int_ |avatarID|The ID of the avatar to resume replaying the recording on (note: it has to be an avatar enabled for replay).|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
@@ -1240,6 +1192,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 Start recording sensor data.
 
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
@@ -1253,6 +1206,7 @@ Start full replay of the whole interaction sequence on an avatar.
 
 | _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
 | _Transform_ |selectedObject|If provided, the entire sensor recording will be replayed in this object's frame. If not, in global frame.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
@@ -1268,6 +1222,7 @@ Start replaying a specific interaction segment on one object.
 | _int_ |avatarID|The avatar to play the interaction with.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand to play the interaction with.|
 | _int_ |interactionId|The ID of the interaction segment to be played on this object.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
@@ -1280,6 +1235,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 Stop recording sensor data and store the whole sequence to a file
 
 | _string_ |filename|The filename to save the recording to.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
@@ -1290,8 +1246,34 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 Stop replay of the recorded interaction sequence on an avatar.
 
 | _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
+
+
+
+## [ENABLE_NETWORK_API](#)
+
+### VG_Controller.RegisterAvatar
+
+Register a new avatar during runtime.
+
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
+|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| _int_ |networkID1|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
+| _int_ |networkID2|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.RegisterAvatar
+
+Register a new avatar during runtime.
+
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
+|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 

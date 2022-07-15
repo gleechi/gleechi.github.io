@@ -10,17 +10,81 @@ redirect_from: release_notes.html
 folder: mydoc
 ---
 
-## V0.14.0(2022-06-17)
-
+<!-- (Template)
+## V0.15.0(2022-07-15)
 
 ##### Major Functionality Changes:
+* 
 
+##### GUI / Component Changes:
+* 
+
+##### API Changes:
+* 
+
+##### Other / Internal Changes:
+*
+
+##### Update to VG Core library 0.11.0:
+* 
+
+##### Known Issues:
+*
+-->
+
+
+## V0.15.0-rc1 (state of 2022-07-15; not released)
+
+##### Major Functionality Changes:
+* **Breaking change:** The sensor configuration in MyVirtualGrasp has been refactored:
+  * Each controller profile (earlier VG_AutoSetup) has been ported into a ScriptableObject of type VG_ControllerProfile (in Resources/ExternalControllers), uncluttering the MyVirtualGrasp interface.
+  * To resolve update issues: for a sensor in avatar in MyVirtualGrasp, just drag and drop the controller profile .asset you want to use into the "Profile" slot.
+  * You can customize the profiles fully now.
+  * VG_AutoSetup has been removed from the API and GUI.
+* **Breaking change:** VG_SynthesisMethod has been removed.
+  * [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) has been closely coupled to the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type) that could be set globally (in MyVirtualGrasp) or object-specific (in [VG_Interactable](unity_component_vginteractable.0.15.0.html))
+  * Some combinations had limited usecases, thus now the [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) is implicitely set automatically based on the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type).
+  * Only JUMP_PRIMARY_GRASP will result in a STATIC GRASP; all other [VG_InteractionTypes](grasp_interaction.0.15.0.html#grasp-interaction-type) will result in a DYNAMIC_GRASP.
+
+##### GUI / Component Changes:
+* Avatar Model Field removed to unclutter the interface. We always assume humanoid hand models for now.
+* If your version supports networking (Pro feature), you can now toggle DebugSettings->UseNetworkIDs and avatars (in MyVirtualGrasp) and objects (in VG_Articulation) will allow you to set a network ID for them.
+* VG_Articulations / [VG_Interactables](unity_component_vginteractable.0.15.0.html) will be grayed out during runtime to make clear that changing them has no effect. To change them, use the adequate API functions.
+* All changes triggered by API functions that change VG_Articulation or [VG_Interactable](unity_component_vginteractable.0.15.0.html) (except RecoverObject()) are now reflected in the Inspector components.
+* The control flags (that were a list of checkboxes in each Sensor before) have been replaced with a nicer VG_SensorControlFlags [Flags] enum. Due to the change above related to VG_ControllerProfile, they were also moved into VG_ControllerProfile assets.
+* Slightly re-ordered some global interaction settings in MyVirtualGrasp.
+* VG_ExternalController cleared up and simplified.
+* VG_ControllerProfile supports list of controller names, separated by ';', in order of priorization. For example "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.
+* GetSynthesisMethodForObject(), SetGlobalSynthesisMethod(), SetSynthesisMethodForSelectedObject(), SetSynthesisMethodForObject() removed (see breaking change on [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) above).
+* VG_GraspStudio.cs and related Prefab and Resources removed. VG_GraspStudio replaced by VG_GraspAnnotator.
+
+##### API Changes:
+* Uncluttered API from a number of classes and enums that did not need to be public.
+* TOGGLE_SYNTHESIS and TOGGLE_INTERACTION removed from VG_EditorAction.
+* GetBroadcastSignal() (used if your version supports networking (Pro feature)) was extended with a flag argument to be able to pick out specific parts of the network signal.
+* SetAvatarSpecificObjectSelectionWeight() and ClearAvatarSpecificObjectSelectionWeights() added, allowing to specify relative selection preferences for cluttered objects.
+* ResetObject() and ResetAllObjects() marked as deprecated. They will be removed in a future version.
+* SetObjectJointState() added to set an articulated object's state in runtime.
+* Formerly deprecated SetGestureDuration() and SetPushAngleThreshold() removed.
+
+##### Other / Internal Changes:
+* The .NET TargetFrameworkVersion has been downgraded from 4.8 to 4.7.2 since it caused some issues for Unity+VSCode users.
+* Debug messages that come from the native VG library to the console have been equipped with "context" as well (if applicable), meaning that selecting the message will highlight the GameObject the message relates to.
+* New external controller "UnityInteractionHand" added that supports controller supported by Unity's action-based [Unity Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/index.html) (together with "XRI Default Input Actions.inputactions" in Resources).
+
+##### Update to VG Core library 0.11.0:
+* 
+
+##### Known Issues:
+*
+## V0.14.0(2022-06-17)
+
+##### Major Functionality Changes:
 * **Breaking change:** [ChangeObjectJoint](virtualgrasp_unityapi.0.15.0.html#vg_controllerchangeobjectjoint) is extended with one additional input parameter "new_anchor_transform". 
 * {% include tooltip.html tooltip="PhysicalObject" text="Physical objects" %} are allowed to have disabled VG_Articulation components with any constrained joint types. Note the enabled VG_Articulation can only have Floating joint type.
 * Customized {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} (different from default value 1.0f) will be recovered when object is switched from hidden to selectable again to enable interaction.
 
 ##### GUI / Component Changes:
-
 * SteamHand.cs added as new external controller to support any controllers supported through SteamVR (for example Knuckles).
 * When using finger tracking devices, {% include tooltip.html tooltip="FingerControlType" text="Finger Control Type" %} option -- "BY_ANIMATION" is disabled, so only recommended BY_SENSOR_FULL_DOFS is used.
 * GUI issues of some Unity versions resolved by making lists [NonReorderable].
