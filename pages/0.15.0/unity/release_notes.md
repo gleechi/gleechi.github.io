@@ -40,34 +40,33 @@ folder: mydoc
   * Each controller profile (earlier VG_AutoSetup) has been ported into a ScriptableObject of type [VG_ControllerProfile](unity_component_myvirtualgrasp.0.15.0.html#controller-profile) (in Resources/ExternalControllers), uncluttering the [MyVirtualGrasp](unity_component_myvirtualgrasp.0.15.0.html#sensors--controllers) interface.
   * To resolve update issues: for a sensor in avatar in [MyVirtualGrasp](unity_component_myvirtualgrasp.0.15.0.html#sensors--controllers), just drag and drop the controller profile .asset you want to use into the "Profile" slot.
   * You can customize the profiles fully now.
+  * The profile supports list of controller names, separated by ';', in order of priorization. For example "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.
   * VG_AutoSetup has been removed from the API and GUI.
 
 * **Breaking change:** VG_SynthesisMethod has been removed.
   * [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) has been closely coupled to the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type) that could be set globally (in [MyVirtualGrasp->Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.15.0.html#global-grasp-interaction-settings)) or object-specific (in [VG_Interactable](unity_component_vginteractable.0.15.0.html)).
   * Some combinations had limited usecases, thus now the [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) is implicitely set automatically based on the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type). Only JUMP_PRIMARY_GRASP will result in a STATIC GRASP; all other [VG_InteractionTypes](grasp_interaction.0.15.0.html#grasp-interaction-type) will result in a DYNAMIC_GRASP.
+  * GetSynthesisMethodForObject, SetGlobalSynthesisMethod, SetSynthesisMethodForSelectedObject, and SetSynthesisMethodForObject removed.
 
-* **Breaking change:** [VG_GraspStudio](unity_component_vggraspstudio.0.14.0.html) has been removed, and is replaced with [VG_GraspEditor](unity_component_vggraspeditor.0.15.0.html) which is a much simpler interface that can be used in runtime in any client’s unity project. 
+* **Breaking change:** [VG_GraspStudio](unity_component_vggraspstudio.0.14.0.html) related script, resources and prefab have been removed, and is replaced with [VG_GraspEditor](unity_component_vggraspeditor.0.15.0.html) which is a much simpler interface that can be used in runtime in any client’s unity project. 
 
 ##### GUI / Component Changes:
-* Avatar Model Field removed to unclutter the interface. We always assume humanoid hand models for now.
-* If your version supports networking (Pro feature), you can now toggle DebugSettings->UseNetworkIDs and avatars (in MyVirtualGrasp) and objects (in VG_Articulation) will allow you to set a network ID for them.
+* [Avatar Model Field](unity_component_myvirtualgrasp.0.15.0.html#sensors--controllers) removed to unclutter the interface. We always assume humanoid hand models for now.
+* If your version supports networking (Pro feature), you can now enable [DebugSettings->UseNetworkIDs](unity_component_myvirtualgrasp.0.15.0.html#debug-settings) to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.0.15.0.html#sensors--controllers)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.0.15.0.html)).
 * [VG_Articulations](unity_component_vgarticulation.0.15.0.html) / [VG_Interactables](unity_component_vginteractable.0.15.0.html) will be grayed out during runtime to make clear that changing them has no effect. To change them, use the adequate API functions.
 * All changes triggered by API functions that change [VG_Articulations](unity_component_vgarticulation.0.15.0.html) or [VG_Interactable](unity_component_vginteractable.0.15.0.html) (except [RecoverObjectJoint](virtualgrasp_unityapi.0.15.0.html#vg_controllerrecoverobjectjoint)) are now reflected in the Inspector components.
-* The control flags (that were a list of checkboxes in each Sensor before) have been replaced with a nicer VG_SensorControlFlags [Flags] enum. Due to the change above related to VG_ControllerProfile, they were also moved into VG_ControllerProfile assets.
-* Slightly re-ordered some global interaction settings in MyVirtualGrasp.
+* The control flags (that were a list of checkboxes in each Sensor before) have been replaced with a nicer VG_SensorControlFlags [Flags] enum. Due to the change above related to [VG_ControllerProfile](unity_component_myvirtualgrasp.0.15.0.html#controller-profile), they were also moved into VG_ControllerProfile assets.
+* Slightly re-ordered some [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.15.0.html#global-grasp-interaction-settings) in MyVirtualGrasp.
 * VG_ExternalController cleared up and simplified.
-* VG_ControllerProfile supports list of controller names, separated by ';', in order of priorization. For example "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.
-* GetSynthesisMethodForObject(), SetGlobalSynthesisMethod(), SetSynthesisMethodForSelectedObject(), SetSynthesisMethodForObject() removed (see breaking change on [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) above).
-* VG_GraspStudio.cs and related Prefab and Resources removed. VG_GraspStudio replaced by VG_GraspAnnotator.
 
 ##### API Changes:
 * Uncluttered API from a number of classes and enums that did not need to be public.
-* TOGGLE_SYNTHESIS and TOGGLE_INTERACTION removed from VG_EditorAction.
-* GetBroadcastSignal() (used if your version supports networking (Pro feature)) was extended with a flag argument to be able to pick out specific parts of the network signal.
-* SetAvatarSpecificObjectSelectionWeight() and ClearAvatarSpecificObjectSelectionWeights() added, allowing to specify relative selection preferences for cluttered objects.
-* ResetObject() and ResetAllObjects() marked as deprecated. They will be removed in a future version.
-* SetObjectJointState() added to set an articulated object's state in runtime.
-* Formerly deprecated SetGestureDuration() and SetPushAngleThreshold() removed.
+* TOGGLE_SYNTHESIS and TOGGLE_INTERACTION removed from [VG_EditorAction](virtualgrasp_unityapi.0.15.0.html#vg_editoraction).
+* [GetBroadcastSignal](virtualgrasp_unityapi.0.15.0.html#vg_controllergetbroadcastsignal) -- used if your version supports networking (Pro feature) -- was extended with a flag argument to be able to pick out specific parts of the network signal.
+* [SetAvatarSpecificObjectSelectionWeight](SetAvatarSpecificObjectSelectionWeight) and [ClearAvatarSpecificObjectSelectionWeights](virtualgrasp_unityapi.0.15.0.html#vg_controllerclearavatarspecificobjectselectionweights) added, allowing to specify different selection preferences on an object for different avatars.
+* [SetObjectJointState](virtualgrasp_unityapi.0.15.0.html#vg_controllersetobjectjointstate) added to set an articulated object's state in runtime.
+* Formerly deprecated SetGestureDuration and SetPushAngleThreshold removed.
+* ResetObject and ResetAllObjects marked as deprecated. They will be removed in a future version.
 
 ##### Other / Internal Changes:
 * The .NET TargetFrameworkVersion has been downgraded from 4.8 to 4.7.2 since it caused some issues for Unity+VSCode users.

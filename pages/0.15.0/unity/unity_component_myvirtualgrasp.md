@@ -82,7 +82,7 @@ Through controller profiles (which are ScriptableObjects), you are able to confi
 
 | Option | Description |
 |-------|--------|--------|
-| External| name of the external controller, as a string, so one can write your own external controller.|  
+| External Type| name of the external controller, as a string, so one can write your own external controller. Note, here we supports adding a list of controller names, separated by ';', in order of priorization. E.g. "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.|  
 | Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
 | Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.0.15.0.html#vg_fingercontroltype). | 
 | Offset |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
@@ -161,9 +161,10 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 
 ## Debug Settings
 
-{% include image.html file="unity/unity_vg_debug_settings_0_13_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
+{% include image.html file="unity/unity_vg_debug_settings_0_15_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
 
 | Parameters | Description |
 |-------|--------|
 | Export Scene in Runtime | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes. (see [create debug files](debug_files.0.15.0.html#creating-debug-files)) | 
 | Export Scene in Editor | Alternatively to check "Export Scene in Runtime", pressing Export Scene in Edit will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included. (see [create debug files](debug_files.0.15.0.html#creating-debug-files))|
+| Use Network IDs | (Pro feature) Enabling this will allow you to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.0.15.0.html#sensors--controllers)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.0.15.0.html)).|
