@@ -13,10 +13,12 @@ folder: mydoc
 
 {% include image.html file="unity/unity_vg_prefab_graspeditor_prefabview.png" alt="VG Grasp Editor." caption="VG Grasp Editor" %}
 
-VG_GraspEditor is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that provide a tutorial on the minimal VG API functions for accessing grasps existing in the grasp database as well as using the labeling interface. A corresponding VG_GraspEditor prefab as shown above is added in **VirtualGrasp\Resources\onboarding**. This prefab can be added into any unity scene and allows runtime adding, deleting and reviewing {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} (see [Jump Primary Grasp](grasp_interaction.0.15.0.html#grasp-interaction-type)). 
+VG_GraspEditor is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that provide a tutorial on the minimal VG API functions for accessing grasps existing in the grasp database as well as using the labeling interface. A VG_GraspEditor prefab that uses this script (as shown in above image) is added in **VirtualGrasp\Resources\onboarding**. This prefab can be added into any unity scene and allows runtime adding, deleting and reviewing {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} (see [Jump Primary Grasp](grasp_interaction.0.15.0.html#grasp-interaction-type)). 
 
 {% include important.html content="VG_GraspEditor is a new version of grasp editing tool provided since this VG version (0.15.0). This replaces the [VG_GraspStudio](unity_component_vggraspstudio.0.14.0.html) in earlier versions, and provides a much simpler interface that can be used in runtime in any client's unity project.
-VG_GraspEditor is added into the VG_onboarding scene for you to experiment with the grasp editing process. " %}
+VG_GraspEditor prefab is added into the VG_onboarding scene for you to experiment with the grasp editing process. " %}
+
+{% include callout.html content="VG_GraspEditor prefab as in current version is very simple graphically, and will be optimized in next version." %}
 
 {% include youtube.html id="cAiS-uSTxJk" %}
 
