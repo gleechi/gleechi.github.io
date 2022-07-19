@@ -34,9 +34,21 @@ Using VG_GraspEditor you can add {% include tooltip.html tooltip="DynamicGrasp" 
 * If you want to experiment with {% include tooltip.html tooltip="JumpPrimaryGrasp" text="Jump Primary Grasp" %} interaction with the primary grasps, click **Toggle interaction** button to toggle to {% include tooltip.html tooltip="JumpPrimaryGrasp" text="Jump Primary Grasp" %} interaction type. Then when you regrasp this object the primary grasp closes to the current wrist pose will be applied. 
 * When current interaction is {% include tooltip.html tooltip="JumpPrimaryGrasp" text="Jump Primary Grasp" %}, you can also **step** through all the {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} by clicking **Step grasp** button. 
 * By steping through grasps, you can also click **Delete grasp** button to delete unwanted grasps.
-* To save grasps there is no need to press any button, simply close the application, the added grasps will be saved into StreamingAssets/VG_Grasps/grasps.db in your project folder. Note only grasps are saved, and the toggled interaction type will not be saved into the project setting on this object. 
+* To save grasps there is no need to press any button, simply close the application, the added grasps will be saved into StreamingAssets/VG_Grasps/grasps.db in your project folder. 
+
+{% include callout.html content= "Note during the grasp editing, only edited grasps are saved to the database, the toggled interaction type is not saved in the scene as your initial project settings for the object." %} 
+
 
 ## Using Grasps in Runtime
+
+To use {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} for an object, you need to set this object's {% include tooltip.html tooltip="InteractionType" text="interaction type" %} to be {% include tooltip.html tooltip="JumpPrimaryGrasp" text="Jump Primary Grasp" %}. To do that you can
+* either add [VG_Interactable](unity_component_vginteractable.0.15.0.html) component to the object and to specify for this object locally, 
+* or specify in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.15.0.html#global-grasp-interaction-settings) if you want all objects to be only grasped using added {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %},
+* or using api function [SetInteractionTypeForObject](virtualgrasp_unityapi.0.15.0.html#vg_controllersetinteractiontypeforobject) to change this object to use primary grasp in runtime,
+* or using api function [SetGlobalInteractionType](virtualgrasp_unityapi.0.15.0.html#vg_controllersetglobalinteractiontype) to change all the objects to use primary grasps in runtime.
+
+{% include callout.html content= "When Jump Primary Grasp is specified as interaction type, if no primary grasps are added for this object, then dynamic grasp is automatically applied when you grasp an object." %} 
+
 
 ## Important Note on the Files
 
