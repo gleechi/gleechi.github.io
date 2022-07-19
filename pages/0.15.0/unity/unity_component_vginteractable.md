@@ -9,17 +9,14 @@ permalink: unity_component_vginteractable.0.15.0.html
 folder: mydoc
 ---
 
-{% include image.html file="unity/unity_vg_interactable.png" alt="VG interactable." caption="VG_Interactable" %}
+{% include image.html file="unity/unity_vg_interactable_0_15_0.png" alt="VG interactable." caption="VG_Interactable" %}
 
 ## Description
 
-The VG_Interactable component allows you to specify object specific {% include tooltip.html tooltip="GraspSynthesisMethod" text="synthesis method" %}, {% include tooltip.html tooltip="InteractionType" text="interaction type" %}, and two throw velocity scales. 
+The VG_Interactable component allows you to specify object specific {% include tooltip.html tooltip="InteractionType" text="interaction type" %}, and two throw velocity scales. All parameters in the VG_Interactable component are explained in [grasp interaction](grasp_interaction.0.15.0.html#grasp-interaction).
 
-All parameters in the VG_Interactable component are explained in [grasp interaction](grasp_interaction.0.15.0.html#grasp-interaction).
+ {% include callout.html content= "Interaction Type, Throw Velocity Scale and Throw Angular Velocity Scale can be set globally in MyVirtualGrasp script [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.15.0.html#global-grasp-interaction-settings). This VG_Interactable local settings will overwrite the global settings for that object. I.e. all objects without a customized VG_Interactable will follow the global settings, but those with VG_Interactable will follow the local settings." %} 
 
-Adding VG_Interactable to an object will override the [global grasp interaction settings](unity_component_myvirtualgrasp.0.15.0.html#global-grasp-interaction-settings) for that particular object. 
-
-All objects without a customized VG_Interactable will follow the global settings, but those with VG_Interactable will follow the local settings.
 
 {% include multiple_script.html %}
 
