@@ -33,24 +33,26 @@ folder: mydoc
 -->
 
 
-## V0.15.0-rc1 (state of 2022-07-15; not released)
+## V0.15.0-rc1 (state of 2022-07-19; not released)
 
 ##### Major Functionality Changes:
 * **Breaking change:** The sensor configuration in MyVirtualGrasp has been refactored:
-  * Each controller profile (earlier VG_AutoSetup) has been ported into a ScriptableObject of type VG_ControllerProfile (in Resources/ExternalControllers), uncluttering the MyVirtualGrasp interface.
-  * To resolve update issues: for a sensor in avatar in MyVirtualGrasp, just drag and drop the controller profile .asset you want to use into the "Profile" slot.
+  * Each controller profile (earlier VG_AutoSetup) has been ported into a ScriptableObject of type [VG_ControllerProfile](unity_component_myvirtualgrasp.0.15.0.html#controller-profile) (in Resources/ExternalControllers), uncluttering the [MyVirtualGrasp](unity_component_myvirtualgrasp.0.15.0.html#sensors--controllers) interface.
+  * To resolve update issues: for a sensor in avatar in [MyVirtualGrasp](unity_component_myvirtualgrasp.0.15.0.html#sensors--controllers), just drag and drop the controller profile .asset you want to use into the "Profile" slot.
   * You can customize the profiles fully now.
   * VG_AutoSetup has been removed from the API and GUI.
+
 * **Breaking change:** VG_SynthesisMethod has been removed.
-  * [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) has been closely coupled to the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type) that could be set globally (in MyVirtualGrasp) or object-specific (in [VG_Interactable](unity_component_vginteractable.0.15.0.html))
-  * Some combinations had limited usecases, thus now the [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) is implicitely set automatically based on the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type).
-  * Only JUMP_PRIMARY_GRASP will result in a STATIC GRASP; all other [VG_InteractionTypes](grasp_interaction.0.15.0.html#grasp-interaction-type) will result in a DYNAMIC_GRASP.
+  * [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) has been closely coupled to the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type) that could be set globally (in [MyVirtualGrasp->Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.15.0.html#global-grasp-interaction-settings)) or object-specific (in [VG_Interactable](unity_component_vginteractable.0.15.0.html)).
+  * Some combinations had limited usecases, thus now the [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) is implicitely set automatically based on the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type). Only JUMP_PRIMARY_GRASP will result in a STATIC GRASP; all other [VG_InteractionTypes](grasp_interaction.0.15.0.html#grasp-interaction-type) will result in a DYNAMIC_GRASP.
+
+* **Breaking change:** [VG_GraspStudio](unity_component_vggraspstudio.0.14.0.html) has been removed, and is replaced with [VG_GraspEditor](unity_component_vggraspeditor.0.15.0.html) which is a much simpler interface that can be used in runtime in any client’s unity project. 
 
 ##### GUI / Component Changes:
 * Avatar Model Field removed to unclutter the interface. We always assume humanoid hand models for now.
 * If your version supports networking (Pro feature), you can now toggle DebugSettings->UseNetworkIDs and avatars (in MyVirtualGrasp) and objects (in VG_Articulation) will allow you to set a network ID for them.
-* VG_Articulations / [VG_Interactables](unity_component_vginteractable.0.15.0.html) will be grayed out during runtime to make clear that changing them has no effect. To change them, use the adequate API functions.
-* All changes triggered by API functions that change VG_Articulation or [VG_Interactable](unity_component_vginteractable.0.15.0.html) (except RecoverObject()) are now reflected in the Inspector components.
+* [VG_Articulations](unity_component_vgarticulation.0.15.0.html) / [VG_Interactables](unity_component_vginteractable.0.15.0.html) will be grayed out during runtime to make clear that changing them has no effect. To change them, use the adequate API functions.
+* All changes triggered by API functions that change [VG_Articulations](unity_component_vgarticulation.0.15.0.html) or [VG_Interactable](unity_component_vginteractable.0.15.0.html) (except [RecoverObjectJoint](virtualgrasp_unityapi.0.15.0.html#vg_controllerrecoverobjectjoint)) are now reflected in the Inspector components.
 * The control flags (that were a list of checkboxes in each Sensor before) have been replaced with a nicer VG_SensorControlFlags [Flags] enum. Due to the change above related to VG_ControllerProfile, they were also moved into VG_ControllerProfile assets.
 * Slightly re-ordered some global interaction settings in MyVirtualGrasp.
 * VG_ExternalController cleared up and simplified.
@@ -72,11 +74,27 @@ folder: mydoc
 * Debug messages that come from the native VG library to the console have been equipped with "context" as well (if applicable), meaning that selecting the message will highlight the GameObject the message relates to.
 * New external controller "UnityInteractionHand" added that supports controller supported by Unity's action-based [Unity Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/index.html) (together with "XRI Default Input Actions.inputactions" in Resources).
 
-##### Update to VG Core library 0.11.0:
-* 
+##### Update to VG Core library 0.12.0:
+* Improved pinch dynamic grasp on small objects. **(fixed known issue from 0.13.0)**
+* Always make [SwitchGraspObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerswitchgraspobject) and [JumpGraspObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerjumpgraspobject) succeed to grasp the target object. **(fixed known issue from 0.13.0)**
+* Fixed a crashing bug: when an object and all its upstream objects have FIXED VG_Articulation joint, when grasped by two hands, when one hand releases crash happens. **(fixed known issue from 0.13.0)**
 
 ##### Known Issues:
-*
+* When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
+
+* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.15.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.15.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+
+* The {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.15.0.html#changeobjectjoint) as yet. 
+
+* {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
+
+* If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.0.15.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
+
+* [MakeGesture](virtualgrasp_unityapi.0.15.0.html#vg_controllermakegesture) have a bug when choose gesture from [VG_GraspType.FLAT](virtualgrasp_unityapi.0.15.0.html#vg_grasptype). 
+
+* [ResetAllObjects](virtualgrasp_unityapi.0.15.0.html#vg_controllerresetallobjects) and [ResetObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerresetobject) are not working properly. 
+
+
 ## V0.14.0(2022-06-17)
 
 ##### Major Functionality Changes:
@@ -118,7 +136,7 @@ folder: mydoc
 
 * A few events such as [OnObjectGrasped](virtualgrasp_unityapi.0.15.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.0.15.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
-* The newly added {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.15.0.html#changeobjectjoint) as yet. 
+* The {% include tooltip.html tooltip="Planar" text="planar" %} joint does not support {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.0.15.0.html#changeobjectjoint) as yet. 
 
 * Dynamic Grasp on small or thin objects sometimes thumb has no contact on the object.
 
