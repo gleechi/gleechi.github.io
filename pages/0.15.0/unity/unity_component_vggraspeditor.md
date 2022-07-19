@@ -60,6 +60,6 @@ The VirtualGrasp plugin will automatically load this file at initialization (e.g
 
 By this follows that:
 
-* All scenes will use the same grasps, since the .db file is saved in and loaded from the project.
+* All scenes will use the same added grasps, since the .db file is saved in and loaded from the project.
 * If you you are using a version control system and want to share the data with others, you have to commit the .db file to the repository.
 
