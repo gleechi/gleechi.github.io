@@ -91,8 +91,6 @@ folder: mydoc
 
 * [MakeGesture](virtualgrasp_unityapi.0.15.0.html#vg_controllermakegesture) have a bug when choose gesture from [VG_GraspType.FLAT](virtualgrasp_unityapi.0.15.0.html#vg_grasptype). 
 
-* [ResetAllObjects](virtualgrasp_unityapi.0.15.0.html#vg_controllerresetallobjects) and [ResetObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerresetobject) are not working properly. 
-
 
 ## V0.14.0(2022-06-17)
 
