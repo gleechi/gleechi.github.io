@@ -11,15 +11,14 @@ folder: mydoc
 
 ## Description 
 
-VG_GraspEditor is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %}.
-It is provided as a component of the VirtualGrasp Unity plugin, and thus only available in Unity for now. 
+{% include image.html file="unity/unity_vg_prefab_graspeditor_prefabview.png" alt="VG Grasp Editor." caption="VG Grasp Editor" %}
 
-VG_GraspEditor provides a tutorial on the minimal VG API functions for accessing grasps existing in the grasp database as well as using the labeling interface.
+VG_GraspEditor is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that provide a tutorial on the minimal VG API functions for accessing grasps existing in the grasp database as well as using the labeling interface. A corresponding VG_GraspEditor prefab as shown above is added in **VirtualGrasp\Resources\onboarding**. This prefab can be added into any unity scene and allows runtime adding, deleting and reviewing primary grasps (see [Jump Primary Grasp](grasp_interaction.0.15.0.html#grasp-interaction-type)). 
 
-Some examples of annotations are:
 
-* "adding manually annotated grasps for an object”
-* “choosing only some "primary" grasps for an object”.
+
+{% include important.html content="VG_GraspEditor is a new version of grasp editing tool provided since this VG version (0.15.0). This replaces the [VG_GraspStudio](unity_component_vggraspstudio.0.14.0.html) in earlier versions, and provides a much simpler interface that can be used in runtime in any client's unity project." %}
+
 
 ## Adding Grasps
 
