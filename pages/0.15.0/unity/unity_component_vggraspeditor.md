@@ -52,9 +52,6 @@ To use {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} f
 * or use the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.0.15.0.html#vg_controllersetinteractiontypeforobject) to change this object to use primary grasp in runtime,
 * or use the API function [SetGlobalInteractionType](virtualgrasp_unityapi.0.15.0.html#vg_controllersetglobalinteractiontype) to change all the objects to use primary grasps in runtime.
 
-{% include callout.html content= "When Jump Primary Grasp is specified as interaction type, and no primary grasps are added for this object, then dynamic grasp is automatically applied when you grasp an object." %} 
-
-
 ## Important Note on the Files
 
 The information on added grasps will be stored in the grasp .db file which you will find in each project's StreamingAssets/VG_Grasps folder by default.
