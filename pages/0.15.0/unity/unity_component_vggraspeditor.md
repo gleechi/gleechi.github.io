@@ -54,7 +54,7 @@ To use {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} f
 
 ## Important Note on the Files
 
-The information on added grasps will be stored in the grasp .db file which you will find in each project's StreamingAssets/VG_Grasps folder by default.
+The information on added grasps will be stored in the grasp .db file which you will find in each project's **StreamingAssets/VG_Grasps/** folder by default.
 
 The VirtualGrasp plugin will automatically load this file at initialization (e.g. start the game), and save it at releasing (e.g. stop the game). 
 
