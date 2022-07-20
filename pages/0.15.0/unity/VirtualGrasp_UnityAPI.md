@@ -494,6 +494,20 @@ Instantaneously switch the grasped object to specified object in the function, t
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
+### VG_Controller.TogglePrimaryGraspOnObject
+
+Instantaneously switch the grasped object, and continously calling also toggle through primary grasps on this object.
+
+| _int_ |avatarID|The avatar id|
+|[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
+| _Transform_ |obj|The transform of the object to switch to grasp and toggle primary grasps.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps ín the grasp db.
+
+
+
 
 ## [VIRTUALGRASP_CONTROLLER_FUNCTIONS](#virtualgrasp_controller_functions)
 
