@@ -65,8 +65,8 @@ folder: mydoc
 * [GetBroadcastSignal](virtualgrasp_unityapi.0.15.0.html#vg_controllergetbroadcastsignal) -- used if your version supports networking (Pro feature) -- was extended with a flag argument to be able to pick out specific parts of the network signal.
 * [SetAvatarSpecificObjectSelectionWeight](SetAvatarSpecificObjectSelectionWeight) and [ClearAvatarSpecificObjectSelectionWeights](virtualgrasp_unityapi.0.15.0.html#vg_controllerclearavatarspecificobjectselectionweights) added, allowing to specify different selection preferences on an object for different avatars.
 * [SetObjectJointState](virtualgrasp_unityapi.0.15.0.html#vg_controllersetobjectjointstate) added to set an articulated object's state in runtime.
-* Formerly deprecated SetGestureDuration and SetPushAngleThreshold removed.
-* ResetObject and ResetAllObjects marked as deprecated. They will be removed in a future version.
+* Formerly deprecated SetGestureDuration and SetPushAngleThreshold are removed.
+* Formerly deprecated ResetObject and ResetAllObjects are removed.
 
 ##### Other / Internal Changes:
 * The .NET TargetFrameworkVersion has been downgraded from 4.8 to 4.7.2 since it caused some issues for Unity+VSCode users.
