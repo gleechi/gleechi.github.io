@@ -27,7 +27,7 @@ The VG_GraspEditor Prefab is added into the VG_onboarding scene for you to exper
 
 ## Editing Grasps
 
-Using VG_GraspEditor you can add {% include tooltip.html tooltip="DynamicGrasp" text="dynamically synthesized grasps" %} as {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} into the StreamingAssets/VG_Grasps/grasps.db in runtime. 
+Using VG_GraspEditor you can add {% include tooltip.html tooltip="DynamicGrasp" text="dynamically synthesized grasps" %} as {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} into the grasp DB in runtime. 
 
 * The VG_GraspEditor Prefab shows up as an "editing pad" with a number of buttons to allow adding, deleting, deleting all, stepping through {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} and experimenting with the {% include tooltip.html tooltip="JumpPrimaryGrasp" text="Jump Primary Grasp" %} interactions on the object.
 * This editing pad and buttons are also {% include tooltip.html tooltip="VGInteractable" text="VG interactable" %} so that they can be grasped and moved close to any object(s) on which grasp editing is needed.
