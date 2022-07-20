@@ -25,7 +25,7 @@ folder: mydoc
 ##### Other / Internal Changes:
 *
 
-##### Update to VG Core library 0.11.0:
+##### Update to VG Core library:
 * 
 
 ##### Known Issues:
@@ -33,7 +33,7 @@ folder: mydoc
 -->
 
 
-## V0.15.0-rc1 (state of 2022-07-19; not released)
+## V0.15.0-rc1
 
 ##### Major Functionality Changes:
 * **Breaking change:** The sensor configuration in MyVirtualGrasp has been refactored:
@@ -73,10 +73,10 @@ folder: mydoc
 * Debug messages that come from the native VG library to the console have been equipped with "context" as well (if applicable), meaning that selecting the message will highlight the GameObject the message relates to.
 * New external controller "UnityInteractionHand" added that supports controller supported by Unity's action-based [Unity Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/index.html) (together with "XRI Default Input Actions.inputactions" in Resources).
 
-##### Update to VG Core library 0.12.0:
-* Improved pinch dynamic grasp on small objects. **(fixed known issue from 0.13.0)**
-* Always make [SwitchGraspObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerswitchgraspobject) and [JumpGraspObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerjumpgraspobject) succeed to grasp the target object. **(fixed known issue from 0.13.0)**
-* Fixed a crashing bug: when an object and all its upstream objects have FIXED VG_Articulation joint, when grasped by two hands, when one hand releases crash happens. **(fixed known issue from 0.13.0)**
+##### Update to VG Core library:
+* Improved pinch dynamic grasp on small objects. **(fixed known issue from 0.14.0)**
+* Always make [SwitchGraspObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerswitchgraspobject) and [JumpGraspObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerjumpgraspobject) succeed to grasp the target object. **(fixed known issue from 0.14.0)**
+* Fixed a crashing bug: when an object and all its upstream objects have FIXED VG_Articulation joint, when grasped by two hands, when one hand releases crash happens. **(fixed known issue from 0.14.0)**
 
 ##### Known Issues:
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
