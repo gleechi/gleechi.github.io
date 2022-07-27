@@ -304,7 +304,7 @@ Change an object's joint in runtime.
 |[*VG_JointType*](#vg_jointtype) | new_jointType|The joint type to switch to.|
 | _Transform_ |new_anchor_transform|The anchor transform to switch to.|
 | _Vector2_ |new_limit|The new limit of the new joint type.|
-| _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) if new_jointType is Revolute.|
+| _float_ |new_screwRate|The new screw rate (>=0, in cm per degree) if new_jointType is Revolute.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
@@ -504,7 +504,7 @@ Instantaneously switch the grasped object, and continously calling also toggle t
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
- The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps ín the grasp db.
+ The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps ï¿½n the grasp db.
 
 
 
