@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V0.15.0-rc1
+## V0.15.0
 
 ##### Major Functionality Changes:
 * **Breaking change:** The sensor configuration in MyVirtualGrasp has been refactored:
