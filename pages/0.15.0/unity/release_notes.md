@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V0.15.0
+## V0.15.0 (2022-07-27)
 
 ##### Major Functionality Changes:
 * **Breaking change:** The sensor configuration in MyVirtualGrasp has been refactored:
@@ -98,7 +98,7 @@ folder: mydoc
 * [MakeGesture](virtualgrasp_unityapi.0.15.0.html#vg_controllermakegesture) have a bug when choose gesture from [VG_GraspType.FLAT](virtualgrasp_unityapi.0.15.0.html#vg_grasptype). 
 
 
-## V0.14.0(2022-06-17)
+## V0.14.0 (2022-06-17)
 
 ##### Major Functionality Changes:
 * **Breaking change:** [ChangeObjectJoint](virtualgrasp_unityapi.0.15.0.html#vg_controllerchangeobjectjoint) is extended with one additional input parameter "new_anchor_transform". 
