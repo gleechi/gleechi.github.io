@@ -32,7 +32,6 @@ folder: mydoc
 *
 -->
 
-
 ## V0.15.0-rc1
 
 ##### Major Functionality Changes:
@@ -42,6 +41,7 @@ folder: mydoc
   * You can customize the profiles fully now.
   * The profile supports list of controller names, separated by ';', in order of priorization. For example "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.
   * VG_AutoSetup has been removed from the API and GUI.
+  * Origin transform has been kept in MyVirtualGrasp to allow overwrite of the name-based origin in the [VG_ControllerProfile](unity_component_myvirtualgrasp.0.15.0.html#controller-profile).
 
 * **Breaking change:** VG_SynthesisMethod has been removed.
   * [VG_SynthesisMethod](grasp_interaction.0.15.0.html#grasp-synthesis-method) has been closely coupled to the [VG_InteractionType](grasp_interaction.0.15.0.html#grasp-interaction-type) that could be set globally (in [MyVirtualGrasp->Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.15.0.html#global-grasp-interaction-settings)) or object-specific (in [VG_Interactable](unity_component_vginteractable.0.15.0.html)).
@@ -58,6 +58,7 @@ folder: mydoc
 * The control flags (that were a list of checkboxes in each Sensor before) have been replaced with a nicer VG_SensorControlFlags [Flags] enum. Due to the change above related to [VG_ControllerProfile](unity_component_myvirtualgrasp.0.15.0.html#controller-profile), they were also moved into VG_ControllerProfile assets.
 * Slightly re-ordered some [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.0.15.0.html#global-grasp-interaction-settings) in MyVirtualGrasp.
 * VG_ExternalController cleared up and simplified.
+* Bugfix: when anchor of VG_Articulation is not set, no change needs to be reflected on anchor when calling API functions such as ChangeObjectJoint.
 
 ##### API Changes:
 * Uncluttered API from a number of classes and enums that did not need to be public.
@@ -72,11 +73,16 @@ folder: mydoc
 * The .NET TargetFrameworkVersion has been downgraded from 4.8 to 4.7.2 since it caused some issues for Unity+VSCode users.
 * Debug messages that come from the native VG library to the console have been equipped with "context" as well (if applicable), meaning that selecting the message will highlight the GameObject the message relates to.
 * New external controller "UnityInteractionHand" added that supports controller supported by Unity's action-based [Unity Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/index.html) (together with "XRI Default Input Actions.inputactions" in Resources).
+* [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.0.15.0.html) runtime optimizations.
+* Bugfix: rig registration now also considers hidden bones.
 
 ##### Update to VG Core library:
+
+* Dramatic runtime performance optimization for dynamic grasping
 * Improved pinch dynamic grasp on small objects. **(fixed known issue from 0.14.0)**
 * Always make [SwitchGraspObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerswitchgraspobject) and [JumpGraspObject](virtualgrasp_unityapi.0.15.0.html#vg_controllerjumpgraspobject) succeed to grasp the target object. **(fixed known issue from 0.14.0)**
 * Fixed a crashing bug: when an object and all its upstream objects have FIXED VG_Articulation joint, when grasped by two hands, when one hand releases crash happens. **(fixed known issue from 0.14.0)**
+* Fixed a crashing bug: networking objectSignal will not crash anymore when invalid key is provided.
 
 ##### Known Issues:
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
