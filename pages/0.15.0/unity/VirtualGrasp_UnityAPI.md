@@ -304,7 +304,7 @@ Change an object's joint in runtime.
 |[*VG_JointType*](#vg_jointtype) | new_jointType|The joint type to switch to.|
 | _Transform_ |new_anchor_transform|The anchor transform to switch to.|
 | _Vector2_ |new_limit|The new limit of the new joint type.|
-| _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) if new_jointType is Revolute.|
+| _float_ |new_screwRate|The new screw rate (>=0, in cm per degree) if new_jointType is Revolute.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
@@ -492,6 +492,20 @@ Instantaneously switch the grasped object to specified object in the function, t
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
 | _Transform_ |obj|The transform of the object to switch to grasp|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.TogglePrimaryGraspOnObject
+
+Instantaneously switch the grasped object, and continously calling also toggle through primary grasps on this object.
+
+| _int_ |avatarID|The avatar id|
+|[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
+| _Transform_ |obj|The transform of the object to switch to grasp and toggle primary grasps.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps �n the grasp db.
+
 
 
 
