@@ -10,7 +10,7 @@ You can use VirtualGrasp without a VR headset and your scene does not need to be
 
 {% include callout.html content="If you do not have a headset, you can use the \"MOUSE\" auto-setup to get started and control the hands with the mouse. " type="warning" %}
 
-{% include callout.html content="If you do have a headset, we recommend to use the \"UNITYXR\" auto-setup (after assuring that you enabled your scene for VR) to get started, through [UnityXR](https://docs.unity3d.com/Manual/XR.0.9.6.html)." type="info" %}
+{% include callout.html content="If you do have a headset, we recommend to use the \"UNITYXR\" auto-setup (after assuring that you enabled your scene for VR) to get started, through [UnityXR](https://docs.unity3d.com/Manual/XR.html)." type="info" %}
 
 <!--See [AutoSetup & Sensors](unity_component_myvirtualgrasp.0.9.6.html#autosetup--sensors) to learn more details about sensor setup.-->
 
