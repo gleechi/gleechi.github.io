@@ -97,6 +97,7 @@ folder: mydoc
 
 * [MakeGesture](virtualgrasp_unityapi.0.15.0.html#vg_controllermakegesture) have a bug when choose gesture from [VG_GraspType.FLAT](virtualgrasp_unityapi.0.15.0.html#vg_grasptype). 
 
+* When using the [VG_GraspEditor](unity_component_vggraspeditor.0.15.0.html) on Android, the grasp database is not modified. We recommend for now to do all grasp editing in the Unity Editor.
 
 ## V0.14.0 (2022-06-17)
 

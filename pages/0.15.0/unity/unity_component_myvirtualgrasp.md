@@ -72,7 +72,7 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 <!--enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.0.15.0.html), or the [VG_Networking Component](unity_component_vgnetworing.0.15.0.html).-->
 <!--Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.0.15.0.html), or the [VG_Recorder Component](unity_component_vgrecorder.0.15.0.html).-->
 
-### Controller Profile
+### Profile
 
 {% include image.html file="unity/unity_vg_ec_unityxrhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
@@ -86,7 +86,7 @@ Through controller profiles (which are ScriptableObjects), you are able to confi
 | Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
 | Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.0.15.0.html#vg_fingercontroltype). | 
 | Offset |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
-| Origin Name | Set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin. | 
+| Origin Name | Set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
 | Origin Scale | You can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
 
 <!--| Finger Control Type | Description |
@@ -109,6 +109,12 @@ VirtualGrasp is using names to identify which objects are marked as {% include t
 
 Once an object is marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}, it will be supported by VG's [grasp](grasp_interaction.0.15.0.html) and [push](push_interaction.0.15.0.html) interactions. 
 -->
+
+### Origin
+
+While each VG_ControllerProfile contains an "Origin Name" that should act as the origin of your controller data, you can overwrite the origin by selecting a different transform here. This may be useful since searching for a GameObject name as the VG_ControllerProfile does is error-prone, for example there may be multiple objects with that name.
+
+If you set an "Origin" here instead, this Transform will overwrite the origin potentially detected through the VG_ControllerProfile. If you do not provide an "Origin" here (set it to None), the selected VG_ControllerProfile will try to find a GameObject by name as described above.
 
 ## Global Grasp Interaction Settings
 
