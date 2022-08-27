@@ -37,10 +37,12 @@ For any joint type, there are a set of parameters to be used to configure the jo
 | Swing | swing angle limit for cone joint. |
 | Twist | twist angle limit for cone joint. |
 | Screw Rate | only valid for revolute joint, describing how much the object linearly move along the axis given every degree of rotation, in unit (cm/degree). | 
-| Discrete States | discrete values in the 1-dof joint's limit boundary. By default same as [min, max]. If provided has to be at least 2 states and in ascending order. | 
-| Joint Center | around which position an object is rotating around, specified by the anchor transform's position. | 
-| Joint Axis | the axis specified by the anchor transform's _zaxis_. For revolute joint, this defines rotation axis, for prismatic joint, object move linearly along this axis, for cone joint this defines center of the core shape limit range, for planar joint, this is normal of the plane. |
-| Joint Axis2 | the secondary axis specified by the anchor transform's _xaxis_, which defines orientation of planar joint's rectangular shaped limit space. |
+| Discrete States | discrete values for 1-dof joints within the limit boundary. By default [Min, Max]. If provided has to be at least 2 states and in ascending order. | 
+| Discrete States x | discrete values for planar joint along _xaxis_ of anchor transform. By default [Min x, Max x]. If provided has to be at least 2 states and in ascending order. | 
+| Discrete States y | discrete values for planar joint along _yaxis_ of anchor transform. By default [Min y, Max y]. If provided has to be at least 2 states and in ascending order. | 
+| Joint Center | around which position an object is rotating around, specified by the _Anchor_'s position. | 
+| Joint Axis | the axis specified by the _Anchor_'s _zaxis_. For revolute joint, this defines rotation axis, for prismatic joint, object move linearly along this axis, for cone joint this defines center of the core shape limit range, for planar joint, this is normal of the plane. |
+| Joint Axis2 | the secondary axis specified by the _Anchor_'s _yaxis_, which defines orientation of planar joint's rectangular shaped limit space. |
 
 ### Joint State
 
