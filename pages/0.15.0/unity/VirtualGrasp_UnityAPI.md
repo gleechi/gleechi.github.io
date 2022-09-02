@@ -124,6 +124,14 @@ Different articulated joint types supported by VG.
 |CONE|3-DOF ball and socket joint modeled with cone joint limit|
 
 
+### VG_MotionType
+
+Whether the motion is free or limited
+
+|Limited|If motion is limited by the limits in the joint's degree of freedom(s)|
+|Free|If motion is free in the joint's degree of freedom(s)|
+
+
 ### VG_NetworkSignal
 
 Enum bitmask to compose parts of a NetworkSignal
@@ -172,6 +180,7 @@ ReturnCode for various VirtualGrasp functions.Most functions in this API provide
 |SAVE_GRASP_DB_FAILED|Failed to export the internal grasp db to a file.|
 |UNKNOWN_AVATAR||
 |AVATAR_BLOCKED||
+|ARTICULATION_SETUP_FAILED||
 
 
 ### VG_SensorControlFlags
@@ -304,21 +313,19 @@ This event is invoked in the fixed update loop before VG runs its update. Thus, 
 
 ### VG_Controller.ChangeObjectJoint
 
-Change an object's joint in runtime.
+Change a set of prameters of an object's joint in runtime.
 
-| _Transform_ |selectedObject|The object to change the joint type for.|
-|[*VG_JointType*](#vg_jointtype) | new_jointType|The joint type to switch to.|
-| _Transform_ |new_anchor_transform|The anchor transform to switch to.|
-| _Vector2_ |new_limit|The new limit of the new joint type.|
-| _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) if new_jointType is Revolute.|
+| _Transform_ |selectedObject|The object to change the object joint parameters.|
+|[*VG_JointType*](#vg_jointtype) | new_jointType|The new joint type.|
+|[*VG_MotionType*](#vg_motiontype) | new_motionType|The new motion type specifying if motion should be limited or free.|
+| _Transform_ |new_anchor_transform|The new anchor transform.|
+| _Vector2_ |new_limit|The new limit of the new joint type. For planar joint this is the limit along xaxis of the anchor transform. |
+| _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) for revolute joint.|
+| _Vector2_ |new_limit2|The new limit along yaxis of the anchor transform for planar joint.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
- Note that the former joint can be recovered (see RecoverObjectJoint).
-
-
-**Remark:**
- If new_screwRate is set to 0 then do not screw.
+ If new_screwRate is set to 0 then rotating of revolute object will not move object position along the joint axis.
 
 
 
@@ -466,10 +473,11 @@ Set if an object can only be manipulated by dual hands from a same avatar.
 
 ### VG_Controller.SetObjectJointState
 
-Set the current joint to desired state for a single-dof articulated object.
+Set the current joint to desired state for a single-dof articulated object or planar joint object.
 
 | _Transform_ |selectedObject|The object to set the joint state value for.|
 | _float_ |jointState|The target joint state. If exceed joint limit will be constrained within limit.|
+| _float_ |jointState2|The target secondary joint state for Planar joint. If exceed joint limit will be constrained within limit.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -510,7 +518,7 @@ Instantaneously switch the grasped object, and continously calling also toggle t
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
- The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps �n the grasp db.
+ The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps ín the grasp db.
 
 
 
@@ -1193,6 +1201,16 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 Resume replaying of an avatar.
 
 | _int_ |avatarID|The ID of the avatar to resume replaying the recording on (note: it has to be an avatar enabled for replay).|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
+
+
+### VG_Controller.SaveRecording
+
+Save recording sensor data and store the whole sequence to a file
+
+| _string_ |filename|The filename to save the recording to.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
