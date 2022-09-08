@@ -59,6 +59,15 @@ An enum to describe how fingers are controlled.
 |BY_OSCILLATED_ANIMATION|When not grasping, fingers are controlled by oscillating between two state of animations|
 
 
+### VG_GestureType
+
+A humanoid hand gesture type enum.
+
+|UNKNOWN_GESTURETYPE|Unknown type|
+|PUSH_GESTURE|Index finger push gesture|
+|FIST_GESTURE|Fist gesture|
+
+
 ### VG_GraspLabel
 
 For labeling grasps (grasp editor functionality).
@@ -74,15 +83,12 @@ For labeling grasps (grasp editor functionality).
 
 Animation grasp type enum.
 
-|UNKNOWN_GRASPTYPE|Unknown grasp type|
-|POWER|Power grasp|
-|PINCH|Pinch grasp|
-|FLAT|Flat grasp (like on a basketball)|
-|PUSH|Push grasp|
-|GMANUS|used for sensor animation|
-|OPENING|this is for robotic opening grasp in order to grasp inside a hole of the object|
-|CLOSING|this is for robotic closing grasp for parallel gripper|
-|SUCTION_PIN|this is for robotic suction pin gripper|
+|UNKNOWN_GRASPTYPE|Unknown type|
+|POWER|Humanoid power grasp|
+|PINCH|Humanoid pinch grasp|
+|OPENING|Robotic opening grasp|
+|CLOSING|Robotic closing grasp|
+|SUCTION_PIN|Robotic suction pin grasp|
 
 
 ### VG_HandSide
@@ -98,24 +104,32 @@ We support two hands per avatar, left and right in this enum.
 
 An enum to describe a hand interaction type (i.e. a mode on grasp visualization).
 
-|TRIGGER_GRASP|Original, hand goes to object at grasp position|
-|PREVIEW_GRASP|Grasp is always previewed once object is selected, trigger will allow pick up the object|
+|TRIGGER_GRASP|Default, hand goes to object at grasp position|
+|PREVIEW_GRASP|Grasp is always previewed once object is selected, trigger will pick up the object|
 |PREVIEW_ONLY|like PREVIEW_GRASP, but trigger will not allow pick up the object|
 |JUMP_GRASP|Object jumps to hand when grasp is triggered|
-|STICKY_HAND|Object sticks to hand without grasp when grasp is triggered|
-|JUMP_PRIMARY_GRASP|Using mechanism like JUMP_GRASP, but use a grasp that is labled as primary|
+|STICKY_HAND|Object sticks to hand without forming grasp pose when grasp is triggered|
+|JUMP_PRIMARY_GRASP|Using mechanism like JUMP_GRASP, but use a primary grasp in grasp DB|
 
 
 ### VG_JointType
 
 Different articulated joint types supported by VG.
 
-|REVOLUTE|revolute joint constrained around an axis, such as wheel|
-|PRISMATIC|prismatic joint constrained along an axis, such as drawer|
-|FIXED|fixed, not-moveable joint|
+|REVOLUTE|revolute joint with constrained rotational movement around an axis|
+|PRISMATIC|prismatic joint with constrained translational movement along an axis|
+|FIXED|fixed, non-moveable joint|
 |FLOATING|floating, unconstrained joint|
-|PLANAR|planar joint; up to here consistent with joint types in URDF, all 1-DOF joint|
+|PLANAR|planar joint with constrained translational movement on a plane|
 |CONE|3-DOF ball and socket joint modeled with cone joint limit|
+
+
+### VG_MotionType
+
+Whether the motion is free or limited
+
+|Limited|If motion is limited by the limits in the joint's degree of freedom(s)|
+|Free|If motion is free in the joint's degree of freedom(s)|
 
 
 ### VG_NetworkSignal
@@ -143,7 +157,7 @@ The query grasp method for GetGrasp() function
 Decide when query grasp if hand moves and how to move hand.
 
 |NO_MOVE|will not move internal object and hand|
-|MOVE_HAND_SMOOTHLY|will move object and hand moves smoothly with GRASP transition|
+|MOVE_HAND_SMOOTHLY|will move object and hand moves smoothly with a transition period|
 |MOVE_HAND_DIRECTLY|will move object and hand move directly to target grasp pose|
 
 
@@ -166,6 +180,7 @@ ReturnCode for various VirtualGrasp functions.Most functions in this API provide
 |SAVE_GRASP_DB_FAILED|Failed to export the internal grasp db to a file.|
 |UNKNOWN_AVATAR||
 |AVATAR_BLOCKED||
+|ARTICULATION_SETUP_FAILED||
 
 
 ### VG_SensorControlFlags
@@ -298,21 +313,19 @@ This event is invoked in the fixed update loop before VG runs its update. Thus, 
 
 ### VG_Controller.ChangeObjectJoint
 
-Change an object's joint in runtime.
+Change a set of prameters of an object's joint in runtime.
 
-| _Transform_ |selectedObject|The object to change the joint type for.|
-|[*VG_JointType*](#vg_jointtype) | new_jointType|The joint type to switch to.|
-| _Transform_ |new_anchor_transform|The anchor transform to switch to.|
-| _Vector2_ |new_limit|The new limit of the new joint type.|
-| _float_ |new_screwRate|The new screw rate (>=0, in cm per degree) if new_jointType is Revolute.|
+| _Transform_ |selectedObject|The object to change the object joint parameters.|
+|[*VG_JointType*](#vg_jointtype) | new_jointType|The new joint type.|
+|[*VG_MotionType*](#vg_motiontype) | new_motionType|The new motion type specifying if motion should be limited or free.|
+| _Transform_ |new_anchor_transform|The new anchor transform.|
+| _Vector2_ |new_limit|The new limit of the new joint type. For planar joint this is the limit along xaxis of the anchor transform. |
+| _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) for revolute joint.|
+| _Vector2_ |new_limit2|The new limit along yaxis of the anchor transform for planar joint.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
- Note that the former joint can be recovered (see RecoverObjectJoint).
-
-
-**Remark:**
- If new_screwRate is set to 0 then do not screw.
+ If new_screwRate is set to 0 then rotating of revolute object will not move object position along the joint axis.
 
 
 
@@ -460,10 +473,11 @@ Set if an object can only be manipulated by dual hands from a same avatar.
 
 ### VG_Controller.SetObjectJointState
 
-Set the current joint to desired state for a single-dof articulated object.
+Set the current joint to desired state for a single-dof articulated object or planar joint object.
 
 | _Transform_ |selectedObject|The object to set the joint state value for.|
 | _float_ |jointState|The target joint state. If exceed joint limit will be constrained within limit.|
+| _float_ |jointState2|The target secondary joint state for Planar joint. If exceed joint limit will be constrained within limit.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -504,7 +518,7 @@ Instantaneously switch the grasped object, and continously calling also toggle t
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
- The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps �n the grasp db.
+ The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps ín the grasp db.
 
 
 
@@ -824,7 +838,7 @@ Make a gesture with a hand.
 
 | _int_ |avatarID|The avatar to make gesture for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to make gesture for.|
-|[*VG_GraspType*](#vg_grasptype) | gesture|The gesture to make with the [side] hand of avatar [avatarID].|
+|[*VG_GestureType*](#vg_gesturetype) | gesture|The gesture to make with the [side] hand of avatar [avatarID].|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -974,10 +988,9 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 
 
 
-## [NETWORK_INTERFACE_API **(pro*)**](#network_interface_api-pro)
+## [NETWORK_INTERFACE_API](#network_interface_api)
 
 ### VG_Controller.GetBroadcastSignal
-<span class="label label-default">pro</span>
 
 Receive (from VG) a multiplayer broadcast message as a binary byte array.
 
@@ -988,7 +1001,6 @@ Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.0.15.0.html)
 
 
 ### VG_Controller.SetBroadcastSignal
-<span class="label label-default">pro</span>
 
 Set (to VG) a multiplayer broadcast message as a binary byte array.
 
@@ -1113,10 +1125,9 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 
 
 
-## [RECORDING_INTERFACE_API **(pro*)**](#recording_interface_api-pro)
+## [RECORDING_INTERFACE_API](#recording_interface_api)
 
 ### VG_Controller.GetReplayAvatarID
-<span class="label label-default">pro</span>
 
 Get the AvatarID of the first replay avatar.
 
@@ -1129,7 +1140,6 @@ Get the AvatarID of the first replay avatar.
 
 
 ### VG_Controller.GetReplayStartWristPose
-<span class="label label-default">pro</span>
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
 
@@ -1153,7 +1163,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 ### VG_Controller.IsReplaySuccess
-<span class="label label-default">pro</span>
 
 Check if finished replay had identical response as recorded
 
@@ -1163,7 +1172,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 ### VG_Controller.IsReplaying
-<span class="label label-default">pro</span>
 
 Check if a hand is currently replaying a recorded sensor data.
 
@@ -1175,7 +1183,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 ### VG_Controller.LoadRecording
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1188,7 +1195,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 ### VG_Controller.ResumeReplay
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1200,8 +1206,17 @@ Resume replaying of an avatar.
 Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
+### VG_Controller.SaveRecording
+
+Save recording sensor data and store the whole sequence to a file
+
+| _string_ |filename|The filename to save the recording to.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
+
+
 ### VG_Controller.StartRecording
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1213,7 +1228,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 ### VG_Controller.StartReplay
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1227,7 +1241,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 ### VG_Controller.StartReplayOnObject
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1243,7 +1256,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 ### VG_Controller.StopRecording
-<span class="label label-default">pro</span>
 <a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
 
 
@@ -1256,7 +1268,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.0.15.0.html)
 
 
 ### VG_Controller.StopReplay
-<span class="label label-default">pro</span>
 
 Stop replay of the recorded interaction sequence on an avatar.
 
