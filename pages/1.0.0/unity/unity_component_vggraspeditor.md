@@ -11,7 +11,7 @@ folder: mydoc
 
 ## Description 
 
-{% include image.html file="unity/unity_vg_prefab_graspeditor_prefabview.png" alt="VG Grasp Editor." caption="VG Grasp Editor" %}
+{% include image.html file="unity/unity_vg_prefab_graspeditor_prefabview_1_0_0.png" alt="VG Grasp Editor." caption="VG Grasp Editor" %}
 
 VG_GraspEditor is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that provides a tutorial on the minimal VG API functions for accessing grasps existing in the VG grasp database as well as using the labeling interface. 
 
