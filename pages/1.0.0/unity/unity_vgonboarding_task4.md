@@ -41,101 +41,102 @@ VirtualGrasp/Scenes/onboarding/VG_Onboarding.unity
 
 using UnityEngine;
 using VirtualGrasp;
-using System.Collections.Generic;
 
 /** 
- * AssembleArticulationBody shows as a tutorial on how to use VG to
- * assemble and dissemble objects through Unity's ArticulationBody.
+ * AssembleVGArticulation shows as a tutorial on how to use the VG_Controller.ChangeObjectJoint function for
+ * assemble and dissemble non-physical objects (objects without rigid body or articulation body).
  */
-public class AssembleArticulationBody : MonoBehaviour
+[LIBVIRTUALGRASP_UNITY_SCRIPT]
+[HelpURL("https://docs.virtualgrasp.com/unity_vgonboarding_task5." + VG_Version.__VG_VERSION__ + ".html")]
+public class AssembleVGArticulation : MonoBehaviour
 {
+    [Tooltip("When assemble, the new parent to assign to this object.")]
     public Transform m_newParent = null;
+    [Tooltip("The target pose of the assembled object.")]
     public Transform m_desiredPose = null;
+    [Tooltip("Threshold to assemble when object to Desired Pose is smaller than this value.")]
     public float m_assembleDistance = 0.05f;
+    [Tooltip("Threshold to disassemble when sensor hand position to grasped hand position is bigger than this value.")]
     public float m_disassembleDistance = 0.5f;
+    [Tooltip("The VG Articulation of constrained (non-FLOATING) joint type to switch to when assemble an object.")]
+    public VG_Articulation m_assembleArticulation = null;
 
-    public ArticulationJointType m_jointType = ArticulationJointType.FixedJoint;
-    public bool m_matchAnchors = true;
-    public Vector3 m_anchorPosition = Vector3.zero;
-    public Vector3 m_anchorRotation = Vector3.zero;
-    public Vector3 m_parentAnchorPosition = Vector3.zero;
-    public Vector3 m_parentAnchorRotation = Vector3.zero;
+    [Tooltip("If provided give disassemble sound effect.")]
+    public AudioSource m_disassembleSoundEffect;
+    [Tooltip("If provided give assemble sound effect.")]
+    public AudioSource m_assembleSoundEffect;
 
-    private ArticulationBody m_this_ab;
-    private ArticulationBody m_parent_ab;
-
-    private float timeAtDisassemble = 0.0F;
-    private float assembleDelay = 1.0F;
+    private float m_timeAtDisassemble = 0.0F;
+    private float m_assembleDelay = 1.0F;
 
     void Start()
     {
-        gameObject.TryGetComponent<ArticulationBody>(out m_this_ab);
-        if (m_newParent != null)
-        {
-
-            if(!m_newParent.TryGetComponent<ArticulationBody>(out m_parent_ab))
-            {
-                Debug.LogWarning("New parent " + m_newParent.name + " should have Articulation Body component, will add one in script");
-                m_parent_ab = m_newParent.gameObject.AddComponent<ArticulationBody>();
-            }
-        }
-        else
-            Debug.LogError("Need to specify assembling New Parent!");
+        if (m_assembleArticulation == null)
+            VG_Debug.LogError("Has to assign an Assemble Articulation on " + this.transform.name);
+        if (m_assembleArticulation.m_type == VG_JointType.FLOATING)
+            VG_Debug.LogError("Assemble Articulation should be of a constrained joint type, can not be FLOATING on " + this.transform.name);
     }
 
     void Update()
     {
-        assembleArticulationBody();
-        dissembleArticluationBody();
+        assembleByJointChange();
+        dessembleByJointChange();
     }
 
-    void assembleArticulationBody()
+    void assembleByJointChange()
     {
-        if(m_this_ab == null || m_parent_ab == null)
-        {
-            Debug.LogError("Object do no have articulation body, so can't do articulation body based assembling!");
-            return;
-        }
-
-        if ((Time.realtimeSinceStartup - timeAtDisassemble) > assembleDelay
-            && (m_desiredPose.position - transform.position).magnitude < m_assembleDistance
-            && transform.parent != m_newParent)
+        VG_JointType jointType;
+        if ((Time.realtimeSinceStartup - m_timeAtDisassemble) > m_assembleDelay
+           && (m_desiredPose.position - this.transform.position).magnitude < m_assembleDistance
+           && VG_Controller.GetObjectJointType(this.transform, false, out jointType) == VG_ReturnCode.SUCCESS &&
+           jointType == VG_JointType.FLOATING)
         {
             m_desiredPose.gameObject.SetActive(false);
-            transform.SetPositionAndRotation(m_desiredPose.position, m_desiredPose.rotation);
-            transform.SetParent(m_newParent);
-            m_this_ab.jointType = m_jointType;
-#if UNITY_2021_2_OR_NEWER
-            m_this_ab.matchAnchors = m_matchAnchors;
-#else
-            m_this_ab.computeParentAnchor = m_matchAnchors;
-#endif
-            m_this_ab.anchorPosition = m_anchorPosition;
-            m_this_ab.anchorRotation = Quaternion.Euler(m_anchorRotation);
-            m_this_ab.parentAnchorPosition = m_parentAnchorPosition;
-            m_this_ab.parentAnchorRotation = Quaternion.Euler(m_parentAnchorRotation);
+
+            // Project object rotation axis to align to desired rotation axis.
+            Quaternion q_raw = Quaternion.LookRotation(m_desiredPose.up, transform.forward);
+            Quaternion q_nat = q_raw * Quaternion.Euler(0, 180, 0) * Quaternion.Euler(-90, 0, 0);
+            this.transform.SetPositionAndRotation(m_desiredPose.position, q_nat);
+
+            if (m_newParent != null)
+                this.transform.SetParent(m_newParent);
+
+            VG_ReturnCode ret = VG_Controller.ChangeObjectJoint(transform, m_assembleArticulation);
+            if(ret != VG_ReturnCode.SUCCESS)
+                VG_Debug.LogError("Failed to ChangeObjectJoint() on " + transform.name + " with return code " + ret);
+
+            m_assembleSoundEffect?.Play();
         }
     }
 
-    void dissembleArticluationBody()
+    void dessembleByJointChange()
     {
         foreach (VG_HandStatus hand in VG_Controller.GetHands())
         {
-            if (hand.m_selectedObject == transform && hand.IsHolding() && transform.parent == m_newParent)
+            VG_JointType jointType;
+            if (hand.m_selectedObject == transform && hand.IsHolding()
+                && VG_Controller.GetObjectJointType(transform, false, out jointType) == VG_ReturnCode.SUCCESS
+                && jointType != VG_JointType.FLOATING)
             {
                 VG_Controller.GetSensorPose(hand.m_avatarID, hand.m_side, out Vector3 sensor_pos, out Quaternion sensor_rot);
-                if ((sensor_pos - hand.m_hand.position).magnitude > m_disassembleDistance ) 
+                float jointState = 0.0f;
+                if (jointType == VG_JointType.REVOLUTE)
+                    VG_Controller.GetObjectJointState(transform, out jointState);
+                if (jointState == 0.0f && (sensor_pos - hand.m_hand.position).magnitude > m_disassembleDistance)
                 {
                     m_desiredPose.gameObject.SetActive(true);
                     transform.SetParent(m_newParent.parent);
-                    timeAtDisassemble = Time.realtimeSinceStartup;
+                    VG_ReturnCode ret = VG_Controller.RecoverObjectJoint(transform);
+                    if (ret != VG_ReturnCode.SUCCESS)
+                        VG_Debug.LogError("Failed to RecoverObjectJoint() on " + transform.name + " with return code " + ret);
+
+                    m_timeAtDisassemble = Time.realtimeSinceStartup;
+                    m_disassembleSoundEffect?.Play();
                 }
             }
         }
     }
 }
-
-
 
 ````
 

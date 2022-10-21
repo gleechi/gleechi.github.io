@@ -55,7 +55,10 @@ folder: mydoc
 * Fixed a bug: sometimes an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object's {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} becomes negative causing this object not interactable. 
 * If an object is set to afford INDEX_PUSHABLE interaction, VG library will switch its {% include tooltip.html tooltip="InteractionType" text="interaction type" %} to {% include tooltip.html tooltip="StickyHand" text="STICKY HAND" %} to avoid some unneccssary debug outputs.
 * When an object's Rigidbody component has Rigidbody.isKinematic true, VG will consider this object as  non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %}
-* Multiplayer with VG network message functions with complex object settings. 
+* Multiplayer with VG network message functions with complex object settings.
+* Added [VG onboarding task 7](unity_vgonboarding_task7.1.0.0.html) showing off using VG Articulation to assemble a chain with physical object. 
+ 
+
 
 ##### Update to VG Core library: *
 
