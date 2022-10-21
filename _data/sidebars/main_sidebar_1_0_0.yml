@@ -154,6 +154,9 @@ entries:
         - title: Task6_Pad_VG_Planar_Joint
           url: /unity_vgonboarding_task6.1.0.0.html
           output: web
+        - title: Task7_Wrench_Chain_Assemble_VG
+          url: /unity_vgonboarding_task7.1.0.0.html
+          output: web
       
   - title: References
     output: web

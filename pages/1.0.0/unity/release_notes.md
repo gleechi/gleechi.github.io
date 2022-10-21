@@ -76,6 +76,7 @@ folder: mydoc
 
 * If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.1.0.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
+
 ## V0.15.0(2022-07-27)
 
 ##### Major Functionality Changes:
