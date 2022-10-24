@@ -41,7 +41,7 @@ folder: mydoc
 ##### GUI / Component Changes:
 * Only one enabled [VG_Articulation](unity_component_vgarticulation.1.0.0.html) component is allowed now, and the enabled component reflect the current [object articulation](object_articulation.1.0.0.html) status.
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html) for constrained joint types now allows selection of "Motion Type" to Limited or Free, where Free means there is no limitation along the constrained degrees of freedom of this joint. 
-* [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) prefab has improved graphics without change of functionality. 
+* [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) prefab has improved graphics without any changes of functionality. 
 
 ##### API Changes:
 
@@ -53,10 +53,11 @@ folder: mydoc
 * Fixed a bug: OnGraspTriggered event sometimes have m_selectedObject to be null.
 * Fixed a bug: sometimes an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object's {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} becomes negative causing this object not interactable. 
 * If an object is set to afford INDEX_PUSHABLE interaction, VG library will switch its {% include tooltip.html tooltip="InteractionType" text="interaction type" %} to {% include tooltip.html tooltip="StickyHand" text="STICKY HAND" %} to avoid some unneccssary debug outputs.
-* When an object's Rigidbody component has Rigidbody.isKinematic true, VG will consider this object as  non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %}
-* Multiplayer with VG network message functions with complex object settings.
+* When an object's Rigidbody component has Rigidbody.isKinematic true, VG will consider this object as a non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %}.
+* [VG onboarding task 5](unity_vgonboarding_task5.1.0.0.html) added an additional prefab, "Task5_bottle_with_rigidbody", in the onboarding scene to show the same AssembleVGArticulation.cs also works on the bottle and cap when they are physical object. 
 * Added [VG onboarding task 7](unity_vgonboarding_task7.1.0.0.html) showing off using VG Articulation to assemble a chain with physical object.  
 * Two other assemble VG onboarding tasks, [task4](unity_vgonboarding_task4.1.0.0.html) and [task5](unity_vgonboarding_task5.1.0.0.html), have improved the scripts on how to set desired object rotation when assembling. 
+* Multiplayer VG support now allows multiple players grasping on the same object at the same time, and also works with complex object settings.
 
 ##### Update to VG Core library:
 
