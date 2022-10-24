@@ -19,7 +19,7 @@ A VG_GraspEditor Prefab that uses this script (as shown in above image) is added
 
 {% include important.html content="Please do all grasp editing in the Unity Editor in order to modify the grasp database. When using VG_GraspEditor on Android, the grasp database is not modified to prevent users from accidentally modifying an application. " %}
 
-{% include youtube.html id="cAiS-uSTxJk" %}
+{% include youtube.html id="40kYLBKhmqk" %}
 
 ## Editing Grasps
 
