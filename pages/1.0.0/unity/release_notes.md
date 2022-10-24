@@ -61,7 +61,7 @@ folder: mydoc
 * [VG onboarding task 5](unity_vgonboarding_task5.1.0.0.html) added an additional prefab, "Task5_bottle_with_rigidbody", in the onboarding scene to show the same AssembleVGArticulation.cs also works on the bottle and cap when they are physical objects. 
 * Added [VG onboarding task 7](unity_vgonboarding_task7.1.0.0.html) showing off using VG Articulation to assemble a chain with physical objects.  
 * For [VG onboarding task4](unity_vgonboarding_task4.1.0.0.html) and [task5](unity_vgonboarding_task5.1.0.0.html), the function for assembling has improved computation of desired object rotation. 
-* Multiplayer VG support now allows multiple players grasping on the same object at the same time, and also works with complex object settings.
+* Multiplayer (not available in free or pro versions) VG support now allows multiple players grasping on the same object at the same time, and also works with complex object settings.
 
 ##### Update to VG Core library:
 
@@ -77,9 +77,9 @@ folder: mydoc
 
 * If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.1.0.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
 
-* Multiplayer with VG network message still can not solve complete object sync for new player registration.
+* Multiplayer (not available in free or pro versions) with VG network message still can not solve complete object sync for new player registration.
 
-* A few events such as [OnObjectDeselected](virtualgrasp_unityapi.1.0.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
+* A few events such as [OnObjectDeselected](virtualgrasp_unityapi.1.0.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer (not available in free or pro versions) scenes.
 
 
 ## V0.15.0(2022-07-27)
