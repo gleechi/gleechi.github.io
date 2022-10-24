@@ -68,15 +68,15 @@ folder: mydoc
 
 ##### Known Issues:
 
-* Multiplayer with VG network message still can not solve complete object sync for new player registration.
-
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
-
-* A few events such as [OnObjectGrasped](virtualgrasp_unityapi.1.0.0.html#onobjectgrasped) and [OnObjectDeselected](virtualgrasp_unityapi.1.0.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
 * {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered due to event handling is not taking care of this interaction type yet.
 
 * If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.1.0.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. 
+
+* Multiplayer with VG network message still can not solve complete object sync for new player registration.
+
+* A few events such as [OnObjectDeselected](virtualgrasp_unityapi.1.0.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer scenes.
 
 
 ## V0.15.0(2022-07-27)
