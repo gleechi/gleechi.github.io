@@ -17,11 +17,7 @@ VG_GraspEditor is a {% include tooltip.html tooltip="VGPublicScript" text="publi
 
 A VG_GraspEditor Prefab that uses this script (as shown in above image) is added in **VirtualGrasp\Resources\onboarding**. This prefab can be added into any unity scene and allows runtime adding, deleting and reviewing {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} (see [Jump Primary Grasp](grasp_interaction.1.0.0.html#grasp-interaction-type)). 
 
-{% include important.html content="VG_GraspEditor is a new version of grasp editing tool provided since this VG version (1.0.0). It replaces the [VG_GraspStudio](unity_component_vggraspstudio.0.14.0.html) in earlier versions, and provides a much simpler interface that can be used in runtime in any client's unity project.
-
-The VG_GraspEditor Prefab is added into the VG_onboarding scene for you to experiment with the grasp editing process." %}
-
-{% include callout.html content="VG_GraspEditor prefab as in current version is very simple graphically, and will be optimized in a future version." %}
+{% include important.html content="Please do all grasp editing in the Unity Editor in order to modify the grasp database. When using VG_GraspEditor on Android, the grasp database is not modified to prevent users from accidentally modifying an application. " %}
 
 {% include youtube.html id="cAiS-uSTxJk" %}
 

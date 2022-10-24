@@ -66,7 +66,7 @@ The baking output of objects is a grasp database which will enable DG for any hu
 
 In the situations when you do want to grasp an object with a set of fixed ways, [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) can be used to add {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasp" %} into the grasp DB. 
 
-{% include important.html content="From this VG version (1.0.0), Grasp Synthesis Method is not exposed as a parameter for grasp interaction setting to avoid confusion caused by how to combine with Grasp Interaction Type. So whenever Jump Primary Grasp is selected as Grasp Interaction Type, Grasp Synthesis Method will be switched to Static Grasp internally in VG, otherwise by default Dynamic Grasp Synthesis Method is used." %}
+{% include important.html content="Grasp Synthesis Method is not exposed as a parameter for grasp interaction setting to avoid confusion caused by how to combine with Grasp Interaction Type. So whenever Jump Primary Grasp is selected as Grasp Interaction Type, Grasp Synthesis Method will be switched to Static Grasp internally in VG, otherwise by default Dynamic Grasp Synthesis Method is used." %}
 
 ### Grasp Interaction Type
 

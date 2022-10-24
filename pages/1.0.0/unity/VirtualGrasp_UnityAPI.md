@@ -181,6 +181,8 @@ ReturnCode for various VirtualGrasp functions.Most functions in this API provide
 |UNKNOWN_AVATAR||
 |AVATAR_BLOCKED||
 |ARTICULATION_SETUP_FAILED||
+|NO_SENSOR_DB||
+|ARTICULATION_NO_CHANGE||
 
 
 ### VG_SensorControlFlags
@@ -236,64 +238,10 @@ The event to call when we are going to reset all objects in the library.
 
 
 
-### VG_Controller.OnGraspTriggered
-
-This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
 ### VG_Controller.OnInitialize
 
 The event to call when we have successfully initialized the library.
 
-
-
-### VG_Controller.OnObjectCollided
-
-This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.0.0.html),  [VG_HintVisualizer](unity_component_vghintvisualizer.1.0.0.html)
-
-
-### VG_Controller.OnObjectDeselected
-
-This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
-
-
-### VG_Controller.OnObjectFullyReleased
-
-This event is invoked in the frame when an object is fully release by all hands. The Transform it carries includes the object that has just been released.
-
-
-
-### VG_Controller.OnObjectGrasped
-
-This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.OnObjectPushed
-
-This event is invoked in the frame when a hand pushing an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.OnObjectReleased
-
-This event is invoked in the frame when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.OnObjectSelected
-
-This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
 
 
 ### VG_Controller.OnPostUpdate
@@ -346,6 +294,24 @@ Clear all avatar specific object selection weights.
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
+### VG_Controller.GetAvatarSpecificObjectSelectionWeight
+
+Returns the avatar specific object selection weight of an object for interaction.
+
+| _int_ |avatarID|The avatar id|
+| _Transform_ |obj|Which object to specify weight|
+| _**out** float_ |weight|The corresponding weight|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ Note by default this weight is equal to the object's selection weight for all avatars.
+
+
+**Remark:**
+ Use case is mainly to specify relative selection preferences for cluttered objects.
+
+
+
 ### VG_Controller.GetGraspButton
 
 Return the currently selected GraspButton.
@@ -387,6 +353,23 @@ Get the current secondary joint state along yaxis of joint anchor for planar art
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _**out** float_ |secondaryJointState|The returned secondary joint state. Will be set to 0.0f upon error.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call. when selectedObject is null, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+
+
+### VG_Controller.GetObjectSelectionWeight
+
+Returns the object selection weight for grasping interaction.
+
+| _Transform_ |obj|Which object to specify weight|
+| _**out** float_ |weight|The corresponding weight|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ Note by default this weight is 1 for all objects.
+
+
+**Remark:**
+ Use case is mainly to specify relative selection preferences for cluttered objects.
+
 
 
 ### VG_Controller.GetSelectableObjects
@@ -454,11 +437,11 @@ Specify the avatar specific object selection weight of an object for interaction
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
- Note by default this weight is 1 for all objects.
+ Note by default this weight is equal to the object's selection weight for all avatars.
 
 
 **Remark:**
- Use case is mainly to specify relative selection preferences for cluttered objects.
+ Use case is mainly to specify different grasp preferences for avatars e.g. master vs. student grasp abilities.
 
 
 
@@ -494,7 +477,7 @@ Specify the object selection weights for grasping interaction.
 
 
 **Remark:**
- Use case is mainly to specify relative selection preferences for cluttered objects.
+ Use case is mainly to specify different grasp preferences for avatars e.g. master vs. student grasp abilities.
 
 
 
@@ -518,7 +501,7 @@ Instantaneously switch the grasped object, and continously calling also toggle t
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
- The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps ín the grasp db.
+ The specified object should have JUMP_PRIMARY_GRASP interaction type and has added primary grasps in the grasp db.
 
 
 
@@ -624,6 +607,284 @@ Unregister avatar during runtime
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
+### VG_Controller.UnityEvent<Transform
+
+This event is invoked when an object's selection weight is changed. The event carries the object for which the weight has been changed and the new weight.
+
+
+
+### VG_Controller.UnityEvent<Transform
+
+This event is invoked when an avatar-specific object selection weight is changed. The event carries the object and avatarID for which the weight has been changed and the new weight.
+
+
+
+### VG_Controller.UnityEvent<VG_Articulation>
+
+This event is invoked when an object's articulation / joint is changed. The VG_Articulation it carries includes more information about the joint.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when an object is fully release by all hands. The Transform it carries includes the object that has just been released.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when an upstream movable object is fully release by all hands. The Transform it carries includes the object that has just been released.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when a hand pushing an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when object is grasped by 2nd hand. The VG_HandStatus it carries includes more information about the interaction.
+
+
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when object is released by the 2nd grasping hand. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+
+## [RECORDING_INTERFACE_API](#recording_interface_api)
+
+### VG_Controller.CollectRecording
+
+Collect recording sensor data.
+
+| _**out** byte[]_ |recording|[output] byte array containing the sensor recording.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.GetReplayAvatarID
+
+Get the AvatarID of the first replay avatar.
+
+| _**out** int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ No guarantee on returning the one that was first registered as replay avatar
+
+
+
+### VG_Controller.GetReplayStartWristPose
+
+Get the starting wrist poses for full replay of the whole interaction sequence.
+
+| _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
+| _Transform_ |selectedObject|If provided, the entire sensor recording will transformed in to object's frame. If not, in global frame.|
+| _**out** Vector3_ |p_left|The position of the left wrist.|
+| _**out** Quaternion_ |q_left|The orientation of the left wrist.|
+| _**out** Vector3_ |p_right|The position of the right wrist.|
+| _**out** Quaternion_ |q_right|The orientation of the right wrist.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ LoadRecording need to be called before this to load recorded sensor data.
+
+
+**Remark:**
+ SetProcessByRecordedFrame need to be called before this to set this avatar to be enabled for replay.
+
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.IsReplaySuccess
+
+Check if finished replay had identical response as recorded
+
+| **returns** | _bool_ | True if replay was identical, False otherwise.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.IsReplaying
+
+Check if a hand is currently replaying a recorded sensor data.
+
+| _int_ |avatarID|The avatar to check.|
+|[*VG_HandSide*](#vg_handside) | handSide|The hand to check.|
+| **returns** | _bool_ | True if replaying, False otherwise.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.LoadRecording
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
+
+Load recorded sensor data from a file, but do not start replay
+
+| _string_ |filename|The filename to load the recording from.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.LoadRecording
+
+Load recorded sensor data from a byte array.
+
+| _[unknown]_ |filename|The byte array to load the recording from.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.ResumeReplay
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
+
+Resume replaying of an avatar.
+
+| _int_ |avatarID|The ID of the avatar to resume replaying the recording on (note: it has to be an avatar enabled for replay).|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.SaveRecording
+
+Save recording sensor data and store the whole sequence to a file
+
+| _string_ |filename|The filename to save the recording to.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.StartRecording
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
+
+Start recording sensor data.
+
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.StartReplay
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
+
+Start full replay of the whole interaction sequence on an avatar.
+
+| _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
+| _Transform_ |selectedObject|If provided, the entire sensor recording will be replayed in this object's frame. If not, in global frame.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.StartReplayOnObject
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
+
+Start replaying a specific interaction segment on one object.
+
+| _Transform_ |obj|The object to play the interaction on.|
+| _int_ |avatarID|The avatar to play the interaction with.|
+|[*VG_HandSide*](#vg_handside) | handSide|The hand to play the interaction with.|
+| _int_ |interactionId|The ID of the interaction segment to be played on this object.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.StopRecording
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+
+
+Stop recording sensor data.
+
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
+### VG_Controller.StopReplay
+
+Stop replay of the recorded interaction sequence on an avatar.
+
+| _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
+
+
 
 ## [DATABASE_API](#database_api)
 
@@ -701,14 +962,26 @@ Get the current interaction type assigned to an object.
 | **returns** |[VG_InteractionType](#vg_interactiontype) | VG_InteractionType describing the current interaction type of the object.|
 
 
-### VG_Controller.GetNumGrasps
+### VG_Controller.GetNumGraspsInDB
 
-Receive the number of grasps for a specific object.
+Receive the number of saved grasps in the grasp db for a specific object, and optionally a specified hand.
 
 | _Transform_ |selectedObject|The object to get the number of available grasps for.|
 | _int_ |avatarID|If a valid avatarID together with handSide, receive only the available grasps for this hand (otherwise all available grasps).|
 |[*VG_HandSide*](#vg_handside) | handSide|If a valid handSide together with avatarID, receive only the available grasps for this hand (otherwise all available grasps).|
-| **returns** | _int_ | The number of grasps for the selected object (either all or for the specified hand).|
+| **returns** | _int_ | The number of saved grasps in the grasp db for the selected object (either all or for the specified hand).|
+
+Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.0.0.html)
+
+
+### VG_Controller.GetNumPrimaryGraspsInDB
+
+Receive the number of primary grasps in the grasp db for a specific object, and optionally a specified hand.
+
+| _Transform_ |selectedObject|The object to get the number of available grasps for.|
+| _int_ |avatarID|If a valid avatarID together with handSide, receive only the primary grasps for this hand (otherwise all available grasps).|
+|[*VG_HandSide*](#vg_handside) | handSide|If a valid handSide together with avatarID, receive only the primary grasps for this hand (otherwise all available grasps).|
+| **returns** | _int_ | The number of primary grasps in the grasp db for the selected object (either all or for the specified hand).|
 
 Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.0.0.html)
 
@@ -1125,159 +1398,6 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 
 
 
-## [RECORDING_INTERFACE_API](#recording_interface_api)
-
-### VG_Controller.GetReplayAvatarID
-
-Get the AvatarID of the first replay avatar.
-
-| _**out** int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-**Remark:**
- No guarantee on returning the one that was first registered as replay avatar
-
-
-
-### VG_Controller.GetReplayStartWristPose
-
-Get the starting wrist poses for full replay of the whole interaction sequence.
-
-| _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
-| _Transform_ |selectedObject|If provided, the entire sensor recording will transformed in to object's frame. If not, in global frame.|
-| _**out** Vector3_ |p_left|The position of the left wrist.|
-| _**out** Quaternion_ |q_left|The orientation of the left wrist.|
-| _**out** Vector3_ |p_right|The position of the right wrist.|
-| _**out** Quaternion_ |q_right|The orientation of the right wrist.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-**Remark:**
- LoadRecording need to be called before this to load recorded sensor data.
-
-
-**Remark:**
- SetProcessByRecordedFrame need to be called before this to set this avatar to be enabled for replay.
-
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.IsReplaySuccess
-
-Check if finished replay had identical response as recorded
-
-| **returns** | _bool_ | True if replay was identical, False otherwise.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.IsReplaying
-
-Check if a hand is currently replaying a recorded sensor data.
-
-| _int_ |avatarID|The avatar to check.|
-|[*VG_HandSide*](#vg_handside) | handSide|The hand to check.|
-| **returns** | _bool_ | True if replaying, False otherwise.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.LoadRecording
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
-
-
-Load recorded sensor data from a file, but do not start replay
-
-| _string_ |filename|The filename to load the recording from.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.ResumeReplay
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
-
-
-Resume replaying of an avatar.
-
-| _int_ |avatarID|The ID of the avatar to resume replaying the recording on (note: it has to be an avatar enabled for replay).|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.SaveRecording
-
-Save recording sensor data and store the whole sequence to a file
-
-| _string_ |filename|The filename to save the recording to.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.StartRecording
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
-
-
-Start recording sensor data.
-
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.StartReplay
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
-
-
-Start full replay of the whole interaction sequence on an avatar.
-
-| _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
-| _Transform_ |selectedObject|If provided, the entire sensor recording will be replayed in this object's frame. If not, in global frame.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.StartReplayOnObject
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
-
-
-Start replaying a specific interaction segment on one object.
-
-| _Transform_ |obj|The object to play the interaction on.|
-| _int_ |avatarID|The avatar to play the interaction with.|
-|[*VG_HandSide*](#vg_handside) | handSide|The hand to play the interaction with.|
-| _int_ |interactionId|The ID of the interaction segment to be played on this object.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.StopRecording
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
-
-
-Stop recording sensor data and store the whole sequence to a file
-
-| _string_ |filename|The filename to save the recording to.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-### VG_Controller.StopReplay
-
-Stop replay of the recorded interaction sequence on an avatar.
-
-| _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-
 ## [ENABLE_NETWORK_API](#enable_network_api)
 
 ### VG_Controller.RegisterAvatar
@@ -1300,6 +1420,23 @@ Register a new avatar during runtime.
 |[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
 | _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+
+## [ENABLE_DEVELOPMENT_API](#enable_development_api)
+
+### VG_Controller.SetReplayComparisonParameters
+
+Set parameters thresholds for replay recording validation.
+
+| _float_ |objectPositionThreshold|Threshold for selected object position. [mm]|
+| _float_ |objectRotationThreshold|Threshold for selected object rotation. [quaternion measure]|
+| _float_ |statePositionThreshold|Threshold for object state position. [mm]|
+| _float_ |stateAngleThreshold|Threshold for object state rotation. [radian]|
+| _int_ |interactionModeLag|Threshold for maximum interaction mode mismatch. []|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 
