@@ -19,7 +19,7 @@ folder: mydoc
 
 #### Interaction behaviors wanted
 
-* We want to assemble the a set of objects (wrenches in this example) into a chain connected through VG joint (used {% include tooltip.html tooltip="Cone" text="cone" %} joint with free motion in this example), while able to freely determine who is parent and who is child. 
+* We want to assemble a set of objects (wrenches in this example) into a chain connected through VG joint (used {% include tooltip.html tooltip="Cone" text="cone" %} joint with free motion in this example), while able to freely determine who is parent and who is child. 
 
 #### Tips for VR developers
 
