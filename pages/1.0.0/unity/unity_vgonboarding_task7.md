@@ -167,4 +167,4 @@ public class ChainAssembleVGArticulation : MonoBehaviour
 
 ````
 
-is the script showing how to use API function [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint) to attach and unattach wrenches from each other to form a chain. 
+is the script showing how to use API function [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint) to attach and unattach wrenches to and from each other to form a chain. 

@@ -21,12 +21,12 @@ folder: mydoc
 #### Interaction behaviors wanted
 
 * We want to close the water bottle with the cap screwed on. 
-* Water bottle or cap can be either physical or non-physical, so can not use Unity's physical joint support if they are not physical object.
+* Water bottle or cap can be either physical or non-physical, so can not use Unity's physical joint support if they are not {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %}.
 
 #### Tips for VR developers
 
 * VG_Articulation support creating constrained joints on non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %}.
-* When VG joint is changed through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) or [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerrecoverobjectjoint) VG internally handles remove and recover Rigidbody (see release notes [API Changes](release_notes.1.0.0.html)).
+* When an object's joint is changed in runtime through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) or [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerrecoverobjectjoint) VG internally handles remove and recover Rigidbody (see release notes [API Changes](release_notes.1.0.0.html) and page [physical object joint change](unity_component_vgarticulation.1.0.0.html#physical-object-joint-change)).
 
 ### Solution
 
@@ -44,7 +44,7 @@ using VirtualGrasp;
 
 /** 
  * AssembleVGArticulation shows as a tutorial on how to use the VG_Controller.ChangeObjectJoint function for
- * assemble and dissemble non-physical objects (objects without rigid body or articulation body).
+ * assemble and dissemble objects.
  */
 [LIBVIRTUALGRASP_UNITY_SCRIPT]
 [HelpURL("https://docs.virtualgrasp.com/unity_vgonboarding_task5." + VG_Version.__VG_VERSION__ + ".html")]
