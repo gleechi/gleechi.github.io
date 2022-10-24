@@ -645,12 +645,6 @@ This event is invoked in the frame when an object is fully release by all hands.
 
 ### VG_Controller.UnityEvent<VG_HandStatus>
 
-This event is invoked in the frame when an upstream movable object is fully release by all hands. The Transform it carries includes the object that has just been released.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
 This event is invoked in the frame when a hand pushing an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
@@ -673,17 +667,31 @@ Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
 
 ### VG_Controller.UnityEvent<VG_HandStatus>
 
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
+This event is invoked in the frame when a hand is switching from EMPTY mode to a non-empty mode.
 
 
 
 ### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when a hand is switching from a non-empty mode to EMPTY mode.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when an upstream movable object is fully release by all hands. The Transform it carries includes the object that has just been released.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when an upstream movable object is changed.
+
+
+
+### VG_Controller.UnityEvent<VG_HandStatus>
+
+This event is invoked in the frame when an upstream movable object is removed.
 
 
 
@@ -797,7 +805,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 Load recorded sensor data from a byte array.
 
-| _[unknown]_ |filename|The byte array to load the recording from.|
+| _byte[]_ |recording|The byte array to load the recording from.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)

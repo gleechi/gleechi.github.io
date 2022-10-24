@@ -28,6 +28,7 @@ For any joint type, there are a set of parameters to be used to configure the jo
 
 | Parameters | Description |
 |-------|--------|
+| Motion Type | if Free the motion in the joint defined dof(s) will not be constrained by any limits. |
 | Min | lower limit of 1-dof joint, i.e. revolute or prismatic joint. |
 | Max | upper limit of 1-dof joint, i.e. revolute or prismatic joint. |
 | Min x | lower limit of planar joint, along _xaxis_ of anchor transform. |

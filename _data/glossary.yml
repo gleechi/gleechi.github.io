@@ -7,7 +7,7 @@ VGPublicScript: Refers to a customizable component that exemplifies the use of c
 
 GameObject: In Unity, any node in the Hierarchy is called a GameObject.
 
-PhysicalObject: Refers to an object with dynamical properties assigned; in Unity a GameObject that has Rigidbody or Articulation Body component assigned is a physical object.
+PhysicalObject: Refers to an object with dynamical properties assigned; in Unity a GameObject that has Rigidbody (non-kinematic) or Articulation Body component assigned is a physical object.
 
 CABVG: Refers to VirtualGrasp's baking server, to which you can connect through VG_BakingClient -- a GUI interface that is part of the VG SDK; it is used for [object baking](object_baking.html). 
 

@@ -16,13 +16,13 @@ By default, the VG_articulation component sets an object to have floating {% inc
 
 As soon as you change the {% include tooltip.html tooltip="JointType" text="joint type" %}, the interface will change dynamically.
 
-{% include image.html file="unity/unity_vg_articulation_full_0_11_0.png" alt="VG Articulation" caption="VG_Articulation dynamic interface after changing to REVOLUTE joint." %}
+{% include image.html file="unity/unity_vg_articulation_full_1_0_0.png" alt="VG Articulation" caption="VG_Articulation dynamic interface after changing to REVOLUTE joint." %}
 
 All the parameters are explained in detail in [object articulation](object_articulation.1.0.0.html#object-articulation).
 
 {% include multiple_script.html %}
 
-{% include callout.html content="If you add multiple VG_Articulation components to a game object, the first active component will be used to configure your initial object articulation." %}
+{% include callout.html content="If you add multiple VG_Articulation components to a game object, only one component can be active and will be used to configure the initial object articulation." %}
 
 {% include callout.html content="If only an inactive VG_Articulation component is added to a game object, the object will be registered to VirtualGrasp and included in the [baking process](unity_component_vgbakingclient.1.0.0.html#step-2-preparation), however its interactability is temporarily disabled (equivalent to [SetObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#setobjectselectionweight) to 0)." %}
 
@@ -30,7 +30,7 @@ All the parameters are explained in detail in [object articulation](object_artic
 
 Regardless of what is the initial setting of an object's articulation, you can change the object's articulation parameters in runtime 
 through scripting using the API functions [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) 
-and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint).
+and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint). And these runtime changes are reflected by the current active VG_Articulation component in the Unity inspector.
 
 ### ChangeObjectJoint
 
@@ -46,4 +46,7 @@ As a result, all the parameters set in the component will be specified in runtim
 
 If you want to recover the object joint to its original parameters set by the **enabled** VG_Articulation component, you can call the [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint) API function.
 
-{% include important.html content="Switch an object to a non-floating joint type (whether through ChangeObjectJoint or RecoverObjectJoint) is not allowed if an object is physical, i.e. with Rigidbody or ArticulationBody components." %}
+### Physical Object Joint Change
+
+A {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} can not have constrained VG {% include tooltip.html tooltip="JointType" text="joint types" %} (non-Floating type), because VG's [object joint](object_articulation.1.0.0.html#object-joint) is inherently kinematic. This is why when adding VG_Articulation component to a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %}, only {% include tooltip.html tooltip="Floating" text="floating" %} type is allowed. 
+In runtime when [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint-1) or [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint) is called on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} to switch joint to non-constrained {% include tooltip.html tooltip="JointType" text="joint types" %}, VG internally will remove Rigidbody or Articulation Body on this game object, cache the physical properties, and later add them back on when switch back to {% include tooltip.html tooltip="Floating" text="floating" %} type.
