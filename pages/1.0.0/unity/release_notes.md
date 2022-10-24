@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V1.0.0 - rc1 (2022-10-21)
+## V1.0.0 - rc1 (2022-10-24)
 
 ##### Major Functionality Changes:
 * **Breaking change:** The old [GetNumGrasps](virtualgrasp_unityapi.0.15.0.html#vg_controllergetnumgrasps) api function changed name to [GetNumGraspsInDB](virtualgrasp_unityapi.1.0.0.html#vg_controllergetnumgraspsindb) to avoid potentially confusing user to think GetNumGrasps is to obtain currently executed grasps on an object. 
