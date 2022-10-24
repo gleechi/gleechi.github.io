@@ -27,6 +27,7 @@ folder: mydoc
 #### Tips for VR developers
 
 * This task is mainly to showcase VirtualGrasp's support on interaction with ArticulationBody. 
+* The assembling in this example is not making use of VG's non-physical joint systems, but purely of Unity's physical joint system provided by ArticulationBody component. To see how to use VG's joint system for assembling check out [Onboarding Task5](unity_vgonboarding_task5.1.0.0.html) and [Task 7](unity_vgonboarding_task7.1.0.0.html).
 
 ### Solution
 
