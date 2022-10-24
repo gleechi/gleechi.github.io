@@ -42,6 +42,8 @@ folder: mydoc
 
 * Added "ensemble physical object" support. That is when assembling two {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint), as an example shown in [VG Onboarding Task7](unity_vgonboarding_task7.1.0.0.html), grasping the child objects (when child became non-physical due to object change to constrained joint type), the parent which is still a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} will follow as if the parent-child has become an ensemble physical object.
 
+* When an object's Rigidbody component has Rigidbody.isKinematic true, VG will consider this object as a non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %}. (In previous versions whenever an object has Rigidbody component, even when it is kinematic, VG considers the object physical resulting in some unwanted interaction behaviors.)
+
 ##### GUI / Component Changes:
 * Only one enabled [VG_Articulation](unity_component_vgarticulation.1.0.0.html) component is allowed now, and the enabled component reflects the current [object articulation](object_articulation.1.0.0.html) status.
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html) for constrained joint types now allows selection of "Motion Type" to be Limited or Free, where Free means there is no limitation along the constrained dof(s) of this joint. 
@@ -56,7 +58,6 @@ folder: mydoc
 * Fixed a bug: when OnGraspTriggered event invoked, sometimes m_selectedObject is null.
 * Fixed a bug: sometimes an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object's {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} becomes negative causing this object not interactable. 
 * If an object is set to afford INDEX_PUSHABLE interaction, VG library will switch its {% include tooltip.html tooltip="InteractionType" text="interaction type" %} to {% include tooltip.html tooltip="StickyHand" text="STICKY HAND" %} to avoid some unneccssary debug outputs.
-* When an object's Rigidbody component has Rigidbody.isKinematic true, VG will consider this object as a non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %}.
 * [VG onboarding task 5](unity_vgonboarding_task5.1.0.0.html) added an additional prefab, "Task5_bottle_with_rigidbody", in the onboarding scene to show the same AssembleVGArticulation.cs also works on the bottle and cap when they are physical objects. 
 * Added [VG onboarding task 7](unity_vgonboarding_task7.1.0.0.html) showing off using VG Articulation to assemble a chain with physical objects.  
 * For [VG onboarding task4](unity_vgonboarding_task4.1.0.0.html) and [task5](unity_vgonboarding_task5.1.0.0.html), the function for assembling has improved computation of desired object rotation. 
