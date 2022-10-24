@@ -40,6 +40,8 @@ folder: mydoc
 
 * [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint) (two overloaded functions) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerrecoverobjectjoint) do not have any function signature change. However from this version, VG will internally remove Rigidbody or ArticulationBody on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} if the function call intends to change object joint to a constrained joint type (non-{% include tooltip.html tooltip="Floating" text="floating" %}), and recover just removed Rigidbody or ArticulationBody when it changes back to  {% include tooltip.html tooltip="Floating" text="floating" %} joint type. This change makes it convenient for Unity developers to benefit from VG's [object articulation](object_articulation.1.0.0.html) system on both physical and non-physical environments.
 
+* Added "ensemble physical object" support. That is when assembling two {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint), as an example shown in [VG Onboarding Task7](unity_vgonboarding_task7.1.0.0.html), grasping the child objects (when child became non-physical due to object change to constrained joint type), the parent which is still a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} will follow as if the parent-child has become an ensemble physical object.
+
 ##### GUI / Component Changes:
 * Only one enabled [VG_Articulation](unity_component_vgarticulation.1.0.0.html) component is allowed now, and the enabled component reflects the current [object articulation](object_articulation.1.0.0.html) status.
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html) for constrained joint types now allows selection of "Motion Type" to be Limited or Free, where Free means there is no limitation along the constrained dof(s) of this joint. 
@@ -63,7 +65,6 @@ folder: mydoc
 ##### Update to VG Core library:
 
 * Improved the grasp interaction on object that has rotating {% include tooltip.html tooltip="JointType" text="joint types" %}. 
-* Added "ensemble physical object" support. That is when assembling two {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint), as an example shown in [VG Onboarding Task7](unity_vgonboarding_task7.1.0.0.html), grasping the child objects (when child became non-physical due to object change to constrained joint type), the parent which is still a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} will follow as if the parent-child has become an ensemble physical object.
 * Completed {% include tooltip.html tooltip="Planar" text="planar" %} joint features by adding {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) support. **(fixed known issue from 0.15.0)**
 * Reduced dynamic grasp finger-object penetration when pinch grasp small elongated objects.
 
