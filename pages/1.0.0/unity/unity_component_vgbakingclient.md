@@ -21,7 +21,7 @@ If you are not familiar with the concept of object baking, please read the [obje
 
 ## VG_BakingClient
 
-{% include image.html file="unity/unity_vg_baking_client_0_12_0.png" alt="VG Baking Client in Unity." caption="VG_BakingClient in Unity." %}
+{% include image.html file="unity/unity_vg_baking_client_1_0_0.png" alt="VG Baking Client in Unity." caption="VG_BakingClient in Unity." %}
 
 <!--{% include warning.html content="CABVG is currently ongoing maintenance and an upgrade to version 2.0. It is therefore not available and the documentation below deprecated." %}-->
 
