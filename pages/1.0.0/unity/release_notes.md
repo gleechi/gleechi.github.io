@@ -62,7 +62,7 @@ folder: mydoc
 ##### Update to VG Core library:
 
 * Improved the grasp interaction on object that has rotating {% include tooltip.html tooltip="JointType" text="joint types" %}. 
-* When assemble two {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint), as an example shown in [VG Onboarding Task5](unity_vgonboarding_task5.1.0.0.html), the grasping the child object (cap in Task5), the parent will also follow even if parent is still a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %}. 
+* Added "ensemble physical object" support. That is when assembling two {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint), as an example shown in [VG Onboarding Task7](unity_vgonboarding_task7.1.0.0.html), grasping the child objects (when child became non-physical due to object change to constrained joint type), the parent which is still a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} will follow as if the parent-child has become an ensemble physical object.
 * Completed {% include tooltip.html tooltip="Planar" text="planar" %} joint features by adding {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) support. **(fixed known issue from 0.15.0)**
 * Reduced dynamic grasp finger-object penetration when pinch grasp small elongated objects.
 
