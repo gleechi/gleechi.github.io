@@ -19,7 +19,7 @@ folder: mydoc
 
 #### Interaction behaviors wanted
 
-* We want to assemble the a set of objects (wrenches in this example) into a chain connected through VG joint (used {% include tooltip.html tooltip="Cone" text="cone" %} joint with free motion in this example), while freely determing who is parent and who is child. 
+* We want to assemble the a set of objects (wrenches in this example) into a chain connected through VG joint (used {% include tooltip.html tooltip="Cone" text="cone" %} joint with free motion in this example), while able to freely determine who is parent and who is child. 
 
 #### Tips for VR developers
 
@@ -167,4 +167,4 @@ public class ChainAssembleVGArticulation : MonoBehaviour
 
 ````
 
-is the script showing how to use API function [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint) to attach and unattach the cap on to the bottle. 
+is the script showing how to use API function [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint) to attach and unattach wrenches from each other to form a chain. 
