@@ -1213,9 +1213,10 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 
 
 
-## [NETWORK_INTERFACE_API](#network_interface_api)
+## [NETWORK_INTERFACE_API **(pro*)**](#network_interface_api-pro)
 
 ### VG_Controller.GetBroadcastSignal
+<span class="label label-default">pro</span>
 
 Receive (from VG) a multiplayer broadcast message as a binary byte array.
 
@@ -1226,6 +1227,7 @@ Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.1.0.0.html)
 
 
 ### VG_Controller.SetBroadcastSignal
+<span class="label label-default">pro</span>
 
 Set (to VG) a multiplayer broadcast message as a binary byte array.
 
