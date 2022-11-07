@@ -29,7 +29,7 @@ In the majority of use cases only 1 single sensor is used.
 
 As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor.
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_0_15_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
 
 <!--
 {% include callout.html content="Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process." %}
@@ -72,11 +72,11 @@ For each sensor, you can assign multiple avatars, though in most cases you will 
 <!--enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.1.0.0.html), or the [VG_Networking Component](unity_component_vgnetworing.1.0.0.html).-->
 <!--Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.1.0.0.html), or the [VG_Recorder Component](unity_component_vgrecorder.1.0.0.html).-->
 
-### Profile
+### Controller Profile
 
-{% include image.html file="unity/unity_vg_ec_unityxrhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+{% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
-Through controller profiles (which are ScriptableObjects), you are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in __Resources/ExternalControllers__. Elements of each VG_ControllerProfile are explained in this table: 
+Through controller profiles (which are ScriptableObjects), you are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in __Resources/VG_ControllerProfiles__. Elements of each VG_ControllerProfile are explained in this table: 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 
@@ -85,9 +85,10 @@ Through controller profiles (which are ScriptableObjects), you are able to confi
 | External Type| name of the external controller, as a string, so one can write your own external controller. Note, here we supports adding a list of controller names, separated by ';', in order of priorization. E.g. "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.|  
 | Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
 | Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.1.0.0.html#vg_fingercontroltype). | 
-| Offset |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
+| Offset Position<br>Offset Rotation |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
 | Origin Name | Set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
 | Origin Scale | You can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
+| Hand Mappings | You can find a more detailed documentation on [Controller Axis Mappings](axis_mappings.1.0.0.html#controller-axis-mapping). | 
 
 <!--| Finger Control Type | Description |
 |-------|--------|
@@ -98,6 +99,12 @@ Through controller profiles (which are ScriptableObjects), you are able to confi
 | BY_EXTERNAL | only relevant for External Controller sensor type, finger will be set by an externally specified finger dofs. | -->
 
 {% include image.html width = "60" file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
+
+### Hand Profile
+
+{% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+
+Through hand profiles (which are ScriptableObjects), you are able to configure a number of hand model-related settings and thereyby allow you to quickly switch between different custom hands. Besides the original VG_GleechiHands_Profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [Hand Axis Mappings](axis_mappings.1.0.0.html#hand-axis-mapping).
 
 <!--
 ## Object Identifiers
