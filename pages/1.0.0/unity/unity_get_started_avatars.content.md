@@ -10,7 +10,7 @@ Next, link it into its place under Sensors → Avatars → Skeletal Mesh, by dra
 
 **In Pro-versions of VG,** you can replace this model by any other skinned mesh renderer that you import into the scene.
 
-In this case, you need to potentially create and configure a new VG_HandProfile for your model, and link it into its place under Sensors → Avatars → HandProfile. More about the use of custom hand models and configuring them is described on [Hand Axis Mappings](knowledge/axis_mappings.1.0.0.html).
+In this case, you need to potentially create and configure a new VG_HandProfile for your model, and link it into its place under Sensors → Avatars → HandProfile. More about the use of custom hand models and configuring them is described on [Hand Axis Mappings](axis_mappings.1.0.0.html#hand-axis-mapping).
 
 In addition, there are certain conditions on which kind of skeletal meshes are supported. As a rule of thumb, the rigging / model hierarchy should be same as the Gleechi hand model included in the SDK:
 

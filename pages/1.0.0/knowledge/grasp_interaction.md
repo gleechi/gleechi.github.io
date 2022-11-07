@@ -30,7 +30,7 @@ and then explain a set of parameters to configure and fine-tune the grasp intera
 * [Grasp Speed and Release Speed](#grasp-speed-and-release-speed)
 * [Throw Velocity and Angular Velocity Scales](#throw-velocity-scale-and-throw-angular-velocity-scale)
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction_0_15_0.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings (Unity)" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction_1_0_0.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings (Unity)" %}
 
 ### From Object Selection to Grasp Synthesis
 
