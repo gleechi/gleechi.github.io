@@ -226,21 +226,79 @@ Enum for setting which (VR) controller buttons.
 
 ## [EVENTS](#events)
 
-### VG_Controller.OnAfterReset
+### VG_Controller.OnAvatarSpecificObjectSelectionWeightChanged
 
-The event to call when we have reset all objects in the library.
+This event is invoked when an avatar-specific object selection weight is changed. The event carries the object and avatarID for which the weight has been changed and the new weight.
 
 
 
-### VG_Controller.OnBeforeReset
+### VG_Controller.OnGraspTriggered
 
-The event to call when we are going to reset all objects in the library.
+This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
 
 ### VG_Controller.OnInitialize
 
 The event to call when we have successfully initialized the library.
+
+
+
+### VG_Controller.OnObjectCollided
+
+This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectDeselected
+
+This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
+
+
+### VG_Controller.OnObjectFullyReleased
+
+This event is invoked in the frame when an object is fully release by all hands. The Transform it carries includes the object that has just been released.
+
+
+
+### VG_Controller.OnObjectGrasped
+
+This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectJointChanged
+
+This event is invoked when an object's articulation / joint is changed. The VG_Articulation it carries includes more information about the joint.
+
+
+
+### VG_Controller.OnObjectPushed
+
+This event is invoked in the frame when a hand pushing an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectReleased
+
+This event is invoked in the frame when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectSelected
+
+This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
+
+
+### VG_Controller.OnObjectSelectionWeightChanged
+
+This event is invoked when an object's selection weight is changed. The event carries the object for which the weight has been changed and the new weight.
 
 
 
@@ -605,120 +663,6 @@ Unregister avatar during runtime
 
 | _int_ |avatarID|The id of the avatar to be unregistered.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-
-### VG_Controller.UnityEvent<Transform
-
-This event is invoked when an object's selection weight is changed. The event carries the object for which the weight has been changed and the new weight.
-
-
-
-### VG_Controller.UnityEvent<Transform
-
-This event is invoked when an avatar-specific object selection weight is changed. The event carries the object and avatarID for which the weight has been changed and the new weight.
-
-
-
-### VG_Controller.UnityEvent<VG_Articulation>
-
-This event is invoked when an object's articulation / joint is changed. The VG_Articulation it carries includes more information about the joint.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when an object is fully release by all hands. The Transform it carries includes the object that has just been released.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand pushing an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is switching from EMPTY mode to a non-empty mode.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is switching from a non-empty mode to EMPTY mode.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when an upstream movable object is fully release by all hands. The Transform it carries includes the object that has just been released.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when an upstream movable object is changed.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when an upstream movable object is removed.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when object is grasped by 2nd hand. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when object is released by the 2nd grasping hand. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
-
 
 
 
