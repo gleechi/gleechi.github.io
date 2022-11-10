@@ -38,6 +38,8 @@ folder: mydoc
 * **Breaking change:** The old [GetNumGrasps](virtualgrasp_unityapi.0.15.0.html#vg_controllergetnumgrasps) api function changed name to [GetNumGraspsInDB](virtualgrasp_unityapi.1.0.0.html#vg_controllergetnumgraspsindb) to avoid potentially confusing user to think GetNumGrasps is to obtain currently executed grasps on an object. 
   * Together with this change, a new api function [GetNumPrimaryGraspsInDB](virtualgrasp_unityapi.1.0.0.html#vg_controllergetnumprimarygraspsindb) is added to give number of enabled {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} in the grasp DB. 
 
+* [VG_HandProfiles](unity_component_myvirtualgrasp.1.0.0.html#hand-profile) were introduced to simplify the external controller mapping for custom hand models.
+
 * [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint) (two overloaded functions) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerrecoverobjectjoint) do not have any function signature change. However from this version, VG will internally remove Rigidbody or ArticulationBody on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} if the function call intends to change object joint to a constrained joint type (non-{% include tooltip.html tooltip="Floating" text="floating" %}), and recover just removed Rigidbody or ArticulationBody when it changes back to  {% include tooltip.html tooltip="Floating" text="floating" %} joint type. This change makes it convenient for Unity developers to benefit from VG's [object articulation](object_articulation.1.0.0.html) system on both physical and non-physical environments.
 
 * Added "ensemble physical object" support. That is when assembling two {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint), as an example shown in [VG Onboarding Task7](unity_vgonboarding_task7.1.0.0.html), grasping the child objects (when child became non-physical due to object change to constrained joint type), the parent which is still a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} will follow as if the parent-child has become an ensemble physical object.
@@ -48,11 +50,17 @@ folder: mydoc
 * Only one enabled [VG_Articulation](unity_component_vgarticulation.1.0.0.html) component is allowed now, and the enabled component reflects the current [object articulation](object_articulation.1.0.0.html) status.
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html) for constrained joint types now allows selection of "Motion Type" to be Limited or Free, where Free means there is no limitation along the constrained dof(s) of this joint. 
 * [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) prefab has improved 3D shape and texture without any changes of functionality. 
+* "VirtualGrasp" Menu cleanup. Some obsolete entries were removed.
+* [VG_Articulation](unity_component_vgarticulation.1.0.0.html), [VG_Interactable](unity_component_vginteractable.1.0.0.html and [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) scripts are deactivated during runtime to better reflect that changes to them are only valid in editor mode.
+* Grasp and Release animation speeds in [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) GUI integer fields were replaced by range sliders.
 
 ##### API Changes:
 
 * Bugfix: if runtime [UnRegisterAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerunregisteravatar) and then reregister by calling [RegisterAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerregisteravatar) again, the reregistered avatar will lose sensor control. 
 * Added [VG_GestureType](virtualgrasp_unityapi.1.0.0.html#vg_gesturetype) enum and [MakeGesture](virtualgrasp_unityapi.1.0.0.html#vg_controllermakegesture) api switched to use this enum instead of previously using [VG_GraspType](virtualgrasp_unityapi.1.0.0.html#vg_grasptype). **(fixed known issue from 0.15.0)**
+* All API functions properly guarded if VG is actually active.
+* Removed SetPhysicalObject(), OnAfterReset, OnBeforeReset and ResetObject() and ResetAllObjects() API functions.
+* Added GetObjectSelectionWeight() and GetAvatarSpecificObjectSelectionWeight() API functions.
 
 ##### Other / Internal Changes:
 * Fixed a bug: when OnGraspTriggered event invoked, sometimes m_selectedObject is null.
@@ -62,6 +70,7 @@ folder: mydoc
 * Added [VG onboarding task 7](unity_vgonboarding_task7.1.0.0.html) showing off using VG Articulation to assemble a chain with physical objects.  
 * For [VG onboarding task4](unity_vgonboarding_task4.1.0.0.html) and [task5](unity_vgonboarding_task5.1.0.0.html), the function for assembling has improved computation of desired object rotation. 
 * Multiplayer (not available in free or pro versions) VG support now allows multiple players grasping on the same object at the same time, and also works with complex object settings.
+* The .NET TargetFrameworkVersion has been downgraded from 4.7.2 to 4.7.1 since it caused some issues for Unity+VSCode users.
 
 ##### Update to VG Core library:
 
