@@ -77,6 +77,7 @@ folder: mydoc
 ##### Update to VG Core library:
 
 * Improved the grasp interaction on object that has rotating {% include tooltip.html tooltip="JointType" text="joint types" %}. 
+* Improved the grasp interaction on floating objects with multiple hands. 
 * Completed {% include tooltip.html tooltip="Planar" text="planar" %} joint features by adding {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) support. **(fixed known issue from 0.15.0)**
 * Reduced dynamic grasp finger-object penetration when pinch grasp small elongated objects.
 
