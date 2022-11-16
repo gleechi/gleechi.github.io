@@ -23,7 +23,6 @@ override public void Awake()
 
 VG_ExternalControllerManager.cs is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} so that it is extendable, for example to add more controllers or functionalities.
 
-
 The VG_ExternalControllerManager is managing different VG_ExternalControllers. We call it **external controller**, because an external source or plugin is providing VirtualGrasp with the input data in Unity (but external to VirtualGrasp). In most cases, the source is a plugin provided by the hardware manufacturer for your engine of choice. 
 
 In contrast to external controllers we term **internal controllers** as those that link the controllers native library directly to VirtualGrasp. Internal controllers are by default not supported for the VirtualGrasp SDK, due to third-party distribution regulations.
@@ -35,8 +34,9 @@ Thus, whenever we speak of controllers or sensors in this documentation, we refe
 ## VG_ExternalController Class
 
 To link together a controller plugin with VG, the VirtualGrasp SDK provides a base class 
-VG_ExternalController together with a few ready-to-use child classes for the following
-controllers:
+VG_ExternalController. The VirtualGrasp SDK already includes a few ready-to-use child classes for the
+controllers listed below. For each controller, you will also find its [VG_ControllerProfile](unity_component_myvirtualgrasp.1.0.0.html#profile), among others to configure its [Controller Axis Mapping](axis_mappings.1.0.0.html#controller-axis-mapping).
+
 
 * [VG_EC_MouseHand](unity_vg_ec_mousehand.1.0.0.html) for Mouse control.
 * [VG_EC_UnityXRHand](unity_vg_ec_unityxrhand.1.0.0.html) for all XR controllers that are supported through the [UnityXR](https://docs.unity3d.com/Manual/XR.1.0.0.html) API.
@@ -51,6 +51,7 @@ While all these classes can serve as tutorials to understand how a VG_ExternalCo
 <br>
 {% include youtube.html id="Z-yjd1muM44" caption="Switching between different external controllers using VG_ControllerProfiles." %}
 
+<!--
 ## Modifying or Writing a Controller
 
 The following we describe technical considerations that you may have when you modify or write your own VG_ExternalController. You may especially end up here if you try to use your own, customized hand model for your application. Note that "SDK" in this case refers to the particular controller plugin (such as Oculus SDK, Ultraleap SDK, etc.).
@@ -73,3 +74,4 @@ In this case you have two options:
 
     1. In the optimal case that your hand model is aligned with finger tracking sensor data, just remove the two lines where modifyPose() is called.
     2. If that does not work that means your hand model is not aligned with the finger tracking sensor data and that you have to update the modifyPose() function. Enabling the DebugDraw() call just below the modifyPose() can help you by visualizing the skeleton and rotations.
+-->

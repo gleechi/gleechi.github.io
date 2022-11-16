@@ -4,7 +4,7 @@
 
 In any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.1.0.0.html), a sensor setting can be configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through various [VG_ExternalControllers](unity_component_vgexternalcontrollermanager.1.0.0.html). A number of controller profiles are already included in VirtualGrasp, such as Oculus controllers, mouse control, finger tracking, among others. 
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_0_15_0.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}
 
 You can use VirtualGrasp without a VR headset and your scene does not need to be a VR-enabled scene. 
 

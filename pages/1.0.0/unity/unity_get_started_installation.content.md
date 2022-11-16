@@ -17,7 +17,7 @@ There is only one minimal main component you have to add by default to use and c
 
 You can identify that VG has been successfully initialized when a message like these appear on the Console, also informing you of the SDK version:
 
-{% include callout.html content="Initialized VirtualGrasp SDK 1.0.0 (core 0.6.6)." %}
+{% include callout.html content="Initialized VirtualGrasp SDK (version 1.0.0-full)." %}
 
 <!--{% include image.html file="unity/unity_console_initialization.png" alt="VG Console Initialization" caption="VirtualGrasp initialization message in the Unity console." %}-->
 

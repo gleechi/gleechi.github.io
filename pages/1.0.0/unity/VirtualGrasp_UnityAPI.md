@@ -226,21 +226,79 @@ Enum for setting which (VR) controller buttons.
 
 ## [EVENTS](#events)
 
-### VG_Controller.OnAfterReset
+### VG_Controller.OnAvatarSpecificObjectSelectionWeightChanged
 
-The event to call when we have reset all objects in the library.
+This event is invoked when an avatar-specific object selection weight is changed. The event carries the object and avatarID for which the weight has been changed and the new weight.
 
 
 
-### VG_Controller.OnBeforeReset
+### VG_Controller.OnGraspTriggered
 
-The event to call when we are going to reset all objects in the library.
+This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
 
 ### VG_Controller.OnInitialize
 
 The event to call when we have successfully initialized the library.
+
+
+
+### VG_Controller.OnObjectCollided
+
+This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectDeselected
+
+This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
+
+
+### VG_Controller.OnObjectFullyReleased
+
+This event is invoked in the frame when an object is fully release by all hands. The Transform it carries includes the object that has just been released.
+
+
+
+### VG_Controller.OnObjectGrasped
+
+This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectJointChanged
+
+This event is invoked when an object's articulation / joint is changed. The VG_Articulation it carries includes more information about the joint.
+
+
+
+### VG_Controller.OnObjectPushed
+
+This event is invoked in the frame when a hand pushing an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectReleased
+
+This event is invoked in the frame when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+
+### VG_Controller.OnObjectSelected
+
+This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
+
+
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
+
+
+### VG_Controller.OnObjectSelectionWeightChanged
+
+This event is invoked when an object's selection weight is changed. The event carries the object for which the weight has been changed and the new weight.
 
 
 
@@ -587,6 +645,16 @@ The Update() method has been divided into three parts: IsolatedUpdateDataIn(), I
 
 
 
+### VG_Controller.RegisterAvatar
+
+Register a new avatar during runtime.
+
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
+|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
 ### VG_Controller.Release
 
 Release the plugin.
@@ -605,120 +673,6 @@ Unregister avatar during runtime
 
 | _int_ |avatarID|The id of the avatar to be unregistered.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-
-### VG_Controller.UnityEvent<Transform
-
-This event is invoked when an object's selection weight is changed. The event carries the object for which the weight has been changed and the new weight.
-
-
-
-### VG_Controller.UnityEvent<Transform
-
-This event is invoked when an avatar-specific object selection weight is changed. The event carries the object and avatarID for which the weight has been changed and the new weight.
-
-
-
-### VG_Controller.UnityEvent<VG_Articulation>
-
-This event is invoked when an object's articulation / joint is changed. The VG_Articulation it carries includes more information about the joint.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is starting to release an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when an object is fully release by all hands. The Transform it carries includes the object that has just been released.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand pushing an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is switching from EMPTY mode to a non-empty mode.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is switching from a non-empty mode to EMPTY mode.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when an upstream movable object is fully release by all hands. The Transform it carries includes the object that has just been released.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when an upstream movable object is changed.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when an upstream movable object is removed.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when a hand is starting to grasp an object. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when object is grasped by 2nd hand. The VG_HandStatus it carries includes more information about the interaction.
-
-
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.0.0.html)
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked in the frame when object is released by the 2nd grasping hand. The VG_HandStatus it carries includes more information about the interaction.
-
-
-
-### VG_Controller.UnityEvent<VG_HandStatus>
-
-This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
-
 
 
 
@@ -891,37 +845,6 @@ Stop replay of the recorded interaction sequence on an avatar.
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
-
-
-
-## [DATABASE_API](#database_api)
-
-### VG_Controller.DeleteGrasp
-
-Deletes object-specific grasp db. Won't delete grasp if there still exists one or more registered objects with objectHash.
-
-| _uint_ |objectHash|Hash of the object to delete.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-| _exception_ |ArgumentException|In case of unidentified objectHash.|
-
-
-### VG_Controller.GetGrasp
-
-Get grasp information in raw byte format by objectHash.
-
-| _uint_ |objectHash|Hash of the object for which to retrieve the grasp db.|
-| _**out** VG_RawDataHandle_ |handle|Handle with (encrypted) grasp information for object with hash objectHash.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-| _exception_ |ArgumentException|In case of unidentified objectHash.|
-
-
-### VG_Controller.LoadGrasp
-
-Loads object-specific grasp db.
-
-| _byte[]_ |grasp|Byte stream of object-specific grasp db.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-| _exception_ |IOException|In case of incorrect data format.|
 
 
 
@@ -1269,28 +1192,6 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 
 
 
-## [NETWORK_INTERFACE_API](#network_interface_api)
-
-### VG_Controller.GetBroadcastSignal
-
-Receive (from VG) a multiplayer broadcast message as a binary byte array.
-
-|[*VG_NetworkSignal*](#vg_networksignal) | signals|A bitmask of network signals to request. Default is All.|
-| **returns** | _byte[]_ | The message received by VG.|
-
-Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.1.0.0.html)
-
-
-### VG_Controller.SetBroadcastSignal
-
-Set (to VG) a multiplayer broadcast message as a binary byte array.
-
-| _byte[]_ |message|The message (raw bytes) to be sent and processed by VG.|
-
-Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.1.0.0.html)
-
-
-
 ## [SENSOR_INTERFACE_API](#sensor_interface_api)
 
 ### VG_Controller.GetGrabStrength
@@ -1403,48 +1304,6 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 | _Vector3?_ |position|The offset position. Set to null if position should not be modified.|
 | _Vector3?_ |rotation|The offset rotation. Set to null if rotation should not be modified.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-
-
-## [ENABLE_NETWORK_API](#enable_network_api)
-
-### VG_Controller.RegisterAvatar
-
-Register a new avatar during runtime.
-
-| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
-|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
-| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
-| _int_ |networkID1|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
-| _int_ |networkID2|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-
-### VG_Controller.RegisterAvatar
-
-Register a new avatar during runtime.
-
-| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
-|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
-| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-
-
-## [ENABLE_DEVELOPMENT_API](#enable_development_api)
-
-### VG_Controller.SetReplayComparisonParameters
-
-Set parameters thresholds for replay recording validation.
-
-| _float_ |objectPositionThreshold|Threshold for selected object position. [mm]|
-| _float_ |objectRotationThreshold|Threshold for selected object rotation. [quaternion measure]|
-| _float_ |statePositionThreshold|Threshold for object state position. [mm]|
-| _float_ |stateAngleThreshold|Threshold for object state rotation. [radian]|
-| _int_ |interactionModeLag|Threshold for maximum interaction mode mismatch. []|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 
