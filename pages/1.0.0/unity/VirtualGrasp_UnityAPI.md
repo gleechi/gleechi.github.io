@@ -848,10 +848,41 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 
+## [DATABASE_API](#database_api)
+
+### VG_Controller.DeleteGrasp
+
+Deletes object-specific grasp db. Won't delete grasp if there still exists one or more registered objects with objectHash.
+
+| _uint_ |objectHash|Hash of the object to delete.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+| _exception_ |ArgumentException|In case of unidentified objectHash.|
+
+
+### VG_Controller.GetGrasp
+
+Get grasp information in raw byte format by objectHash.
+
+| _uint_ |objectHash|Hash of the object for which to retrieve the grasp db.|
+| _**out** VG_RawDataHandle_ |handle|Handle with (encrypted) grasp information for object with hash objectHash.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+| _exception_ |ArgumentException|In case of unidentified objectHash.|
+
+
+### VG_Controller.LoadGrasp
+
+Loads object-specific grasp db.
+
+| _byte[]_ |grasp|Byte stream of object-specific grasp db.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+| _exception_ |IOException|In case of incorrect data format.|
+
+
+
 ## [GRASP_EDITOR_API](#grasp_editor_api)
 
 ### VG_Controller.EditGrasp
-<a href="https://www.youtube.com/watch?v=Z1j6BgosFVA"><span class="label label-warning">video</span></a>
+<a href="https://youtu.be/40kYLBKhmqk?list=TLGGpdQGi0diO7gxNjExMjAyMg"><span class="label label-warning">video</span></a>
 
 
 Call grasp editor functionality on a currently selected object and grasp.
@@ -1192,6 +1223,28 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 
 
 
+## [NETWORK_INTERFACE_API](#network_interface_api)
+
+### VG_Controller.GetBroadcastSignal
+
+Receive (from VG) a multiplayer broadcast message as a binary byte array.
+
+|[*VG_NetworkSignal*](#vg_networksignal) | signals|A bitmask of network signals to request. Default is All.|
+| **returns** | _byte[]_ | The message received by VG.|
+
+Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.1.0.0.html)
+
+
+### VG_Controller.SetBroadcastSignal
+
+Set (to VG) a multiplayer broadcast message as a binary byte array.
+
+| _byte[]_ |message|The message (raw bytes) to be sent and processed by VG.|
+
+Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.1.0.0.html)
+
+
+
 ## [SENSOR_INTERFACE_API](#sensor_interface_api)
 
 ### VG_Controller.GetGrabStrength
@@ -1303,6 +1356,21 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 |[*VG_SensorType*](#vg_sensortype) | sensor|The sensor type to change the offset for.|
 | _Vector3?_ |position|The offset position. Set to null if position should not be modified.|
 | _Vector3?_ |rotation|The offset rotation. Set to null if rotation should not be modified.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+
+## [ENABLE_NETWORK_API](#enable_network_api)
+
+### VG_Controller.RegisterAvatar
+
+Register a new avatar during runtime.
+
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
+|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| _int_ |networkID1|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
+| _int_ |networkID2|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
