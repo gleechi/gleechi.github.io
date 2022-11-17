@@ -15,15 +15,6 @@ Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCT
 
 ## [ENUMS](#enums)
 
-### VG_AvatarType
-
-An enum to descibe an avatar type
-
-|DEFAULT|A default avatar|
-|REMOTE|A remote avatar (multiplayer)|
-|REPLAY|A replay avatar (AI)|
-
-
 ### VG_BoneType
 
 An enum to describe a bone type, used for accessing of bones from outside the library.
@@ -304,13 +295,13 @@ This event is invoked when an object's selection weight is changed. The event ca
 
 ### VG_Controller.OnPostUpdate
 
-This event is invoked in the fixed update loop after VG runs its update. Thus, all other scripts that should update after the VG cycle should listen to this event.
+This event is invoked in the update loop after VG runs its update. Thus, all other scripts that should update after the VG cycle should listen to this event.
 
 
 
 ### VG_Controller.OnPreUpdate
 
-This event is invoked in the fixed update loop before VG runs its update. Thus, all other scripts that should update before the VG cycle should listen to this event.
+This event is invoked in the update loop before VG runs its update. Thus, all other scripts that should update before the VG cycle should listen to this event.
 
 
 
@@ -645,13 +636,44 @@ The Update() method has been divided into three parts: IsolatedUpdateDataIn(), I
 
 
 
-### VG_Controller.RegisterAvatar
+### VG_Controller.RegisterRemoteAvatar
+
+Register a new remote avatar during runtime.
+
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
+| _int_ |networkID1|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
+| _int_ |networkID2|If networking is used, these will be the networkingIDs of the right hand of the new avatar (we assume max 2 hands per avatar).|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.RegisterReplayAvatar
 
 Register a new avatar during runtime.
 
 | _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
-|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
 | _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.RegisterSensorAvatar
+
+Register a new avatar during runtime. Single sensor controlling each hand.
+
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| _VG_SensorSetup_ |primarySetup|The primary sensor setup used to control the avatar.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.RegisterSensorAvatar
+
+Register a new avatar during runtime. Double sensor for each hand.
+
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| _VG_SensorSetup_ |primarySetup|The primary sensor setup used to control the avatar.|
+| _VG_SensorSetup_ |secondarySetup|The secondary sensor setup used to control the avatar.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -1362,15 +1384,28 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 
 ## [ENABLE_NETWORK_API](#enable_network_api)
 
-### VG_Controller.RegisterAvatar
+### VG_Controller.RegisterSensorAvatar
 
-Register a new avatar during runtime.
+Register a new avatar during runtime. Single sensor with network hook.
 
 | _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
-|[*VG_AvatarType*](#vg_avatartype) | type|The avatar type this avatar should be.|
 | _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
-| _int_ |networkID1|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
-| _int_ |networkID2|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
+| _VG_SensorSetup_ |primarySetup|The primary sensor setup used to control the avatar.|
+| _int_ |networkID1|The remote sensor identifier for the left hand.|
+| _int_ |networkID2|The remote sensor identifier for the right hand.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.RegisterSensorAvatar
+
+Register a new avatar during runtime. Double sensor with network hook.
+
+| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
+| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| _VG_SensorSetup_ |primarySetup|The primary sensor setup used to control the avatar.|
+| _VG_SensorSetup_ |secondarySetup|The secondary sensor setup used to control the avatar.|
+| _int_ |networkID1|The remote sensor identifier for the left hand.|
+| _int_ |networkID2|The remote sensor identifier for the right hand.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
