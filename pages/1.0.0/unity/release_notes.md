@@ -97,7 +97,7 @@ folder: mydoc
 * A few events such as [OnObjectDeselected](virtualgrasp_unityapi.1.0.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer 
 (_not available in free or pro versions_) scenes.
 
-* VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistencies showed as non-smooth hand movement with/without holding an object. We recommend you to resolve these by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
+* VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
 
 
 ## V0.15.0(2022-07-27)
