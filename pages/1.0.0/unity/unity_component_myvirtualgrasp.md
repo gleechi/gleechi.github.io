@@ -45,7 +45,7 @@ VirtualGrasp allows creating multiple avatars in the interface by modifying _Siz
 {% include important.html content="Currently only one sensor avatar is allowed, but you can have mulitple replay avatars." %}
 
 
-#### HandProfile
+#### Hand Profile
 
 {% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 

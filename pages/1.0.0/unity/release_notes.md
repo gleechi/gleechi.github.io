@@ -56,19 +56,19 @@ folder: mydoc
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html) for constrained joint types now allows selection of "Motion Type" to be Limited or Free, where Free means there is no limitation along the constrained dof(s) of this joint. 
 * [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) prefab has improved 3D shape and texture. And {% include tooltip.html tooltip="PreviewGrasp" text="Preview Grasp" %} is added into the _Toggle_ button control to allow using it as the main interaction to search and add primary grasps.  
 * "VirtualGrasp" Menu cleanup. Some obsolete entries were removed.
-* [VG_Articulation](unity_component_vgarticulation.1.0.0.html), [VG_Interactable](unity_component_vginteractable.1.0.0.html and [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) scripts are deactivated during runtime to better reflect that changes to them are only valid in editor mode.
+* [VG_Articulation](unity_component_vgarticulation.1.0.0.html), [VG_Interactable](unity_component_vginteractable.1.0.0.html) and [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) scripts are deactivated during runtime to better reflect that changes to them are only valid in editor mode.
 * Grasp and Release animation speeds in [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) GUI integer fields were replaced by range sliders.
 
 ##### API Changes:
 
-* Bugfix: if runtime [UnRegisterAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerunregisteravatar) and then reregister by calling [RegisterAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerregisteravatar) again, the reregistered avatar will lose sensor control. 
+* Bugfix: if runtime [UnRegisterAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerunregisteravatar) and then reregister again, the reregistered avatar will lose sensor control. 
 * Added [VG_GestureType](virtualgrasp_unityapi.1.0.0.html#vg_gesturetype) enum and [MakeGesture](virtualgrasp_unityapi.1.0.0.html#vg_controllermakegesture) api switched to use this enum instead of previously using [VG_GraspType](virtualgrasp_unityapi.1.0.0.html#vg_grasptype). **(fixed known issue from 0.15.0)**
 * All API functions properly guarded if VG is actually active.
-* Removed SetPhysicalObject(), OnAfterReset, OnBeforeReset and ResetObject() and ResetAllObjects() API functions.
-* Added GetObjectSelectionWeight() and GetAvatarSpecificObjectSelectionWeight() API functions.
+* Removed SetPhysicalObject, OnAfterReset, OnBeforeReset and ResetObject and ResetAllObjects API functions.
+* Added [GetObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#vg_controllergetobjectselectionweight) and [GetAvatarSpecificObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#vg_controllergetavatarspecificobjectselectionweight) API functions.
 
 ##### Other / Internal Changes:
-* Fixed a bug: when OnGraspTriggered event invoked, sometimes m_selectedObject is null.
+* Fixed a bug: when [OnGraspTriggered](virtualgrasp_unityapi.1.0.0.html#vg_controllerongrasptriggered) event invoked, sometimes m_selectedObject is null.
 * Fixed a bug: sometimes an {% include tooltip.html tooltip="VGInteractable" text="interactable" %} object's {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} becomes negative causing this object not interactable. 
 * If an object is set to afford INDEX_PUSHABLE interaction, VG library will switch its {% include tooltip.html tooltip="InteractionType" text="interaction type" %} to {% include tooltip.html tooltip="StickyHand" text="STICKY HAND" %} to avoid some unneccssary debug outputs.
 * [VG onboarding task 5](unity_vgonboarding_task5.1.0.0.html) added an additional prefab, "Task5_bottle_with_rigidbody", in the onboarding scene to show the same AssembleVGArticulation.cs also works on the bottle and cap when they are physical objects. 
@@ -78,8 +78,8 @@ folder: mydoc
 * Fixed a bug: {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered. **(fixed known issue from 0.15.0)**
 * Fixed a bug: If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.1.0.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. **(fixed known issue from 0.15.0)**
 * The .NET TargetFrameworkVersion has been downgraded from 4.7.2 to 4.7.1 since it caused some issues for Unity+VSCode users.
-* Fixed a bug: when pause an VR app with Occulus button or remove headset, the grasp pose is lost. 
-* Improved the sync of status of [VG_Articulation](unity_component_vgarticulation.1.0.0.html) on a Game Object with the interactability of that objects.
+* Fixed a bug: when pause a VR app with Occulus button or remove headset, the grasp pose is lost. 
+* Improved the status sync of [VG_Articulation](unity_component_vgarticulation.1.0.0.html) on a Game Object with the interactability of that objects.
 
 ##### Update to VG Core library:
 
