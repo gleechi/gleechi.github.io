@@ -112,7 +112,7 @@ In VG library we define a “narrower” sensed set of affordances that determin
 
 This is a miscellaneous parameter to enforce an object can only be moved when grasped by two hands. 
 
-The purpose of this feature is to simulate a heavy object that need more hands to be moved when the object is non-physical (i.e. no Rigidbody or ArticulationBody component). Naturally, this setting will not take effect on {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %}. 
+The purpose of this feature is to simulate a heavy object that need more hands to be moved when the object is non-{% include tooltip.html tooltip="PhysicalObject" text="physical"%}. Naturally, this setting will not take effect on {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %}. 
 
 ## Graphical User Interface
 
