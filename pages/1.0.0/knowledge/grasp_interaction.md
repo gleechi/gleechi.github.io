@@ -64,7 +64,7 @@ There are two alternative grasp synthesis methods -- {% include tooltip.html too
 Therefore, VirtualGrasp offers a much more advanced, flexible grasp synthesis method -- {% include tooltip.html tooltip="DynamicGrasp" text="Dynamic grasp" %} -- which compute the {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} dynamically in runtime. To speed this process up to meet the runtime {% include tooltip.html tooltip="GraspSynthesis" text="grasp synthesis" %} requirement, we need to [bake the object](object_baking.1.0.0.html#object-baking).
 The baking output of objects is a grasp database which will enable DG for any humanoid hands.
 
-In the situations when you do want to grasp an object with a set of fixed ways, [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) can be used to add {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasp" %} into the grasp DB. 
+In the situations when you do want to grasp an object with a set of fixed ways, [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) can be used to add {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} into the grasp DB. 
 
 {% include important.html content="Grasp Synthesis Method is not exposed as a parameter for grasp interaction setting to avoid confusion caused by how to combine with Grasp Interaction Type. So whenever Jump Primary Grasp is selected as Grasp Interaction Type, Grasp Synthesis Method will be switched to Static Grasp internally in VG, otherwise by default Dynamic Grasp Synthesis Method is used." %}
 
