@@ -2,7 +2,7 @@
 
 {% include callout.html content="In VirtualGrasp we use the terms \"sensor\" and \"controller\" exchangeably since a VR controller is essentially a sensing device for hand poses." %}
 
-In any VG_MainScript, such as [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.1.0.0.html), a sensor setting can be configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through various [VG_ExternalControllers](unity_component_vgexternalcontrollermanager.1.0.0.html). A number of controller profiles are already included in VirtualGrasp, such as Oculus controllers, mouse control, finger tracking, among others. 
+In [MyVirtualGrasp.cs](unity_component_myvirtualgrasp.1.0.0.html), a sensor setup can be configured for any {% include tooltip.html tooltip="Controller" text="controller" %} (or {% include tooltip.html tooltip="Sensor" text="sensor" %}) supported through various [VG_ExternalControllers](unity_component_vgexternalcontrollermanager.1.0.0.html). A number of controller profiles are already included in VirtualGrasp, such as Oculus controllers, mouse control, finger tracking, among others. See [Sensors page](unity_component_myvirtualgrasp.1.0.0.html#sensors) for detailed instruction.
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="VG control flags." caption="MyVirtualGrasp is the default main configuration component for VirtualGrasp.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}
 

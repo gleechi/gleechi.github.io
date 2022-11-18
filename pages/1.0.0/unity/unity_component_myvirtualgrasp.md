@@ -58,14 +58,11 @@ This allows developers to combine two sensors to control avatar's hands. For exa
 
 In the majority of use cases only one primary sensor is used. 
 
-As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor.
-
-
-#### Profile
+#### Controller Profile
 
 {% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
-Through controller profiles (which are ScriptableObjects), you are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in __Resources/VG_ControllerProfiles__. Elements of each VG_ControllerProfile are explained in this table: 
+In each Sensor Setup, _Profile_ option allows you to select the "controller profile" (which are ScriptableObjects) for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in __Resources/VG_ControllerProfiles__. Elements of each VG_ControllerProfile are explained in this table: 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 
