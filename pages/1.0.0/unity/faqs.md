@@ -13,7 +13,7 @@ folder: mydoc
 
 ### Where is the GleechiLib Prefab?
 
-If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in version 0_9_6. You are expected to just insert a VG_MainScript component (such as MyVirtualGrasp) on a GameObject of your choice.
+If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in version 0_9_6. You are expected to just insert [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) component on a GameObject of your choice.
 
 ## Hands and Controllers
 
@@ -37,7 +37,7 @@ There could be four reasons:
 1. [Mesh is not readable](#mesh-not-readable).
 2. The added [VG_Articulation](unity_component_vgarticulation.1.0.0.html) component is disabled (unchecked).
 3. You have in runtime disabled this [VG_Articulation](unity_component_vgarticulation.1.0.0.html) component.
-4. You have in runtime [SetObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#setobjectselectionweight) to 0. 
+4. You have in runtime [SetObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#setobjectselectionweight) to value <=0. 
 
 ### I runtime changed the VG_Articulation component on an object with different joint type and/or other joint parameters. Why the interaction with this object does not correspond to these changes?
 
@@ -47,7 +47,7 @@ You can only runtime change object articulation by using API function [ChangeObj
 
 The default interaction type for all objects is {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} and Grasp Animation Speed 0.05 (see [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.1.0.0.html#global-grasp-interaction-settings)) which means that the a grasp moves the hand to the object in 0.05 seconds.
 
-So, when you are trying to catch a fast moving object such as a falling one, the hand will follow the object for 0.05 sec to grab it while falling. There are two quick options to get a different experience: 
+So, when you are trying to catch a fast moving object such as a falling one, the hand will follow the object for 0.05 sec to grab it while falling. There are two quick options to get a better experience: 
 
 1. Decrease the Grasp Animation Speed to 0.01 (which is the minimum). This makes the grasp happen quicker, while still moving the hand to the object. 
 2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} for this object and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Animation Speed for the object to interpolate into the hand. These and more [interaction types](grasp_interaction.1.0.0.html#grasp-interaction-type) are documented [here](grasp_interaction.1.0.0.html#grasp-interaction-type).

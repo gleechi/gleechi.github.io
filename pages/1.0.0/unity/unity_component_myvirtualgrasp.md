@@ -72,9 +72,9 @@ In each Sensor Setup, _Profile_ option allows you to select the "controller prof
 | Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
 | Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.1.0.0.html#vg_fingercontroltype). | 
 | Offset Position<br>Offset Rotation |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
-| Origin Name | Set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
-| Origin Scale | You can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
-| Hand Mappings | You can find a more detailed documentation on [Controller Axis Mappings](axis_mappings.1.0.0.html#controller-axis-mapping). | 
+| Origin Name | set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
+| Origin Scale | you can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
+| Hand Mappings | you can find a more detailed documentation on [Controller Axis Mappings](axis_mappings.1.0.0.html#controller-axis-mapping). | 
 
 <!--| Finger Control Type | Description |
 |-------|--------|
