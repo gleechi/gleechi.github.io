@@ -47,6 +47,12 @@ SensorData: Refers to the signals provided by a hand sensing device such as VR c
 
 SensorRecordAndReplay: Refers to the functionality of VirtualGrasp to allow recording SensorData during runtime interaction, and later replaying to reproduce those interaction. See [sensor record and replay](sensor_record_replay.html).
 
+SensorAvatar: Refers to the avatar whose hands are controlled by a sensor signal to move and interact with the objects. 
+
+ReplayAvatar: Refers to the avatar whose hands are controlled by pre-recorded sensor signal to move and interact with the objects.
+
+PhysicalAvatar: Refers to the avatar whose hands are physical, currently with colliders attached to the palm and fingers. 
+
 SensorOffset: When the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust an offset to synchronize them. See [sensor offset](unity_component_myvirtualgrasp.html#sensor).
 
 SensorPose: The 3D position and orientation of an avatar's wrist determined by a sensor (VR controller or finger tracking devices); note this can be different from the actual rendered pose of the avatar wrist. See [grasp interaction](grasp_interaction.html#grasp-interaction-type).

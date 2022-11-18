@@ -17,62 +17,51 @@ In Unity, VG_MainScript inherits from Monobehavior so you can use it as a compon
 
 On this page, we are going to describe all the major configuration options covered in MyVirtualGrasp.cs.
 
-## Sensors & Controllers
+## Avatars and Sensors
+
+{% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="Avatar and Sensor setup in Unity." caption="Avatar and Sensor setup in Unity." %}
 
 {% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a controller is essentially a sensing device for hand poses." %}
 
-VirtualGrasp allows you to configure multiple {% include tooltip.html tooltip="Sensor" text="sensors" %} in an application. 
+### Avatars
 
+VirtualGrasp provides a default avatar model "ThirdParty\VirtualGrasp\Resources\GleechiHands\GleechiRig". 
+And if you want to use your own model it is supported in the pro version, see [Avatars page](unity_get_started_avatars.1.0.0.html). 
+
+#### SkeletalMesh
+
+Specify this to provide a reference to the SkinnedMeshRenderer of the avatar model that you have imported in your scene and which should be controlled by VG during runtime.
+
+#### Replay and Physical
+
+There are three avatar types in VirtualGrasp:
+
+* By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, meaning that avatar's hands are directly controlled by the [VG's sensor / controller integration](unity_component_vgexternalcontrollermanager.1.0.0.html) for movement and object interaction. 
+* If _Replay_ option is ticked, then an avatar will be registered as {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. Such an avatar will be controlled by pre-recorded sensor data (see [Sensor Record and Replay](sensor_record_replay.1.0.0.html) and [VG_Recorder](unity_component_vgrecorder.1.0.0.html)). Note this feature is only available in VirtualGrasp pro version.
+* Both {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} and {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} can be created as a {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatar" %} if _Physical_ option is ticked. 
+
+VirtualGrasp allows creating multiple avatars in the interface by modifying _Size_ value. In the example image above, we specified to created two avatars, where first one is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, and second one is a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. 
+
+{% include important.html content="Currently only one sensor avatar is allowed, but you can have mulitple replay avatars." %}
+
+
+#### HandProfile
+
+{% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+
+Through hand profiles (which are ScriptableObjects), you are able to configure a number of hand model-related settings and thereyby allow you to quickly switch between different custom hands. Besides the original VG_GleechiHands_Profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [Hand Axis Mappings](axis_mappings.1.0.0.html#hand-axis-mapping).
+
+### Sensors
+
+VirtualGrasp allows you to assign upto two {% include tooltip.html tooltip="Sensor" text="sensors" %} for an avatar. 
 This allows developers to combine two sensors to control avatar's hands. For example you can choose to use a data glove to control avatar's finger pose and grasp triggers, while using an Oculus touch controller to control wrist position and orientation. Though this is not most common setup for today's development use cases, this feature may become useful expecially for research and development of new hand controllers. 
 
-In the majority of use cases only 1 single sensor is used. 
+In the majority of use cases only one primary sensor is used. 
 
 As you can see in MyVirtualGrasp, **Sensors** is a list in the interface. The first sensor element is listed as **Element 0**. All of the sensor elements will share the same interface, so in the descriptions below, we will focus on the importance of each element for each Sensor.
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}
 
-<!--
-{% include callout.html content="Pay attention to the Console in case there is anything you may need to take care of manually to complete the auto-setup process." %}
-
-{% include important.html content="No matter if Sensors Size is 1 or 2, all the components under Control list should be checked by the combined sensors, and if 2 sensor elements are used, they should not both control same component. For example two sensors should not both control position of the hand." %}
--->
-
-<!--
-<div class="panel-group" id="accordion1">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">Show Image</a>
-            </h4>
-        </div>
-        <div id="collapseOne1" class="panel-collapse collapse noCrossRef">
-            <div class="panel-body">
-                <img src="/images/unity/unity_vg_myvirtualgrasp_0_10_1.png">
-            </div>
-        </div>
-    </div>
-</div>
--->
-
-### Avatars
-
-For each sensor, you can assign multiple avatars, though in most cases you will have only one avatar per sensor.
-
-<!--{% include image.html file="unity/unity_vg_myvirtualgrasp_avatar.png" alt="Avatar configuration options in Unity." caption="Avatar configuration options in Unity." %}-->
-
-| Option | Description | Supported VG Version|
-|-------|--------|--------|
-| Model | should be HUMANOID_HAND in most application use cases. There could also be robotic hand options, but they will not be discussed here. | All Versions|
-| SkeletalMesh| used to provide a reference to the SkinnedMeshRenderer of the avatar that you have imported in your scene and which should be controlled by VG during runtime. | All Versions |
-| Replay | enable this if you want to use this avatar for replay recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.1.0.0.html), or the [VG_Recorder Component](unity_component_vgrecorder.1.0.0.html). This is a feature that is not available in the free version. | Pro Version|
-| Remote | This is a placeholder for advanced multiplayer support for hand interaction that we are working on towards a stable version.  This is a feature that is not available in the free version. | Pro Version |
-| Physical | enable this if you want VG to create colliders for this avatar and enable the hand for physical interactions. NOTE: at the moment, this option is experimental and should not be used apart from testing.| All Versions |
-
-
-<!--enable this if you want to use this avatar to reflect networked data (i.e. listening to another client over network in a multiplayer scenario), as explained in [Multiplayer Interaction](multiplayer_interaction.1.0.0.html), or the [VG_Networking Component](unity_component_vgnetworing.1.0.0.html).-->
-<!--Check the **Replay** option if you want to use this avatar not for runtime-control, but for replaying recorded sensor data, as explained in [Sensor Record and Replay](sensor_record_replay.1.0.0.html), or the [VG_Recorder Component](unity_component_vgrecorder.1.0.0.html).-->
-
-### Controller Profile
+#### Profile
 
 {% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
@@ -100,24 +89,7 @@ Through controller profiles (which are ScriptableObjects), you are able to confi
 
 {% include image.html width = "60" file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
 
-### Hand Profile
-
-{% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
-
-Through hand profiles (which are ScriptableObjects), you are able to configure a number of hand model-related settings and thereyby allow you to quickly switch between different custom hands. Besides the original VG_GleechiHands_Profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [Hand Axis Mappings](axis_mappings.1.0.0.html#hand-axis-mapping).
-
-<!--
-## Object Identifiers
-
-{% include image.html file="unity/unity_vg_object_identifiers.png" alt="VG object identifiers." caption="VG object identifiers" %}
-
-VirtualGrasp is using names to identify which objects are marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}. You can customize component and layer names in MyVirtualGrasp → Object Identifiers. 
-[VG_Articulation](unity_component_vgarticulation.1.0.0.html) component is a default entry, but this method also allows you to quickly adjust your project if you already have a layer or a component that marks your {% include tooltip.html tooltip="VGInteractable" text="interactable" %} objects.
-
-Once an object is marked as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}, it will be supported by VG's [grasp](grasp_interaction.1.0.0.html) and [push](push_interaction.1.0.0.html) interactions. 
--->
-
-### Origin
+#### Origin
 
 While each VG_ControllerProfile contains an "Origin Name" that should act as the origin of your controller data, you can overwrite the origin by selecting a different transform here. This may be useful since searching for a GameObject name as the VG_ControllerProfile does is error-prone, for example there may be multiple objects with that name.
 
