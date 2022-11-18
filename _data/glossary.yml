@@ -117,7 +117,7 @@ Bounce: One of object's StateAffordance that is only relevant for 1-dof joints; 
 
 TwoStage: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it bounces back to the highest and lowest values of the DiscreteStates in an alternating order. See [object affordances](object_articulation.html#object-affordances).
 
-Snaps: One of object's StateAffordance that is only relevant for 1-dof joints; when object is released from hand interaction, it snaps to the closest value of the DiscreteStates. See [object affordances](object_articulation.html#object-affordances).
+Snaps: One of object's StateAffordance that is only relevant for 1-dof joints or 2-dof Planer joint; when object is released from hand interaction, it snaps to the closest value of the DiscreteStates. See [object affordances](object_articulation.html#object-affordances).
 
 Joint: Joint is where two bones or GameObjects meet, and in VirtualGrasp it defines how a child object moves w.r.t. its parent (not the other way around); and different from the physics-based joint systems in some game engines like Unity, VG's joint system is non-physical (kinematic).
 
