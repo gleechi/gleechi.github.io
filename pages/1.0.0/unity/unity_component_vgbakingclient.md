@@ -12,7 +12,7 @@ folder: mydoc
 
 The VG_BakingClient is an {% include tooltip.html tooltip="VGInternalScript" text="internal script" %} that integrates the VirtualGrasp Cloud Baking Service ({% include tooltip.html tooltip="CABVG" text="CABVG" %}) into the Unity editor. 
 
-If you are not familiar with the concept of object baking, please read the [object baking documentation](object_baking.1.0.0.html) first.
+If you are not familiar with the concept of {% include tooltip.html tooltip="ObjectBaking" text="object baking" %}, please read the [object baking documentation](object_baking.1.0.0.html) first.
 
 {% include editor_script.html %}
 

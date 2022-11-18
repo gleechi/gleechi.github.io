@@ -52,7 +52,7 @@ A *.zip* file of all the content in *vg_tmp* folder is the input that is needed 
 
 When you stop the scene, two scene configuration files for each Unity or Unreal scene will be saved: 
 * *.scn*: Is a JSON representation of the current state of the scene including VG interaction setup and all interactable objects' status at the moment of saving. 
-* *.scn.objrig* completely corresponds to the *.scn* file, but uses indentation to represent object hiearchy. 
+* *.scn.objrig* completely corresponds to the *.scn* file, but uses indentation to represent object hierarchy. 
 
 These scene files reveals *how VG sees the status of your current scene* in your VR application. 
 Because of this, they are very useful for you to debug any VG-related interaction issues that you experience. 
@@ -61,7 +61,6 @@ For example:
 * {% include tooltip.html tooltip="ObjectHierarchy" text="object hierarchy" %}: you thought you placed antenna as the child of radio. To see if it is really that way in VG, you can check the *.scn* file. 
 * {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %}: you thought you have changed the selection weight on the antenna to 0, but it is actually not when checking the *.scn* file. 
 * {% include tooltip.html tooltip="Affordance" text="affordance" %}: you thought you have set the radio to be pushable (FINGER_PUSHABLE), but it is actually only graspable (ONLY_GRASPABLE).
-* {% include tooltip.html tooltip="GraspSynthesisMethod" text="synthesis method" %}: you thought you have decided to use static grasps (STATIC_GRASP) on the antenna, but it is using dynamic grasps (DYNAMIC_GRASP) in reality.
 
 {% include callout.html content="Since .scn files are written at the moment when you stop playing the scene, the saved information reflects your scene configuration at that moment. 
 So if you in runtime, for example, changed an object's joint type or selection weight, then the resulting .scn files will reflect the effective values after your runtime changes." %}
@@ -149,6 +148,7 @@ object {
     }
   }
   selection_weight: 1
+  interactable: true
   affordance: ONLY_GRASPABLE
   synthesis_method: DYNAMIC_GRASP
   physical: true
@@ -187,6 +187,7 @@ object {
     }
   }
   selection_weight: 1
+  interactable: true
   affordance: ONLY_GRASPABLE
   synthesis_method: DYNAMIC_GRASP
 }

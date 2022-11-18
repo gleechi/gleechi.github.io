@@ -15,7 +15,7 @@ VGSceneFiles: Refers to VirtualGrasp's JSON representation of the current intera
 
 ObjectHierarchy: Refers to parent-child relations between objects in a game scene; VG synchronizes its internal object hierarchy with that in the game scene in runtime. 
 
-ObjectBaking: Refers to a preprocess of expensive object analysis, which is needed for DynamicGrasp synthesis in runtime.
+ObjectBaking: Refers to a preprocess of expensive object analysis, which is needed for DynamicGrasp synthesis in runtime, can also be referred to as Grasp Baking.
 
 InteractiveBehaviors: Refers to when hand(s) interact with an object, how the object behaves (moves); it is determined by the object's [joint and affordances setup](object_articulation.html). 
 
