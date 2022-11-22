@@ -44,9 +44,9 @@ entries:
     - title: Controllers
       url: /controllers.1.0.0.html
       output: web 
-    - title: Axis Mappings
-      url: /axis_mappings.1.0.0.html
-      output: web 
+    - title: Avatars
+      url: /avatars.1.0.0.html
+      output: web  
     - title: Object Articulation
       url: /object_articulation.1.0.0.html
       output: web

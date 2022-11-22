@@ -10,13 +10,13 @@ Next, link it into its place under Avatars → Skeletal Mesh, by dragging and dr
 
 **In Pro-versions of VG,** you can replace this model by any other skinned mesh renderer that you import into the scene.
 
-In this case, you need to potentially create and configure a new VG_HandProfile for your model, and link it into its place under Avatars → HandProfile. More about the use of custom hand models and configuring them is described on [Hand Axis Mappings](axis_mappings.1.0.0.html#hand-axis-mapping).
+In this case, you need to potentially create and configure a new VG_HandProfile for your model, and link it into its place under Avatars → HandProfile. 
+In addition, there are certain conditions on which kind of skeletal meshes are supported. 
 
-In addition, there are certain conditions on which kind of skeletal meshes are supported. As a rule of thumb, the rigging / model hierarchy should be same as the Gleechi hand model included in the SDK:
+We recommend you to include both left and right hands in one avatar model like in Gleechi's avatar model. But if you do have two separate models for left and right hands, you can set it up with 2 Avatars with same _Hand Profile_ and [sensor setup](unity_get_started_sensors.1.0.0.html). 
 
-* 1 avatar should include 2 hands (its SkeletalMesh structure), 
-* 1 hand should include 5 fingers (no extra bones), and 
-* 1 finger should include 3-4 bones (with or without fingertip). If a fingertip is missing, VirtualGrasp will estimate its position, but it is recommended, and also very easy in Unity to add missing fingertip bones manually.
+More about the use of custom hand models and configuring them is described in [Avatars](avatars.1.0.0.html).
+
 
 <!--You can see that VG has successfully initialized the avatar when messages like these appear:
 {% include image.html file="unity/unity_avatar_init_0_11_1.png" alt="Unity avatar init." caption="VirtualGrasp initialization message in the Unity console." %}

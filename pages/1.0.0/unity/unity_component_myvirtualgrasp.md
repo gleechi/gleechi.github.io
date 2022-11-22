@@ -42,14 +42,12 @@ There are three avatar types in VirtualGrasp:
 
 VirtualGrasp allows creating multiple avatars in the interface by modifying _Size_ value. In the example image above, we specified to created two avatars, where first one is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, and second one is a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. 
 
-{% include important.html content="Currently only one sensor avatar is allowed, but you can have mulitple replay avatars." %}
-
 
 #### Hand Profile
 
 {% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
-Through hand profiles (which are ScriptableObjects), you are able to configure a number of hand model-related settings and thereyby allow you to quickly switch between different custom hands. Besides the original VG_GleechiHands_Profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [Hand Axis Mappings](axis_mappings.1.0.0.html#hand-axis-mapping).
+Through hand profiles (which are ScriptableObjects), you are able to configure a number of hand model-related settings and thereyby allow you to quickly switch between different custom hands. Besides the original VG_GleechiHands_Profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [Hand Axis Mappings](avatars.1.0.0.html#hand-axis-mappings).
 
 ### Sensors
 
