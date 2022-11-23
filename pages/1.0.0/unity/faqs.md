@@ -29,6 +29,11 @@ The VG SDK is hardware-agnostic and does not depend on a headset. Thus, the ques
 
 The reason for the mismatch is that each controller (for example, VG_EC_OculusHands.cs) is adjusting the raw finger orientations that come directly from the controller API (for example, from the Oculus Integration plugin) to match the hand model representation that is provided with the SDK. Read more on ways to resolve this issue on the [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.0.9.6.html#coordinate-frame-corrections) page.
 
+### Is there any concerns when using Oculus's OVR Player Controller?
+
+When you use VirtualGrasp, you should not put the hand rig under the OVR Player Controller. 
+The background of this is that the hand rig are controlled under-the-hood by VG continuously, and you don't need to put the hands into the TrackingSpace in order to move them. 
+
 ## Interaction
 
 ### I added a VG_Articulation component to my game object, but I could not interact with the object when I play.
