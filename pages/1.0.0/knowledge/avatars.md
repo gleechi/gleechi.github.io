@@ -34,10 +34,16 @@ Image below shows an example how to set it up in Unity, but it applies to any VG
 
 {% include image.html file="unity/unity_vg_avatar_sensor_separate_hands_setup.png" width="100" alt="Unity Avatar Sensor setup for two separate hand models." caption="Unity Avatar Sensor setup for two separate hand models." %}
 
-## Axis Mappings
+## Hand Profile
+
+VirtualGrasp provides "hand profile" to configure a number of hand model-related settings and thereyby allows you to quickly switch between different custom hands. 
+
+{% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+
+### Hand Axis Mappings
+
+
 
 ### Controller Axis Mapping
 
 {% include image.html width = "60" file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
-
-### Hand Axis Mappings
