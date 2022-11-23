@@ -72,7 +72,7 @@ In each Sensor Setup, _Profile_ option allows you to select the "controller prof
 | Offset Position<br>Offset Rotation |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
 | Origin Name | set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
 | Origin Scale | you can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
-| Hand Mappings | you can find a more detailed documentation on [Controller Axis Mappings](axis_mappings.1.0.0.html#controller-axis-mapping). | 
+| Hand Mappings | you can find a more detailed documentation on [Controller Axis Mappings](avatars.1.0.0.html#controller-axis-mapping). | 
 
 <!--| Finger Control Type | Description |
 |-------|--------|
@@ -82,7 +82,6 @@ In each Sensor Setup, _Profile_ option allows you to select the "controller prof
 | BY_OSCILLATED_ANIMATION | will let hand animated a little bit when not interacting with any object to avoid "rigid hand" feeling. (Experimental) | 
 | BY_EXTERNAL | only relevant for External Controller sensor type, finger will be set by an externally specified finger dofs. | -->
 
-{% include image.html width = "60" file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
 
 #### Origin
 
