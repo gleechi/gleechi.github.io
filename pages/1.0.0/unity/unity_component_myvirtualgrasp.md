@@ -26,7 +26,7 @@ On this page, we are going to describe all the major configuration options cover
 ### Avatars
 
 VirtualGrasp provides a default avatar model "ThirdParty\VirtualGrasp\Resources\GleechiHands\GleechiRig". 
-And if you want to use your own model it is supported in the pro version, see [Avatars page](unity_get_started_avatars.1.0.0.html). 
+And if you want to use your own model it is supported in the **Pro version**, see [Avatars page](avatars.1.0.0.html). 
 
 #### SkeletalMesh
 
@@ -37,11 +37,10 @@ Specify this to provide a reference to the SkinnedMeshRenderer of the avatar mod
 There are three avatar types in VirtualGrasp:
 
 * By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, meaning that avatar's hands are directly controlled by the [VG's sensor / controller integration](unity_component_vgexternalcontrollermanager.1.0.0.html) for movement and object interaction. 
-* If _Replay_ option is ticked, then an avatar will be registered as {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. Such an avatar will be controlled by pre-recorded sensor data (see [Sensor Record and Replay](sensor_record_replay.1.0.0.html) and [VG_Recorder](unity_component_vgrecorder.1.0.0.html)). Note this feature is only available in VirtualGrasp pro version.
+* If _Replay_ option is ticked, then an avatar will be registered as {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. Such an avatar will be controlled by pre-recorded sensor data (see [Sensor Record and Replay](sensor_record_replay.1.0.0.html) and [VG_Recorder](unity_component_vgrecorder.1.0.0.html)). Note this feature is only available in VirtualGrasp **Pro version**.
 * Both {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} and {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} can be created as a {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatar" %} if _Physical_ option is ticked. 
 
 VirtualGrasp allows creating multiple avatars in the interface by modifying _Size_ value. In the example image above, we specified to created two avatars, where first one is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, and second one is a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. 
-
 
 #### Hand Profile
 
@@ -49,37 +48,13 @@ In Unity, VirtualGrasp provie "hand profiles" as ScritableObjects. You are able 
 
 ### Sensors
 
-VirtualGrasp allows you to assign upto two {% include tooltip.html tooltip="Sensor" text="sensors" %} for an avatar. 
-This allows developers to combine two sensors to control avatar's hands. For example you can choose to use a data glove to control avatar's finger pose and grasp triggers, while using an Oculus touch controller to control wrist position and orientation. Though this is not most common setup for today's development use cases, this feature may become useful expecially for research and development of new hand controllers. 
-
-In the majority of use cases only one primary sensor is used. 
+VirtualGrasp allows you to assign upto two {% include tooltip.html tooltip="Sensor" text="sensors" %} for an avatar, which allows developers to combine two sensors to control avatar's hands. However in the majority of use cases only one primary sensor is used. Detailed background can be found in [Controllers](controllers.1.0.0.html) page. 
 
 #### Controller Profile
 
-{% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+In each Sensor Setup, _Profile_ option allows you to select the "controller profile" for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in __Resources/VG_ControllerProfiles__. 
 
-In each Sensor Setup, _Profile_ option allows you to select the "controller profile" (which are ScriptableObjects) for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in __Resources/VG_ControllerProfiles__. Elements of each VG_ControllerProfile are explained in this table: 
-
-<!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
-
-| Option | Description |
-|-------|--------|--------|
-| External Type| name of the external controller, as a string, so one can write your own external controller. Note, here we supports adding a list of controller names, separated by ';', in order of priorization. E.g. "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.|  
-| Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
-| Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.1.0.0.html#vg_fingercontroltype). | 
-| Offset Position<br>Offset Rotation |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
-| Origin Name | set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
-| Origin Scale | you can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
-| Hand Mappings | you can find a more detailed documentation on [Controller Axis Mappings](avatars.1.0.0.html#controller-axis-mapping). | 
-
-<!--| Finger Control Type | Description |
-|-------|--------|
-| BY_SENSOR_FULL_DOFS | for sensor that can provide full dofs hand tracking like Leap Motion, the avatar hand will follow your own hand on all dofs. | 
-| BY_SENSOR_LOW_DOFS| for sensor that can only provide one dof for each finger, like some data gloves, the avatar hand finger will be bended by just one value for each finger following a predefined animation path | 
-| BY_ANIMATION | for all sensor types which all provide a single value, grabbing strength, range between 0.0 and 1.0, all fingers will follow a predefined path in animation. | 
-| BY_OSCILLATED_ANIMATION | will let hand animated a little bit when not interacting with any object to avoid "rigid hand" feeling. (Experimental) | 
-| BY_EXTERNAL | only relevant for External Controller sensor type, finger will be set by an externally specified finger dofs. | -->
-
+To learn how to create your custom controller profile see [Controller Profile](controllers.1.0.0.html#controller-profile). 
 
 #### Origin
 

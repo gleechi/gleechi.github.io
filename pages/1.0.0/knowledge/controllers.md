@@ -20,9 +20,49 @@ In terms of hand control, VirtualGrasp can create natural [grasp interactions](g
 This is because unlike many physics-based grasp synthesis solutions in the market that require accurate finger tracking, VirtualGrasp exploits "object intelligence". By analyzing shape and affordances of an object model in VR, we can synthesize {% include tooltip.html tooltip="GraspConfiguration" text="grasp configurations" %} on a hand with just the knowledge of where the wrist is, and without any dependence of expensive physical simulations. 
 
 ## How to Setup
-Whether it is Unity or Unreal, you can assign your controller input in MyVirtualGrasp → Sensors. 
-See [Controller Profile](unity_component_myvirtualgrasp.1.0.0.html#controller-profile) to learn how to setup your sensors in Unity. A set of ready-to-use controllers is explained in on the [VG_ExternalControllerManager](http://localhost:4000/unity_component_vgexternalcontrollermanager.1.0.0.html#vg_externalcontroller-class) page. 
 
+
+VirtualGrasp allows you to assign upto two types of {% include tooltip.html tooltip="Sensor" text="sensors" %} for an avatar. 
+This allows developers to combine two sensors to control avatar's hands. For example you can choose to use a data glove to control avatar's finger pose and grasp triggers, while using an Oculus touch controller to control wrist position and orientation. Though this is not most common setup for today's development use cases, this feature may become useful expecially for research and development of new hand controllers. 
+
+In the majority of use cases only one primary sensor is used. 
+
+
+Whether it is Unity or Unreal, you can assign your controller input in MyVirtualGrasp → Avatars → Primary and Secondary Sensor Setup. 
+
+{% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="Avatar and Sensor setup in Unity." caption="Avatar and Sensor setup in Unity." %}
+
+### Controller Profile
+
+{% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+
+In each Sensor Setup, _Profile_ option allows you to select the "controller profile" (which are ScriptableObjects) for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. Elements of each VG_ControllerProfile are explained in this table: 
+
+<!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
+
+| Option | Description |
+|-------|--------|--------|
+| External Type| name of the external controller, as a string, so one can write your own external controller. Note, here we supports adding a list of controller names, separated by ';', in order of priorization. E.g. "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.|  
+| Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
+| Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.1.0.0.html#vg_fingercontroltype). | 
+| Offset Position<br>Offset Rotation |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
+| Origin Name | set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
+| Origin Scale | you can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
+| Hand Mappings | you can find a more detailed documentation on [Controller Axis Mappings](avatars.1.0.0.html#controller-axis-mappings). | 
+
+<!--| Finger Control Type | Description |
+|-------|--------|
+| BY_SENSOR_FULL_DOFS | for sensor that can provide full dofs hand tracking like Leap Motion, the avatar hand will follow your own hand on all dofs. | 
+| BY_SENSOR_LOW_DOFS| for sensor that can only provide one dof for each finger, like some data gloves, the avatar hand finger will be bended by just one value for each finger following a predefined animation path | 
+| BY_ANIMATION | for all sensor types which all provide a single value, grabbing strength, range between 0.0 and 1.0, all fingers will follow a predefined path in animation. | 
+| BY_OSCILLATED_ANIMATION | will let hand animated a little bit when not interacting with any object to avoid "rigid hand" feeling. (Experimental) | 
+| BY_EXTERNAL | only relevant for External Controller sensor type, finger will be set by an externally specified finger dofs. | -->
+
+A set of ready-to-use controllers is explained in on the [VG_ExternalControllerManager](http://localhost:4000/unity_component_vgexternalcontrollermanager.1.0.0.html#vg_externalcontroller-class) page. 
+
+### Origin
+
+While each VG_ControllerProfile contains an "Origin Name" that should act as the origin of your controller data, you can overwrite the origin by selecting a different transform here. 
 
 <!--
 {% include image.html file="unity/unity_control_flags.png" alt="VG control flags." caption="VG Control Flags" %}
