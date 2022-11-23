@@ -28,7 +28,7 @@ If developers want to use custom avatars with the Pro version of VirtualGrasp SD
 
 ### Separate Hand Models
 
-Sometimes, developers have a skeleton mesh for one hand (left or right), and create the opposite side by mirroring; or there could be separate skeleton meshes for left and right hands. In such cases VirtualGrasp considers the left and right hand skeleton meshes as two separate Avatars; and you can set it up using same _Hand Profile_ and [sensor setup](unity_get_started_sensors.1.0.0.html). 
+Sometimes, developers have a skeleton mesh for one hand side, and create the opposite side by mirroring hence a separate skeleton mesh. In such cases VirtualGrasp considers the left and right hand skeleton meshes as two separate _Avatars_; and you can set it up using same _Hand Profile_ and [sensor setup](unity_get_started_sensors.1.0.0.html). 
 
 Image below shows an example how to set it up in Unity, but it applies to any VG integrated game engines.
 
