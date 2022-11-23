@@ -13,7 +13,7 @@ Next, link it into its place under Avatars → Skeletal Mesh, by dragging and dr
 In this case, you need to potentially create and configure a new VG_HandProfile for your model, and link it into its place under Avatars → HandProfile. 
 In addition, there are certain conditions on which kind of skeletal meshes are supported. 
 
-We recommend you to include both left and right hands in one avatar model like in Gleechi's avatar model. But if you do have two separate models for left and right hands, you can set it up with 2 Avatars with same _Hand Profile_ and [sensor setup](unity_get_started_sensors.1.0.0.html). 
+We recommend you to include both left and right hands in one avatar model like in Gleechi's avatar model. But if you do have two separate models for left and right hands, you can set it up following [separate hand models](avatars.1.0.0.html#separate-hand-models). 
 
 More about the use of custom hand models and configuring them is described in [Avatars](avatars.1.0.0.html).
 
