@@ -48,30 +48,8 @@ controllers listed below. For each controller, you will also find its [VG_Contro
 
 While all these classes can serve as tutorials to understand how a VG_ExternalController can be setup, please refer to each particular page for further details on just that particular controller.
 
+{% include important.html content="The video below shows the old layout of Sensors -> Avatars, while currently is Avatars -> Sensors. However the content regarding the controller profiles are still valid." %}
+
 <br>
 {% include youtube.html id="Z-yjd1muM44" caption="Switching between different external controllers using VG_ControllerProfiles." %}
 
-<!--
-## Modifying or Writing a Controller
-
-The following we describe technical considerations that you may have when you modify or write your own VG_ExternalController. You may especially end up here if you try to use your own, customized hand model for your application. Note that "SDK" in this case refers to the particular controller plugin (such as Oculus SDK, Ultraleap SDK, etc.).
-
-### Initialization and Mapping
-
-Each VG_ExternalController has to include a VG_ExternalControllerMapping that maps the bone indices provided by the SDK to VirtualGrasp. The VG_ExternalControllerMapping includes variables for 16 bones (1 wrist + 5 * 3 finger bones). The VG_ExternalControllerMapping should be initialized in the VG_ExternalController Initialization function.
-
-### Coordinate-Frame Corrections
-
-If you use a custom hand rig different than the GleechiRig provided in the SDK, you may find the fingers of the hand bending along the wrong axis.
-
-The reason for the mismatch is that each finger controller (for example, VG_EC_OculusHands.cs) is adjusting the raw finger orientations that come directly from the controller API (for example, from the Oculus Integration plugin) to match the hand model representation that is provided with the SDK.
-
-In this case you have two options:
-
-1. you can base or adjust your hand rig to the existing hand rig, keeping the coordinate-frame definition (e.g., y along the finger bone, x to the right, z towards the palm) as in the provided rig. This is some work for a 3D artist.
-
-2. in the controller (such as VG_EC_OculusHands.cs), in the Compute() function, you will see that all the raw finger orientations are processed through the modifyPose() function. Each pose matrix is modified to a new rotation based on if it is wrist or finger and if it is left and right hand (these were the changes we needed for the provided hand model). This is some work for a programmer.
-
-    1. In the optimal case that your hand model is aligned with finger tracking sensor data, just remove the two lines where modifyPose() is called.
-    2. If that does not work that means your hand model is not aligned with the finger tracking sensor data and that you have to update the modifyPose() function. Enabling the DebugDraw() call just below the modifyPose() can help you by visualizing the skeleton and rotations.
--->

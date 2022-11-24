@@ -17,9 +17,14 @@ If you see the use of GleechiLib prefab in one of our videos, but can not find i
 
 ## Hands and Controllers
 
-### I used the VG_AutoSetup with a controller but the hands don't move.
+<!--### I used the VG_AutoSetup with a controller but the hands don't move.
 
 Assure that all the requirements of the controller you picked are met. You can find these requirements at the top of each script in ThirdParty/VirtualGrasp/VG_ExternalControllers/VG_EC_***.cs, as well as on the specific [documentation pages](unity_component_vgexternalcontrollermanager.1.0.0.html#vg_externalcontroller-class). Do not forget to uncomment the #define in the script as soon as you have installed all prerequisites.
+-->
+
+### I have setup the avatar but the hands don't move.
+
+Make sure you do not tick _Replay_ option in MyVirtualgrasp → Avatars window, see [Avatar Types](avatars.1.0.0.html#avatar-types) to understand more.
 
 ### Does VG support other headsets / controllers?
 
@@ -27,7 +32,7 @@ The VG SDK is hardware-agnostic and does not depend on a headset. Thus, the ques
 
 ### I am using my own hand models and the fingers bend strangely.
 
-The reason for the mismatch is that each controller (for example, VG_EC_OculusHands.cs) is adjusting the raw finger orientations that come directly from the controller API (for example, from the Oculus Integration plugin) to match the hand model representation that is provided with the SDK. Read more on ways to resolve this issue on the [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.0.9.6.html#coordinate-frame-corrections) page.
+The reason for the mismatch is that each controller (for example, [VG_EC_OculusHands.cs](unity_vg_ec_oculushand.1.0.0.html)) is adjusting the raw finger orientations that come directly from the controller API (for example, from the Oculus Integration plugin) to match the hand model representation that is provided with the SDK. Read more on ways to resolve this issue on the [controller axis mapping](avatars.1.0.0.html#controller-axis-mappings) page.
 
 ### Are there any concerns when using Oculus's OVR Player Controller?
 
