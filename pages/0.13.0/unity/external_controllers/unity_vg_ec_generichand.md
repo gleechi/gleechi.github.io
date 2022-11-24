@@ -6,7 +6,7 @@ permalink: unity_vg_ec_generichand.0.13.0.html
 folder: mydoc/external_controllers
 ---
 
-{% include external_controller.html %}
+{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.0.13.0.html) on the purpose of a VG_ExternalController." %}
 
 ## Description 
 
