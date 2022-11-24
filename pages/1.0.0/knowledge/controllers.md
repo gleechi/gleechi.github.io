@@ -36,7 +36,7 @@ Whether it is Unity or Unreal, you can assign your controller input in MyVirtual
 
 {% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
-In each Sensor Setup, _Profile_ option allows you to select the "controller profile" (which are ScriptableObjects) for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. Elements of each VG_ControllerProfile are explained in this table: 
+In each Sensor Setup, _Profile_ option allows you to select the "controller profile" for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. Elements of each VG_ControllerProfile are explained in this table: 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 
@@ -49,6 +49,9 @@ In each Sensor Setup, _Profile_ option allows you to select the "controller prof
 | Origin Name | set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
 | Origin Scale | you can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
 | Hand Mappings | you can find a more detailed documentation on [Controller Axis Mappings](avatars.1.0.0.html#controller-axis-mappings). | 
+
+{% include image.html width = "60" file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
+
 
 <!--| Finger Control Type | Description |
 |-------|--------|
