@@ -40,6 +40,8 @@ VirtualGrasp provides "hand profile" to configure a number of hand model-related
 
 {% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
+(Editing of this section is in progress.)
+
 ### Hand Axis Mappings
 
 ### Controller Axis Mappings
