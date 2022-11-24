@@ -38,7 +38,7 @@ Whether it is Unity or Unreal, in Sensor Setup, _Profile_ option allows you to s
 
 {% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
- Elements of each VG_ControllerProfile are explained in this table: 
+ Elements of VG_ControllerProfile are explained in this table: 
 
 <!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
 

@@ -9,7 +9,7 @@ permalink: unity_component_vgrecorder.1.0.0.html
 folder: mydoc
 ---
 
-{% include image.html file="unity/unity_vg_recorder_0_11_1.png" alt="VG Recorder" caption="VG_Recorder Component." %}
+{% include image.html file="unity/unity_vg_recorder_1_0_0.png" alt="VG Recorder" caption="VG_Recorder Component." %}
 
 ## Description
 
@@ -52,9 +52,10 @@ After you have recorded an {% include tooltip.html tooltip="InteractionSequence"
 
 This option is very handy when you want to record and replay for example an assembling task where interactions with multiple objects are involved. However you need to guaranttee while replaying all objects are at the same location as when they are recorded.
 
-Pressing the _Replay Sequence Key_ will replay the recording provided in _Recording Filename_ from its start with the replay avatar. Pressing _Left Shift + Replay Sequence Key_ will pause and resume the replay. To create a different avatar to follow the recording, please follow the [instructions below](#how-to-create-another-pair-of-hands-for-replaying-an-interaction-sequence). In the video below, the green button triggers this replay.
+Pressing the _Replay Sequence Key_ will replay the recording provided in _Recording Filename_ from its start with the replay avatar. Pressing _Left Shift + Replay Sequence Key_ will pause and resume the replay. To create a different avatar to follow the recording, please follow the [instructions below](#how-to-create-another-pair-of-hands-for-replaying-an-interaction-sequence). 
+<!--In the video below, the green button triggers this replay.-->
 
-{% include youtube.html id="o5F5tUb8RQM" caption="Record Replay 1." %}
+<!--{% include youtube.html id="o5F5tUb8RQM" caption="Record Replay 1." %}-->
 
 ### Full and object-specific interaction replay
 
@@ -80,7 +81,7 @@ This option is handy when you want to record the entire training sequence that i
 
 ## How to Query Start Pose of Hands
 
-You can use [GetReplayStartWristPose](virtualgrasp_unityapi.1.0.0.html#getreplaystartwristpose) to query the start pose of the wrists of the _replay avatar_ when replay is on [full and scene-specific interaction](#full-and-scene-specific-interaction-replay) or [full and object-specific interaction](#full-and-object-specific-interaction-replay). Note this does not work when replaying [partial and object-specific interaction](#partial-and-object-specific-interaction-replay).
+You can use [GetReplayStartWristPose](virtualgrasp_unityapi.1.0.0.html#vg_controllergetreplaystartwristpose) to query the start pose of the wrists of the _replay avatar_ when replay is on [full and scene-specific interaction](#full-and-scene-specific-interaction-replay) or [full and object-specific interaction](#full-and-object-specific-interaction-replay). Note this does not work when replaying [partial and object-specific interaction](#partial-and-object-specific-interaction-replay).
 
 As shown in the VG_Recorder GUI, _Set Hand Start Pose Key_ "S" demonstrate how this is done in the script:
 ```js
@@ -100,10 +101,10 @@ If you replay the whole {% include tooltip.html tooltip="InteractionSequence" te
 
 In order to instantiate another pair of hands to be controlled by the replay, 
 * add another avatar with hands into the scene (such as by duplicating the avatar you already have), 
-* add another element to VG_MainScript→Sensors→Avatars, drag the SkinnedMeshRenderer from scene to _SkeletalMesh_ field and check it as _Replay_ avatar (see below), 
-* also assigne the SkinnedMeshRenderer to the _Replaying avatar_  slot of the VG_Recorder (meaning that you want to replay the recordings on this avatar).
+* add another element to VG_MainScript→Avatars, drag the SkinnedMeshRenderer from scene to _SkeletalMesh_ field and check it as _Replay_ avatar (see below), 
+* also assign the SkinnedMeshRenderer to the _Replaying avatar_  slot of the VG_Recorder (meaning that you want to replay the recordings on this avatar).
 
-{% include image.html file="unity/unity_vg_recorder_avatars_0_11_1.png" alt="VG Recorder Hands" caption="In MyVirtualGrasp: Setup for another avatar to replay recorded data." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="In MyVirtualGrasp: Setup for another avatar to replay recorded data." caption="In MyVirtualGrasp: Setup for another avatar to replay recorded data." %}
 
 <!--
 ## Videos

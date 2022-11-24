@@ -34,11 +34,8 @@ Specify this to provide a reference to the SkinnedMeshRenderer of the avatar mod
 
 #### Replay and Physical
 
-There are three avatar types in VirtualGrasp:
-
-* By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, meaning that avatar's hands are directly controlled by the [VG's sensor / controller integration](unity_component_vgexternalcontrollermanager.1.0.0.html) for movement and object interaction. 
-* If _Replay_ option is ticked, then an avatar will be registered as {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. Such an avatar will be controlled by pre-recorded sensor data (see [Sensor Record and Replay](sensor_record_replay.1.0.0.html) and [VG_Recorder](unity_component_vgrecorder.1.0.0.html)). Note this feature is only available in VirtualGrasp **Pro version**.
-* Both {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} and {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} can be created as a {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatar" %} if _Physical_ option is ticked. 
+There are three avatar types in VirtualGrasp (see [Avatar Types](avatars.1.0.0.html#avatar-types)).
+By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}. If _Replay_ is ticked, the avatar becomes {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} (Pro version only). And both sensor and replay avatars can be {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatars" %}.
 
 VirtualGrasp allows creating multiple avatars in the interface by modifying _Size_ value. In the example image above, we specified to created two avatars, where first one is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, and second one is a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. 
 
