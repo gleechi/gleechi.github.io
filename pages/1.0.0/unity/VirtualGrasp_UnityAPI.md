@@ -8,9 +8,9 @@ toc: true
 ---
 <hr><b>Tags</b>
 <table>
-<tr><td><span class="label label-default">pro</span></td><td>this function is related to a feature that is not part of the free version.
+<tr><td><span class="label label-primary">pro</span></td><td>this function is related to a feature that is not part of the free version.
 Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCTION.</td></tr>
-<tr><td><span class="label label-primary">video</span></td><td>this function is related to a tutorial movie.</td></tr>
+<tr><td><span class="label label-default">video</span></td><td>this function is related to a tutorial movie.</td></tr>
 </table><hr>
 
 ## [ENUMS](#enums)
@@ -698,9 +698,10 @@ Unregister avatar during runtime
 
 
 
-## [RECORDING_INTERFACE_API](#recording_interface_api)
+## [RECORDING_INTERFACE_API **[pro]**](#recording_interface_api-pro)
 
 ### VG_Controller.CollectRecording
+<span class="label label-primary">pro</span>
 
 Collect recording sensor data.
 
@@ -711,6 +712,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.GetReplayAvatarID
+<span class="label label-primary">pro</span>
 
 Get the AvatarID of the first replay avatar.
 
@@ -723,6 +725,7 @@ Get the AvatarID of the first replay avatar.
 
 
 ### VG_Controller.GetReplayStartWristPose
+<span class="label label-primary">pro</span>
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
 
@@ -746,6 +749,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.IsReplaySuccess
+<span class="label label-primary">pro</span>
 
 Check if finished replay had identical response as recorded
 
@@ -755,6 +759,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.IsReplaying
+<span class="label label-primary">pro</span>
 
 Check if a hand is currently replaying a recorded sensor data.
 
@@ -766,7 +771,8 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.LoadRecording
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+<span class="label label-primary">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-default">video</span></a>
 
 
 Load recorded sensor data from a file, but do not start replay
@@ -778,6 +784,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.LoadRecording
+<span class="label label-primary">pro</span>
 
 Load recorded sensor data from a byte array.
 
@@ -788,7 +795,8 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.ResumeReplay
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+<span class="label label-primary">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-default">video</span></a>
 
 
 Resume replaying of an avatar.
@@ -800,6 +808,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.SaveRecording
+<span class="label label-primary">pro</span>
 
 Save recording sensor data and store the whole sequence to a file
 
@@ -810,7 +819,8 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StartRecording
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+<span class="label label-primary">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-default">video</span></a>
 
 
 Start recording sensor data.
@@ -821,7 +831,8 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StartReplay
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+<span class="label label-primary">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-default">video</span></a>
 
 
 Start full replay of the whole interaction sequence on an avatar.
@@ -834,7 +845,8 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StartReplayOnObject
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+<span class="label label-primary">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-default">video</span></a>
 
 
 Start replaying a specific interaction segment on one object.
@@ -849,7 +861,8 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StopRecording
-<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-warning">video</span></a>
+<span class="label label-primary">pro</span>
+<a href="https://www.youtube.com/watch?v=o5F5tUb8RQM"><span class="label label-default">video</span></a>
 
 
 Stop recording sensor data.
@@ -860,6 +873,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StopReplay
+<span class="label label-primary">pro</span>
 
 Stop replay of the recorded interaction sequence on an avatar.
 
@@ -870,41 +884,10 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 
-## [DATABASE_API](#database_api)
-
-### VG_Controller.DeleteGrasp
-
-Deletes object-specific grasp db. Won't delete grasp if there still exists one or more registered objects with objectHash.
-
-| _uint_ |objectHash|Hash of the object to delete.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-| _exception_ |ArgumentException|In case of unidentified objectHash.|
-
-
-### VG_Controller.GetGrasp
-
-Get grasp information in raw byte format by objectHash.
-
-| _uint_ |objectHash|Hash of the object for which to retrieve the grasp db.|
-| _**out** VG_RawDataHandle_ |handle|Handle with (encrypted) grasp information for object with hash objectHash.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-| _exception_ |ArgumentException|In case of unidentified objectHash.|
-
-
-### VG_Controller.LoadGrasp
-
-Loads object-specific grasp db.
-
-| _byte[]_ |grasp|Byte stream of object-specific grasp db.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-| _exception_ |IOException|In case of incorrect data format.|
-
-
-
 ## [GRASP_EDITOR_API](#grasp_editor_api)
 
 ### VG_Controller.EditGrasp
-<a href="https://youtu.be/40kYLBKhmqk?list=TLGGpdQGi0diO7gxNjExMjAyMg"><span class="label label-warning">video</span></a>
+<a href="https://youtu.be/40kYLBKhmqk?list=TLGGpdQGi0diO7gxNjExMjAyMg"><span class="label label-default">video</span></a>
 
 
 Call grasp editor functionality on a currently selected object and grasp.
@@ -1245,28 +1228,6 @@ Set the throw velocity scale for a selected object. The throw velocity scale def
 
 
 
-## [NETWORK_INTERFACE_API](#network_interface_api)
-
-### VG_Controller.GetBroadcastSignal
-
-Receive (from VG) a multiplayer broadcast message as a binary byte array.
-
-|[*VG_NetworkSignal*](#vg_networksignal) | signals|A bitmask of network signals to request. Default is All.|
-| **returns** | _byte[]_ | The message received by VG.|
-
-Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.1.0.0.html)
-
-
-### VG_Controller.SetBroadcastSignal
-
-Set (to VG) a multiplayer broadcast message as a binary byte array.
-
-| _byte[]_ |message|The message (raw bytes) to be sent and processed by VG.|
-
-Used in: [VG_NetworkManager](unity_component_vgnetworkmanager.1.0.0.html)
-
-
-
 ## [SENSOR_INTERFACE_API](#sensor_interface_api)
 
 ### VG_Controller.GetGrabStrength
@@ -1382,38 +1343,10 @@ Change the sensor offset in runtime. The sensor offset is the offset between the
 
 
 
-## [ENABLE_NETWORK_API](#enable_network_api)
-
-### VG_Controller.RegisterSensorAvatar
-
-Register a new avatar during runtime. Single sensor with network hook.
-
-| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
-| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
-| _VG_SensorSetup_ |primarySetup|The primary sensor setup used to control the avatar.|
-| _int_ |networkID1|The remote sensor identifier for the left hand.|
-| _int_ |networkID2|The remote sensor identifier for the right hand.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-
-### VG_Controller.RegisterSensorAvatar
-
-Register a new avatar during runtime. Double sensor with network hook.
-
-| _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
-| _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
-| _VG_SensorSetup_ |primarySetup|The primary sensor setup used to control the avatar.|
-| _VG_SensorSetup_ |secondarySetup|The secondary sensor setup used to control the avatar.|
-| _int_ |networkID1|The remote sensor identifier for the left hand.|
-| _int_ |networkID2|The remote sensor identifier for the right hand.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-
-
 <hr><b>Tags</b>
 <table>
-<tr><td><span class="label label-default">pro</span></td><td>this function is related to a feature that is not part of the free version.
+<tr><td><span class="label label-primary">pro</span></td><td>this function is related to a feature that is not part of the free version.
 Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCTION.</td></tr>
-<tr><td><span class="label label-primary">video</span></td><td>this function is related to a tutorial movie.</td></tr>
+<tr><td><span class="label label-default">video</span></td><td>this function is related to a tutorial movie.</td></tr>
 </table><hr>
 
