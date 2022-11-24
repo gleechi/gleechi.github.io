@@ -106,11 +106,9 @@ VG_Controller.GetReplayStartWristPose(replayingAvatarInstanceID, m_replayObject,
 
 {% include callout.html content="Note that querying the start pose of hands does not affect later replaying the interaction sequence." %}
 
-## How to Create another Pair of Hands for Replaying an Interaction Sequence
+## How to Create another Pair of Hands for Replaying
 
-If you replay the whole {% include tooltip.html tooltip="InteractionSequence" text="interaction sequence" %} of {% include tooltip.html tooltip="SensorData" text="sensor data" %} without any changes, the controlled VR hands will be disembodied, which is what you potentially do not want. 
-
-In order to instantiate another pair of hands to be controlled by the replay, 
+If you want a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} co-exist with a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} while playing in a scene, you can instantiate another pair of hands to be controlled by the replay, 
 * add another avatar with hands into the scene (such as by duplicating the avatar you already have), 
 * add another element to VG_MainScript→Avatars, drag the SkinnedMeshRenderer from scene to _SkeletalMesh_ field and check it as _Replay_ avatar (see below), 
 * also assign the SkinnedMeshRenderer to the _Replaying avatar_  slot of the VG_Recorder (meaning that you want to replay the recordings on this avatar).

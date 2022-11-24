@@ -62,11 +62,11 @@ Either the entire <a href="#" data-toggle="tooltip" data-original-title="{{site.
 
 What is recorded is the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorData}}">sensor data</a> -- wrist position, orientation and grasp trigger signals.
 In other words, what we record is user provided control signals on hands -- where a user places hand, and when a user want to grasp and interact with an object. 
-And what we DO NOT record is the "result" of these control signals, namely, when and how a hand formed the 
-<a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a>.
+And what we DO NOT record is the "result" of these control signals, namely, when a hand grasped an object, which object is grasped, and when and how a hand formed the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.GraspConfiguration}}">grasp configuration</a>.
 
-As a result, for example, if you recorded a set of sensor data on a particular scene with a set of objects placed at specific locations, and later you tried to play this sensor data on a different scene with either same set of objects placed at different places, or with different set of objects, the resulting interaction will NOT be the same. 
-
+Therefore, if you want to achieve same interaction behaviors of the avatar during recording, replaying setup need to guarrantee to
+1. use the same avatar (mainly same pair of hands skeleton mesh) as the recording, and
+2. use the same scene (same set of objects at same locations) as the recording.
 
 To learn more details on how to use <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorRecordAndReplay}}">sensor record and replay</a> 
 in Unity please see [VG_Recorder](unity_component_vgrecorder.1.0.0.html#unity-component-vgrecorder).
