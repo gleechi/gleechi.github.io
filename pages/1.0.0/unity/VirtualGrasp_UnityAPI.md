@@ -698,9 +698,10 @@ Unregister avatar during runtime
 
 
 
-## [RECORDING_INTERFACE_API](#recording_interface_api)
+## [RECORDING_INTERFACE_API **[pro]**](#recording_interface_api-pro)
 
 ### VG_Controller.CollectRecording
+<span class="label label-primary">pro</span>
 
 Collect recording sensor data.
 
@@ -711,6 +712,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.GetReplayAvatarID
+<span class="label label-primary">pro</span>
 
 Get the AvatarID of the first replay avatar.
 
@@ -723,6 +725,7 @@ Get the AvatarID of the first replay avatar.
 
 
 ### VG_Controller.GetReplayStartWristPose
+<span class="label label-primary">pro</span>
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
 
@@ -746,6 +749,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.IsReplaySuccess
+<span class="label label-primary">pro</span>
 
 Check if finished replay had identical response as recorded
 
@@ -755,6 +759,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.IsReplaying
+<span class="label label-primary">pro</span>
 
 Check if a hand is currently replaying a recorded sensor data.
 
@@ -766,6 +771,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.LoadRecording
+<span class="label label-primary">pro</span>
 
 Load recorded sensor data from a file, but do not start replay
 
@@ -776,6 +782,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.LoadRecording
+<span class="label label-primary">pro</span>
 
 Load recorded sensor data from a byte array.
 
@@ -786,6 +793,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.ResumeReplay
+<span class="label label-primary">pro</span>
 
 Resume replaying of an avatar.
 
@@ -796,6 +804,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.SaveRecording
+<span class="label label-primary">pro</span>
 
 Save recording sensor data and store the whole sequence to a file
 
@@ -806,6 +815,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StartRecording
+<span class="label label-primary">pro</span>
 
 Start recording sensor data.
 
@@ -815,6 +825,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StartReplay
+<span class="label label-primary">pro</span>
 
 Start full replay of the whole interaction sequence on an avatar.
 
@@ -826,6 +837,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StartReplayOnObject
+<span class="label label-primary">pro</span>
 
 Start replaying a specific interaction segment on one object.
 
@@ -839,6 +851,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StopRecording
+<span class="label label-primary">pro</span>
 
 Stop recording sensor data.
 
@@ -848,6 +861,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.0.0.html)
 
 
 ### VG_Controller.StopReplay
+<span class="label label-primary">pro</span>
 
 Stop replay of the recorded interaction sequence on an avatar.
 
