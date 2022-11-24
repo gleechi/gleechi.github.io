@@ -46,7 +46,7 @@ entries:
       output: web 
     - title: Avatars
       url: /avatars.1.0.0.html
-      output: web  
+      output: web
     - title: Object Articulation
       url: /object_articulation.1.0.0.html
       output: web

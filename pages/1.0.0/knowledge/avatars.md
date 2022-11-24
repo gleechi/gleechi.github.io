@@ -13,7 +13,8 @@ For any avatar model (skeletal mesh), VirtualGrasp identifies the left and right
 
 By default, Gleechi provides an avatar model, GleechiRig in VirtualGrasp/Resources/GleechiHands/. In this avatar both left and right hands are included in the single skeleton hierarchy, and there are no bones other than hand bones included. 
 However avatars can have non-hand bones such as arm or even full body. VirtualGrasp automatically identifies the hand bones and only controls the hand movement, without influencing any other parts of the skeleton. 
-If on the other hand you have two separate skeletal meshes one for left hand and one for right hand, the you can setup two Avatars. 
+If on the other hand you have two separate skeletal meshes one for left hand and one for right hand, the you can setup two Avatars with same sensors to control them
+(see [separate hand models](#separate-hand-models)). 
 
 ## Custom Hand Model 
 
