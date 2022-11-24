@@ -4,7 +4,7 @@ First, import a hand model into your scene, such as the provided GleechiRig in T
 
 Next, link it into its place under Avatars → Skeletal Mesh, by dragging and dropping its SkinnedMeshRenderer (which you can find directly under GleechiRig in the Hierarchy) into this slot.
 
-{% include image.html file="unity/unity_hand_model_1_0_0.png" alt="Unity hand model." caption="Hand model references need to be provided in Avatars → Skeletal Mesh.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}
+{% include image.html file="unity/unity_hand_model_1_0_0.png" alt="Unity hand model." caption="Hand model references need to be provided in MyVirtualgrasp → Avatars → Skeletal Mesh.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}
 
 ### Customized Avatars and Hand Models
 
