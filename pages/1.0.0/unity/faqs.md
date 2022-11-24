@@ -78,7 +78,7 @@ This can be caused by multiple things:
 
 ## Sensor Recording and Replaying
 
-### Can I use another avatar different from avatar used for recording to replay recorded sensor data?
+### Can I use an avatar with different shaped/sized hands to replay recorded sensor data?
 
 Yes and no. You can always replay recorded sensor data on any avatar's hands since [what is recorded](sensor_record_replay.1.0.0.html#what-is-recorded-exactly) is the sensor data that applies to any hand. However you can not guaranttee creating same interactive behaviors. This is because if hands are of different skeleton or size, its relative pose w.r.t the objects will result in, for example, different grasp synthesized or even no grasp synthesized.  
 
