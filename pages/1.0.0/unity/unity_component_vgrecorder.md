@@ -27,16 +27,15 @@ Some example use cases are:
 
 ## How to Record Sensor Data
 
-Pressing the _Recording Key_ during play will toggle between starting and stopping the recording of an interaction sequence.
+In order to record sensor data, a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} needs to be created (see [Avatar Types](avatars.1.0.0.html#avatar-types)). 
+
+If _Recording Mode_ is "MANUAL", pressing the _Recording Key_ during play will toggle between starting and stopping the recording of an interaction sequence.
+If _Recording Mode_ is "RECORD_ON_PLAY" recording will kickoff immediately once play starts.
+
 After a recording is finished, a file with the recorded data will be written, named after the provided _Recording Filename_. 
 In the current implementation of VG_Recorder, the recording will be **attached** to the same file, so if you want to separate and keep multiple recordings, 
 you have to rename them.
-
-In order to record an interaction sequence:
-* press the _Recording Key_ key once, 
-* do some interactions in your scene, 
-* press the _Recording Key_ another time.
-
+If however _Replay From Memory_ is ticked, then the recorded data will not be written to a file but kept in the memory. 
 
 {% include tip.html content="To make the VG_Recorder react appropriately to keyboard input, the Unity Editor needs to be in focus (by mouse click on the game window once)." %}
 
@@ -46,11 +45,23 @@ In order to support recording and replaying {% include tooltip.html tooltip="Sen
 
 ## How to Replay an Interaction Sequence
 
+In order to replay the recorded sensor data, a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} needs to be created (see [Avatar Types](avatars.1.0.0.html#avatar-types)). 
+
+If _Recording Mode_ is "MANUAL", pressing the _Replay Sequence Key_ or _Replay Segment Key_ during play will replay the recorded sensor data.
+If _Recording Mode_ is "RECORD_ON_PLAY" replay will kickoff immediately once play starts.
+
+When replay starts, normally sensor data will be loaded from the file with recorded data named after the provided _Replay Filename_. 
+If however _Replay From Memory_ is ticked, then replay will assume the recording is already done and saved in memory. 
+
+Depending on the options specified in VG_Recorder window, you can replay recorded sensor data in following three ways. 
+
 ### Full and scene-specific interaction replay
 
-After you have recorded an {% include tooltip.html tooltip="InteractionSequence" text="interaction sequence" %}, you can fully replay it later. The _Replay Object_ has to be empty (None) for this mode. In this replay mode, the hand movements will be replayed exactly as they were recorded. That means that as soon as you change positions of objects that you did interact with, the replaying hand will grasp empty air. 
+After you have recorded an {% include tooltip.html tooltip="InteractionSequence" text="interaction sequence" %}, you can fully replay it later. The _Replay Object_ has to be empty (None). In this replay mode, the hand movements will be replayed exactly as they were recorded in global coordinate frame. That means if you change positions of objects different from when they are during recording, the replaying hand will grasp empty air. 
 
-This option is very handy when you want to record and replay for example an assembling task where interactions with multiple objects are involved. However you need to guaranttee while replaying all objects are at the same location as when they are recorded.
+This option is very handy when you want to record and replay for example an assembling task where interactions with multiple objects are involved. However you need to guaranttee 
+1. while replaying all objects are at the same location as when they are recorded,
+2. you use {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} with same hand models as the {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} used for recording.
 
 Pressing the _Replay Sequence Key_ will replay the recording provided in _Recording Filename_ from its start with the replay avatar. Pressing _Left Shift + Replay Sequence Key_ will pause and resume the replay. To create a different avatar to follow the recording, please follow the [instructions below](#how-to-create-another-pair-of-hands-for-replaying-an-interaction-sequence). 
 <!--In the video below, the green button triggers this replay.-->
