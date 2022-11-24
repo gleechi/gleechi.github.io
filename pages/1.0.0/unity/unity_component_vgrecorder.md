@@ -63,7 +63,7 @@ This option is very handy when you want to record and replay for example an asse
 1. while replaying all objects are at the same location as when they are recorded,
 2. you use {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} with same hand models as the {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} used for recording.
 
-Pressing the _Replay Sequence Key_ will replay the recording provided in _Recording Filename_ from its start with the replay avatar. Pressing _Left Shift + Replay Sequence Key_ will pause and resume the replay. To create a different avatar to follow the recording, please follow the [instructions below](#how-to-create-another-pair-of-hands-for-replaying-an-interaction-sequence). 
+Pressing the _Replay Sequence Key_ will replay the recording provided in _Recording Filename_ from its start with the replay avatar. Pressing _Left Shift + Replay Sequence Key_ will pause and resume the replay. To create a second avatar to follow the recording, please follow the [instructions below](#how-to-create-another-pair-of-hands-for-replaying). 
 <!--In the video below, the green button triggers this replay.-->
 
 <!--{% include youtube.html id="o5F5tUb8RQM" caption="Record Replay 1." %}-->
@@ -111,7 +111,7 @@ VG_Controller.GetReplayStartWristPose(replayingAvatarInstanceID, m_replayObject,
 If you want a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} co-exist with a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} while playing in a scene, you can instantiate another pair of hands to be controlled by the replay, 
 * add another avatar with hands into the scene (such as by duplicating the avatar you already have), 
 * add another element to VG_MainScript→Avatars, drag the SkinnedMeshRenderer from scene to _SkeletalMesh_ field and check it as _Replay_ avatar (see below), 
-* also assign the SkinnedMeshRenderer to the _Replaying avatar_  slot of the VG_Recorder (meaning that you want to replay the recordings on this avatar).
+* also assign the SkinnedMeshRenderer to the _Replay Avatar_ slot of the VG_Recorder (meaning that you want to replay the recordings on this avatar).
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="In MyVirtualGrasp: Setup for another avatar to replay recorded data." caption="In MyVirtualGrasp: Setup for another avatar to replay recorded data." %}
 
