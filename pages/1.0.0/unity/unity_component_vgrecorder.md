@@ -43,7 +43,7 @@ If however _Replay From Memory_ is ticked, then the recorded data will not be wr
 
 In order to support recording and replaying {% include tooltip.html tooltip="SensorData" text="sensor data" %} and re-using that information, there will be recording files in each project.
 
-## How to Replay an Interaction Sequence
+## How to Replay Sensor Data
 
 In order to replay the recorded sensor data, a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} needs to be created (see [Avatar Types](avatars.1.0.0.html#avatar-types)). 
 
