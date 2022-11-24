@@ -51,7 +51,7 @@ VirtualGrasp provides "hand profile" to configure a number of hand model-related
 
 There are three avatar types in VirtualGrasp:
 
-* By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, meaning that avatar's hands are directly controlled by the [sensors](unity_component_vgexternalcontrollermanager.1.0.0.html) for movement and object interaction. This is also the avatar used for [recording sensor data](sensor_record_replay.1.0.0.html) (feature available in **Pro version**).   
+* By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, meaning that avatar's hands are directly controlled by the [sensors](controllers.1.0.0.html) for movement and object interaction. This is also the avatar used for [recording sensor data](sensor_record_replay.1.0.0.html) (feature available in **Pro version**).
 * If _Replay_ option is ticked, then the avatar will be registered as a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. The hands of this avatar will be controlled by pre-recorded sensor data. Note this <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorRecordAndReplay}}">sensor record and replay</a> feature is only available in VirtualGrasp **Pro version**.
 * Both {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} and {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} can be created as a {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatar" %} if _Physical_ option is ticked. 
 
