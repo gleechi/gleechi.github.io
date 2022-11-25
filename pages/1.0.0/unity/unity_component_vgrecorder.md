@@ -48,7 +48,7 @@ In order to support recording and replaying {% include tooltip.html tooltip="Sen
 In order to replay the recorded sensor data, a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} needs to be created (see [Avatar Types](avatars.1.0.0.html#avatar-types)). 
 
 If _Recording Mode_ is "MANUAL", pressing the _Replay Sequence Key_ or _Replay Segment Key_ during play will replay the recorded sensor data.
-If _Recording Mode_ is "RECORD_ON_PLAY" replay will kickoff immediately once play starts.
+If _Recording Mode_ is "RECORD_ON_PLAY" replay will kickoff immediately once play starts. And replay is on full interaction sequence ([scene-specific](#full-and-scene-specific-interaction-replay) or [object-specific](#full-and-object-specific-interaction-replay) replay mode). 
 
 When replay starts, normally sensor data will be loaded from the file with recorded data named after the provided _Replay Filename_. 
 If however _Replay From Memory_ is ticked, then replay will assume the recording is already done and saved in memory. 
@@ -70,9 +70,11 @@ Pressing the _Replay Sequence Key_ will replay the recording provided in _Record
 
 ### Full and object-specific interaction replay
 
-If you assign a _Replay Object_, the {% include tooltip.html tooltip="InteractionSequence" text="interaction sequence" %} will be replayed fully, but in the frame of the provided _Replay Object_. Also all the other objects that your hands have interacted with in the sequence will also be moved into the frame of the provided _Replay Object_. This means that it is assured that the particular object - even after positional changes - will be interacted with as recorded. 
+If you assign a _Replay Object_, the {% include tooltip.html tooltip="InteractionSequence" text="interaction sequence" %} will be replayed fully, but in the frame of the provided _Replay Object_. Also all the other objects that your hands have interacted with in the sequence will also be moved into the frame of the provided _Replay Object_. This means that it is assured that the selected _Replay Object_ - even after positional changes - will be interacted with as recorded. 
 
 This option is very handy when you want to record and replay for example an assembling task where interactions with multiple objects are involved. And when you replay it you don't want to be restricted by having to place the objects at exact locations when recorded. 
+
+{% include important.html content="When multiple objects are involved in a recording, then the objects other than the _Replay Object_ should not be physical objects since physical objects can not be placed accurately in the frame of the _Replay Object_ due to its reaction to physical forces after the placement."%}
 
 ### Partial and object-specific interaction replay
 
