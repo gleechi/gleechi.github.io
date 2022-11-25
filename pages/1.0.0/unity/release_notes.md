@@ -35,6 +35,11 @@ folder: mydoc
 ## V1.0.0 - rc2 (2022-11-18)
 
 ##### Major Functionality Changes:
+* **Breaking change:** The Sensor/Avatar configuration in the MyVirtualGrasp component has been refactored:
+  * While before, a list of Avatars could be assigned to each element of a list of Sensors (see [MyVirtualGrasp 0.15.0](unity_component_myvirtualgrasp.0.15.0.html#sensors--controllers)), 
+  * now maximally 2 Sensor setups can be assigned to each element of a a list of Avatars (see [MyVirtualGrasp 1.0.0](unity_component_myvirtualgrasp.1.0.0.html#avatars-and-sensors)).
+  * If you are updating to this version from an older version, **you need to re-configure your MyVirtualGrasp component**.
+
 * **Breaking change:** The old [GetNumGrasps](virtualgrasp_unityapi.0.15.0.html#vg_controllergetnumgrasps) api function changed name to [GetNumGraspsInDB](virtualgrasp_unityapi.1.0.0.html#vg_controllergetnumgraspsindb) to avoid potentially confusing user to think GetNumGrasps is to obtain currently executed grasps on an object. 
   * Together with this change, a new api function [GetNumPrimaryGraspsInDB](virtualgrasp_unityapi.1.0.0.html#vg_controllergetnumprimarygraspsindb) is added to give number of enabled {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} in the grasp DB. 
 
