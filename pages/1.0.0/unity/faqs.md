@@ -32,7 +32,7 @@ The VG SDK is hardware-agnostic and does not depend on a headset. Thus, the ques
 
 ### I am using my own hand models and the fingers bend strangely.
 
-The reason for the mismatch is that each controller (for example, [VG_EC_OculusHands.cs](unity_vg_ec_oculushand.1.0.0.html)) is adjusting the raw finger orientations that come directly from the controller API (for example, from the Oculus Integration plugin) to match the hand model representation that is provided with the SDK. Read more on ways to resolve this issue on the [controller axis mapping](avatars.1.0.0.html#controller-axis-mappings) page.
+Each hand models maybe represented differently in terms of how all the bones are oriented. If you have a representation that is not aligned with the [VG_HandProfile](avatars.1.0.0.html#hand-profile), you will experience wrists or finger bones bending into the wrong axis direction. You can resolve this problem by creating your own Hand Profile. Read more on using [custom hand models](avatars.1.0.0.html#custom-hand-model).
 
 ### Are there any concerns when using Oculus's OVR Player Controller?
 
