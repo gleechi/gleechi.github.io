@@ -483,6 +483,10 @@ Recover an object's original joint, after it has been changed by ChangeObjectJoi
 | _Transform_ |selectedObject|The object to recover the joint for.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
+**Remark:**
+ Recommend to use this in LateUpdate to guarantee object pose is in sync with VirtualGrasp library.
+
+
 
 ### VG_Controller.SetAvatarSpecificObjectSelectionWeight
 
