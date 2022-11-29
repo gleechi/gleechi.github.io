@@ -44,7 +44,7 @@ using VirtualGrasp;
 
 /** 
  * AssembleVGArticulation shows as a tutorial on how to use the VG_Controller.ChangeObjectJoint function for
- * assemble and dissemble objects.
+ * assemble and dissemble non-physical objects (objects without rigid body or articulation body).
  */
 [LIBVIRTUALGRASP_UNITY_SCRIPT]
 [HelpURL("https://docs.virtualgrasp.com/unity_vgonboarding_task5." + VG_Version.__VG_VERSION__ + ".html")]
@@ -54,8 +54,12 @@ public class AssembleVGArticulation : MonoBehaviour
     public Transform m_newParent = null;
     [Tooltip("The target pose of the assembled object.")]
     public Transform m_desiredPose = null;
-    [Tooltip("Threshold to assemble when object to Desired Pose is smaller than this value.")]
+    [Tooltip("Threshold to assemble when object to Desired position is smaller than this value.")]
     public float m_assembleDistance = 0.05f;
+
+    [Tooltip("Threshold to assemble when object to Desired angle is smaller than this value.")]
+    public float m_assembleAngle = 45;
+
     [Tooltip("Threshold to disassemble when sensor hand position to grasped hand position is bigger than this value.")]
     public float m_disassembleDistance = 0.5f;
     [Tooltip("The VG Articulation of constrained (non-FLOATING) joint type to switch to when assemble an object.")]
@@ -77,7 +81,7 @@ public class AssembleVGArticulation : MonoBehaviour
             VG_Debug.LogError("Assemble Articulation should be of a constrained joint type, can not be FLOATING on " + this.transform.name);
     }
 
-    void Update()
+    void LateUpdate()
     {
         assembleByJointChange();
         dessembleByJointChange();
@@ -86,8 +90,11 @@ public class AssembleVGArticulation : MonoBehaviour
     void assembleByJointChange()
     {
         VG_JointType jointType;
+        Quaternion.FromToRotation(m_desiredPose.up, this.transform.up).ToAngleAxis(out float angle, out _);
+
         if ((Time.realtimeSinceStartup - m_timeAtDisassemble) > m_assembleDelay
            && (m_desiredPose.position - this.transform.position).magnitude < m_assembleDistance
+           && (angle < m_assembleAngle)
            && VG_Controller.GetObjectJointType(this.transform, false, out jointType) == VG_ReturnCode.SUCCESS &&
            jointType == VG_JointType.FLOATING)
         {

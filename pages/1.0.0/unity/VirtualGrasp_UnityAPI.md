@@ -325,6 +325,10 @@ Change a set of prameters of an object's joint in runtime.
  If new_screwRate is set to 0 then rotating of revolute object will not move object position along the joint axis.
 
 
+**Remark:**
+ Recommend to use this in LateUpdate to guarantee object pose is in sync with VirtualGrasp library.
+
+
 
 ### VG_Controller.ChangeObjectJoint
 
@@ -333,6 +337,10 @@ Change an object's joint and all other articulation parameters in runtime.
 | _Transform_ |selectedObject|The object to change the joint for.|
 | _VG_Articulation_ |articulation|An articulation describing the new articulation parameters.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ Recommend to use this in LateUpdate to guarantee object pose is in sync with VirtualGrasp library.
+
 
 
 ### VG_Controller.ClearAvatarSpecificObjectSelectionWeights

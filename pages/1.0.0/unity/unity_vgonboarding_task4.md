@@ -93,7 +93,7 @@ public class AssembleArticulationBody : MonoBehaviour
             InvokeRepeating("turnWheelEffect", 0.0F, .5F);
     }
 
-    void Update()
+    void LateUpdate()
     {
         assembleArticulationBody();
         dissembleArticluationBody();
