@@ -22,18 +22,18 @@ frame by frame, and also automatically segment the frames into segments (we call
  
         SensorDB has 2 hand interaction(s):
          humanoid_handLeft1 has 10 interaction segments(s):
-           segment #0  has 462/462 frames/states
-           segment #1  has 934/934 frames/states, on object baseball
-           segment #2  has 169/169 frames/states
-           segment #3  has 568/568 frames/states, on object apple
-           segment #4  has 178/178 frames/states
-           segment #5  has 631/631 frames/states, on object baseball
-           segment #6  has 152/152 frames/states
-           segment #7  has 593/593 frames/states, on object pear
-           segment #8  has 40/40 frames/states
-           segment #9  has 358/358 frames/states, on object screwdriver
+           segment #0  has 462/0 frames/states
+           segment #1  has 934/0 frames/states, on object baseball
+           segment #2  has 169/0 frames/states
+           segment #3  has 568/0 frames/states, on object apple
+           segment #4  has 178/0 frames/states
+           segment #5  has 631/0 frames/states, on object baseball
+           segment #6  has 152/0 frames/states
+           segment #7  has 593/0 frames/states, on object pear
+           segment #8  has 40/0 frames/states
+           segment #9  has 358/0 frames/states, on object screwdriver
          humanoid_handRight1 has 1 interaction segment(s):
-           segment #0  has 4085/4085 frames/states
+           segment #0  has 4085/0 frames/states
 		   
 Above code block shows a display of one recording on an avatar with a pair of left and right humanoid hands. 
 You can see in this recording:
