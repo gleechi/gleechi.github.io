@@ -19,11 +19,18 @@ However, avatars can have non-hand bones such as elbows, shoulders, or even full
 
 ### Hand Model Standard
 
-If you want to use a custom avatar (enabled in the Pro version of the VirtualGrasp SDK), there are certain conditions to be met related to the skeletal hand structure. GleechiRig gives a reference of the rigging / model hierarchy of the hands:
+Image below shows GleechiRig's left hand model. The labeled wrist and finger bones represent the hand bones whose movement VirtualGrasp controls. 
 
-* a hand's wrist bone should include 5 fingers as children (no extra bones), and 
-* each finger should include 3-4 bones (with or without fingertip). If a fingertip is missing, VirtualGrasp will estimate its position, but it is recommended, and also very easy in Unity to add missing fingertip bones manually, and
-* hands with metacarpal bones for non-thumb fingers are not fully supported. 
+If you want to use a custom avatar (enabled in the Pro version of the VirtualGrasp SDK), the minimum conditions to be met related to the skeletal hand structure are:
+* A hand's wrist bone should include 5 fingers as children (no extra bones),
+* with 3 bones in each finger whose movement VG controls, and
+* for thumb, the 3 bones correspond to the first metacarpal and the 2 phanlanges, and
+* for non-thumb fingers, the 3 bones correspond to the 3 phanlanges in human hand anatomy. 
+
+Additionally, 
+
+* The last transform (4th bone) at finger tip (thumb3_L for example) is recommended to be provided to give accurate representation of last bone's dimention. If a fingertip is missing, VirtualGrasp will estimate its position, but may result in finger tip penetration when pushing or grasping objects. Note it is very easy in Unity to add missing fingertip bones manually.
+* VirtualGrasp also supports custom hands with the 4 metacarpals connecting the non-thumb fingers, however it does not control the movement of them. 
 
 {% include image.html file="vg_hand_model.png" width="100" alt="VG hand model." caption="VG Hand model example with 4 bones (including finger tip) each finger." %}
 
