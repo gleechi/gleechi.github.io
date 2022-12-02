@@ -4,7 +4,7 @@
 <div style="width: 100%; margin:0 auto;">
 {% endif %}
 <div class="ytcontainer">
-  <iframe class="yt" src="https://www.youtube.com/embed/{{include.id}}?rel=0&modestbranding=1&playlist={{include.id}}&loop=1" allowfullscreen></iframe>
+  <iframe class="yt" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/{{include.id}}?rel=0&modestbranding=1&playlist={{include.id}}&loop=1" allowfullscreen></iframe>
 </div>
 </div>
 {% if {{include.caption}} %}<figcaption>{{include.caption}}</figcaption>{% endif %}
