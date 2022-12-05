@@ -62,3 +62,4 @@ There are three avatar types in VirtualGrasp:
 
 {% include image.html file="unity/unity_hand_model_1_0_0.png" alt="Unity hand model." caption="Hand model references need to be provided in MyVirtualgrasp → Avatars → Skeletal Mesh.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}
 
+{% include callout.html content= "The physical avatar currently is only semi-physical in that only colliders are added to hand bones, no rigid bodies or articulation bodies are used." %} 
