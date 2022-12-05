@@ -69,6 +69,10 @@ Note that you cannot define the Grasp Animation Speed for a specific object. You
 
 The unnatrual looking grasps could be caused by you have set the {% include tooltip.html tooltip="InteractionType" text="interaction type" %} of this object to be {% include tooltip.html tooltip="StickyHand" text="STICKY_HAND" %}. You could have set it by either globally for all objects in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.1.0.0.html#global-grasp-interaction-settings), or on specific object through [VG_Interactable](unity_component_vginteractable.1.0.0.html) component, which overwrite the global settings. To fix it just switch to the commonly used {% include tooltip.html tooltip="InteractionType" text="interaction type" %}: {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} or {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}. See [Grasp Interaction Type](grasp_interaction.1.0.0.html#grasp-interaction-type) for more information.
 
+### Why I can grasp an object with a primary grasp on one hand, but the other hand can not grasp the object at all?
+
+When an object is set to use {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp"%} as {% include tooltip.html tooltip="InteractionType" text="interaction type"%}, it requires there are {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasp"%}(s) added to this object for both hands. If you only added primary grasp(s) for one hand, then the other hand will not be able to grasp the object. There is console warning message accordingly. 
+
 ## Baking
 
 ### How am I supposed to import the .obj files (in vg_tmp) into my project?
