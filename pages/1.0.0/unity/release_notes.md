@@ -59,7 +59,9 @@ folder: mydoc
 ##### GUI / Component Changes:
 * Only one enabled [VG_Articulation](unity_component_vgarticulation.1.0.0.html) component is allowed now, and the enabled component reflects the current [object articulation](object_articulation.1.0.0.html) status.
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html) for constrained joint types now allows selection of "Motion Type" to be Limited or Free, where Free means there is no limitation along the constrained dof(s) of this joint. 
-* [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) prefab has improved 3D shape and texture. And {% include tooltip.html tooltip="PreviewGrasp" text="Preview Grasp" %} is added into the _Toggle_ button control to allow using it as the main interaction to search and add primary grasps.  
+* [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) 
+  * prefab has improved 3D shape and texture, and
+  * VG_GraspEditor script exposed an option _Editing Interaction Type_ to allow developers to choose the main {% include tooltip.html tooltip="InteractionType" text="interaction type" %} to use when adding primary grasps. 
 * "VirtualGrasp" Menu cleanup. Some obsolete entries were removed.
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html), [VG_Interactable](unity_component_vginteractable.1.0.0.html) and [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) scripts are deactivated during runtime to better reflect that changes to them are only valid in editor mode.
 * Grasp and Release animation speeds in [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) GUI integer fields were replaced by range sliders.
@@ -85,7 +87,9 @@ folder: mydoc
 * The .NET TargetFrameworkVersion has been downgraded from 4.7.2 to 4.7.1 since it caused some issues for Unity+VSCode users.
 * Fixed a bug: when pause a VR app with Occulus button or remove headset, the grasp pose is lost. 
 * Improved the status sync of [VG_Articulation](unity_component_vgarticulation.1.0.0.html) on a Game Object with the interactability of that objects.
-
+* Fixed a bug: the second avatar registered has twisted finger bones. 
+* Improved the VG_MainScript inspector DebugSettings to become a proper foldout menu. 
+* Fixed a bug: crashing when [JumpGraspObject](virtualgrasp_unityapi.1.0.0.html#vg_controllerjumpgraspobject), [SwitchGraspObject](virtualgrasp_unityapi.1.0.0.html#vg_controllerswitchgraspobject), or [TogglePrimaryGraspOnObject](virtualgrasp_unityapi.1.0.0.html#vg_controllertoggleprimarygrasponobject) is called on an object without mesh assigned to it.
 
 ##### Update to VG Core library:
 
