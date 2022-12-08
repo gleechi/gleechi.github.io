@@ -36,6 +36,8 @@ Whether it is Unity or Unreal, you can assign your controller input in [MyVirtua
 
 Whether it is Unity or Unreal, in Sensor Setup, _Profile_ option allows you to select the "controller profile" for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others.
 
+A set of ready-to-use controllers is explained in on the [VG_ExternalControllerManager](http://localhost:4000/unity_component_vgexternalcontrollermanager.1.0.0.html#vg_externalcontroller-class) page. 
+
 {% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
  Elements of VG_ControllerProfile are explained in this table: 
@@ -63,7 +65,6 @@ Whether it is Unity or Unreal, in Sensor Setup, _Profile_ option allows you to s
 | BY_OSCILLATED_ANIMATION | will let hand animated a little bit when not interacting with any object to avoid "rigid hand" feeling. (Experimental) | 
 | BY_EXTERNAL | only relevant for External Controller sensor type, finger will be set by an externally specified finger dofs. | -->
 
-A set of ready-to-use controllers is explained in on the [VG_ExternalControllerManager](http://localhost:4000/unity_component_vgexternalcontrollermanager.1.0.0.html#vg_externalcontroller-class) page. 
 
 ### Origin
 
