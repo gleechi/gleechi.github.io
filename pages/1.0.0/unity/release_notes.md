@@ -68,12 +68,12 @@ folder: mydoc
 
 ##### API Changes:
 
-* Bugfix: if runtime [UnRegisterAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerunregisteravatar) and then reregister again, the reregistered avatar will lose sensor control. 
+* Fixed a bug:: if runtime [UnRegisterAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerunregisteravatar) and then reregister again, the reregistered avatar will lose sensor control. 
 * Added [VG_GestureType](virtualgrasp_unityapi.1.0.0.html#vg_gesturetype) enum and [MakeGesture](virtualgrasp_unityapi.1.0.0.html#vg_controllermakegesture) api switched to use this enum instead of previously using [VG_GraspType](virtualgrasp_unityapi.1.0.0.html#vg_grasptype). **(fixed known issue from 0.15.0)**
 * All API functions properly guarded if VG is actually active.
 * Removed SetPhysicalObject, OnAfterReset, OnBeforeReset and ResetObject and ResetAllObjects API functions.
 * Added [GetObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#vg_controllergetobjectselectionweight) and [GetAvatarSpecificObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#vg_controllergetavatarspecificobjectselectionweight) API functions.
-* Added [SetRecordingStatesOnAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllersetrecordingstatesonavatar) API function added.
+* Added [SetRecordingStatesOnAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllersetrecordingstatesonavatar) API function.
 * Some minor tweaks to VG_GraspEditor, VG_Highlighter, and VG_Recorder.
 
 ##### Other / Internal Changes:
