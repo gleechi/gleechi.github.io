@@ -3,6 +3,21 @@ If you start from scratch, just create a new, empty project in Unity.
 
 {% include image.html file="unity/unity_new_project.png" alt="New Unity Project" caption="Create a New Project in Unity" %}
 
+### Supported Unity Engine Versions
+
+In our experience Unity and the VirtualGrasp SDK are very robust in terms of up- or downgrading inside a major Unity version (e.g., 2020.x.x, 2021.x.x, etc) for your projects.
+
+Note that VirtualGrasp SDK supports Windows and Android builds, but not MacOS.
+
+The following is a list of Unity Engine versions that we have tested the VirtualGrasp SDK with:
+
+* **Unity 2019.x and earlier** is not and will not be supported due to the lack of ArticulationBody components. 
+* <ins>**Unity 2020.x**</ins> is supported and has been tested successfully.
+* <ins>**Unity 2021.x**</ins> is supported and has been tested successfully.
+  * **Unity 2021.3** is the version that we are currently using to create the SDK.
+* <ins>**Unity 2022.1**</ins> is supported and has been tested successfully. 
+  * For Unity 2022.1.0b, there is an Inspector GUI artifact in VG_MainScript/Sensors, but it is a known [Unity issue](https://issuetracker.unity3d.com/issues/first-array-element-expansion-is-broken-for-arrays-that-use-custom-property-drawers).
+
 ### Installing the VirtualGrasp plugin for Unity
 
 To import VirtualGrasp into your Unity project, go to Assets → Import Package → Custom Package and import the VirtualGrasp *.unitypackage. After doing this, you should find the main VirtualGrasp installation under ThirdParty/VirtualGrasp in your Unity project. 

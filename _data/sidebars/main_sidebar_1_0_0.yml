@@ -19,9 +19,6 @@ entries:
   - title: Tutorials
     output: web
     folderitems:
-    - title: Supported Unity Engines
-      url: /unity_get_started_engines.1.0.0.html
-      output: web
     - title: Installation
       url: /unity_get_started_installation.1.0.0.html
       output: web
