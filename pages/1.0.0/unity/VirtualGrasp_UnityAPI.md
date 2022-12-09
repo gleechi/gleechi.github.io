@@ -701,6 +701,19 @@ Save the object hierarchy debug state. This is done automatically when closing V
 
 
 
+### VG_Controller.SetRecordingStatesOnAvatar
+
+Set if use the avatar for recording response states during sensor recording or replay.
+
+| _int_ |avatarID|The avatar id.|
+| _bool_ |recordingStates|If use this avatar to record response states in sensor db.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ When recordingStates is true, if avatar is used for sensor recording, then recording will also include response states, while if avatar is used for replay sensor db, then replay will update response states in the sensor db.
+
+
+
 ### VG_Controller.UnRegisterAvatar
 
 Unregister avatar during runtime
