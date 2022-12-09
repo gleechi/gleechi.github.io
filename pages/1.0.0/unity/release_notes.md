@@ -73,6 +73,8 @@ folder: mydoc
 * All API functions properly guarded if VG is actually active.
 * Removed SetPhysicalObject, OnAfterReset, OnBeforeReset and ResetObject and ResetAllObjects API functions.
 * Added [GetObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#vg_controllergetobjectselectionweight) and [GetAvatarSpecificObjectSelectionWeight](virtualgrasp_unityapi.1.0.0.html#vg_controllergetavatarspecificobjectselectionweight) API functions.
+* Added [SetRecordingStatesOnAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllersetrecordingstatesonavatar) API function added.
+* Some minor tweaks to VG_GraspEditor, VG_Highlighter, and VG_Recorder.
 
 ##### Other / Internal Changes:
 * Fixed a bug: when [OnGraspTriggered](virtualgrasp_unityapi.1.0.0.html#vg_controllerongrasptriggered) event invoked, sometimes m_selectedObject is null.
@@ -82,6 +84,9 @@ folder: mydoc
 * Added [VG onboarding task 7](unity_vgonboarding_task7.1.0.0.html) showing off using VG Articulation to assemble a chain with physical objects.  
 * For [VG onboarding task4](unity_vgonboarding_task4.1.0.0.html) and [task5](unity_vgonboarding_task5.1.0.0.html), the function for assembling has improved computation of desired object rotation; the assembling and dissasembling code are called in LateUpdate instead of Update to sync with player input. 
 * Multiplayer (_not available in free or pro versions_) VG support now allows multiple players grasping on the same object at the same time, and also works with complex object settings.
+* Explicit asset database refresh added when VG creates files (such as files for mesh baking input and output).
+* Adjusted In-Editor tutorials to follow the new changes in the VG API and GUI.
+* Improved the project file structure. Among others made it possible to delete the example onboarding folder and resources to make the plugin lighter without affecting VG functionality.
 * Fixed a bug: {% include tooltip.html tooltip="PreviewGrasp" text="Preview grasp" %} is not able to pick up a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} once grasp is triggered. **(fixed known issue from 0.15.0)**
 * Fixed a bug: If _Haptics_ is enabled in [Sensor Control](unity_component_myvirtualgrasp.1.0.0.html#autosetup--sensors) specifications, haptics feedback is not consistently given at the moment of grasp, release or collision on build. **(fixed known issue from 0.15.0)**
 * The .NET TargetFrameworkVersion has been downgraded from 4.7.2 to 4.7.1 since it caused some issues for Unity+VSCode users.
@@ -97,6 +102,7 @@ folder: mydoc
 * Improved the grasp interaction on floating objects with multiple hands. 
 * Completed {% include tooltip.html tooltip="Planar" text="planar" %} joint features by adding {% include tooltip.html tooltip="DiscreteStates" text="discrete states" %} and [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) support. **(fixed known issue from 0.15.0)**
 * Reduced dynamic grasp finger-object penetration when pinch grasp small elongated objects.
+* Fixed a bug: hand twisting when registering multiple avatars of same structure was fixed.
 
 ##### Known Issues:
 
