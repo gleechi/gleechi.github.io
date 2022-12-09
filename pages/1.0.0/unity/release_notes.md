@@ -60,7 +60,8 @@ folder: mydoc
 * Only one enabled [VG_Articulation](unity_component_vgarticulation.1.0.0.html) component is allowed now, and the enabled component reflects the current [object articulation](object_articulation.1.0.0.html) status.
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html) for constrained joint types now allows selection of "Motion Type" to be Limited or Free, where Free means there is no limitation along the constrained dof(s) of this joint. 
 * [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) 
-  * prefab has improved 3D shape and texture, and
+  * The prefab has improved 3D shape and texture, and
+  * has been moved to ThirdParty/VirtualGrasp/Resources/GraspEditor/ to separate it from the Onboarding demo scene.
   * VG_GraspEditor script exposed an option _Editing Interaction Type_ to allow developers to choose the main {% include tooltip.html tooltip="InteractionType" text="interaction type" %} to use when adding primary grasps. 
 * "VirtualGrasp" Menu cleanup. Some obsolete entries were removed.
 * [VG_Articulation](unity_component_vgarticulation.1.0.0.html), [VG_Interactable](unity_component_vginteractable.1.0.0.html) and [MyVirtualGrasp](unity_component_myvirtualgrasp.1.0.0.html) scripts are deactivated during runtime to better reflect that changes to them are only valid in editor mode.
