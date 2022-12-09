@@ -38,6 +38,7 @@ Additionally,
 
 If you have a skeletal mesh for one hand side and are creating the opposite side by duplicating and mirroring this hand, you can setup two separate avatars with same sensors to control the two hands. In such cases VirtualGrasp considers the left and right hand skeleton meshes as two separate _Avatars_. You can set it up using same _Hand Profile_ and [sensor setup](unity_get_started_sensors.1.0.0.html). 
 
+Please watch the video below on how to setup your Custom Hand in Unity.
 
 <!--
 The image below shows an example of how to set it up in Unity, but it applies to any VG integrated game engine.
