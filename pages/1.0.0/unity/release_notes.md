@@ -116,7 +116,7 @@ folder: mydoc
 
 * VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
 
-* [VG_Recorder](unity_component_vgrecorder.1.0.0.html) only allows to assign one _Replay Avatar_, which make it not work if you have [separate hand models](avatars.1.0.0.html#separate-hand-models) when using custom avatar supported by VG **Pro version**.  
+* [VG_Recorder](unity_component_vgrecorder.1.0.0.html) only allows to assign one _Replay Avatar_, which makes it not work if you have [separate hand models](avatars.1.0.0.html#separate-hand-models) when using custom avatar supported by VG **Pro version**.  
 
 * [SetSensorActive](virtualgrasp_unityapi.1.0.0.html#vg_controllersetsensoractive) does not have effect. If you set it inactive, the avatar's hands are still controlled and moved by the sensor / controller. 
 
