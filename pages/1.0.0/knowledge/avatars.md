@@ -47,7 +47,7 @@ The image below shows an example of how to set it up in Unity, but it applies to
 
 ### Hand Profiles
 
-VirtualGrasp provides VG_HandProfiles to configure a number of hand model-related settings and thereby allows you to quickly switch between different custom hands.
+VirtualGrasp provides VG_HandProfiles (in Unity as ScriptableObjects) to configure a number of hand model-related settings and thereby allows you to quickly switch between different custom hands.
 
 {% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG_HandProfile in Unity." caption="VG_HandProfile as scriptable object in Unity." %}
 

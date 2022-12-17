@@ -41,7 +41,7 @@ VirtualGrasp allows creating multiple avatars in the interface by modifying _Siz
 
 #### Hand Profile
 
-In Unity, VirtualGrasp provides "hand profiles" as ScriptableObjects. You are able to configure a number of hand model-related settings and thereby  quickly switch between different custom hands. Besides the original VG_GleechiHands profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [Hand Profiles](avatars.1.0.0.html#hand-profile).
+In Unity, VirtualGrasp provides "hand profiles" as ScriptableObjects. You are able to configure a number of hand model-related settings and thereby  quickly switch between different custom hands. Besides the original VG_GleechiHands profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [Hand Profiles](avatars.1.0.0.html#hand-profiles).
 
 ### Sensors
 

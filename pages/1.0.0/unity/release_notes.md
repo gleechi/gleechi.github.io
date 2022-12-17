@@ -48,7 +48,7 @@ folder: mydoc
   * [RegisterRemoteAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerregisterremoteavatar) for remote controlled avatars in multiplayer applications, and
   * [RegisterReplayAvatar](virtualgrasp_unityapi.1.0.0.html#vg_controllerregisterreplayavatar) for replay controlled avatars.
 
-* [VG_HandProfiles](unity_component_myvirtualgrasp.1.0.0.html#hand-profile) were introduced to simplify the external controller mapping for custom hand models.
+* [VG_HandProfiles](avatars.1.0.0.html#hand-profiles) were introduced to simplify the external controller mapping for custom hand models.
 
 * [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint) (two overloaded functions) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerrecoverobjectjoint) do not have any function signature change. However from this version, VG will internally remove Rigidbody or ArticulationBody on a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} if the function call intends to change object joint to a constrained joint type (non-{% include tooltip.html tooltip="Floating" text="floating" %}), and recover just removed Rigidbody or ArticulationBody when it changes back to  {% include tooltip.html tooltip="Floating" text="floating" %} joint type. This change makes it convenient for Unity developers to benefit from VG's [object articulation](object_articulation.1.0.0.html) system on both physical and non-physical environments.
 
