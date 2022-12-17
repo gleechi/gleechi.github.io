@@ -42,7 +42,7 @@ For any joint type, there are a set of parameters to be used to configure the jo
 | Discrete States x | discrete values for planar joint along _xaxis_ of anchor transform. By default [Min x, Max x]. If provided has to be at least 2 states and in ascending order. | 
 | Discrete States y | discrete values for planar joint along _yaxis_ of anchor transform. By default [Min y, Max y]. If provided has to be at least 2 states and in ascending order. | 
 | Joint Center | around which position an object is rotating around, specified by the _Anchor_'s position. | 
-| Joint Axis | the axis specified by the _Anchor_'s _zaxis_. For revolute joint, this defines rotation axis, for prismatic joint, object move linearly along this axis, for cone joint this defines center of the core shape limit range, for planar joint, this is normal of the plane. |
+| Joint Axis | the axis specified by the _Anchor_'s _zaxis_. For revolute joint, this defines rotation axis, for prismatic joint, object move linearly along this axis, for cone joint this defines center of the cone shape limit range, for planar joint, this is normal of the plane. |
 | Joint Axis2 | the secondary axis specified by the _Anchor_'s _yaxis_, which defines orientation of planar joint's rectangular shaped limit space. |
 
 ### Joint State
