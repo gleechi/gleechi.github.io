@@ -1,7 +1,16 @@
+### Downloading the VirtualGrasp plugin for Unity
 
-If you start from scratch, just create a new, empty project in Unity. 
+The VirtualGrasp SDK for Unity is currently available in the two versions FREE and PRO:
 
-{% include image.html file="unity/unity_new_project.png" alt="New Unity Project" caption="Create a New Project in Unity" %}
+| Version | [PRO](https://assetstore.unity.com/packages/tools/utilities/virtualgrasp-pro-239348) | [FREE](https://assetstore.unity.com/packages/tools/utilities/virtualgrasp-free-240823) |
+| VG SDK & Interaction Engine | ✔ | ✔ |
+| Android & Windows support | ✔ | ✔ |
+| [Object Baking](object_baking.1.0.0.html) | ✔ | |
+| [Grasp Editing](unity_component_vggraspeditor.1.0.0.html) | ✔ | |
+| [Custom Hand Models](avatars.1.0.0.html#custom-hand-models) | ✔ | |
+| [Replay Features](sensor_record_replay.1.0.0.html) | ✔ | |
+| Commercial License | ✔ | |
+
 
 ### Supported Unity Engine Versions
 
@@ -19,6 +28,10 @@ The following is a list of Unity Engine versions that we have tested the Virtual
   * For Unity 2022.1.0b, there is an Inspector GUI artifact in VG_MainScript/Sensors, but it is a known [Unity issue](https://issuetracker.unity3d.com/issues/first-array-element-expansion-is-broken-for-arrays-that-use-custom-property-drawers).
 
 ### Installing the VirtualGrasp plugin for Unity
+
+If you start from scratch, just create a new, empty project in Unity. 
+
+{% include image.html file="unity/unity_new_project.png" alt="New Unity Project" caption="Create a New Project in Unity" %}
 
 To import VirtualGrasp into your Unity project, go to Assets → Import Package → Custom Package and import the VirtualGrasp *.unitypackage. After doing this, you should find the main VirtualGrasp installation under ThirdParty/VirtualGrasp in your Unity project. 
 
