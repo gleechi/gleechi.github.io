@@ -120,6 +120,7 @@ folder: mydoc
 
 * [SetSensorActive](virtualgrasp_unityapi.1.0.0.html#vg_controllersetsensoractive) does not have effect. If you set it inactive, the avatar's hands are still controlled and moved by the sensor / controller. 
 
+* "VirtualGrasp --> Make Interactables Readable" helper function mentioned in [Object Setup](unity_get_started_objects.1.0.0.html) is not working. For now you have to manually check “Read/Write enabled” checkbox in the model inspector of your object in order to interact with the object or bake grasp.
 
 ## V0.15.0(2022-07-27)
 
