@@ -114,6 +114,9 @@ entries:
     - title: VG_HandVisualizer
       url: /unity_component_vghandvisualizer.1.0.0.html
       output: web
+    - title: VG_HandStatus
+      url: /unity_component_vghandstatus.1.0.0.html
+      output: web
     - title: VG_HandStatusDebugger
       url: /unity_component_vghandstatusdebugger.1.0.0.html
       output: web
