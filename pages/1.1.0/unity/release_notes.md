@@ -56,6 +56,8 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
+* [VG_FingerAnimator](unity_component_vgfingeranimator.1.1.0.html) is added as an alternative to [VG_PostAnimator](unity_component_vgpostanimator.1.1.0.html) for finger animation.
+
 ##### API Changes:
 
 
