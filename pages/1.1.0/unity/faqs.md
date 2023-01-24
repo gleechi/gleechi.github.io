@@ -69,6 +69,17 @@ Note that you cannot define the Grasp Animation Speed for a specific object. You
 
 The unnatrual looking grasps could be caused by you have set the {% include tooltip.html tooltip="InteractionType" text="interaction type" %} of this object to be {% include tooltip.html tooltip="StickyHand" text="STICKY_HAND" %}. You could have set it by either globally for all objects in [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.1.1.0.html#global-grasp-interaction-settings), or on specific object through [VG_Interactable](unity_component_vginteractable.1.1.0.html) component, which overwrite the global settings. To fix it just switch to the commonly used {% include tooltip.html tooltip="InteractionType" text="interaction type" %}: {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} or {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}. See [Grasp Interaction Type](grasp_interaction.1.1.0.html#grasp-interaction-type) for more information.
 
+If the interaction type is not the reason, check if have forgotten to set the baking output grasp db to [MyVirtualGrasp -> Grasp DB](unity_component_myvirtualgrasp.1.1.0.html#grasp-db).
+
+### Why on some small tiny objects I sometimes get very bad grasps?
+
+As a backgroud, for tiny objects that need precision grasps, currently VG adopts two alternative dynamic grasp synthesis algorithms with differet levels of grasp quality. When {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type is used on the object, the algorithm that result in lower grasp quality is used because this algorithm create less wrist rotation offset to prevent breaking the immersion. 
+When {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} interaction type is used, the other algorithm that result in higher grasp quality is used because the higher quality is at the cost of big wrist rotation offset. However since object is "jumping" into the hand therefore wrist will not leave its {% include tooltip.html tooltip="SensorPose" text="sensor pose" %} thus not breaking the immersion. 
+
+So if you notice tiny objects having bad grasps, it might be due to {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type being used on this object. You can switch the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}. To switch interaction type for a specific object, you can either add [VG_Interactable](unity_component_vginteractable.1.1.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [VG_Controller.SetInteractionTypeForObject](virtualgrasp_unityapi.1.1.0.html#setinteractiontypeforobject) from your code during runtime.
+
+You can read [Grasp Interaction Type](grasp_interaction.1.1.0.html#grasp-interaction-type) for more detailed explanation.
+
 ### Why I can grasp an object with a primary grasp on one hand, but the other hand can not grasp the object at all?
 
 When an object is set to use {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp"%} as {% include tooltip.html tooltip="InteractionType" text="interaction type"%}, it requires there are {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasp"%}(s) added to this object for both hands. If you only added primary grasp(s) for one hand, then the other hand will not be able to grasp the object. There is console warning message accordingly. 

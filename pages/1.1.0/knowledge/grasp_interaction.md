@@ -84,6 +84,9 @@ Because of this difference, there are different alternative solutions to pose th
 | Sticky Hand | a fall-back solution when object is not baked, so the grasp configuration is directly taken from the hand pose at the moment of grasp triggering, as if the hand is sticking to the object.  | this allows VR developers to setup the {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behaviors" %} through [object articulation](object_articulation.1.1.0.html) before baking objects. | 
 
 
+{% include callout.html content="For tiny objects that need precision grasps, the grasp quality now varies depending on which interaction type is chosen for the object. When Jump Grasp is used on an object, the grasp will have more accurate finger placement on the object but the object will have larger rotation when jumping into the hand. When Trigger Grasp is used, the grasp will have less accurate finger placement with the benefit of less hand offset when moved towards the grasping pose." %}
+
+
 ### Grasp Animation Speed and Release Animation Speed
 
 {% include tooltip.html tooltip="GraspSpeed" text="Grasp animation speed" %} and {% include tooltip.html tooltip="ReleaseSpeed" text="release animation speed" %} determines how fast the hand forms grasp and releases from grasp respectively, hence also significantly affect the user experiences when interacting with an object. 

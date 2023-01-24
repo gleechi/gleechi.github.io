@@ -1,5 +1,5 @@
 ---
-title: VG_Recorder Component
+title: VG_Recorder Component (Pro)
 #tags: [getting_started]
 keywords: component, recorder, grasp
 #last_updated: July 16, 2016
@@ -9,7 +9,7 @@ permalink: unity_component_vgrecorder.1.1.0.html
 folder: mydoc
 ---
 
-{% include image.html file="unity/unity_vg_recorder_1_0_0.png" alt="VG Recorder" caption="VG_Recorder Component." %}
+{% include image.html file="unity/unity_vg_recorder_1_1_0.png" alt="VG Recorder" caption="VG_Recorder Component." %}
 
 ## Description
 
@@ -27,30 +27,29 @@ Some example use cases are:
 
 ## How to Record Sensor Data
 
-In order to record sensor data, a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} needs to be created (see [Avatar Types](avatars.1.1.0.html#avatar-types)). 
+In order to record sensor data, a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} needs to be created in [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.1.0.html#avatars) (see [Avatar Types](avatars.1.1.0.html#avatar-types)). 
 
 If _Recording Mode_ is "MANUAL", pressing the _Recording Key_ during play will toggle between starting and stopping the recording of an interaction sequence.
 If _Recording Mode_ is "RECORD_ON_PLAY" recording will kickoff immediately once play starts.
 
-After a recording is finished, a file with the recorded data will be written, named after the provided _Recording Filename_. 
-In the current implementation of VG_Recorder, the recording will be **attached** to the same file, so if you want to separate and keep multiple recordings, 
-you have to rename them.
-If however _Replay From Memory_ is ticked, then the recorded data will not be written to a file but kept in the memory. 
+After a recording is finished, the recorded data will be written as a .sdb file with provided full path - _New Recording Path_. Note file name has to end with ".sdb". If however _Replay From Memory_ is ticked, then the recorded data will not be written to a file but kept in the memory. 
 
 {% include tip.html content="To make the VG_Recorder react appropriately to keyboard input, the Unity Editor needs to be in focus (by mouse click on the game window once)." %}
 
-### Important Note on the Files
+### Important Note on the Files (@kai modify or delete this)
 
 In order to support recording and replaying {% include tooltip.html tooltip="SensorData" text="sensor data" %} and re-using that information, there will be recording files in each project.
 
 ## How to Replay Sensor Data
 
-In order to replay the recorded sensor data, a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} needs to be created (see [Avatar Types](avatars.1.1.0.html#avatar-types)). 
+In order to replay the recorded sensor data, a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} needs to be created in [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.1.0.html#avatars) (see [Avatar Types](avatars.1.1.0.html#avatar-types)), and corresponding skinned mesh renderer should be specified in _Replay Avatars_ entry. 
+
+Note from this version (1.1.0) VG_Recorder allows to assign multiple _Replay Avatars_. This allows you to replay data on a pair of hands that are represented by [separate hand models](avatars.1.1.0.html#separate-hand-models). 
 
 If _Recording Mode_ is "MANUAL", pressing the _Replay Sequence Key_ or _Replay Segment Key_ during play will replay the recorded sensor data.
 If _Recording Mode_ is "RECORD_ON_PLAY" replay will kickoff immediately once play starts. And replay is on [full sequence replay](#full-and-scene-specific-sequence-replay) mode. 
 
-When replay starts, normally sensor data will be loaded from the file with recorded data named after the provided _Replay Filename_. 
+When replay starts, normally sensor data will be loaded from the .sdb assets provided by _Replay Recording_. 
 If however _Replay From Memory_ is ticked, then replay will assume the recording is already done and saved in memory. 
 
 Depending on the options specified in VG_Recorder window, you can replay recorded sensor data in following two ways. 
@@ -121,14 +120,14 @@ If you want a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar
 
 ## Sensor Recording for a built Android app
 
-All recordings performed by the user while in Editor mode are stored under "StreamingAssets/VG_Recordings" followed by the user selected filename (optionally combined with some parent folders). During the phase of building the application for Android all recordings are copied and stored inside the zipped apk file. After installation of the application to an Android device and while initialization, all recordings will be copied over to Android persistent data folder for quick access. 
+Since from this version (1.1.0) all .sdb files are recognized as Unity assets, so any .sdb files put into the Assets folder will be packaged in to apk file. 
     
-**Recording directly from the Android application is allowed but user should pay attention:**
+**Recording directly from the Android application is allowed but user should pay attention: (@kai need to modify)**
     
 * If the recording provided by the user for the new recording matches one that already exists it will temporarily replace it, until the next initialization of the application when the shipped recording will be restored. 
 * Application reinstallation/update/data cleaning may likely lead to lose of the previously recorded data from Android.
 * App sharing could also introduce some problems with the recording on Android.
     
 
-{% include tip.html content="In order for the user to overcome these problems, an option is to keep all the recordings performed on Android into a desired cloud storage (e.g., AWS S3 bucket). So everytime a recording is performed it should be uploaded to the desired remote target destination using the corresponding API functions of the cloud service. User should also download all the Android recordings after VG has initialized. " %}
+{% include tip.html content="(@kai need to modify) In order for the user to overcome these problems, an option is to keep all the recordings performed on Android into a desired cloud storage (e.g., AWS S3 bucket). So everytime a recording is performed it should be uploaded to the desired remote target destination using the corresponding API functions of the cloud service. User should also download all the Android recordings after VG has initialized. " %}
 

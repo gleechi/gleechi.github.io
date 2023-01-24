@@ -35,11 +35,21 @@ folder: mydoc
 ## V1.1.0(2023-01-24)
 
 ##### Major Functionality Changes:
-* **Breaking change:** How grasp db is loaded into the project has been refactored:
+* **Breaking change:** How grasp db (.db file) is loaded into the project has been refactored:
   * In previous versions grasp db is unrecognized file for Unity, and now it is recognized as an asset if it is put into Assets folder. And any .db files inside Assets folder will be recognized as grasp db files. 
   * In previous versions once baking is finished the output grasps.db file will be put into StreamingAssets folder and will be automatically loaded into the project while when playing. Now each time grasp baking is finished the output will be a new file "Assets/grasp-<hash>.db" with random hash. 
   * And if you want to use the new baking result, developers need to set it into [MyVirtualGrasp -> Grasp DB](unity_component_myvirtualgrasp.1.1.0.html#grasp-db). 
-  * If you want to use previously baked grasp db inside the StreamingAssets folder in previous VG versions, you need to move it into Assets folder. 
+  * If you want to use previously baked grasp db inside the StreamingAssets folder in previous VG versions, you need to move it into Assets folder, and drag this grasp db into [MyVirtualGrasp -> Grasp DB](unity_component_myvirtualgrasp.1.1.0.html#grasp-db). 
+
+* **Breaking change for Pro version:** How sensor db (.sdb file) is loaded into the project has been refactored:
+  * In previous versions sensor db is unrecognized file for Unity, and now it is recognized as an asset if it is put into Assets folder. And any .sdb files inside Assets folder will be recognized as sensor db assets. 
+  * In previous versions [VG_Recorder in VG1.0.0](unity_component_vgrecorder.1.0.0.html) output recorded .sdb file into StreamingAssets folder. Now [VG_Recorder](unity_component_vgrecorder.1.1.0.html) needs to enter complete _New Recording Path_ end with .sdb file to save recorded data. 
+  * When replaying recorded .sdb file, this file should be dragged into [VG_Recorder](unity_component_vgrecorder.1.1.0.html)  _Replay Recording_ entry. 
+  * [Sensor recording for a built Android app](unity_component_vgrecorder.1.1.0.html#sensor-recording-for-a-built-android-app) can follow a standard Unity asset packaging into apk files. 
+
+* For Pro version: [VG_Recorder](unity_component_vgrecorder.1.1.0.html) allows to assign multiple _Replay Avatars_. This allows you to replay data on a pair of hands that are represented by [separate hand models](avatars.1.1.0.html#separate-hand-models). 
+
+* For tiny objects that need precision grasps, the grasp quality now varies depending on which {% include tooltip.html tooltip="InteractionType" text="interaction type" %} is chosen for the object. When {% include tooltip.html tooltip="JumpGrasp" text="jump grasp" %} is used on an object, the grasp will have more accurate finger placement on the object but the object will have larger rotation when "jumping" into the hand. When {% include tooltip.html tooltip="TriggerGrasp" text="trigger grasp" %} is used, the grasp will have less accurate finger placement with the benefit of less hand offset when moved towards the grasping pose. (See [Grasp Interaction Type](grasp_interaction.1.1.0.html#grasp-interaction-type) section.)
 
 
 ##### GUI / Component Changes:

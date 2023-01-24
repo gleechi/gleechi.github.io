@@ -1,5 +1,5 @@
 ---
-title: VG_Recorder Component
+title: VG_Recorder Component (Pro)
 #tags: [getting_started]
 keywords: component, recorder, grasp
 #last_updated: July 16, 2016

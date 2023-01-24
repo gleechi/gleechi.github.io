@@ -73,10 +73,7 @@ See detailed explanation of the parameters in page [grasp Interaction](grasp_int
 ## Grasp DB
 
 {% include image.html file="unity/unity_vg_graspdb.png" alt="VG grasp database." caption="VG grasp database" %}
-Grasp DB as a Unity asset needs to be provided. 
-Any .db file is recognized as a grasp db when it is placed in the Assets folder. 
-
-Previously used .db files inside the StreamingAssets folder need to be moved out to Assets folder in order to be recognized as grasp db. 
+Once you have baked grasps for your current project using [VG_BakingClient](unity_component_vgbakingclient.1.1.0.html#step-3-baking), the saved grasp db can be dragged into _Grasp DB_ entry to be utilized. 
 
 
 <!--### Selection Settings
