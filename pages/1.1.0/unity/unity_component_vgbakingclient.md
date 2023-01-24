@@ -40,7 +40,7 @@ The preparation step is to create input files needed by the Baking Service. Sinc
 To prepare project, click _Prepare project_ button in baking client window, and a separate window "Prepare project" shown in above image will pop up. Follow the instruction to prepare the baking input files:
 1. At the begining of preparing project, if the listed number of scenes, hand models or objects is non-zero, please click _Clear_ button to clear all so to prevent outdated data from polluting your baking result. 
 2. Click _Export_ button will create and fill _Asset/vg_tmp/_ folder with "[Debug Files](debug_files.1.1.0.html#debug-files-content)" generated from the currently opened unity scene. To add more objects from other scenes, close this _Prepare project_ window, open the other scene, open this _Prepare project_ window and _Export_ again. Such process goes on untill you have accumulated all scenes that have {% include tooltip.html tooltip="VGInteractable" text="interactable" %} objects. **Note** all objects with [VG_Articulation](unity_component_vgarticulation.1.1.0.html) component will be exported even if this component is disabled.
-3. Click _Finish_ button will package all data collected in Asset/vg_tmp/ into "grasps.zip", so you are ready to upload to Gleechi's cloud baking service. 
+3. Click _Finish_ button will package all data collected in Asset/vg_tmp/ into "bake-job.zip", so you are ready to upload to Gleechi's cloud baking service. 
 
 {% include important.html content="Note there are two ways to create the files depending on the need of your project. Currently, if you want to bake objects that are runtime spawned, _Prepare project_ window does not support it, you need to enable _Export Scene in Runtime_ in Debug Settings. See [Creating Debug Files](debug_files.1.1.0.html#creating-debug-files) for detailed instruction." %}
 
@@ -49,5 +49,8 @@ To prepare project, click _Prepare project_ button in baking client window, and 
 Once _Prepare project_ is finished by clicking _Finish_ button, you can come back to main baking client window, and click _Create Grasps for project_ to upload your package to the Gleechi Cloud baking server and trigger a bake. 
 A window will appear to inform you about the process. Expect about 1-2 minutes for a common bake. 
 
-Once baking is complete, the grasp baking .db file will be downloaded into your project folder.
+Once baking is complete, the console message will be displayed to show the newly baked grasp db (as .db) file in your project folder. You need to drag this file into [MyVirtualGrasp -> Grasp DB](unity_component_myvirtualgrasp.1.1.0.html#grasp-db) to use it in your project.
+
 Now you can directly play the project and enjoy natural looking grasps dynamically generated on your objects.
+
+{% include callout.html content="Any .db file is recognized as a grasp db when it is placed in the Assets folder. "%}

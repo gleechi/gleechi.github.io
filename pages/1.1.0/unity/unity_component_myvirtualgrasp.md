@@ -70,6 +70,14 @@ See detailed explanation of the parameters in page [grasp Interaction](grasp_int
 
 {% include callout.html content= "Note that Interaction Type, Throw Velocity Scale and Throw Angular Velocity Scale can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.1.1.0.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global settings for that object." %} 
 
+## Grasp DB
+
+{% include image.html file="unity/unity_vg_graspdb.png" alt="VG grasp database." caption="VG grasp database" %}
+Grasp DB as a Unity asset needs to be provided. 
+Any .db file is recognized as a grasp db when it is placed in the Assets folder. 
+
+Previously used .db files inside the StreamingAssets folder need to be moved out to Assets folder in order to be recognized as grasp db. 
+
 
 <!--### Selection Settings
 {% include image.html file="unity/unity_vg_selection_settings.png" alt="VG selection settings." caption="VG selection settings" %}
