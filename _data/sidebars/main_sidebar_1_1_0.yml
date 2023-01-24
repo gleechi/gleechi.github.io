@@ -135,6 +135,9 @@ entries:
     - title: VG_FingerAnimator
       url: /unity_component_vgfingeranimator.1.1.0.html
       output: web
+    - title: VG_Assemble
+      url: /unity_component_vgassemble.1.1.0.html
+      output: web
     - title: VG_Recorder [pro]
       url: /unity_component_vgrecorder.1.1.0.html
       output: web
