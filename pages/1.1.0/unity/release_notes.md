@@ -58,8 +58,9 @@ folder: mydoc
 
 * [VG_FingerAnimator](unity_component_vgfingeranimator.1.1.0.html) is added as an alternative to [VG_PostAnimator](unity_component_vgpostanimator.1.1.0.html) for finger animation.
 
-##### API Changes:
+* Fixed a bug: [SetSensorActive](virtualgrasp_unityapi.1.1.0.html#vg_controllersetsensoractive) now works properly. **(fixed known issue from 1.0.0)**
 
+##### API Changes:
 
 ##### Other / Internal Changes:
 * [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html) was added to show case how [VG_Assemble](unity_component_vgassemble.1.1.0.html) is used to assemble or disassemble screw with a screw driver to a box.  
@@ -67,6 +68,7 @@ folder: mydoc
 * [task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use a chain loop instead of previous wrench. 
 
 ##### Update to VG Core library:
+* When a chain of objects are connected through VG constrained joints, in the previous version, if one hand grasp an upstream object, and the other grasp a distal object, only the distal object (with constrained but movable joint, i.e. non-Fixed) is movable by the hand. Now grasping the distal joint will move its upstream movable joint. This change allows (for example in [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html)) when we have a chain like box (floating) --> screw (revolute) --> screw driver (fixed), users could grasp box with one hand, and grasp and rotate the distal object, screw driver, with another hand, and rotate screw into the box.  
 
 ##### Known Issues:
 
@@ -78,8 +80,6 @@ folder: mydoc
 (_not available in free or pro versions_) scenes.
 
 * VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
-
-* [SetSensorActive](virtualgrasp_unityapi.1.1.0.html#vg_controllersetsensoractive) does not have effect. If you set it inactive, the avatar's hands are still controlled and moved by the sensor / controller. 
 
 ## V1.0.0(2022-12-07)
 
