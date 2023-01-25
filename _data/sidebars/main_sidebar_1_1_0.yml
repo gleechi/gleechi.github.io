@@ -148,7 +148,7 @@ entries:
         - title: Task1_Button_Switch
           url: /unity_vgonboarding_task1.1.1.0.html
           output: web
-        - title: Task2_Radio_Disassemble
+        - title: Task2_Radio_Disassemble_VG
           url: /unity_vgonboarding_task2.1.1.0.html
           output: web
         - title: Task3_Container

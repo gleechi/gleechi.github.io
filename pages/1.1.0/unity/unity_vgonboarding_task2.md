@@ -1,5 +1,5 @@
 ---
-title: VirtualGrasp Onboarding Task2 - Dissemble
+title: VirtualGrasp Onboarding Task2 - Radio Disassemble and Reassemble
 #tags: [getting_started]
 keywords: casestudy, task2, vgonboarding, assemble, disassemble, VG_Assemble
 #last_updated: July 16, 2016
