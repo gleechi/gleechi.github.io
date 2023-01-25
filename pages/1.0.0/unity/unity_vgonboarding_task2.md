@@ -1,7 +1,7 @@
 ---
-title: VirtualGrasp Onboarding Task2 - Dissemble
+title: VirtualGrasp Onboarding Task2 - Radio Disassemble
 #tags: [getting_started]
-keywords: casestudy, task2, vgonboarding, dissemble
+keywords: casestudy, task2, vgonboarding, disassemble
 #last_updated: July 16, 2016
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar_1_0_0
@@ -12,8 +12,6 @@ folder: mydoc
 {% include onboarding_task.html %}
 
 ### Task Description
-
-<!--{% include youtube.html id="x9emKcJleCk" %}-->
 
 {% include youtube.html id="VN3migI5sO0" %}
 
@@ -29,7 +27,6 @@ folder: mydoc
 #### Tips for VR developers
 
 * Which {% include tooltip.html tooltip="JointType" text="joint type" %} should be assigned to the antenna and two knobs?
-* Note that in order to use VirtualGrasp supported kinematic {% include tooltip.html tooltip="Joint" text="joints" %}, object has to be non-physical (i.e. no Rigidbody or ArticulationBody components).
 * How to use {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} to make small object like knobs that are near the big radio body easily selected and grasped?
 * How to dissembling radio's parts by runtime changing object's VG {% include tooltip.html tooltip="JointType" text="joint types" %}. 
 

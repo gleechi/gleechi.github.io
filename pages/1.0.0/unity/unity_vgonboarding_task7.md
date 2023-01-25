@@ -13,18 +13,11 @@ folder: mydoc
 
 ### Task Description
 
-<!--{% include youtube.html id="_DcS9Tcfoj8" %}-->
-
 {% include youtube.html id="22fNmqZyIV8" %}
 
 #### Interaction behaviors wanted
 
 * We want to assemble a set of objects (wrenches in this example) into a chain connected through VG joint (used {% include tooltip.html tooltip="Cone" text="cone" %} joint with free motion in this example), while able to freely determine who is parent and who is child. 
-
-#### Tips for VR developers
-
-* VG_Articulation support creating constrained joints on non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %}.
-* When VG joint is changed through [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) or [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerrecoverobjectjoint) VG internally handles remove and recover Rigidbody (see page [physical object joint change](unity_component_vgarticulation.1.0.0.html#physical-object-joint-change)).
 
 ### Solution
 

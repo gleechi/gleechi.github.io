@@ -17,12 +17,8 @@ folder: mydoc
 
 #### Interaction behaviors wanted
 
-* We want to assemble a set of objects (chain loops in this example) into a chain connected through VG joint (used {% include tooltip.html tooltip="Cone" text="cone" %} joint), while able to freely determine who is parent and who is child. 
+* We want to assemble a set of objects (chain loops in this example) into a chain connected through VG joint (used {% include tooltip.html tooltip="Cone" text="cone" %} joint), while able to freely determine who is the parent and who is the child. 
 
-#### Tips for VR developers
-
-* VG_Articulation support creating constrained joints on non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %}.
-* When VG joint is changed through [ChangeObjectJoint](virtualgrasp_unityapi.1.1.0.html#changeobjectjoint) or [RecoverObjectJoint](virtualgrasp_unityapi.1.1.0.html#vg_controllerrecoverobjectjoint) VG internally handles remove and recover Rigidbody (see page [physical object joint change](unity_component_vgarticulation.1.1.0.html#physical-object-joint-change)).
 
 ### Solution
 
@@ -41,7 +37,7 @@ Above image shows the setting for the component on one of the 4 chain loops. A f
 
 * Since when we assemble the chain loop to each other, we want the loop to attach to other loop as its child, we check _Assemble To Parent_ flag. 
 * Since we have totally 4 chain loops, and each one can assemble to the other 3 loops, we have 3 _Desired Poses_ **anchor_target** transform as child of the other 3 loops. 
-* Since each chain loop a rotational symetric object, so assemble angle threshold just need to make sure its symetry axis is aligned with desired pose. This axis is represented by the **z-axis** of the _Assemble Anchor_ on the loop. Therefore _Asemble Axis_ is set to be (0, 0, 1) to indicate z-axis of the **anchor** should match that of **anchor_target**.  
+* Since each chain loop a rotational symmetric object, so assemble angle threshold just need to make sure its symmetry axis is aligned with desired pose. This axis is represented by the **z-axis** of the _Assemble Anchor_ on the loop. Therefore _Asemble Axis_ is set to be (0, 0, 1) to indicate z-axis of the **anchor** should match that of **anchor_target**.  
 * Because when assembled, the chain loop is using  {% include tooltip.html tooltip="Cone" text="cone" %} joint,  a disabled [VG_Articulation](unity_component_vgarticulation.1.1.0.html) with  {% include tooltip.html tooltip="Revolute" text="revolute" %} joint is added to this game object and drag it to _Assemble Articulation_ entry.
 * Because the chain loop initially is at the disassembled state ({% include tooltip.html tooltip="Floating" text="floating" %} joint), we don't need to assign _Disassemble Articulation_ entry.
 * Because the chain loop initially is at the disassembled state ({% include tooltip.html tooltip="Floating" text="floating" %} joint), if the object initially is {% include tooltip.html tooltip="PhysicalObject" text="physical" %}, when disassembled it will always recover its physical properties automatically handled by VG. Therefore _Force Disassembled Physical_ flag does not need to be checked.
