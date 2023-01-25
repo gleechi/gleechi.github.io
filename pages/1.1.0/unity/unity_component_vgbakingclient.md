@@ -49,7 +49,7 @@ To prepare project, click _Prepare project_ button in baking client window, and 
 Once _Prepare project_ is finished by clicking _Finish_ button, you can come back to main baking client window, and click _Create Grasps for project_ to upload your package to the Gleechi Cloud baking server and trigger a bake. 
 A window will appear to inform you about the process. Expect about 1-2 minutes for a common bake. 
 
-Once baking is complete, the console message will be displayed to show the newly baked grasp db (as .db) file is saved as "Assets/grasp-<hash>.db" with random hash. You need to drag this file into [MyVirtualGrasp -> Grasp DB](unity_component_myvirtualgrasp.1.1.0.html#grasp-db) to use it in your project.
+Once baking is complete, the console message will be displayed to show the newly baked grasp db (as .db) file is saved as "Assets/grasp-[hash].db" with a random generated hash. You need to drag this file into [MyVirtualGrasp --> Grasp DB](unity_component_myvirtualgrasp.1.1.0.html#grasp-db) to use it in your project.
 
 Now you can directly play the project and enjoy natural looking grasps dynamically generated on your objects.
 
