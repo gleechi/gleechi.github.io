@@ -64,11 +64,11 @@ folder: mydoc
 
 ##### Other / Internal Changes:
 * [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html) was added to show case how [VG_Assemble](unity_component_vgassemble.1.1.0.html) is used to assemble or disassemble screw with a screw driver to a box.  
-* [task2 radio disassemble](unity_vgonboarding_task2.1.1.0.html) and [task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use the new [VG_Assemble](unity_component_vgassemble.1.1.0.html) component. The old scripts DisassembleWithDistanc.cs and ChaiAssembleVGArticulation.cs are removed. 
-* [task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use a chain loop instead of previous wrench. 
+* [Task2 radio disassemble](unity_vgonboarding_task2.1.1.0.html) and [task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use the new [VG_Assemble](unity_component_vgassemble.1.1.0.html) component. The old scripts DisassembleWithDistanc.cs and ChainAssembleVGArticulation.cs are removed. 
+* [Task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use the chain loop instead of previous the wrench. 
 
 ##### Update to VG Core library:
-* When a chain of objects are connected through VG constrained joints, in the previous version, if one hand grasp an upstream object, and the other grasp a distal object, only the distal object (with constrained but movable joint, i.e. non-Fixed) is movable by the hand. Now grasping the distal joint will move its upstream movable joint. This change allows (for example in [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html)) when we have a chain like box (floating) --> screw (revolute) --> screw driver (fixed), users could grasp box with one hand, and grasp and rotate the distal object, screw driver, with another hand, and rotate screw into the box.  
+* When a chain of objects are connected through VG constrained joints, in the previous version, if one hand grasps an upstream object, and the other grasps a distal object, only the distal object (with constrained but movable joint, i.e. non-Fixed) is movable by the hand. In this version (1.1.0) grasping the distal joint will move its upstream movable joint. This change allows (for example in [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html)) on a chain like box (floating) --> screw (revolute) --> screw driver (fixed), users could grasp box with one hand, and grasp and rotate the distal object, screw driver, with another hand in order to rotate screw into the box.
 
 ##### Known Issues:
 
