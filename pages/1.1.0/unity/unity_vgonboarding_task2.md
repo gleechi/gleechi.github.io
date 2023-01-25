@@ -15,7 +15,7 @@ folder: mydoc
 
 <!--{% include youtube.html id="x9emKcJleCk" %}-->
 
-{% include youtube.html id="VN3migI5sO0" %}
+{% include youtube.html id="kMjdAaeFivE" %}
 
 #### Interaction behaviors wanted
 
@@ -25,11 +25,12 @@ folder: mydoc
 * When one hand grasp the radio body, the other hand should be able to easily grasp knobs (NOTE this is a challenging object selection problem when a smaller object like knobs are close with a bigger radio object).  
 * Can dissembling the antenna and two knobs from the radio body when hand grasping on them and pulling farther away. 
 * After the antenna or two knobs are dissembled, they should also physically react to the environment and gravity.
+* Can assemble the disassembled parts back to the radio.
 
 #### Tips for VR developers
 
 * Which {% include tooltip.html tooltip="JointType" text="joint type" %} should be assigned to the antenna and two knobs?
-* Note that in order to use VirtualGrasp supported kinematic {% include tooltip.html tooltip="Joint" text="joints" %}, object has to be non-physical (i.e. no Rigidbody or ArticulationBody components).
+* Note that in order to use VirtualGrasp supported constrained (non-{% include tooltip.html tooltip="Floating" text="floating" %}) {% include tooltip.html tooltip="Joint" text="joints" %}, object has to be non-{% include tooltip.html tooltip="PhysicalObject" text="physical" %}.
 * How to use {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %} to make small object like knobs that are near the big radio body easily selected and grasped?
 * How to dissembling radio's parts by runtime changing object's VG {% include tooltip.html tooltip="JointType" text="joint types" %}. 
 
@@ -40,6 +41,22 @@ In VirtualGrasp SDK, we packed the solution of this task in **VirtualGrasp\Scene
 ```js
 VirtualGrasp\Scenes\onboarding\VG_Onboarding.unity
 ````
+#### Disassemble and re-assemble knobs and antenna
+
+{% include image.html file="unity/unity_onboarding_task2_vg_assemble.png" alt="VG Assemble setup for antenna." caption="VG Assemble setup for antenna." %}
+
+[VG_Assemble](unity_component_vgassemble.1.1.0.html) component is used for disassembling and re-assembling the two knobs and the antenna from the radio. 
+Above image shows the setting for the component on antenna. A few things to point out:
+
+* Since when we re-assemble the antenna to the radio, we want the antenna to attach to radio as radio's child, we check _Assemble To Parent_ flag. 
+* And _Desired Poses_ is **antenna_anchor_target** transform that is child of the radio.
+* Since the antenna is a rotational symetric object, so assemble angle threshold just need to make sure this symetry axis is aligned with desired pose. This axis is represented by the **z-axis** of the assigned _Assemble Anchor_ **anchor** transform. Therefore _Asemble Axis_ is set to be (0, 0, 1) to indicate z-axis of **anchor** should match that of **antenna_anchor_target**.  
+* Because the antenna initially is at assembled state (attached to radio with {% include tooltip.html tooltip="Cone" text="cone" %} joint), we need to add a disabled [VG_Articulation](unity_component_vgarticulation.1.1.0.html) with  {% include tooltip.html tooltip="Floating" text="floating" %} joint to this game object and drag it to _Disassemble Articulation_ entry. (If an object initially is floating joint type, this is not needed.)
+* Since initially the antenna is attached to the radio with a constrained joint type -- {% include tooltip.html tooltip="Cone" text="cone" %} joint, the object can not be {% include tooltip.html tooltip="PhysicalObject" text="physical" %}. Therefore if we want the object to become physical when it is disassembled, we need to check _Force Disassembled Physical_ flag. 
+
+
+
+#### Change selection weight to make knobs easily selected
 
 ```js
 //VirtualGrasp\Scenes\onboarding\Scripts\ChangeSelectionWeight.cs:
@@ -85,52 +102,6 @@ is the script showing how to use API function
 This script is attached to the two knobs, and the main radio body would be **m_dependent_object**; as a result, once the radio is grasped by one hand, the selection weight of the two knobs will be tuned up to **m_graspedWeight** so that the knobs can be easily selected for grasping by the other hand. The logic may not be perfect, however the main goal in this script is to show the use cases of {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %}.
 
 Note, in this example, even when we don't tune up selection weights on the knobs, the selection still works well. 
-
-```js
-//VirtualGrasp\Scenes\onboarding\Scripts\DissembleWithDistance.cs:
-
-using UnityEngine;
-using VirtualGrasp;
-
-/** 
- * DissembleWithDistance shows as a tutorial on how to use the VG_Controller.ChangeObjectJoint
- * function to dissemble parts that are initially non-physical objects.
- */
-public class DissembleWithDistance : MonoBehaviour
-{
-    public Transform new_parent;
-
-    public float m_disassembleDistance = 0.2f;
-
-    void Update()
-    {        
-        foreach (VG_HandStatus hand in VG_Controller.GetHands())
-        {
-            if(hand.m_selectedObject == transform && hand.IsHolding()
-                && VG_Controller.GetObjectJointType(transform) != VG_JointType.FLOATING)
-            {
-                VG_Controller.GetSensorPose(hand.m_avatarID, hand.m_side, out Vector3 sensor_pos, out Quaternion sensor_rot);
-                if((sensor_pos - hand.m_hand.position).magnitude > m_disassembleDistance)
-                {
-                    VG_Controller.ChangeObjectJoint(transform, VG_JointType.FLOATING);
-                    transform.SetParent(new_parent);
-
-                    // Set this object as physical object
-                    if(!transform.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rb))
-                    {
-                        rb = transform.gameObject.AddComponent<Rigidbody>();
-                        rb.useGravity = true;
-                    }
-                    if (!transform.TryGetComponent<Collider>(out _))
-                        transform.gameObject.AddComponent<BoxCollider>();
-                }
-            }
-        }
-    }
-}
-
-````
-is the script to use API function [GetSensorPose](virtualgrasp_unityapi.1.1.0.html#getsensorpose) to check when sensor controlled wrist position (**sensor_pos**) is too far from the avatar hand's wrist position (**hand.m_hand.position**) by a certain threshold (**m_disassembleDistance**), then API function [ChangeObjectJoint](virtualgrasp_unityapi.1.1.0.html#changeobjectjoint) is used to change object {% include tooltip.html tooltip="JointType" text="joint type" %} to freely floating.
 
 
 
