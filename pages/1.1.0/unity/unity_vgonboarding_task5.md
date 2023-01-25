@@ -1,7 +1,7 @@
 ---
 title: VirtualGrasp Onboarding Task5 - Assemble 
 #tags: [getting_started]
-keywords: casestudy, task5, vgonboarding, assemble, dissemble
+keywords: casestudy, task5, vgonboarding, assemble, disassemble, VG_Assemble
 #last_updated: July 16, 2016
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar_1_1_0
@@ -47,5 +47,6 @@ Above image shows the setting for the component on cap. A few things to point ou
 * And _Desired Poses_ is **cap_target** transform that is child of the bottle.
 * Since the cap is a rotational symetric object, so assemble angle threshold just need to make sure its symetry axis is aligned with desired pose. This axis is represented by the **y-axis** of the cap object itself, since _Assemble Anchor_ is not assigned. Therefore _Asemble Axis_ is set to be (0, 1, 0) to indicate y-axis of the object should match that of **cap_target**.  
 * Because when assembled, cap is using  {% include tooltip.html tooltip="Revolute" text="revolute" %} joint with non-zero screw rate to simulate screwing effect of cap in real world. A disabled [VG_Articulation](unity_component_vgarticulation.1.1.0.html) with  {% include tooltip.html tooltip="Revolute" text="revolute" %} joint is added to this game object and drag it to _Assemble Articulation_ entry.
-* Because the cap initially is at the disassembled state (attached to radio with {% include tooltip.html tooltip="Floating" text="floating" %} joint), we don't need to assign _Disassemble Articulation_ entry.
-* Because the cap initially is at the disassembled state (attached to radio with {% include tooltip.html tooltip="Floating" text="floating" %} joint), if the object initially is {% include tooltip.html tooltip="PhysicalObject" text="physical" %}, when disassembled it will always recover its physical properties automatically handled by VG. Therefore _Force Disassembled Physical_ flag does not need to be checked.
+* Because when disassemble a cap in the real life, we need to unscrew to loosen it, this requirement is simulated by checking _Disassemble On Zero State_ flag.
+* Because the cap initially is at the disassembled state ({% include tooltip.html tooltip="Floating" text="floating" %} joint), we don't need to assign _Disassemble Articulation_ entry.
+* Because the cap initially is at the disassembled state ({% include tooltip.html tooltip="Floating" text="floating" %} joint), if the object initially is {% include tooltip.html tooltip="PhysicalObject" text="physical" %}, when disassembled it will always recover its physical properties automatically handled by VG. Therefore _Force Disassembled Physical_ flag does not need to be checked.
