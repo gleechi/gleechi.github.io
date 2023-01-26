@@ -122,6 +122,8 @@ folder: mydoc
 
 * "VirtualGrasp --> Make Interactables Readable" helper function mentioned in [Object Setup](unity_get_started_objects.1.0.0.html) is not working. For now you have to manually check “Read/Write enabled” checkbox in the model inspector of your object in order to interact with the object or bake grasp.
 
+*  When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody get lost once this object is fully released. 
+
 ## V0.15.0(2022-07-27)
 
 ##### Major Functionality Changes:

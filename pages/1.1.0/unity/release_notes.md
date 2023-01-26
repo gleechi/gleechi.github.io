@@ -63,6 +63,7 @@ folder: mydoc
 ##### API Changes:
 
 ##### Other / Internal Changes:
+* Fixed a bug: When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody will be kept after this object is fully released. **(fixed known issue from 1.0.0)**
 * [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html) was added to show case how [VG_Assemble](unity_component_vgassemble.1.1.0.html) is used to assemble or disassemble screw with a screw driver to a box.  
 * [Task2 radio disassemble](unity_vgonboarding_task2.1.1.0.html) and [task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use the new [VG_Assemble](unity_component_vgassemble.1.1.0.html) component. The old scripts DisassembleWithDistanc.cs and ChainAssembleVGArticulation.cs are removed. 
 * [Task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use the chain loop instead of previous the wrench. 
@@ -170,6 +171,8 @@ folder: mydoc
 * [SetSensorActive](virtualgrasp_unityapi.1.1.0.html#vg_controllersetsensoractive) does not have effect. If you set it inactive, the avatar's hands are still controlled and moved by the sensor / controller. 
 
 * "VirtualGrasp --> Make Interactables Readable" helper function mentioned in [Object Setup](unity_get_started_objects.1.1.0.html) is not working. For now you have to manually check “Read/Write enabled” checkbox in the model inspector of your object in order to interact with the object or bake grasp.
+
+* When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody get lost once this object is fully released.
 
 ## V0.15.0(2022-07-27)
 
