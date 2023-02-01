@@ -174,6 +174,8 @@ folder: mydoc
 
 * When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody get lost once this object is fully released.
 
+* If an object has constrained {% include tooltip.html tooltip="Joint" text="joint" %}, pushing **Step grasp** button on [VG_GraspEditor](unity_component_vggraspeditor.1.1.0.html) to review primary grasps on this object does not work. 
+
 ## V0.15.0(2022-07-27)
 
 ##### Major Functionality Changes:

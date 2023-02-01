@@ -122,7 +122,9 @@ folder: mydoc
 
 * "VirtualGrasp --> Make Interactables Readable" helper function mentioned in [Object Setup](unity_get_started_objects.1.0.0.html) is not working. For now you have to manually check “Read/Write enabled” checkbox in the model inspector of your object in order to interact with the object or bake grasp.
 
-*  When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody get lost once this object is fully released. 
+* When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody get lost once this object is fully released. 
+
+* If an object has constrained {% include tooltip.html tooltip="Joint" text="joint" %}, pushing **Step grasp** button on [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) to review primary grasps on this object does not work. 
 
 ## V0.15.0(2022-07-27)
 
