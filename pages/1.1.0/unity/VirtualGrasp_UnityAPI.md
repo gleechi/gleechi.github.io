@@ -174,6 +174,7 @@ ReturnCode for various VirtualGrasp functions.Most functions in this API provide
 |ARTICULATION_SETUP_FAILED||
 |NO_SENSOR_DB||
 |ARTICULATION_NO_CHANGE||
+|INVALID_OBJECT||
 
 
 ### VG_SensorControlFlags
@@ -468,12 +469,16 @@ Return all unbaked objects.
 
 ### VG_Controller.JumpGraspObject
 
-Specify an object to be grasped by a hand no matter how far the object is, and object will jump to the hand.
+Specify an object to be grasped by a hand no matter how far the object is.
 
 | _int_ |avatarID|The avatar id|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
-| _Transform_ |obj|The object that will be jump grasped by this hand|
+| _Transform_ |obj|The transform of the object that will be grasped by this hand|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ Recommend to use "Jump Primary Grasp" interaction type on the object since otherwise dynamically generated grasp can be unnatural due to suboptimal hand placement.
+
 
 
 ### VG_Controller.RecoverObjectJoint
@@ -544,12 +549,16 @@ Specify the object selection weights for grasping interaction.
 
 ### VG_Controller.SwitchGraspObject
 
-Instantaneously switch the grasped object to specified object in the function, the object will jump to hand.
+Instantaneously switch the grasped object to specified object in the function.
 
 | _int_ |avatarID|The avatar id|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
 | _Transform_ |obj|The transform of the object to switch to grasp|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ Recommend to use "Jump Primary Grasp" interaction type on the object since otherwise dynamically generated grasp can be unnatural due to suboptimal hand placement.
+
 
 
 ### VG_Controller.TogglePrimaryGraspOnObject
@@ -723,10 +732,19 @@ Unregister avatar during runtime
 
 
 
-## [RECORDING_INTERFACE_API **[pro]**](#recording_interface_api-pro)
+## [RECORDING_INTERFACE_API](#recording_interface_api)
 
 ### VG_Controller.CollectRecording
-<span class="label label-primary">pro</span>
+
+Collect recording sensor data.
+
+| _**out** VG_Recording_ |recording|[output] vg sensor recording.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+
+
+### VG_Controller.CollectRecording
 
 Collect recording sensor data.
 
@@ -737,7 +755,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.GetReplayAvatarID
-<span class="label label-primary">pro</span>
 
 Get the AvatarID of the first replay avatar.
 
@@ -750,7 +767,6 @@ Get the AvatarID of the first replay avatar.
 
 
 ### VG_Controller.GetReplayStartWristPose
-<span class="label label-primary">pro</span>
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
 
@@ -774,7 +790,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.IsReplaySuccess
-<span class="label label-primary">pro</span>
 
 Check if finished replay had identical response as recorded
 
@@ -784,7 +799,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.IsReplaying
-<span class="label label-primary">pro</span>
 
 Check if a hand is currently replaying a recorded sensor data.
 
@@ -796,29 +810,26 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.LoadRecording
-<span class="label label-primary">pro</span>
 
 Load recorded sensor data from a file, but do not start replay
 
-| _string_ |filename|The filename to load the recording from.|
+| _string_ |fullpath|The full path to load the recording from.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.LoadRecording
-<span class="label label-primary">pro</span>
 
 Load recorded sensor data from a byte array.
 
-| _byte[]_ |recording|The byte array to load the recording from.|
+| _VG_Recording_ |recording|The byte array to load the recording from.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.ResumeReplay
-<span class="label label-primary">pro</span>
 
 Resume replaying of an avatar.
 
@@ -829,18 +840,16 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.SaveRecording
-<span class="label label-primary">pro</span>
 
 Save recording sensor data and store the whole sequence to a file
 
-| _string_ |filename|The filename to save the recording to.|
+| _string_ |fullpath|The fullpath of the filename to save the recording to.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StartRecording
-<span class="label label-primary">pro</span>
 
 Start recording sensor data.
 
@@ -850,7 +859,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StartReplay
-<span class="label label-primary">pro</span>
 
 Start full replay of the whole interaction sequence on an avatar.
 
@@ -862,7 +870,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StartReplayOnObject
-<span class="label label-primary">pro</span>
 
 Start replaying a specific interaction segment on one object.
 
@@ -876,7 +883,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StopRecording
-<span class="label label-primary">pro</span>
 
 Stop recording sensor data.
 
@@ -886,7 +892,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StopReplay
-<span class="label label-primary">pro</span>
 
 Stop replay of the recorded interaction sequence on an avatar.
 
@@ -1040,6 +1045,19 @@ Return the pose matrix of a specific bone.
 Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.1.0.html)
 
 
+### VG_Controller.GetCurrentGesture
+
+Query what is the gesture a hand is forming, holding or releasing at the moment.
+
+| _int_ |avatarID|The avatar to query gesture status for.|
+|[*VG_HandSide*](#vg_handside) | side|The hand on which to query gesture status.|
+| _**out** VG_GestureType_ |gesture|Output, the current gesture type the hand is in.|
+
+**Remark:**
+ If gesture output is UNKNOWN_GESTURETYPE, that means the hand is not forming, holding or releasing any gesture, but at a complete gesture-empty state.
+
+
+
 ### VG_Controller.GetFingerBone
 
 Return the pose of a specific finger bone as a matrix.
@@ -1097,7 +1115,7 @@ Make a gesture with a hand.
 
 ### VG_Controller.ReleaseGesture
 
-Release a gesture on a hand
+Release a gesture on a hand.
 
 | _int_ |avatarID|The avatar to release a grasp for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
