@@ -135,6 +135,12 @@ entries:
     - title: VG_FingerAnimator
       url: /unity_component_vgfingeranimator.1.1.0.html
       output: web
+    - title: VG_ObjectAnimator
+      url: /unity_component_vgobjectanimator.1.1.0.html
+      output: web
+    - title: VG_AnimationDriver
+      url: /unity_component_vganimationdriver.1.1.0.html
+      output: web
     - title: VG_Assemble
       url: /unity_component_vgassemble.1.1.0.html
       output: web
@@ -168,6 +174,9 @@ entries:
           output: web
         - title: Task8_Screw_Assemble_VG
           url: /unity_vgonboarding_task8.1.1.0.html
+          output: web
+        - title: Task9_Plier_Manipulation_Animation
+          url: /unity_vgonboarding_task9.1.1.0.html
           output: web
       
   - title: References

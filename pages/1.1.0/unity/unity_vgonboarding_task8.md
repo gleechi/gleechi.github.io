@@ -1,7 +1,7 @@
 ---
 title: VirtualGrasp Onboarding Task8 - Screw Assemble 
 #tags: [getting_started]
-keywords: casestudy, task7, vgonboarding, assemble, disassemble, VG_Assemble
+keywords: casestudy, task8, vgonboarding, assemble, disassemble, VG_Assemble
 #last_updated: July 16, 2016
 #summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar_1_1_0
