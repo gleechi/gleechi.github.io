@@ -589,7 +589,7 @@ Reset the plugin.
 Get the AvatarID of the given skinned mesh renderer
 
 | _**out** int_ |avatarID|The returned AvatarID.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.INVALID_AVATAR if avatar is null.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successful avatar id fetch, or VG_ReturnCode.INVALID_AVATAR if avatar is null.|
 
 
 ### VG_Controller.GetDebugPath
@@ -617,13 +617,26 @@ Receive an enumerator of all registered hands and their status.
 
 ### VG_Controller.GetSensorControlledAvatarID
 
-Get the AvatarID of the first sensor controlled avatar.
+Get the AvatarID of the sensor controlled avatar when the avatar represents both left and right hands.
 
 | _**out** int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successfull avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successful avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
 
 **Remark:**
  No guarantee on returning the one that was first sensor controlled avatar
+
+
+
+### VG_Controller.GetSensorControlledAvatarID
+
+Get the AvatarID(s) of sensor controlled avatar(s) when each avatar represents just one hand side.
+
+| _**out** int_ |avatarID1|The first returned AvatarID. Will be set to -1 upon error.|
+| _**out** int_ |avatarID2|The second returned AvatarID of the other hand if each avatar is representing one hand.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successful avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
+
+**Remark:**
+ If each avatar registered represents one hand side, then avatarID1 and avatarID2 represent left and right hand avatar respectively.
 
 
 
@@ -756,13 +769,26 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 ### VG_Controller.GetReplayAvatarID
 
-Get the AvatarID of the first replay avatar.
+Get the AvatarID of the replay avatar when the avatar represents both left and right hands.
 
 | _**out** int_ |avatarID|The returned AvatarID. Will be set to -1 upon error.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
  No guarantee on returning the one that was first registered as replay avatar
+
+
+
+### VG_Controller.GetReplayAvatarID
+
+Get the AvatarID(s) of the replay avatar(s) when each avatar represents just one hand side.
+
+| _**out** int_ |avatarID1|The first returned AvatarID. Will be set to -1 upon error.|
+| _**out** int_ |avatarID2|The second returned AvatarID of the other hand if each avatar is representing one hand.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+**Remark:**
+ If each avatar registered represents one hand side, then avatarID1 and avatarID2 represent left and right hand avatar respectively.
 
 
 

@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V1.1.0-rc1 (2023-01-24)
+## V1.1.0-rc2 (2023-02-09)
 
 ##### Major Functionality Changes:
 * **Breaking change:** How grasp db (.db file) is loaded into the project has been refactored:
@@ -53,22 +53,21 @@ folder: mydoc
 
 * Fixed a bug: "VirtualGrasp --> Make Interactables Readable" helper function mentioned in [Object Setup](unity_get_started_objects.1.1.0.html) now works, and you will see in console output which object(s) has been processed. **(fixed known issue from 1.0.0)**
 
-
 ##### GUI / Component Changes:
 
 * [VG_FingerAnimator](unity_component_vgfingeranimator.1.1.0.html) is added as an alternative to [VG_PostAnimator](unity_component_vgpostanimator.1.1.0.html) for finger animation.
 
 * Fixed a bug: [SetSensorActive](virtualgrasp_unityapi.1.1.0.html#vg_controllersetsensoractive) now works properly. **(fixed known issue from 1.0.0)**
 
-<!--* Fixed a bug: In previous version, if an object has constrained {% include tooltip.html tooltip="Joint" text="joint" %}, pushing **Step grasp** button on [VG_GraspEditor](unity_component_vggraspeditor.1.1.0.html) to review primary grasps on this object did not work. Now it works. **(fixed known issue from 1.0.0)**
---> 
+* Fixed a bug: In previous version, if an object has constrained {% include tooltip.html tooltip="Joint" text="joint" %}, pushing **Step grasp** button on [VG_GraspEditor](unity_component_vggraspeditor.1.1.0.html) to review primary grasps on this object did not work. Now it works. **(fixed known issue from 1.0.0)**
+
 ##### API Changes:
 
-<!--
+* Added two overloaded functions, [GetReplayAvatarID](virtualgrasp_unityapi.1.1.0.html#vg_controllergetreplayavatarid-1) and [GetSensorControlledAvatarID](virtualgrasp_unityapi.1.1.0.html#vg_controllergetsensorcontrolledavatarid-1), to provide two avatar ids when two avatars are used to represent left and right hands respectively. 
+
 * Added [GetCurrentGesture](virtualgrasp_unityapi.1.1.0.html#vg_controllergetcurrentgesture) api function. 
 
 * Previously [SwitchGraspObject](virtualgrasp_unityapi.1.1.0.html#vg_controllerswitchgraspobject) and [JumpGraspObject](virtualgrasp_unityapi.1.1.0.html#vg_controllerjumpgraspobject) only work on objects with {% include tooltip.html tooltip="Floating" text="floating" %} joint, now it works on all objects including those with constrained (non-{% include tooltip.html tooltip="Floating" text="floating" %}) joint types. 
--->
 
 ##### Other / Internal Changes:
 * Fixed a bug: When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody will be kept after this object is fully released. **(fixed known issue from 1.0.0)**
