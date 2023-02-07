@@ -629,15 +629,11 @@ Get the AvatarID of the sensor controlled avatar when the avatar represents both
 
 ### VG_Controller.GetSensorControlledAvatarID
 
-Get the AvatarID(s) of sensor controlled avatar(s) when each avatar represents just one hand side.
+Get the AvatarID(s) of the sensor controlled avatar(s) when each avatar represents both hand sides or just one hand side. If the avatar represents both hand sides then avatarIDLeft and avatarIDRight are identical.
 
-| _**out** int_ |avatarID1|The first returned AvatarID. Will be set to -1 upon error.|
-| _**out** int_ |avatarID2|The second returned AvatarID of the other hand if each avatar is representing one hand.|
-| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successful avatar id fetch, or VG_ReturnCode.DLL_FUNCTION_FAILED on an unexpected error.|
-
-**Remark:**
- If each avatar registered represents one hand side, then avatarID1 and avatarID2 represent left and right hand avatar respectively.
-
+| _**out** int_ |avatarIDLeft|The ID of sensor avatar that include left hand. Will be set to -1 upon error or if there is no sensor avatar representing left hand.|
+| _**out** int_ |avatarIDRight|The ID of sensor avatar that include right hand. Will be set to -1 upon error or if there is no sensor avatar representing right hand.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.Initialize
@@ -781,15 +777,11 @@ Get the AvatarID of the replay avatar when the avatar represents both left and r
 
 ### VG_Controller.GetReplayAvatarID
 
-Get the AvatarID(s) of the replay avatar(s) when each avatar represents just one hand side.
+Get the AvatarID(s) of the replay avatar(s) when each avatar represents both hand sides or just one hand side. If the avatar represents both hand sides then avatarIDLeft and avatarIDRight are identical.
 
-| _**out** int_ |avatarID1|The first returned AvatarID. Will be set to -1 upon error.|
-| _**out** int_ |avatarID2|The second returned AvatarID of the other hand if each avatar is representing one hand.|
+| _**out** int_ |avatarIDLeft|The ID of replay avatar that include left hand. Will be set to -1 upon error or if there is no replay avatar representing left hand.|
+| _**out** int_ |avatarIDRight|The ID of replay avatar that include right hand. Will be set to -1 upon error or if there is no replay avatar representing right hand.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
-
-**Remark:**
- If each avatar registered represents one hand side, then avatarID1 and avatarID2 represent left and right hand avatar respectively.
-
 
 
 ### VG_Controller.GetReplayStartWristPose
