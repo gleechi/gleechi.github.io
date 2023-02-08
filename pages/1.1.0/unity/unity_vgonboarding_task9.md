@@ -17,7 +17,7 @@ folder: mydoc
 
 #### Interaction behaviors wanted
 
-* We want to be able to use primary grasp as a basis to grasp and manipulate an articulated object, the pliers.
+* We want to be able to use {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} as a basis to grasp and manipulate an articulated object, the pliers.
 * We want to use the controller's GRIP button to control grasp, and once the plier is grasped, to use TRIGGER button to animate closing and opening of the pliers.
 
 ### Solution
