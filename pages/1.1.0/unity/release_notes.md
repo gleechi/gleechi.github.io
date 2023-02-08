@@ -45,7 +45,6 @@ folder: mydoc
   * In previous versions sensor db is unrecognized file for Unity, and now it is recognized as an asset if it is put into Assets folder. And any .sdb files inside Assets folder will be recognized as sensor db assets. 
   * In previous versions [VG_Recorder in VG1.0.0](unity_component_vgrecorder.1.0.0.html) output recorded .sdb file into StreamingAssets folder. Now [VG_Recorder](unity_component_vgrecorder.1.1.0.html) needs to enter complete _New Recording Path_ end with .sdb file to save recorded data. 
   * When replaying recorded .sdb file, this file should be dragged into [VG_Recorder](unity_component_vgrecorder.1.1.0.html)  _Replay Recording_ entry. 
-  * [Sensor recording for a built Android app](unity_component_vgrecorder.1.1.0.html#sensor-recording-for-a-built-android-app) can follow a standard Unity asset packaging into apk files. 
 
 * For Pro version: [VG_Recorder](unity_component_vgrecorder.1.1.0.html) allows to assign multiple _Replay Avatars_. This allows you to replay data on a pair of hands that are represented by [separate hand models](avatars.1.1.0.html#separate-hand-models). **(fixed known issue from 1.0.0)**
 
@@ -55,7 +54,7 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 
-* [VG_FingerAnimator](unity_component_vgfingeranimator.1.1.0.html) is added as an alternative to [VG_PostAnimator](unity_component_vgpostanimator.1.1.0.html) for finger animation.
+* [VG_FingerAnimator](unity_component_vgfingeranimator.1.1.0.html), [VG_ObjectAnimator](unity_component_vgobjectanimator.1.1.0.html) and [VG_AnimationDriver](unity_component_vganimationdriver.1.1.0.html) are added to support easy creation of animation of in-hand manipulation of articulated objects. See [VG onboarding task 9](unity_vgonboarding_task9.1.1.0.html) to learn an example use case.
 
 * Fixed a bug: [SetSensorActive](virtualgrasp_unityapi.1.1.0.html#vg_controllersetsensoractive) now works properly. **(fixed known issue from 1.0.0)**
 
@@ -71,9 +70,12 @@ folder: mydoc
 
 ##### Other / Internal Changes:
 * Fixed a bug: When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody will be kept after this object is fully released. **(fixed known issue from 1.0.0)**
-* [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html) was added to show case how [VG_Assemble](unity_component_vgassemble.1.1.0.html) is used to assemble or disassemble screw with a screw driver to a box.  
 * [Task2 radio disassemble](unity_vgonboarding_task2.1.1.0.html) and [task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use the new [VG_Assemble](unity_component_vgassemble.1.1.0.html) component. The old scripts DisassembleWithDistanc.cs and ChainAssembleVGArticulation.cs are removed. 
 * [Task7 chain assemble](unity_vgonboarding_task7.1.1.0.html) switched to use the chain loop instead of previous the wrench. 
+* [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html) was added to show case how [VG_Assemble](unity_component_vgassemble.1.1.0.html) is used to assemble or disassemble screw with a screw driver to a box.  
+* [VG onboarding task 9](unity_vgonboarding_task9.1.1.0.html) was added to show case how to use the newly added three components, [VG_FingerAnimator](unity_component_vgfingeranimator.1.1.0.html), [VG_ObjectAnimator](unity_component_vgobjectanimator.1.1.0.html) and [VG_AnimationDriver](unity_component_vganimationdriver.1.1.0.html) to create animation of in-hand manipulation of articulated objects.
+* VG onboarding scene now switches to use GRIP button as the **Grasp Button** in [MyVirtualGrasp -> Global Grasp Interaction Settings](unity_component_myvirtualgrasp.1.1.0.html#global-grasp-interaction-settings). This is to support [VG onboarding task 9](unity_vgonboarding_task9.1.1.0.html) to use TRIGGER button for animating the manipulation of the plier part.
+
 
 ##### Update to VG Core library:
 * When a chain of objects are connected through VG constrained joints, in the previous version, if one hand grasps an upstream object, and the other grasps a distal object, only the distal object (with constrained but movable joint, i.e. non-Fixed) is movable by the hand. In this version (1.1.0) grasping the distal joint will move its upstream movable joint. This change allows (for example in [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html)) on a chain like box (floating) --> screw (revolute) --> screw driver (fixed), users could grasp box with one hand, and grasp and rotate the distal object, screw driver, with another hand in order to rotate screw into the box.

@@ -36,10 +36,6 @@ After a recording is finished, the recorded data will be written as a .sdb file 
 
 {% include tip.html content="To make the VG_Recorder react appropriately to keyboard input, the Unity Editor needs to be in focus (by mouse click on the game window once)." %}
 
-### Important Note on the Files (@kai modify or delete this)
-
-In order to support recording and replaying {% include tooltip.html tooltip="SensorData" text="sensor data" %} and re-using that information, there will be recording files in each project.
-
 ## How to Replay Sensor Data
 
 In order to replay the recorded sensor data, a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} needs to be created in [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.1.0.html#avatars) (see [Avatar Types](avatars.1.1.0.html#avatar-types)), and corresponding skinned mesh renderer should be specified in _Replay Avatars_ entry. 
@@ -116,18 +112,3 @@ If you want a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar
 * also assign the SkinnedMeshRenderer to the _Replay Avatar_ slot of the VG_Recorder (meaning that you want to replay the recordings on this avatar).
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="In MyVirtualGrasp: Setup for another avatar to replay recorded data." caption="In MyVirtualGrasp: Setup for another avatar to replay recorded data." %}
-
-
-## Sensor Recording for a built Android app
-
-Since from this version (1.1.0) all .sdb files are recognized as Unity assets, so any .sdb files put into the Assets folder will be packaged in to apk file. 
-    
-**Recording directly from the Android application is allowed but user should pay attention: (@kai need to modify)**
-    
-* If the recording provided by the user for the new recording matches one that already exists it will temporarily replace it, until the next initialization of the application when the shipped recording will be restored. 
-* Application reinstallation/update/data cleaning may likely lead to lose of the previously recorded data from Android.
-* App sharing could also introduce some problems with the recording on Android.
-    
-
-{% include tip.html content="(@kai need to modify) In order for the user to overcome these problems, an option is to keep all the recordings performed on Android into a desired cloud storage (e.g., AWS S3 bucket). So everytime a recording is performed it should be uploaded to the desired remote target destination using the corresponding API functions of the cloud service. User should also download all the Android recordings after VG has initialized. " %}
-
