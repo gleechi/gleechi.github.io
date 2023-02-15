@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V1.1.0-rc2 (2023-02-09)
+## V1.1.0-rc2 (2023-02-16)
 
 ##### Major Functionality Changes:
 * **Breaking change:** How grasp db (.db file) is loaded into the project has been refactored:
