@@ -126,6 +126,8 @@ folder: mydoc
 
 * If an object has constrained {% include tooltip.html tooltip="Joint" text="joint" %}, pushing **Step grasp** button on [VG_GraspEditor](unity_component_vggraspeditor.1.0.0.html) to review primary grasps on this object does not work. 
 
+* While a hand grasps a physical object to collide with another physical object, if any colliding object's collider is disabled, the controller grasping the object will continue to have vibrating haptic feedback until hand releases the object.
+
 ## V0.15.0(2022-07-27)
 
 ##### Major Functionality Changes:

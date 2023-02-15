@@ -75,6 +75,7 @@ folder: mydoc
 * [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html) was added to show case how [VG_Assemble](unity_component_vgassemble.1.1.0.html) is used to assemble or disassemble screw with a screw driver to a box.  
 * [VG onboarding task 9](unity_vgonboarding_task9.1.1.0.html) was added to show case how to use the newly added three components, [VG_FingerAnimator](unity_component_vgfingeranimator.1.1.0.html), [VG_ObjectAnimator](unity_component_vgobjectanimator.1.1.0.html) and [VG_AnimationDriver](unity_component_vganimationdriver.1.1.0.html) to create animation of in-hand manipulation of articulated objects.
 * VG onboarding scene now switches to use GRIP button as the **Grasp Button** in [MyVirtualGrasp -> Global Grasp Interaction Settings](unity_component_myvirtualgrasp.1.1.0.html#global-grasp-interaction-settings). This is to support [VG onboarding task 9](unity_vgonboarding_task9.1.1.0.html) to use TRIGGER button for animating the manipulation of the plier part.
+* Fixed a bug: While a hand grasps a physical object to collide with another physical object, if any colliding object's collider is disabled, the controller grasping the object will continue to have vibrating haptic feedback until hand releases the object. Now it is fixed so that when the collider is disabled, the vibration will stop. **(fixed known issue from 1.0.0)**
 
 
 ##### Update to VG Core library:
@@ -183,7 +184,9 @@ folder: mydoc
 
 * When an object is held in hand(s), runtime changes of physical properties of Rigidbody or ArticulationBody get lost once this object is fully released.
 
-* If an object has constrained {% include tooltip.html tooltip="Joint" text="joint" %}, pushing **Step grasp** button on [VG_GraspEditor](unity_component_vggraspeditor.1.1.0.html) to review primary grasps on this object does not work. 
+* If an object has constrained {% include tooltip.html tooltip="Joint" text="joint" %}, pushing **Step grasp** button on [VG_GraspEditor](unity_component_vggraspeditor.1.1.0.html) to review primary grasps on this object does not work.
+
+* While a hand grasps a physical object to collide with another physical object, if any colliding object's collider is disabled, the controller grasping the object will continue to have vibrating haptic feedback until hand releases the object.
 
 ## V0.15.0(2022-07-27)
 
