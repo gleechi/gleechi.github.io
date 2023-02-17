@@ -96,6 +96,8 @@ folder: mydoc
 
 * You can not use _OVR Hand_ (which can be found in the Oculus Integration under Oculus\VR\Scripts\Util\OVRHand.cs) together with VG controllers at the moment, as they both are independently affecting the hand model. 
 
+* The [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.1.0.html) is currently relying on Unity InputSystem. You thus have a dependency of this system in the current version, but will resolve this in the next so it can also be used with legacy input.
+
 ## V1.0.0(2022-12-07)
 
 ##### Major Functionality Changes:
