@@ -128,6 +128,8 @@ folder: mydoc
 
 * While a hand grasps a physical object to collide with another physical object, if any colliding object's collider is disabled, the controller grasping the object will continue to have vibrating haptic feedback until hand releases the object.
 
+* You can not use _OVR Hand_ (which can be found in the Oculus Integration under Oculus\VR\Scripts\Util\OVRHand.cs) together with VG controllers at the moment, as they both are independently affecting the hand model. 
+
 ## V0.15.0(2022-07-27)
 
 ##### Major Functionality Changes:
