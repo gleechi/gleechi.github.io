@@ -24,7 +24,7 @@ All the parameters are explained in detail in [object articulation](object_artic
 
 {% include callout.html content="If you add multiple VG_Articulation components to a game object, only one component can be active and will be used to configure the initial object articulation." %}
 
-{% include callout.html content="If only an inactive VG_Articulation component is added to a game object, the object will be registered to VirtualGrasp and included in the [baking process](unity_component_vgbakingclient.1.1.0.html#step-2-preparation), however its interactability is temporarily disabled (equivalent to [SetObjectSelectionWeight](virtualgrasp_unityapi.1.1.0.html#setobjectselectionweight) to 0)." %}
+{% include callout.html content="If only an inactive VG_Articulation component is added to a game object, the object will be registered to VirtualGrasp with the corresponding articulation parameters, and included in the [baking process](unity_component_vgbakingclient.1.1.0.html#step-2-preparation), however its interactability is temporarily disabled (equivalent to [SetObjectSelectionWeight](virtualgrasp_unityapi.1.1.0.html#setobjectselectionweight) to 0)." %}
 
 ## Runtime Changes
 
