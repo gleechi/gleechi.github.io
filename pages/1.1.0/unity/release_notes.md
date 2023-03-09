@@ -98,6 +98,8 @@ folder: mydoc
 
 * The [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.1.0.html) is currently relying on the Unity "XR Interaction Toolkit" package. We thus have a dependency of this system in the current 1.1.0, but will resolve this in the next so it can also be used with legacy input.
 
+* When a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody is released from grasping, the RigidBody.iskinematic always switch to false even if the developer has changed iskinematic to true when object is grasped.
+
 ## V1.0.0(2022-12-07)
 
 ##### Major Functionality Changes:
