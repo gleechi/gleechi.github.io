@@ -96,6 +96,9 @@ entries:
         - title: VG_EC_OculusHand
           url: /unity_vg_ec_oculushand.1.2.0.html
           output: web
+        - title: VG_EC_OVRHand
+          url: /unity_vg_ec_ovrhand.1.2.0.html
+          output: web
         - title: VG_EC_SteamHand
           url: /unity_vg_ec_steamhand.1.2.0.html
           output: web
@@ -104,6 +107,9 @@ entries:
           output: web
         - title: VG_EC_UnityXRHand
           url: /unity_vg_ec_unityxrhand.1.2.0.html
+          output: web
+        - title: VG_EC_UnityXRHands
+          url: /unity_vg_ec_unityxrhands.1.2.0.html
           output: web
         #- title: VG_EC_GenericHand
         #  url: /unity_vg_ec_generichand.1.2.0.html
