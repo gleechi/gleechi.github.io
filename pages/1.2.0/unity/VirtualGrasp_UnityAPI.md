@@ -1,8 +1,8 @@
 ---
 title: Unity API
-sidebar: main_sidebar_1_1_0
+sidebar: main_sidebar_1_2_0
 keywords: grasp, baking, cabvg
-permalink: virtualgrasp_unityapi.1.1.0.html
+permalink: virtualgrasp_unityapi.1.2.0.html
 folder: unity
 toc: true
 ---
@@ -247,7 +247,7 @@ This event is invoked when a grasped object is colliding with another object. Th
 This event is invoked in the frame when a hand is starting to deselect an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.1.0.html)
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.2.0.html)
 
 
 ### VG_Controller.OnObjectFullyReleased
@@ -285,7 +285,7 @@ This event is invoked in the frame when a hand is starting to release an object.
 This event is invoked in the frame when a hand is starting to select an object. The VG_HandStatus it carries includes more information about the interaction.
 
 
-Used in: [VG_Highlighter](unity_component_vghighlighter.1.1.0.html)
+Used in: [VG_Highlighter](unity_component_vghighlighter.1.2.0.html)
 
 
 ### VG_Controller.OnObjectSelectionWeightChanged
@@ -751,7 +751,7 @@ Collect recording sensor data.
 | _**out** VG_Recording_ |recording|[output] vg sensor recording.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.CollectRecording
@@ -762,7 +762,7 @@ Collect recording sensor data.
 | _**out** byte[]_ |recording|[output] byte array containing the sensor recording.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.GetReplayAvatarID
@@ -809,7 +809,7 @@ Get the starting wrist poses for full replay of the whole interaction sequence.
  SetProcessByRecordedFrame need to be called before this to set this avatar to be enabled for replay.
 
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.IsReplaySuccess
@@ -819,7 +819,7 @@ Check if finished replay had identical response as recorded
 
 | **returns** | _bool_ | True if replay was identical, False otherwise.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.IsReplaying
@@ -831,7 +831,7 @@ Check if a hand is currently replaying a recorded sensor data.
 |[*VG_HandSide*](#vg_handside) | handSide|The hand to check.|
 | **returns** | _bool_ | True if replaying, False otherwise.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.LoadRecording
@@ -842,7 +842,7 @@ Load recorded sensor data from a file, but do not start replay
 | _string_ |fullpath|The full path to load the recording from.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.LoadRecording
@@ -853,7 +853,7 @@ Load recorded sensor data from a byte array.
 | _VG_Recording_ |recording|The byte array to load the recording from.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.ResumeReplay
@@ -864,7 +864,7 @@ Resume replaying of an avatar.
 | _int_ |avatarID|The ID of the avatar to resume replaying the recording on (note: it has to be an avatar enabled for replay).|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.SaveRecording
@@ -875,7 +875,7 @@ Save recording sensor data and store the whole sequence to a file
 | _string_ |fullpath|The fullpath of the filename to save the recording to.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.StartRecording
@@ -885,7 +885,7 @@ Start recording sensor data.
 
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.StartReplay
@@ -897,7 +897,7 @@ Start full replay of the whole interaction sequence on an avatar.
 | _Transform_ |selectedObject|If provided, the entire sensor recording will be replayed in this object's frame. If not, in global frame.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.StartReplayOnObject
@@ -911,7 +911,7 @@ Start replaying a specific interaction segment on one object.
 | _int_ |interactionId|The ID of the interaction segment to be played on this object.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.StopRecording
@@ -921,7 +921,7 @@ Stop recording sensor data.
 
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 ### VG_Controller.StopReplay
@@ -932,7 +932,7 @@ Stop replay of the recorded interaction sequence on an avatar.
 | _int_ |avatarID|The ID of the avatar to play the recording on (note: it has to be an avatar enabled for replay).|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
+Used in: [VG_Recorder](unity_component_vgrecorder.1.2.0.html)
 
 
 
@@ -951,7 +951,7 @@ Call grasp editor functionality on a currently selected object and grasp.
 | _int_ |grasp|The grasp ID to call the action on (if not provided, the current grasp of the hand).|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_GraspStudio](unity_component_vggraspstudio.1.1.0.html)
+Used in: [VG_GraspStudio](unity_component_vggraspstudio.1.2.0.html)
 
 
 ### VG_Controller.GetGrasp
@@ -970,7 +970,7 @@ Receive a grasp in the grasp DB by index.
 |[*VG_QueryGraspMethod*](#vg_querygraspmethod) | queryGraspMethod|Can be used to define how the graspIndex should be interpreted.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_GraspStudio](unity_component_vggraspstudio.1.1.0.html)
+Used in: [VG_GraspStudio](unity_component_vggraspstudio.1.2.0.html)
 
 
 ### VG_Controller.GetInteractionTypeForObject
@@ -990,7 +990,7 @@ Receive the number of saved grasps in the grasp db for a specific object, and op
 |[*VG_HandSide*](#vg_handside) | handSide|If a valid handSide together with avatarID, receive only the available grasps for this hand (otherwise all available grasps).|
 | **returns** | _int_ | The number of saved grasps in the grasp db for the selected object (either all or for the specified hand).|
 
-Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.1.0.html)
+Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.2.0.html)
 
 
 ### VG_Controller.GetNumPrimaryGraspsInDB
@@ -1002,7 +1002,7 @@ Receive the number of primary grasps in the grasp db for a specific object, and 
 |[*VG_HandSide*](#vg_handside) | handSide|If a valid handSide together with avatarID, receive only the primary grasps for this hand (otherwise all available grasps).|
 | **returns** | _int_ | The number of primary grasps in the grasp db for the selected object (either all or for the specified hand).|
 
-Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.1.0.html)
+Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.2.0.html)
 
 
 
@@ -1037,7 +1037,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 | _**out** Transform_ |t|The returned pose of the bone.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.1.0.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.2.0.html)
 
 
 ### VG_Controller.GetBone
@@ -1047,7 +1047,7 @@ Return the Transform that corresponds to a provided instance ID.
 | _int_ |transformID|The instance ID.|
 | **returns** | _Transform_ | The Transform that corresponds to the transformID.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.1.0.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.2.0.html)
 
 
 ### VG_Controller.GetBone
@@ -1062,7 +1062,7 @@ Return the pose (i.e. position and orientation) of a specific bone.
 | _**out** Quaternion_ |q|The returned rotation of the bone.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.1.0.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.2.0.html)
 
 
 ### VG_Controller.GetBone
@@ -1076,7 +1076,7 @@ Return the pose matrix of a specific bone.
 | _**out** Matrix4x4_ |m|The returned pose matrix of the bone.|
 | **returns** | _Transform_ | The Unity Transform that corresponds to the requested bone.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.1.0.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.2.0.html)
 
 
 ### VG_Controller.GetCurrentGesture
@@ -1104,7 +1104,7 @@ Return the pose of a specific finger bone as a matrix.
 | _**out** Matrix4x4_ |m|The returned pose of the bone.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.1.0.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.2.0.html)
 
 
 ### VG_Controller.GetFingerBone
@@ -1120,7 +1120,7 @@ Return the pose (i.e. position and orientation) of a specific finger bone.
 | _**out** Quaternion_ |q|The returned rotation of the bone.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.1.0.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.2.0.html)
 
 
 ### VG_Controller.GetFingerBone
@@ -1134,7 +1134,7 @@ Reflect the pose of a specific bone on a Transform.
 | _**out** Transform_ |t|The returned pose of the bone.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.1.0.html)
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.2.0.html)
 
 
 ### VG_Controller.MakeGesture
@@ -1325,7 +1325,7 @@ Get the push cirle for this hand side of an avatar as a visual hint for object s
 | _**out** bool_ |inContact|True if contact (i.e. pushing), False otherwise.|
 | **returns** | _Transform_ | The selected object's Unity Transform, or null if none.|
 
-Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.1.0.html)
+Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.2.0.html)
 
 
 ### VG_Controller.IsMissingSensorData
@@ -1367,7 +1367,7 @@ Send an external controller grab signal to the plugin (for EXTERNAL_CONTROLLER s
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to set external sensor pose for.|
 | _float_ |strength|The grab strength signal to set.|
 
-Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.1.0.html)
+Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.2.0.html)
 
 
 ### VG_Controller.SetFingerCalibrationMode
