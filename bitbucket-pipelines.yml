@@ -1,12 +1,22 @@
 # This pipeline will sync this bitbucket repo with the github docs repo that servers docs.gleechi.com
 # Instructions from: https://medium.com/@dmitryshaposhnik/sync-bitbucket-repo-to-github-669458ea9a5e
+definitions: 
+  steps:
+    - step: &mirror-to-github
+        name: build and test
+        script:
+          #- apt-get install git-lfs
+          - git push --mirror git@github.com:gleechi/gleechi.github.io.git
 
 clone:
   depth: full
   lfs: true
+
 pipelines:
-  default:
-    - step:
-        script:
-          #- apt-get install git-lfs
-          - git push --mirror git@github.com:gleechi/gleechi.github.io.git
+  branches:
+    main:
+      - step: *mirror-to-github
+  
+  pull-requests:
+    '**':
+      - step: *mirror-to-github
