@@ -35,6 +35,7 @@ folder: mydoc
 
 ##### Major Functionality Changes:
 * [Hand Profiles](avatars.1.2.0.html#hand-profiles) add a new functionality to allow developers to manually map a hand bones (wrist and finger bones) to [Gleechi hand model](avatars.1.2.0.html#hand-model-standard). 
+* To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
 
 ##### GUI / Component Changes:
 * TBD
