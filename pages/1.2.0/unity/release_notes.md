@@ -31,7 +31,7 @@ folder: mydoc
 *
 -->
 
-## V1.2.0-rc1 (2023-03-17)
+## V1.2.0-rc1 (2023-03-24)
 
 ##### Major Functionality Changes:
 * TBD
@@ -120,6 +120,8 @@ folder: mydoc
 * When a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody is released from grasping, the RigidBody.iskinematic always switch to false even if the developer has changed iskinematic to true when object is grasped.
 
 * The first overloaded function [ChangeObjectJoint](virtualgrasp_unityapi.1.2.0.html#vg_controllerchangeobjectjoint) has a bug on joint limit setting of Revolute and Cone joint types because the limit angle in degree missed to be converted to radian before passing to the VirtualGrasp library.
+
+* Repeated runtime calling of register and unregister of avtars will cause Unity crash due to memory leaks.  
 
 ## V1.0.0(2022-12-07)
 
