@@ -35,7 +35,10 @@ folder: mydoc
 
 ##### Major Functionality Changes:
 * [Hand Profiles](avatars.1.2.0.html#hand-profiles) add a new functionality to allow developers to manually map a hand bones (wrist and finger bones) to [Gleechi hand model](avatars.1.2.0.html#hand-model-standard). 
+
 * To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
+
+* [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.2.0.html) now can also be used with legacy input. **(fixed known issue from 1.1.0)**
 
 ##### GUI / Component Changes:
 * TBD
@@ -44,16 +47,31 @@ folder: mydoc
 * TBD
 
 ##### Other / Internal Changes:
+
+* You can not use _OVR Hand_ (which can be found in the Oculus Integration under Oculus\VR\Scripts\Util\OVRHand.cs) together with VG controllers as they both are independently affecting the hand model. Since OVR hand controller is updating hand pose in Unity's Update() loop, it will always overwrite VG's hand controller which is updating in the FixedUpdate() loop. Because VG needs to handle interaction with physical objects, we cannot move VG update to Update() loop. [VG_EC_OVRHand controller](unity_vg_ec_ovrhand.1.2.0.html) is added only for the OculusIntegration sample (in Assets/com.gleechi.unity.virtualgrasp/Samples/OculusIntegration) to compare OVR hand controller with VG's Oculus integration.
+
 * Fixed a bug: Solved memory leak and Unity crashing bug when repeatedly calling register and unregister avatars. **(fixed known issue from 1.1.0)**
+
 * Fixed a bug: Solved RigidBody.iskinematic true runtime setting is lost problem when a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody is released from grasping. **(fixed known issue from 1.1.0)**
+
 * Fixed a bug: The first overloaded function [ChangeObjectJoint](virtualgrasp_unityapi.1.2.0.html#vg_controllerchangeobjectjoint) when target is Revolute or Cone joint types limit angle is not converted to radian before passing to the VirtualGrasp library, causing limits appear to be much bigger than the set values. **(fixed known issue from 1.1.0)**
+
 * Fixed a bug: When handover a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} from one hand to another, sometimes the receiving hands may drop together with the object. **(fixed known issue from 1.1.0)**
 
 ##### Update to VG Core library:
 * TBD
 
 ##### Known Issues:
-* TBD
+* When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
+
+* Multiplayer (_not available in free or pro versions_) with VG network message still can not solve complete object sync for new player registration.
+
+* A few events such as [OnObjectDeselected](virtualgrasp_unityapi.1.2.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer 
+(_not available in free or pro versions_) scenes.
+
+* VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
+
+* When a game object with ArticulationBody (with constrained joint like prismatic) is released from grasp, the object may move to a direction not intended by the released hand.
 
 ## V1.1.0
 
