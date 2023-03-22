@@ -34,7 +34,7 @@ folder: mydoc
 ## V1.2.0-rc1 (2023-03-24)
 
 ##### Major Functionality Changes:
-* TBD
+* [Hand Profiles](avatars.1.2.0.html#hand-profiles) add a new functionality to allow developers to manually map a hand bones (wrist and finger bones) to [Gleechi hand model](avatars.1.2.0.html#hand-model-standard). 
 
 ##### GUI / Component Changes:
 * TBD
@@ -43,7 +43,10 @@ folder: mydoc
 * TBD
 
 ##### Other / Internal Changes:
-*TBD
+* Fixed a bug: Solved memory leak and Unity crashing bug when repeatedly calling register and unregister avatars. **(fixed known issue from 1.1.0)**
+* Fixed a bug: Solved RigidBody.iskinematic true runtime setting is lost problem when a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody is released from grasping. **(fixed known issue from 1.1.0)**
+* Fixed a bug: The first overloaded function [ChangeObjectJoint](virtualgrasp_unityapi.1.2.0.html#vg_controllerchangeobjectjoint) when target is Revolute or Cone joint types limit angle is not converted to radian before passing to the VirtualGrasp library, causing limits appear to be much bigger than the set values. **(fixed known issue from 1.1.0)**
+* Fixed a bug: When handover a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} from one hand to another, sometimes the receiving hands may drop together with the object. **(fixed known issue from 1.1.0)**
 
 ##### Update to VG Core library:
 * TBD
@@ -120,6 +123,8 @@ folder: mydoc
 * When a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody is released from grasping, the RigidBody.iskinematic always switch to false even if the developer has changed iskinematic to true when object is grasped.
 
 * The first overloaded function [ChangeObjectJoint](virtualgrasp_unityapi.1.2.0.html#vg_controllerchangeobjectjoint) has a bug on joint limit setting of Revolute and Cone joint types because the limit angle in degree missed to be converted to radian before passing to the VirtualGrasp library.
+
+* When handover a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} from one hand to another, sometimes the receiving hands may drop together with the object. 
 
 * Repeated runtime calling of register and unregister of avtars will cause Unity crash due to memory leaks.  
 

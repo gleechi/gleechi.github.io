@@ -102,6 +102,8 @@ folder: mydoc
 
 * The first overloaded function [ChangeObjectJoint](virtualgrasp_unityapi.1.1.0.html#vg_controllerchangeobjectjoint) has a bug on joint limit setting of Revolute and Cone joint types because the limit angle in degree missed to be converted to radian before passing to the VirtualGrasp library.
 
+* When handover a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} from one hand to another, sometimes the receiving hands may drop together with the object. 
+
 * Repeated runtime calling of register and unregister of avtars will cause Unity crash due to memory leaks. 
 
 ## V1.0.0(2022-12-07)

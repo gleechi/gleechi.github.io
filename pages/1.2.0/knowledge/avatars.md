@@ -22,7 +22,7 @@ However, avatars can have non-hand bones such as elbows, shoulders, or even full
 The image below shows GleechiRig's left hand model. The labeled wrist and finger bones represent the hand bones whose movement VirtualGrasp controls. 
 
 If you want to use a custom avatar (enabled in the Pro version of the VirtualGrasp SDK), the recommended minimum conditions to be met related to the skeletal hand structure are:
-* A hand's wrist bone should include 5 fingers as children (no extra bones),
+* A hand's wrist bone should include 5 fingers as children,
 * with 3 bones in each finger whose movement VG controls, and
 * for thumb, the 3 bones correspond to the first metacarpal and the 2 phalanges, and
 * for non-thumb fingers, the 3 bones correspond to the 3 phalanges in human hand anatomy. 
@@ -49,7 +49,8 @@ The image below shows an example of how to set it up in Unity, but it applies to
 
 VirtualGrasp provides VG_HandProfiles (in Unity as ScriptableObjects) to configure a number of hand model-related settings and thereby allows you to quickly switch between different custom hands.
 
-{% include image.html file="unity/unity_vg_ec_handprofile.png" alt="VG_HandProfile in Unity." caption="VG_HandProfile as scriptable object in Unity." %}
+{% include image.html file="unity/unity_vg_ec_handprofile_1_2_0.png" alt="VG_HandProfile in Unity." caption="VG_HandProfile as scriptable object in Unity." %}
+When your hand model is not following [the Gleechi hand model standard](#hand-model-standard), you can manually assign hand bone indices which will be saved in the hand profile for your hands.
 
 Please watch the video below for a tutorial that shows an example of how to configure a VG_HandProfile for your Custom Hand in Unity.
 
@@ -66,3 +67,4 @@ There are three avatar types in VirtualGrasp:
 {% include image.html file="unity/unity_hand_model_1_0_0.png" alt="Unity hand model." caption="Hand model references need to be provided in MyVirtualgrasp → Avatars → Skeletal Mesh.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}
 
 {% include callout.html content= "The physical avatar currently is only semi-physical in that only colliders are added to hand bones, no rigid bodies or articulation bodies are used." %} 
+
