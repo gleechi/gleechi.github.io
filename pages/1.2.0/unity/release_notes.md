@@ -36,8 +36,6 @@ folder: mydoc
 ##### Major Functionality Changes:
 * [Hand Profiles](avatars.1.2.0.html#hand-profiles) add a new functionality to allow developers to manually map a hand bones (wrist and finger bones) to [Gleechi hand model](avatars.1.2.0.html#hand-model-standard). 
 
-* To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
-
 * [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.2.0.html) now can also be used with legacy input. **(fixed known issue from 1.1.0)**
 
 * VirtualGrasp SDK move over to custom package structure. com.gleechi.unity.virtualgrasp. 
@@ -46,7 +44,8 @@ folder: mydoc
 * [My VirtualGrasp -> Avatars and Sensors](unity_component_myvirtualgrasp.1.2.0.html#avatars-and-sensors) shows clearer separation of multiple avatars, and also shows avtar's ID. 
 
 ##### API Changes:
-* TBD
+* * To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
+
 
 ##### Other / Internal Changes:
 
