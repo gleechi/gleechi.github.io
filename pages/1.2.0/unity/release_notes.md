@@ -50,7 +50,11 @@ folder: mydoc
 
 ##### Other / Internal Changes:
 
-*  [VG_EC_OVRHand controller](unity_vg_ec_ovrhand.1.2.0.html) is added only for the OculusIntegration sample (in Assets/com.gleechi.unity.virtualgrasp/Samples/OculusIntegration) to compare OVR hand controller with VG's Oculus integration. This is to demonstrate the fact that you can not use _OVR Hand_ (which can be found in the Oculus Integration under Oculus\VR\Scripts\Util\OVRHand.cs) together with VG controllers as they both are independently affecting the hand model. Since OVR hand controller is updating hand pose in Unity's Update() loop, it will always overwrite VG's hand controller which is updating in the FixedUpdate() loop, therefore showing the symptom of hands not able to grasp an object. Because VG needs to handle interaction with physical objects, we cannot move VG update to Update() loop to avoid this overwritting.
+* VG_OculusHands_Profile is added in Resources/VG_HandProfiles/ to support OVR hand models which do not follow [the Gleechi hand model standard](avatars.1.2.0.html#hand-model-standard). Note developers do not need VirtualGrasp SDK to release a new hand profile to support any custom hand models, and please see [Hand Profiles](avatars.1.2.0.html#hand-profiles) to learn how to create your own hand profile with hand bone maps.
+
+* OculusIntegration sample scene is added (in Samples/OculusIntegration) to compare OVR hand controller with VG's Oculus integration. See [FAQ regarding OVR hand](faqs.1.2.0.html#i-want-to-use-use-ovr-hand-with-virtualgrasp-but-my-hands-can-not-grasp-any-object-why) for more explanation.
+
+*  [VG_EC_OVRHand controller](unity_vg_ec_ovrhand.1.2.0.html) is added only for the OculusIntegration sample scene mentioned above.
 
 * Fixed a bug: Solved memory leak and Unity crashing bug when repeatedly calling register and unregister avatars. **(fixed known issue from 1.1.0)**
 
