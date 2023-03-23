@@ -50,9 +50,9 @@ The image below shows an example of how to set it up in Unity, but it applies to
 VirtualGrasp provides VG_HandProfiles (in Unity as ScriptableObjects) to configure a number of hand model-related settings and thereby allows you to quickly switch between different custom hands.
 
 {% include image.html file="unity/unity_vg_ec_handprofile_1_2_0.png" alt="VG_HandProfile in Unity." caption="VG_HandProfile as scriptable object in Unity." %}
-When your hand model is not following [the Gleechi hand model standard](#hand-model-standard), you can manually assign hand bone indices which will be saved in the hand profile for your hands.
+When your hand model is not following [the Gleechi hand model standard](#hand-model-standard), you can manually provide a hand bone map by loading your hand skinned mesh and editing the Left and Right Hand Bone Maps, then click **Assign Hand Bone Indices** to save the map as "hand bone indices" in the hand profile.
 
-Please watch the video below for a tutorial that shows an example of how to configure a VG_HandProfile for your Custom Hand in Unity.
+Please watch the video below for a tutorial that shows an example of how to configure a VG_HandProfile for your Custom Hand in Unity. In this video **Hand Bone Indices** is not needed hence empty because the hand model follows the Gleechi hand model standard.
 
 {% include youtube.html id="UFCitkp39uw" %}
 
