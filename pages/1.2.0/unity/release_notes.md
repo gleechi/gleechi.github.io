@@ -60,7 +60,7 @@ folder: mydoc
 * Fixed a bug: When handover a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} from one hand to another, sometimes the receiving hands may drop together with the object. **(fixed known issue from 1.1.0)**
 
 ##### Update to VG Core library:
-* TBD
+* No update.
 
 ##### Known Issues:
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
@@ -74,7 +74,7 @@ folder: mydoc
 
 * When a game object with ArticulationBody (with constrained joint like prismatic) is released from grasp, the object may move to a direction not intended by the released hand.
 
-## V1.1.0
+## V1.1.0  (2023-03-07)
 
 ##### Major Functionality Changes:
 * **Breaking change:** How grasp db (.db file) is loaded into the project has been refactored:
