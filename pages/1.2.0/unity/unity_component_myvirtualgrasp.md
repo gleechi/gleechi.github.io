@@ -19,7 +19,7 @@ On this page, we are going to describe all the major configuration options cover
 
 ## Avatars and Sensors
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="Avatar and Sensor setup in Unity." caption="Avatar and Sensor setup in Unity." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_1_2_0.png" alt="Avatar and Sensor setup in Unity." caption="Avatar and Sensor setup in Unity." %}
 
 {% include callout.html content="In VirtualGrasp we use the term sensor and controller exchangeably since a controller is essentially a sensing device for hand poses." %}
 

@@ -40,8 +40,10 @@ folder: mydoc
 
 * [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.2.0.html) now can also be used with legacy input. **(fixed known issue from 1.1.0)**
 
+* VirtualGrasp SDK move over to custom package structure. com.gleechi.unity.virtualgrasp. 
+
 ##### GUI / Component Changes:
-* TBD
+* [My VirtualGrasp -> Avatars and Sensors](unity_component_myvirtualgrasp.1.2.0.html#avatars-and-sensors) shows clearer separation of multiple avatars, and also shows avtar's ID. 
 
 ##### API Changes:
 * TBD
