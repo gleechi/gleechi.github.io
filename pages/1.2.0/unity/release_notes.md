@@ -44,7 +44,7 @@ folder: mydoc
 * [My VirtualGrasp -> Avatars and Sensors](unity_component_myvirtualgrasp.1.2.0.html#avatars-and-sensors) shows clearer separation of multiple avatars, and also shows avtar's ID. 
 
 ##### API Changes:
-* * To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
+* To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
 
 
 ##### Other / Internal Changes:
