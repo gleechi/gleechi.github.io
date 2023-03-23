@@ -64,7 +64,7 @@ There are three avatar types in VirtualGrasp:
 * If the _Replay_ option is ticked, then the avatar will be registered as a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. The hands of this avatar will be controlled by pre-recorded sensor data. Note this <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorRecordAndReplay}}">sensor record and replay</a> feature is only available in VirtualGrasp **Pro version**.
 * Both {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} and {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} can be created as a {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatar" %} if _Physical_ option is ticked. 
 
-{% include image.html file="unity/unity_hand_model_1_0_0.png" alt="Unity hand model." caption="Hand model references need to be provided in MyVirtualgrasp → Avatars → Skeletal Mesh.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}
+{% include image.html file="unity/unity_hand_model_1_2_0.png" alt="Unity hand model." caption="Hand model references need to be provided in MyVirtualgrasp → Avatars → Skeletal Mesh.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}
 
 {% include callout.html content= "The physical avatar currently is only semi-physical in that only colliders are added to hand bones, no rigid bodies or articulation bodies are used." %} 
 
