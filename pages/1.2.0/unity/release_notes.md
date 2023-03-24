@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V1.2.0-rc1 (2023-03-24) <span style="color:red">(to be completed)</span>
+## V1.2.0-rc1 (2023-03-24)
 
 ##### Major Functionality Changes:
 * [Hand Profiles](avatars.1.2.0.html#hand-profiles) add a new functionality to allow developers to manually map customized hand bones (wrist and finger bones) to [Gleechi hand model](avatars.1.2.0.html#hand-model-standard). 
