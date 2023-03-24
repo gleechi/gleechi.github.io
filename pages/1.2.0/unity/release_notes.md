@@ -35,16 +35,23 @@ folder: mydoc
 ## V1.2.0-rc1 (2023-03-24)
 
 ##### Major Functionality Changes:
+
 * [Hand Profiles](avatars.1.2.0.html#hand-profiles) add a new functionality to allow developers to manually map customized hand bones (wrist and finger bones) to [Gleechi hand model](avatars.1.2.0.html#hand-model-standard). 
 
 * [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.2.0.html) now can also be used with legacy input. **(fixed known issue from 1.1.0)**
 
-* VirtualGrasp SDK move over to custom package structure. com.gleechi.unity.virtualgrasp. 
+* VirtualGrasp SDK moved over to [Custom Package](https://docs.unity3d.com/Manual/CustomPackages.html) structure, with SDK being a proper package and the Onboarding being an optionally installable "Sample." We are still unsure how this affects the Asset Store deployment through the Unity verification system, but will update as soon as we have a validated version. We will update potentially incorrect paths in this documentation then.
 
 ##### GUI / Component Changes:
+
 * [My VirtualGrasp -> Avatars and Sensors](unity_component_myvirtualgrasp.1.2.0.html#avatars-and-sensors) shows clearer separation of multiple avatars, and also shows avtar's ID. 
 
+* The [Baking Client](unity_component_vgbakingclient.1.2.0.html) has been visually optimized to make it easier to handle login and baking. 
+
+* The [VG_EC_MouseHand](unity_vg_ec_mousehand.1.2.0.html) controller has been adjusted so it can be used with both Legacy and new Input System.
+
 ##### API Changes:
+
 * To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
 
 
