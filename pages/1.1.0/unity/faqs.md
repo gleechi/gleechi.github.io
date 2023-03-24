@@ -40,6 +40,13 @@ When you use VirtualGrasp, you should not put the hand rig under the OVRPlayerCo
 
 When you put the avatar also under TrackingSpace, the hands will in addition be affected by the movement of that Transform (as a child of it) - which in the case of OVRPlayerController seems is some acceleration-based movement with damping. This movement induced by the PlayerController will then create a wiggeling behavior when moving the player while holding an object with VG.
 
+### I want to use use _OVR Hand_ with VirtualGrasp, but my hands can not grasp any object, why?
+You can not use _OVR Hand_ (which can be found in the Oculus Integration under Oculus\VR\Scripts\Util\OVRHand.cs) together with VG controllers as they both are independently affecting the hand model. Since OVR hand controller is updating hand pose in Unity's Update() loop, it will always overwrite VG's hand controller which is updating in the FixedUpdate() loop, therefore showing the symptom of hands not able to grasp an object. Because VG needs to handle interaction with physical objects, we cannot move VG update to Update() loop to avoid this overwritting. 
+
+Compared to _OVR Hand_, VG's sensor integration with Oculus finger tracking (through [VG_EC_OculusHand](unity_vg_ec_oculushand.1.2.0.html)) has equivalent hand control quality, because VG consumes the same Oculus finger tracking signal and integrates it into VG's hand interaction engine.
+
+Note in this version (1.1.0) you can not use OVRHand's hand model (skinned mesh) because it does not follow [Gleechi hand model standard](avatars.1.1.0.html#hand-model-standard). In the next version (1.2.0) this will be fixed by a new feature of Hand Profiles. 
+
 ## Interaction
 
 ### I added a VG_Articulation component to my game object, but I could not interact with the object when I play.
