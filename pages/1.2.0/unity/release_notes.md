@@ -50,6 +50,8 @@ folder: mydoc
 
 * The [VG_EC_MouseHand](unity_vg_ec_mousehand.1.2.0.html) controller has been adjusted so it can be used with both Legacy and new Input System.
 
+* When using "NULL" as the origin name in any [VG_ControllerProfile](controllers.1.2.0.html#controller-profile) the origin will be hard reset to zero-origin even if an origin transform is provided in the MyVirtualGrasp component. This to assure that some controllers (such as the [VG_EC_MouseHand](unity_vg_ec_mousehand.1.2.0.html)) do not use any origin offset.
+
 ##### API Changes:
 
 * To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
