@@ -330,6 +330,10 @@ Change a set of prameters of an object's joint in runtime.
  Recommend to use this in LateUpdate to guarantee object pose is in sync with VirtualGrasp library.
 
 
+**Remark:**
+ Should not be called on a Game Object that has [RequireComponent(typeof(Rigidbody))] attribute since VG needs to destroy Rigidbody when change to constrained joint type.
+
+
 
 ### VG_Controller.ChangeObjectJoint
 
@@ -341,6 +345,10 @@ Change an object's joint and all other articulation parameters in runtime.
 
 **Remark:**
  Recommend to use this in LateUpdate to guarantee object pose is in sync with VirtualGrasp library.
+
+
+**Remark:**
+ Should not be called on a Game Object that has [RequireComponent(typeof(Rigidbody))] attribute since VG needs to destroy Rigidbody when change to constrained joint type.
 
 
 
@@ -592,13 +600,6 @@ Get the AvatarID of the given skinned mesh renderer
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode.SUCCESS on successful avatar id fetch, or VG_ReturnCode.INVALID_AVATAR if avatar is null.|
 
 
-### VG_Controller.GetDebugPath
-
-Return the path where VG stores debug files.
-
-| **returns** | _string_ | The path (platform dependent).|
-
-
 ### VG_Controller.GetHand
 
 Receive a specific hand and its status.
@@ -674,6 +675,7 @@ Register a new remote avatar during runtime.
 | _int_ |networkID1|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
 | _int_ |networkID2|If networking is used, these will be the networkingIDs of the right hand of the new avatar (we assume max 2 hands per avatar).|
 | _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| _VG_HandProfile_ |handProfile|Optional, provide the hand profile for this avatar registration.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -683,6 +685,7 @@ Register a new avatar during runtime.
 
 | _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
 | _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
+| _VG_HandProfile_ |handProfile|Optional, provide the hand profile for this avatar registration.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -693,6 +696,7 @@ Register a new avatar during runtime. Single sensor controlling each hand.
 | _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
 | _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
 | _VG_SensorSetup_ |primarySetup|The primary sensor setup used to control the avatar.|
+| _VG_HandProfile_ |handProfile|Optional, provide the hand profile for this avatar registration.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -704,6 +708,7 @@ Register a new avatar during runtime. Double sensor for each hand.
 | _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
 | _VG_SensorSetup_ |primarySetup|The primary sensor setup used to control the avatar.|
 | _VG_SensorSetup_ |secondarySetup|The secondary sensor setup used to control the avatar.|
+| _VG_HandProfile_ |handProfile|Optional, provide the hand profile for this avatar registration.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -717,6 +722,15 @@ Release the plugin.
 
 Save the object hierarchy debug state. This is done automatically when closing VirtualGrasp.
 
+
+
+### VG_Controller.SetAvatarMirrorHandControl
+
+Set for a sensor avatar if has mirror hand control
+
+| _int_ |avatarID|The id of the avatar to be unregistered.|
+| _bool_ |mirrorHand|Specify if sensor will control avatar hand of the opposite side.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
 ### VG_Controller.SetRecordingStatesOnAvatar
@@ -741,10 +755,9 @@ Unregister avatar during runtime
 
 
 
-## [RECORDING_INTERFACE_API **[pro]**](#recording_interface_api-pro)
+## [RECORDING_INTERFACE_API](#recording_interface_api)
 
 ### VG_Controller.CollectRecording
-<span class="label label-primary">pro</span>
 
 Collect recording sensor data.
 
@@ -755,7 +768,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.CollectRecording
-<span class="label label-primary">pro</span>
 
 Collect recording sensor data.
 
@@ -766,7 +778,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.GetReplayAvatarID
-<span class="label label-primary">pro</span>
 
 Get the AvatarID of the replay avatar when the avatar represents both left and right hands.
 
@@ -779,7 +790,6 @@ Get the AvatarID of the replay avatar when the avatar represents both left and r
 
 
 ### VG_Controller.GetReplayAvatarID
-<span class="label label-primary">pro</span>
 
 Get the AvatarID(s) of the replay avatar(s) when each avatar represents both hand sides or just one hand side. If the avatar represents both hand sides then avatarIDLeft and avatarIDRight are identical.
 
@@ -789,7 +799,6 @@ Get the AvatarID(s) of the replay avatar(s) when each avatar represents both han
 
 
 ### VG_Controller.GetReplayStartWristPose
-<span class="label label-primary">pro</span>
 
 Get the starting wrist poses for full replay of the whole interaction sequence.
 
@@ -813,7 +822,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.IsReplaySuccess
-<span class="label label-primary">pro</span>
 
 Check if finished replay had identical response as recorded
 
@@ -823,7 +831,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.IsReplaying
-<span class="label label-primary">pro</span>
 
 Check if a hand is currently replaying a recorded sensor data.
 
@@ -835,7 +842,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.LoadRecording
-<span class="label label-primary">pro</span>
 
 Load recorded sensor data from a file, but do not start replay
 
@@ -846,7 +852,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.LoadRecording
-<span class="label label-primary">pro</span>
 
 Load recorded sensor data from a byte array.
 
@@ -857,7 +862,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.ResumeReplay
-<span class="label label-primary">pro</span>
 
 Resume replaying of an avatar.
 
@@ -868,7 +872,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.SaveRecording
-<span class="label label-primary">pro</span>
 
 Save recording sensor data and store the whole sequence to a file
 
@@ -879,7 +882,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StartRecording
-<span class="label label-primary">pro</span>
 
 Start recording sensor data.
 
@@ -889,7 +891,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StartReplay
-<span class="label label-primary">pro</span>
 
 Start full replay of the whole interaction sequence on an avatar.
 
@@ -901,7 +902,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StartReplayOnObject
-<span class="label label-primary">pro</span>
 
 Start replaying a specific interaction segment on one object.
 
@@ -915,7 +915,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StopRecording
-<span class="label label-primary">pro</span>
 
 Stop recording sensor data.
 
@@ -925,7 +924,6 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.1.0.html)
 
 
 ### VG_Controller.StopReplay
-<span class="label label-primary">pro</span>
 
 Stop replay of the recorded interaction sequence on an avatar.
 
@@ -1114,7 +1112,7 @@ Return the pose (i.e. position and orientation) of a specific finger bone.
 | _int_ |avatarID|The avatar to get the bone pose from.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 | _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
-| _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
+| _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip if there is original rig has no finger tip transform..|
 | _**out** int_ |instanceID|The returned ID of the bone transform.|
 | _**out** Vector3_ |p|The returned position of the bone.|
 | _**out** Quaternion_ |q|The returned rotation of the bone.|
@@ -1130,7 +1128,7 @@ Reflect the pose of a specific bone on a Transform.
 | _int_ |avatarID|The avatar to get the bone pose from.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
 | _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
-| _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
+| _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip if there is original rig has no finger tip transform.|
 | _**out** Transform_ |t|The returned pose of the bone.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 

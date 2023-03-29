@@ -38,6 +38,8 @@ folder: mydoc
 
 * [Hand Profiles](avatars.1.2.0.html#hand-profiles) add a new functionality to allow developers to manually map customized hand bones (wrist and finger bones) to [Gleechi hand model](avatars.1.2.0.html#hand-model-standard). 
 
+* Mirror hand control feature is added. Developers can set a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} to have mirror hand control either at initial [Avatars and Sensors](unity_component_myvirtualgrasp.1.2.0.html) setting, or in runtime through [SetAvatarMirrorHandControl](virtualgrasp_unityapi.1.2.0.html#vg_controllersetavatarmirrorhandcontrol) api function. 
+
 * [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.2.0.html) now can also be used with legacy input. **(fixed known issue from 1.1.0)**
 
 * VirtualGrasp SDK moved over to [Custom Package](https://docs.unity3d.com/Manual/CustomPackages.html) structure, with SDK being a proper package and the Onboarding being an optionally installable "Sample." We are still unsure how this affects the Asset Store deployment through the Unity verification system, but will update as soon as we have a validated version. We will update potentially incorrect paths in this documentation then.
@@ -56,6 +58,7 @@ folder: mydoc
 
 * To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
 
+* [SetAvatarMirrorHandControl](virtualgrasp_unityapi.1.2.0.html#vg_controllersetavatarmirrorhandcontrol) api function is added to allow runtime specify a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} to have or not have mirror hand control.
 
 ##### Other / Internal Changes:
 
