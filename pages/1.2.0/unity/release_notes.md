@@ -56,7 +56,7 @@ folder: mydoc
 
 ##### API Changes:
 
-* To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and three RegisterSensorAvatar api functions add optional "handProfile" input.
+* To support runtime register custom avatars, [RegisterReplayAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterreplayavatar), [RegisterRemoteAvatar](virtualgrasp_unityapi.1.2.0.html#vg_controllerregisterremoteavatar), and all overloaded RegisterSensorAvatar functions has a new optional "handProfile" input.
 
 * [SetAvatarMirrorHandControl](virtualgrasp_unityapi.1.2.0.html#vg_controllersetavatarmirrorhandcontrol) api function is added to allow runtime specify a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} to have or not have mirror hand control.
 
