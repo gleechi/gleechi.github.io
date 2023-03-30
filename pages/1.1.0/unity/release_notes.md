@@ -105,6 +105,8 @@ folder: mydoc
 
 * Repeated runtime calling of register and unregister of avtars will cause Unity crash due to memory leaks. 
 
+* When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraint of movement, {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints. 
+
 ## V1.0.0(2022-12-07)
 
 ##### Major Functionality Changes:
