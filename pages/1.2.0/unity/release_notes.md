@@ -76,7 +76,7 @@ folder: mydoc
 
 * Fixed a bug: When handover a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} from one hand to another, sometimes the receiving hands may drop together with the object. **(fixed known issue from 1.1.0)**
 
-* Fixed a bug: When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraints of movement, {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints. Now the physical constraints will be respected. **(fixed known issue from 1.1.0)**
+* Fixed a bug: When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraints of movement, and {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints. Now the physical constraints will be respected. **(fixed known issue from 1.1.0)**
 
 ##### Update to VG Core library:
 * No update.
@@ -167,7 +167,7 @@ folder: mydoc
 
 * Repeated runtime calling of register and unregister of avtars will cause Unity crash due to memory leaks.  
 
-* When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraint of movement, {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints. 
+* When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraint of movement, and {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints. 
 
 ## V1.0.0(2022-12-07)
 
