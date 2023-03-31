@@ -115,10 +115,11 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 
 ## Debug Settings
 
-{% include image.html file="unity/unity_vg_debug_settings_0_15_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
+{% include image.html file="unity/unity_vg_debug_settings_1_2_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
 
 | Parameters | Description |
 |-------|--------|
-| Export Scene in Runtime | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes. (see [create debug files](debug_files.1.2.0.html#creating-debug-files)) | 
-| Export Scene in Editor | Alternatively to check "Export Scene in Runtime", pressing Export Scene in Edit will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included. (see [create debug files](debug_files.1.2.0.html#creating-debug-files))|
-| Use Network IDs | (Pro feature) Enabling this will allow you to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.2.0.html#sensors--controllers)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.1.2.0.html)).|
+| Export EC DebugDraw | Enabling this will show the raw sensor skeleton of the external controller data that the hand(s) are using. This is useful if you are creating or debugging [external controller data](unity_component_vgexternalcontrollermanager.1.2.0.html). | 
+| Export Scene in Runtime | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes. (see [create debug files](debug_files.1.2.0.html#creating-debug-files)). | 
+| Export Scene in Editor | Alternatively to check "Export Scene in Runtime", pressing Export Scene in Edit will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included. (see [create debug files](debug_files.1.2.0.html#creating-debug-files)). |
+| Use Network IDs | (Pro feature) Enabling this will allow you to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.2.0.html#sensors--controllers)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.1.2.0.html)). |
