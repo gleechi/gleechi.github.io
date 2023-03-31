@@ -18,7 +18,9 @@ The following requirements have to be met to be able to use this controller:
 
 This is an external controller class that supports the action-based [Unity XR Interaction toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/xr-controller-action-based.html) controller as an external controller.
  
-The following requirements have to be met to be able to enable the #define VG_USE_UNITYINTERACTION_HAND above and use the controller:
+{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **VG_USE_UNITYINTERACTION_HAND** to your Unity player settings (Project Settings → Player → Script Compilation)." %}
+
+The following requirements have to be met to be able to use the controller:
 
  * You have the "XR Plugin Management" package installed into your Unity project.
  * You have the "XR Interaction Toolkit" package installed into your Unity project.

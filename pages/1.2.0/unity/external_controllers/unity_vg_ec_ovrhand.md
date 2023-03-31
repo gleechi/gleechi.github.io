@@ -18,7 +18,7 @@ This is an external controller class that supports a generic overlay controller 
 
 At the moment, we therefore recommend not to use OVRHand / OVRCustomSkeleton but instead use one of the various finger controllers that come with VirtualGrasp and take the same sensor signal. You can compare the solutions in the OculusIntegration sample." %}
 
-{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **VG_USE_OCULUS_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation) OR activate the same define in VG_EC_OculusHand.cs." %}
+{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **VG_USE_OCULUS_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation)." %}
       
 The following requirements have to be met to be able to enable the #define VG_USE_OVRHAND_CONTROLLER above and use the controller:
 

@@ -14,7 +14,7 @@ folder: mydoc/external_controllers
 
  This is an external controller class that supports the Unity XRHands controller as an external controller.
  
-{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **VG_USE_XRHANDS_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation) OR activate the same define in VG_EC_UnityXRHands.cs." %}
+{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **VG_USE_XRHANDS_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation)." %}
 
  The following requirements have to be met to be able to enable the #define VG_USE_XRHANDS_CONTROLLER above and use the controller:
   * You have followed the installation and setup instructions of the [Unity XRHands package](https://docs.unity3d.com/Packages/com.unity.xr.hands@1.1/manual/)
