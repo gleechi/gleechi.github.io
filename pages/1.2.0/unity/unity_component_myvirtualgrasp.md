@@ -123,3 +123,11 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 | Export Scene in Runtime | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes. (see [create debug files](debug_files.1.2.0.html#creating-debug-files)). | 
 | Export Scene in Editor | Alternatively to check "Export Scene in Runtime", pressing Export Scene in Edit will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included. (see [create debug files](debug_files.1.2.0.html#creating-debug-files)). |
 | Use Network IDs | (Pro feature) Enabling this will allow you to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.2.0.html#sensors--controllers)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.1.2.0.html)). |
+
+
+## SensorAvatar and SensorAndReplayAvatars Prefabs
+
+Two prefabs "SensorAvatar" and "SensorAndReplayAvatars" are added in Runtime\Resources\Prefabs\ to provide an easy setup of [MyVirtualGrasp](unity_component_myvirtualgrasp.1.2.0.html) with VG SDK included GleechiRig.
+* **SensorAvatar.prefab** has a setup of one {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}.
+* **SensorAndReplayAvatars.prefab** includes one {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} and one {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. [VG_Recorder](unity_component_vgrecorder.1.2.0.html) is also added and configured to be able to record with the {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} and replay with the {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. Note the full functionality of this prefab is only available in Pro version.
+

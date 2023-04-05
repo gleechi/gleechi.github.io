@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V1.2.0-rc2 (2023-04-03)
+## V1.2.0 (2023-04-05)
 
 ##### Major Functionality Changes:
 
@@ -43,6 +43,8 @@ folder: mydoc
 * [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.2.0.html) now can also be used with legacy input. **(fixed known issue from 1.1.0)**
 
 * VirtualGrasp SDK moved over to [Custom Package](https://docs.unity3d.com/Manual/CustomPackages.html) structure, with SDK being a proper package and the Onboarding being an optionally installable "Sample." We are still unsure how this affects the Asset Store deployment through the Unity verification system, but will update as soon as we have a validated version. We will update potentially incorrect paths in this documentation then.
+
+* [Prefabs "SensorAvatar" and "SensorAndReplayAvatars"](unity_component_myvirtualgrasp.1.2.0.html#sensoravatar-and-sensorandreplayavatars-prefabs) are added in Runtime\Resources\Prefabs\ to provide easy setup of [MyVirtualGrasp](unity_component_myvirtualgrasp.1.2.0.html) with GleechiRig. 
 
 ##### GUI / Component Changes:
 
@@ -66,7 +68,9 @@ folder: mydoc
 
 * OculusIntegration sample scene is added (in Samples/OculusIntegration) to compare OVR hand controller with VG's Oculus integration. See [FAQ regarding OVR hand](faqs.1.2.0.html#i-want-to-use-use-ovr-hand-with-virtualgrasp-but-my-hands-can-not-grasp-any-object-why) for more explanation.
 
-*  [VG_EC_OVRHand controller](unity_vg_ec_ovrhand.1.2.0.html) is added only for the OculusIntegration sample scene mentioned above.
+* VG Onboarding sample scene include a tool tip box instructing users on how to navigate in the scene. 
+
+* [VG_EC_OVRHand controller](unity_vg_ec_ovrhand.1.2.0.html) is added only for the OculusIntegration sample scene mentioned above.
 
 * Fixed a bug: Solved memory leak and Unity crashing bug when repeatedly calling register and unregister avatars. **(fixed known issue from 1.1.0)**
 
