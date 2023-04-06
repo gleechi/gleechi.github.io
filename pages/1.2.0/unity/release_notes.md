@@ -80,8 +80,6 @@ folder: mydoc
 
 * Fixed a bug: When handover a {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} from one hand to another, sometimes the receiving hands may drop together with the object. **(fixed known issue from 1.1.0)**
 
-* Fixed a bug: When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraints of movement, and {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints. Now the physical constraints will be respected. **(fixed known issue from 1.1.0)**
-
 ##### Update to VG Core library:
 * No update.
 
@@ -96,6 +94,8 @@ folder: mydoc
 * VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
 
 * When a game object with ArticulationBody (with constrained joint like prismatic) is released from grasp, the object may move to a direction not intended by the released hand.
+
+* When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraint of movement, and {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints. 
 
 ## V1.1.0  (2023-03-07)
 
