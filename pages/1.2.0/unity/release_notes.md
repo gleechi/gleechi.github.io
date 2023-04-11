@@ -38,7 +38,7 @@ folder: mydoc
 
 * [Hand Profiles](avatars.1.2.0.html#hand-profiles) add a new functionality to allow developers to manually map customized hand bones (wrist and finger bones) to [Gleechi hand model](avatars.1.2.0.html#hand-model-standard). 
 
-* Mirror hand control feature is added. Developers can set a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} to have mirror hand control either at initial [Avatars and Sensors](unity_component_myvirtualgrasp.1.2.0.html) setting, or in runtime through [SetAvatarMirrorHandControl](virtualgrasp_unityapi.1.2.0.html#vg_controllersetavatarmirrorhandcontrol) api function. 
+* Mirror hand control feature is added. Developers can set a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} to have mirror hand control either at initial [Avatars and Sensors](unity_component_myvirtualgrasp.1.2.0.html#avatars-and-sensors) setting, or in runtime through [SetAvatarMirrorHandControl](virtualgrasp_unityapi.1.2.0.html#vg_controllersetavatarmirrorhandcontrol) api function. 
 
 * [VG_AnimationDriver](https://docs.virtualgrasp.com/unity_component_vganimationdriver.1.2.0.html) now can also be used with legacy input. **(fixed known issue from 1.1.0)**
 
