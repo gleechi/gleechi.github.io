@@ -39,6 +39,13 @@ By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="s
 
 VirtualGrasp allows creating multiple avatars in the interface by modifying _Size_ value. In the example image above, we specified to created two avatars, where first one is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, and second one is a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. 
 
+#### Mirror Hand Control
+
+You can set a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} to have mirror hand control by checking the **Mirror** option on an avatar. (In runtime, can use [SetAvatarMirrorHandControl](virtualgrasp_unityapi.1.2.0.html#vg_controllersetavatarmirrorhandcontrol) api function.)
+
+{% include important.html content= "In order to have mirror hand control, the sensor avatar(s) have to have both left and right hands included. If you use an avatar model (skeletal mesh) that includes both hand sides (e.g. GleechiRig), then just one Avatar element is needed. If, however, you have separate avatars for each hand side, then you need to setup two Avatar elements and specify **Mirror** option on both of them. " %} 
+
+
 #### Hand Profile
 
 In Unity, VirtualGrasp provides "hand profiles" as ScriptableObjects. You are able to configure a number of hand model-related settings and thereby  quickly switch between different custom hands. Besides the original VG_GleechiHands profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [Hand Profiles](avatars.1.2.0.html#hand-profiles).
