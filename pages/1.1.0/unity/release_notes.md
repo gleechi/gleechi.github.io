@@ -76,8 +76,6 @@ folder: mydoc
 * VG onboarding scene now switches to use GRIP button as the **Grasp Button** in [MyVirtualGrasp -> Global Grasp Interaction Settings](unity_component_myvirtualgrasp.1.1.0.html#global-grasp-interaction-settings). This is to support [VG onboarding task 9](unity_vgonboarding_task9.1.1.0.html) to use TRIGGER button for animating the manipulation of the plier part.
 * Fixed a bug: While a hand grasps a physical object to collide with another physical object, if any colliding object's collider is disabled, the controller grasping the object will continue to have vibrating haptic feedback until hand releases the object. Now it is fixed so that when the collider is disabled, the vibration will stop. **(fixed known issue from 1.0.0)**
 
-
-##### Update to VG Core library:
 * When a chain of objects are connected through VG constrained joints, in the previous version, if one hand grasps an upstream object, and the other grasps a distal object, only the distal object (with constrained but movable joint, i.e. non-Fixed) is movable by the hand. In this version (1.1.0) grasping the distal joint will move its upstream movable joint. This change allows (for example in [VG onboarding task 8](unity_vgonboarding_task8.1.1.0.html)) on a chain like box (floating) --> screw (revolute) --> screw driver (fixed), users could grasp box with one hand, and grasp and rotate the distal object, screw driver, with another hand in order to rotate screw into the box.
 
 ##### Known Issues:
@@ -172,7 +170,6 @@ folder: mydoc
 * Improved the VG_MainScript inspector DebugSettings to become a proper foldout menu. 
 * Fixed a bug: crashing when [JumpGraspObject](virtualgrasp_unityapi.1.1.0.html#vg_controllerjumpgraspobject), [SwitchGraspObject](virtualgrasp_unityapi.1.1.0.html#vg_controllerswitchgraspobject), or [TogglePrimaryGraspOnObject](virtualgrasp_unityapi.1.1.0.html#vg_controllertoggleprimarygrasponobject) is called on an object without mesh assigned to it.
 
-##### Update to VG Core library:
 
 * Improved the grasp interaction on object that has rotating {% include tooltip.html tooltip="JointType" text="joint types" %}. 
 * Improved the grasp interaction on floating objects with multiple hands. 

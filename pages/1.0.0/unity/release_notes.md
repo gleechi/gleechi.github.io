@@ -96,7 +96,6 @@ folder: mydoc
 * Improved the VG_MainScript inspector DebugSettings to become a proper foldout menu. 
 * Fixed a bug: crashing when [JumpGraspObject](virtualgrasp_unityapi.1.0.0.html#vg_controllerjumpgraspobject), [SwitchGraspObject](virtualgrasp_unityapi.1.0.0.html#vg_controllerswitchgraspobject), or [TogglePrimaryGraspOnObject](virtualgrasp_unityapi.1.0.0.html#vg_controllertoggleprimarygrasponobject) is called on an object without mesh assigned to it.
 
-##### Update to VG Core library:
 
 * Improved the grasp interaction on object that has rotating {% include tooltip.html tooltip="JointType" text="joint types" %}. 
 * Improved the grasp interaction on floating objects with multiple hands. 
