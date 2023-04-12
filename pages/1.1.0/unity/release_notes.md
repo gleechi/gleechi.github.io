@@ -103,7 +103,9 @@ folder: mydoc
 
 * Repeated runtime calling of register and unregister of avtars will cause Unity crash due to memory leaks. 
 
-* When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraint of movement, and {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints. 
+* When {% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with RigidBody has constraint of movement, and {% include tooltip.html tooltip="JumpGrasp" text="Jump Grasp" %} interaction type is used, object will jump to hand without respecting this physical constraints.
+
+* An internal component VG_ColliderTest should not be allowed to be added to a GameObject, but now there is no prevension on this yet.
 
 ## V1.0.0(2022-12-07)
 
@@ -201,6 +203,8 @@ folder: mydoc
 * While a hand grasps a physical object to collide with another physical object, if any colliding object's collider is disabled, the controller grasping the object will continue to have vibrating haptic feedback until hand releases the object.
 
 * You can not use _OVR Hand_ (which can be found in the Oculus Integration under Oculus\VR\Scripts\Util\OVRHand.cs) together with VG controllers at the moment, as they both are independently affecting the hand model. 
+
+* An internal component VG_ColliderTest should not be allowed to be added to a GameObject, but now there is no prevension on this yet.
 
 ## V0.15.0(2022-07-27)
 

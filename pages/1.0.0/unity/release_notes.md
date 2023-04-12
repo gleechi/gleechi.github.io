@@ -128,6 +128,8 @@ folder: mydoc
 
 * You can not use _OVR Hand_ (which can be found in the Oculus Integration under Oculus\VR\Scripts\Util\OVRHand.cs) together with VG controllers at the moment, as they both are independently affecting the hand model. 
 
+* An internal component VG_ColliderTest should not be allowed to be added to a GameObject, but now there is no prevension on this yet.
+
 ## V0.15.0(2022-07-27)
 
 ##### Major Functionality Changes:
