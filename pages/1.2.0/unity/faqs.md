@@ -28,7 +28,7 @@ Make sure you do not tick _Replay_ option in MyVirtualgrasp → Avatars window, 
 
 ### Why does my hands not move smoothly, but rather choppy or laggy when using VG?
 
-VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. 
+VG main loop runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. 
 
 We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
 You can set it on Start or Awake Time.fixedDeltaTime = 1f / refreshRate. 
