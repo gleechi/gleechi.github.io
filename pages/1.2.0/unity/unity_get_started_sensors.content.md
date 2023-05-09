@@ -12,6 +12,11 @@ You can use VirtualGrasp without a VR headset and your scene does not need to be
 
 {% include callout.html content="If you do have a headset, we recommend to use the \"VG_EC_UnityXRHand\" profile (after assuring that you enabled your scene for VR) to get started, through [UnityXR](https://docs.unity3d.com/Manual/XR.html)." type="info" %}
 
+{% include important.html content="VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. 
+We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
+You can set it on Start or Awake Time.fixedDeltaTime = 1f / refreshRate. 
+Alternatively you can also set it manually in the editor at: Project Settings -> Time -> Fixed Timestep. In this field you can write for example 1/72 and hit enter, if 72 is the refresh rate you're targetting." %}
+
 <!--See [AutoSetup & Sensors](unity_component_myvirtualgrasp.1.2.0.html#autosetup--sensors) to learn more details about sensor setup.-->
 
 {% if include.skip != "true" %}
