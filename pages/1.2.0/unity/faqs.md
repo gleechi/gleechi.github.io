@@ -13,7 +13,7 @@ folder: mydoc
 
 ### Where is the GleechiLib Prefab?
 
-If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in version 0_9_6. You are expected to just insert [MyVirtualGrasp](unity_component_myvirtualgrasp.1.2.0.html) component on a GameObject of your choice.
+If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in version 0_9_6. [Prefabs "SensorAvatar" and "SensorAndReplayAvatars"](unity_component_myvirtualgrasp.1.2.0.html#sensoravatar-and-sensorandreplayavatars-prefabs) are added since version 1_2_0 in Runtime\Resources\Prefabs\ to provide easy setup of [MyVirtualGrasp](unity_component_myvirtualgrasp.1.2.0.html) with GleechiRig. 
 
 ## Hands and Controllers
 
@@ -25,6 +25,15 @@ Assure that all the requirements of the controller you picked are met. You can f
 ### I have setup the avatar but the hands don't move.
 
 Make sure you do not tick _Replay_ option in MyVirtualgrasp → Avatars window, see [Avatar Types](avatars.1.2.0.html#avatar-types) to understand more.
+
+### Why does my hands not move smoothly, but rather choppy or laggy when using VG?
+
+VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. 
+
+We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
+You can set it on Start or Awake Time.fixedDeltaTime = 1f / refreshRate. 
+Alternatively you can also set it manually in the editor at: Project Settings -> Time -> Fixed Timestep. In this field you can write for example 1/72 and hit enter, if 72 is the refresh rate you're targetting.
+
 
 ### Does VG support other headsets / controllers?
 
