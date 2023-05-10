@@ -96,6 +96,8 @@ folder: mydoc
 
 * An internal component VG_ColliderTest should not be allowed to be added to a GameObject, but now there is no prevension on this yet.
 
+* VG_Articulation on joint gizmo has a bug for Revolute joint, the gizmo shown joint range with left-handed system that is opposite to the direction of object rotation. Also for both Revolute and Prismatic joint, the gizmo is moving together with object, not respecting the initial zero pose. 
+
 ## V1.1.0  (2023-03-07)
 
 ##### Major Functionality Changes:
