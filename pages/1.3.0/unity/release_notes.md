@@ -32,7 +32,27 @@ folder: mydoc
 *
 -->
 
-## V1.3.0-rc2 (2023-04-03)
+## V1.3.0-rc1 (2023-04-15)
+
+##### Major Functionality Changes:
+* TBD
+
+##### GUI / Component Changes:
+* TBD
+
+##### API Changes:
+* TBD
+
+##### Other / Internal Changes:
+* TBD
+
+##### Update to VG Core library:
+* TBD
+
+##### Known Issues:
+* TBD
+
+## V1.2.0 (2023-04-03)
 
 ##### Major Functionality Changes:
 
