@@ -83,11 +83,6 @@ folder: mydoc
 ##### Known Issues:
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 
-* Multiplayer (_not available in free or pro versions_) with VG network message still can not solve complete object sync for new player registration.
-
-* A few events such as [OnObjectDeselected](virtualgrasp_unityapi.1.2.0.html#onobjectdeselected) do not function correctly for proxy avatars in multiplayer 
-(_not available in free or pro versions_) scenes.
-
 * VG main loop runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
 
 * When a game object with ArticulationBody (with constrained joint like prismatic) is released from grasp, the object may move to a direction not intended by the released hand.
@@ -97,6 +92,8 @@ folder: mydoc
 * An internal component VG_ColliderTest should not be allowed to be added to a GameObject, but now there is no prevension on this yet.
 
 * VG_Articulation on joint gizmo has a bug for Revolute joint, the gizmo shown joint range with left-handed system that is opposite to the direction of object rotation. Also for both Revolute and Prismatic joint, the gizmo is moving together with object, not respecting the initial zero pose. 
+
+* When mirror hand control is enabled, the disabling of hand still are controlled by missing sensor signal from same side. 
 
 ## V1.1.0  (2023-03-07)
 
