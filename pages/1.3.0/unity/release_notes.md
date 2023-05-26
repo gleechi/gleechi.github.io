@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V1.3.0-rc1 (2023-04-15)
+## V1.3.0-rc1 (2023-05-15)
 
 ##### Major Functionality Changes:
 * [StopSettingObjectJointState](virtualgrasp_unityapi.1.3.0.html#vg_controllerstopsettingobjectjointstate) is added and should be called after [SetObjectJointState](virtualgrasp_unityapi.1.3.0.html#vg_controllersetobjectjointstate) is called on an object. If not this object may not be able to be moved by grasping hands later. 
