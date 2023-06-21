@@ -53,12 +53,12 @@ To use {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} f
 
 ## Important Note on the Files
 
-The information on added grasps will be stored in the grasp .db file which you will find in each project's **StreamingAssets/VG_Grasps/** folder by default.
-
-The VirtualGrasp plugin will automatically load this file at initialization (e.g. start the game), and save it at releasing (e.g. stop the game). 
+The information on added grasps will be stored in the grasp .db file that you specified in [MyVirtualGrasp -> Grasp DB](unity_component_myvirtualgrasp.1.3.0.html#grasp-db). You do not need to specifically save the added grasps since, 
+the VirtualGrasp plugin will load this file at initialization (e.g. start the game), and save it at releasing (e.g. stop the game). 
 
 By this follows that:
 
 * All scenes will use the same added grasps, since the .db file is saved in and loaded from the project.
 * If you you are using a version control system and want to share the data with others, you have to commit the .db file to the repository.
 
+{% include important.html content= "After grasp editing which modifies the grasp .db file, rebaking objects (due to added new objects) will not remove the added grasps. The new baking result saved in Assets/VG_Grasps/grasp-hash.db with a different hash still contains the added grasps. However if you change the shape or scale of the objects on which the primary grasps are added, then rebaking will remove the grasps."%} 
