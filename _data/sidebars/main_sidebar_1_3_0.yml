@@ -114,6 +114,9 @@ entries:
         #- title: VG_EC_GenericHand
         #  url: /unity_vg_ec_generichand.1.3.0.html
         #  output: web
+    - title: VG_HandProfile
+      url: /unity_component_vghandprofile.1.3.0.html
+      output: web
     - title: VG_GraspEditor
       url: /unity_component_vggraspeditor.1.3.0.html
       output: web
