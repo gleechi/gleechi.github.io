@@ -32,14 +32,14 @@ folder: mydoc
 *
 -->
 
-## V1.3.0-rc1 (2023-05-15)
+## V1.3.0 (2023-05-15)
 
 ##### Major Functionality Changes:
 * [StopSettingObjectJointState](virtualgrasp_unityapi.1.3.0.html#vg_controllerstopsettingobjectjointstate) is added and should be called after [SetObjectJointState](virtualgrasp_unityapi.1.3.0.html#vg_controllersetobjectjointstate) is called on an object. If not this object may not be able to be moved by grasping hands later. 
 
 
 ##### GUI / Component Changes:
-* Extend [Hand Profile](avatars.1.3.0.html#hand-profiles) UI by thumb rotation, and hide the **Hand Bone Indices** that form the map of avatar's bone to gleechi hand model.  
+* Extend [Hand Profile](unity_component_vghandprofile.1.3.0.html) UI by thumb rotation, and hide the **Hand Bone Indices** that form the map of avatar's bone to gleechi hand model.
 
 ##### API Changes:
 * Add AVATAR_ALREADY_REGISTERED enum to use when registering avatar is already registered (and return that avatars ID instead of 0). 
