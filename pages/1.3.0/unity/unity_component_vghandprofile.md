@@ -1,5 +1,5 @@
 ---
-title: VG_HandProfiles Scritable Object
+title: VG_HandProfiles Scriptable Object
 keywords: editor, script
 sidebar: main_sidebar_1_3_0
 permalink: unity_component_vghandprofile.1.3.0.html
