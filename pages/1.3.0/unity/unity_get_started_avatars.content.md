@@ -10,8 +10,8 @@ Next, link it into its place under Avatars → Skeletal Mesh, by dragging and dr
 
 **In Pro-versions of VG,** you can replace this model by any other skinned mesh renderer that you import into the scene.
 
-In this case, you need to potentially create and configure a new VG_HandProfile for your model, and link it into its place under Avatars → HandProfile. 
-In addition, there are certain conditions on which kind of skeletal meshes are supported. 
+In this case, you potentially need to create and configure a new [VG_HandProfile](unity_component_vghandprofile.1.3.0.html) for your model, and link it into its place under Avatars → HandProfile. 
+In addition, there are certain conditions on which kind of skeletal meshes are supported, and check out [Gleechi hand model standard](avatars.1.3.0.html#hand-model-standard) for details. 
 
 We recommend you to include both left and right hands in one avatar model like in Gleechi's avatar model. But if you do have two separate models for left and right hands, you can set it up following [separate hand models](avatars.1.3.0.html#separate-hand-models). 
 
