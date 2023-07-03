@@ -93,6 +93,9 @@ entries:
         - title: VG_EC_MouseHand
           url: /unity_vg_ec_mousehand.1.3.0.html
           output: web
+        - title: VG_EC_ScriptHand
+          url: /unity_vg_ec_scripthand.1.3.0.html
+          output: web
         - title: VG_EC_OculusHand
           url: /unity_vg_ec_oculushand.1.3.0.html
           output: web
