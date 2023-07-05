@@ -62,6 +62,8 @@ folder: mydoc
 
 * An internal component VG_ColliderTest should not be allowed to be added to a GameObject, but now there is no prevension on this yet.
 
+* Combinig two sensors -- Primary and Secondary [Sensors](unity_component_myvirtualgrasp.1.3.0.html#sensors) -- for an avatar is not working properly. Note for majority use cases you only need one Primary Sensor Setup.
+
 ## V1.2.0 (2023-04-03)
 
 ##### Major Functionality Changes:
