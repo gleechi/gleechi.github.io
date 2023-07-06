@@ -64,6 +64,10 @@ folder: mydoc
 
 * Combinig two sensors -- Primary and Secondary [Sensors](unity_component_myvirtualgrasp.1.3.0.html#sensors) -- for an avatar is not working properly. Note for majority use cases you only need one Primary Sensor Setup.
 
+* When runtime spawn a new avatar, the existing registered avatar's hands will suddenly flip. 
+
+* [Grasp Editor](unity_component_vggraspeditor.1.3.0.html) is not working with runtime spawned {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}.
+
 ## V1.2.0 (2023-04-03)
 
 ##### Major Functionality Changes:
