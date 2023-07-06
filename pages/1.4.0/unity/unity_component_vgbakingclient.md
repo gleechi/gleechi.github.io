@@ -34,7 +34,7 @@ Check if your credentials are valid by clicking "Verify credentials".
 
 ### Step 2: Packaging
 
-{% include image.html file="unity/unity_vg_baking_client_1_2_0a.png" alt="Baking Client in Unity - Bake Tab." caption="BakingClient in Unity - Bake Tab." %}
+{% include image.html file="unity/unity_vg_baking_client_1_4_0.png" alt="Baking Client in Unity - Bake Tab." caption="BakingClient in Unity - Bake Tab." %}
 
 The Packaging step is to create input files needed by the Baking Service. Since these input files can also be used for debugging purposes we refer them to "[Debug Files](debug_files.1.4.0.html#debug-files-content)". 
 

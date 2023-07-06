@@ -39,12 +39,12 @@ folder: mydoc
 
 ##### GUI / Component Changes:
 * [VG_Articulation](unity_component_vgarticulation.1.4.0.html) now enables [Dual Hands Only](object_articulation.1.4.0.html#dual-hands-only) option for {% include tooltip.html tooltip="PhysicalObject" text="physical object" %}. 
+* [VG_BakingClient](unity_component_vgbakingclient.1.4.0.html#step-2-packaging) GUI moved "Clear" button before "Export" button to be more aligned of order of actions.
 
 ##### API Changes:
 * Add [ForceReleaseObject](virtualgrasp_unityapi.1.4.0.html#vg_controllerforcereleaseobject-2) overloaded function that recieves transform of the object that is to be released by all grasping hands. 
 * Add [GetHand](virtualgrasp_unityapi.1.4.0.html#vg_controllergethand-1) overloaded function that recieves transform of the wrist.
 * Add [GetFingerBone](virtualgrasp_unityapi.1.4.0.html#vg_controllergetfingerbone-3) overloaded function that recieves transform of the wrist.
-* [VG_BakingClient](unity_component_vgbakingclient.1.4.0.html) GUI moved "Clear" button before "Export" button to be more aligned of order of action.
 
 ##### Other / Internal Changes:
 
