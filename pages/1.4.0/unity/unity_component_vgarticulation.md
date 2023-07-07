@@ -32,7 +32,7 @@ Regardless of what is the initial setting of an object's articulation, you can c
 through scripting using the API functions [ChangeObjectJoint](virtualgrasp_unityapi.1.4.0.html#changeobjectjoint) 
 and [RecoverObjectJoint](virtualgrasp_unityapi.1.4.0.html#recoverobjectjoint). And these runtime changes are reflected by the current active VG_Articulation component in the Unity inspector.
 
-Example uses can be found in [bottle-cap assembling](unity_vgonboarding_task5.1.4.0.html) and [chain assembling](unity_vgonboarding_task7.1.4.0.html) tasks in VG onboarding scene in "VirtualGrasp\Scenes\onboarding".
+Example uses can be found in [VG_Assemble](unity_component_vgassemble.1.4.0.html) {% include tooltip.html tooltip="VGPublicScript" text="public script" %}.
 
 ### ChangeObjectJoint
 
@@ -46,7 +46,7 @@ As a result, all the parameters set in the component will be specified in runtim
 
 ### RecoverObjectJoint
 
-If you want to recover the object joint to its original parameters, you can call the [RecoverObjectJoint](virtualgrasp_unityapi.1.4.0.html#recoverobjectjoint) API function.
+If you want to recover the object joint to its original parameters (the initial parameter when game start), you can call the [RecoverObjectJoint](virtualgrasp_unityapi.1.4.0.html#recoverobjectjoint) API function.
 
 ### Physical Object Joint Change
 
