@@ -37,6 +37,8 @@ folder: mydoc
 ##### Major Functionality Changes:
 * Prior to this version, if an object's initial pose (which is the zero pose) is violating the joint limit setting (for example when joint limit exclude zero pose), after game start, only when hand is interacting with this object (pushing or grasping), the object snaps to the valid pose respecting the joint limit. This creates a sense of buggy application. Now, the object is directly set to the joint limit range at the game start. 
 
+* [VG_EC_MouseHand](unity_vg_ec_mousehand.1.4.0.html) external controller allows separate control of left and right hand movement depending on if left-shift or right-shift key is pressed. This improvement is only when Unity "Input System" is used. 
+
 ##### GUI / Component Changes:
 * [VG_Articulation](unity_component_vgarticulation.1.4.0.html) now enables [Dual Hands Only](object_articulation.1.4.0.html#dual-hands-only) option for {% include tooltip.html tooltip="PhysicalObject" text="physical object" %}. 
 * [VG_BakingClient](unity_component_vgbakingclient.1.4.0.html#step-2-packaging) GUI moved "Clear" button before "Export" button to be more aligned of order of actions.
@@ -66,7 +68,6 @@ folder: mydoc
 * An internal component VG_ColliderTest should not be allowed to be added to a GameObject, but now there is no prevension on this yet.
 
 * Combinig two sensors -- Primary and Secondary [Sensors](unity_component_myvirtualgrasp.1.4.0.html#sensors) -- for an avatar is not working properly. Note for majority use cases you only need one Primary Sensor Setup.
-
 
 ## V1.3.0 (2023-05-15)
 

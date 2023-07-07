@@ -22,6 +22,11 @@ If you see the use of GleechiLib prefab in one of our videos, but can not find i
 Assure that all the requirements of the controller you picked are met. You can find these requirements at the top of each script in ThirdParty/VirtualGrasp/VG_ExternalControllers/VG_EC_***.cs, as well as on the specific [documentation pages](unity_component_vgexternalcontrollermanager.1.4.0.html#vg_externalcontroller-class). Do not forget to uncomment the #define in the script as soon as you have installed all prerequisites.
 -->
 
+### I have a compilation error from VG_EC_Mouse.cs when VG_ENABLE_INPUT_SYSTEM.
+
+The reason is probably that the "Input System" Unity package API has been updated (e.g. that the "value" has been replaced by "ReadValue()" or alike). We are trying with each update to align with the newest version of the package. If you experience issues, please refer to the package API that you are using.
+
+
 ### I have setup the avatar but the hands don't move.
 
 Make sure you do not tick _Replay_ option in MyVirtualgrasp → Avatars window, see [Avatar Types](avatars.1.4.0.html#avatar-types) to understand more.
