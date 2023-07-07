@@ -10,11 +10,9 @@ folder: mydoc
 
 The VG_HandStatus is a class that contains data about the current status of hands during runtime in the Editor. 
 
-The [VG_HandStatusDebugger](unity_component_vghandstatusdebugger.1.4.0.html) provides a tutorial on some of the members of [VG_HandStatus](unity_component_vghandstatus.1.4.0.html) which are central to many of the API functions, such as [GetHands()](virtualgrasp_unityapi.1.4.0.html#vg_controllergethands) or some [Events](virtualgrasp_unityapi.1.4.0.html#events). All hands and their VG_Handstatus containers are updated in each frame the VG update is called.
+The [VG_HandStatusDebugger](unity_component_vghandstatusdebugger.1.4.0.html) provides a simple debug tool to runtime observe changes of VG_Handstatus.
 
-As you can see in the example video, this is data such as the current avatar ID, the hand side, the wrist transform of that hand, the currently selected object, and the grab strength.
-
-{% include youtube.html id="8YOEeZmeil8" caption="The VG_HandStatusDebugger will continuously update the list of VG_HandStatus in the Inspector." %}
+{% include image.html file="unity/unity_vg_handstatusdebugger.png" alt="VG HandStatusDebugger" caption="The VG HandStatusDebugger showing runtime update of HandStatus data." %}
 
 ## Publc Member Variables
 
@@ -26,9 +24,17 @@ As you can see in the example video, this is data such as the current avatar ID,
 | bool | m_triggerHaptics | Trigger external controller haptics. |
 | Transform | m_selectedObject | The currently selected object in this hand. |
 | float | m_grabStrength | The current grab / closing value (0=open hand; 1=closed hand). |
+| [VG_InteractionMode](virtualgrasp_unityapi.1.4.0.html#vg_interactionmode) | m_mode | The interaction mode of the hand. |
+| Vector3 | m_graspPos | The wrist position relative to grasped object. |
+| Quaternion | m_graspRot | The wrist rotation relative to grasped object. |
+| bool | m_isRemote | If this is a remote proxy hand (for multiplayer feature). |
+| List<Transform> | m_linkedObjects | Store linked object of this hand, i.e. the set of objects whose movement will be controlled by this hand. |
+| float | m_jointState1 | Joint state at moment of grasp (or push) start or stop. If object has revolute or prismatic joint, if planar joint this is the state along xaxis of the joint anchor. |
+| float | m_jointState2 | Joint state at moment of grasp (or push) start or stop. If object has planar joint, the state along yaxis of the joint anchor. |
 
 ## Publc Member Functions
 
 | Type | Name | Description |
 | bool | IsHolding() | If the hand is currently holding an object. |
-| bool | IsTwoHandHolding() | If an object is held in this hand and if it is currently held by another hand as well. |
+| bool | IsMultiHandHolding() | If an object is held in this hand and if it is currently held by other hand(s) as well. |
+| bool | IsPushing() | If hand is pushing the selected object. |
