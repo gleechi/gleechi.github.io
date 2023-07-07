@@ -135,9 +135,6 @@ entries:
     - title: VG_Interactable
       url: /unity_component_vginteractable.1.2.0.html
       output: web
-    - title: VG_PostAnimator
-      url: /unity_component_vgpostanimator.1.2.0.html
-      output: web
     - title: VG_FingerAnimator
       url: /unity_component_vgfingeranimator.1.2.0.html
       output: web

@@ -89,7 +89,7 @@ public class ChangeSelectionWeight : MonoBehaviour
 
 ````
 is the script showing how to use API function 
-[SetObjectSelectionWeight](virtualgrasp_unityapi.1.4.0.html#setobjectselectionweight) to tune up and down the selection weight in runtime. 
+[SetObjectSelectionWeight](virtualgrasp_unityapi.1.4.0.html#vg_controllersetobjectselectionweight) to tune up and down the selection weight in runtime. 
 This script is attached to the two knobs, and the main radio body would be **m_dependent_object**; as a result, once the radio is grasped by one hand, the selection weight of the two knobs will be tuned up to **m_graspedWeight** so that the knobs can be easily selected for grasping by the other hand. The logic may not be perfect, however the main goal in this script is to show the use cases of {% include tooltip.html tooltip="SelectionWeight" text="selection weight" %}.
 
 Note, in this example, even when we don't tune up selection weights on the knobs, the selection still works well. 

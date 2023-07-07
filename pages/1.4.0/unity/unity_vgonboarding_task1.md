@@ -27,7 +27,7 @@ folder: mydoc
 
 * Which {% include tooltip.html tooltip="JointType" text="joint type" %} should be assigned to the button?
 * Which {% include tooltip.html tooltip="StateAffordance" text="state affordance" %} to use to allow button be switch between these two states?
-* How to determine when light should be on or off (use [GetObjectJointState](virtualgrasp_unityapi.1.4.0.html#getobjectjointstate) function)?
+* How to determine when light should be on or off (use [GetObjectJointState](virtualgrasp_unityapi.1.4.0.html#vg_controllergetobjectjointstate) function)?
 * More systemtic understanding can be obtained in [push interaction](push_interaction.1.4.0.html#background).
 
 ### Solution
@@ -100,5 +100,5 @@ public class ToggleLight : MonoBehaviour
 }
 
 ````
-is the script showing how to use API function [GetObjectJointState](virtualgrasp_unityapi.1.4.0.html#getobjectjointstate) to get the object's {% include tooltip.html tooltip="JointState" text="joint state" %} in order to determine when the light is on or off. 
+is the script showing how to use API function [GetObjectJointState](virtualgrasp_unityapi.1.4.0.html#vg_controllergetobjectjointstate) to get the object's {% include tooltip.html tooltip="JointState" text="joint state" %} in order to determine when the light is on or off. 
 

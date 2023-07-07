@@ -16,7 +16,7 @@ folder: mydoc
 VG_HintVisualizer is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %}.
 It can be used as a Unity component to visualize some hints such as a selection sphere to debug graspable object selection or a push sphere to guide pushing interactions.
 
-The MonoBehavior provides a tutorial on the VG API functions for accessing the push state ([GetPushCircle](virtualgrasp_unityapi.1.0.0.html#getpushcircle)).
+The MonoBehavior provides a tutorial on the VG API functions for accessing the push state ([GetPushCircle](virtualgrasp_unityapi.1.0.0.html#vg_controllergetpushcircle)).
 
 {% include singleton_script.html %}
 

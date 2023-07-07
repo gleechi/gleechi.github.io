@@ -16,7 +16,7 @@ folder: mydoc
 VG_HighLighter is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %}.
 The MonoBehavior script exemplifies how you could enable object highlighting based on the current hand status; 
 and provides a tutorial on the VG API functions for some of the VG_Controller event functions, 
-such as [OnObjectSelected](virtualgrasp_unityapi.1.3.0.html#onobjectselected) and [OnObjectDeselected](virtualgrasp_unityapi.1.3.0.html#onobjectdeselected).
+such as [OnObjectSelected](virtualgrasp_unityapi.1.3.0.html#vg_controlleronobjectselected) and [OnObjectDeselected](virtualgrasp_unityapi.1.3.0.html#vg_controlleronobjectdeselected).
 
 {% include singleton_script.html %}
 

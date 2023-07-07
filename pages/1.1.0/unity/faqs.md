@@ -56,11 +56,11 @@ There could be four reasons:
 1. [Mesh is not readable](#mesh-not-readable).
 2. The added [VG_Articulation](unity_component_vgarticulation.1.1.0.html) component is disabled (unchecked).
 3. You have in runtime disabled this [VG_Articulation](unity_component_vgarticulation.1.1.0.html) component.
-4. You have in runtime [SetObjectSelectionWeight](virtualgrasp_unityapi.1.1.0.html#setobjectselectionweight) to value <=0. 
+4. You have in runtime [SetObjectSelectionWeight](virtualgrasp_unityapi.1.1.0.html#vg_controllersetobjectselectionweight) to value <=0. 
 
 ### I runtime changed the VG_Articulation component on an object with different joint type and/or other joint parameters. Why the interaction with this object does not correspond to these changes?
 
-You can only runtime change object articulation by using API function [ChangeObjectJoint](virtualgrasp_unityapi.1.1.0.html#changeobjectjoint-1). See page [runtime changes](unity_component_vgarticulation.1.1.0.html#runtime-changes). 
+You can only runtime change object articulation by using API function [ChangeObjectJoint](virtualgrasp_unityapi.1.1.0.html#vg_controllerchangeobjectjoint-1). See page [runtime changes](unity_component_vgarticulation.1.1.0.html#runtime-changes). 
 
 ### When I tried to catch a fast moving object, the hand is following the object for a little which looks strange.
 
@@ -84,7 +84,7 @@ If the interaction type is not the reason, check if have forgotten to set the ba
 As a backgroud, for tiny objects that need precision grasps, currently VG adopts two alternative dynamic grasp synthesis algorithms with differet levels of grasp quality. When {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type is used on the object, the algorithm that result in lower grasp quality is used because this algorithm create less wrist rotation offset to prevent breaking the immersion. 
 When {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} interaction type is used, the other algorithm that result in higher grasp quality is used because the higher quality is at the cost of big wrist rotation offset. However since object is "jumping" into the hand therefore wrist will not leave its {% include tooltip.html tooltip="SensorPose" text="sensor pose" %} thus not breaking the immersion. 
 
-So if you notice tiny objects having bad grasps, it might be due to {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type being used on this object. You can switch the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}. To switch interaction type for a specific object, you can either add [VG_Interactable](unity_component_vginteractable.1.1.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [VG_Controller.SetInteractionTypeForObject](virtualgrasp_unityapi.1.1.0.html#setinteractiontypeforobject) from your code during runtime.
+So if you notice tiny objects having bad grasps, it might be due to {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type being used on this object. You can switch the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}. To switch interaction type for a specific object, you can either add [VG_Interactable](unity_component_vginteractable.1.1.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.1.1.0.html#vg_controllersetinteractiontypeforobject) from your code during runtime.
 
 You can read [Grasp Interaction Type](grasp_interaction.1.1.0.html#grasp-interaction-type) for more detailed explanation.
 

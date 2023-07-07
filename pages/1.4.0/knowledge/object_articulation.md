@@ -63,7 +63,7 @@ The table below gives some example values of joint state for two 1-dof joints to
 
 If an object has {% include tooltip.html tooltip="Planar" text="PLANAR" %} joint, then there are {% include tooltip.html tooltip="JointState" text="joint state" %} and {% include tooltip.html tooltip="SecondaryJointState" text="secondary joint state" %} representing the position of object along _xaxis_ and _yaxis_ of the {% include tooltip.html tooltip="Pivot" text="anchor" %} transform. 
 
-{% include tip.html content="You can use [GetObjectJointState](virtualgrasp_unityapi.1.4.0.html#getobjectjointstate) and [GetObjectSecondaryJointState](virtualgrasp_unityapi.1.4.0.html#getobjectsecondaryjointstate) to get current joint state and secondary joint state (in the case of PLANAR joint) respectively." %}
+{% include tip.html content="You can use [GetObjectJointState](virtualgrasp_unityapi.1.4.0.html#vg_controllergetobjectjointstate) and [GetObjectSecondaryJointState](virtualgrasp_unityapi.1.4.0.html#vg_controllergetobjectsecondaryjointstate) to get current joint state and secondary joint state (in the case of PLANAR joint) respectively." %}
  
 
 ### Anchor vs. Push Direction

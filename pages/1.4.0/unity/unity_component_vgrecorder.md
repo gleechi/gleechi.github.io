@@ -40,7 +40,7 @@ After a recording is finished, the recorded data will be written as a .sdb file 
 
 In order to replay the recorded sensor data, a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} needs to be created in [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.4.0.html#avatars) (see [Avatar Types](avatars.1.4.0.html#avatar-types)), and corresponding skinned mesh renderer should be specified in _Replay Avatars_ entry. 
 
-Note from this version (1.4.0) VG_Recorder allows to assign multiple _Replay Avatars_. This allows you to replay data on a pair of hands that are represented by [separate hand models](avatars.1.4.0.html#separate-hand-models). 
+VG_Recorder allows to assign multiple _Replay Avatars_. This allows you to replay data on a pair of hands that are represented by [separate hand models](avatars.1.4.0.html#separate-hand-models). 
 
 If _Recording Mode_ is "MANUAL", pressing the _Replay Sequence Key_ or _Replay Segment Key_ during play will replay the recorded sensor data.
 If _Recording Mode_ is "RECORD_ON_PLAY" replay will kickoff immediately once play starts. And replay is on [full sequence replay](#full-and-scene-specific-sequence-replay) mode. 

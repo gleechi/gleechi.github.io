@@ -24,10 +24,10 @@ In this page we first describe the process of how VG creates object grasp intera
 * [From Object Selection to Grasp Synthesis](#from-object-selection-to-grasp-synthesis)
 
 and then explain a set of parameters to configure and fine-tune the grasp interaction experiences in your VR application:
-* [Grasp Button](l#grasp-button)
+* [Grasp Button](#grasp-button)
 * [Grasp Synthesis Method](#grasp-synthesis-method)
 * [Grasp Interaction Type](#grasp-interaction-type)
-* [Grasp Speed and Release Speed](#grasp-speed-and-release-speed)
+* [Grasp Speed and Release Speed](#grasp-animation-speed-and-release-animation-speed)
 * [Throw Velocity and Angular Velocity Scales](#throw-velocity-scale-and-throw-angular-velocity-scale)
 
 {% include image.html file="unity/unity_vg_global_grasp_interaction_1_0_0.png" alt="VG Global Grasp Interaction Settings" caption="MyVirtualGrasp script - Global Grasp Interaction Settings (Unity)" %}

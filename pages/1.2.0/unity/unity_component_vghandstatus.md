@@ -10,7 +10,7 @@ folder: mydoc
 
 The VG_HandStatus is a class that contains data about the current status of hands during runtime in the Editor. 
 
-The [VG_HandStatusDebugger](unity_component_vghandstatusdebugger.1.2.0.html) provides a tutorial on some of the members of [VG_HandStatus](unity_component_vghandstatus.1.2.0.html) which are central to many of the API functions, such as [GetHands()](virtualgrasp_unityapi.1.2.0.html#gethands) or some [Events](virtualgrasp_unityapi.1.2.0.html#events). All hands and their VG_Handstatus containers are updated in each frame the VG update is called.
+The [VG_HandStatusDebugger](unity_component_vghandstatusdebugger.1.2.0.html) provides a tutorial on some of the members of [VG_HandStatus](unity_component_vghandstatus.1.2.0.html) which are central to many of the API functions, such as [GetHands()](virtualgrasp_unityapi.1.2.0.html#vg_controllergethands) or some [Events](virtualgrasp_unityapi.1.2.0.html#events). All hands and their VG_Handstatus containers are updated in each frame the VG update is called.
 
 As you can see in the example video, this is data such as the current avatar ID, the hand side, the wrist transform of that hand, the currently selected object, and the grab strength.
 

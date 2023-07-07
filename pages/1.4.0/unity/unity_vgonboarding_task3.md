@@ -25,8 +25,8 @@ folder: mydoc
 #### Tips for VR developers
 
 * How to let objects placed on plate to follow the plate stably without easily rolling and falling down due to physical reactions. Forming [Fixed Joint](https://docs.unity3d.com/Manual/Joints.html) once object drop on the container?
-* When to form this joint? Should object be fully released by all grasping hands? Check out [OnObjectFullyReleased](virtualgrasp_unityapi.1.4.0.html#onobjectfullyreleased).
-* How to pickup the object from the container again? Check out [OnObjectGrasped](virtualgrasp_unityapi.1.4.0.html#onobjectgrasped).
+* When to form this joint? Should object be fully released by all grasping hands? Check out [OnObjectFullyReleased](virtualgrasp_unityapi.1.4.0.html#vg_controlleronobjectfullyreleased).
+* How to pickup the object from the container again? Check out [OnObjectGrasped](virtualgrasp_unityapi.1.4.0.html#vg_controlleronobjectgrasped).
 
 ### Solution
 

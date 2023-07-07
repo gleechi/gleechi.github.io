@@ -127,7 +127,7 @@ public class DissembleWithDistance : MonoBehaviour
 }
 
 ````
-is the script to use API function [GetSensorPose](virtualgrasp_unityapi.1.0.0.html#getsensorpose) to check when sensor controlled wrist position (**sensor_pos**) is too far from the avatar hand's wrist position (**hand.m_hand.position**) by a certain threshold (**m_disassembleDistance**), then API function [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) is used to change object {% include tooltip.html tooltip="JointType" text="joint type" %} to freely floating.
+is the script to use API function [GetSensorPose](virtualgrasp_unityapi.1.0.0.html#vg_controllergetsensorpose) to check when sensor controlled wrist position (**sensor_pos**) is too far from the avatar hand's wrist position (**hand.m_hand.position**) by a certain threshold (**m_disassembleDistance**), then API function [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint) is used to change object {% include tooltip.html tooltip="JointType" text="joint type" %} to freely floating.
 
 
 

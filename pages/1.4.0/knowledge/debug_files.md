@@ -34,14 +34,6 @@ There are two ways to create them
 * One *.db* file carrying data filled with [VG_GraspEditor](unity_component_vggraspeditor.1.4.0.html) or [VG_BakingClient](unity_component_vgbakingclient.1.4.0.html).
 * One *.scn* and one *.scn.objrig* file for each scene, including scene configuration data (see section [Debugging Interaction Issues](#debugging-interaction-issues) to learn about these {% include tooltip.html tooltip="VGSceneFiles" text="VG scene files" %}).
 
-## Naming of the .zip and .db Files
-
-By default, the .zip and .db files are given the name "grasps.zip" and "grasps.db".
-
-You can customize the name by modifying the VG_VirtualGraspDBFile that you can find in the VirtualGrasp/Resources folder.
-
-{% include image.html file="unity/unity_vg_virtualgraspdbfile.png" alt="VG_VirtualGraspDBFile" caption="Scriptable resource VG_VirtualGraspDBFile allows you to customize the name of your .db and .zip file." %}
-
 ## How To Use The Debug Files
 
 ### Object Baking
