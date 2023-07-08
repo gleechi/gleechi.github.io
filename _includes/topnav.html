@@ -47,7 +47,12 @@
                         <li class="dropdownActive"><a href="{{folderitem.url |  remove: "/"}}">{{folderitem.title}}</a></li>
                         {% else %}
                         {% capture url_version %}{{page.url | remove: "/" | split: "." | first}}.{{folderitem.title | split: " " | last }}.html{% endcapture %}
+                        {% capture url_version_exists %}{% file_exists _site/{{url_version}} %}{% endcapture %}
+                        {% if url_version_exists == "true" %}
                         <li><a href={{url_version}}>{{folderitem.title}}</a></li>
+                        {% else %}
+                        <li><a><s>{{folderitem.title}}</s></a></li>
+                        {% endif %}
                         {% endif %}
                         {% endfor %}
                     </ul>

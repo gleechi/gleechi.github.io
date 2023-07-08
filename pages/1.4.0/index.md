@@ -26,7 +26,7 @@ You can find more details in [controllers](controllers.1.4.0.html) page.
 As a general guideline to this site:
 
 * [Tutorials](unity_get_started_installation.1.4.0.html) take you by the hand through a series of steps to learn how to use VirtualGrasp.
-* [Explanations](controllers.1.4.0.html) lead you to learn about fundamental concepts in VirtualGrasp.
+* [Explanation](controllers.1.4.0.html) leads you to learn about fundamental concepts in VirtualGrasp.
 * [How-To Guides](unity_component_myvirtualgrasp.1.4.0.html) are recipes that guide you through the components involved in addressing key problems and use-cases.
 * [Reference](virtualgrasp_unityapi.1.4.0.html) contains technical reference for VirtualGrasp APIs and components as well as release notes. They describe how it works and how to use it,
  but assume that you have a basic understanding of key concepts in [Explanations](controllers.1.4.0.html).
