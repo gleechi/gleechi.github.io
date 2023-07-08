@@ -1,14 +1,14 @@
 ---
-title: VG_EC_MouseHand controller
+title: VG_EC_Mouse controller
 keywords: external-controller
 sidebar: main_sidebar_1_4_0
-permalink: unity_vg_ec_mousehand.1.4.0.html
+permalink: unity_vg_ec_mouse.1.4.0.html
 folder: mydoc/external_controllers
 ---
 
 ## Description
 
-{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.4.0.html) on the purpose of a VG_ExternalController." %}
+{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ControllerProfiles](unity_component_vgcontrollerprofile.1.4.0.html) on the purpose of a VG_ExternalController." %}
 
 ## Setup 
 
@@ -16,7 +16,7 @@ folder: mydoc/external_controllers
 
 This is an external controller class that supports a Mouse controller as an external controller.
 
-There are no requirements to use this controller, so you can use the "VG_EC_MouseHand" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration.
+There are no requirements to use this controller, so you can use the "VG_EC_Mouse" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration.
 
 ## Functionality
 

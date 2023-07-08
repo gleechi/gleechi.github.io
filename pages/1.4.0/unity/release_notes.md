@@ -35,19 +35,31 @@ folder: mydoc
 ## V1.4.0-rc1 (2023-07-07)
 
 ##### Major Functionality Changes:
+
 * Prior to this version, if an object's initial pose (which is the zero pose) is violating the joint limit setting (for example when joint limit exclude zero pose), after game start, only when hand is interacting with this object (pushing or grasping), the object snaps to the valid pose respecting the joint limit. This creates a sense of buggy application. Now, the object is directly set to the joint limit range at the game start. 
 
 * [VG_EC_MouseHand](unity_vg_ec_mousehand.1.4.0.html) external controller allows separate control of left and right hand movement depending on if left-shift or right-shift key is pressed. This improvement is only when Unity "Input System" is used. 
 
 ##### GUI / Component Changes:
+
 * [VG_Articulation](unity_component_vgarticulation.1.4.0.html) now enables [Dual Hands Only](object_articulation.1.4.0.html#dual-hands-only) option for {% include tooltip.html tooltip="PhysicalObject" text="physical object" %}. 
 * [VG_BakingClient](unity_component_vgbakingclient.1.4.0.html#step-2-packaging) GUI moved "Clear" button before "Export" button to be more aligned of order of actions.
 * [VG_HandStatus](unity_component_vghandstatus.1.4.0.html) exposed more relevant variables: mode, grasp pose, isremote, linkedObjects and joint states. 
 
 ##### API Changes:
-* Add [ForceReleaseObject](virtualgrasp_unityapi.1.4.0.html#vg_controllerforcereleaseobject-2) overloaded function that recieves transform of the object that is to be released by all grasping hands. 
+
+* Add [ForceReleaseObject](virtualgrasp_unityapi.1.4.0.html#vg_controllerforcereleaseobject-2) overloaded function that recieves transform of the object that is to be released by all grasping hands.
+
 * Add [GetHand](virtualgrasp_unityapi.1.4.0.html#vg_controllergethand-1) overloaded function that recieves transform of the wrist.
+
 * Add [GetFingerBone](virtualgrasp_unityapi.1.4.0.html#vg_controllergetfingerbone-3) overloaded function that recieves transform of the wrist.
+
+* The former VG_ExternalControllerManager was integrated into the core functionality of the VG SDK. Controllers are now automatically instantiated through the rig registration. Thus, the VG_ExternalControllerManager page has been removed from the documentation.
+
+* Due to earlier confusion about the naming convention of controllers, controller profiles, and hand profiles, many assets have been renamed:
+  * All controller scripts (child classes of VG_ExternalController, in Runtime/Scripts/VG_ExternalControllers/) as well as the classes inside have been renamed using VG_EC_* prefix and a more descriptive the name of the controller.
+  * All [VG_ControllerProfiles](unity_component_vgcontrollerprofile.1.4.0.html) (ScriptableObjects, in Runtime/Resources/VG_ControllerProfiles) have been renamed using VG_CP_* prefix and more descriptive names of the provider and the controller. The member "external type" of each VG_ControllerProfile was renamed to "controller classes" and now expects one or more exact names of the VG_EC_* controller classes (see above).
+  * All [VG_HandProfiles](unity_component_vghandprofile.1.4.0.html) (ScriptableObjects, in Runtime/Resources/VG_HandProfiles) have been renamed using VG_HP_* prefix and more descriptive names of the provider.
 
 ##### Other / Internal Changes:
 

@@ -8,7 +8,7 @@ folder: mydoc/external_controllers
 
 ## Description
 
-{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.4.0.html) on the purpose of a VG_ExternalController." %}
+{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ControllerProfiles](unity_component_vgcontrollerprofile.1.4.0.html) on the purpose of a VG_ExternalController." %}
 
 ## Setup 
 

@@ -1,14 +1,14 @@
 ---
-title: VG_EC_SteamHand controller
+title: VG_EC_Steam controller
 keywords: external-controller
 sidebar: main_sidebar_1_4_0
-permalink: unity_vg_ec_steamhand.1.4.0.html
+permalink: unity_vg_ec_steam.1.4.0.html
 folder: mydoc/external_controllers
 ---
 
 ## Description 
 
-{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.4.0.html) on the purpose of a VG_ExternalController." %}
+{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ControllerProfiles](unity_component_vgcontrollerprofile.1.4.0.html) on the purpose of a VG_ExternalController." %}
 
 ## Setup 
 
@@ -22,7 +22,7 @@ The following requirements have to be met to be able to use this controller:
  * You have the [SteamVR Unity plugin](https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647) imported into your Unity project.
  * You have OpenVR Loader selected in Unity XR Management Project Settings.
 
-If these requirements are met, you will be able to use the "VG_EC_SteamHand" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+If these requirements are met, you will be able to use the "VG_EC_Steam" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_steamhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 

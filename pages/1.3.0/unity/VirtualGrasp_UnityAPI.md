@@ -289,6 +289,12 @@ This event is invoked when an object's articulation / joint is changed. The VG_A
 
 
 
+### VG_Controller.OnObjectJointChangedOnJointConfig
+
+This event is invoked when an object's articulation / joint is changed. The VG_ObjectJointConfig carries the new joint configuration after joint change.
+
+
+
 ### VG_Controller.OnObjectPushStopped
 
 This event is invoked in the frame when a hand releases push on an object. The VG_HandStatus it carries includes more information about the interaction.
@@ -341,16 +347,16 @@ This event is invoked in the update loop before VG runs its update. Thus, all ot
 Change a set of prameters of an object's joint in runtime.
 
 | _Transform_ |selectedObject|The object to change the object joint parameters.|
-|[*VG_JointType*](#vg_jointtype) | new_jointType|The new joint type.|
-|[*VG_MotionType*](#vg_motiontype) | new_motionType|The new motion type specifying if motion should be limited or free.|
-| _Transform_ |new_anchor_transform|The new anchor transform.|
-| _Vector2_ |new_limit|The new limit of the new joint type. For planar joint this is the limit along xaxis of the anchor transform. |
-| _float_ |new_screwRate|The new screw rate (\>=0, in cm per degree) for revolute joint.|
-| _Vector2_ |new_limit2|The new limit along yaxis of the anchor transform for planar joint.|
+|[*VG_JointType*](#vg_jointtype) | jointType|The new joint type.|
+|[*VG_MotionType*](#vg_motiontype) | motionType|The new motion type specifying if motion should be limited or free.|
+| _Transform_ |anchorTransform|The new anchor transform.|
+| _Vector2_ |limit|The new limit of the new joint type. For planar joint this is the limit along xaxis of the anchor transform. |
+| _float_ |screwRate|The new screw rate (\>=0, in cm per degree) for revolute joint.|
+| _Vector2_ |limit2|The new limit along yaxis of the anchor transform for planar joint.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
- If new_screwRate is set to 0 then rotating of revolute object will not move object position along the joint axis.
+ If screwRate is set to 0 then rotating of revolute object will not move object position along the joint axis.
 
 
 **Remark:**
@@ -726,8 +732,6 @@ The Update() method has been divided into three parts: IsolatedUpdateDataIn(), I
 Register a new remote avatar during runtime.
 
 | _SkinnedMeshRenderer_ |avatar|The skinned mesh renderer of the model that should be registered to VG.|
-| _int_ |networkID1|If networking is used, these will be the networkingIDs of the left hand of the new avatar (we assume max 2 hands per avatar).|
-| _int_ |networkID2|If networking is used, these will be the networkingIDs of the right hand of the new avatar (we assume max 2 hands per avatar).|
 | _**out** int_ |id|The new avatar ID will be assigned to this value after registration; -1 if it failed.|
 | _VG_HandProfile_ |handProfile|Optional, provide the hand profile for this avatar registration.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
@@ -1077,7 +1081,6 @@ Used in: [VG_HintVisualizer](unity_component_vghintvisualizer.1.3.0.html)
 ## [GRASP_SELECTION_API](#grasp_selection_api)
 
 ### VG_Controller.ForceReleaseObject
-untested, 
 
 Force the release of a grasp.
 
@@ -1086,12 +1089,19 @@ Force the release of a grasp.
 
 
 ### VG_Controller.ForceReleaseObject
-untested, 
 
 Force the release of a grasp.
 
 | _int_ |avatarID|The avatar to release a grasp for.|
 |[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
+### VG_Controller.ForceReleaseObject
+
+Force the release of the selected object by all grasping hands.
+
+| _Transform_ |selectedObject|The object to be released.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
@@ -1177,10 +1187,39 @@ Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.3.0.html)
 
 ### VG_Controller.GetFingerBone
 
+Return the pose of a specific finger bone as a matrix.
+
+| _Transform_ |wrist|The wrist transform of the hand to get bone pose from.|
+| _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
+| _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip.|
+| _**out** int_ |instanceID|The returned ID of the bone transform.|
+| _**out** Matrix4x4_ |m|The returned pose of the bone.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.3.0.html)
+
+
+### VG_Controller.GetFingerBone
+
 Return the pose (i.e. position and orientation) of a specific finger bone.
 
 | _int_ |avatarID|The avatar to get the bone pose from.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to get the bone pose from.|
+| _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
+| _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip if there is original rig has no finger tip transform..|
+| _**out** int_ |instanceID|The returned ID of the bone transform.|
+| _**out** Vector3_ |p|The returned position of the bone.|
+| _**out** Quaternion_ |q|The returned rotation of the bone.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+Used in: [VG_HandVisualizer](unity_component_vghandvisualizer.1.3.0.html)
+
+
+### VG_Controller.GetFingerBone
+
+Return the pose (i.e. position and orientation) of a specific finger bone.
+
+| _Transform_ |wrist|The wrist transform of the hand to get bone pose from.|
 | _int_ |fingerID|The finger to get the bone pose from (from 0 as thumb to 4 as pinky).|
 | _int_ |boneID|The bone index (from 0 as proximal to N as distal) to get the bone pose from. Use -1 for fingertip if there is original rig has no finger tip transform..|
 | _**out** int_ |instanceID|The returned ID of the bone transform.|

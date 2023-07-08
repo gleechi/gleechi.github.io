@@ -1,14 +1,14 @@
 ---
-title: VG_EC_OVRHand controller
+title: VG_EC_OVR controller
 keywords: external-controller
 sidebar: main_sidebar_1_4_0
-permalink: unity_vg_ec_ovrhand.1.4.0.html
+permalink: unity_vg_ec_ovr.1.4.0.html
 folder: mydoc/external_controllers
 ---
 
 ## Description 
 
-{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.4.0.html) on the purpose of a VG_ExternalController." %}
+{% include callout.html content="This class represents a child class of VG_ExternalController.<br><br> If you haven't yet, have a short look at [VG_ControllerProfiles](unity_component_vgcontrollerprofile.1.4.0.html) on the purpose of a VG_ExternalController." %}
 
 ## Setup 
 
@@ -26,7 +26,7 @@ The following requirements have to be met to be able to enable the #define VG_US
  * You have the [Oculus Integration plugin](https://developer.oculus.com/downloads/package/unity-integration/) imported into your Unity project.
  * You are using a handmodel / rig that is based on the [OVRHand / OVRCustomSkeleton](https://developer.oculus.com/documentation/unity/unity-handtracking/) classes.
 
-If these requirements are met, you will be able to use the "VG_EC_OVRHand" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+If these requirements are met, you will be able to use the "VG_EC_OVR" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_ovrhand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 

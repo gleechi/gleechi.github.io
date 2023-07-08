@@ -93,7 +93,7 @@ We support two hands per avatar, left and right in this enum.
 
 ### VG_InteractionMode
 
-An important information for designing your gameplay with VirtualGrasp is what to do dependent onwhat state the hand is in. For this purpose, VG_InteractionMode defines different interaction modesthat are used by the library (such as grasping or empty). You can access a specific hand's modethrough its VG_HandStatus.
+Enum that defines at what state the hand is in and you can access a specific hand's mode through its VG_HandStatus.
 
 |RELEASE|when wrist and finger toward sensor pose|
 |GRASP|when wrist and finger towards target grasp pose|

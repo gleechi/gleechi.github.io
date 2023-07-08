@@ -15,27 +15,14 @@ entries:
       url: /index.1.4.0.html
       output: web
       subfolders:
-
-  - title: Tutorials
-    output: web
-    folderitems:
     - title: Installation
       url: /unity_get_started_installation.1.4.0.html
       output: web
-    - title: Avatar Setup
-      url: /unity_get_started_avatars.1.4.0.html
-      output: web
-    - title: Sensor Setup
-      url: /unity_get_started_sensors.1.4.0.html
-      output: web
-    - title: Object Setup
-      url: /unity_get_started_objects.1.4.0.html
-      output: web      
-    - title: Build Setup
-      url: /unity_get_started_build.1.4.0.html
+    - title: Quickstart
+      url: /unity_get_started_quickstart.1.4.0.html
       output: web
       
-  - title: Explanations
+  - title: Explanation
     output: web
     folderitems:
     - title: Controllers
@@ -79,37 +66,37 @@ entries:
       url: /unity_component_vgarticulation.1.4.0.html
       output: web
       subfolders:
-    - title: VG_ExternalControllerManager
-      url: /unity_component_vgexternalcontrollermanager.1.4.0.html
+    - title: VG_ControllerProfile
+      url: /unity_component_vgcontrollerprofile.1.4.0.html
       output: web
-      subfolders:      
+      subfolders:
       - title: VG_ExternalController
         url: /unity_component_vgexternalcontroller.1.4.0.html
         output: web
-        subfolderitems:     
-        - title: VG_EC_LeapHand
-          url: /unity_vg_ec_leaphand.1.4.0.html
+        subfolderitems:
+        - title: VG_EC_Leap
+          url: /unity_vg_ec_leap.1.4.0.html
           output: web   
-        - title: VG_EC_MouseHand
-          url: /unity_vg_ec_mousehand.1.4.0.html
+        - title: VG_EC_Mouse
+          url: /unity_vg_ec_mouse.1.4.0.html
           output: web
-        - title: VG_EC_ScriptHand
-          url: /unity_vg_ec_scripthand.1.4.0.html
+        - title: VG_EC_Script
+          url: /unity_vg_ec_script.1.4.0.html
           output: web
         - title: VG_EC_OculusHand
-          url: /unity_vg_ec_oculushand.1.4.0.html
+          url: /unity_vg_ec_oculus.1.4.0.html
           output: web
         - title: VG_EC_OVRHand
-          url: /unity_vg_ec_ovrhand.1.4.0.html
+          url: /unity_vg_ec_ovr.1.4.0.html
           output: web
-        - title: VG_EC_SteamHand
-          url: /unity_vg_ec_steamhand.1.4.0.html
+        - title: VG_EC_Steam
+          url: /unity_vg_ec_steam.1.4.0.html
           output: web
-        - title: VG_EC_UnityInteractionHand
-          url: /unity_vg_ec_unityinteractionhand.1.4.0.html
+        - title: VG_EC_UnityInteraction
+          url: /unity_vg_ec_unityinteraction.1.4.0.html
           output: web
-        - title: VG_EC_UnityXRHand
-          url: /unity_vg_ec_unityxrhand.1.4.0.html
+        - title: VG_EC_UnityXR
+          url: /unity_vg_ec_unityxr.1.4.0.html
           output: web
         - title: VG_EC_UnityXRHands
           url: /unity_vg_ec_unityxrhands.1.4.0.html
@@ -188,7 +175,7 @@ entries:
           url: /unity_vgonboarding_task9.1.4.0.html
           output: web
       
-  - title: References
+  - title: Reference
     output: web
     folderitems:
     - title: Release Notes

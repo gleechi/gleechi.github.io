@@ -1,15 +1,15 @@
 ---
-title: Installation
+title: Quickstart
 #series: "Getting Started in Unity series 1.4.0"
 #weight: 1
 sidebar: main_sidebar_1_4_0
 keywords: hand, object, avatar, install, quickstart
-permalink: unity_get_started_installation.1.4.0.html
+permalink: unity_get_started_quickstart.1.4.0.html
 folder: mydoc
 toc: false
 ---
 
-{% include_relative unity_get_started_installation.content.md %}
+{% include_relative unity_get_started_quickstart.content.md %}
 
 {% if include.skip != "true" %}
 <!--#### QuickStart Video
