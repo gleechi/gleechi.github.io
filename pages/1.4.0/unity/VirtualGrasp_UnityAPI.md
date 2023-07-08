@@ -1023,7 +1023,7 @@ Call grasp editor functionality on a currently selected object and grasp.
 | _int_ |grasp|The grasp ID to call the action on (if not provided, the current grasp of the hand).|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_GraspStudio](unity_component_vggraspstudio.1.4.0.html)
+Used in: [VG_GraspStudio](unity_component_vggraspeditor.1.4.0.html)
 
 
 ### VG_Controller.GetGrasp
@@ -1042,7 +1042,7 @@ Receive a grasp in the grasp DB by index.
 |[*VG_QueryGraspMethod*](#vg_querygraspmethod) | queryGraspMethod|Can be used to define how the graspIndex should be interpreted.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_GraspStudio](unity_component_vggraspstudio.1.4.0.html)
+Used in: [VG_GraspStudio](unity_component_vggraspeditor.1.4.0.html)
 
 
 ### VG_Controller.GetInteractionTypeForObject
@@ -1482,7 +1482,7 @@ Send an external controller grab signal to the plugin (for EXTERNAL_CONTROLLER s
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to set external sensor pose for.|
 | _float_ |strength|The grab strength signal to set.|
 
-Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.4.0.html)
+Used in: [VG_ExternalControllerManager](unity_component_vgcontrollerprofile.1.4.0.html)
 
 
 ### VG_Controller.SetFingerCalibrationMode

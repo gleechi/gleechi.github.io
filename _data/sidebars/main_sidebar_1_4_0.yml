@@ -7,7 +7,7 @@ entries:
   levels: one
   folders:
 
-  - title: Welcome
+  - title: Tutorials
     url: /index.1.4.0.html
     output: web
     folderitems:
@@ -18,7 +18,7 @@ entries:
     - title: Installation
       url: /unity_get_started_installation.1.4.0.html
       output: web
-    - title: Quickstart
+    - title: Quickstart Guide
       url: /unity_get_started_quickstart.1.4.0.html
       output: web
       
@@ -83,10 +83,10 @@ entries:
         - title: VG_EC_Script
           url: /unity_vg_ec_script.1.4.0.html
           output: web
-        - title: VG_EC_OculusHand
+        - title: VG_EC_Oculus
           url: /unity_vg_ec_oculus.1.4.0.html
           output: web
-        - title: VG_EC_OVRHand
+        - title: VG_EC_OVR
           url: /unity_vg_ec_ovr.1.4.0.html
           output: web
         - title: VG_EC_Steam

@@ -22,8 +22,6 @@ topnav_dropdowns:
           url: /index.1.1.0.html
         - title: Unity SDK 1.0.0
           url: /index.1.0.0.html
-        - title: Unity SDK 0.15.0
-          url: /index.0.15.0.html
           
     # - title: Chapters
     #  folderitems:
