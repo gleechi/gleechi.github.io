@@ -54,7 +54,7 @@ folder: mydoc
 
 * Add [GetFingerBone](virtualgrasp_unityapi.1.4.0.html#vg_controllergetfingerbone-3) overloaded function that recieves transform of the wrist.
 
-* The former VG_ExternalControllerManager was integrated into the core functionality of the VG SDK. Controllers are now automatically instantiated through the rig registration. Thus, the VG_ExternalControllerManager page has been removed from the documentation.
+* The former VG_ExternalControllerManager was integrated into the core functionality of the VG SDK. Controllers are now automatically instantiated through the rig registration. Thus, the VG_ExternalControllerManager page has been removed from the documentation (and a new page for [VG_ControllerProfile](unity_component_vgcontrollerprofile.1.4.0.html) was created instead).
 
 * Due to earlier confusion about the naming convention of controllers, controller profiles, and hand profiles, many assets have been renamed:
   * All controller scripts (child classes of VG_ExternalController, in Runtime/Scripts/VG_ExternalControllers/) as well as the classes inside have been renamed using VG_EC_* prefix and a more descriptive the name of the controller.
@@ -66,6 +66,10 @@ folder: mydoc
 * Fixed a bug: When runtime spawn a new avatar, the existing registered avatar's hands will suddenly flip. **(fixed known issue from 1.3.0)**
 
 * Fixed a bug: [Grasp Editor](unity_component_vggraspeditor.1.4.0.html) was not working with runtime spawned {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, and now it is fixed. **(fixed known issue from 1.3.0)**
+
+* The In-Editor Tutorials folder was moved to the Samples folder. This allows to install the tutorials optionally in an NPM package setup.
+
+* Naming convention for asset files was introduced and implemented, such as T_* for textures, M_* for materials, etc.
 
 <!-- DONT DELETE, FOR INTERNAL NOTES
 * [Not Available For Released Versions] VG works with multiplayer non-{% include tooltip.html tooltip="PhysicalObject" text="physical object" %} with singular or combo object settings, and also works with object assembling in collaboration with multiplayer players. 

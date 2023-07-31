@@ -74,14 +74,17 @@ entries:
         url: /unity_component_vgexternalcontroller.1.4.0.html
         output: web
         subfolderitems:
-        - title: VG_EC_Leap
-          url: /unity_vg_ec_leap.1.4.0.html
-          output: web   
         - title: VG_EC_Mouse
           url: /unity_vg_ec_mouse.1.4.0.html
           output: web
         - title: VG_EC_Script
           url: /unity_vg_ec_script.1.4.0.html
+          output: web
+        - title: VG_EC_Leap
+          url: /unity_vg_ec_leap.1.4.0.html
+          output: web   
+        - title: VG_EC_Manus
+          url: /unity_vg_ec_manus.1.4.0.html
           output: web
         - title: VG_EC_Oculus
           url: /unity_vg_ec_oculus.1.4.0.html

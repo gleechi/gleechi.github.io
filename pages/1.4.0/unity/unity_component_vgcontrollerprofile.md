@@ -28,13 +28,14 @@ controllers listed below. For each controller, you will also find its [VG_Contro
 
 * [VG_EC_Mouse](unity_vg_ec_mouse.1.4.0.html) for Mouse control.
 * [VG_EC_Script](unity_vg_ec_script.1.4.0.html) for control from other scripts.
+* [VG_EC_Leap](unity_vg_ec_leap.1.4.0.html) for LeapMotion controller which is supported through the [Ultraleap](https://developer.leapmotion.com/unity) API.
+* [VG_EC_Manus](unity_vg_ec_manus.1.4.0.html) for Manus Finger Tracking which is supported through the [Manus Core SDK](https://documentation.manus-meta.com/v2.1.0/unity-plugin/index.html).
+* [VG_EC_Oculus](unity_vg_ec_oculus.1.4.0.html) for Oculus Finger Tracking which is supported through the [Oculus](https://developer.oculus.com/downloads/package/unity-integration/) API.
+* [VG_EC_OVR](unity_vg_ec_ovr.1.4.0.html) for Oculus Finger Tracking which is supported through the OVRHand component of the [Oculus](https://developer.oculus.com/downloads/package/unity-integration/).
+* [VG_EC_Steam](unity_vg_ec_steam.1.4.0.html) for all XR controllers that are supported through [SteamVR](https://valvesoftware.github.io/steamvr_unity_plugin/index.html) API.
 * [VG_EC_UnityXR](unity_vg_ec_unityxr.1.4.0.html) for all XR controllers that are supported through the [UnityXR](https://docs.unity3d.com/Manual/XR.1.4.0.html) API.
 * [VG_EC_UnityXRHands](unity_vg_ec_unityxrhands.1.4.0.html) for all XR controllers that are supported through the [Unity XRHands](https://docs.unity3d.com/Packages/com.unity.xr.hands@1.1/manual/index.html) API.
 * [VG_EC_UnityInteraction](unity_vg_ec_unityinteraction.1.4.0.html) for all XR controllers that are supported through the [Unity XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/xr-controller-action-based.html) API.
-* [VG_EC_Steam](unity_vg_ec_steam.1.4.0.html) for all XR controllers that are supported through [SteamVR](https://valvesoftware.github.io/steamvr_unity_plugin/index.html) API.
-* [VG_EC_Oculus](unity_vg_ec_oculus.1.4.0.html) for Oculus Finger Tracking which is supported through the [Oculus](https://developer.oculus.com/downloads/package/unity-integration/) API.
-* [VG_EC_OVR](unity_vg_ec_ovr.1.4.0.html) for Oculus Finger Tracking which is supported through the OVRHand component of the [Oculus](https://developer.oculus.com/downloads/package/unity-integration/).
-* [VG_EC_Leap](unity_vg_ec_leap.1.4.0.html) for LeapMotion controller which is supported through the [Ultraleap](https://developer.leapmotion.com/unity) API.
 * [VG_EC_Generic](unity_vg_ec_generic.1.4.0.html) as a fallback solution.
 
 While all these classes can serve as tutorials to understand how a VG_ExternalController can be setup, please refer to each particular page for further details on just that particular controller.
