@@ -10,7 +10,7 @@ folder: mydoc
 
 VirtualGrasp provides VG_HandProfiles (in Unity as ScriptableObjects) to configure a number of hand model-related settings and thereby allows you to quickly switch between different custom hands.
 
-{% include image.html file="unity/unity_vg_ec_handprofile_1_3_0.png" alt="VG_HandProfile in Unity." caption="VG_HandProfile as scriptable object in Unity." %}
+{% include image.html file="unity/unity_vg_ec_handprofile_1_4_0.png" alt="VG_HandProfile in Unity." caption="VG_HandProfile as scriptable object in Unity." %}
 
 
 ## Rotation Mapping

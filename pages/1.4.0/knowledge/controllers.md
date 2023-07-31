@@ -38,7 +38,7 @@ Whether it is Unity or Unreal, in Sensor Setup, _Profile_ option allows you to s
 
 A set of ready-to-use controllers is explained in on the [VG_ExternalControllerManager](http://localhost:4000/unity_component_vgexternalcontrollermanager.1.4.0.html#vg_externalcontroller-class) page. 
 
-{% include image.html file="unity/unity_vg_ec_unityxr.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+{% include image.html file="unity/unity_vg_ec_unityxrhands_1_4_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
  Elements of VG_ControllerProfile are explained in this table: 
 
@@ -46,7 +46,7 @@ A set of ready-to-use controllers is explained in on the [VG_ExternalControllerM
 
 | Option | Description |
 |-------|--------|--------|
-| External Type| name of the external controller, as a string, so one can write your own external controller. Note, here we supports adding a list of controller names, separated by ';', in order of priorization. E.g. "OculusHand;UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.|  
+| Controller Classes| name of the external controller, as a string. Note, here we supports adding a list of controller names, separated by ';', in order of priorization. E.g. "VG_EC_Oculus;VG_EC_UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.|  
 | Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
 | Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.1.4.0.html#vg_fingercontroltype). | 
 | Offset Position<br>Offset Rotation |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 

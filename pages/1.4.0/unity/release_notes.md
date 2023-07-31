@@ -87,6 +87,8 @@ folder: mydoc
 
 * Combinig two sensors -- Primary and Secondary [Sensors](unity_component_myvirtualgrasp.1.4.0.html#sensors) -- for an avatar is not working properly. Note for majority use cases you only need one Primary Sensor Setup.
 
+* There is a typo on the controller profile scritable object **VG_CP_Unity.XRInteraction**, "VG_EC_UnityXRInteraction" should be changed to "VG_EC_UnityInteraction", corresponding to the name of [the corresponding external controller class](unity_vg_ec_unityinteraction.1.4.0.html).
+
 ## V1.3.0 (2023-05-15)
 
 ##### Major Functionality Changes:
