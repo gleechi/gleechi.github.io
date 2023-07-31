@@ -184,18 +184,18 @@ entries:
     - title: Release Notes
       url: /release_notes.1.4.0.html
       output: web
-    - title: FAQs
-      url: /faqs.1.4.0.html
-      output: web
     - title: Unity API
       url: /virtualgrasp_unityapi.1.4.0.html
       output: web 
-    - title: Unity API functions
-      url: /virtualgrasp_unityapi.1.4.0.html#virtualgrasp_controller_functions
+    - title: FAQs
+      url: /faqs.1.4.0.html
       output: web
-    - title: Unity Enums
-      url: /virtualgrasp_unityapi.1.4.0.html#enums
-      output: web
-    - title: Unity Events
-      url: /virtualgrasp_unityapi.1.4.0.html#events
-      output: web
+    #- title: Unity API functions
+    #  url: /virtualgrasp_unityapi.1.4.0.html#virtualgrasp_controller_functions
+    #  output: web
+    #- title: Unity Enums
+    #  url: /virtualgrasp_unityapi.1.4.0.html#enums
+    #  output: web
+    #- title: Unity Events
+    #  url: /virtualgrasp_unityapi.1.4.0.html#events
+    #  output: web
