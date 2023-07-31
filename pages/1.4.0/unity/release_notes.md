@@ -45,6 +45,7 @@ folder: mydoc
 * [VG_Articulation](unity_component_vgarticulation.1.4.0.html) now enables [Dual Hands Only](object_articulation.1.4.0.html#dual-hands-only) option for {% include tooltip.html tooltip="PhysicalObject" text="physical object" %}. 
 * [VG_BakingClient](unity_component_vgbakingclient.1.4.0.html#step-2-packaging) GUI moved "Clear" button before "Export" button to be more aligned of order of actions.
 * [VG_HandStatus](unity_component_vghandstatus.1.4.0.html) exposed more relevant variables: mode, grasp pose, isremote, linkedObjects and joint states. 
+* [VG_ManusHand](unity_vg_ec_manus.1.4.0.html) was added as an experimental controller, including controller profile and hand profile.
 
 ##### API Changes:
 
@@ -54,7 +55,7 @@ folder: mydoc
 
 * Add [GetFingerBone](virtualgrasp_unityapi.1.4.0.html#vg_controllergetfingerbone-3) overloaded function that recieves transform of the wrist.
 
-* The former VG_ExternalControllerManager was integrated into the core functionality of the VG SDK. Controllers are now automatically instantiated through the rig registration. Thus, the VG_ExternalControllerManager page has been removed from the documentation (and a new page for [VG_ControllerProfile](unity_component_vgcontrollerprofile.1.4.0.html) was created instead).
+* The former VG_ExternalControllerManager was integrated into the core functionality of the VG SDK. Controllers are now automatically instantiated through the rig registration and it is not necessary anymore to do this separately. Thus, the VG_ExternalControllerManager page has been removed from the documentation (and a new page for [VG_ControllerProfile](unity_component_vgcontrollerprofile.1.4.0.html) was created instead).
 
 * Due to earlier confusion about the naming convention of controllers, controller profiles, and hand profiles, many assets have been renamed:
   * All controller scripts (child classes of VG_ExternalController, in Runtime/Scripts/VG_ExternalControllers/) as well as the classes inside have been renamed using VG_EC_* prefix and a more descriptive the name of the controller.
