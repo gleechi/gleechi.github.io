@@ -25,7 +25,7 @@ The following requirements have to be met to be able to enable the #define VG_US
      
 If these requirements are met, you will be able to use the "VG_EC_MANUS" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
-{% include image.html file="unity/unity_vg_ec_manushand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
+{% include image.html file="unity/unity_vg_ec_manus.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 
 ## Functionality
 

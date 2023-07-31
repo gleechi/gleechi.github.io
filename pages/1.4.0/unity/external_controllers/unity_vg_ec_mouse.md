@@ -12,7 +12,7 @@ folder: mydoc/external_controllers
 
 ## Setup 
 
-{% include image.html file="unity/unity_vg_ec_mousehand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
+{% include image.html file="unity/unity_vg_ec_mouse.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 
 This is an external controller class that supports a Mouse controller as an external controller.
 

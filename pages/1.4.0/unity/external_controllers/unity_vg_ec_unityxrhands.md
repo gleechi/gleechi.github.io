@@ -21,7 +21,7 @@ folder: mydoc/external_controllers
 
 If these requirements are met, you will be able to use the "VG_EC_UnityXRHands" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
-{% include image.html file="unity/unity_vg_ec_unityxrhands.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
+{% include image.html file="unity/unity_vg_ec_unityxrhands_1_4_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 
 ## Functionality
 

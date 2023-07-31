@@ -30,7 +30,7 @@ In the majority of use cases only one primary sensor is used.
 
 Whether it is Unity or Unreal, you can assign your controller input in [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#avatars-and-sensors) → Avatars → Primary and Secondary Sensor Setup. 
 
-{% include image.html file="unity/unity_vg_myvirtualgrasp_1_0_0.png" alt="Avatar and Sensor setup in Unity." caption="Avatar and Sensor setup in Unity." %}
+{% include image.html file="unity/unity_vg_myvirtualgrasp_1_4_0.png" alt="Avatar and Sensor setup in Unity." caption="Avatar and Sensor setup in Unity." %}
 
 ### Controller Profile
 
@@ -38,7 +38,7 @@ Whether it is Unity or Unreal, in Sensor Setup, _Profile_ option allows you to s
 
 A set of ready-to-use controllers is explained in on the [VG_ExternalControllerManager](http://localhost:4000/unity_component_vgexternalcontrollermanager.1.4.0.html#vg_externalcontroller-class) page. 
 
-{% include image.html file="unity/unity_vg_ec_unityxrhand_1_0_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
+{% include image.html file="unity/unity_vg_ec_unityxr.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 
  Elements of VG_ControllerProfile are explained in this table: 
 

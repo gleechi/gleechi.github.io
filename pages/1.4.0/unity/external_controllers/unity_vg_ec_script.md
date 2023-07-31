@@ -12,7 +12,7 @@ folder: mydoc/external_controllers
 
 ## Setup 
 
-{% include image.html file="unity/unity_vg_ec_scripthand.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
+{% include image.html file="unity/unity_vg_ec_script.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 
 This is an external controller class that supports a Script controller as an external controller. 
 
