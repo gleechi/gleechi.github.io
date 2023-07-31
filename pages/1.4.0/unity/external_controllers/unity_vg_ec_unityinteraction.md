@@ -27,7 +27,9 @@ The following requirements have to be met to be able to use the controller:
  * You have selected "OpenXR" as the Plugin-Provider in Project Settings -> XR Plugin Management
  * if you use Oculus, you use it through "OpenXR" (Oculus -> Tools -> OVR Utilitites Plugin -> Set OVR to OpenXR)
 
-If these requirements are met, you will be able to use the "VG_EC_UnityInteraction" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+## Controller Profile
+
+If these requirements are met, you will be able to use the **VG_CP_Unity.XRInteraction** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_unityinteraction.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 

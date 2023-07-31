@@ -16,7 +16,8 @@ folder: mydoc/external_controllers
 
 This is an external controller class that supports a Mouse controller as an external controller.
 
-There are no requirements to use this controller, so you can use the "VG_EC_Mouse" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration.
+## Controller Profile
+There are no requirements to use this controller, so you can use the **VG_CP_Common.Mouse** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration.
 
 ## Functionality
 

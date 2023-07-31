@@ -18,7 +18,9 @@ The following requirements have to be met to be able to use this controller:
 
  * You have the Unity XR Management package installed into your Unity project.
 
-If these requirements are met, you will be able to use the "VG_EC_UnityXR" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+## Controller Profile
+
+If these requirements are met, you will be able to use the **VG_CP_Unity.UnityXR** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_unityxr.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 

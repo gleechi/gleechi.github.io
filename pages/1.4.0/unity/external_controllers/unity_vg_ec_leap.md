@@ -22,7 +22,9 @@ The following requirements have to be met to be able to use this controller:
  * Note that Core Assets > 4.4.0 are for LeapMotion SDK 4 or higher, and the older Core Assets are for LeapMotion SDK 3 (lastest CA 4.3.4).
  * You have the corresponding [LeapMotion SDK](https://developer.leapmotion.com/sdk-leap-motion-controller/) installed on your computer.
 
-If these requirements are met, you will be able to use the "VG_EC_LeapHand" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+## Controller Profile
+
+If these requirements are met, you will be able to use the **VG_CP_UltraLeap.HandTracking** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_leap.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 

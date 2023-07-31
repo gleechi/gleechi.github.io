@@ -22,8 +22,10 @@ The following requirements have to be met to be able to enable the #define VG_US
  * You have the corresponding [Manus Core SDK](https://resources.manus-meta.com/downloads) installed on your computer.
  * You have the [Unity Plugin for Manus Core](https://resources.manus-meta.com/downloads) imported into your Unity project.
  * You have a Manus Pro License assigned to your SDK to use the Unity Plugin.
-     
-If these requirements are met, you will be able to use the "VG_EC_MANUS" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+
+## Controller Profile
+
+If these requirements are met, you will be able to use the **VG_CP_Manus.HandTracking** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_manus.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 

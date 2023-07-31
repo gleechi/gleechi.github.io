@@ -22,7 +22,9 @@ The following requirements have to be met to be able to use this controller:
  * You have the [SteamVR Unity plugin](https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647) imported into your Unity project.
  * You have OpenVR Loader selected in Unity XR Management Project Settings.
 
-If these requirements are met, you will be able to use the "VG_EC_Steam" controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+## Controller Profile
+
+If these requirements are met, you will be able to use the **VG_CP_Steam.HandTracking** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_steam.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 
