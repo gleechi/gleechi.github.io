@@ -36,7 +36,7 @@ Whether it is Unity or Unreal, you can assign your controller input in [MyVirtua
 
 Whether it is Unity or Unreal, in Sensor Setup, _Profile_ option allows you to select the "controller profile" for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others.
 
-A set of ready-to-use controllers is explained in on the [VG_ExternalControllerManager](http://localhost:4000/unity_component_vgexternalcontrollermanager.1.4.0.html#vg_externalcontroller-class) page. 
+A set of ready-to-use controllers is explained in on the [VG_ControllerProfile](unity_component_vgcontrollerprofile.1.4.0.html) page. 
 
 {% include image.html file="unity/unity_vg_ec_unityxrhands_1_4_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
 

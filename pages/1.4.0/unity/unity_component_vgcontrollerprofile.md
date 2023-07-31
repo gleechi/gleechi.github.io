@@ -23,8 +23,7 @@ Thus, whenever we speak of controllers or sensors in this documentation, we refe
 To link together a controller plugin with VG, the VirtualGrasp SDK provides a base class VG_ExternalController. 
 
 The VirtualGrasp SDK already includes a few ready-to-use child classes for the
-controllers listed below. For each controller, you will also find its [VG_ControllerProfile](controllers.1.4.0.html#controller-profile).
-
+controllers listed below. For each controller, you will also find its [VG_ControllerProfile](controllers.1.4.0.html#controller-profile) as a scriptable object.
 
 * [VG_EC_Mouse](unity_vg_ec_mouse.1.4.0.html) for Mouse control.
 * [VG_EC_Script](unity_vg_ec_script.1.4.0.html) for control from other scripts.
