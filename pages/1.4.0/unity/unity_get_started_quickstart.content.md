@@ -1,6 +1,6 @@
 ### Installation
 
-To quickstart, first [download and install](downloading-the-virtualgrasp-plugin-for-unity) the VirtualGrasp SDK into a project.
+To quickstart, first [download and install](unity_get_started_installation.1.4.0.html#downloading-the-virtualgrasp-plugin-for-unity) the VirtualGrasp SDK into a project.
 
 ### Play the Onboarding Scene
 
