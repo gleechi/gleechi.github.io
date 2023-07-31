@@ -32,7 +32,7 @@ folder: mydoc
 *
 -->
 
-## V1.4.0-rc1 (2023-07-07)
+## V1.4.0 (2023-07-24)
 
 ##### Major Functionality Changes:
 
