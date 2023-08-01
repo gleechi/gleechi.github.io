@@ -9,4 +9,4 @@ _pdf
 vendor/
 .bundle/
 Gemfile.lock
-
+htmlproofer.log

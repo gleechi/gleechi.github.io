@@ -54,15 +54,11 @@ markdown: kramdown
 kramdown:
  input: GFM
  auto_ids: true
- hard_wrap: false
+ #auto_id_stripping: false 
+ hard_wrap: false             # Interprets line breaks literally
  syntax_highlighter: rouge
 
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
-
-collections:
-  tooltips:
-    output: false
-# collections are declared here. this renders the content in _tooltips and processes it, but doesn't output it as actual files in the output unless you change output to true
 
 defaults:
   -

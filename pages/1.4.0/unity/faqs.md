@@ -33,7 +33,7 @@ Make sure you do not tick _Replay_ option in MyVirtualgrasp → Avatars window, 
 
 ### Does VG support other headsets / controllers?
 
-The VG SDK is hardware-agnostic and does not depend on a headset. Thus, the question of headset support goes more towards Unity. In terms of controllers, VG SDK provides a customizable controller abstraction (see [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.4.0.html#coordinate-frame-corrections)) for a few stand-alone controllers and abstractions (such as UnityXR) which require their Unity SDKs. If your controller is not supported, you can either write a VG_ExternalController for it yourself, or contact us.  
+The VG SDK is hardware-agnostic and does not depend on a headset. Thus, the question of headset support goes more towards Unity. In terms of controllers, VG SDK provides a customizable controller abstraction (see [Controllers](controllers.1.4.0.html)) for a few stand-alone controllers and abstractions (such as UnityXR) which require their Unity SDKs. If your controller is not supported, you can either write a VG_ExternalController for it yourself, or contact us.  
 
 ### I am using my own hand models and the fingers bend strangely.
 
@@ -48,7 +48,7 @@ When you put the avatar also under TrackingSpace, the hands will in addition be 
 ### I want to use use _OVR Hand_ with VirtualGrasp, but my hands can not grasp any object, why?
 You can not use _OVR Hand_ (which can be found in the Oculus Integration under Oculus\VR\Scripts\Util\OVRHand.cs) together with VG controllers as they both are independently affecting the hand model. Since OVR hand controller is updating hand pose in Unity's Update() loop, it will always overwrite VG's hand controller which is updating in the FixedUpdate() loop, therefore showing the symptom of hands not able to grasp an object. Because VG needs to handle interaction with physical objects, we cannot move VG update to Update() loop to avoid this overwritting. 
 
-Compared to _OVR Hand_, VG's sensor integration with Oculus finger tracking (through [VG_EC_OculusHand](unity_vg_ec_oculushand.1.4.0.html)) has equivalent hand control quality, because VG consumes the same Oculus finger tracking signal and integrates it into VG's hand interaction engine.
+Compared to _OVR Hand_, VG's sensor integration with Oculus finger tracking (through [VG_EC_Oculus](unity_vg_ec_oculus.1.4.0.html)) has equivalent hand control quality, because VG consumes the same Oculus finger tracking signal and integrates it into VG's hand interaction engine.
 
 The OculusIntegration sample scene provided by VirtualGrasp package shows the comparison of OVR hand controller with VG's Oculus integration. Video below recorded this scene. The bottom hand pair is controlled by the OVR hand controller and the top pair is controlled by VG's Oculus integration. You can see that they have equivalent tracking quality when the hands are moving in the air with no object interaction. When interaction with the object, OVR hands can't grasp object (because OVR is overwriting the hand after VG), but VG's can. 
 
@@ -77,7 +77,7 @@ So, when you are trying to catch a fast moving object such as a falling one, the
 1. Decrease the Grasp Animation Speed to 0.01 (which is the minimum). This makes the grasp happen quicker, while still moving the hand to the object. 
 2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} for this object and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Animation Speed for the object to interpolate into the hand. These and more [interaction types](grasp_interaction.1.4.0.html#grasp-interaction-type) are documented [here](grasp_interaction.1.4.0.html#grasp-interaction-type).
 
-Note that you cannot define the Grasp Animation Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.1.4.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.1.4.0.html#vg_controllersetinteractiontypeforobject) from your code during runtime.
+Note that you cannot define the Grasp Animation Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.1.4.0.html) on your object to change it from the start, or by using the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.1.4.0.html#vg_controllersetinteractiontypeforobject) from your code during runtime.
 
 ### All my objects are baked but why do I still get unnatural looking grasps?
 
@@ -90,7 +90,7 @@ If the interaction type is not the reason, check if have forgotten to set the ba
 As a backgroud, for tiny objects that need precision grasps, currently VG adopts two alternative dynamic grasp synthesis algorithms with differet levels of grasp quality. When {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type is used on the object, the algorithm that result in lower grasp quality is used because this algorithm create less wrist rotation offset to prevent breaking the immersion. 
 When {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} interaction type is used, the other algorithm that result in higher grasp quality is used because the higher quality is at the cost of big wrist rotation offset. However since object is "jumping" into the hand therefore wrist will not leave its {% include tooltip.html tooltip="SensorPose" text="sensor pose" %} thus not breaking the immersion. 
 
-So if you notice tiny objects having bad grasps, it might be due to {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type being used on this object. You can switch the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}. To switch interaction type for a specific object, you can either add [VG_Interactable](unity_component_vginteractable.1.4.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.1.4.0.html#vg_controllersetinteractiontypeforobject) from your code during runtime.
+So if you notice tiny objects having bad grasps, it might be due to {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type being used on this object. You can switch the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %}. To switch interaction type for a specific object, you can either add [VG_Interactable](unity_component_vginteractable.1.4.0.html) on your object to change it from the start, or by using the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.1.4.0.html#vg_controllersetinteractiontypeforobject) from your code during runtime.
 
 You can read [Grasp Interaction Type](grasp_interaction.1.4.0.html#grasp-interaction-type) for more detailed explanation.
 
@@ -108,7 +108,7 @@ You are not supposed to import the .obj files in your own scenes (since you have
 
 This can be caused by multiple things:
 * [Mesh not readable](#mesh-not-readable) error, or
-* The objects are runtime spawned and were not exported correctly in [Prepare project](unity_component_vgbakingclient.1.4.0.html#step-2-preparation) step. 
+* The objects are runtime spawned and were not exported correctly in [Prepare project](unity_component_vgbakingclient.1.4.0.html#step-2-packaging) step. 
 
 ## Sensor Recording and Replaying
 
