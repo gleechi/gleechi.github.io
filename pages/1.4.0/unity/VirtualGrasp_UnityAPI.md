@@ -3,7 +3,7 @@ title: Unity API
 sidebar: main_sidebar_1_4_0
 keywords: grasp, baking, cabvg
 permalink: virtualgrasp_unityapi.1.4.0.html
-folder: unity
+folder: mydoc
 toc: true
 ---
 <hr><b>Tags</b>
@@ -12,6 +12,8 @@ toc: true
 Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCTION.</td></tr>
 <tr><td><span class="label label-default">video</span></td><td>this function is related to a tutorial movie.</td></tr>
 </table><hr>
+
+# MAIN
 
 ## [ENUMS](#enums)
 
@@ -277,7 +279,7 @@ This event is invoked in the frame when an object is fully release by all hands.
 
 
 
-### VG_Controller.OnObjectGrasped
+### VG_Controller.OnObjectGrasped {#vg_controlleronobjectgrasped}
 
 This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
 

@@ -8,7 +8,7 @@ folder: mydoc
 
 ## Description
 
-VG_Articulation is an {% include tooltip.html tooltip="VGInternalScript" text="internal script" %} that provides the main interface to mark an object as {% include tooltip.html tooltip="VGInteractable" text="interactable" %} (see [object identifiers](unity_get_started_objects.1.4.0.html#customizing-layers-and-component-names)), as well as to parametrize its [object articulation](object_articulation.1.4.0.html#object-articulation) and {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behavior" %}. 
+VG_Articulation is an {% include tooltip.html tooltip="VGInternalScript" text="internal script" %} that provides the main interface to mark an object as {% include tooltip.html tooltip="VGInteractable" text="interactable" %}, as well as to parametrize its [object articulation](object_articulation.1.4.0.html) and {% include tooltip.html tooltip="InteractiveBehaviors" text="interactive behavior" %}. 
 
 By default, the VG_articulation component sets an object to have floating {% include tooltip.html tooltip="JointType" text="joint type" %}. If an object is non-{% include tooltip.html tooltip="PhysicalObject" text="physical" %}, constrained (non-floating) joint types can be specified. 
 
@@ -18,13 +18,13 @@ As soon as you change the {% include tooltip.html tooltip="JointType" text="join
 
 {% include image.html file="unity/unity_vg_articulation_full_1_0_0.png" alt="VG Articulation" caption="VG_Articulation dynamic interface after changing to REVOLUTE joint." %}
 
-All the parameters are explained in detail in [object articulation](object_articulation.1.4.0.html#object-articulation).
+All the parameters are explained in detail in [object articulation](object_articulation.1.4.0.html).
 
 {% include multiple_script.html %}
 
 {% include callout.html content="If you add multiple VG_Articulation components to a game object, only one component can be active and will be used to configure the initial object articulation." %}
 
-{% include callout.html content="If only an inactive VG_Articulation component is added to a game object, the object will be registered to VirtualGrasp with the corresponding articulation parameters, and included in the [baking process](unity_component_vgbakingclient.1.4.0.html#step-2-preparation), however its interactability is temporarily disabled (equivalent to [SetObjectSelectionWeight](virtualgrasp_unityapi.1.4.0.html#vg_controllersetobjectselectionweight) to 0)." %}
+{% include callout.html content="If only an inactive VG_Articulation component is added to a game object, the object will be registered to VirtualGrasp with the corresponding articulation parameters, and included in the [baking process](unity_component_vgbakingclient.1.4.0.html#step-2-packaging), however its interactability is temporarily disabled (equivalent to [SetObjectSelectionWeight](virtualgrasp_unityapi.1.4.0.html#vg_controllersetobjectselectionweight) to 0)." %}
 
 ## Runtime Changes
 
@@ -36,7 +36,7 @@ Example uses can be found in [VG_Assemble](unity_component_vgassemble.1.4.0.html
 
 ### ChangeObjectJoint
 
-One of the two [ChangeObjectJoint](virtualgrasp_unityapi.1.4.0.html#vg_controllerchangeobjectjoint-1) API functions receives an VG_Articulation component as input for the [object articulation](object_articulation.1.4.0.html#object-articulation) settings you want to apply.
+One of the two [ChangeObjectJoint](virtualgrasp_unityapi.1.4.0.html#vg_controllerchangeobjectjoint-1) API functions receives an VG_Articulation component as input for the [object articulation](object_articulation.1.4.0.html) settings you want to apply.
 
 To do that, you can add a **disabled** VG_Articulation component to the object, which your script can receive and use as the argument in the [ChangeObjectJoint](virtualgrasp_unityapi.1.4.0.html#vg_controllerchangeobjectjoint-1) function.
 

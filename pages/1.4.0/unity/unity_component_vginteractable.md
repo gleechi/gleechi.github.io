@@ -13,7 +13,7 @@ folder: mydoc
 
 ## Description
 
-The VG_Interactable component allows you to specify object specific {% include tooltip.html tooltip="InteractionType" text="interaction type" %}, and two throw velocity scales. All parameters in the VG_Interactable component are explained in [grasp interaction](grasp_interaction.1.4.0.html#grasp-interaction).
+The VG_Interactable component allows you to specify object specific {% include tooltip.html tooltip="InteractionType" text="interaction type" %}, and two throw velocity scales. All parameters in the VG_Interactable component are explained in [grasp interaction](grasp_interaction.1.4.0.html).
 
  {% include callout.html content= "Interaction Type, Throw Velocity Scale and Throw Angular Velocity Scale can be set globally in MyVirtualGrasp script [Global Grasp Interaction Settings](unity_component_myvirtualgrasp.1.4.0.html#global-grasp-interaction-settings). This VG_Interactable local settings will overwrite the global settings for that object. I.e. all objects without a customized VG_Interactable will follow the global settings, but those with VG_Interactable will follow the local settings." %} 
 

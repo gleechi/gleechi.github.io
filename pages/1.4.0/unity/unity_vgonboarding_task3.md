@@ -2,8 +2,6 @@
 title: VirtualGrasp Onboarding Task3 - Container
 #tags: [getting_started]
 keywords: casestudy, task2, vgonboarding, dissemble
-#last_updated: July 16, 2016
-#summary: "Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available."
 sidebar: main_sidebar_1_4_0
 permalink: unity_vgonboarding_task3.1.4.0.html
 folder: mydoc

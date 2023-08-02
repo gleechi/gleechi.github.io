@@ -8,3 +8,5 @@ _pdf
 .vscode
 vendor/
 .bundle/
+Gemfile.lock
+htmlproofer.log

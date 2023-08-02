@@ -38,7 +38,7 @@ There are two ways to create them
 
 ### Object Baking
 
-A *.zip* file of all the content in *vg_tmp* folder is the input that is needed for [object baking](object_baking.1.4.0.html#upload-input).
+A *.zip* file of all the content in *vg_tmp* folder is the input that is needed for [object baking](object_baking.1.4.0.html).
 
 ### Debugging Interaction Issues
 
