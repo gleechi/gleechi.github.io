@@ -89,6 +89,11 @@ folder: mydoc
 
 * There is a typo on the controller profile scritable object **VG_CP_Unity.XRInteraction**, "VG_EC_UnityXRInteraction" should be changed to "VG_EC_UnityInteraction", corresponding to the name of [the corresponding external controller class](unity_vg_ec_unityinteraction.1.4.0.html).
 
+* VG_Recorder click on the defined **Replay Sequence Key** or **Replay Segment Key** can not replay just recorded data. 
+
+* [StartReplay](virtualgrasp_unityapi.1.4.0.html#vg_controllerstartreplay) the feature with selectedObject input does not work completely.
+
+
 ## V1.3.0 (2023-05-15)
 
 ##### Major Functionality Changes:
