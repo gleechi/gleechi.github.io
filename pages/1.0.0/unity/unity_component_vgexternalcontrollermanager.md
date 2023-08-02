@@ -35,7 +35,7 @@ Thus, whenever we speak of controllers or sensors in this documentation, we refe
 
 To link together a controller plugin with VG, the VirtualGrasp SDK provides a base class 
 VG_ExternalController. The VirtualGrasp SDK already includes a few ready-to-use child classes for the
-controllers listed below. For each controller, you will also find its [VG_ControllerProfile](controllers.1.0.0.html#controller-profile), among others to configure its [Controller Axis Mapping](avatars.1.0.0.html#controller-axis-mappings).
+controllers listed below. For each controller, you will also find its [VG_ControllerProfile](controllers.1.0.0.html#controller-profile), among others to configure its [Controller Axis Mapping](avatars.1.0.0.html).
 
 
 * [VG_EC_MouseHand](unity_vg_ec_mousehand.1.0.0.html) for Mouse control.
