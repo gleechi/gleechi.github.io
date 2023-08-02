@@ -91,7 +91,7 @@ folder: mydoc
 
 * VG_Recorder click on the defined **Replay Sequence Key** or **Replay Segment Key** can not replay just recorded data. 
 
-* [StartReplay](virtualgrasp_unityapi.1.4.0.html#vg_controllerstartreplay) the feature with selectedObject input does not work completely.
+* [StartReplay](virtualgrasp_unityapi.1.4.0.html#vg_controllerstartreplay) entering selectedObject will not fully support object-centered replay.
 
 
 ## V1.3.0 (2023-05-15)
