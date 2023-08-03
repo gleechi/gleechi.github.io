@@ -33,7 +33,7 @@ GraspType: What types of grasps depicting shape of hand/fingers when holding an 
 
 GraspSynthesis: A runtime process of creating hand grasping configuration – the wrist and fingers pose w.r.t the object – when an user triggers grasp with VR controllers.
 
-FingerControlType: Describes how sensor is controlling the finger movement on the avatar hands; the different finger control types are explained in detail in [sensor settings](unity_component_myvirtualgrasp.html#sensor). 
+FingerControlType: Describes how sensor is controlling the finger movement on the avatar hands; the different finger control types are explained in detail in [sensor settings](unity_component_myvirtualgrasp.html). 
 
 GraspSynthesisMethod: Describes the method used for GraspSynthesis. See [synthesis method](grasp_interaction.html#grasp-synthesis-method).
 

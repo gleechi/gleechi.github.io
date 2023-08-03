@@ -69,5 +69,5 @@ Therefore, if you want to achieve same interaction behaviors of the avatar durin
 2. use the same scene (same set of objects at same locations) as the recording.
 
 To learn more details on how to use <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorRecordAndReplay}}">sensor record and replay</a> 
-in Unity please see [VG_Recorder](unity_component_vgrecorder.1.2.0.html#unity-component-vgrecorder).
+in Unity please see [VG_Recorder](unity_component_vgrecorder.1.2.0.html).
 

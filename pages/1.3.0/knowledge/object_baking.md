@@ -22,7 +22,7 @@ Table below lists when a new bake is needed:
 | Object pivot (origin) changed |  Because the shape analysis result is stored in the object's coordinate frame. | 
 
 {% include callout.html content="If you have not baked your project, you can still enjoy 
-the object interactive behaviors supported by [object articulation](object_articulation.1.3.0.html#object-articulation). 
+the object interactive behaviors supported by [object articulation](object_articulation.1.3.0.html). 
 However, note that there will only be unnatural looking sticky hand like grasps
  (see [grasp interaction type](grasp_interaction.1.3.0.html#grasp-interaction-type))." %}
 
