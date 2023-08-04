@@ -8,7 +8,7 @@ exclude: true
 
 Version: Unity 1.2.0
 
-{% include tip.html content="This document resembles the \"Tutorials\" section guide of the more extensive online documentation that can be found at [https://docs.gleechi.com](https://docs.gleechi.com)." %}
+{% include tip.html content="This document resembles the \"Tutorials\" section guide of the more extensive online documentation that can be found at [https://docs.gleechi.com](https://docs.virtualgrasp.com)." %}
 
 <!-- We are using "activated" only for on-demand doc pdf generation. If enabled, the search will parse it 
 and there are side-effects on the original included pages; and we do not want those. -->

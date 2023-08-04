@@ -142,4 +142,4 @@ public class AssembleVGArticulation : MonoBehaviour
 
 ````
 
-is the script showing how to use API function [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#changeobjectjoint) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#recoverobjectjoint) to attach and unattach the cap on to the bottle. 
+is the script showing how to use API function [ChangeObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerchangeobjectjoint) and [RecoverObjectJoint](virtualgrasp_unityapi.1.0.0.html#vg_controllerrecoverobjectjoint) to attach and unattach the cap on to the bottle. 

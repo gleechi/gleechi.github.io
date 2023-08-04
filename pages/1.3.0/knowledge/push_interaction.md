@@ -9,16 +9,16 @@ toc: true
 
 ### Background
 
-VirtualGrasp not only provides solutions to [grasp interaction](grasp_interaction.1.3.0.html#grasp-interaction), 
+VirtualGrasp not only provides solutions to [grasp interaction](grasp_interaction.1.3.0.html), 
 but also for push interactions.
 
 Button push as an action in real world is very simple process due to the very physical laws existing in the nature. 
 When the same problem is ported into VR, a realistic button push behavior requires some tedius steps that often needs complex setup of physical properties on 
 both button and the hand.
 
-VirtualGrasp provides a solution to make push interaction setup easier and intuitive through [object articulation](object_articulation.1.3.0.html#object-articulation), without relying on physical simulations.
+VirtualGrasp provides a solution to make push interaction setup easier and intuitive through [object articulation](object_articulation.1.3.0.html), without relying on physical simulations.
 
-{% include callout.html content="Most important concepts relevant to push interaction are explained in [object articulation](object_articulation.1.3.0.html#object-articulation) page." %}
+{% include callout.html content="Most important concepts relevant to push interaction are explained in [object articulation](object_articulation.1.3.0.html) page." %}
 
 Below we will explain how to setup push interaction without adding any physical properties on an object -- [push without physics](#push-without-physics), 
 
@@ -55,11 +55,11 @@ So when index finger is approaching from bottom to the button, opposite to the b
 
 
 Once an object is selected, you can turn on the visual hint to show which object is selected for push without physics. 
-See [VG_HintVisualizer](unity_component_vghintvisualizer.1.3.0.html#unity-component-vghintvisualizer) to learn how to use it.
+See [VG_HintVisualizer](unity_component_vghintvisualizer.1.3.0.html) to learn how to use it.
 
 #### How to Setup Push Without Physics
 
-Through VirtualGrasp's [object articulation](object_articulation.1.3.0.html#object-articulation) feature, a VR developer can setup a pushable object with various behaviors simulating real world's button object in any game engine. And this setup does not require the developer to add any physical components (such as RigidBody or Colliders) to either objects or hands in the game engine. 
+Through VirtualGrasp's [object articulation](object_articulation.1.3.0.html) feature, a VR developer can setup a pushable object with various behaviors simulating real world's button object in any game engine. And this setup does not require the developer to add any physical components (such as RigidBody or Colliders) to either objects or hands in the game engine. 
 
 Using Unity game engine as an example, to create a pushable button, 
 you add the component [VG_Articulation](unity_component_vgarticulation.1.3.0.html) to the object, and the parameters shown in below image create a button that can be pushed by index finger, and will bounce alternatively to the two <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.DiscreteStates}}">discrete states</a> when push is released (see [affordances](object_articulation.1.3.0.html#object-affordances)):

@@ -72,10 +72,10 @@ If you set an "Origin" here instead, this Transform will overwrite the origin po
 
 After you have setup how your avatar's hands are controlled, you can use the interface to specify [Grasp Button](virtualgrasp_unityapi.1.2.0.html#vg_vrbutton) globally for all of the sensors.
 
-You can set the default [grasp Interaction](grasp_interaction.1.2.0.html#grasp-interaction) parameters for all objects in the scene globally in Global Grasp Interaction Settings.
-See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.1.2.0.html#grasp-interaction).
+You can set the default [grasp Interaction](grasp_interaction.1.2.0.html) parameters for all objects in the scene globally in Global Grasp Interaction Settings.
+See detailed explanation of the parameters in page [grasp Interaction](grasp_interaction.1.2.0.html).
 
-{% include callout.html content= "Note that Interaction Type, Throw Velocity Scale and Throw Angular Velocity Scale can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.1.2.0.html#unity-component-vginteractable) component to the object. These local settings will overwrite the global settings for that object." %} 
+{% include callout.html content= "Note that Interaction Type, Throw Velocity Scale and Throw Angular Velocity Scale can be set locally for each object by attaching [VG_Interactable](unity_component_vginteractable.1.2.0.html) component to the object. These local settings will overwrite the global settings for that object." %} 
 
 ## Grasp DB
 
@@ -129,7 +129,7 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 | Export EC DebugDraw | Enabling this will show the raw sensor skeleton of the external controller data that the hand(s) are using. This is useful if you are creating or debugging [external controller data](unity_component_vgexternalcontrollermanager.1.2.0.html). | 
 | Export Scene in Runtime | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes. (see [create debug files](debug_files.1.2.0.html#creating-debug-files)). | 
 | Export Scene in Editor | Alternatively to check "Export Scene in Runtime", pressing Export Scene in Edit will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included. (see [create debug files](debug_files.1.2.0.html#creating-debug-files)). |
-| Use Network IDs | (Pro feature) Enabling this will allow you to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.2.0.html#sensors--controllers)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.1.2.0.html)). |
+| Use Network IDs | (Pro feature) Enabling this will allow you to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](unity_component_myvirtualgrasp.1.2.0.html#avatars-and-sensors)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.1.2.0.html)). |
 
 
 ## SensorAvatar and SensorAndReplayAvatars Prefabs
