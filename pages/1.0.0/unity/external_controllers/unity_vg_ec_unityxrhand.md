@@ -12,7 +12,7 @@ folder: mydoc/external_controllers
 
 ## Setup 
 
-This is an external controller class that supports a [UnityXR](https://docs.unity3d.com/Manual/XR.1.0.0.html) controller (such as provided by Pico or Oculus integrations) as an external controller.
+This is an external controller class that supports a [UnityXR](https://docs.unity3d.com/Manual/XR.html) controller (such as provided by Pico or Oculus integrations) as an external controller.
  
 <!--{% include important.html content="After assuring that the following conditions are met, you have to add the scripting define symbol **VG_USE_UNITYXR_CONTROLLER** to your Unity player settings (Project Settings → Player → Script Compilation) OR activate the same define in VG_EC_UnityXRHand.cs." %}-->
 

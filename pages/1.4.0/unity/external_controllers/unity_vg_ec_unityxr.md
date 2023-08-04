@@ -12,7 +12,7 @@ folder: mydoc/external_controllers
 
 ## Setup 
 
-This is an external controller class that supports a [UnityXR](https://docs.unity3d.com/Manual/XR.1.4.0.html) controller (such as provided by Pico or Oculus integrations) as an external controller.
+This is an external controller class that supports a [UnityXR](https://docs.unity3d.com/Manual/XR.html) controller (such as provided by Pico or Oculus integrations) as an external controller.
  
 The following requirements have to be met to be able to use this controller:
 

@@ -40,7 +40,7 @@ controllers listed below. For each controller, you will also find its [VG_Contro
 
 * [VG_EC_MouseHand](unity_vg_ec_mousehand.1.3.0.html) for Mouse control.
 * [VG_EC_ScriptHand](unity_vg_ec_scripthand.1.3.0.html) for control from other scripts.
-* [VG_EC_UnityXRHand](unity_vg_ec_unityxrhand.1.3.0.html) for all XR controllers that are supported through the [UnityXR](https://docs.unity3d.com/Manual/XR.1.3.0.html) API.
+* [VG_EC_UnityXRHand](unity_vg_ec_unityxrhand.1.3.0.html) for all XR controllers that are supported through the [UnityXR](https://docs.unity3d.com/Manual/XR.html) API.
 * [VG_EC_UnityXRHands](unity_vg_ec_unityxrhands.1.3.0.html) for all XR controllers that are supported through the [Unity XRHands](https://docs.unity3d.com/Packages/com.unity.xr.hands@1.1/manual/index.html) API.
 * [VG_EC_UnityInteractionHand](unity_vg_ec_unityinteractionhand.1.3.0.html) for all XR controllers that are supported through the [Unity XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/xr-controller-action-based.html) API.
 * [VG_EC_SteamHand](unity_vg_ec_steamhand.1.3.0.html) for all XR controllers that are supported through [SteamVR](https://valvesoftware.github.io/steamvr_unity_plugin/index.html) API.
