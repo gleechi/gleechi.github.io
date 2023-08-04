@@ -13,10 +13,10 @@ folder: mydoc
 
 ## Description
 
-The VirtualGrasp library (VG_Controller) has a couple of [API functions](virtualgrasp_unityapi.1.0.0.html#recording_interface_api) 
+The VirtualGrasp library (VG_Controller) has a couple of [API functions](virtualgrasp_unityapi.1.0.0.html#recording_interface_api-pro) 
 for recording and replaying {% include tooltip.html tooltip="SensorData" text="sensor data" %}. For convenience, the SDK includes a VG_Recorder {% include tooltip.html tooltip="VGPublicScript" text="public script" %} as a customizable component. 
 
-You can use it to access the major functionalities which are explained in [sensor record and replay](sensor_record_replay.1.0.0.html#sensor-record-replay).
+You can use it to access the major functionalities which are explained in [sensor record and replay](sensor_record_replay.1.0.0.html).
 
 Some example use cases are:
 * “replaying entire instruction sequence”.

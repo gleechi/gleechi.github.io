@@ -28,11 +28,11 @@ Make sure you do not tick _Replay_ option in MyVirtualgrasp → Avatars window, 
 
 ### Does VG support other headsets / controllers?
 
-The VG SDK is hardware-agnostic and does not depend on a headset. Thus, the question of headset support goes more towards Unity. In terms of controllers, VG SDK provides a customizable controller abstraction (see [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.0.0.html#coordinate-frame-corrections)) for a few stand-alone controllers and abstractions (such as UnityXR) which require their Unity SDKs. If your controller is not supported, you can either write a VG_ExternalController for it yourself, or contact us.  
+The VG SDK is hardware-agnostic and does not depend on a headset. Thus, the question of headset support goes more towards Unity. In terms of controllers, VG SDK provides a customizable controller abstraction (see [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.0.0.html)) for a few stand-alone controllers and abstractions (such as UnityXR) which require their Unity SDKs. If your controller is not supported, you can either write a VG_ExternalController for it yourself, or contact us.  
 
 ### I am using my own hand models and the fingers bend strangely.
 
-Each hand models maybe represented differently in terms of how all the bones are oriented. If you have a representation that is not aligned with the [VG_HandProfile](avatars.1.0.0.html#hand-profile), you will experience wrists or finger bones bending into the wrong axis direction. You can resolve this problem by creating your own Hand Profile. Read more on using [custom hand models](avatars.1.0.0.html#custom-hand-model).
+Each hand models maybe represented differently in terms of how all the bones are oriented. If you have a representation that is not aligned with the [VG_HandProfile](avatars.1.0.0.html#hand-profiles), you will experience wrists or finger bones bending into the wrong axis direction. You can resolve this problem by creating your own Hand Profile. Read more on using [custom hand models](avatars.1.0.0.html#custom-hand-models).
 
 ### Are there any concerns when using Oculus's OVR Player Controller?
 
@@ -63,7 +63,7 @@ So, when you are trying to catch a fast moving object such as a falling one, the
 1. Decrease the Grasp Animation Speed to 0.01 (which is the minimum). This makes the grasp happen quicker, while still moving the hand to the object. 
 2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} for this object and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Animation Speed for the object to interpolate into the hand. These and more [interaction types](grasp_interaction.1.0.0.html#grasp-interaction-type) are documented [here](grasp_interaction.1.0.0.html#grasp-interaction-type).
 
-Note that you cannot define the Grasp Animation Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.1.0.0.html#unity-component-vginteractable) on your object to change it from the start, or by using the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.1.0.0.html#vg_controllersetinteractiontypeforobject) from your code during runtime.
+Note that you cannot define the Grasp Animation Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.1.0.0.html) on your object to change it from the start, or by using the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.1.0.0.html#vg_controllersetinteractiontypeforobject) from your code during runtime.
 
 ### All my objects are baked but why do I still get unnatural looking grasps?
 
