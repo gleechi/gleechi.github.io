@@ -93,6 +93,7 @@ folder: mydoc
 
 * [StartReplay](virtualgrasp_unityapi.1.4.0.html#vg_controllerstartreplay) entering selectedObject will not fully support object-centered replay.
 
+* [SetBlockRelease](virtualgrasp_unityapi.1.4.0.html#vg_controllersetblockrelease) with no hand side input has a bug: if input avatarID corresponds to an avatar that has only right hand, then this function will not block release on the right hand because an early return happens when left hand is not found. Before this is fixed, to safely release right hand, use the overloaded function [SetBlockRelease](virtualgrasp_unityapi.1.4.0.html#vg_controllersetblockrelease-1) with hand side input  instead.
 
 ## V1.3.0 (2023-05-15)
 
