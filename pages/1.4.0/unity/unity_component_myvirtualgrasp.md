@@ -125,4 +125,4 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 | Use Network IDs | (Pro feature) Enabling this will allow you to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](#avatars-and-sensors)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.1.4.0.html)). |
 
 
-{% include tips.html content= "Runtime/Resources/Prefabs/ includes two prefabs **SensorAvatar** and **SensorAndReplayAvatars** that have pre-setup basic avatar and sensor settings with MyVirtualGrasp, and you can use them to quick start your project."%} 
+{% include tip.html content= "Runtime/Resources/Prefabs/ includes two prefabs **SensorAvatar** and **SensorAndReplayAvatars** that have pre-setup basic avatar and sensor settings with MyVirtualGrasp, and you can use them to quick start your project."%} 
