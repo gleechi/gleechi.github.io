@@ -85,6 +85,8 @@ The unnatrual looking grasps could be caused by you have set the {% include tool
 
 If the interaction type is not the reason, check if have forgotten to set the baking output grasp db to [MyVirtualGrasp -> Grasp DB](unity_component_myvirtualgrasp.1.4.0.html#grasp-db).
 
+The last reason is you did not bake this object successfully due to [mesh of the object is not readable](faqs.1.4.0.html#mesh-not-readable). Make it readable first, then rebake should fix the problem.
+
 ### Why on some small tiny objects I sometimes get very bad grasps?
 
 As a backgroud, for tiny objects that need precision grasps, currently VG adopts two alternative dynamic grasp synthesis algorithms with differet levels of grasp quality. When {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type is used on the object, the algorithm that result in lower grasp quality is used because this algorithm create less wrist rotation offset to prevent breaking the immersion. 
