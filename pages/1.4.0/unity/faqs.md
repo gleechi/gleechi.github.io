@@ -75,7 +75,7 @@ The default interaction type for all objects is {% include tooltip.html tooltip=
 So, when you are trying to catch a fast moving object such as a falling one, the hand will follow the object for 0.05 sec to grab it while falling. There are two quick options to get a better experience: 
 
 1. Decrease the Grasp Animation Speed to 0.01 (which is the minimum). This makes the grasp happen quicker, while still moving the hand to the object. 
-2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} for this object and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Animation Speed for the object to interpolate into the hand. These and more [interaction types](grasp_interaction.1.4.0.html#grasp-interaction-type) are documented [here](grasp_interaction.1.4.0.html#grasp-interaction-type).
+2. Change the interaction type to {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} for this object and the object will move towards the hand instead. Note that it will now still take the time of the Grasp Animation Speed for the object to interpolate into the hand. The {% include tooltip.html tooltip="InteractionType" text="interaction type" %} are documented [here](grasp_interaction.1.4.0.html#grasp-interaction-type).
 
 Note that you cannot define the Grasp Animation Speed for a specific object. You can switch the interaction type for a specific object, either by using a [VG_Interactable](unity_component_vginteractable.1.4.0.html) on your object to change it from the start, or by using the API function [SetInteractionTypeForObject](virtualgrasp_unityapi.1.4.0.html#vg_controllersetinteractiontypeforobject) from your code during runtime.
 

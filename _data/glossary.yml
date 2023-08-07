@@ -37,7 +37,7 @@ FingerControlType: Describes how sensor is controlling the finger movement on th
 
 GraspSynthesisMethod: Describes the method used for GraspSynthesis. See [synthesis method](grasp_interaction.html#grasp-synthesis-method).
 
-InteractionType: Describes how hand/object moves when VR user selected an object or triggers grasp to start interacting with an object. See [interaction type](grasp_interaction.html#grasp-interaction-type). 
+InteractionType: Describes how hand/object moves when VR user selects an object or triggers grasp to start interacting with an object. See [interaction type](grasp_interaction.html#grasp-interaction-type). 
 
 Sensor: Refers to a hand sensing device such as VR controllers like Oculus Touch or finger tracking devices like LeapMotion; they can sense wrist position, orientation and optionally finger poses; since sensor is used to control avatars in VR, it can also be referred to as controller. 
 

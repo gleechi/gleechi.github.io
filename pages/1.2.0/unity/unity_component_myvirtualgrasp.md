@@ -68,7 +68,7 @@ If you set an "Origin" here instead, this Transform will overwrite the origin po
 
 ## Global Grasp Interaction Settings
 
-{% include image.html file="unity/unity_vg_global_grasp_interaction_0_15_0.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
+{% include image.html file="unity/unity_vg_global_grasp_interaction_1_1_0.png" alt="VG global grasp interaction settings." caption="VG global grasp interaction settings" %}
 
 After you have setup how your avatar's hands are controlled, you can use the interface to specify [Grasp Button](virtualgrasp_unityapi.1.2.0.html#vg_vrbutton) globally for all of the sensors.
 
