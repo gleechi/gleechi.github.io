@@ -85,9 +85,9 @@ The unnatrual looking grasps could be caused by you have set the {% include tool
 
 If the interaction type is not the reason, check if have forgotten to set the baking output grasp db to [MyVirtualGrasp -> Grasp DB](unity_component_myvirtualgrasp.1.4.0.html#grasp-db).
 
-The last reason is you did not bake this object successfully due to [mesh of the object is not readable](faqs.1.4.0.html#mesh-not-readable). Make it readable first, then rebake should fix the problem.
+The last reason is you did not bake this object successfully, which should have console warning output while baking. Please check question [Why some of my interactable object not baked?](faqs.1.4.0.html#why-are-some-of-my-interactable-objects-not-baked)
 
-### Why on some small tiny objects I sometimes get very bad grasps?
+### Why on some small tiny objects I sometimes get bad grasps?
 
 As a backgroud, for tiny objects that need precision grasps, currently VG adopts two alternative dynamic grasp synthesis algorithms with differet levels of grasp quality. When {% include tooltip.html tooltip="TriggerGrasp" text="TRIGGER_GRASP" %} interaction type is used on the object, the algorithm that result in lower grasp quality is used because this algorithm create less wrist rotation offset to prevent breaking the immersion. 
 When {% include tooltip.html tooltip="JumpGrasp" text="JUMP_GRASP" %} interaction type is used, the other algorithm that result in higher grasp quality is used because the higher quality is at the cost of big wrist rotation offset. However since object is "jumping" into the hand therefore wrist will not leave its {% include tooltip.html tooltip="SensorPose" text="sensor pose" %} thus not breaking the immersion. 
@@ -110,7 +110,7 @@ You are not supposed to import the .obj files in your own scenes (since you have
 
 This can be caused by multiple things:
 * [Mesh not readable](#mesh-not-readable) error, or
-* The objects are runtime spawned and were not exported correctly in [Prepare project](unity_component_vgbakingclient.1.4.0.html#step-2-packaging) step. 
+* The objects are runtime spawned and were not exported correctly in [Packaging](unity_component_vgbakingclient.1.4.0.html#step-2-packaging) step. 
 
 ## Sensor Recording and Replaying
 

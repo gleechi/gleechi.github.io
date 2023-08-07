@@ -20,8 +20,6 @@ There are two ways to create them
 
 {% include important.html content="Each creation of debug files is scene-dependent, meaning that it only relates to the **current** Unity scene. Thus, to complement debug files from multiple scenes, you have to launch these scenes separately with **Export Scene in Runtime** enabled if you export in runtime, or press **Export Current Scene** after opening each scene." %}
 
-{% include important.html content="If creating of debug files is for the purpose of grasp baking, after export all scenes, you need to go to **VirtualGrasp->Bake grasps->Prepare Project->Finish** to complete the export for baking." %}
-
 {% include important.html content="It is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}<br>
 
 {% include image.html file="knowledge/baking_pipeline_0_12_0.png" alt="Baking Pipeline." caption="Baking Pipeline." %}

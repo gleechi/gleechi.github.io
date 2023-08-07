@@ -8,7 +8,7 @@ toc: true
 ---
 
 ## Creating Debug Files
-{% include image.html file="unity/unity_vg_debug_settings_0_13_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
+{% include image.html file="unity/unity_vg_debug_settings_1_4_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
 
 We can enable creation of a set of debug files (see [Debug Files Content](#debug-files-content) below) which is saved in a *vg_tmp* subdirectory in your project’s Asset folder. 
 
@@ -19,8 +19,6 @@ There are two ways to create them
 2. Pressing **Export Scene in Editor** will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included.
 
 {% include important.html content="Each creation of debug files is scene-dependent, meaning that it only relates to the **current** Unity scene. Thus, to complement debug files from multiple scenes, you have to launch these scenes separately with **Export Scene in Runtime** enabled if you export in runtime, or press **Export Current Scene** after opening each scene." %}
-
-{% include important.html content="If creating of debug files is for the purpose of grasp baking, after export all scenes, you need to go to **VirtualGrasp->Bake grasps->Prepare Project->Finish** to complete the export for baking." %}
 
 {% include important.html content="It is recommended to delete the vg_tmp folder whenever you start with a new debug file creation process, since existing and potentially outdated data will not be deleted (only potentially overwritten)." %}<br>
 
