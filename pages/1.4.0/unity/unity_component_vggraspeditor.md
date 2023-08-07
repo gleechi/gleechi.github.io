@@ -37,7 +37,7 @@ Using VG_GraspEditor you can add {% include tooltip.html tooltip="DynamicGrasp" 
 * When the current interaction is {% include tooltip.html tooltip="JumpPrimaryGrasp" text="Jump Primary Grasp" %}, you can also **step** through to review all the {% include tooltip.html tooltip="PrimaryGrasp" text="primary grasps" %} by clicking the **Step grasp** button. 
 * By stepping through grasps, you can also click the **Delete grasp** button to delete unwanted grasps.
 * Remember to add primary grasps for both left and right hands for a given object, otherwise when the object is set to {% include tooltip.html tooltip="JumpPrimaryGrasp" text="jump primary grasp" %} interaction type, the hand without primary grasps added will not be able to grasp the object.
-* There is no need to press any button to save grasps, simply close the application, and the added grasps will be saved into StreamingAssets/VG_Grasps/grasps.db in your project folder.
+* There is no need to press any button to save grasps, simply close the application, and the added grasps will be saved into the graspdb used in the project.
 
 {% include important.html content= "Note that during the grasp editing, only edited grasps are saved to the database. The toggled interaction type is not saved in the scene and will not overwrite your project settings for the object." %} 
 

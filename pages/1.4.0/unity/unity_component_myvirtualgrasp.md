@@ -123,3 +123,6 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 | Export Scene in Runtime | Enabling this and running the application will create a vg_tmp subdirectory in your project and save sources that are used for different purposes. (see [create debug files](debug_files.1.4.0.html#creating-debug-files)). | 
 | Export Scene in Editor | Alternatively to check "Export Scene in Runtime", pressing Export Scene in Edit will simulate a launch of the VG plugin from the Unity Editor, thus without the need of launching the scene. This option is provided for convenience, but objects that are not in your scene yet will not be included. (see [create debug files](debug_files.1.4.0.html#creating-debug-files)). |
 | Use Network IDs | (Pro feature) Enabling this will allow you to set network ID for avatar's left/right hand (through [MyVirtualGrasp->Avatar](#avatars-and-sensors)), and set network ID for object (through [VG_Articulation](unity_component_vgarticulation.1.4.0.html)). |
+
+
+{% include tips.html content= "Runtime/Resources/Prefabs/ includes two prefabs **SensorAvatar** and **SensorAndReplayAvatars** that have pre-setup basic avatar and sensor settings with MyVirtualGrasp, and you can use them to quick start your project."%} 

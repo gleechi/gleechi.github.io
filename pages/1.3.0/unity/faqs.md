@@ -13,7 +13,7 @@ folder: mydoc
 
 ### Where is the GleechiLib Prefab?
 
-If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in version 0_9_6. You are expected to just insert [MyVirtualGrasp](unity_component_myvirtualgrasp.1.3.0.html) component on a GameObject of your choice.
+If you see the use of GleechiLib prefab in one of our videos, but can not find it in the SDK: the GleechiLib Prefab was removed in version 0_9_6. You are expected to just insert [MyVirtualGrasp](unity_component_myvirtualgrasp.1.3.0.html) component on a GameObject of your choice. Runtime/Resources/Prefabs/ includes two prefabs **SensorAvatar** and **SensorAndReplayAvatars** that have pre-setup basic avatar and sensor settings with MyVirtualGrasp, and you can use them to quick start your project.
 
 ## Hands and Controllers
 
