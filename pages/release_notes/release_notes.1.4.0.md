@@ -92,6 +92,8 @@ folder: mydoc
 
 * [SetBlockRelease](virtualgrasp_unityapi.1.4.0.html#vg_controllersetblockrelease) with no hand side input has a bug: if input avatarID corresponds to an avatar that has only right hand, then this function will not block release on the right hand because an early return happens when left hand is not found. Before this is fixed, to safely release right hand, use the overloaded function [SetBlockRelease](virtualgrasp_unityapi.1.4.0.html#vg_controllersetblockrelease-1) with hand side input  instead.
 
+* [ForceReleaseObject](virtualgrasp_unityapi.1.4.0.html#vg_controllerforcereleaseobject) with no hand side input has a bug: if input avatarID corresponds to an avatar that has only right hand, then this function will not force release on the right hand because an early return happens when left hand is not found. Before this is fixed, to safely release right hand, use the overloaded function [ForceReleaseObject](virtualgrasp_unityapi.1.4.0.html#vg_controllerforcereleaseobject-1) with hand side input instead.
+
 {% include_relative release_notes.1.3.0.md %}
 
 <!--
