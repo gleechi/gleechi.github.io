@@ -7,6 +7,7 @@ permalink: controllers.1.4.0.html
 folder: knowledge
 toc: true
 ---
+
 ## Background
 
 {% include callout.html content="In VirtualGrasp we use the terms sensor and controller exchangeably since a VR controller is essentially a sensing device for hand poses." %}
@@ -27,35 +28,17 @@ This allows developers to combine two sensors to control avatar's hands. For exa
 
 In the majority of use cases only one primary sensor is used. 
 
-
 Whether it is Unity or Unreal, you can assign your controller input in [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#avatars-and-sensors) → Avatars → Primary and Secondary Sensor Setup. 
 
 {% include image.html file="unity/unity_vg_myvirtualgrasp_1_4_0.png" alt="Avatar and Sensor setup in Unity." caption="Avatar and Sensor setup in Unity." %}
 
 ### Controller Profile
 
-Whether it is Unity or Unreal, in Sensor Setup, _Profile_ option allows you to select the "controller profile" for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others.
+In Unity, VirtualGrasp provides "controller profiles" as ScriptableObjects. You are able to configure a number of controller-related settings and thereby quickly integrate new motion controller hardware, and or switch between them. There are already a number of the most common hardware controllers pre-configured as part of the VG SDK in Resources/VG_ControllerPofiles, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. You can find a more detailed documentation on [VG_ControllerProfiles](unity_component_vgcontrollerprofile.1.4.0.html).
 
-A set of ready-to-use controllers is explained in on the [VG_ControllerProfile](unity_component_vgcontrollerprofile.1.4.0.html) page. 
-
-{% include image.html file="unity/unity_vg_ec_unityxrhands_1_4_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile as scriptable object in Unity." %}
-
- Elements of VG_ControllerProfile are explained in this table: 
-
-<!--{% include image.html file="unity/unity_vg_sensor.png" alt="Sensor configuration options in Unity." caption="Sensor configuration options in Unity." %}-->
-
-| Option | Description |
-|-------|--------|--------|
-| Controller Classes| name of the external controller, as a string. Note, here we supports adding a list of controller names, separated by ';', in order of priorization. E.g. "VG_EC_Oculus;VG_EC_UnityXR" (assuming that you have enabled both controllers properly) will use Oculus hand tracking as a priority, but if no hands are tracked, it will fallback to UnityXR controllers.|  
-| Control |  specify what this sensor element controls. If you added two sensors, then one could control wrist position, rotation and  haptics, another controls fingers and grasp for example.| 
-| Finger Control Type |  specify how sensor controls the finger motion. See [Finger Control Type](virtualgrasp_unityapi.1.4.0.html#vg_fingercontroltype). | 
-| Offset Position<br>Offset Rotation |  when the virtual hands do not match to the position or rotation of your real hands holding the controllers, you can adjust the offset to synchronize them. Note that the hand coordinate system's axes, XYZ, are defined like you strech out three axes with thumb, index, and middle finger (i.e. X is thumb up, Y is index forward, and Z is middle inward) of each hand. In other words, with a fully flat hand, all finger point along the positive Y axis, and your palm faces the positive Z axis.| 
-| Origin Name | set this to the GameObject name that should act as the origin of your controller data. For example, "XRRig" for the default Unity XR Rig (unless you renamed it). If no GameObject with this name is found (or you leave it empty), the origin will be the zero-origin.<br><br>To overwrite this behavior, you can use the [Origin](#origin) field as described below.| 
-| Origin Scale | you can add a scale multiplier to the sensor data if you like. The default is (1,1,1). | 
-| Hand Mappings | you can find a more detailed documentation on [VG_HandProfiles](unity_component_vghandprofile.1.4.0.html). |
-
+<!--
 {% include image.html width = "60" file="knowledge/3D_Cartesian_Coodinate_Handedness.jpg" alt="LHS/RHS" %} <figcaption>The offset is applied in LHS (left hand system) for the left and RHS (right hand system) for the right hand.<br>Source: Original by <a href="https://commons.wikimedia.org/wiki/File:3D_Cartesian_Coodinate_Handedness.jpg">PrimalShell</a>, <a href="https://en.wikipedia.org/wiki/en:Creative_Commons">Creative Commons</a> <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">Attribution-Share Alike 3.0 Unported</a> license.</figcaption>
-
+-->
 
 <!--| Finger Control Type | Description |
 |-------|--------|

@@ -25,12 +25,15 @@ entries:
   - title: Explanation
     output: web
     folderitems:
-    - title: Controllers
-      url: /controllers.1.4.0.html
-      output: web 
     - title: Avatars
       url: /avatars.1.4.0.html
       output: web
+    - title: Axis Mappings
+      url: /axis_mappings.1.4.0.html
+      output: web
+    - title: Controllers
+      url: /controllers.1.4.0.html
+      output: web 
     - title: Object Articulation
       url: /object_articulation.1.4.0.html
       output: web

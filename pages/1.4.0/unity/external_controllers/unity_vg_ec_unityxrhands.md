@@ -20,7 +20,7 @@ folder: mydoc/external_controllers
   * You have followed the installation and setup instructions of the [Unity XRHands package](https://docs.unity3d.com/Packages/com.unity.xr.hands@1.1/manual/)
 
 ## Controller Profile
-If these requirements are met, you will be able to use the **VG_CP_Unity.XRHands** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+If these requirements are met, you will be able to use the **VG_CP_Unity.XRHands** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_unityxrhands_1_4_0.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 

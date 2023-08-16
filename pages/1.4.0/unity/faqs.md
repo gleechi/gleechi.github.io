@@ -29,7 +29,7 @@ The reason is probably that the "Input System" Unity package API has been update
 
 ### I have setup the avatar but the hands don't move.
 
-Make sure you do not tick _Replay_ option in MyVirtualgrasp → Avatars window, see [Avatar Types](avatars.1.4.0.html#avatar-types) to understand more.
+Make sure you do not tick _Replay_ option in MyVirtualgrasp → Avatars window, see [Avatar Types](unity_component_myvirtualgrasp.1.4.0.html#replay-physical-and-mirror) to understand more.
 
 ### Does VG support other headsets / controllers?
 

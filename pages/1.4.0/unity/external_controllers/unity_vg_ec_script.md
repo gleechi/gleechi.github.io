@@ -17,7 +17,7 @@ folder: mydoc/external_controllers
 This is an external controller class that supports a Script controller as an external controller. 
 
 ## Controller Profile
-There are no requirements to use this controller, so you can use the **VG_CP_Common.Script** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration.
+There are no requirements to use this controller, so you can use the **VG_CP_Common.Script** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#profile) configuration.
 
 Providing the VG_EC_Script controller profile will allow you to access controller signals (for now grab strength and wrist pose) through public variables from other scripts in your project.
 

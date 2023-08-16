@@ -32,26 +32,38 @@ And if you want to use your own model it is supported in the **Pro version**, se
 
 Specify this to provide a reference to the SkinnedMeshRenderer of the avatar model that you have imported in your scene and which should be controlled by VG during runtime.
 
-#### Replay and Physical
-
-There are three avatar types in VirtualGrasp (see [Avatar Types](avatars.1.4.0.html#avatar-types)).
-By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}. If _Replay_ is ticked, the avatar becomes {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} (Pro version only). And both sensor and replay avatars can be {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatars" %}.
-
-VirtualGrasp allows creating multiple avatars in the interface by modifying _Size_ value. In the example image above, we specified to created two avatars, where first one is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, and second one is a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. 
-
 #### Hand Profile
 
-In Unity, VirtualGrasp provides "hand profiles" as ScriptableObjects. You are able to configure a number of hand model-related settings and thereby  quickly switch between different custom hands. Besides the original VG_GleechiHands profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. You can find a more detailed documentation on [VG_HandProfiles](unity_component_vghandprofile.1.4.0.html).
+In Unity, VirtualGrasp provides "hand profiles" as ScriptableObjects. You are able to configure a number of hand model-related settings and thereby  quickly switch between different hand models. Besides the original VG_GleechiHands profile you may find some others as part of the VG SDK in __Resources/VG_HandPofiles__. 
+
+To read more about hand profiles see [VG_HandProfiles](unity_component_vghandprofile.1.4.0.html).
+
+#### Replay, Physical and Mirror
+
+By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}, meaning that avatar's hands are directly controlled by the [sensors](controllers.1.4.0.html) for movement and object interaction. This is also the avatar used for [recording sensor data](sensor_record_replay.1.4.0.html) (feature available in **Pro version**).
+
+If the _Replay_ option is ticked, then the avatar will be registered as a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %}. The hands of this avatar will be controlled by pre-recorded sensor data. Note this <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorRecordAndReplay}}">sensor record and replay</a> feature is only available in VirtualGrasp **Pro version**.
+
+Both {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} and {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} can be created as a {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatar" %} if _Physical_ option is ticked. 
+
+Only {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} can be specified to have mirror hand control if _Mirror_ option is ticked. When mirror hand control is enabled, the controller/sensor signal from a user's left hand side will be used to control avatar hand of the right side, vice versa. 
+
+<!--{% include image.html file="unity/unity_hand_model_1_2_0.png" alt="Unity hand model." caption="Hand model references need to be provided in MyVirtualgrasp → Avatars → Skeletal Mesh.<br>Note that \"Replay\" only appears in Pro-versions of VG." %}-->
+
+{% include callout.html content= "The physical avatar currently is only semi-physical in that only colliders are added to hand bones, no rigid bodies or articulation bodies are used." %} 
+
+<!--By default an avatar is a {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}. If _Replay_ is ticked, the avatar becomes {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar" %} (Pro version only). And both sensor and replay avatars can be {% include tooltip.html tooltip="PhysicalAvatar" text="physical avatars" %}.-->
+
 
 ### Sensors
 
 VirtualGrasp allows you to assign upto two {% include tooltip.html tooltip="Sensor" text="sensors" %} for an avatar, which allows developers to combine two sensors to control avatar's hands. However in the majority of use cases only one primary sensor is used. Detailed background can be found in [Controllers](controllers.1.4.0.html) page. 
 
-#### Controller Profile
+#### Profile
 
-In each Sensor Setup, _Profile_ option allows you to select the "controller profile" for that sensor (primary or secondary). You are able to configure a number of controller-related settings and thereyby allow you to quickly switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfile are part of the VG SDK and you can find them in __Resources/VG_ControllerProfiles__. 
+In each Sensor Setup, the _Profile_ option allows you to select the "controller profile" for that sensor (primary or secondary). You are thereby able to drag & drop a number of controller-related settings and thereyby quickly enable or switch between different controller inputs, such as UnityXR (e.g. supporting Quest), LeapMotion, Mouse, and others. A number of common VG_ControllerProfiles are already part of the VG SDK and you can find them in __Resources/VG_ControllerProfiles__. 
 
-To learn how to create your custom controller profile see [Controller Profile](controllers.1.4.0.html#controller-profile). 
+To read more about controller profiles see [VG_ControllerProfiles](unity_component_vgcontrollerprofile.1.4.0.html). 
 
 #### Origin
 

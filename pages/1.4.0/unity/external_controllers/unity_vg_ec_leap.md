@@ -24,7 +24,7 @@ The following requirements have to be met to be able to use this controller:
 
 ## Controller Profile
 
-If these requirements are met, you will be able to use the **VG_CP_UltraLeap.HandTracking** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#controller-profile) configuration (otherwise an error will appear on the console).
+If these requirements are met, you will be able to use the **VG_CP_UltraLeap.HandTracking** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.4.0.html#profile) configuration (otherwise an error will appear on the console).
 
 {% include image.html file="unity/unity_vg_ec_leap.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 
