@@ -75,6 +75,8 @@
 
 * When graspable object is very close to an index pushable object, after grasp the object, pushing gesture may not form. 
 
+* When index finger tip moves in a different direction from wrist, pushing can get double triggered.
+
 * Multiplayer (_not available in free or pro versions_) with VG network message still can not solve complete object sync for new player registration.
 
 * A few events such as [OnObjectDeselected](virtualgrasp_unityapi.1.4.0.html#vg_controlleronobjectdeselected) do not function correctly for proxy avatars in multiplayer 
