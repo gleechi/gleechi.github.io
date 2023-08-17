@@ -93,8 +93,6 @@ If {% include tooltip.html tooltip="ReleaseSpeed" text="release animation speed"
 
 {% include tip.html content="For grasp animation speed, lower value means faster grasp, for release animation speed, lower value means faster release." %}
 
-{% include important.html content="For both grasp and release animation speed, there is a minimum allowed value. So any value specified in the GUI that is smaller than the min value will be clamped to this min value." %}
-
 ### Throw Velocity Scale and Throw Angular Velocity Scale
 
 The two velocity scales allow you to scale up and down throwing power when an object is released from all grasping hands. 
