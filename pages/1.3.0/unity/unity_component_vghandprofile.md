@@ -33,9 +33,9 @@ Image below shows an example of assigned "hand bone indices" (shown in "[]") on 
 
 {% include image.html file="unity/unity_vg_ec_handprofile_handboneindices.png" alt="Hand Bone Indices in VG_HandProfile in Unity." caption="Example of assigned Hand Bone Indices in VG_HandProfile in Unity. Note the transforms for bones are only assigned if a hand model skinned mesh is loaded." %}
 
-### How to check if a custom hand model needs hand bone mapping?
+### How to create hand bone mapping for a custom hand model?
 
-You can use a provided hand profile in **Resources/VG_HandProfiles/** that does not have Hand Bone Mapping (i.e. indices are not assigned thus shown as [-1], an example is GleechiHand profile), and load your hand skinned mesh. The moment you load the hand skinned mesh, VG will try to identify the hand bones automatically since no indices are provided. Two situations may occur:
+If you have created a hand profile for this hand model for the [rotation mappings](unity_component_vghandprofile.1.3.0.html#rotation-mapping), then in the same profile, load your hand skinned mesh. Since no bone map has been created (all indices are [-1]), the moment you load the hand skinned mesh, VG will try to identify the hand bones automatically. Two situations may occur:
 1. VG fails to identify any hands, thus no corresponding bone transforms are assigned in either Left or Right Hand Bone Map drop down menu. 
 2. VG identified left and/or right hands (depending on if your model contains both hands or only one hand side). In such case, the identified hand bone transforms should be filled in Left and/or Right Hand Bone Map drop down menu.
 
