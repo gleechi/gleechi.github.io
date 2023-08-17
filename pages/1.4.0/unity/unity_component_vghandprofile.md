@@ -10,7 +10,7 @@ folder: mydoc
 
 VirtualGrasp provides VG_HandProfiles (in Unity as ScriptableObjects) to configure a number of hand model-related settings and thereby allows you to quickly switch between different hand models.
 
-{% include callout.html content="You only need to create a new instance of a VG_HandProfile if you import a new hand model into your game that deviates from a hand model that you already have. You then need to configure the hand bone mapping as well as potentially the mapping rotations (see below) for your new VG_HandProfile." %}
+{% include callout.html content="You only need to create a new instance of a VG_HandProfile if you import a new hand model into your game that deviates from a hand model that you already have. You then potentially need to configure the hand rotation mappings as well as the hand bone mappings (see below) for your new VG_HandProfile." %}
 
 {% include image.html file="unity/unity_vg_ec_handprofile_1_4_0.png" alt="VG_HandProfile in Unity." caption="Example of a VG_HandProfile as a scriptable object in Unity." %}
 
