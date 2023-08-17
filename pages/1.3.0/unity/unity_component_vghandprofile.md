@@ -48,13 +48,6 @@ In situation 1, since VG has failed to identify any hand bones, you have to manu
 In both situations, when **Assign Hand Bone Indices** is pushed, VG will verify the validity of your manually assigned bone map and give hints if something is not correct. 
 
 
-
-
-
-
-
-
-
 Please watch the video below for a tutorial that shows an example of how to configure a VG_HandProfile for your Custom Hand in Unity. In current video **Hand Bone Indices** is not needed because the hand model follows the Gleechi hand model standard. The video was recorded in an earlier version so the profile GUI is outdated. A new video instruction will be added soon.
 
 {% include youtube.html id="UFCitkp39uw" %}
