@@ -8,7 +8,7 @@ toc: true
 ---
 
 ## Creating Debug Files
-{% include image.html file="unity/unity_vg_debug_settings_1_4_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
+{% include image.html file="unity/unity_vg_debug_settings_1_3_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
 
 We can enable creation of a set of debug files (see [Debug Files Content](#debug-files-content) below) which is saved in a *vg_tmp* subdirectory in your project’s Asset folder. 
 
