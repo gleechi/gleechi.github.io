@@ -190,7 +190,7 @@ if __name__ == "__main__":
     adjustTopNav("../_data/topnav.yml", args.old, args.new)
 
     # Re-adjust the release notes (version was replaced above in this .md file as well)
-    adjustReleaseNotes(args.new + "/unity/release_notes.md", args.old, args.new)
+    #adjustReleaseNotes(args.new + "/unity/release_notes.md", args.old, args.new)
 
 else:
     print("check_header.py is being imported into another module")
