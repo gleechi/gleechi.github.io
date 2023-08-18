@@ -127,7 +127,7 @@ to how to choose a grasp in the database that is **closest** to avatar wrist. Ho
 
 ## Debug Settings
 
-{% include image.html file="unity/unity_vg_debug_settings_1_3_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
+{% include image.html file="unity/unity_vg_debug_settings_1_5_0.png" alt="VG Debug Settings." caption="VG debug settings." %}
 
 | Parameters | Description |
 |-------|--------|
