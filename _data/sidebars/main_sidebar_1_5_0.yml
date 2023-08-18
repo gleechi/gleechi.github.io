@@ -134,6 +134,9 @@ entries:
     - title: VG_Interactable
       url: /unity_component_vginteractable.1.5.0.html
       output: web
+    - title: VG_Locomotion
+      url: /unity_component_vglocomotion.1.5.0.html
+      output: web
     - title: VG_FingerAnimator
       url: /unity_component_vgfingeranimator.1.5.0.html
       output: web
@@ -148,6 +151,9 @@ entries:
       output: web
     - title: VG_Recorder [pro]
       url: /unity_component_vgrecorder.1.5.0.html
+      output: web
+    - title: VG_Utility
+      url: /unity_component_vgutility.1.5.0.html
       output: web
       subfolders:
       - title: VG_Onboarding
