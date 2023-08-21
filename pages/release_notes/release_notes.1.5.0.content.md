@@ -28,6 +28,8 @@
  
  * Fixed the algorithm error on [VG_FingerAnimator](unity_component_vgfingeranimator.1.4.0.html) that leads to the absolute target rotation keep changing, resulting in flickering finger animation. **(fixed known issue from 1.4.0)**
 
+ * [Index pushing interaction](push_interaction.1.5.0.html) now has an improvement on user experience: index finger tip (the pushing agent) will stay on the pushing surface unless the hand is pushing too "hard" in the the surface. 
+
 ##### GUI / Component Changes:
 * [VG_Recorder](unity_component_vgrecorder.1.5.0.html) fixed a bug of clicking on the defined **Replay Sequence Key** or **Replay Segment Key** can not replay just recorded data. **(fixed known issue from 1.4.0)**
 * [VG_Recorder](unity_component_vgrecorder.1.5.0.html) removed _Replay From Memory_ option.
@@ -37,7 +39,7 @@
   * _SensorAvatarLeap_ was added as prefab varient of _SensorAvatar_ to directly support leap motion sensor control.
   * _SeparateHandsSensorAvatar_ was added. It is comparible to _SensorAvatar_ with the difference of using the newly added singular left hand model _Runtime/Resources/GleechiHands/GleechiLeftHand.fbx_. This prefab was added mainly to show an example of how to set up VG {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}  with separate hand models. 
   * _SeparateHandsSensorAndReplayAvatars_ was added as prefab varient of _SeparateHandsSensorAvatar_. It is comparible to _SensorAndReplayAvatars_ also with the difference of using the newly added singular left hand model. This was added mainly to show an example of how to setup VG library for sensor recording and replaying with separate hand models. 
-
+* Changed external controller class and script name from VG_EC_UnityInteraction.cs to VG_EC_UnityXRInteraction.cs to be consistent with the **Controller Classes** input in VG_CP_Unity.XRInteraction controller profile. **(fixed known issue from 1.4.0)**
 
 ##### API Changes:
 * Fixed the bug on [SetBlockRelease](virtualgrasp_unityapi.1.4.0.html#vg_controllersetblockrelease) overload function with no hand side input: if input avatarID corresponds to an avatar that has only right hand, then this function will not set block release on the right hand because an early return happens when left hand is not found. **(fixed known issue from 1.4.0)**
@@ -50,7 +52,6 @@
 
 * Fixed the issue when index finger tip moves in a different direction from wrist, pushing can get double triggered. **(fixed known issue from 1.4.0)**
 
-
 ##### Known Issues:
 
 * VG main loop currently runs in FixedUpdate rather than Update in order to synchronize VG powered hand object interaction with physics calculation in Unity. This can cause some visual inconsistency showed as non-smooth hand movement with/without holding an object. We recommend you to resolve this by setting the Time.fixedDeltaTime to match the refresh rate of the device you are targetting (e.g. 1f / 72f to target 72 hz displays). 
@@ -59,9 +60,7 @@
 
 * An internal component VG_ColliderTest should not be allowed to be added to a GameObject, but now there is no prevension on this yet.
 
-* Combinig two sensors -- Primary and Secondary [Sensors](unity_component_myvirtualgrasp.1.4.0.html#sensors) -- for an avatar is not working properly. Note for majority use cases you only need one Primary Sensor Setup.
-
-* There is a typo on the controller profile scritable object **VG_CP_Unity.XRInteraction**, "VG_EC_UnityXRInteraction" should be changed to "VG_EC_UnityInteraction", corresponding to the name of [the corresponding external controller class](unity_vg_ec_unityinteraction.1.4.0.html). 
+* Combinig two sensors -- Primary and Secondary [Sensors](unity_component_myvirtualgrasp.1.4.0.html#sensors) -- for an avatar is not working properly. Note for majority use cases you only need one Primary Sensor Setup. 
 
 * [StartReplay](virtualgrasp_unityapi.1.4.0.html#vg_controllerstartreplay) entering selectedObject will not fully support object-centered replay.
 

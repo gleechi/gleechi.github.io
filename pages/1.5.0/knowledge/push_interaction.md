@@ -53,9 +53,10 @@ For example image above shows the push direction transform added to the red butt
 the {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}. 
 So when index finger is approaching from bottom to the button, opposite to the blue arrow, the object will not be selected for push.
 
+{% include callout.html content="Note that a pushable object is selected before the finger tip touches the object, and the selection can be visualized by using [VG_HintVisualizer](unity_component_vghintvisualizer.1.5.0.html)." %}
 
-Once an object is selected, you can turn on the visual hint to show which object is selected for push without physics. 
-See [VG_HintVisualizer](unity_component_vghintvisualizer.1.5.0.html) to learn how to use it.
+Once an object is selected, a push on the object will be triggered when the finger tip touches the pushing surface. The pushable object's movement is then controlled by sensor controlled finger tip position through joint articulation. In other words, the finger tip is "dragging" the object to move to the allowed direction by joint articulation setup. This way an object (like a button) can be "pushed down" as shown in the video below, or "slided" on a surface as shown on the rectangular button with planar joint (see [pad with planar joint buttons](unity_vgonboarding_task6.1.5.0.html)).
+
 
 #### How to Setup Push Without Physics
 
@@ -77,3 +78,11 @@ you add the component [VG_Articulation](unity_component_vgarticulation.1.5.0.htm
 {% include callout.html content="When TWO_STAGE affordance is chosen, object' joint state will bounce back to the smallest value of the discrete states after the 2nd push.
 Since by default discrete states will take the two range values from the joint limits [min, max], so if discrete states is not provided, the joint state will bounce back to the min value. 
 If you want it to bounce to a different value from min, you should define the discrete states with first (smallest) value larger than joint limit's min value. As shown in above image, the smallest discrete value 0.004 is bigger than the min value 0." %}
+
+#### Why the finger penetrates?
+Some complaints have arrised from VG users about the finger penetrating through pushing surface of an object. The foundamental reason is on the mechanism of [how pushable object is selected](#from-object-selection-to-push-without-physics) for VG's non-physical pushing setup. To explain more explicitly, if a pushable object is **selected** when a finger tip is close enough to the object and well aligned to the approach direction, then **deselection** will need to happen when finger tip is further away from the object. And the measure of the distance also applies when finger tip is deeper into the pushing surface, i.e. you push very "hardly". The distance threshold can not be too big because it will confuses selection for nearby graspable object.  It also can not be too big because we want to form a push gesture the moment an pushable object is selected. 
+
+Proxy hand (the visible blue hand) will stay on the surface of pushable object (buttons) while in Pushing mode. However if pushing too "hardly", i.e. sensor controlled finger tip (non-proxyhand) is too deep and further away from pushing surface (indicated by the movement of the green sphere), VG releases the hand from the object, hence proxy hand goes back to sensor controlled hand.
+
+{% include youtube.html id="ey8weaVMETw" caption="VG Finger Push With Proxy Hand" %}
+ 
