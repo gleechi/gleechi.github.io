@@ -34,11 +34,16 @@ Additionally,
 
 {% include image.html file="vg_hand_model.png" width="100" alt="VG hand model." caption="VG Hand model example with 4 bones (including finger tip) each finger." %}
 
+{% include tip.html content= "[VG_HandProfile](unity_component_vghandprofile.1.5.0.html) page gives detailed instruction on how to setup custom hands in Unity."%} 
+
 ### Separate Hand Models
 
 If you have a skeletal mesh for one hand side and are creating the opposite side by duplicating and mirroring this hand, you can setup two separate avatars with same sensors to control the two hands. In such cases VirtualGrasp considers the left and right hand skeleton meshes as two separate _Avatars_.
 
-[VG_HandProfile](unity_component_vghandprofile.1.5.0.html) page gives detailed instruction on how to setup custom hands in Unity.
+In _Runtime/Resources/Prefabs/_ of the Unity SDK, two prefabs for basic avatar setup are included to showcase how to setup VG avatars using separate hand models:
+* **SeparateHandsSensorAvatar** is a prefab setting up the {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %} with separate left and right hand models (using a singular Gleechi left hand model _Runtime/Resources/GleechiHands/GleechiLeftHand.fbx_).  
+
+* **SeparateHandsSensorAndReplayAvatars** is a prefab varient of **SeparateHandsSensorAvatar**, which shows how to setup VG library for sensor recording and replaying with separate hand models. 
 
 <!--The image below shows an example of how to set it up in Unity, but it applies to any VG integrated game engine.
 
