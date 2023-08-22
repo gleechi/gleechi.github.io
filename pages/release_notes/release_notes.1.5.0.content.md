@@ -25,6 +25,8 @@
 ##### Major Functionality Changes:
 
  * **Breaking change:** Two overloaded functions [SetBlockRelease](virtualgrasp_unityapi.1.4.0.html#vg_controllersetblockrelease) changed names to SetBlockReleaseObject to make it consistent with ForceReleaseObject function.
+
+ * **Breaking change:** Changed external controller class name from VG_EC_UnityInteraction to [VG_EC_UnityXRInteraction](unity_vg_ec_unityxrinteraction.1.5.0.html) to be consistent with the corresponding controller profile, VG_CP_Unity.XRInteraction. Also changed the scripting define symbol for this controller class from VG_USE_UNITYINTERACTION_HAND to VG_USE_UNITYXRINTERACTION_HAND for Unity player settings (Project Settings → Player → Script Compilation) **(fixed known issue from 1.4.0)**
  
  * Fixed the algorithm error on [VG_FingerAnimator](unity_component_vgfingeranimator.1.4.0.html) that leads to the absolute target rotation keep changing, resulting in flickering finger animation. **(fixed known issue from 1.4.0)**
 
@@ -40,8 +42,7 @@
   * _SensorAvatarLeap_ was added as prefab varient of _SensorAvatar_ to directly support leap motion sensor control.
   * _SeparateHandsSensorAvatar_ was added. It is comparible to _SensorAvatar_ with the difference of using the newly added singular left hand model _Runtime/Resources/GleechiHands/GleechiLeftHand.fbx_. This prefab was added mainly to show an example of how to set up VG {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}  with separate hand models. 
   * _SeparateHandsSensorAndReplayAvatars_ was added as prefab varient of _SeparateHandsSensorAvatar_. It is comparible to _SensorAndReplayAvatars_ also with the difference of using the newly added singular left hand model. This was added mainly to show an example of how to setup VG library for sensor recording and replaying with separate hand models. 
-* Changed external controller class and script name from VG_EC_UnityInteraction.cs to [VG_EC_UnityXRInteraction.cs](unity_vg_ec_unityxrinteraction.1.5.0.html) to be consistent with the **Controller Classes** input in VG_CP_Unity.XRInteraction controller profile. **(fixed known issue from 1.4.0)**
- 
+
 
 ##### API Changes:
 * Fixed the bug on [SetBlockRelease](virtualgrasp_unityapi.1.4.0.html#vg_controllersetblockrelease) overload function with no hand side input: if input avatarID corresponds to an avatar that has only right hand, then this function will not set block release on the right hand because an early return happens when left hand is not found. **(fixed known issue from 1.4.0)**
