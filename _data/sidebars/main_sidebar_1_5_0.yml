@@ -98,8 +98,8 @@ entries:
         - title: VG_EC_Steam
           url: /unity_vg_ec_steam.1.5.0.html
           output: web
-        - title: VG_EC_UnityInteraction
-          url: /unity_vg_ec_unityinteraction.1.5.0.html
+        - title: VG_EC_UnityXRInteraction
+          url: /unity_vg_ec_unityxrinteraction.1.5.0.html
           output: web
         - title: VG_EC_UnityXR
           url: /unity_vg_ec_unityxr.1.5.0.html

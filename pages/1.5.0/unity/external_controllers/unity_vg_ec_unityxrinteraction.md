@@ -1,8 +1,8 @@
 ---
-title: VG_EC_UnityInteraction controller
+title: VG_EC_UnityXRInteraction controller
 keywords: external-controller
 sidebar: main_sidebar_1_5_0
-permalink: unity_vg_ec_unityinteraction.1.5.0.html
+permalink: unity_vg_ec_unityxrinteraction.1.5.0.html
 folder: mydoc/external_controllers
 ---
 
@@ -31,7 +31,7 @@ The following requirements have to be met to be able to use the controller:
 
 If these requirements are met, you will be able to use the **VG_CP_Unity.XRInteraction** controller profile to setup your [MyVirtualGrasp](unity_component_myvirtualgrasp.1.5.0.html#profile) configuration (otherwise an error will appear on the console).
 
-{% include image.html file="unity/unity_vg_ec_unityinteraction.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
+{% include image.html file="unity/unity_vg_ec_unityxrinteraction.png" alt="VG Controller profile in Unity." caption="VG Controller profile in Unity." %}
 
 ## Functionality
 
