@@ -65,7 +65,7 @@ controller input methods listed below. For each controller, you will also find a
 | [VG_EC_Steam](unity_vg_ec_steam.1.5.0.html) | VG_CP_Steam.HandTracking | OpenXR controllers; [SteamVR](https://valvesoftware.github.io/steamvr_unity_plugin/index.html) API |
 | [VG_EC_UnityXR](unity_vg_ec_unityxr.1.5.0.html) | VG_CP_Unity.UnityXR | UnityXR controllers; [UnityXR](https://docs.unity3d.com/Manual/XR.html) API |
 | [VG_EC_UnityXRHands](unity_vg_ec_unityxrhands.1.5.0.html) | VG_CP_Unity.XRHands | Unity XR Hands controllers; [Unity XRHands](https://docs.unity3d.com/Packages/com.unity.xr.hands@1.1/manual/index.html) API |
-| [VG_EC_UnityInteraction](unity_vg_ec_unityinteraction.1.5.0.html) | VG_CP_Unity.XRInteraction | Unity XR Interaction controllers; [Unity XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/xr-controller-action-based.html) API |
+| [VG_EC_UnityXRInteraction](unity_vg_ec_unityxrinteraction.1.5.0.html) | VG_CP_Unity.XRInteraction | Unity XR Interaction controllers; [Unity XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.0/manual/xr-controller-action-based.html) API |
 | [VG_EC_Generic](unity_vg_ec_generic.1.5.0.html) | VG_CP_Common.Generic | Unity transforms / fallback solution |
 
 
