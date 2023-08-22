@@ -28,7 +28,7 @@
  
  * Fixed the algorithm error on [VG_FingerAnimator](unity_component_vgfingeranimator.1.4.0.html) that leads to the absolute target rotation keep changing, resulting in flickering finger animation. **(fixed known issue from 1.4.0)**
 
- * [Index pushing interaction](push_interaction.1.5.0.html) now has an improvement on user experience: index finger tip (the pushing agent) will stay on the pushing surface unless the hand is pushing too "hard" in the the surface. 
+ * [Index pushing interaction](push_interaction.1.5.0.html#why-the-finger-penetrates) now has an improvement on user experience: a proxy hand feature is introduced to force index finger tip to stay on the pushing surface unless the hand is pushing too "hard" into the surface. 
 
 ##### GUI / Component Changes:
 * [VG_Recorder](unity_component_vgrecorder.1.5.0.html) fixed a bug of clicking on the defined **Replay Sequence Key** or **Replay Segment Key** can not replay just recorded data. **(fixed known issue from 1.4.0)**

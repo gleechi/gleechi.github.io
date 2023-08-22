@@ -53,9 +53,9 @@ For example image above shows the push direction transform added to the red butt
 the {% include tooltip.html tooltip="ApproachDirection" text="approach direction" %}. 
 So when index finger is approaching from bottom to the button, opposite to the blue arrow, the object will not be selected for push.
 
+{% include callout.html content="Note that a pushable object is selected before the finger tip touches the object, and the selection can be visualized by using [VG_HintVisualizer](unity_component_vghintvisualizer.1.0.0.html)." %}
 
-Once an object is selected, you can turn on the visual hint to show which object is selected for push without physics. 
-See [VG_HintVisualizer](unity_component_vghintvisualizer.1.0.0.html) to learn how to use it.
+Once an object is selected, a push on the object will be triggered when the finger tip touches the pushing surface. The pushable object's movement is then controlled by sensor controlled finger tip position through joint articulation. In other words, the finger tip is "dragging" the object to move to the allowed direction by joint articulation setup. This way an object (like a button) can be "pushed down", or "slided" on a surface as shown on the rectangular button with planar joint (see [pad with planar joint buttons](unity_vgonboarding_task6.1.0.0.html)).
 
 #### How to Setup Push Without Physics
 
