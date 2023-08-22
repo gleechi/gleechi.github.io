@@ -107,9 +107,5 @@ If you want a {% include tooltip.html tooltip="ReplayAvatar" text="replay avatar
 * add another element to MyVirtualGrasp→Avatars, drag the SkinnedMeshRenderer from scene to _SkeletalMesh_ field and check it as _Replay_ avatar, 
 * also assign the SkinnedMeshRenderer to the _Replay Avatar_ slot of the VG_Recorder (meaning that you want to replay the recordings on this avatar).
 
-_Resources/Prefabs/SensorAndReplayAvatars.prefab_ provided by the VG SDK gives an example of basic VG library setup that enables sensor recording and replaying. 
-Gleechi's avatar _GleechiRig_ that includes both left and right hands are used. 
-
-If however you have separate left and right hand models, checkout _Resources/Prefabs/SeparateHandsSensorAndReplayAvatars.prefab_ for reference. 
-
+{% include tip.html content= "Runtime/Resources/Prefabs/ includes two prefabs **SensorAndReplayAvatars** and **SeparateHandsSensorAndReplayAvatars** that give examples of basic VG library setup that enables sensor recording and replaying. The former uses _GleechiRig_ that includes both left and right hands, and the latter uses separate left and right hand models."%} 
  
