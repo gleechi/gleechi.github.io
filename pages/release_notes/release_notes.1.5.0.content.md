@@ -33,7 +33,7 @@
 ##### GUI / Component Changes:
 * [VG_Recorder](unity_component_vgrecorder.1.5.0.html) fixed a bug of clicking on the defined **Replay Sequence Key** or **Replay Segment Key** can not replay just recorded data. **(fixed known issue from 1.4.0)**
 * [VG_Recorder](unity_component_vgrecorder.1.5.0.html) removed _Replay From Memory_ option.
-* Added [VG_Utility](unity_component_vgutility.1.5.0.html) that covers most of VG's static GUI functions.
+* Added [VG_Utility](unity_component_vgutility.1.5.0.html) scriptable object in _Runtime/Resources/_ that covers most of VG's static GUI functions.
 * Added a new [VG_Locomotion](unity_component_vglocomotion.1.5.0.html) component originated from _Samples/onboarding/Scripts/Move.cs_. In addition to original Move.cs speed control on locomotion is added, and keyboard control is added. 
 * Added more prefabs and improved existing ones in _Runtime/Resources/Prefabs/_
   * _SensorAvatar_ and _SensorAndReplayAvatars_ were refactored to avoid conflicting control of avatar movement by different mechanisms. 
