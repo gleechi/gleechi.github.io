@@ -46,6 +46,7 @@
 
 * Fixed the bug on [ForceReleaseObject](virtualgrasp_unityapi.1.4.0.html#vg_controllerforcereleaseobject) overload function with no hand side input: if input avatarID corresponds to an avatar that has only right hand, then this function will not force release the right hand because an early return happens when left hand is not found. **(fixed known issue from 1.4.0)**
 
+* Added IsReplaying(int avatarID) overloaded function. 
 
 ##### Other / Internal Changes:
 * Fixed the issue when graspable object is close to an index pushable object, after grasping the object, pushing gesture may not form. **(fixed known issue from 1.4.0)**
