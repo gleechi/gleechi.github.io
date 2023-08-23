@@ -106,7 +106,7 @@ In VG library we define a “narrower” sensed set of affordances that determin
 | Normal | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: Object stay at the pose when hand is released  | for all joint types| 
 | Bounce | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, bounce to the lowest discrete state | for 1-dof joint | 
 | Two Stage | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
-| Snaps | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, snap to the closest discrete state | for 1-dof joint | 
+| Snaps | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, snap to the closest discrete state | for 1-dof joint and 2-dof Planar joint | 
 
 ## Dual Hands Only
 
