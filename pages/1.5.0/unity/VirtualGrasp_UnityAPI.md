@@ -3,7 +3,7 @@ title: Unity API
 sidebar: main_sidebar_1_5_0
 keywords: grasp, baking, cabvg
 permalink: virtualgrasp_unityapi.1.5.0.html
-folder: mydoc
+folder: unity
 toc: true
 ---
 <hr><b>Tags</b>
@@ -12,8 +12,6 @@ toc: true
 Calling it when not supported should result in a VG_ReturnCode.UNSUPPORTED_FUNCTION.</td></tr>
 <tr><td><span class="label label-default">video</span></td><td>this function is related to a tutorial movie.</td></tr>
 </table><hr>
-
-# MAIN
 
 ## [ENUMS](#enums)
 
@@ -253,12 +251,6 @@ This event is invoked in the frame when a hand is starting to grasp an object. T
 
 
 
-### VG_Controller.OnInitialize
-
-The event to call when we have successfully initialized the library.
-
-
-
 ### VG_Controller.OnObjectCollided
 
 This event is invoked when a grasped object is colliding with another object. The VG_HandStatus it carries includes more information about the interaction.
@@ -279,7 +271,7 @@ This event is invoked in the frame when an object is fully release by all hands.
 
 
 
-### VG_Controller.OnObjectGrasped {#vg_controlleronobjectgrasped}
+### VG_Controller.OnObjectGrasped
 
 This event is invoked in the frame when a hand has fully grasped an object. The VG_HandStatus it carries includes more information about the interaction.
 
@@ -329,24 +321,12 @@ This event is invoked when an object's selection weight is changed. The event ca
 
 
 
-### VG_Controller.OnPostUpdate
-
-This event is invoked in the update loop after VG runs its update. Thus, all other scripts that should update after the VG cycle should listen to this event.
-
-
-
-### VG_Controller.OnPreUpdate
-
-This event is invoked in the update loop before VG runs its update. Thus, all other scripts that should update before the VG cycle should listen to this event.
-
-
-
 
 ## [OBJECT_SELECTION_API](#object_selection_api)
 
 ### VG_Controller.ChangeObjectJoint
 
-Change a set of prameters of an object's joint in runtime.
+Change a set of parameters of an object's joint in runtime.
 
 | _Transform_ |selectedObject|The object to change the object joint parameters.|
 |[*VG_JointType*](#vg_jointtype) | jointType|The new joint type.|
@@ -354,7 +334,7 @@ Change a set of prameters of an object's joint in runtime.
 | _Transform_ |anchorTransform|The new anchor transform.|
 | _Vector2_ |limit|The new limit of the new joint type. For planar joint this is the limit along xaxis of the anchor transform. |
 | _float_ |screwRate|The new screw rate (\>=0, in cm per degree) for revolute joint.|
-| _Vector2_ |limit2|The new limit along yaxis of the anchor transform for planar joint.|
+| _Vector2_ |limit2|The new limit along y-axis of the anchor transform for planar joint.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 **Remark:**
@@ -424,13 +404,13 @@ Return the currently selected GraspButton.
 Return the avatar/hand pairs that are currently grasping a specified object.
 
 | _Transform_ |objectToCheck|The object to be checked if it is currently grasped.|
-| _**out** List\<KeyValuePair\<int, VG_HandSide\>\>_ |hands|An output list of avatar-handside-pairs describing which hands are currently grasping that object.|
+| _**out** List\<KeyValuePair\<int, VG_HandSide\>\>_ |hands|An output list of avatar-hand-side-pairs describing which hands are currently grasping that object.|
 | **returns** | _int_ | Number of hands grasping the object.|
 
 
 ### VG_Controller.GetObjectJointState
 
-Get the current joint state of a single-dof articulated object. For planar joint, the joint state along xaxis of the joint anchor.
+Get the current joint state of a single-dof articulated object. For planar joint, the joint state along x-axis of the joint anchor.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _**out** float_ |jointState|The returned joint state. Will be set to 0.0f upon error|
@@ -449,7 +429,7 @@ Get object's original or current joint type.
 
 ### VG_Controller.GetObjectSecondaryJointState
 
-Get the current secondary joint state along yaxis of joint anchor for planar articulated object.
+Get the current secondary joint state along y-axis of joint anchor for planar articulated object.
 
 | _Transform_ |selectedObject|The object to get the current joint state value for.|
 | _**out** float_ |secondaryJointState|The returned secondary joint state. Will be set to 0.0f upon error.|
@@ -567,7 +547,7 @@ Specify the avatar specific object selection weight of an object for interaction
 
 ### VG_Controller.SetDualHandsOnly
 
-Set if an object can only be manipulated by dual hands from a same avatar.
+Set if an object can only be manipulated by two or more hands from same or different avatars.
 
 | _Transform_ |selectedObject|The object to change the dual hand type for.|
 | _bool_ |dualHandsOnly|If dual hand only.|
@@ -625,7 +605,7 @@ Instantaneously switch the grasped object to specified object in the function.
 
 ### VG_Controller.TogglePrimaryGraspOnObject
 
-Instantaneously switch the grasped object, and continously calling also toggle through primary grasps on this object.
+Instantaneously switch the grasped object, and continuously calling also toggle through primary grasps on this object.
 
 | _int_ |avatarID|The avatar id|
 |[*VG_HandSide*](#vg_handside) | handSide|The side of the hand|
@@ -814,6 +794,24 @@ Unregister avatar during runtime
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
+### VG_Controller.new
+
+The event to call when we have successfully initialized the library.
+
+
+
+### VG_Controller.new
+
+This event is invoked in the update loop before VG runs its update. Thus, all other scripts that should update before the VG cycle should listen to this event.
+
+
+
+### VG_Controller.new
+
+This event is invoked in the update loop after VG runs its update. Thus, all other scripts that should update after the VG cycle should listen to this event.
+
+
+
 
 ## [RECORDING_INTERFACE_API **[pro]**](#recording_interface_api-pro)
 
@@ -908,12 +906,23 @@ Check if a hand is currently replaying a recorded sensor data.
 Used in: [VG_Recorder](unity_component_vgrecorder.1.5.0.html)
 
 
+### VG_Controller.IsReplaying
+<span class="label label-primary">pro</span> (= will return VG_ReturnCode::UNSUPPORTED_FUNCTION in free version)
+
+Check if avatar is currently replaying a recorded sensor data.
+
+| _int_ |avatarID|The avatar to check.|
+| **returns** | _bool_ | True if replaying, False otherwise.|
+
+Used in: [VG_Recorder](unity_component_vgrecorder.1.5.0.html)
+
+
 ### VG_Controller.LoadRecording
 <span class="label label-primary">pro</span> (= will return VG_ReturnCode::UNSUPPORTED_FUNCTION in free version)
 
 Load recorded sensor data from a file, but do not start replay
 
-| _string_ |fullpath|The full path to load the recording from.|
+| _string_ |fullPath|The full path to load the recording from.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.1.5.0.html)
@@ -946,7 +955,7 @@ Used in: [VG_Recorder](unity_component_vgrecorder.1.5.0.html)
 
 Save recording sensor data and store the whole sequence to a file
 
-| _string_ |fullpath|The fullpath of the filename to save the recording to.|
+| _string_ |fullPath|The full path of the filename to save the recording to.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 Used in: [VG_Recorder](unity_component_vgrecorder.1.5.0.html)
@@ -1025,7 +1034,7 @@ Call grasp editor functionality on a currently selected object and grasp.
 | _int_ |grasp|The grasp ID to call the action on (if not provided, the current grasp of the hand).|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_GraspStudio](unity_component_vggraspeditor.1.5.0.html)
+Used in: [VG_GraspStudio](unity_component_vggraspstudio.1.5.0.html)
 
 
 ### VG_Controller.GetGrasp
@@ -1044,7 +1053,7 @@ Receive a grasp in the grasp DB by index.
 |[*VG_QueryGraspMethod*](#vg_querygraspmethod) | queryGraspMethod|Can be used to define how the graspIndex should be interpreted.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
-Used in: [VG_GraspStudio](unity_component_vggraspeditor.1.5.0.html)
+Used in: [VG_GraspStudio](unity_component_vggraspstudio.1.5.0.html)
 
 
 ### VG_Controller.GetInteractionTypeForObject
@@ -1265,21 +1274,21 @@ Release a gesture on a hand.
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
-### VG_Controller.SetBlockRelease
+### VG_Controller.SetBlockReleaseObject
 
-Specify if on this hand should block release or not in runtime.
+Specify if on all hands of this avatar should block releasing the interaction (grasp or push) with an object or not in runtime.
 
-| _int_ |avatarID|The avatar to release a grasp for.|
+| _int_ |avatarID|The avatar to block release for.|
 | _bool_ |block|If block release signal or not on this avatar.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
 
-### VG_Controller.SetBlockRelease
+### VG_Controller.SetBlockReleaseObject
 
-Specify if on this hand should block release or not in runtime.
+Specify if on this hand should block releasing the interaction (grasp or push) with an object or not in runtime.
 
-| _int_ |avatarID|The avatar to release a grasp for.|
-|[*VG_HandSide*](#vg_handside) | side|The hand which to release the grasp for.|
+| _int_ |avatarID|The avatar to block release for.|
+|[*VG_HandSide*](#vg_handside) | side|The hand of the avatar to block release for.|
 | _bool_ |block|If block release signal or not on this hand.|
 | **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
 
@@ -1432,12 +1441,12 @@ Returns the current grab velocity of a hand. The current velocity of the grab st
 
 ### VG_Controller.GetPushCircle
 
-Get the push cirle for this hand side of an avatar as a visual hint for object selection for push without physics.
+Get the push circle for this hand side of an avatar as a visual hint for object selection for push without physics.
 
 | _int_ |avatarID|The avatar to get the push circle for.|
 |[*VG_HandSide*](#vg_handside) | handSide|The hand to get the push circle for.|
 | _**out** Vector3_ |p|The push circle's position.|
-| _**out** Quaternion_ |r|The push circle's rotation (zaxis is normal).|
+| _**out** Quaternion_ |r|The push circle's rotation (z-axis is normal).|
 | _**out** float_ |radius|Radius of the push circle,|
 | _**out** bool_ |inContact|True if contact (i.e. pushing), False otherwise.|
 | **returns** | _Transform_ | The selected object's Unity Transform, or null if none.|
@@ -1484,7 +1493,7 @@ Send an external controller grab signal to the plugin (for EXTERNAL_CONTROLLER s
 |[*VG_HandSide*](#vg_handside) | handSide|The hand side to set external sensor pose for.|
 | _float_ |strength|The grab strength signal to set.|
 
-Used in: [VG_ExternalControllerManager](unity_component_vgcontrollerprofile.1.5.0.html)
+Used in: [VG_ExternalControllerManager](unity_component_vgexternalcontrollermanager.1.5.0.html)
 
 
 ### VG_Controller.SetFingerCalibrationMode
