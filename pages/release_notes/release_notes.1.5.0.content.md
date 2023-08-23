@@ -34,12 +34,12 @@
 
 ##### GUI / Component Changes:
 * [VG_Recorder](unity_component_vgrecorder.1.5.0.html) fixed a bug of clicking on the defined **Replay Sequence Key** or **Replay Segment Key** can not replay just recorded data. **(fixed known issue from 1.4.0)**
-* [VG_Recorder](unity_component_vgrecorder.1.5.0.html) removed _Replay From Memory_ option.
-* Added [VG_Utility](unity_component_vgutility.1.5.0.html) scriptable object in _Runtime/Resources/_ that covers most of VG's static GUI functions.
-* Added a new [VG_Locomotion](unity_component_vglocomotion.1.5.0.html) component originated from _Samples/onboarding/Scripts/Move.cs_. In addition to original Move.cs speed control on locomotion is added, and keyboard control is added. 
+  * as a result _Replay From Memory_ option is removed on the GUI of [VG_Recorder](unity_component_vgrecorder.1.5.0.html) since directly hitting replay key after recording is replaying from memory. 
+* Added [VG_Utility](unity_component_vgutility.1.5.0.html) scriptable object in _Runtime/Resources/_ that covers most of VG's static API functions.
+* Added [VG_Locomotion](unity_component_vglocomotion.1.5.0.html) component that originats from _Samples/onboarding/Scripts/Move.cs_. In addition to the original functionalities in Move.cs, on VG_Locomotion speed control and keyboard control are added. 
 * Added more prefabs and improved existing ones in _Runtime/Resources/Prefabs/_
   * _SensorAvatar_ and _SensorAndReplayAvatars_ were refactored to avoid conflicting control of avatar movement by different mechanisms. 
-  * _SensorAvatarLeap_ was added as prefab varient of _SensorAvatar_ to directly support leap motion sensor control.
+  * _SensorAvatarLeap_ was added as prefab varient of _SensorAvatar_ to directly support Leap motion sensor control.
   * _SeparateHandsSensorAvatar_ was added. It is comparible to _SensorAvatar_ with the difference of using the newly added singular left hand model _Runtime/Resources/GleechiHands/GleechiLeftHand.fbx_. This prefab was added mainly to show an example of how to set up VG {% include tooltip.html tooltip="SensorAvatar" text="sensor avatar" %}  with separate hand models. 
   * _SeparateHandsSensorAndReplayAvatars_ was added as prefab varient of _SeparateHandsSensorAvatar_. It is comparible to _SensorAndReplayAvatars_ also with the difference of using the newly added singular left hand model. This was added mainly to show an example of how to setup VG library for sensor recording and replaying with separate hand models. 
 
