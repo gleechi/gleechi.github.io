@@ -20,7 +20,7 @@
 *
 -->
 
-## V1.5.0 - rc1 (2023-08-25)
+## V1.5.0 (2023-08-25)
 
 ##### Major Functionality Changes:
 
