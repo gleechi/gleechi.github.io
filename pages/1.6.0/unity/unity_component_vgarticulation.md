@@ -12,11 +12,11 @@ VG_Articulation is an {% include tooltip.html tooltip="VGInternalScript" text="i
 
 By default, the VG_articulation component sets an object to have floating {% include tooltip.html tooltip="JointType" text="joint type" %}. If an object is non-{% include tooltip.html tooltip="PhysicalObject" text="physical" %}, constrained (non-floating) joint types can be specified. 
 
-{% include image.html file="unity/unity_vg_articulation_default.png" alt="VG Articulation" caption="The default VG_Articulation Component (FLOATING joint)." %}
+{% include image.html file="unity/unity_vg_articulation_default_1_6_0.png" alt="VG Articulation" caption="The default VG_Articulation Component (FLOATING joint)." %}
 
 As soon as you change the {% include tooltip.html tooltip="JointType" text="joint type" %}, the interface will change dynamically.
 
-{% include image.html file="unity/unity_vg_articulation_full_1_0_0.png" alt="VG Articulation" caption="VG_Articulation dynamic interface after changing to REVOLUTE joint." %}
+{% include image.html file="unity/unity_vg_articulation_full_1_6_0.png" alt="VG Articulation" caption="VG_Articulation dynamic interface after changing to REVOLUTE joint." %}
 
 All the parameters are explained in detail in [object articulation](object_articulation.1.6.0.html).
 

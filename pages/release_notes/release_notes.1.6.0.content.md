@@ -20,15 +20,15 @@
 *
 -->
 
-## V1.6.0 - rc1 (2023-09-1)
+## V1.6.0 - rc1 (2023-09-10)
 
 ##### Major Functionality Changes:
 
- * TBD
+ * [VG_Articulation](unity_component_vgarticulation.1.6.0.html) added **Simulated Weight** feature to simulate the "heavy object lifting" effect. Note that this effect is not through physics simulation, but rather artificially slowing down the lifting of an object with non-zero simulated weight. 
 
 ##### GUI / Component Changes:
 
- * TBD
+ * [VG_Articulation](unity_component_vgarticulation.1.6.0.html) added **Simulated Weight** feature to simulate the "heavy object lifting" effect.
 
 ##### API Changes:
 

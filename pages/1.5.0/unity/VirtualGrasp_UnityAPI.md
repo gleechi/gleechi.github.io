@@ -581,6 +581,15 @@ Specify the object selection weights for grasping interaction.
 
 
 
+### VG_Controller.SetSimulatedWeight
+
+Set simulated weight for an object (physical or not) to simulate heavy lifting effect when grasped.
+
+| _Transform_ |selectedObject|The object to change the dual hand type for.|
+| _float_ |simulatedWeight|The weight (kg) that determines the \"delayed\" effect of heavy lifting. If 0 means no delay to pick up.|
+| **returns** |[VG_ReturnCode](#vg_returncode) | VG_ReturnCode describing the error state of the function call.|
+
+
 ### VG_Controller.StopSettingObjectJointState
 
 Stop setting the current joint to desired state for a single-dof articulated object or planar joint object.
