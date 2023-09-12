@@ -108,11 +108,19 @@ In VG library we define a “narrower” sensed set of affordances that determin
 | Two Stage | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, bounce to the highest and lowest discrete state in an alternating order | for 1-dof joint | 
 | Snaps | {% include tooltip.html tooltip="StateAffordance" text="state affordance" %}: When released, snap to the closest discrete state | for 1-dof joint and 2-dof Planar joint | 
 
-## Dual Hands Only
+## Simulating Heavy Object
+Objects with heavy weight should not be so easily lifted like lifting air. To simulate this "heavy lifting" effect, VG offers two options.
+
+### Dual Hands Only
 
 This is a miscellaneous parameter to enforce an object can only be moved when grasped by more than one hands. 
+The purpose of this feature is to "simulate" a heavy object that needs more hands to be moved. 
 
-The purpose of this feature is to "simulate" a heavy object that need more hands to be moved. This option applies to both {% include tooltip.html tooltip="PhysicalObject" text="physical objects" %} and non-physical objects.
+### Simulated Weight
+
+Another option is to add a simulated weight to the object. This weight is in unit of kilogram, however it does not engage in physical simulation through physics engine. If a non-zero weight (>0) is entered here, VG will apply a slower lifting effect with the duration proportional to the entered weight. 
+
+{% include callout.html content="**Dual Hands Only** and **Simulated Weight** can be used individually or combined. And they applies to both physical and non-physical objects. Note that in the cases of physical objects, the simulated weight has nothing to do with the mass of Rigidbody or Articulatio Body.  " %}
 
 ## Graphical User Interface
 
