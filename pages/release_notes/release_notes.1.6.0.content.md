@@ -50,6 +50,8 @@
 
 * [StartReplay](virtualgrasp_unityapi.1.4.0.html#vg_controllerstartreplay) entering selectedObject will not fully support object-centered replay.
 
+* [VG_Assemble](unity_component_vgassemble.1.6.0.html) has a bug: when "Assemble Axis" is Y axis, the angular difference is not taken into account when measuring closeness of the object to the target.
+
 
 
 {% include_relative release_notes.1.5.0.content.md %}
