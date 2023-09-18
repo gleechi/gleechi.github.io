@@ -186,6 +186,9 @@ entries:
         - title: Task9_Plier_Manipulation_Animation
           url: /unity_vgonboarding_task9.1.6.0.html
           output: web
+        - title: Task10_Symmetric_Assemble_VG
+          url: /unity_vgonboarding_task10.1.6.0.html
+          output: web
       
   - title: Reference
     output: web
