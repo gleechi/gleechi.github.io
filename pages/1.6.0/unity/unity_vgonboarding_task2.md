@@ -36,14 +36,14 @@ VirtualGrasp\Scenes\onboarding\VG_Onboarding.unity
 ````
 #### Disassemble and re-assemble knobs and antenna
 
-{% include image.html file="unity/unity_onboarding_task2_vg_assemble.png" alt="VG Assemble setup for antenna." caption="VG Assemble setup for antenna." %}
+{% include image.html file="unity/unity_onboarding_task2_vg_assemble_1_6_0.png" alt="VG Assemble setup for antenna." caption="VG Assemble setup for antenna." %}
 
 [VG_Assemble](unity_component_vgassemble.1.6.0.html) component is used for disassembling and re-assembling the two knobs and the antenna from the radio. 
 Above image shows the setting for the component on antenna. A few things to point out:
 
 * Since when we re-assemble the antenna to the radio, we want the antenna to attach to radio as radio's child, we check _Assemble To Parent_ flag. 
 * And _Desired Poses_ is **antenna_anchor_target** transform that is radio's child.
-* Since the antenna is a rotational symmetric object, so assemble angle threshold just need to make sure this symmetry axis is aligned with the desired pose. This axis is represented by the **z-axis** of the assigned _Assemble Anchor_ **anchor** transform. Therefore _Assemble Axis_ is set to be (0, 0, 1) to indicate z-axis of **anchor** should match that of **antenna_anchor_target**.  
+* Since the antenna is a rotational symmetric object, so assemble angle threshold just need to make sure this symmetry axis is aligned with the desired pose. This axis is represented by the **Z Axis** of the assigned _Assemble Anchor_ **anchor** transform, therefore _Assemble Axis_ is set to be "Z Axis" indicating z-axis of **anchor** should match that of **antenna_anchor_target**. Since any rotation angle around the axis is fine, _Assemble Symmetry Steps_ is set to be 0. 
 * Because the antenna initially is at the assembled state (attached to the radio with {% include tooltip.html tooltip="Cone" text="cone" %} joint), we need to add a disabled [VG_Articulation](unity_component_vgarticulation.1.6.0.html) with  {% include tooltip.html tooltip="Floating" text="floating" %} joint to this game object and drag it to _Disassemble Articulation_ entry. (If an object initially is floating joint type, this is not needed.)
 * Since initially the antenna is attached to the radio with a constrained joint type -- {% include tooltip.html tooltip="Cone" text="cone" %} joint, the object can not be {% include tooltip.html tooltip="PhysicalObject" text="physical" %}. Therefore if we want the object to become physical when it is disassembled, we need to check _Force Disassembled Physical_ flag. 
 
