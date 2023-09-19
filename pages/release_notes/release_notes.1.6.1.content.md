@@ -30,6 +30,8 @@
 If [0, 0, 0] was used to require whole rotation match, for this new version, the corresponding setting is to select any assymetric axis (e.g. "X Axis") for **Assemble Axis**, and set 1 for **Assemble Symmetry Steps** which is a new option added in this version. 
 Please check documentation [VG_Assemble](unity_component_vgassemble.1.6.1.html) and example onboarding [task 10](unity_vgonboarding_task10.1.6.1.html) to see how this improved component can cope with a whole range of symmetric conditions.
 
+* Another internal change in [VG_Assemble](unity_component_vgassemble.1.6.1.html) is that previusly automatically disabling and enabling the desired pose transform when an object is assembled and disassembled respectively is now removed. Instead a public function _SetTargetTransformActive_ is added that can be hooked to _On Assembled_ and _On Disassembled_ to achieve the same effect. 
+
 ##### GUI / Component Changes:
 
  * [VG_Articulation](unity_component_vgarticulation.1.6.0.html) added **Simulated Weight** feature to simulate the "heavy object lifting" effect.

@@ -20,7 +20,7 @@ folder: mydoc
 * Objects whose shapes have different levels of symmetry demand different types of rotaional matching when assembling to a target pose. 
 * This task showcases how these different symmetric shapes could be assembled with a set of generic parameters in the provided [VG_Assemble](unity_component_vgassemble.1.6.1.html) component. 
 * As shown in the above video, the assembling behaviors we want are:
-    * for the sphere, just positional match is needed since it is rotational symmetric around the centriod;
+    * for the sphere, just positional match is needed since it is rotational symmetric around the centroid;
     * for the cone, matching of a rotational axis is needed, and around this axis it is completely rotational symmetric;
     * for the hexagonal prism, matching of a rotational axis in either direction is needed, and around this axis it is rotational symmetric but at 6 discrete angles around the 360 deg range;
     * for the pyramid, matching of a rotational axis is needed, and around this axis it is rotational symmetric but at 4 discrete angles around the 360 deg range;
