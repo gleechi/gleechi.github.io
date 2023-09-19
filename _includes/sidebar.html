@@ -2,11 +2,11 @@
 
 <ul id="mysidebar" class="nav">
   <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
-  {% if sidebar[0].version != "1.6.0" and sidebar %}
-  {% capture url_version %}{{page.url | split: "." | first }}.1.6.0.html{% endcapture %}
+  {% if sidebar[0].version != "1.6.1" and sidebar %}
+  {% capture url_version %}{{page.url | split: "." | first }}.1.6.1.html{% endcapture %}
   {% assign file = site.pages | where: "url", {{url_version}} | first %}
   {% if file %}
-  <u><i><a style="background-color: #FF8800; font-size: 9pt;" href="{{url_version}}">Note: Newer version 1.6.0 exists.</a></i></u>
+  <u><i><a style="background-color: #FF8800; font-size: 9pt;" href="{{url_version}}">Note: Newer version 1.6.1 exists.</a></i></u>
   {% endif %}
   {% endif %}
   {% for entry in sidebar %}

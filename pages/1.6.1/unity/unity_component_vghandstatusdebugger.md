@@ -1,0 +1,37 @@
+---
+title: VG_HandStatusDebugger Component
+keywords: editor, script
+sidebar: main_sidebar_1_6_1
+permalink: unity_component_vghandstatusdebugger.1.6.1.html
+folder: mydoc
+---
+
+## Description
+
+The VG_HandStatusDebugger is a {% include tooltip.html tooltip="VGPublicScript" text="public script" %} that shows the current status of hands ([VG_HandStatus](unity_component_vghandstatus.1.6.1.html)) during runtime in the Editor. 
+
+The VG_HandStatusDebugger provides a tutorial on some of the members of [VG_HandStatus](unity_component_vghandstatus.1.6.1.html) which are central to many of the API functions, such as [GetHands()](virtualgrasp_unityapi.1.6.1.html#vg_controllergethands) or some [Events](virtualgrasp_unityapi.1.6.1.html#events).
+
+{% include singleton_script.html %}
+
+```js
+// ThirdParty/VirtualGrasp/Scripts/VG_HandStatusDebugger.cs
+
+public class VG_HandStatusDebugger : MonoBehaviour
+{
+    [Tooltip("This list will be updated during runtime with the VG_HandStatus of all hands.")]
+    public List<VG_HandStatus> m_hands = new List<VG_HandStatus>();
+
+#if UNITY_EDITOR
+    public void Update()
+    {
+        m_hands.Clear();
+        foreach (VG_HandStatus hand in VG_Controller.GetHands())
+            m_hands.Add(hand);
+    }
+#endif
+}
+````
+
+{% include youtube.html id="8YOEeZmeil8" caption="The VG_HandStatusDebugger will continuously update the list of VG_HandStatus in the Inspector. Hand status variables are out of the date in this video and will be updated soon" %}
+
