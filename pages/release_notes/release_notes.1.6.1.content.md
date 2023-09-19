@@ -24,7 +24,7 @@
 
 ##### Major Functionality Changes:
 
- * [VG_Articulation](unity_component_vgarticulation.1.6.0.html) added **Simulated Weight** feature to simulate the "heavy object lifting" effect. Note that this effect is not through physics simulation, but rather artificially slowing down the lifting of an object with non-zero simulated weight. 
+ * [VG_Articulation](unity_component_vgarticulation.1.6.1.html) added **Simulated Weight** feature to simulate the "heavy object lifting" effect. Note that this effect is not through physics simulation, but rather artificially slowing down the lifting of an object with non-zero simulated weight. 
 
  * **Breaking change:** [VG_Assemble](unity_component_vgassemble.1.6.1.html) is improved to cover assembling object with different symmetric levels. Developers who used this component in previous versions just need to convert 3D vector of **Assemble Axis** to the corresponding axis type, for example [0, 1, 0] corresponds to "Y Axis".
 If [0, 0, 0] was used to require whole rotation match, for this new version, the corresponding setting is to select any assymetric axis (e.g. "X Axis") for **Assemble Axis**, and set 1 for **Assemble Symmetry Steps** which is a new option added in this version. 
@@ -34,7 +34,7 @@ Please check documentation [VG_Assemble](unity_component_vgassemble.1.6.1.html) 
 
 ##### GUI / Component Changes:
 
- * [VG_Articulation](unity_component_vgarticulation.1.6.0.html) added **Simulated Weight** feature to simulate the "heavy object lifting" effect.
+ * [VG_Articulation](unity_component_vgarticulation.1.6.1.html) added **Simulated Weight** feature to simulate the "heavy object lifting" effect.
 
  * [VG_Assemble](unity_component_vgassemble.1.6.1.html) is improved to cover assembling object with different symmetric levels. The GUI changes include:
     1. **Assemble Axis** changed from entering a 3D vector to an enum of axis types. 
