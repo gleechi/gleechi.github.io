@@ -50,6 +50,6 @@ Above image shows the setting for assembling the curved bar object in the video.
 | Hexagon Prism |6-step rotational symmetric around a symmetric axis | Y Axis Symmetric  | 6 | Y Axis Symmetric is chosen because the shape is symmetric in either direction of the Y Axis. And 6 Steps is chosen because hexagon requres matching of rotation at 6 discrete steps around the Y Axis |
 | Pyramid |4-step rotational symmetric around an axis | Y Axis | 4 | Y Axis the rotational axis of the Pyramid. And 4 Steps is chosen because Pyramid requres matching of rotation at 4 discrete steps around the Y Axis |
 | Curved Bar |2-step rotational symmetric around an axis  | Z Axis | 2 | Z Axis of assigned Assemble Anchor is chosen because the Curved Bar is symmetric around this axis. And 2 Steps is chosen because around Z Axis matching could happen with 180 degree of flip, i.e. 2 discrete steps around the Z axis |
-| Apple |1-step rotational symmetric around an axis (i.e. non-symmetric) | X Axis | 1 | Apple is an assymetric object, so any unsymmetric Assemble Axis can be chosen (X, Y, or Z Axis), and 1 Step is chosen because it is only allowed to match of one angle around this X axis.|
+| Apple |1-step rotational symmetric around an axis (i.e. non-symmetric) | X Axis | 1 | Apple is an assymetric object, so any asymmetric Assemble Axis can be chosen (X, Y, or Z Axis), and 1 Step is chosen because it is only allowed to match of one angle around this X axis.|
 
 
