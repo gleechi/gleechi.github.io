@@ -32,7 +32,7 @@ Please check documentation [VG_Assemble](unity_component_vgassemble.1.6.3.html) 
 
 * An internal change in [VG_Assemble](unity_component_vgassemble.1.6.3.html) is that previusly automatically disabling and enabling the desired pose transform when an object is assembled and disassembled respectively is now removed. Instead a public function _SetTargetTransformActive_ is added that can be hooked to _On Assembled_ and _On Disassembled_ to achieve the same effect. 
 
-* Another change in [VG_Assemble](unity_component_vgassemble.1.6.3.html) is that previusly the unity events of assemble or disassemble returns the assembled object transform, now they returns the selected target transform. 
+* Another change in [VG_Assemble](unity_component_vgassemble.1.6.3.html) is that previusly the unity events of assemble or disassemble return the assembled object transform, now they return the selected target transform. 
 
 ##### GUI / Component Changes:
 
