@@ -1,4 +1,4 @@
-## V1.0.0(2022-12-07)
+## V1.0.0 (2022-12-07)
 
 ##### Major Functionality Changes:
 * **Breaking change:** The Sensor/Avatar configuration in the MyVirtualGrasp component has been refactored:
