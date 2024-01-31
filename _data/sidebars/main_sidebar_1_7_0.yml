@@ -1,0 +1,213 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  product: Unity SDK
+  version: 1.7.0
+  levels: one
+  folders:
+
+  - title: Tutorials
+    url: /index.1.7.0.html
+    output: web
+    folderitems:
+    - title: Welcome
+      url: /index.1.7.0.html
+      output: web
+      subfolders:
+    - title: Installation
+      url: /unity_get_started_installation.1.7.0.html
+      output: web
+    - title: Quickstart Guide
+      url: /unity_get_started_quickstart.1.7.0.html
+      output: web
+      
+  - title: Explanation
+    output: web
+    folderitems:
+    - title: Avatars
+      url: /avatars.1.7.0.html
+      output: web
+    - title: Axis Mappings
+      url: /axis_mappings.1.7.0.html
+      output: web
+    - title: Controllers
+      url: /controllers.1.7.0.html
+      output: web 
+    - title: Object Articulation
+      url: /object_articulation.1.7.0.html
+      output: web
+    - title: Object Baking
+      url: /object_baking.1.7.0.html
+      output: web
+    - title: Grasp Interaction
+      url: /grasp_interaction.1.7.0.html
+      output: web
+    - title: Push Interaction
+      url: /push_interaction.1.7.0.html
+      output: web
+    - title: Debug Files
+      url: /debug_files.1.7.0.html
+      output: web
+    - title: Sensor Record and Replay
+      url: /sensor_record_replay.1.7.0.html
+      output: web
+    - title: Glossary
+      url: /glossary.1.7.0.html
+      output: web
+      
+  - title: How-To Guides
+    output: web
+    folderitems:
+    - title: BakingClient [EditorWindow]
+      url: /unity_component_vgbakingclient.1.7.0.html
+      output: web
+    - title: My VirtualGrasp
+      url: /unity_component_myvirtualgrasp.1.7.0.html
+      output: web
+    - title: VG_Articulation
+      url: /unity_component_vgarticulation.1.7.0.html
+      output: web
+      subfolders:
+    - title: VG_ControllerProfile
+      url: /unity_component_vgcontrollerprofile.1.7.0.html
+      output: web
+      subfolders:
+      - title: VG_ExternalController
+        url: /unity_component_vgexternalcontroller.1.7.0.html
+        output: web
+        subfolderitems:
+        - title: VG_EC_Mouse
+          url: /unity_vg_ec_mouse.1.7.0.html
+          output: web
+        - title: VG_EC_Script
+          url: /unity_vg_ec_script.1.7.0.html
+          output: web
+        - title: VG_EC_Leap
+          url: /unity_vg_ec_leap.1.7.0.html
+          output: web   
+        - title: VG_EC_Manus
+          url: /unity_vg_ec_manus.1.7.0.html
+          output: web
+        - title: VG_EC_Oculus
+          url: /unity_vg_ec_oculus.1.7.0.html
+          output: web
+        - title: VG_EC_OVR
+          url: /unity_vg_ec_ovr.1.7.0.html
+          output: web
+        - title: VG_EC_Steam
+          url: /unity_vg_ec_steam.1.7.0.html
+          output: web
+        - title: VG_EC_UnityXRInteraction
+          url: /unity_vg_ec_unityxrinteraction.1.7.0.html
+          output: web
+        - title: VG_EC_UnityXR
+          url: /unity_vg_ec_unityxr.1.7.0.html
+          output: web
+        - title: VG_EC_UnityXRHands
+          url: /unity_vg_ec_unityxrhands.1.7.0.html
+          output: web
+        #- title: VG_EC_GenericHand
+        #  url: /unity_vg_ec_generichand.1.7.0.html
+        #  output: web
+    - title: VG_GraspEditor
+      url: /unity_component_vggraspeditor.1.7.0.html
+      output: web
+    - title: VG_HandProfile
+      url: /unity_component_vghandprofile.1.7.0.html
+      output: web
+    - title: VG_HandVisualizer
+      url: /unity_component_vghandvisualizer.1.7.0.html
+      output: web
+    - title: VG_HandStatus
+      url: /unity_component_vghandstatus.1.7.0.html
+      output: web
+    - title: VG_HandStatusDebugger
+      url: /unity_component_vghandstatusdebugger.1.7.0.html
+      output: web
+    - title: VG_HighLighter
+      url: /unity_component_vghighlighter.1.7.0.html
+      output: web 
+    - title: VG_HintVisualizer
+      url: /unity_component_vghintvisualizer.1.7.0.html
+      output: web 
+    - title: VG_Interactable
+      url: /unity_component_vginteractable.1.7.0.html
+      output: web
+    - title: VG_Locomotion
+      url: /unity_component_vglocomotion.1.7.0.html
+      output: web
+    - title: VG_FingerAnimator
+      url: /unity_component_vgfingeranimator.1.7.0.html
+      output: web
+    - title: VG_ObjectAnimator
+      url: /unity_component_vgobjectanimator.1.7.0.html
+      output: web
+    - title: VG_AnimationDriver
+      url: /unity_component_vganimationdriver.1.7.0.html
+      output: web
+    - title: VG_Assemble
+      url: /unity_component_vgassemble.1.7.0.html
+      output: web
+    - title: VG_Recorder [pro]
+      url: /unity_component_vgrecorder.1.7.0.html
+      output: web
+    - title: VG_Utility
+      url: /unity_component_vgutility.1.7.0.html
+      output: web
+      subfolders:
+      - title: VG_Onboarding
+        output: web
+        subfolderitems:
+        - title: Task1_Button_Switch
+          url: /unity_vgonboarding_task1.1.7.0.html
+          output: web
+        - title: Task2_Radio_Disassemble_VG
+          url: /unity_vgonboarding_task2.1.7.0.html
+          output: web
+        - title: Task3_Container
+          url: /unity_vgonboarding_task3.1.7.0.html
+          output: web
+        - title: Task4_Valve_Assemble_ArtiBody
+          url: /unity_vgonboarding_task4.1.7.0.html
+          output: web
+        - title: Task5_Bottle_Assemble_VG
+          url: /unity_vgonboarding_task5.1.7.0.html
+          output: web
+        - title: Task6_Pad_VG_Planar_Joint
+          url: /unity_vgonboarding_task6.1.7.0.html
+          output: web
+        - title: Task7_Chain_Assemble_VG
+          url: /unity_vgonboarding_task7.1.7.0.html
+          output: web
+        - title: Task8_Screw_Assemble_VG
+          url: /unity_vgonboarding_task8.1.7.0.html
+          output: web
+        - title: Task9_Plier_Manipulation_Animation
+          url: /unity_vgonboarding_task9.1.7.0.html
+          output: web
+        - title: Task10_Symmetric_Assemble_VG
+          url: /unity_vgonboarding_task10.1.7.0.html
+          output: web
+      
+  - title: Reference
+    output: web
+    folderitems:
+    - title: Release Notes
+      url: /release_notes.1.7.0.html
+      output: web
+    - title: Unity API
+      url: /virtualgrasp_unityapi.1.7.0.html
+      output: web 
+    - title: FAQs
+      url: /faqs.1.7.0.html
+      output: web
+    #- title: Unity API functions
+    #  url: /virtualgrasp_unityapi.1.7.0.html#virtualgrasp_controller_functions
+    #  output: web
+    #- title: Unity Enums
+    #  url: /virtualgrasp_unityapi.1.7.0.html#enums
+    #  output: web
+    #- title: Unity Events
+    #  url: /virtualgrasp_unityapi.1.7.0.html#events
+    #  output: web
