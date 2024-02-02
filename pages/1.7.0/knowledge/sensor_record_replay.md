@@ -9,7 +9,7 @@ toc: true
 
 ### Background
 
-One feature of VirtualGrasp (Pro version) is the ability to pre-record a
+One feature of VirtualGrasp is the ability to pre-record a
 <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSequence}}">interaction sequence</a>,
 and later replay the whole sequence or individual <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.InteractionSegment}}">interaction segment</a> on specific objects. 
 This is enabled by the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.SensorRecordAndReplay}}">sensor record and replay</a>

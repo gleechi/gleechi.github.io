@@ -149,7 +149,7 @@ entries:
     - title: VG_Assemble
       url: /unity_component_vgassemble.1.7.0.html
       output: web
-    - title: VG_Recorder [pro]
+    - title: VG_Recorder
       url: /unity_component_vgrecorder.1.7.0.html
       output: web
     - title: VG_Utility
